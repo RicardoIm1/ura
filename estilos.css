@@ -276,7 +276,7 @@
       font-size: 17px;
       color: var(--apple-dark-gray);
       background: var(--apple-light-gray);
-      margin-top: 80px;
+      /*margin-top: 80px;*/
           margin-bottom:0;
     }
     
