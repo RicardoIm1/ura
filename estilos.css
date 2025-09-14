@@ -306,3 +306,56 @@
       .evaluacion-desc{
         font-size: 2rem;
       }
+
+
+
+
+.tema-card-link {
+
+
+  text-decoration: none;
+
+
+  color: inherit;
+
+
+  display: block; /* para que el <a> se comporte como un bloque */
+
+
+}
+
+
+
+
+
+.tema-card {
+
+
+  /* estilos visuales de tu tarjeta */
+
+
+  border: 1px solid #ccc;
+
+
+  padding: 16px;
+
+
+  border-radius: 8px;
+
+
+  transition: box-shadow 0.3s;
+
+
+}
+
+
+
+
+
+.tema-card:hover {
+
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+
+}
