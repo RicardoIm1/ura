@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computación I - Universidad URA</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    /* Modal */
+    #modal-info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 1000;
+    }
+    .modal-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      background: #f5f5f5;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      overflow-y: auto;
+      max-height: 80%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      font-size: 1rem;
+    }
+
+    }
+    .modal.show .modal-overlay {
+      opacity: 1;
+    }
+    .modal.show .modal-content {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    /* Ajuste de listas dentro del modal */
+    #modal-text ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    #modal-text h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+      <div class="header-title">Computación I</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Computación I</h1>
+    <h2>INAR0104</h2>
+  </div>
+
+  <section class="container">
+    <h2 class="section-title">Objetivo General</h2>
+    <p class="objetivo">
+      Al finalizar el curso el alumno será capaz de explicar el procesamiento de información por computadora, 
+      utilizando la terminología técnica de identificación de los principales componentes de un sistema de computación,
+      definiendo sus respectivas funciones, así como describir la historia de la computación y distinguir problemas susceptibles de soluciones mediante la computación.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Temario</h2>
+    <div class="temas-grid">
+      <div class="tema-card">
+        <div class="tema-num">TEMA 1</div>
+        <h3 class="tema-title">Introducción a Computadores Digitales</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('1.1 Computación Análoga', `
+            <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
+            <h4>Definición</h4>
+            <ul>
+              <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o movimiento).</li>
+              <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
+            </ul>
+            <h4>Características</h4>
+            <ul>
+              <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
+              <li>Ofrece resultados aproximados.</li>
+              <li>Muy usada antes de la aparición de computadoras digitales.</li>
+            </ul>
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Regla de cálculo para operaciones matemáticas.</li>
+              <li>Relojes de manecillas.</li>
+              <li>Termómetros de mercurio.</li>
+            </ul>
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+            </ul>
+          `)">1.1 Computación Análoga
+          </li>
+
+          <ul class="tema-list">
+            <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
+              <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
+
+            <h4>Definición</h4>
+            <ul>
+              <li>Conjunto de técnicas y procedimientos que permiten representar, procesar, analizar y manipular información utilizando sistemas discretos.</li>
+              <li>Convierte datos del mundo real en valores discretos (generalmente binarios) para su almacenamiento, transmisión y procesamiento mediante computadoras.</li>
+              <li>Base de la computación digital, presente en smartphones, sistemas de control industrial, análisis de datos clínicos y prácticamente toda tecnología moderna.</li>
+            </ul>
+
+            <h4>Características</h4>
+            <ul>
+              <li>Trabaja con información discreta en lugar de continua, usando ceros y unos como lenguaje fundamental.</li>
+              <li>Permite precisión, reproducibilidad y facilidad de manipulación de datos.</li>
+              <li>Capacidad de aplicar algoritmos complejos para resolver problemas que serían difíciles o imposibles de abordar con métodos análogos.</li>
+              <li>Facilita el almacenamiento, la comunicación y el control de información de manera confiable y eficiente.</li>
+              <li>Sirve de soporte a simulaciones, modelado y análisis de datos en diversas áreas del conocimiento.</li>
+            </ul>
+
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Computadoras personales y servidores que procesan información digital.</li>
+              <li>Smartphones y tablets que ejecutan aplicaciones basadas en datos discretos.</li>
+              <li>Sistemas de control industrial, como robots y automatización de fábricas.</li>
+              <li>Dispositivos médicos que digitalizan señales biológicas para diagnóstico y monitoreo.</li>
+            </ul>
+
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+          </ul>
+            `)">1.2 Introducción a métodos digitales
+          </li>
+
+          <ul class="tema-list">
+            <li onclick="abrirModal('1.3 Descripción de componentes', `
+                <p><strong>Objetivo:</strong> Conocer los principales componentes de un sistema digital, su funcionamiento y cómo interactúan para procesar información.</p>
+
+                <h4>Definición</h4>
+                <ul>
+                  <li>Los componentes de un sistema digital son los elementos físicos y lógicos que permiten la representación, procesamiento, almacenamiento y comunicación de información en forma discreta.</li>
+                  <li>Incluyen tanto hardware (circuitos, procesadores, memoria, periféricos) como software (sistemas operativos y programas) que controlan el flujo y la manipulación de datos.</li>
+                  <li>Son la base de cualquier dispositivo digital moderno, desde microcontroladores hasta supercomputadoras.</li>
+                </ul>
+
+                <h4>Principales Componentes</h4>
+                <ul>
+                  <li><strong>Unidad Central de Procesamiento (CPU):</strong> Componente encargado de ejecutar instrucciones, procesar datos y coordinar el funcionamiento de todo el sistema.</li>
+                  <li><strong>Memoria:</strong> Almacena datos e instrucciones de manera temporal (RAM) o permanente (ROM, discos, memorias flash).</li>
+                  <li><strong>Dispositivos de Entrada:</strong> Permiten la interacción con el sistema, como teclados, sensores, micrófonos y cámaras.</li>
+                  <li><strong>Dispositivos de Salida:</strong> Permiten mostrar o transmitir información procesada, como pantallas, impresoras o actuadores en sistemas de control.</li>
+                  <li><strong>Bus de Datos:</strong> Conjunto de líneas que transportan información entre la CPU, memoria y periféricos.</li>
+                  <li><strong>Controladores y Interfaces:</strong> Administran la comunicación con dispositivos externos y aseguran que los datos se transfieran correctamente.</li>
+                  <li><strong>Software de Sistema:</strong> Sistemas operativos y firmware que gestionan recursos y permiten ejecutar aplicaciones.</li>
+                </ul>
+
+                <h4>Características</h4>
+                <ul>
+                  <li>Interconexión eficiente entre componentes, permitiendo un flujo de información rápido y confiable.</li>
+                  <li>Capacidad de procesamiento secuencial y paralelo mediante CPU y otros procesadores especializados.</li>
+                  <li>Almacenamiento jerárquico, que permite acceso rápido a datos frecuentes y conservación a largo plazo de información crítica.</li>
+                  <li>Modularidad, facilitando la actualización y sustitución de componentes sin afectar el funcionamiento general.</li>
+                  <li>Compatibilidad entre hardware y software para ejecutar algoritmos y procesos de manera correcta.</li>
+                </ul>
+
+                <h4>Ejemplos</h4>
+                <ul>
+                  <li>Un microcontrolador Arduino que integra CPU, memoria y puertos de entrada/salida para proyectos electrónicos.</li>
+                  <li>Computadoras personales con CPU, RAM, disco duro, tarjeta gráfica y periféricos conectados mediante buses.</li>
+                  <li>Servidores de datos que utilizan múltiples CPUs, memorias de alta velocidad y sistemas redundantes para garantizar disponibilidad.</li>
+                  <li>Smartphones que combinan procesador, memoria, sensores y sistemas operativos móviles en un solo dispositivo compacto.</li>
+                </ul>
+
+                <h4>Fuentes Bibliográficas</h4>
+                <ul>
+                  <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                  <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+                  <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+                  <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+                </ul>
+            </ul>
+          `)">1.3 Descricpción de componentes.  
+          </li>
+          
+          <ul class="tema-list">
+            <li onclick="abrirModal('1.4 Lectura de entrada', `
+  <p><strong>Objetivo:</strong> Entender cómo los sistemas digitales reciben información del mundo exterior y la preparan para su procesamiento interno.</p>
+
+  <h4>Definición</h4>
+  <ul>
+    <li>La lectura de entrada se refiere al proceso mediante el cual un sistema digital captura datos desde dispositivos o sensores externos para ser procesados por la CPU.</li>
+    <li>Convierte señales físicas (como presión, luz, sonido o movimiento) en información discreta que puede ser entendida y manipulada por el sistema.</li>
+    <li>Es el primer paso para la interacción entre el mundo real y los sistemas digitales, permitiendo la automatización, control y análisis de datos.</li>
+  </ul>
+
+  <h4>Principales Dispositivos de Entrada</h4>
+  <ul>
+    <li><strong>Teclados y ratones:</strong> Permiten ingresar datos y comandos de forma directa.</li>
+    <li><strong>Sensores:</strong> Capturan información física como temperatura, presión, luz o humedad.</li>
+    <li><strong>Micrófonos y cámaras:</strong> Digitalizan señales de audio y video para procesamiento y almacenamiento.</li>
+    <li><strong>Lectores de código:</strong> Incluyen códigos de barras y QR que convierten información codificada en datos legibles por el sistema.</li>
+    <li><strong>Dispositivos táctiles y pantallas interactivas:</strong> Permiten la interacción directa con interfaces gráficas y aplicaciones.</li>
+    <li><strong>Interfaces de red:</strong> Reciben información proveniente de otros sistemas digitales a través de protocolos de comunicación.</li>
+  </ul>
+
+  <h4>Características</h4>
+  <ul>
+    <li>Transforma señales analógicas o físicas en información digital interpretable.</li>
+    <li>Precisión y fidelidad en la captura de datos para asegurar un procesamiento confiable.</li>
+    <li>Velocidad de respuesta suficiente para mantener sincronización con el procesamiento interno.</li>
+    <li>Compatibilidad con los estándares de comunicación y formatos de datos del sistema.</li>
+    <li>Posibilidad de integración con múltiples dispositivos simultáneamente para sistemas complejos.</li>
+  </ul>
+
+  <h4>Ejemplos</h4>
+  <ul>
+    <li>Un sensor de temperatura conectado a un microcontrolador para controlar un sistema de climatización.</li>
+    <li>La cámara de un smartphone que captura imágenes y video para aplicaciones de reconocimiento facial.</li>
+    <li>Lectores de tarjetas RFID que permiten el acceso seguro a instalaciones o sistemas electrónicos.</li>
+    <li>Teclados y pantallas táctiles en cajeros automáticos que registran la información del usuario.</li>
+    <li>Micrófonos digitales que capturan audio para asistentes de voz y sistemas de dictado.</li>
+  </ul>
+
+  <h4>Fuentes Bibliográficas</h4>
+  <ul>
+    <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+    <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+    <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+    <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+  </ul>
+`')">1.4 Lectura de entrada
+        </li> 
+          </ul>
+          <li>1.5. Unidad de memoria</li>
+          <li>1.6. Almacenamiento en código</li>
+          <li>1.7. Números binarios</li>
+          <li>1.8. Organización de los componentes fundamentales del computador</li>
+          <li>1.9. Instrucciones en lenguaje de máquina</li>
+        </ul>
+      </div>
+      
+      <div class="tema-card">
+        <div class="tema-num">TEMA 2</div>
+        <h3 class="tema-title">Programación</h3>
+        <ul class="tema-list">
+          <li>2.1. Descripción general</li>
+          <li>2.2. Tipos de proposiciones</li>
+          <li>2.3. Proposiciones de asignación aritmética</li>
+          <li>2.4. Proposiciones de asignación lógica</li>
+          <li>2.5. Proposición de flujo</li>
+          <li>2.6. Diagramas</li>
+        </ul>
+      </div>
+      
+      <div class="tema-card">
+        <div class="tema-num">TEMA 3</div>
+        <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
+        <ul class="tema-list">
+          <li>3.1. Proposición de entrada</li>
+          <li>3.2. Proposición de salida</li>
+          <li>3.3. Proposición de control</li>
+          <li>3.4. Proposición de formato</li>
+          <li>3.5. Formato I</li>
+          <li>3.6. Formato F</li>
+          <li>3.7. Formato E</li>
+          <li>3.8. Capacidades adicionales de formato</li>
+          <li>3.9. Código holierith</li>
+        </ul>
+      </div>
+      
+      <div class="tema-card">
+        <div class="tema-num">TEMA 4</div>
+        <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
+        <ul class="tema-list">
+          <li>4.1. Introducción</li>
+          <li>4.2. Definiciones</li>
+          <li>4.3. Tipos de subprogramas</li>
+          <li>4.4. Formación de un subprograma</li>
+          <li>4.5. Subprogramas de función</li>
+          <li>4.6. Subprogramas de subrutinas</li>
+          <li>4.7. Subprogramas combinados</li>
+        </ul>
+      </div>
+      
+      <div class="tema-card">
+        <div class="tema-num">TEMA 5</div>
+        <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
+        <ul class="tema-list">
+          <li>5.1. Introducción</li>
+          <li>5.2. Ejemplos de paquetes</li>
+          <li>5.3. Texas instrument TI-59</li>
+          <li>5.4. Manejo de calculador</li>
+          <li>5.5. Casio FX-502P</li>
+          <li>5.6. Códigos</li>
+          <li>5.7. Instrucciones</li>
+          <li>5.8. Interpretación de datos</li>
+          <li>5.9. Corrección de programas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="actividades">
+    <h2 class="section-title">Actividades de Aprendizaje</h2>
+    
+    <div>
+      <h3 class="actividades-subtitle">Bajo la conducción del docente en laboratorio de cómputo</h3>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Ejercicios de diagramas de flujo</h3>
+          <p>El alumno realizará ejercicios de diagramas de flujo con diversas propuestas.</p>
+        </div>
+        <div class="card">
+          <h3>Elaboración de programas</h3>
+          <p>El alumno elaborará programas utilizando formatos establecidos.</p>
+        </div>
+        <div class="card">
+          <h3>Modificaciones a programas</h3>
+          <p>Los alumnos efectuarán modificaciones a los programas realizados con subrutinas y subprogramas.</p>
+        </div>
+        <div class="card">
+          <h3>Ejercicios con computadoras manuales</h3>
+          <p>Se harán ejercicios con computadoras manuales Texas y Casio.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 70px;">
+      <h3 class="actividades-subtitle">De manera independiente</h3>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Investigación bibliográfica</h3>
+          <p>El alumno hará una investigación bibliográfica de la historia de la computación y de los componentes de la misma, elaborando un resumen.</p>
+        </div>
+        <div class="card">
+          <h3>Programas con proposiciones</h3>
+          <p>Se hará un programa utilizando las proposiciones y formatos establecidos.</p>
+        </div>
+        <div class="card">
+          <h3>Solución de problemas</h3>
+          <p>Se resolverán problemas aplicados a cálculo mediante computadoras manuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Evaluación</h2>
+    <div class="evaluacion-grid">
+      <div class="evaluacion-item">
+        <div class="evaluacion-porcentaje">40%</div>
+        <p class="evaluacion-desc">Dos exámenes parciales</p>
+      </div>
+      <div class="evaluacion-item">
+        <div class="evaluacion-porcentaje">20%</div>
+        <p class="evaluacion-desc">Reporte de prácticas de laboratorio</p>
+      </div>
+      <div class="evaluacion-item">
+        <div class="evaluacion-porcentaje">10%</div>
+        <p class="evaluacion-desc">Investigaciones bibliográficas</p>
+      </div>
+      <div class="evaluacion-item">
+        <div class="evaluacion-porcentaje">30%</div>
+        <p class="evaluacion-desc">Examen final</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal-info" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal-info');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const modalClose = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    // Función para abrir modal con HTML
+    function abrirModal(titulo, html) {
+      modalTitle.textContent = titulo;
+      modalText.innerHTML = html;
+      modal.classList.add('show');
+      modal.style.display = 'block';
+    }
+
+    // Función para cerrar modal
+    function cerrarModal() {
+      modal.classList.remove('show');
+      setTimeout(() => modal.style.display = 'none', 300); // espera la transición
+    }
+
+    modalClose.addEventListener('click', cerrarModal);
+    modalOverlay.addEventListener('click', cerrarModal);
+  </script>
+
+  <footer>
+    © 2025 Universidad URA – Asignatura Computación I
+  </footer>
+</body>
+</html>
