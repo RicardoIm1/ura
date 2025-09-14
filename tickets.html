@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materias del Profesor Ricardo - Universidad URA</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+  <style>
+    /* Ajustes específicos del formulario de tickets */
+    .ticket-card {
+      background: var(--apple-light-gray);
+      border-radius: 18px;
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .ticket-card h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-align: center;
+      color: var(--apple-black);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 12px;
+      font-size: 16px;
+      background: white;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--apple-blue);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.2);
+    }
+    .archivo-personalizado {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-subida {
+      background: var(--apple-blue);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.2s ease;
+    }
+    .btn-subida:hover {
+      background: #005bb5;
+    }
+    #screenshot {
+      display: none;
+    }
+    .nombre-archivo {
+      font-size: 14px;
+      color: var(--apple-dark-gray);
+    }
+    button {
+      width: 100%;
+      background: var(--apple-gradient);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .estado-formulario {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .estado-formulario.mostrar {
+      opacity: 1;
+    }
+    .estado-formulario.exito {
+      color: green;
+    }
+    .estado-formulario.error {
+      color: red;
+    }
+  </style>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">
+      <a href="" target="_blank" style="text-decoration: none; color: inherit;">
+      Materias del Profesor Ricardo
+      </a>
+    </div>
+  </header>
+</head>
+<body>
+  <div class="container">
+    <div class="ticket-card">
+      <h2>🎟️ Gestor de Tickets</h2>
+      <div class="form-group">
+        <input type="text" id="titulo" placeholder="¿Cuál es tu problema?">
+      </div>
+      <div class="form-group">
+        <input type="text" id="cliente" placeholder="¿Cuál es tu nombre?">
+      </div>
+
+      <div class="form-group">
+        <select id="prioridad" required>
+          <option value="" disabled selected>Selecciona la materia</option>
+          <option value="LCIA103">Matemáticas Aplicadas a los Negocios 1</option>
+          <option value="LAET105">Matemáticas para la Administración</option>
+          <option value="INAR0104">Computación 1</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <textarea id="notas" rows="3" placeholder="Describe tu problema..."></textarea>
+      </div>
+      <div class="form-group archivo-personalizado">
+        <label for="screenshot" class="btn-subida">📷 Elegir captura</label>
+        <input type="file" id="screenshot" accept="image/*">
+        <span id="nombreArchivo" class="nombre-archivo">Ningún archivo seleccionado</span>
+      </div>
+      <button onclick="registrarTicket()">Registrar Ticket</button>
+      <div id="mensajeEstado" class="estado-formulario"></div>
+    </div>
+  </div>
+  <footer>
+    © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
+  </footer>
+</body>
+</html>
+    <script>
+    function registrarTicket() {
+      const folio = "TCK-" + Date.now();
+      const titulo = document.getElementById("titulo").value.trim();
+      const cliente = document.getElementById("cliente").value.trim();
+      const prioridad = document.getElementById("prioridad").value;
+      const notas = document.getElementById("notas").value.trim();
+      const archivo = document.getElementById("screenshot").files[0];
+
+      if (!titulo || !cliente || !prioridad || !notas) {
+        mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
+        return;
+      }
+
+      if (archivo) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const base64 = e.target.result.split(',')[1];
+
+          mostrarMensaje("🕒 Guardando ticket…", true);
+
+          google.script.run
+            .withSuccessHandler(urlImagen => {
+              guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen);
+            })
+            .withFailureHandler(err => {
+              mostrarMensaje("❌ Error al subir imagen: " + err.message, false);
+            })
+            .subirCaptura(base64, archivo.name);
+        };
+        reader.readAsDataURL(archivo);
+      } else {
+        guardarDatos(folio, titulo, cliente, prioridad, notas, "");
+      }
+    }
+
+    function guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen) {
+  const datos = {
+    id: folio,
+    titulo,
+    cliente,
+    prioridad,
+    estado: "Abierto",
+    fecha: new Date().toLocaleString(),
+    notas,
+    imagen: urlImagen
+  };
+
+  // Mostrar que está guardando
+  mostrarMensaje("🕒 Guardando ticket…", true);
+
+  google.script.run
+    .withSuccessHandler(() => {
+      lanzarConfeti();
+      mostrarMensaje(`✔️ Ticket enviado con éxito. Tu folio es: ${folio}`, true);
+      limpiarFormulario();
+    })
+    .withFailureHandler(err => {
+      mostrarMensaje("❌ Error al guardar: " + err.message, false);
+    })
+    .guardarEnSheets(datos);
+}
+
+
+    function limpiarFormulario() {
+      document.getElementById("titulo").value = "";
+      document.getElementById("cliente").value = "";
+      document.getElementById("prioridad").value = "Alta";
+      document.getElementById("notas").value = "";
+      document.getElementById("screenshot").value = "";
+      document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
+    }
+
+    function mostrarMensaje(texto, exito) {
+      const msg = document.getElementById("mensajeEstado");
+      msg.textContent = texto;
+      msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
+
+      setTimeout(() => {
+        msg.className = "estado-formulario";
+        msg.textContent = "";
+      }, 4000);
+    }
+
+    function lanzarConfeti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#4cc9f0', '#4361ee', '#f72585'],
+        scalar: 1.1
+      });
+    }
+
+    document.getElementById("screenshot").addEventListener("change", function () {
+      const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
+      document.getElementById("nombreArchivo").textContent = nombre;
+    });
+
+  </script>
+
+</body>
+</html>
