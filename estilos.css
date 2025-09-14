@@ -322,3 +322,15 @@
       .tema-card:hover {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       }
+
+      .nombre-ricardo {
+        color: #0c2095; /* azul Apple */
+        text-decoration: none; /* por si quieres quitar subrayado */
+      }
+
+      .nombre-ricardo:hover {
+        color: #f72585; /* color distinto al pasar el mouse */
+      }
+      .nombre-ricardo:active {
+        color: #ffb703; /* color al hacer clic */
+      } 
