@@ -58,6 +58,12 @@
     }
     
     /* Hero section */
+      .no-style-link {
+        color: inherit;         /* hereda el color del h1 */
+        text-decoration: none;  /* elimina el subrayado */
+        font: inherit;          /* hereda la fuente y estilo del h1 */
+      }
+
     .hero {
       background: var(--apple-gradient);
       color: white;
