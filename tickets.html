@@ -1,256 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materias del Profesor Ricardo - Universidad URA</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Gestor de Tickets - Estilo Apple</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-dark-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-blue: #0071e3;
+            --apple-blue-hover: #0077ed;
+            --apple-gradient: linear-gradient(135deg, #0071e3, #7c4dff);
+            --apple-border-radius: 12px;
+            --apple-transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: var(--apple-black);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header estilo Apple */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 22px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-logo {
+            height: 36px;
+        }
+        
+        .header-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--apple-black);
+        }
+        
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 22px;
+            flex: 1;
+        }
+        
+        /* Tarjeta de formulario estilo Apple */
+        .ticket-card {
+            background: var(--apple-light-gray);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--apple-transition);
+        }
+        
+        .ticket-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .ticket-card h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--apple-black);
+            letter-spacing: -0.003em;
+        }
+        
+        /* Grupos de formulario */
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--apple-dark-gray);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--apple-border-radius);
+            font-size: 16px;
+            background: white;
+            outline: none;
+            transition: var(--apple-transition);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--apple-blue);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+        }
+        
+        /* Select personalizado */
+        .select-wrapper {
+            position: relative;
+        }
+        
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 12px;
+            color: var(--apple-dark-gray);
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .form-group select {
+            padding-right: 40px;
+        }
+        
+        /* Subida de archivos */
+        .archivo-personalizado {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        
+        .btn-subida {
+            background: var(--apple-blue);
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--apple-border-radius);
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: var(--apple-transition);
+            border: none;
+            white-space: nowrap;
+        }
+        
+        .btn-subida:hover {
+            background: var(--apple-blue-hover);
+            transform: scale(1.03);
+        }
+        
+        #screenshot {
+            display: none;
+        }
+        
+        .nombre-archivo {
+            font-size: 14px;
+            color: var(--apple-dark-gray);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        /* Botón de enviar */
+        .btn-enviar {
+            width: 100%;
+            background: var(--apple-gradient);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: var(--apple-border-radius);
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--apple-transition);
+            margin-top: 10px;
+        }
+        
+        .btn-enviar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-enviar:active {
+            transform: translateY(0);
+        }
+        
+        /* Mensaje de estado */
+        .estado-formulario {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15px;
+            padding: 12px;
+            border-radius: var(--apple-border-radius);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .estado-formulario.mostrar {
+            opacity: 1;
+        }
+        
+        .estado-formulario.exito {
+            color: #34c759;
+            background-color: rgba(52, 199, 89, 0.1);
+        }
+        
+        .estado-formulario.error {
+            color: #ff3b30;
+            background-color: rgba(255, 59, 48, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 22px;
+            font-size: 15px;
+            color: var(--apple-dark-gray);
+            background: var(--apple-light-gray);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 60px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ticket-card {
+                padding: 30px 20px;
+            }
+            
+            .ticket-card h2 {
+                font-size: 24px;
+            }
+            
+            .archivo-personalizado {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .btn-subida {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        /* Animación de carga */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .cargando {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
 </head>
-  <style>
-    /* Ajustes específicos del formulario de tickets */
-    .ticket-card {
-      background: var(--apple-light-gray);
-      border-radius: 18px;
-      padding: 40px;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    .ticket-card h2 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 25px;
-      text-align: center;
-      color: var(--apple-black);
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 12px;
-      font-size: 16px;
-      background: white;
-      outline: none;
-      transition: all 0.2s ease;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--apple-blue);
-      box-shadow: 0 0 0 3px rgba(0,113,227,0.2);
-    }
-    .archivo-personalizado {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn-subida {
-      background: var(--apple-blue);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 15px;
-      transition: background 0.2s ease;
-    }
-    .btn-subida:hover {
-      background: #005bb5;
-    }
-    #screenshot {
-      display: none;
-    }
-    .nombre-archivo {
-      font-size: 14px;
-      color: var(--apple-dark-gray);
-    }
-    button {
-      width: 100%;
-      background: var(--apple-gradient);
-      color: white;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    .estado-formulario {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 15px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .estado-formulario.mostrar {
-      opacity: 1;
-    }
-    .estado-formulario.exito {
-      color: green;
-    }
-    .estado-formulario.error {
-      color: red;
-    }
-  </style>
 <body>
-  <header>
-    <div class="header-content">
-      <a href="index.html">
-        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
-      </a>
-      <div class="header-title">
-      <a href="" target="_blank" style="text-decoration: none; color: inherit;">
-      Materias del Profesor Ricardo
-      </a>
-    </div>
-  </header>
-</head>
-<body>
-  <div class="container">
-    <div class="ticket-card">
-      <h2>🎟️ Gestor de Tickets</h2>
-      <div class="form-group">
-        <input type="text" id="titulo" placeholder="¿Cuál es tu consulta?">
-      </div>
-      <div class="form-group">
-        <input type="text" id="cliente" placeholder="¿Cuál es tu nombre?">
-      </div>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="https://via.placeholder.com/150x40/0071E3/FFFFFF?text=URA+Logo" alt="Logotipo URA" class="header-logo">
+            </a>
+            <div class="header-title">
+                <a href="" target="_blank" style="text-decoration: none; color: inherit;">
+                    Materias del Profesor Ricardo
+                </a>
+            </div>
+        </div>
+    </header>
 
-      <div class="form-group">
-        <select id="prioridad" required>
-          <option value="" disabled selected>Selecciona la materia</option>
-          <option value="LCIA103">Matemáticas Aplicadas a los Negocios 1</option>
-          <option value="LAET105">Matemáticas para la Administración</option>
-          <option value="INAR0104">Computación 1</option>
-        </select>
-      </div>
+    <div class="container">
+        <div class="ticket-card">
+            <h2>🎟️ Gestor de Tickets</h2>
+            <div class="form-group">
+                <label for="titulo">Título de la consulta</label>
+                <input type="text" id="titulo" placeholder="¿Cuál es tu consulta?">
+            </div>
+            <div class="form-group">
+                <label for="cliente">Nombre del estudiante</label>
+                <input type="text" id="cliente" placeholder="¿Cuál es tu nombre?">
+            </div>
 
-      <div class="form-group">
-        <textarea id="notas" rows="3" placeholder="Describe tu problema..."></textarea>
-      </div>
-      <div class="form-group archivo-personalizado">
-        <label for="screenshot" class="btn-subida">📷 Elegir captura</label>
-        <input type="file" id="screenshot" accept="image/*">
-        <span id="nombreArchivo" class="nombre-archivo">Ningún archivo seleccionado</span>
-      </div>
-      <button onclick="registrarTicket()">Registrar Ticket</button>
-      <div id="mensajeEstado" class="estado-formulario"></div>
+            <div class="form-group">
+                <label for="prioridad">Materia</label>
+                <div class="select-wrapper">
+                    <select id="prioridad" required>
+                        <option value="" disabled selected>Selecciona la materia</option>
+                        <option value="LCIA103">Matemáticas Aplicadas a los Negocios 1</option>
+                        <option value="LAET105">Matemáticas para la Administración</option>
+                        <option value="INAR0104">Computación 1</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notas">Descripción del problema</label>
+                <textarea id="notas" rows="4" placeholder="Describe tu problema con detalle..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Captura de pantalla (opcional)</label>
+                <div class="archivo-personalizado">
+                    <label for="screenshot" class="btn-subida">📷 Elegir archivo</label>
+                    <input type="file" id="screenshot" accept="image/*">
+                    <span id="nombreArchivo" class="nombre-archivo">Ningún archivo seleccionado</span>
+                </div>
+            </div>
+            
+            <button class="btn-enviar" onclick="registrarTicket()">Registrar Ticket</button>
+            <div id="mensajeEstado" class="estado-formulario"></div>
+        </div>
     </div>
-  </div>
-  <footer>
-    © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
-  </footer>
-</body>
-</html>
+    
+    <footer>
+        © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
+    </footer>
+
     <script>
-    function registrarTicket() {
-      const folio = "TCK-" + Date.now();
-      const titulo = document.getElementById("titulo").value.trim();
-      const cliente = document.getElementById("cliente").value.trim();
-      const prioridad = document.getElementById("prioridad").value;
-      const notas = document.getElementById("notas").value.trim();
-      const archivo = document.getElementById("screenshot").files[0];
+        function registrarTicket() {
+            const folio = "TCK-" + Date.now();
+            const titulo = document.getElementById("titulo").value.trim();
+            const cliente = document.getElementById("cliente").value.trim();
+            const prioridad = document.getElementById("prioridad").value;
+            const notas = document.getElementById("notas").value.trim();
+            const archivo = document.getElementById("screenshot").files[0];
 
-      if (!titulo || !cliente || !prioridad || !notas) {
-        mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
-        return;
-      }
+            if (!titulo || !cliente || !prioridad || !notas) {
+                mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
+                return;
+            }
 
-      if (archivo) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const base64 = e.target.result.split(',')[1];
+            // Simular la función de Google Apps Script para demostración
+            if (typeof google === 'undefined' || !google.script.run) {
+                // Modo demostración
+                setTimeout(() => {
+                    lanzarConfeti();
+                    mostrarMensaje(`✔️ ¡Modo demostración! Ticket enviado con éxito. Tu folio sería: ${folio}`, true);
+                    limpiarFormulario();
+                }, 1500);
+                
+                mostrarMensaje("🕒 Procesando ticket...", true);
+                return;
+            }
 
-          mostrarMensaje("🕒 Guardando ticket…", true);
+            if (archivo) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const base64 = e.target.result.split(',')[1];
 
-          google.script.run
-            .withSuccessHandler(urlImagen => {
-              guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen);
-            })
-            .withFailureHandler(err => {
-              mostrarMensaje("❌ Error al subir imagen: " + err.message, false);
-            })
-            .subirCaptura(base64, archivo.name);
-        };
-        reader.readAsDataURL(archivo);
-      } else {
-        guardarDatos(folio, titulo, cliente, prioridad, notas, "");
-      }
-    }
+                    mostrarMensaje("🕒 Subiendo imagen...", true);
 
-    function guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen) {
-  const datos = {
-    id: folio,
-    titulo,
-    cliente,
-    prioridad,
-    estado: "Abierto",
-    fecha: new Date().toLocaleString(),
-    notas,
-    imagen: urlImagen
-  };
+                    google.script.run
+                        .withSuccessHandler(urlImagen => {
+                            guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen);
+                        })
+                        .withFailureHandler(err => {
+                            mostrarMensaje("❌ Error al subir imagen: " + err.message, false);
+                        })
+                        .subirCaptura(base64, archivo.name);
+                };
+                reader.readAsDataURL(archivo);
+            } else {
+                guardarDatos(folio, titulo, cliente, prioridad, notas, "");
+            }
+        }
 
-  // Mostrar que está guardando
-  mostrarMensaje("🕒 Guardando ticket…", true);
+        function guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen) {
+            const datos = {
+                id: folio,
+                titulo,
+                cliente,
+                prioridad,
+                estado: "Abierto",
+                fecha: new Date().toLocaleString(),
+                notas,
+                imagen: urlImagen
+            };
 
-  google.script.run
-    .withSuccessHandler(() => {
-      lanzarConfeti();
-      mostrarMensaje(`✔️ Ticket enviado con éxito. Tu folio es: ${folio}`, true);
-      limpiarFormulario();
-    })
-    .withFailureHandler(err => {
-      mostrarMensaje("❌ Error al guardar: " + err.message, false);
-    })
-    .guardarEnSheets(datos);
-}
+            mostrarMensaje("🕒 Guardando ticket…", true);
 
+            google.script.run
+                .withSuccessHandler(() => {
+                    lanzarConfeti();
+                    mostrarMensaje(`✔️ Ticket enviado con éxito. Tu folio es: ${folio}`, true);
+                    limpiarFormulario();
+                })
+                .withFailureHandler(err => {
+                    mostrarMensaje("❌ Error al guardar: " + err.message, false);
+                })
+                .guardarEnSheets(datos);
+        }
 
-    function limpiarFormulario() {
-      document.getElementById("titulo").value = "";
-      document.getElementById("cliente").value = "";
-      document.getElementById("prioridad").value = "Alta";
-      document.getElementById("notas").value = "";
-      document.getElementById("screenshot").value = "";
-      document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
-    }
+        function limpiarFormulario() {
+            document.getElementById("titulo").value = "";
+            document.getElementById("cliente").value = "";
+            document.getElementById("prioridad").value = "";
+            document.getElementById("notas").value = "";
+            document.getElementById("screenshot").value = "";
+            document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
+        }
 
-    function mostrarMensaje(texto, exito) {
-      const msg = document.getElementById("mensajeEstado");
-      msg.textContent = texto;
-      msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
+        function mostrarMensaje(texto, exito) {
+            const msg = document.getElementById("mensajeEstado");
+            msg.textContent = texto;
+            msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
 
-      setTimeout(() => {
-        msg.className = "estado-formulario";
-        msg.textContent = "";
-      }, 4000);
-    }
+            setTimeout(() => {
+                if (msg.textContent === texto) {
+                    msg.className = "estado-formulario";
+                    msg.textContent = "";
+                }
+            }, 5000);
+        }
 
-    function lanzarConfeti() {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#4cc9f0', '#4361ee', '#f72585'],
-        scalar: 1.1
-      });
-    }
+        function lanzarConfeti() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#0071e3', '#7c4dff', '#34c759', '#ff9500'],
+                scalar: 1.2
+            });
+        }
 
-    document.getElementById("screenshot").addEventListener("change", function () {
-      const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
-      document.getElementById("nombreArchivo").textContent = nombre;
-    });
+        document.getElementById("screenshot").addEventListener("change", function () {
+            const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
+            document.getElementById("nombreArchivo").textContent = nombre;
+        });
 
-  </script>
-
+        // Mejorar la experiencia del formulario
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, select, textarea');
+            
+            inputs.forEach(input => {
+                // Guardar estado de los campos para no perderlos al recargar
+                if (input.type !== 'file') {
+                    const savedValue = localStorage.getItem(input.id);
+                    if (savedValue) {
+                        input.value = savedValue;
+                    }
+                    
+                    input.addEventListener('input', function() {
+                        localStorage.setItem(input.id, input.value);
+                    });
+                }
+                
+                // Mejorar la usabilidad con teclado
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && input.type !== 'textarea') {
+                        e.preventDefault();
+                        const nextInput = input.nextElementSibling;
+                        if (nextInput && (nextInput.tagName === 'INPUT' || nextInput.tagName === 'SELECT' || nextInput.tagName === 'TEXTAREA')) {
+                            nextInput.focus();
+                        } else {
+                            registrarTicket();
+                        }
+                    }
+                });
+            });
+            
+            // Limpiar el almacenamiento al enviar el formulario
+            document.querySelector('.btn-enviar').addEventListener('click', function() {
+                inputs.forEach(input => {
+                    if (input.type !== 'file') {
+                        localStorage.removeItem(input.id);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
