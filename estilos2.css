@@ -247,7 +247,7 @@
 
         /* Reducir tamaño del emoji */
         .tema-list li::before {
-            font-size: 0.6em;
+            font-size: 0.4em;
             margin-right: 5px;
         }
         
