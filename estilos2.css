@@ -240,16 +240,16 @@
         }
         
         .emoji-small {
-            font-size: 0.4em;
+            font-size: 0.5em;
             display: inline-block;
             vertical-align: middle;
         }
 
-        /* Reducir tamaño del emoji */
+        /* Reducir tamaño del emoji
         .tema-list li::before {
             font-size: 0.4em;
             margin-right: 5px;
-        }
+        }*/
         
         .tema-list li:last-child {
             border-bottom: none;
