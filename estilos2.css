@@ -239,6 +239,22 @@
                 cursor:pointer;
         }
         
+        .tema-list li {
+            font-size: 17px;
+            color: var(--apple-dark-gray);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transición suave */
+        }
+        
+        .tema-list li:hover {
+            background-color: rgba(0, 0, 0, 0.03); /* Fondo al pasar el mouse */
+            padding-left: 10px; /* Desplazamiento a la derecha */
+            color: #000; /* Color de texto más oscuro */
+            border-bottom-color: rgba(0, 0, 0, 0.2); /* Borde más visible */
+        }
+        
         .emoji-small {
             font-size: 0.5em;
             display: inline-block;
