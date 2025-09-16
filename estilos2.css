@@ -238,6 +238,11 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
                 cursor:pointer;
         }
+        /* Reducir tamaño del emoji */
+        .tema-list li::before {
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
         
         .tema-list li:last-child {
             border-bottom: none;
