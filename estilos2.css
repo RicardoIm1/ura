@@ -13,12 +13,11 @@
             --apple-vibrant-orange: #FF9500;
             --apple-vibrant-green: #34C759;
         }
-        html{
+        html {
             box-sizing: border-box;
-    font-size: 62.5%;/*No mover este valor 25-07-2024*/
-    background-color: var(--blancof);
-    /* height: 65%; */
+            font-size: 62.5%;
         }
+
         * {
             margin: 0;
             padding: 0;
