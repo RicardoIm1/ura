@@ -326,7 +326,7 @@
         .ticket-card {
             background: var(--apple-light-gray);
             border-radius: 20px;
-            padding: 40px;
+            padding: 25px;
             max-width: 600px;
             margin: 0 auto;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -338,9 +338,9 @@
         }
         
         .ticket-card h2 {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
             color: var(--apple-black);
             letter-spacing: -0.003em;
@@ -348,7 +348,7 @@
         
         /* Grupos de formulario */
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
         
         .form-group label {
@@ -363,10 +363,10 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 14px 18px;
+            padding: 10px 14px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: var(--apple-border-radius);
-            font-size: 16px;
+            font-size: 14px;
             background: white;
             outline: none;
             transition: var(--apple-transition);
@@ -388,17 +388,17 @@
         
         .select-wrapper::after {
             content: "▼";
-            font-size: 12px;
+            font-size: 10px;
             color: var(--apple-dark-gray);
             position: absolute;
-            right: 16px;
+            right: 12px;
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none;
         }
         
         .form-group select {
-            padding-right: 40px;
+            padding-right: 35px;
         }
         
         /* Subida de archivos */
@@ -412,10 +412,10 @@
         .btn-subida {
             background: var(--apple-blue);
             color: white;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: var(--apple-border-radius);
             cursor: pointer;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             transition: var(--apple-transition);
             border: none;
