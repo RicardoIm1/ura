@@ -318,6 +318,7 @@
             `)">1.5 Unidad de memoria <span class="emoji-small">✅</span>
           </li>
         </ul>
+        <ul class="tema-list">
           <li <li onclick="abrirModal('1.6 Almacenamiento en código', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar los métodos y formatos utilizados para almacenar información en sistemas digitales mediante codificación.</p>
@@ -366,6 +367,7 @@
             `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
           </li>
           </ul>
+          <ul class="tema-list">
           <li <li onclick="abrirModal('1.7 Números binarios', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
@@ -412,10 +414,109 @@
                 <li>Khan, M. (2019). <em>Binary Arithmetic and Boolean Algebra</em>. McGraw-Hill.</li>
                 <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
               </ul>
-            `)">1.7. Números binarios <span class="emoji-small">✅</span></li>
-          <li>1.8. Organización de los componentes fundamentales del computador</li>
-          <li>1.9. Instrucciones en lenguaje de máquina</li>
+            `)">1.7. Números binarios <span class="emoji-small">✅</span>
+          </li>
         </ul>
+        <ul class="tema-list">
+          <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Identificar y comprender la interconexión y funcionamiento de los componentes principales de un sistema computacional.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>La organización de componentes se refiere a la disposición estructural y las interconexiones entre las unidades funcionales de un computador.</li>
+                <li>Define cómo los diferentes componentes (CPU, memoria, E/S) interactúan para ejecutar instrucciones y procesar datos.</li>
+                <li>Establece la arquitectura básica que determina el rendimiento, eficiencia y capacidades del sistema.</li>
+              </ul>
+            
+              <h4>Componentes Principales</h4>
+              <ul>
+                <li><strong>Unidad Central de Procesamiento (CPU):</strong> Cerebro del computador que ejecuta instrucciones y procesa datos.</li>
+                <li><strong>Memoria Principal:</strong> Almacena datos e instrucciones necesarios para la ejecución de programas.</li>
+                <li><strong>Dispositivos de Entrada/Salida:</strong> Permiten la comunicación entre el computador y el exterior.</li>
+                <li><strong>Buses del Sistema:</strong> Canales de comunicación que interconectan los componentes del computador.</li>
+                <li><strong>Unidad de Control:</strong> Coordina las actividades de todos los componentes del sistema.</li>
+                <li><strong>Almacenamiento Secundario:</strong> Provee capacidad de almacenamiento no volátil a largo plazo.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Arquitectura definida por el conjunto de instrucciones y organización de hardware.</li>
+                <li>Jerarquía de memoria que equilibra velocidad, capacidad y costo.</li>
+                <li>Mecanismos de interrupción para gestionar eventos asíncronos.</li>
+                <li>Técnicas de paralelismo para mejorar el rendimiento.</li>
+                <li>Modos de direccionamiento para acceder a datos e instrucciones.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Arquitectura Von Neumann con unidad de procesamiento, memoria y buses unificados.</li>
+                <li>Arquitectura Harvard con memorias separadas para datos e instrucciones.</li>
+                <li>Sistemas multiprocesador con varias CPUs compartiendo recursos.</li>
+                <li>Computadoras con buses PCI Express para alta velocidad de transferencia.</li>
+                <li>Sistemas con memoria caché multinivel para reducir latencia.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Stallings, W. (2019). <em>Computer Organization and Architecture: Designing for Performance</em>. Pearson.</li>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+              </ul>
+            `)">1.8. Organización de los componentes fundamentales del computador <span class="emoji-small">✅</span>
+          </li>
+        </ul>
+        <ul class="tema-list">
+          <li  onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Analizar la estructura, tipos y funcionamiento de las instrucciones en lenguaje de máquina que ejecuta directamente el procesador.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Las instrucciones en lenguaje de máquina son comandos en formato binario que la CPU puede ejecutar directamente.</li>
+                <li>Representan las operaciones más básicas que puede realizar un computador, específicas para cada arquitectura de procesador.</li>
+                <li>Forman el conjunto de instrucciones (instruction set) que define las capacidades fundamentales de un procesador.</li>
+              </ul>
+            
+              <h4>Tipos de Instrucciones</h4>
+              <ul>
+                <li><strong>Transferencia de datos:</strong> Mover información entre memoria, registros y dispositivos.</li>
+                <li><strong>Aritméticas:</strong> Realizar operaciones matemáticas como suma, resta, multiplicación y división.</li>
+                <li><strong>Lógicas:</strong> Operaciones booleanas como AND, OR, NOT y XOR.</li>
+                <li><strong>Control de flujo:</strong> Alterar la secuencia de ejecución (saltos, bifurcaciones, llamadas a subrutinas).</li>
+                <li><strong>Manejo de dispositivos:</strong> Controlar operaciones de entrada/salida con periféricos.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Codificadas en formato binario específico para cada arquitectura.</li>
+                <li>Ejecutadas directamente por el hardware del procesador.</li>
+                <li>Organizadas en ciclos de instrucción (fetch, decode, execute).</li>
+                <li>Diferentes modos de direccionamiento para acceder a operandos.</li>
+                <li>Varían en longitud y complejidad según la arquitectura (CISC vs RISC).</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Instrucción ADD en x86: 00000011 11000011 (suma los registros AX y BX).</li>
+                <li>Instrucción LOAD en arquitectura MIPS: 100011 00001 00010 0000000000000000.</li>
+                <li>Salto condicional JZ (Jump if Zero) en ensamblador x86.</li>
+                <li>Instrucción MOV para transferencia de datos en múltiples arquitecturas.</li>
+                <li>Llamada a interrupción INT en x86 para solicitar servicios del sistema operativo.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Intel Corporation. (2019). <em>Intel 64 and IA-32 Architectures Software Developer's Manual</em>.</li>
+                <li>ARM Limited. (2020). <em>ARM Architecture Reference Manual</em>.</li>
+                <li>Sweetman, D. (2006). <em>See MIPS Run</em>. Morgan Kaufmann.</li>
+              </ul>
+            `)">1.9. Instrucciones en lenguaje de máquina <span class="emoji-small">✅</span>
+          </li>
+        </ul>
+            
       </div>
       
       <div class="tema-card">
