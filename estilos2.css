@@ -330,6 +330,7 @@
         /* Formulario estilo Apple */
         .ticket-card {
             background: var(--apple-light-gray);
+            border: 1px solid var(--apple-dark-gray);
             border-radius: 20px;
             padding: 25px;
             max-width: 600px;
