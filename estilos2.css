@@ -13,16 +13,16 @@
             --apple-vibrant-orange: #FF9500;
             --apple-vibrant-green: #34C759;
         }
-        html {
-            box-sizing: border-box;
-            font-size: 62.5%;
-        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
         }
         
         body {
