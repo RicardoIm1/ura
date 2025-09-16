@@ -334,7 +334,6 @@
         /* Formulario estilo Apple */
         .ticket-card {
             background: var(--apple-light-gray);
-            border: 0.1px solid var(--apple-dark-gray);
             border-radius: 20px;
             padding: 25px;
             max-width: 600px;
@@ -358,7 +357,7 @@
         
         /* Grupos de formulario */
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         
         .form-group label {
