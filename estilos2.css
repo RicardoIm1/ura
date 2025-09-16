@@ -240,7 +240,7 @@
         }
         /* Reducir tamaño del emoji */
         .tema-list li::before {
-            font-size: 0.8em;
+            font-size: 0.6em;
             margin-right: 5px;
         }
         
