@@ -430,6 +430,7 @@
         .btn-subida:hover {
             background: var(--apple-blue-hover);
             transform: scale(1.03);
+                color: white;
         }
         
         #screenshot {
