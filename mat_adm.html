@@ -1752,7 +1752,151 @@
           </li>
 
           
-          <li>4.2. Operaciones de conjunto</li>
+
+          <li onclick="abrirModal('4.2 Operaciones de conjunto', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar las operaciones fundamentales entre conjuntos y sus propiedades.</p>
+            
+              <h4>Operaciones Básicas entre Conjuntos</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Operación</th>
+                  <th style='padding: 8px; text-align: left;'>Definición</th>
+                  <th style='padding: 8px; text-align: left;'>Notación</th>
+                  <th style='padding: 8px; text-align: left;'>Ejemplo A={1,2,3}, B={3,4,5}</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Unión</td>
+                  <td style='padding: 8px;'>Elementos que están en A o en B</td>
+                  <td style='padding: 8px;'>A ∪ B</td>
+                  <td style='padding: 8px;'>{1,2,3,4,5}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Intersección</td>
+                  <td style='padding: 8px;'>Elementos que están en A y en B</td>
+                  <td style='padding: 8px;'>A ∩ B</td>
+                  <td style='padding: 8px;'>{3}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Diferencia</td>
+                  <td style='padding: 8px;'>Elementos en A pero no en B</td>
+                  <td style='padding: 8px;'>A - B o A \ B</td>
+                  <td style='padding: 8px;'>{1,2}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Diferencia simétrica</td>
+                  <td style='padding: 8px;'>Elementos en A o B pero no en ambos</td>
+                  <td style='padding: 8px;'>A Δ B</td>
+                  <td style='padding: 8px;'>{1,2,4,5}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Complemento</td>
+                  <td style='padding: 8px;'>Elementos que no están en A</td>
+                  <td style='padding: 8px;'>Aᶜ o A'</td>
+                  <td style='padding: 8px;'>Depende del universo U</td>
+                </tr>
+              </table>
+            
+              <h4>Propiedades de las Operaciones entre Conjuntos</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Propiedad</th>
+                  <th style='padding: 8px; text-align: left;'>Unión</th>
+                  <th style='padding: 8px; text-align: left;'>Intersección</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Conmutativa</td>
+                  <td style='padding: 8px;'>A ∪ B = B ∪ A</td>
+                  <td style='padding: 8px;'>A ∩ B = B ∩ A</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Asociativa</td>
+                  <td style='padding: 8px;'>(A ∪ B) ∪ C = A ∪ (B ∪ C)</td>
+                  <td style='padding: 8px;'>(A ∩ B) ∩ C = A ∩ (B ∩ C)</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Distributiva</td>
+                  <td style='padding: 8px;'>A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</td>
+                  <td style='padding: 8px;'>A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Idempotencia</td>
+                  <td style='padding: 8px;'>A ∪ A = A</td>
+                  <td style='padding: 8px;'>A ∩ A = A</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Identidad</td>
+                  <td style='padding: 8px;'>A ∪ ∅ = A</td>
+                  <td style='padding: 8px;'>A ∩ U = A</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Complemento</td>
+                  <td style='padding: 8px;'>A ∪ Aᶜ = U</td>
+                  <td style='padding: 8px;'>A ∩ Aᶜ = ∅</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Leyes de De Morgan</td>
+                  <td style='padding: 8px;'>(A ∪ B)ᶜ = Aᶜ ∩ Bᶜ</td>
+                  <td style='padding: 8px;'>(A ∩ B)ᶜ = Aᶜ ∪ Bᶜ</td>
+                </tr>
+              </table>
+            
+              <h4>Producto Cartesiano</h4>
+              <ul>
+                <li>A × B = {(a,b) | a ∈ A, b ∈ B}</li>
+                <li>Ejemplo: A={1,2}, B={3,4} → A×B={(1,3), (1,4), (2,3), (2,4)}</li>
+                <li>|A × B| = |A| × |B| (para conjuntos finitos)</li>
+                <li>ℝ² = ℝ × ℝ es el plano cartesiano</li>
+              </ul>
+            
+              <h4>Conjunto Potencia</h4>
+              <ul>
+                <li>P(A) = {X | X ⊆ A} (todos los subconjuntos de A)</li>
+                <li>Ejemplo: A={1,2} → P(A)={∅, {1}, {2}, {1,2}}</li>
+                <li>|P(A)| = 2^{|A|} (para conjuntos finitos)</li>
+                <li>También se denota como 2ᴬ</li>
+              </ul>
+            
+              <h4>Principio de Inclusión-Exclusión</h4>
+              <ul>
+                <li>Para dos conjuntos: |A ∪ B| = |A| + |B| - |A ∩ B|</li>
+                <li>Para tres conjuntos: |A ∪ B ∪ C| = |A| + |B| + |C| - |A∩B| - |A∩C| - |B∩C| + |A∩B∩C|</li>
+                <li>Ejemplo: A={1,2,3}, B={2,3,4}, C={3,4,5}
+                  <br>|A∪B∪C| = 3+3+3-2-2-2+1 = 4 → {1,2,3,4,5}</li>
+              </ul>
+            
+              <h4>Particiones de un Conjunto</h4>
+              <ul>
+                <li>Una partición de A es un conjunto de subconjuntos no vacíos disjuntos cuya unión es A</li>
+                <li>Ejemplo: A={1,2,3,4}, partición: {{1,2}, {3}, {4}}</li>
+                <li>Los subconjuntos se llaman celdas o bloques de la partición</li>
+              </ul>
+            
+              <h4>Operaciones con Conjuntos Numéricos</h4>
+              <ul>
+                <li>ℕ ⊆ ℤ ⊆ ℚ ⊆ ℝ ⊆ ℂ</li>
+                <li>ℚ ∪ 𝕀 = ℝ (donde 𝕀 son irracionales)</li>
+                <li>ℚ ∩ 𝕀 = ∅</li>
+                <li>Ejemplos de operaciones:
+                  <ul>
+                    <li>ℤ ∪ {fracciones} = ℚ</li>
+                    <li>ℝ - ℚ = 𝕀</li>
+                    <li>ℂ - ℝ = {a+bi | b≠0}</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Lipschutz, S. (1998). <em>Teoría de Conjuntos y Temas Afines</em>. McGraw-Hill.</li>
+                <li>Vaught, R. L. (1995). <em>Set Theory: An Introduction</em>. Birkhäuser.</li>
+                <li>Jech, T. (2003). <em>Set Theory</em>. Springer.</li>
+                <li>Kunen, K. (2011). <em>Set Theory</em>. College Publications.</li>
+              </ul>
+            `)">4.2. Operaciones de conjunto <span class="emoji-small">✅</span>
+          </li>
+          
+          
           <li>4.3. Diagramas de Venn</li>
           <li>4.2. Aplicaciones a problemas prácticos</li>
         </ul>
