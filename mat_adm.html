@@ -1068,7 +1068,117 @@
         <div class="tema-num">TEMA 3</div>
         <h3 class="tema-title">Relaciones y números</h3>
         <ul class="tema-list">
-          <li>3.1. Coordenadas rectangulares</li>
+        <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el sistema de coordenadas rectangulares y su uso para representar puntos en el plano.</p>
+            
+              <h4>Definición del Sistema de Coordenadas Rectangulares</h4>
+              <ul>
+                <li>También conocido como sistema cartesiano, desarrollado por René Descartes.</li>
+                <li>Formado por dos rectas perpendiculares: eje X (horizontal) y eje Y (vertical).</li>
+                <li>El punto de intersección (0,0) se llama origen.</li>
+                <li>Divide el plano en cuatro cuadrantes numerados en sentido antihorario.</li>
+              </ul>
+            
+              <h4>Componentes de un Punto</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Coordenada</th>
+                  <th style='padding: 8px; text-align: left;'>Significado</th>
+                  <th style='padding: 8px; text-align: left;'>Ejemplo en P(3,4)</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Abscisa (coordenada x)</td>
+                  <td style='padding: 8px;'>Distancia horizontal desde el origen</td>
+                  <td style='padding: 8px;'>3 unidades a la derecha</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Ordenada (coordenada y)</td>
+                  <td style='padding: 8px;'>Distancia vertical desde el origen</td>
+                  <td style='padding: 8px;'>4 unidades hacia arriba</td>
+                </tr>
+              </table>
+            
+              <h4>Cuadrantes del Plano Cartesiano</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Cuadrante</th>
+                  <th style='padding: 8px; text-align: left;'>Signo de (x,y)</th>
+                  <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>I</td>
+                  <td style='padding: 8px;'>(+, +)</td>
+                  <td style='padding: 8px;'>(3, 4)</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>II</td>
+                  <td style='padding: 8px;'>(-, +)</td>
+                  <td style='padding: 8px;'>(-2, 5)</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>III</td>
+                  <td style='padding: 8px;'>(-, -)</td>
+                  <td style='padding: 8px;'>(-3, -1)</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>IV</td>
+                  <td style='padding: 8px;'>(+, -)</td>
+                  <td style='padding: 8px;'>(4, -2)</td>
+                </tr>
+              </table>
+            
+              <h4>Fórmula de Distancia entre Dos Puntos</h4>
+              <ul>
+                <li>Dados los puntos P(x₁,y₁) y Q(x₂,y₂):</li>
+                <li>d = √[(x₂-x₁)² + (y₂-y₁)²]</li>
+                <li>Ejemplo: Distancia entre (1,2) y (4,6):
+                  <br>d = √[(4-1)² + (6-2)²] = √[3² + 4²] = √[9+16] = √25 = 5</li>
+              </ul>
+            
+              <h4>Fórmula del Punto Medio</h4>
+              <ul>
+                <li>Punto medio entre P(x₁,y₁) y Q(x₂,y₂):</li>
+                <li>M = [(x₁+x₂)/2, (y₁+y₂)/2]</li>
+                <li>Ejemplo: Punto medio entre (2,3) y (6,9):
+                  <br>M = [(2+6)/2, (3+9)/2] = [8/2, 12/2] = (4,6)</li>
+              </ul>
+            
+              <h4>Pasos para Graficar Puntos</h4>
+              <ol>
+                <li>Identificar las coordenadas (x,y) del punto.</li>
+                <li>Ubicar el valor x en el eje horizontal.</li>
+                <li>Ubicar el valor y en el eje vertical.</li>
+                <li>Trazar líneas perpendiculares desde ambos ejes.</li>
+                <li>Marcar el punto de intersección de las líneas.</li>
+              </ol>
+            
+              <h4>Aplicaciones del Sistema de Coordenadas</h4>
+              <ul>
+                <li>Representación gráfica de funciones y ecuaciones.</li>
+                <li>Geolocalización y sistemas de navegación (GPS).</li>
+                <li>Gráficos por computadora y diseño asistido por computadora (CAD).</li>
+                <li>Análisis de datos y representación de información estadística.</li>
+                <li>Resolución de problemas de geometría analítica.</li>
+              </ul>
+            
+              <h4>Ejercicios Prácticos</h4>
+              <ol>
+                <li>Graficar los puntos: A(2,3), B(-1,4), C(0,-2), D(-3,-5)</li>
+                <li>Calcular la distancia entre (-2,1) y (3,5)</li>
+                <li>Encontrar el punto medio entre (4,-1) y (-2,3)</li>
+                <li>Determinar el cuadrante de los puntos: (2,-7), (-3,-4), (-5,2)</li>
+              </ol>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Stewart, J. (2012). <em>Calculus: Early Transcendentals</em>. Cengage Learning.</li>
+                <li>Larson, R. (2018). <em>Calculus</em>. Cengage Learning.</li>
+                <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
+              </ul>
+            `)">3.1. Coordenadas rectangulares <span class="emoji-small">✅</span>
+            </li>
+          
           <li>3.2. Relaciones</li>
           <li>3.3. Funciones</li>
           <li>3.4. Gráfica de una función</li>
