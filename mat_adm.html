@@ -2041,7 +2041,166 @@
             `)">4.3. Diagramas de Venn <span class="emoji-small">✅</span>
           </li>
           
-          <li>4.2. Aplicaciones a problemas prácticos</li>
+<li onclick="abrirModal('4.4 Aplicaciones a problemas prácticos', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Aplicar la teoría de conjuntos para resolver problemas del mundo real en diversos contextos.</p>
+            
+              <h4>Problemas de Conteo y Cardinalidad</h4>
+              <p><strong>Problema:</strong> En una escuela, 120 estudiantes practican fútbol, 80 baloncesto y 60 ambos deportes. ¿Cuántos estudiantes practican al menos un deporte?</p>
+              
+              <h4>Pasos de Solución:</h4>
+              <ol>
+                <li>Definir conjuntos: F = {estudiantes que practican fútbol}, B = {estudiantes que practican baloncesto}</li>
+                <li>Identificar datos: |F| = 120, |B| = 80, |F ∩ B| = 60</li>
+                <li>Aplicar principio de inclusión-exclusión para dos conjuntos:</li>
+                <li>|F ∪ B| = |F| + |B| - |F ∩ B|</li>
+                <li>|F ∪ B| = 120 + 80 - 60 = 140</li>
+                <li><strong>Respuesta:</strong> 140 estudiantes practican al menos un deporte.</li>
+              </ol>
+
+              <h4>Problemas con Tres Conjuntos</h4>
+              <p><strong>Problema:</strong> Encuesta a 200 personas sobre preferencias de revistas:
+                <br>100 leen revista A, 80 revista B, 70 revista C
+                <br>40 leen A y B, 30 leen A y C, 20 leen B y C, 10 leen las tres</p>
+              
+              <h4>Pasos de Solución con Diagrama de Venn:</h4>
+              <ol>
+                <li>Definir conjuntos: A, B, C</li>
+                <li>Empezar por la intersección triple: |A ∩ B ∩ C| = 10</li>
+                <li>Calcular intersecciones doches:
+                  <br>|A ∩ B solamente| = 40 - 10 = 30
+                  <br>|A ∩ C solamente| = 30 - 10 = 20
+                  <br>|B ∩ C solamente| = 20 - 10 = 10</li>
+                <li>Calcular solo un conjunto:
+                  <br>Solo A: 100 - 30 - 20 - 10 = 40
+                  <br>Solo B: 80 - 30 - 10 - 10 = 30
+                  <br>Solo C: 70 - 20 - 10 - 10 = 30</li>
+                <li>Sumar todas las regiones: 40 + 30 + 30 + 30 + 20 + 10 + 10 = 170</li>
+                <li>Calcular ninguno: 200 - 170 = 30</li>
+                <li><strong>Respuesta:</strong> 170 personas leen al menos una revista, 30 no leen ninguna.</li>
+              </ol>
+            
+              <h4>Aplicaciones en Probabilidad</h4>
+              <p><strong>Problema:</strong> ¿Cuál es la probabilidad de que al lanzar dos dados la suma sea 7 o 11?</p>
+              
+              <h4>Pasos de Solución:</h4>
+              <ol>
+                <li>Espacio muestral: 36 resultados posibles (6 × 6)</li>
+                <li>Evento A: suma sea 7 = {(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)} → 6 resultados</li>
+                <li>Evento B: suma sea 11 = {(5,6), (6,5)} → 2 resultados</li>
+                <li>Los eventos son mutuamente excluyentes (A ∩ B = ∅)</li>
+                <li>Aplicar regla de adición: P(A ∪ B) = P(A) + P(B)</li>
+                <li>P(A ∪ B) = 6/36 + 2/36 = 8/36 = 2/9</li>
+                <li><strong>Respuesta:</strong> La probabilidad es 2/9.</li>
+              </ol>
+            
+              <h4>Problemas de Clasificación y Categorización</h4>
+              <p><strong>Problema:</strong> En un zoológico hay 50 animales: 30 son mamíferos, 25 pueden volar, 10 son mamíferos que vuelan. ¿Cuántos no son mamíferos ni vuelan?</p>
+              
+              <h4>Pasos de Solución:</h4>
+              <ol>
+                <li>Definir conjuntos: M = {mamíferos}, V = {animales que vuelan}</li>
+                <li>Datos: |M| = 30, |V| = 25, |M ∩ V| = 10, |U| = 50</li>
+                <li>Calcular unión: |M ∪ V| = |M| + |V| - |M ∩ V| = 30 + 25 - 10 = 45</li>
+                <li>Calcular complemento: |(M ∪ V)ᶜ| = |U| - |M ∪ V| = 50 - 45 = 5</li>
+                <li><strong>Respuesta:</strong> 5 animales no son mamíferos ni vuelan.</li>
+              </ol>
+
+              <h4>Aplicaciones en Bases de Datos y Consultas</h4>
+              <p><strong>Problema:</strong> En una base de datos de clientes, realizar consultas equivalentes a operaciones de conjuntos:</p>
+              
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Operación de Conjuntos</th>
+                  <th style='padding: 8px; text-align: left;'>Equivalente en SQL</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Unión (A ∪ B)</td>
+                  <td style='padding: 8px;'>SELECT * FROM A UNION SELECT * FROM B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Intersección (A ∩ B)</td>
+                  <td style='padding: 8px;'>SELECT * FROM A INTERSECT SELECT * FROM B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Diferencia (A - B)</td>
+                  <td style='padding: 8px;'>SELECT * FROM A EXCEPT SELECT * FROM B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Producto Cartesiano (A × B)</td>
+                  <td style='padding: 8px;'>SELECT * FROM A CROSS JOIN B</td>
+                </tr>
+              </table>
+
+              <h4>Aplicaciones en Lógica y Circuitos</h4>
+              <p><strong>Problema:</strong> Diseñar un circuito para la expresión booleana: (A ∩ B) ∪ (A ∩ C)</p>
+              
+              <h4>Pasos de Solución:</h4>
+              <ol>
+                <li>Simplificar usando álgebra booleana: A ∩ (B ∪ C)</li>
+                <li>Implementar con compuertas lógicas:
+                  <br>- Compuerta OR para B ∪ C
+                  <br>- Compuerta AND para A ∩ (resultado anterior)</li>
+                <li>La expresión simplificada requiere menos componentes</li>
+                <li>Aplicar leyes de De Morgan si es necesario</li>
+              </ol>
+
+              <h4>Problemas de Optimización con Conjuntos</h4>
+              <p><strong>Problema:</strong> Un repartidor debe visitar 5 ciudades. Encontrar la ruta óptima usando teoría de conjuntos.</p>
+              
+              <h4>Enfoque de Solución:</h4>
+              <ol>
+                <li>Representar ciudades como elementos de un conjunto: {A, B, C, D, E}</li>
+                <li>Representar rutas como subconjuntos ordenados</li>
+                <li>Usar permutaciones para todas las rutas posibles: 5! = 120 rutas</li>
+                <li>Aplicar algoritmo de conjunto potencia para evaluar subrutas</li>
+                <li>Usar programación dinámica para optimizar</li>
+              </ol>
+
+              <h4>Aplicaciones en Epidemiología</h4>
+              <p><strong>Problema:</strong> En un estudio epidemiológico, 500 personas fueron expuestas a una enfermedad. 300 presentaron síntomas, 200 tenían fiebre, 150 tenían ambos síntomas. ¿Cuántos no presentaron ningún síntoma?</p>
+              
+              <h4>Pasos de Solución:</h4>
+              <ol>
+                <li>Conjuntos: S = {síntomas}, F = {fiebre}</li>
+                <li>Datos: |S| = 300, |F| = 200, |S ∩ F| = 150, |U| = 500</li>
+                <li>|S ∪ F| = 300 + 200 - 150 = 350</li>
+                <li>|(S ∪ F)ᶜ| = 500 - 350 = 150</li>
+                <li><strong>Respuesta:</strong> 150 personas no presentaron ningún síntoma.</li>
+              </ol>
+
+              <h4>Estrategias Generales para Resolver Problemas de Conjuntos</h4>
+              <ol>
+                <li><strong>Definir claramente</strong> los conjuntos y variables</li>
+                <li><strong>Identificar</strong> las operaciones de conjuntos necesarias</li>
+                <li><strong>Utilizar diagramas de Venn</strong> para visualizar el problema</li>
+                <li><strong>Aplicar fórmulas</strong> de cardinalidad apropiadas</li>
+                <li><strong>Verificar</strong> si los conjuntos son disjuntos o no</li>
+                <li><strong>Simplificar</strong> usando propiedades algebraicas de conjuntos</li>
+                <li><strong>Comprobar</strong> la respuesta con casos límite</li>
+              </ol>
+
+              <h4>Errores Comunes y Cómo Evitarlos</h4>
+              <ul>
+                <li><strong>Error:</strong> Asumir que todos los conjuntos son disjuntos
+                  <br><strong>Solución:</strong> Verificar siempre las intersecciones</li>
+                <li><strong>Error:</strong> Contar elementos múltiples veces
+                  <br><strong>Solución:</strong> Usar principio de inclusión-exclusión</li>
+                <li><strong>Error:</strong> Olvidar el conjunto universal
+                  <br><strong>Solución:</strong> Definir siempre el contexto completo</li>
+                <li><strong>Error:</strong> Confundir unión con intersección
+                  <br><strong>Solución:</strong> Releer cuidadosamente el problema</li>
+              </ul>
+
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Rosen, K. H. (2018). <em>Discrete Mathematics and Its Applications</em>. McGraw-Hill.</li>
+                <li>Lipschutz, S. (1998). <em>Teoría de Conjuntos y Temas Afines</em>. McGraw-Hill.</li>
+                <li>Johnsonbaugh, R. (2018). <em>Discrete Mathematics</em>. Pearson.</li>
+                <li>Epp, S. S. (2010). <em>Discrete Mathematics with Applications</em>. Cengage Learning.</li>
+              </ul>
+            `)">4.4. Aplicaciones a problemas prácticos <span class="emoji-small">✅</span>
+          </li>
         </ul>
       </div>
       
