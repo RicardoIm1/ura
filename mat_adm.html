@@ -1067,8 +1067,9 @@
       <div class="tema-card">
         <div class="tema-num">TEMA 3</div>
         <h3 class="tema-title">Relaciones y números</h3>
-        <ul class="tema-list">
-        <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
+          
+          <ul class="tema-list">
+          <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el sistema de coordenadas rectangulares y su uso para representar puntos en el plano.</p>
             
@@ -1177,9 +1178,10 @@
                 <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
               </ul>
             `)">3.1. Coordenadas rectangulares <span class="emoji-small">✅</span>
-            </li>
+          </li>
           
-<li onclick="abrirModal('3.2 Relaciones', `
+          <ul class="tema-list">
+          <li onclick="abrirModal('3.2 Relaciones', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el concepto de relación matemática y sus diferentes representaciones.</p>
             
@@ -1294,8 +1296,9 @@
                 <li>Suppes, P. (1972). <em>Axiomatic Set Theory</em>. Dover Publications.</li>
               </ul>
             `)">3.2. Relaciones <span class="emoji-small">✅</span>
-            </li>
+          </li>
           
+          <ul class="tema-list">
           <li onclick="abrirModal('3.3 Funciones', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el concepto de función como caso especial de relación y sus propiedades fundamentales.</p>
@@ -1440,6 +1443,7 @@
             `)">3.3. Funciones <span class="emoji-small">✅</span>
           </li>
           
+          <ul class="tema-list">
           <li onclick="abrirModal('3.4 Gráfica de una función', `
               <hr><br>
               <p><strong>Objetivo:</strong> Aprender a graficar funciones y analizar sus características a partir de su representación visual.</p>
@@ -1585,14 +1589,17 @@
                 <li>Thomas, G. B. (2016). <em>Calculus</em>. Pearson.</li>
               </ul>
             `)">3.4. Gráfica de una función <span class="emoji-small">✅</span>
-          </li>        </ul>
+          </li>
+        </ul>
       </div>
       
       <div class="tema-card">
         <div class="tema-num">TEMA 4</div>
         <h3 class="tema-title">Teoría y conjuntos</h3>
         <ul class="tema-list">
-                    <li  onclick="abrirModal('4.1 Definiciones fundamentales', `
+
+          <ul class="tema-list">
+          <li  onclick="abrirModal('4.1 Definiciones fundamentales', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender los conceptos básicos de la teoría de conjuntos y su terminología fundamental.</p>
             
@@ -1751,8 +1758,7 @@
             `)">4.1. Definiciones fundamentales <span class="emoji-small">✅</span>
           </li>
 
-          
-
+          <ul class="tema-list">
           <li onclick="abrirModal('4.2 Operaciones de conjunto', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar las operaciones fundamentales entre conjuntos y sus propiedades.</p>
@@ -1895,8 +1901,8 @@
               </ul>
             `)">4.2. Operaciones de conjunto <span class="emoji-small">✅</span>
           </li>
-          
-          
+
+        <ul class="tema-list">
           <li  onclick="abrirModal('4.3 Diagramas de Venn', `
               <hr><br>
               <p><strong>Objetivo:</strong> Utilizar diagramas de Venn para visualizar y analizar relaciones entre conjuntos.</p>
@@ -2040,8 +2046,9 @@
               </ul>
             `)">4.3. Diagramas de Venn <span class="emoji-small">✅</span>
           </li>
-          
-<li onclick="abrirModal('4.4 Aplicaciones a problemas prácticos', `
+        
+          <ul class="tema-list">
+          <li onclick="abrirModal('4.4 Aplicaciones a problemas prácticos', `
               <hr><br>
               <p><strong>Objetivo:</strong> Aplicar la teoría de conjuntos para resolver problemas del mundo real en diversos contextos.</p>
             
@@ -2208,8 +2215,63 @@
         <div class="tema-num">TEMA 5</div>
         <h3 class="tema-title">Ecuaciones</h3>
         <ul class="tema-list">
-          <li>5.1. Ecuaciones lineales en una variante</li>
-          <li>5.2. Ecuaciones lineales en dos o más variantes</li>
+          <li onclick="abrirModal('5.1. Ecuaciones lineales en una variable', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, métodos de resolución y aplicaciones de las ecuaciones lineales en una variable.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una ecuación lineal en una variable es una igualdad algebraica que puede expresarse en la forma ax + b = 0, donde a y b son constantes y a ≠ 0.</li>
+                <li>Representa una relación de proporcionalidad directa y su gráfica es siempre una línea recta vertical (en el plano cartesiano) que intersecta el eje x en un único punto.</li>
+                <li>El grado de la ecuación es 1, lo que significa que la variable está elevada a la primera potencia.</li>
+              </ul>
+            
+              <h4>Elementos y características</h4>
+              <ul>
+                <li><strong>Variable:</strong> La incógnita que debemos encontrar (generalmente representada por x).</li>
+                <li><strong>Coeficiente:</strong> El número que multiplica a la variable (a en la forma estándar).</li>
+                <li><strong>Término independiente:</strong> El valor constante en la ecuación (b en la forma estándar).</li>
+                <li><strong>Solución o raíz:</strong> El valor numérico que satisface la igualdad cuando se sustituye en lugar de la variable.</li>
+                <li>Toda ecuación lineal en una variable tiene exactamente una solución, a menos que sea una identidad (infinitas soluciones) o una contradicción (ninguna solución).</li>
+              </ul>
+            
+              <h4>Métodos de resolución</h4>
+              <ul>
+                <li><strong>Método algebraico:</strong> Aplicar operaciones inversas para aislar la variable en un lado de la ecuación.</li>
+                <li><strong>Método gráfico:</strong> Representar ambas partes de la ecuación como funciones y encontrar su punto de intersección.</li>
+                <li><strong>Método de igualación:</strong> Útil cuando la ecuación viene expresada de forma no estándar.</li>
+                <li><strong>Verificación de la solución:</strong> Sustituir el valor obtenido en la ecuación original para comprobar que se cumple la igualdad.</li>
+              </ul>
+            
+              <h4>Propiedades aplicables</h4>
+              <ul>
+                <li><strong>Propiedad de la igualdad de la suma:</strong> Si a = b, entonces a + c = b + c.</li>
+                <li><strong>Propiedad de la igualdad de la multiplicación:</strong> Si a = b, entonces a × c = b × c (con c ≠ 0).</li>
+                <li><strong>Propiedad simétrica:</strong> Si a = b, entonces b = a.</li>
+                <li><strong>Propiedad transitiva:</strong> Si a = b y b = c, entonces a = c.</li>
+              </ul>
+            
+              <h4>Ejemplos y aplicaciones</h4>
+              <ul>
+                <li>Resolver: 3x + 5 = 11 → Solución: x = 2</li>
+                <li>Resolver: 2(x - 4) = 3x + 1 → Solución: x = -9</li>
+                <li><strong>Aplicación práctica:</strong> Calcular distancias con velocidad constante (d = v × t).</li>
+                <li><strong>Aplicación práctica:</strong> Determinar precios con descuentos porcentuales.</li>
+                <li><strong>Aplicación práctica:</strong> Planificar presupuestos y gastos financieros.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
+                <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
+                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+              </ul>
+            `)">5.1. Ecuaciones lineales en una variable <span class="emoji-small">✅</span>
+          </li>
+            
+            
+            <li>5.2. Ecuaciones lineales en dos o más variantes</li>
           <li>5.3. Ecuaciones cuadráticas</li>
           <li>5.4. Fórmula General</li>
         </ul>
