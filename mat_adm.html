@@ -3176,7 +3176,226 @@
         </ul><br>
             
         <ul class="tema-list">
-          <li>6.2. Tasa de interés nominal</li>
+          <li           <li onclick="abrirModal('6.2. Tasa de interés nominal', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, características, cálculo y aplicaciones de la tasa de interés nominal, así como su relación con la tasa efectiva y su importancia en el sistema financiero.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Tasa de interés nominal (j):</span> Tasa de interés que se expresa anualmente pero se capitaliza en períodos menores sin considerar el efecto de la capitalización.</li>
+                <li><span style='color: red; font-weight: bold;'>Característica principal:</span> Es una tasa <span style='color: red; font-weight: bold;'>referencial o declarada</span> que no refleja el verdadero costo o rendimiento financiero.</li>
+                <li><span style='color: red; font-weight: bold;'>Frecuencia de capitalización (m):</span> Número de veces que los intereses se capitalizan en un año.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa periódica (i):</span> Tasa que se aplica en cada período de capitalización: i = j/m</li>
+                <li><span style='color: red; font-weight: bold;'>Importante:</span> La tasa nominal <span style='color: red; font-weight: bold;'>no puede utilizarse directamente</span> en las fórmulas de interés compuesto.</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Tasa periódica:</span> i = j/m</li>
+                <li><span style='color: red; font-weight: bold;'>Relación nominal-efectiva:</span> j = m × [(1 + i) - 1]</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa efectiva a partir de nominal:</span> iₑ = (1 + j/m)ᵐ - 1</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa nominal a partir de efectiva:</span> j = m × [(1 + iₑ)¹/ᵐ - 1]</li>
+                <li><span style='color: red; font-weight: bold;'>Monto con tasa nominal:</span> M = C(1 + j/m)ᵐˣⁿ</li>
+              </ul>
+            
+              <h4>Frecuencias de capitalización comunes</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Frecuencia</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Períodos por año (m)</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Símbolo convencional</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Anual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₁</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Semestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₂</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cuatrimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₃</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Trimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₄</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Bimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₆</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mensual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₁₂</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Quincenal</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>24</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₂₄</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Diaria</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>360</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>j₃₆₀</td>
+                </tr>
+              </table>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
+              
+              <p><strong>Ejemplo 1: Conversión de tasa nominal a efectiva</strong></p>
+              <p>Calcular la tasa efectiva anual equivalente a una tasa nominal del 18% capitalizable mensualmente.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>j = 18% = 0.18, m = 12</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>iₑ = (1 + j/m)ᵐ - 1</span></li>
+                <li>Cálculo: iₑ = (1 + 0.18/12)¹² - 1</li>
+                <li>Paso 1: 0.18/12 = <span style='color: red; font-weight: bold;'>0.015</span> (tasa mensual)</li>
+                <li>Paso 2: 1 + 0.015 = <span style='color: red; font-weight: bold;'>1.015</span></li>
+                <li>Paso 3: (1.015)¹² = <span style='color: red; font-weight: bold;'>1.195618</span></li>
+                <li>Paso 4: iₑ = 1.195618 - 1 = <span style='color: red; font-weight: bold;'>0.195618</span></li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>19.56%</span> efectivo anual</li>
+                <li><span style='color: red; font-weight: bold;'>Conclusión:</span> La tasa efectiva (19.56%) es mayor que la nominal (18%) debido a la capitalización mensual.</li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Cálculo de monto con tasa nominal</strong></p>
+              <p>Calcular el monto de $5,000 invertidos a 2 años con una tasa nominal del 12% capitalizable trimestralmente.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $5,000, j = 12% = 0.12, m = 4, t = 2 años</span></li>
+                <li>Tasa periódica: <span style='color: red; font-weight: bold;'>i = j/m = 0.12/4 = 0.03 trimestral</span></li>
+                <li>Número de períodos: <span style='color: red; font-weight: bold;'>n = m × t = 4 × 2 = 8 trimestres</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>M = C(1 + i)ⁿ</span></li>
+                <li>Cálculo: M = 5000 × (1.03)⁸</li>
+                <li>Paso 1: (1.03)⁸ = <span style='color: red; font-weight: bold;'>1.266770</span></li>
+                <li>Paso 2: 5000 × 1.266770 = <span style='color: red; font-weight: bold;'>$6,333.85</span></li>
+                <li>Forma directa: M = 5000 × (1 + 0.12/4)⁴ˣ² = 5000 × (1.03)⁸ = <span style='color: red; font-weight: bold;'>$6,333.85</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Determinación de tasa nominal a partir de efectiva</strong></p>
+              <p>¿Qué tasa nominal capitalizable mensualmente es equivalente a una tasa efectiva anual del 15%?</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>iₑ = 15% = 0.15, m = 12</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>j = m × [(1 + iₑ)¹/ᵐ - 1]</span></li>
+                <li>Cálculo: j = 12 × [(1.15)¹/¹² - 1]</li>
+                <li>Paso 1: 1.15¹/¹² = 1.15^(0.083333) = <span style='color: red; font-weight: bold;'>1.011715</span></li>
+                <li>Paso 2: 1.011715 - 1 = <span style='color: red; font-weight: bold;'>0.011715</span></li>
+                <li>Paso 3: j = 12 × 0.011715 = <span style='color: red; font-weight: bold;'>0.14058</span></li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>14.06%</span> nominal capitalizable mensualmente</li>
+                <li>Verificación: iₑ = (1 + 0.14058/12)¹² - 1 = (1.011715)¹² - 1 = 1.15 - 1 = <span style='color: red; font-weight: bold;'>0.15 (15%)</span></li>
+              </ol>
+            
+              <h4>Comparación entre tasas nominales con diferentes frecuencias</h4>
+              <p>Conversión a tasa efectiva anual para diferentes frecuencias (j = 12% nominal anual):</p>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Frecuencia</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Períodos (m)</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa periódica</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa efectiva anual</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Anual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.00%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Semestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.36%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Trimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.55%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mensual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.68%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Diaria</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>360</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.0333%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.75%</td>
+                </tr>
+              </table>
+              <p><span style='color: red; font-weight: bold;'>Conclusión:</span> A mayor frecuencia de capitalización, mayor es la tasa efectiva resultante para una misma tasa nominal.</p>
+            
+              <h4>Importancia y aplicaciones prácticas</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Instrumentos financieros:</span> La tasa nominal es comúnmente utilizada en publicidad de productos financieros</li>
+                <li><span style='color: red; font-weight: bold;'>Comparación de opciones:</span> Permite comparar diferentes alternativas de inversión o financiamiento</li>
+                <li><span style='color: red; font-weight: bold;'>Regulación financiera:</span> Muchas instituciones financieras están obligadas a declarar tasas nominales</li>
+                <li><span style='color: red; font-weight: bold;'>Contratos:</span> Es la tasa que normalmente se estipula en los contratos de préstamos e inversiones</li>
+                <li><span style='color: red; font-weight: bold;'>Análisis financiero:</span> Sirve como punto de partida para calcular la tasa efectiva real</li>
+              </ul>
+            
+              <h4>Consideraciones importantes y limitaciones</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>La tasa nominal por sí sola no representa el verdadero costo o rendimiento</span> de una operación financiera</li>
+                <li>Es <span style='color: red; font-weight: bold;'>imprescindible conocer la frecuencia de capitalización</span> para realizar cálculos correctos</li>
+                <li>Las tasas nominales <span style='color: red; font-weight: bold;'>solo son comparables cuando tienen la misma frecuencia</span> de capitalización</li>
+                <li>En muchos países, las instituciones financieras están obligadas a <span style='color: red; font-weight: bold;'>informar tanto la tasa nominal como la efectiva</span></li>
+                <li>El <span style='color: red; font-weight: bold;'>análisis de decisiones financieras</span> siempre debe basarse en la <span style='color: red; font-weight: bold;'>tasa efectiva</span></li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Un banco ofrece tres opciones de inversión:</p>
+              <ol>
+                <li>13.5% nominal capitalizable mensualmente</li>
+                <li>13.8% nominal capitalizable trimestralmente</li>
+                <li>14.0% nominal capitalizable semestralmente</li>
+              </ol>
+              <p>Para una inversión de $10,000 a 3 años, determinar:</p>
+              <ol>
+                <li>La tasa efectiva anual de cada opción</li>
+                <li>El monto final de cada inversión</li>
+                <li>¿Qué opción es la más conveniente?</li>
+              </ol>
+              
+              <p><strong>Solución:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Opción 1 (13.5% mensual):</span>
+                  <ul>
+                    <li>iₑ = (1 + 0.135/12)¹² - 1 = (1.01125)¹² - 1 = 1.14396 - 1 = <span style='color: red; font-weight: bold;'>14.40%</span></li>
+                    <li>M = 10000 × (1 + 0.135/12)³⁶ = 10000 × (1.01125)³⁶ = 10000 × 1.5189 = <span style='color: red; font-weight: bold;'>$15,189</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Opción 2 (13.8% trimestral):</span>
+                  <ul>
+                    <li>iₑ = (1 + 0.138/4)⁴ - 1 = (1.0345)⁴ - 1 = 1.1456 - 1 = <span style='color: red; font-weight: bold;'>14.56%</span></li>
+                    <li>M = 10000 × (1 + 0.138/4)¹² = 10000 × (1.0345)¹² = 10000 × 1.5018 = <span style='color: red; font-weight: bold;'>$15,018</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Opción 3 (14.0% semestral):</span>
+                  <ul>
+                    <li>iₑ = (1 + 0.14/2)² - 1 = (1.07)² - 1 = 1.1449 - 1 = <span style='color: red; font-weight: bold;'>14.49%</span></li>
+                    <li>M = 10000 × (1 + 0.14/2)⁶ = 10000 × (1.07)⁶ = 10000 × 1.5007 = <span style='color: red; font-weight: bold;'>$15,007</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Conclusión:</span> La opción 2 es la más conveniente con una tasa efectiva del 14.56% y un monto de $15,018</li>
+              </ol>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
+                <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
+                <li>Portus, L. (2019). <em>Matemáticas financieras</em>. Editorial Limusa.</li>
+                <li>Kellison, S. G. (2009). <em>The Theory of Interest</em>. McGraw-Hill.</li>
+              </ul>
+            `)">6.2. Tasa de interés nominal <span class="emoji-small">✅</span>
+          </li>
+          
           <li>6.3. Valor Presente</li>
           <li>6.4. Tasa de descuento</li>
           <li>6.5. Fuerza de interés</li>
