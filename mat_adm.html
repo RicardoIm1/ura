@@ -1592,7 +1592,166 @@
         <div class="tema-num">TEMA 4</div>
         <h3 class="tema-title">Teoría y conjuntos</h3>
         <ul class="tema-list">
-          <li>4.1. Definiciones fundamentales</li>
+                    <li  onclick="abrirModal('4.1 Definiciones fundamentales', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender los conceptos básicos de la teoría de conjuntos y su terminología fundamental.</p>
+            
+              <h4>Definición de Conjunto</h4>
+              <ul>
+                <li>Un conjunto es una colección de objetos bien definidos, llamados elementos.</li>
+                <li>Notación: Los conjuntos se denotan con letras mayúsculas (A, B, C...).</li>
+                <li>Los elementos se denotan con letras minúsculas (a, b, c...).</li>
+                <li>Pertenencia: a ∈ A significa 'a pertenece a A'.</li>
+                <li>No pertenencia: a ∉ A significa 'a no pertenece a A'.</li>
+              </ul>
+            
+              <h4>Formas de Definir Conjuntos</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Método</th>
+                  <th style='padding: 8px; text-align: left;'>Descripción</th>
+                  <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Por extensión</td>
+                  <td style='padding: 8px;'>Listar todos los elementos</td>
+                  <td style='padding: 8px;'>A = {1, 2, 3, 4}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Por comprensión</td>
+                  <td style='padding: 8px;'>Describir la propiedad característica</td>
+                  <td style='padding: 8px;'>A = {x | x es par, 0 < x < 5}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Diagramas de Venn</td>
+                  <td style='padding: 8px;'>Representación gráfica</td>
+                  <td style='padding: 8px;'>Círculos que representan conjuntos</td>
+                </tr>
+              </table>
+            
+              <h4>Tipos de Conjuntos</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Tipo</th>
+                  <th style='padding: 8px; text-align: left;'>Definición</th>
+                  <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Vacío</td>
+                  <td style='padding: 8px;'>No tiene elementos</td>
+                  <td style='padding: 8px;'>∅ = {}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Unitario</td>
+                  <td style='padding: 8px;'>Un solo elemento</td>
+                  <td style='padding: 8px;'>A = {5}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Finito</td>
+                  <td style='padding: 8px;'>Número limitado de elementos</td>
+                  <td style='padding: 8px;'>A = {1, 2, 3}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Infinito</td>
+                  <td style='padding: 8px;'>Infinitos elementos</td>
+                  <td style='padding: 8px;'>N = {1, 2, 3, ...}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Universal</td>
+                  <td style='padding: 8px;'>Contiene todos los elementos posibles</td>
+                  <td style='padding: 8px;'>U (depende del contexto)</td>
+                </tr>
+              </table>
+            
+              <h4>Relaciones entre Conjuntos</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Relación</th>
+                  <th style='padding: 8px; text-align: left;'>Definición</th>
+                  <th style='padding: 8px; text-align: left;'>Notación</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Igualdad</td>
+                  <td style='padding: 8px;'>Tienen exactamente los mismos elementos</td>
+                  <td style='padding: 8px;'>A = B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Subconjunto</td>
+                  <td style='padding: 8px;'>Todos los elementos de A están en B</td>
+                  <td style='padding: 8px;'>A ⊆ B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Subconjunto propio</td>
+                  <td style='padding: 8px;'>A ⊆ B pero A ≠ B</td>
+                  <td style='padding: 8px;'>A ⊂ B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Conjuntos disjuntos</td>
+                  <td style='padding: 8px;'>No tienen elementos en común</td>
+                  <td style='padding: 8px;'>A ∩ B = ∅</td>
+                </tr>
+              </table>
+            
+              <h4>Cardinalidad de Conjuntos</h4>
+              <ul>
+                <li>La cardinalidad |A| es el número de elementos de A.</li>
+                <li>Para conjuntos finitos: |{a, b, c}| = 3</li>
+                <li>Para conjuntos infinitos: |ℕ| = ℵ₀ (aleph-zero)</li>
+                <li>|∅| = 0</li>
+              </ul>
+            
+              <h4>Conjuntos Numéricos Fundamentales</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Conjunto</th>
+                  <th style='padding: 8px; text-align: left;'>Símbolo</th>
+                  <th style='padding: 8px; text-align: left;'>Elementos</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Naturales</td>
+                  <td style='padding: 8px;'>ℕ</td>
+                  <td style='padding: 8px;'>{1, 2, 3, ...}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Enteros</td>
+                  <td style='padding: 8px;'>ℤ</td>
+                  <td style='padding: 8px;'>{..., -2, -1, 0, 1, 2, ...}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Racionales</td>
+                  <td style='padding: 8px;'>ℚ</td>
+                  <td style='padding: 8px;'>{a/b | a,b∈ℤ, b≠0}</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Reales</td>
+                  <td style='padding: 8px;'>ℝ</td>
+                  <td style='padding: 8px;'>Todos los números racionales e irracionales</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Complejos</td>
+                  <td style='padding: 8px;'>ℂ</td>
+                  <td style='padding: 8px;'>{a+bi | a,b∈ℝ, i²=-1}</td>
+                </tr>
+              </table>
+            
+              <h4>Paradojas y Limitaciones</h4>
+              <ul>
+                <li>Paradoja de Russell: ¿Existe el conjunto de todos los conjuntos que no se pertenecen a sí mismos?</li>
+                <li>Teoremas de incompletitud de Gödel: Limitaciones fundamentales de los sistemas axiomáticos</li>
+                <li>Hipótesis del continuo: ¿Existe un conjunto con cardinalidad entre |ℕ| y |ℝ|?</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Halmos, P. R. (2017). <em>Naive Set Theory</em>. Dover Publications.</li>
+                <li>Devlin, K. (2003). <em>Sets, Functions, and Logic</em>. Chapman and Hall/CRC.</li>
+                <li>Suppes, P. (1972). <em>Axiomatic Set Theory</em>. Dover Publications.</li>
+                <li>Enderton, H. B. (1977). <em>Elements of Set Theory</em>. Academic Press.</li>
+              </ul>
+            `)">4.1. Definiciones fundamentales <span class="emoji-small">✅</span>
+          </li>
+
+          
           <li>4.2. Operaciones de conjunto</li>
           <li>4.3. Diagramas de Venn</li>
           <li>4.2. Aplicaciones a problemas prácticos</li>
