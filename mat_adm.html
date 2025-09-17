@@ -1897,7 +1897,150 @@
           </li>
           
           
-          <li>4.3. Diagramas de Venn</li>
+          <li  onclick="abrirModal('4.3 Diagramas de Venn', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Utilizar diagramas de Venn para visualizar y analizar relaciones entre conjuntos.</p>
+            
+              <h4>Qué son los Diagramas de Venn</h4>
+              <ul>
+                <li>Representación gráfica de conjuntos mediante círculos superpuestos.</li>
+                <li>Desarrollados por John Venn en 1880.</li>
+                <li>Cada círculo representa un conjunto.</li>
+                <li>Las superposiciones representan intersecciones.</li>
+                <li>El rectángulo exterior representa el conjunto universal.</li>
+              </ul>
+            
+              <h4>Elementos de un Diagrama de Venn</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Elemento</th>
+                  <th style='padding: 8px; text-align: left;'>Representación</th>
+                  <th style='padding: 8px; text-align: left;'>Significado</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Círculo</td>
+                  <td style='padding: 8px;'>○</td>
+                  <td style='padding: 8px;'>Conjunto</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Superposición</td>
+                  <td style='padding: 8px;'>∩</td>
+                  <td style='padding: 8px;'>Intersección</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Rectángulo</td>
+                  <td style='padding: 8px;'>□</td>
+                  <td style='padding: 8px;'>Conjunto universal</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Puntos</td>
+                  <td style='padding: 8px;'>•</td>
+                  <td style='padding: 8px;'>Elementos</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Zonas sombreadas</td>
+                  <td style='padding: 8px;'>Área sombreada</td>
+                  <td style='padding: 8px;'>Conjunto vacío o operación</td>
+                </tr>
+              </table>
+            
+              <h4>Regiones en Diagramas de Venn</h4>
+              <ul>
+                <li>Para 1 conjunto: 2 regiones (dentro/fuera)</li>
+                <li>Para 2 conjuntos: 4 regiones (A∩B, A-B, B-A, fuera)</li>
+                <li>Para 3 conjuntos: 8 regiones</li>
+                <li>Para n conjuntos: 2ⁿ regiones (teóricamente)</li>
+              </ul>
+            
+              <h4>Pasos para Construir un Diagrama de Venn</h4>
+              <ol>
+                <li>Identificar todos los conjuntos involucrados.</li>
+                <li>Dibujar el rectángulo del conjunto universal.</li>
+                <li>Dibujar círculos que se superpongan según las relaciones.</li>
+                <li>Marcar las regiones con la información disponible.</li>
+                <li>Utilizar sombreado para indicar conjuntos resultantes.</li>
+              </ol>
+            
+              <h4>Representación de Operaciones</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Operación</th>
+                  <th style='padding: 8px; text-align: left;'>Representación</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>A ∪ B</td>
+                  <td style='padding: 8px;'>Toda el área de A y B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>A ∩ B</td>
+                  <td style='padding: 8px;'>Solo la intersección</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>A - B</td>
+                  <td style='padding: 8px;'>Parte de A que no intersecta B</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Aᶜ</td>
+                  <td style='padding: 8px;'>Todo fuera de A</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>A Δ B</td>
+                  <td style='padding: 8px;'>A ∪ B menos A ∩ B</td>
+                </tr>
+              </table>
+            
+              <h4>Ejemplo: Problema con Tres Conjuntos</h4>
+              <p>En una encuesta a 100 estudiantes:
+                <br>60 matemáticas, 50 física, 40 química
+                <br>30 matemáticas y física, 20 matemáticas y química
+                <br>15 física y química, 10 las tres materias</p>
+              
+              <p>¿Cuántos estudian solo matemáticas?</p>
+              
+              <ol>
+                <li>Dibujar diagrama de Venn con 3 círculos</li>
+                <li>Empezar por la intersección triple: 10</li>
+                <li>Matemáticas-física: 30-10=20</li>
+                <li>Matemáticas-química: 20-10=10</li>
+                <li>Física-química: 15-10=5</li>
+                <li>Solo matemáticas: 60-20-10-10=20</li>
+                <li>Solo física: 50-20-5-10=15</li>
+                <li>Solo química: 40-10-5-10=15</li>
+              </ol>
+            
+              <h4>Límites de los Diagramas de Venn</h4>
+              <ul>
+                <li>Para más de 3 conjuntos se vuelven complejos</li>
+                <li>No son demostraciones formales, solo ayudas visuales</li>
+                <li>Pueden representar relaciones pero no propiedades algebraicas complejas</li>
+                <li>Alternativas: Diagramas de Euler, diagramas de Carroll</li>
+              </ul>
+            
+              <h4>Aplicaciones de los Diagramas de Venn</h4>
+              <ul>
+                <li>Teoría de conjuntos y lógica</li>
+                <li>Probabilidad y estadística</li>
+                <li>Informática (álgebra booleana)</li>
+                <li>Biología (clasificación de especies)</li>
+                <li>Lingüística (análisis semántico)</li>
+              </ul>
+            
+              <h4>Ejercicios Prácticos</h4>
+              <ol>
+                <li>Representar (A ∩ B) ∪ C</li>
+                <li>Representar (A - B)ᶜ</li>
+                <li>Resolver: De 120 personas, 80 hablan inglés, 60 francés, 50 español, 30 inglés y francés, 20 inglés y español, 15 francés y español, 10 los tres idiomas. ¿Cuántos no hablan ninguno?</li>
+              </ol>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Venn, J. (1880). <em>On the Diagrammatic and Mechanical Representation of Propositions and Reasonings</em>. Philosophical Magazine.</li>
+                <li>Baron, M. E. (1969). <em>A Note on the Historical Development of Logic Diagrams</em>. Mathematical Gazette.</li>
+                <li>Ruskey, F., & Weston, M. (2005). <em>Venn Diagrams</em>. Electronic Journal of Combinatorics.</li>
+              </ul>
+            `)">4.3. Diagramas de Venn <span class="emoji-small">✅</span>
+          </li>
+          
           <li>4.2. Aplicaciones a problemas prácticos</li>
         </ul>
       </div>
