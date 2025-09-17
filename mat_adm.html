@@ -2754,7 +2754,179 @@
             </li>
             
             <ul>
-              <li>6.1.1.1. Modelo de interés simple</li>
+<li onclick="abrirModal('6.1.1.1. Modelo de interés simple', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, características, fórmulas y aplicaciones del modelo de interés simple en operaciones financieras a corto plazo.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Interés simple:</span> Sistema de cálculo donde los intereses se generan exclusivamente sobre el capital inicial durante todo el período de la operación.</li>
+                <li><span style='color: red; font-weight: bold;'>Característica fundamental:</span> Los intereses no se capitalizan, es decir, no generan nuevos intereses en períodos siguientes.</li>
+                <li><span style='color: red; font-weight: bold;'>Capital (C):</span> Cantidad inicial de dinero invertida o prestada.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de interés (r):</span> Porcentaje que se aplica al capital para calcular el interés.</li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo (t):</span> Período durante el cual se presta o invierte el capital.</li>
+                <li><span style='color: red; font-weight: bold;'>Monto (M):</span> Suma del capital más los intereses generados (M = C + I).</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Interés simple:</span> I = C × r × t</li>
+                <li><span style='color: red; font-weight: bold;'>Monto o valor futuro:</span> M = C(1 + r × t)</li>
+                <li><span style='color: red; font-weight: bold;'>Capital inicial:</span> C = M / (1 + r × t)</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de interés:</span> r = I / (C × t)</li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo:</span> t = I / (C × r)</li>
+                <li><span style='color: red; font-weight: bold;'>Función de acumulación:</span> a(t) = 1 + r × t</li>
+              </ul>
+            
+              <h4>Consideraciones sobre el tiempo</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Año comercial:</span> 360 días (utilizado en operaciones comerciales)</li>
+                <li><span style='color: red; font-weight: bold;'>Año calendario:</span> 365 días (utilizado en operaciones civiles)</li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo exacto:</span> Número exacto de días entre dos fechas</li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo aproximado:</span> Considera meses de 30 días</li>
+                <li><span style='color: red; font-weight: bold;'>Conversión de unidades:</span> Es crucial expresar el tiempo en la misma unidad que la tasa de interés</li>
+              </ul>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
+              
+              <p><strong>Ejemplo 1: Cálculo de interés simple con tiempo en años</strong></p>
+              <p>Calcular el interés simple generado por un capital de $12,000 al 9% anual durante 4 años.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $12,000, r = 9% anual = 0.09, t = 4 años</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>I = C × r × t</span></li>
+                <li>Cálculo: I = 12000 × 0.09 × 4</li>
+                <li>Paso 1: 12000 × 0.09 = <span style='color: red; font-weight: bold;'>1,080</span> (interés anual)</li>
+                <li>Paso 2: 1080 × 4 = <span style='color: red; font-weight: bold;'>$4,320</span> (interés total)</li>
+                <li>Monto final: M = C + I = 12000 + 4320 = <span style='color: red; font-weight: bold;'>$16,320</span></li>
+                <li>Verificación con fórmula directa: M = 12000(1 + 0.09×4) = 12000×1.36 = <span style='color: red; font-weight: bold;'>$16,320</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Cálculo con tiempo en días (año comercial)</strong></p>
+              <p>Calcular el interés simple de $8,500 al 12% anual durante 90 días.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $8,500, r = 12% anual = 0.12, t = 90/360 = 0.25 años</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>I = C × r × t</span></li>
+                <li>Cálculo: I = 8500 × 0.12 × (90/360)</li>
+                <li>Paso 1: 8500 × 0.12 = <span style='color: red; font-weight: bold;'>1,020</span> (interés anual)</li>
+                <li>Paso 2: 1020 × (90/360) = 1020 × 0.25 = <span style='color: red; font-weight: bold;'>$255</span></li>
+                <li>Forma alternativa: I = (8500 × 0.12 × 90) / 360 = (91800) / 360 = <span style='color: red; font-weight: bold;'>$255</span></li>
+                <li>Monto final: M = 8500 + 255 = <span style='color: red; font-weight: bold;'>$8,755</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Determinación del tiempo necesario</strong></p>
+              <p>¿Durante cuánto tiempo debe invertirse $5,000 al 6% anual para generar $900 de interés simple?</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $5,000, I = $900, r = 6% = 0.06</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>t = I / (C × r)</span></li>
+                <li>Cálculo: t = 900 / (5000 × 0.06)</li>
+                <li>Paso 1: 5000 × 0.06 = <span style='color: red; font-weight: bold;'>300</span> (interés anual)</li>
+                <li>Paso 2: t = 900 / 300 = <span style='color: red; font-weight: bold;'>3 años</span></li>
+                <li>Verificación: I = 5000 × 0.06 × 3 = <span style='color: red; font-weight: bold;'>$900</span></li>
+              </ol>
+            
+              <h4>Comparación entre interés simple y compuesto</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Interés Simple<br>(Capital: $1,000 al 10%)</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Interés Compuesto<br>(Capital: $1,000 al 10%)</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Diferencia</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$1,100</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$1,100</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$0</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$1,200</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$1,210</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$10</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$1,500</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$1,610.51</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$110.51</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>10</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$2,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$2,593.74</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$593.74</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>20</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$3,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$6,727.50</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$3,727.50</td>
+                </tr>
+              </table>
+              <p><span style='color: red; font-weight: bold;'>Conclusión:</span> El interés simple genera crecimiento lineal, mientras que el compuesto genera crecimiento exponencial. La diferencia se acentúa con el tiempo.</p>
+            
+              <h4>Aplicaciones prácticas del interés simple</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Préstamos a corto plazo:</span> Pagarés, préstamos personales de menos de un año</li>
+                <li><span style='color: red; font-weight: bold;'>Inversiones temporales:</span> Certificados de depósito a plazos cortos</li>
+                <li><span style='color: red; font-weight: bold;'>Descuento de documentos:</span> Letras de cambio, pagarés comerciales</li>
+                <li><span style='color: red; font-weight: bold;'>Cálculo de intereses moratorios:</span> Recargos por pagos tardíos</li>
+                <li><span style='color: red; font-weight: bold'>Operaciones comerciales:</span> Factoring, descuento por pronto pago</li>
+              </ul>
+            
+              <h4>Limitaciones y consideraciones importantes</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>No considera el valor tiempo del dinero</span> de manera completa al ignorar la capitalización</li>
+                <li>Es <span style='color: red; font-weight: bold;'>poco utilizado en operaciones a largo plazo</span> debido a que subestima el rendimiento</li>
+                <li>Puede generar <span style='color: red; font-weight: bold;'>distorsiones en evaluaciones financieras</span> para períodos extensos</li>
+                <li>Sigue siendo <span style='color: red; font-weight: bold;'>ampliamente utilizado en operaciones comerciales a corto plazo</span> por su simplicidad</li>
+                <li>Es importante <span style='color: red; font-weight: bold;'>especificar claramente la base temporal</span> (360 o 365 días) en los contratos</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Una persona invierte $20,000 al 8% de interés simple anual el 15 de marzo. Calcular:</p>
+              <ol>
+                <li>El interés generado al 30 de junio del mismo año (año comercial)</li>
+                <li>El monto total disponible el 30 de junio</li>
+                <li>¿Cuántos días exactos transcurrieron?</li>
+              </ol>
+              
+              <p><strong>Solución:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Cálculo de días exactos:</span>
+                  <ul>
+                    <li>Marzo: 31 - 15 = 16 días</li>
+                    <li>Abril: 30 días</li>
+                    <li>Mayo: 31 días</li>
+                    <li>Junio: 30 días</li>
+                    <li>Total: 16 + 30 + 31 + 30 = <span style='color: red; font-weight: bold;'>107 días</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Interés generado:</span>
+                  <ul>
+                    <li>I = C × r × t = 20000 × 0.08 × (107/360)</li>
+                    <li>I = 20000 × 0.08 × 0.297222</li>
+                    <li>I = <span style='color: red; font-weight: bold;'>$475.56</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Monto total:</span>
+                  <ul>
+                    <li>M = C + I = 20000 + 475.56</li>
+                    <li>M = <span style='color: red; font-weight: bold;'>$20,475.56</span></li>
+                  </ul>
+                </li>
+              </ol>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Ayres, F. (2012). <em>Matemáticas Financieras</em>. McGraw-Hill.</li>
+                <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
+                <li>Portus, L. (2019). <em>Matemáticas financieras</em>. Editorial Limusa.</li>
+                <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
+              </ul>
+            `)">6.1.1.1. Modelo de interés simple <span class="emoji-small">✅</span>
+              </li>
+              
               <li>6.1.1.2. Modelo de interés compuesto</li>
             </ul>
           </ul>
