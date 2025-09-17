@@ -743,7 +743,110 @@
             `)">2.2. Exponentes negativos <span class="emoji-small">✅</span>
         </li>
           
-          <li>2.3. Exponentes fraccionarios</li>
+            <li onclick="abrirModal('2.3 Exponentes fraccionarios', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender la relación entre exponentes fraccionarios y radicales, y aplicar las propiedades correspondientes.</p>
+            
+              <h4>Definición de Exponente Fraccionario</h4>
+              <ul>
+                <li>aᵐ/ⁿ = ⁿ√(aᵐ) = (ⁿ√a)ᵐ</li>
+                <li>El denominador del exponente indica el índice del radical.</li>
+                <li>El numerador indica la potencia a la que se eleva el radicando.</li>
+                <li>Ejemplo: 8²/³ = (³√8)² = 2² = 4</li>
+              </ul>
+            
+              <h4>Propiedades de Exponentes Fraccionarios</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Propiedad</th>
+                  <th style='padding: 8px; text-align: left;'>Expresión</th>
+                  <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Producto con misma base</td>
+                  <td style='padding: 8px;'>aᵐ/ⁿ × aᵖ/ⁿ = a⁽ᵐ⁺ᵖ⁾/ⁿ</td>
+                  <td style='padding: 8px;'>5²/³ × 5⁴/³ = 5⁶/³ = 5² = 25</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Cociente con misma base</td>
+                  <td style='padding: 8px;'>aᵐ/ⁿ ÷ aᵖ/ⁿ = a⁽ᵐ⁻ᵖ⁾/ⁿ</td>
+                  <td style='padding: 8px;'>8⁵/³ ÷ 8²/³ = 8³/³ = 8¹ = 8</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Potencia de potencia</td>
+                  <td style='padding: 8px;'>(aᵐ/ⁿ)ᵖ = aᵐᵖ/ⁿ</td>
+                  <td style='padding: 8px;'>(16³/⁴)² = 16⁶/⁴ = 16³/² = (√16)³ = 4³ = 64</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>Exponente negativo fraccionario</td>
+                  <td style='padding: 8px;'>a⁻ᵐ/ⁿ = 1/(aᵐ/ⁿ)</td>
+                  <td style='padding: 8px;'>25⁻³/² = 1/(25³/²) = 1/(125) = 0.008</td>
+                </tr>
+              </table>
+            
+              <h4>Pasos para Simplificar Expresiones con Exponentes Fraccionarios</h4>
+              <ol>
+                <li>Convertir radicales a exponentes fraccionarios si es necesario.</li>
+                <li>Encontrar común denominador para los exponentes fraccionarios.</li>
+                <li>Aplicar las leyes de exponentes correspondientes.</li>
+                <li>Simplificar los exponentes resultantes.</li>
+                <li>Convertir de vuelta a notación radical si se requiere.</li>
+              </ol>
+            
+              <h4>Ejemplo Detallado</h4>
+              <p>Simplificar: (x¹/² × y²/³)⁶ ÷ (x² × y¹/²)</p>
+              <ol>
+                <li>Aplicar potencia de producto: (x³ × y⁴) ÷ (x² × y¹/²)</li>
+                <li>Dividir términos semejantes: x³⁻² × y⁴⁻¹/²</li>
+                <li>Simplificar exponentes: x¹ × y⁷/²</li>
+                <li>Resultado: x × y⁷/² o x√y⁷</li>
+              </ol>
+            
+              <h4>Conversión entre Radicales y Exponentes Fraccionarios</h4>
+              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='padding: 8px; text-align: left;'>Forma Radical</th>
+                  <th style='padding: 8px; text-align: left;'>Forma Exponencial</th>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>√a</td>
+                  <td style='padding: 8px;'>a¹/²</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>³√a</td>
+                  <td style='padding: 8px;'>a¹/³</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>ⁿ√a</td>
+                  <td style='padding: 8px;'>a¹/ⁿ</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>ⁿ√(aᵐ)</td>
+                  <td style='padding: 8px;'>aᵐ/ⁿ</td>
+                </tr>
+                <tr>
+                  <td style='padding: 8px;'>√(a³)</td>
+                  <td style='padding: 8px;'>a³/²</td>
+                </tr>
+              </table>
+            
+              <h4>Aplicaciones Prácticas</h4>
+              <ul>
+                <li>Cálculo de tasas de crecimiento proporcionales</li>
+                <li>Leyes de escala en física e ingeniería</li>
+                <li>Cálculo de probabilidades en estadística avanzada</li>
+                <li>Modelado de fenómenos de decaimiento con exponentes fraccionarios</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Rudin, W. (1976). <em>Principles of Mathematical Analysis</em>. McGraw-Hill.</li>
+                <li>Apostol, T. M. (2013). <em>Calculus, Vol. 1</em>. Reverté.</li>
+                <li>Spivak, M. (2008). <em>Calculus</em>. Publish or Perish.</li>
+              </ul>
+            `)">2.3. Exponentes fraccionarios <span class="emoji-small">✅</span>
+          </li>
+          
           <li>2.4. Ley de los radicales</li>
           <li>2.5. Opeaciones con radicales</li>
         </ul>
