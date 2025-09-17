@@ -3606,11 +3606,275 @@
             `)">6.3. Valor Presente <span class="emoji-small">✅</span>
           </li>
           
-          <li>6.4. Tasa de descuento</li>
-
+          <li onclick="abrirModal('6.4. Tasa de descuento', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, tipos, cálculo y aplicaciones de la tasa de descuento en el análisis financiero, así como su importancia en la evaluación de inversiones y la valoración de activos.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento (d):</span> Tasa de interés utilizada para calcular el valor presente de flujos de efectivo futuros.</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de oportunidad:</span> Representa el rendimiento que se deja de percibir al elegir una inversión sobre otras alternativas disponibles.</li>
+                <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Refleja la incertidumbre asociada con los flujos de efectivo futuros.</li>
+                <li><span style='color: red; font-weight: bold;'>Inflación:</span> Considera la pérdida de poder adquisitivo del dinero a través del tiempo.</li>
+                <li><span style='color: red; font-weight: bold;'>Preferencia temporal:</span> Indica la preferencia por el consumo presente sobre el consumo futuro.</li>
+              </ul>
+            
+              <h4>Tipos de tasas de descuento</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> Tasa que representa el costo promedio de todas las fuentes de financiamiento de una empresa.</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de capital propio (CAPM):</span> Tasa requerida por los accionistas calculada mediante el modelo de valoración de activos de capital.</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de la deuda:</span> Tasa de interés que paga la empresa por sus fondos prestados.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa libre de riesgo:</span> Rendimiento de inversiones sin riesgo de incumplimiento (ej. bonos gubernamentales).</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento ajustada al riesgo:</span> Tasa que incorpora una prima por el riesgo específico del proyecto o inversión.</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa de descuento:</span> VP = VF / (1 + d)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</li>
+                <li><span style='color: red; font-weight: bold;'>Modelo CAPM:</span> Re = Rf + β × (Rm - Rf)</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento real:</span> d_real = (1 + d_nominal) / (1 + π) - 1</li>
+                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + d)ⁿ</li>
+              </ul>
+            
+              <h4>Componentes de la tasa de descuento</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Componente</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Descripción</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa libre de riesgo (Rf)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento de inversiones sin riesgo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima de riesgo de mercado (Rm - Rf)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento adicional por invertir en acciones vs. bonos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6-8% históricamente</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Beta (β)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Medida de volatilidad sistemática</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cov(Ri, Rm) / Var(Rm)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima por riesgo específico</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Riesgo particular del proyecto o empresa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el caso</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima por liquidez</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Compensación por falta de liquidez</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el activo</td>
+                </tr>
+              </table>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
+              
+              <p><strong>Ejemplo 1: Cálculo de WACC</strong></p>
+              <p>Una empresa tiene una estructura de capital compuesta por 60% capital propio y 40% deuda. El costo de capital propio es 12%, el costo de la deuda es 8% y la tasa impositiva es 30%. Calcular el WACC.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>E/V = 0.60, D/V = 0.40, Re = 12%, Rd = 8%, Tc = 30%</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</span></li>
+                <li>Cálculo: WACC = (0.60 × 0.12) + (0.40 × 0.08 × (1 - 0.30))</li>
+                <li>Paso 1: 0.60 × 0.12 = <span style='color: red; font-weight: bold;'>0.072</span></li>
+                <li>Paso 2: 0.40 × 0.08 = 0.032</li>
+                <li>Paso 3: 1 - 0.30 = 0.70</li>
+                <li>Paso 4: 0.032 × 0.70 = <span style='color: red; font-weight: bold;'>0.0224</span></li>
+                <li>Paso 5: WACC = 0.072 + 0.0224 = <span style='color: red; font-weight: bold;'>0.0944 (9.44%)</span></li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La empresa debe usar 9.44% como tasa de descuento para proyectos con riesgo similar.</li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Cálculo de tasa con CAPM</strong></p>
+              <p>Calcular la tasa de descuento para una acción usando el modelo CAPM. La tasa libre de riesgo es 4%, la prima de mercado es 6% y la beta de la acción es 1.2.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>Rf = 4%, Rm - Rf = 6%, β = 1.2</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>Re = Rf + β × (Rm - Rf)</span></li>
+                <li>Cálculo: Re = 0.04 + 1.2 × 0.06</li>
+                <li>Paso 1: 1.2 × 0.06 = <span style='color: red; font-weight: bold;'>0.072</span></li>
+                <li>Paso 2: Re = 0.04 + 0.072 = <span style='color: red; font-weight: bold;'>0.112 (11.2%)</span></li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> Los inversionistas requieren un 11.2% de rendimiento por invertir en esta acción.</li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Ajuste por inflación</strong></p>
+              <p>Si la tasa de descuento nominal es 15% y la inflación esperada es 5%, calcular la tasa de descuento real.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>d_nominal = 15% = 0.15, π = 5% = 0.05</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>d_real = (1 + d_nominal) / (1 + π) - 1</span></li>
+                <li>Cálculo: d_real = (1.15 / 1.05) - 1</li>
+                <li>Paso 1: 1.15 / 1.05 = <span style='color: red; font-weight: bold;'>1.095238</span></li>
+                <li>Paso 2: d_real = 1.095238 - 1 = <span style='color: red; font-weight: bold;'>0.095238 (9.52%)</span></li>
+                <li>Aproximación: d_nominal - π = 15% - 5% = 10% (sobrestima la tasa real)</li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La tasa real de descuento es 9.52%, considerando la pérdida de poder adquisitivo.</li>
+              </ol>
+            
+              <h4>Aplicaciones de la tasa de descuento</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa utilizada</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Evaluación de proyectos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo del Valor Actual Neto (VAN)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>WACC o tasa ajustada al riesgo</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de empresas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Descuento de flujos de caja libre</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>WACC</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Análisis de bonos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Precio como valor presente de cupones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa de rendimiento requerida</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Decisiones de inversión</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Comparación de alternativas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Costo de oportunidad</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Planificación financiera</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas y provisiones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa técnica o actuarial</td>
+                </tr>
+              </table>
+            
+              <h4>Factores que influyen en la determinación de la tasa de descuento</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Condiciones macroeconómicas:</span> Tasas de interés, inflación, crecimiento económico</li>
+                <li><span style='color: red; font-weight: bold;'>Riesgo del proyecto:</span> Volatilidad de flujos, incertidumbre del negocio</li>
+                <li><span style='color: red; font-weight: bold;'>Estructura de capital:</span> Proporción de deuda vs. capital propio</li>
+                <li><span style='color: red; font-weight: bold;'>Horizonte temporal:</span> Plazo de la inversión o proyecto</li>
+                <li><span style='color: red; font-weight: bold;'>Liquidez:</span> Facilidad para convertir el activo en efectivo</li>
+                <li><span style='color: red; font-weight: bold;'>Consideraciones fiscales:</span> Tratamiento tributario de los flujos</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Una empresa evalúa un proyecto con una inversión inicial de $100,000 que generará flujos de $30,000 anuales durante 5 años. Calcular el VAN usando diferentes tasas de descuento:</p>
+              <ol>
+                <li>WACC calculado en 9.44%</li>
+                <li>Tasa con prima de riesgo adicional de 2%</li>
+                <li>Tasa libre de riesgo del 4% (asumiendo proyecto sin riesgo)</li>
+              </ol>
+              
+              <p><strong>Solución:</strong></p>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 9.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 9.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 11.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 11.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 4%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 4%</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9138</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>27,414</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8974</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>26,922</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9615</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>28,845</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8350</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>25,050</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8054</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>24,162</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9246</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>27,738</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7630</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>22,890</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7228</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>21,684</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8890</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>26,670</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6972</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>20,916</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6486</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>19,458</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8548</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>25,644</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6371</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>19,113</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.5820</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>17,460</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8219</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>24,657</td>
+                </tr>
+                <tr style='background-color: #e6f7ff;'>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total VP</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>15,383</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>9,686</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>33,554</strong></td>
+                </tr>
+              </table>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>VAN al 9.44%:</span> $15,383 → <span style='color: red; font-weight: bold;'>Proyecto viable</span></li>
+                <li><span style='color: red; font-weight: bold;'>VAN al 11.44%:</span> $9,686 → <span style='color: red; font-weight: bold;'>Proyecto viable pero menos atractivo</span></li>
+                <li><span style='color: red; font-weight: bold;'>VAN al 4%:</span> $33,554 → <span style='color: red; font-weight: bold;'>Sobrestimación si el proyecto tiene riesgo</span></li>
+              </ol>
+            
+              <h4>Consideraciones importantes</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es el factor más crítico</span> en la evaluación de inversiones</li>
+                <li>Una tasa demasiado alta <span style='color: red; font-weight: bold;'>puede rechazar proyectos rentables</span></li>
+                <li>Una tasa demasiado baja <span style='color: red; font-weight: bold;'>puede aceptar proyectos no rentables</span></li>
+                <li>La tasa debe <span style='color: red; font-weight: bold;'>reflejar el riesgo específico</span> del proyecto o inversión</li>
+                <li>En contextos inflacionarios, es crucial <span style='color: red; font-weight: bold;'>usar tasas consistentes</span> con los flujos (reales o nominales)</li>
+                <li>La tasa de descuento debe <span style='color: red; font-weight: bold;'>actualizarse periódicamente</span> según cambien las condiciones del mercado</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
+                <li>Damodaran, A. (2012). <em>Investment Valuation: Tools and Techniques for Determining the Value of Any Asset</em>. Wiley.</li>
+                <li>Copeland, T. E., Weston, J. F., & Shastri, K. (2005). <em>Financial Theory and Corporate Policy</em>. Pearson Education.</li>
+                <li>Pinto, J. E., Henry, E., Robinson, T. R., & Stowe, J. D. (2015). <em>Equity Asset Valuation</em>. Wiley.</li>
+              </ul>
+            `)">6.4. Tasa de descuento <span class="emoji-small">✅</span>
+          </li>
 
           
           <li>6.5. Fuerza de interés</li>
+
+          
           <li>6.6. Relación entre tasas de interés y de descuento</li>
           <li>6.7. Tasas variables de interés</li>
           <li>6.8. Tasa real de interés</li>
