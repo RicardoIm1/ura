@@ -1377,7 +1377,270 @@
           </li>
           
           <ul>
-              <li>1.2.1. Suma y sus leyes <!--span class="emoji-small">✅</span--></li>
+<ul class="tema-list">
+          <li onclick="abrirModal('1.2.1. Suma y sus leyes', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades de la suma algebraica, así como dominar las técnicas para sumar expresiones algebraicas de diferente complejidad.</p>
+          
+            <h4>Definición y concepto fundamental</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>Suma algebraica:</span> Operación fundamental que consiste en <span style='color: red; font-weight: bold;'>agregar cantidades</span> para obtener un total llamado <span style='color: red; font-weight: bold;'>suma</span> o <span style='color: red; font-weight: bold;'>resultado</span>.</li>
+              <li><span style='color: red; font-weight: bold;'>Términos:</span> Los números o expresiones que se suman se llaman <span style='color: red; font-weight: bold;'>sumandos</span>.</li>
+              <li><span style='color: red; font-weight: bold;'>Resultado:</span> El valor obtenido se denomina <span style='color: red; font-weight: bold;'>suma</span> o <span style='color: red; font-weight: bold;'>total</span>.</li>
+              <li><span style='color: red; font-weight: bold;'>Símbolo:</span> Se representa con el signo <span style='color: red; font-weight: bold;'>+</span> (más).</li>
+            </ul>
+          
+            <h4>Leyes fundamentales de la suma</h4>
+            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+              <tr style='background-color: #f2f2f2;'>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Ley</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Enunciado</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Expresión algebraica</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Conmutativa</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>El orden de los sumandos no altera la suma</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>a + b = b + a</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>3 + 5 = 5 + 3 = 8</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Asociativa</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>La forma de agrupar los sumandos no altera la suma</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>(a + b) + c = a + (b + c)</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>(2 + 3) + 4 = 2 + (3 + 4) = 9</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Modulativa o Identidad</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>La suma de cualquier número con cero es el mismo número</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>a + 0 = a</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>7 + 0 = 7</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Inverso Aditivo</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Todo número tiene un inverso que sumado con él da cero</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>a + (-a) = 0</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>5 + (-5) = 0</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Clausura</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>La suma de dos números reales es otro número real</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Si a, b ∈ ℝ, entonces a + b ∈ ℝ</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>2 + 3 = 5 ∈ ℝ</td>
+              </tr>
+            </table>
+          
+            <h4>Propiedades de la suma algebraica</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>Uniformidad:</span> La suma tiene un resultado único</li>
+              <li><span style='color: red; font-weight: bold;'>Monotonía:</span> Si a = b, entonces a + c = b + c</li>
+              <li><span style='color: red; font-weight: bold;'>Cancelativa:</span> Si a + c = b + c, entonces a = b</li>
+              <li><span style='color: red; font-weight: bold;'>Distributiva respecto al producto:</span> a(b + c) = ab + ac</li>
+            </ul>
+          
+            <h4>Suma de números con signo</h4>
+            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+              <tr style='background-color: #f2f2f2;'>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Caso</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Regla</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Números con mismo signo</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Se suman y se conserva el signo</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>(+3) + (+5) = +8<br>(-4) + (-2) = -6</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Números con signo diferente</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Se restan y se conserva el signo del mayor</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>(+7) + (-3) = +4<br>(-8) + (+5) = -3</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Números opuestos</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>La suma es cero</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>(+6) + (-6) = 0</td>
+              </tr>
+            </table>
+          
+            <h4>Suma de expresiones algebraicas</h4>
+            <p><strong>Regla fundamental:</strong> <span style='color: red; font-weight: bold;'>Solo se pueden sumar términos semejantes</span></p>
+            
+            <p><strong>Procedimiento para sumar expresiones algebraicas:</strong></p>
+            <ol>
+              <li><span style='color: red; font-weight: bold;'>Identificar</span> los términos semejantes</li>
+              <li><span style='color: red; font-weight: bold;'>Agrupar</span> los términos semejantes</li>
+              <li><span style='color: red; font-weight: bold;'>Sumar</span> los coeficientes numéricos</li>
+              <li><span style='color: red; font-weight: bold;'>Conservar</span> la parte literal</li>
+              <li><span style='color: red; font-weight: bold;'>Escribir</span> el resultado ordenado</li>
+            </ol>
+            
+            <p><strong>Ejemplo 1: Suma de monomios</strong></p>
+            <p>Sumar: 3x² + 5x² - 2x² + 7x²</p>
+            <ol>
+              <li>Todos son términos semejantes (misma variable x²)</li>
+              <li>Sumar coeficientes: 3 + 5 - 2 + 7 = 13</li>
+              <li>Conservar parte literal: x²</li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>13x²</span></li>
+            </ol>
+            
+            <p><strong>Ejemplo 2: Suma de polinomios</strong></p>
+            <p>Sumar: (3x² + 2x - 5) + (4x² - 3x + 7)</p>
+            <ol>
+              <li>Eliminar paréntesis: 3x² + 2x - 5 + 4x² - 3x + 7</li>
+              <li>Agrupar términos semejantes: (3x² + 4x²) + (2x - 3x) + (-5 + 7)</li>
+              <li>Sumar coeficientes: 7x² + (-x) + 2</li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>7x² - x + 2</span></li>
+            </ol>
+          
+            <h4>Suma de expresiones con diferentes variables</h4>
+            
+            <p><strong>Ejemplo 3: Suma con múltiples variables</strong></p>
+            <p>Sumar: 2x²y + 3xy² + 5x²y - 2xy² + 4x²y</p>
+            <ol>
+              <li>Identificar términos semejantes:
+                <ul>
+                  <li>Términos con x²y: 2x²y, 5x²y, 4x²y</li>
+                  <li>Términos con xy²: 3xy², -2xy²</li>
+                </ul>
+              </li>
+              <li>Sumar coeficientes de cada grupo:
+                <ul>
+                  <li>x²y: 2 + 5 + 4 = 11</li>
+                  <li>xy²: 3 - 2 = 1</li>
+                </ul>
+              </li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>11x²y + xy²</span></li>
+            </ol>
+            
+            <p><strong>Ejemplo 4: Suma con coeficientes fraccionarios</strong></p>
+            <p>Sumar: ½a + ⅓b + ¼a + ⅔b</p>
+            <ol>
+              <li>Agrupar términos semejantes: (½a + ¼a) + (⅓b + ⅔b)</li>
+              <li>Sumar coeficientes:
+                <ul>
+                  <li>a: ½ + ¼ = 2/4 + 1/4 = 3/4</li>
+                  <li>b: ⅓ + ⅔ = 3/3 = 1</li>
+                </ul>
+              </li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>¾a + b</span></li>
+            </ol>
+          
+            <h4>Suma de expresiones con paréntesis</h4>
+            
+            <p><strong>Ejemplo 5: Suma con paréntesis</strong></p>
+            <p>Sumar: (3x - 2y + 4) + (2x + 5y - 3) + (x - 3y + 2)</p>
+            <ol>
+              <li>Eliminar paréntesis: 3x - 2y + 4 + 2x + 5y - 3 + x - 3y + 2</li>
+              <li>Agrupar términos semejantes: (3x + 2x + x) + (-2y + 5y - 3y) + (4 - 3 + 2)</li>
+              <li>Sumar coeficientes: 6x + 0y + 3</li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>6x + 3</span></li>
+            </ol>
+            
+            <p><strong>Ejemplo 6: Suma con signos negativos</strong></p>
+            <p>Sumar: (-2a² + 3ab - b²) + (5a² - 2ab + 4b²) + (-3a² + ab - 2b²)</p>
+            <ol>
+              <li>Eliminar paréntesis: -2a² + 3ab - b² + 5a² - 2ab + 4b² - 3a² + ab - 2b²</li>
+              <li>Agrupar términos semejantes: (-2a² + 5a² - 3a²) + (3ab - 2ab + ab) + (-b² + 4b² - 2b²)</li>
+              <li>Sumar coeficientes: 0a² + 2ab + b²</li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>2ab + b²</span></li>
+            </ol>
+          
+            <h4>Aplicación de las leyes de la suma</h4>
+            
+            <p><strong>Ejemplo 7: Aplicación de ley conmutativa</strong></p>
+            <p>Demostrar que: 3x + 5y = 5y + 3x</p>
+            <ol>
+              <li>Por la ley conmutativa: a + b = b + a</li>
+              <li>Sea a = 3x, b = 5y</li>
+              <li>Entonces: 3x + 5y = 5y + 3x</li>
+              <li><span style='color: red; font-weight: bold;'>Se cumple la igualdad</span></li>
+            </ol>
+            
+            <p><strong>Ejemplo 8: Aplicación de ley asociativa</strong></p>
+            <p>Demostrar que: (2x + 3y) + 4z = 2x + (3y + 4z)</p>
+            <ol>
+              <li>Por la ley asociativa: (a + b) + c = a + (b + c)</li>
+              <li>Sea a = 2x, b = 3y, c = 4z</li>
+              <li>Entonces: (2x + 3y) + 4z = 2x + (3y + 4z)</li>
+              <li><span style='color: red; font-weight: bold;'>Se cumple la igualdad</span></li>
+            </ol>
+          
+            <h4>Errores comunes en la suma algebraica</h4>
+            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+              <tr style='background-color: #f2f2f2;'>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Error</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Incorrecto</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Correcto</th>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Sumar términos no semejantes</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>2x + 3y = 5xy</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>2x + 3y (no se pueden sumar)</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Sumar exponentes</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>x² + x³ = x⁵</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>x² + x³ (no se pueden sumar)</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Olvidar signos negativos</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>-3x + 2x = 5x</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>-3x + 2x = -x</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>No agrupar correctamente</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>2x + 3y + 4x = 2x + 3y + 4x</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>6x + 3y</td>
+              </tr>
+            </table>
+          
+            <h4>Ejercicio de aplicación integral</h4>
+            <p>Sumar las siguientes expresiones y simplificar completamente:</p>
+            <p>(2x² - 3xy + 4y²) + (5x² + 2xy - 3y²) + (-3x² + xy - 2y²) + (x² - 4xy + y²)</p>
+            
+            <p><strong>Solución paso a paso:</strong></p>
+            <ol>
+              <li><span style='color: red; font-weight: bold;'>Eliminar paréntesis:</span>
+                <ul>
+                  <li>2x² - 3xy + 4y² + 5x² + 2xy - 3y² - 3x² + xy - 2y² + x² - 4xy + y²</li>
+                </ul>
+              </li>
+              <li><span style='color: red; font-weight: bold;'>Agrupar términos semejantes:</span>
+                <ul>
+                  <li>Términos con x²: 2x² + 5x² - 3x² + x²</li>
+                  <li>Términos con xy: -3xy + 2xy + xy - 4xy</li>
+                  <li>Términos con y²: 4y² - 3y² - 2y² + y²</li>
+                </ul>
+              </li>
+              <li><span style='color: red; font-weight: bold;'>Sumar coeficientes:</span>
+                <ul>
+                  <li>x²: 2 + 5 - 3 + 1 = 5</li>
+                  <li>xy: -3 + 2 + 1 - 4 = -4</li>
+                  <li>y²: 4 - 3 - 2 + 1 = 0</li>
+                </ul>
+              </li>
+              <li><span style='color: red; font-weight: bold;'>Resultado final:</span> <span style='color: red; font-weight: bold;'>5x² - 4xy</span></li>
+            </ol>
+          
+            <h4>Aplicaciones prácticas de la suma algebraica</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>Cálculo de perímetros:</span> Suma de lados de figuras geométricas</li>
+              <li><span style='color: red; font-weight: bold;'>Álgebra de polinomios:</span> Operaciones con expresiones algebraicas</li>
+              <li><span style='color: red; font-weight: bold;'>Sistemas de ecuaciones:</span> Método de reducción o eliminación</li>
+              <li><span style='color: red; font-weight: bold;'>Física:</span> Suma de vectores y fuerzas</li>
+              <li><span style='color: red; font-weight: bold;'>Economía:</span> Cálculo de costos totales y presupuestos</li>
+            </ul>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+              <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+              <li>Ángel, A. R. (2008). <em>Álgebra elemental</em>. Pearson Educación.</li>
+              <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
+            </ul>
+          `)">1.2.1. Suma y sus leyes <span class="emoji-small">✅</span>
+          </li>
+  
               <li>1.2.2. Multiplicación de términos algebraicos <!--span class="emoji-small">✅</span--></li>
               <li>1.2.3. Multiplicación y sus leyes <!--span class="emoji-small">✅</span--></li>
               <li>1.2.4. División y sus leyes <!--span class="emoji-small">✅</span--></li>
