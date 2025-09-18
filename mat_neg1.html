@@ -1642,8 +1642,339 @@
           </li>
   
               <li>1.2.2. Multiplicación de términos algebraicos <!--span class="emoji-small">✅</span--></li>
-              <li>1.2.3. Multiplicación y sus leyes <!--span class="emoji-small">✅</span--></li>
-              <li>1.2.4. División y sus leyes <!--span class="emoji-small">✅</span--></li>
+
+
+
+
+
+
+
+  
+          <ul class="tema-list">
+          <li onclick="abrirModal('1.2.2. Multiplicación de términos algebraicos', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y aplicar las reglas, propiedades y procedimientos para multiplicar términos algebraicos, incluyendo monomios, polinomios y expresiones con diferentes variables.</p>
+            
+              <h4>Definición y concepto fundamental</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Multiplicación algebraica:</span> Operación que consiste en <span style='color: red; font-weight: bold;'>combinar factores</span> para obtener un <span style='color: red; font-weight: bold;'>producto</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Términos:</span> Los elementos que se multiplican se llaman <span style='color: red; font-weight: bold;'>factores</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Resultado:</span> El valor obtenido se denomina <span style='color: red; font-weight: bold;'>producto</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Símbolo:</span> Se representa con <span style='color: red; font-weight: bold;'>×, ∙, o por yuxtaposición</span> (sin símbolo).</li>
+              </ul>
+            
+              <h4>Leyes fundamentales de la multiplicación</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ley</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Enunciado</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Expresión algebraica</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Conmutativa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El orden de los factores no altera el producto</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × b = b × a</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x ∙ 2y = 2y ∙ 3x = 6xy</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Asociativa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>La forma de agrupar los factores no altera el producto</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(a × b) × c = a × (b × c)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(2x ∙ 3y) ∙ 4z = 2x ∙ (3y ∙ 4z) = 24xyz</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Modulativa o Identidad</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El producto de cualquier número por 1 es el mismo número</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × 1 = a</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5x ∙ 1 = 5x</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Anulativa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El producto de cualquier número por 0 es 0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × 0 = 0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>7x ∙ 0 = 0</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Distributiva</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Respecto a la suma: a(b + c) = ab + ac</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a(b + c) = ab + ac</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x(2y + 4z) = 6xy + 12xz</td>
+                </tr>
+              </table>
+            
+              <h4>Reglas de signos en la multiplicación</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo del factor 1</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo del factor 2</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo del producto</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(+3x)(+2y) = +6xy</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(+4a)(-3b) = -12ab</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-5x)(+2y) = -10xy</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-3a)(-4b) = +12ab</td>
+                </tr>
+              </table>
+            
+              <h4>Reglas de exponentes en la multiplicación</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Multiplicación de potencias con misma base:</span> aᵐ × aⁿ = aᵐ⁺ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Potencia de potencia:</span> (aᵐ)ⁿ = aᵐⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Potencia de producto:</span> (ab)ⁿ = aⁿbⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Exponente cero:</span> a⁰ = 1 (para a ≠ 0)</li>
+                <li><span style='color: red; font-weight: bold;'>Exponente uno:</span> a¹ = a</li>
+              </ul>
+            
+              <h4>Multiplicación de monomios</h4>
+              <p><strong>Procedimiento paso a paso:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Multiplicar</span> los coeficientes numéricos (aplicando regla de signos)</li>
+                <li><span style='color: red; font-weight: bold;'>Multiplicar</span> las variables aplicando leyes de exponentes</li>
+                <li><span style='color: red; font-weight: bold;'>Ordenar</span> el resultado alfabéticamente</li>
+              </ol>
+              
+              <p><strong>Ejemplo 1: Multiplicación de monomios simples</strong></p>
+              <p>Multiplicar: (3x²) × (4x³)</p>
+              <ol>
+                <li>Multiplicar coeficientes: 3 × 4 = <span style='color: red; font-weight: bold;'>12</span></li>
+                <li>Multiplicar variables: x² × x³ = x²⁺³ = <span style='color: red; font-weight: bold;'>x⁵</span></li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>12x⁵</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Multiplicación con diferentes variables</strong></p>
+              <p>Multiplicar: (-2a²b) × (3ab³) × (-5c)</p>
+              <ol>
+                <li>Multiplicar coeficientes: (-2) × 3 × (-5) = <span style='color: red; font-weight: bold;'>30</span></li>
+                <li>Multiplicar variables: a² × a = a²⁺¹ = a³</li>
+                <li>Multiplicar variables: b × b³ = b¹⁺³ = b⁴</li>
+                <li>Incluir variable c: c</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>30a³b⁴c</span></li>
+              </ol>
+            
+              <h4>Multiplicación de monomio por polinomio</h4>
+              <p><strong>Procedimiento (propiedad distributiva):</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Multiplicar</span> el monomio por cada término del polinomio</li>
+                <li><span style='color: red; font-weight: bold;'>Aplicar</span> las reglas de multiplicación de monomios</li>
+                <li><span style='color: red; font-weight: bold;'>Simplificar</span> si es posible</li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Monomio × Binomio</strong></p>
+              <p>Multiplicar: 3x(2x² - 5y)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva: 3x(2x²) + 3x(-5y)</li>
+                <li>Multiplicar cada término: 6x³ - 15xy</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>6x³ - 15xy</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 4: Monomio × Trinomio</strong></p>
+              <p>Multiplicar: -2a²b(3ab² - 4a²b + 5b³)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva: -2a²b(3ab²) + (-2a²b)(-4a²b) + (-2a²b)(5b³)</li>
+                <li>Multiplicar cada término: -6a³b³ + 8a⁴b² - 10a²b⁴</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>-6a³b³ + 8a⁴b² - 10a²b⁴</span></li>
+              </ol>
+            
+              <h4>Multiplicación de polinomios</h4>
+              <p><strong>Procedimiento general:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Multiplicar</span> cada término del primer polinomio por cada término del segundo</li>
+                <li><span style='color: red; font-weight: bold;'>Sumar</span> los términos semejantes resultantes</li>
+                <li><span style='color: red; font-weight: bold;'>Ordenar</span> el polinomio resultante</li>
+              </ol>
+              
+              <p><strong>Ejemplo 5: Binomio × Binomio</strong></p>
+              <p>Multiplicar: (2x + 3)(4x - 5)</p>
+              <ol>
+                <li>Multiplicar cada término:
+                  <ul>
+                    <li>2x × 4x = 8x²</li>
+                    <li>2x × (-5) = -10x</li>
+                    <li>3 × 4x = 12x</li>
+                    <li>3 × (-5) = -15</li>
+                  </ul>
+                </li>
+                <li>Sumar términos: 8x² + (-10x + 12x) - 15</li>
+                <li>Simplificar: 8x² + 2x - 15</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>8x² + 2x - 15</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 6: Binomio × Trinomio</strong></p>
+              <p>Multiplicar: (x - 2)(x² + 3x - 4)</p>
+              <ol>
+                <li>Multiplicar cada término:
+                  <ul>
+                    <li>x × x² = x³</li>
+                    <li>x × 3x = 3x²</li>
+                    <li>x × (-4) = -4x</li>
+                    <li>(-2) × x² = -2x²</li>
+                    <li>(-2) × 3x = -6x</li>
+                    <li>(-2) × (-4) = 8</li>
+                  </ul>
+                </li>
+                <li>Sumar términos: x³ + (3x² - 2x²) + (-4x - 6x) + 8</li>
+                <li>Simplificar: x³ + x² - 10x + 8</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>x³ + x² - 10x + 8</span></li>
+              </ol>
+            
+              <h4>Productos notables</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Producto notable</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Binomio al cuadrado</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(a ± b)² = a² ± 2ab + b²</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(3x + 2)² = 9x² + 12x + 4</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Binomios conjugados</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(a + b)(a - b) = a² - b²</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(2x + 3)(2x - 3) = 4x² - 9</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Binomio al cubo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(a ± b)³ = a³ ± 3a²b + 3ab² ± b³</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(x + 2)³ = x³ + 6x² + 12x + 8</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Trinomio al cuadrado</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(a + b + c)² = a² + b² + c² + 2ab + 2ac + 2bc</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(x+y+1)² = x²+y²+1+2xy+2x+2y</td>
+                </tr>
+              </table>
+            
+              <h4>Multiplicación con coeficientes fraccionarios</h4>
+              
+              <p><strong>Ejemplo 7: Multiplicación con fracciones</strong></p>
+              <p>Multiplicar: (½a²b) × (⅔ab³) × (¾c)</p>
+              <ol>
+                <li>Multiplicar coeficientes: ½ × ⅔ × ¾ = (1×2×3)/(2×3×4) = 6/24 = <span style='color: red; font-weight: bold;'>¼</span></li>
+                <li>Multiplicar variables: a² × a = a³, b × b³ = b⁴, c = c</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>¼a³b⁴c</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 8: Multiplicación mixta</strong></p>
+              <p>Multiplicar: (¾x² - ½y)(⅔x + ⅜y)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva:
+                  <ul>
+                    <li>(¾x²)(⅔x) = (¾×⅔)x³ = (6/12)x³ = ½x³</li>
+                    <li>(¾x²)(⅜y) = (¾×⅜)x²y = (9/32)x²y</li>
+                    <li>(-½y)(⅔x) = (-½×⅔)xy = (-2/6)xy = -⅓xy</li>
+                    <li>(-½y)(⅜y) = (-½×⅜)y² = (-3/16)y²</li>
+                  </ul>
+                </li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>½x³ + (9/32)x²y - ⅓xy - (3/16)y²</span></li>
+              </ol>
+            
+              <h4>Errores comunes en la multiplicación algebraica</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Error</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Incorrecto</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Correcto</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Sumar exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × x³ = x⁶</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × x³ = x⁵</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicar bases diferentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × y³ = (xy)⁵</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × y³ = x²y³</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Regla de signos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-2x)(-3y) = -6xy</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-2x)(-3y) = 6xy</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Propiedad distributiva</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a(b + c) = ab + c</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a(b + c) = ab + ac</td>
+                </tr>
+              </table>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Multiplicar y simplificar completamente:</p>
+              <p>(2x² - 3xy + y²)(x² + 2xy - 3y²) - (x³ - 2x²y)(x - y)</p>
+              
+              <p><strong>Solución paso a paso:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Primer producto:</span> (2x² - 3xy + y²)(x² + 2xy - 3y²)
+                  <ul>
+                    <li>Multiplicar cada término:
+                      <ul>
+                        <li>2x²(x² + 2xy - 3y²) = 2x⁴ + 4x³y - 6x²y²</li>
+                        <li>-3xy(x² + 2xy - 3y²) = -3x³y - 6x²y² + 9xy³</li>
+                        <li>y²(x² + 2xy - 3y²) = x²y² + 2xy³ - 3y⁴</li>
+                      </ul>
+                    </li>
+                    <li>Sumar términos: 2x⁴ + (4x³y - 3x³y) + (-6x²y² - 6x²y² + x²y²) + (9xy³ + 2xy³) - 3y⁴</li>
+                    <li>Simplificar: 2x⁴ + x³y - 11x²y² + 11xy³ - 3y⁴</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Segundo producto:</span> (x³ - 2x²y)(x - y)
+                  <ul>
+                    <li>Multiplicar: x³(x - y) - 2x²y(x - y) = x⁴ - x³y - 2x³y + 2x²y²</li>
+                    <li>Simplificar: x⁴ - 3x³y + 2x²y²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Restar ambos resultados:</span>
+                  <ul>
+                    <li>(2x⁴ + x³y - 11x²y² + 11xy³ - 3y⁴) - (x⁴ - 3x³y + 2x²y²)</li>
+                    <li>Cambiar signos: 2x⁴ + x³y - 11x²y² + 11xy³ - 3y⁴ - x⁴ + 3x³y - 2x²y²</li>
+                    <li>Reducir términos: x⁴ + 4x³y - 13x²y² + 11xy³ - 3y⁴</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Resultado final:</span> <span style='color: red; font-weight: bold;'>x⁴ + 4x³y - 13x²y² + 11xy³ - 3y⁴</span></li>
+              </ol>
+            
+              <h4>Aplicaciones prácticas</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Cálculo de áreas:</span> Multiplicación de dimensiones para obtener áreas</li>
+                <li><span style='color: red; font-weight: bold;'>Volúmenes:</span> Cálculo de volúmenes de prismas y cubos</li>
+                <li><span style='color: red; font-weight: bold;'>Física:</span> Cálculo de trabajo, energía y potencia</li>
+                <li><span style='color: red; font-weight: bold;'>Economía:</span> Cálculo de ingresos, costos y utilidades</li>
+                <li><span style='color: red; font-weight: bold;'>Ingeniería:</span> Diseño estructural y cálculos de carga</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+                <li>Ángel, A. R. (2008). <em>Álgebra elemental</em>. Pearson Educación.</li>
+                <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
+              </ul>
+            `)">1.2.2. Multiplicación de términos algebraicos <span class="emoji-small">✅</span>
+          </li>
+            
+            <li>1.2.4. División y sus leyes <!--span class="emoji-small">✅</span--></li>
               <li>1.2.5. Potenciación y sus leyes <!--span class="emoji-small">✅</span--></li>
             </ul>
         </ul>
