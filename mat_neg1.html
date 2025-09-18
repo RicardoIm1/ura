@@ -654,289 +654,199 @@
           `)">1.1.1. El término algebraico y sus partes <span class="emoji-small">✅</span>
           </li>
           
-          <li  onclick="abrirModal('1.1.1. El término algebraico y sus partes', `
+                  <ul class="tema-list"> 
+          <li onclick="abrirModal('1.1.2. Términos semejantes', `
               <hr><br>
-              <p><strong>Objetivo:</strong> Identificar y comprender los elementos que componen un término algebraico, incluyendo signo, coeficiente, variable y exponente, así como su clasificación y propiedades.</p>
+              <p><strong>Objetivo:</strong> Identificar, comprender y operar con términos semejantes en expresiones algebraicas, aplicando correctamente la reducción y simplificación.</p>
             
-              <h4>Definición y concepto básico</h4>
+              <h4>Definición y concepto fundamental</h4>
               <ul>
-                <li><span style='color: red; font-weight: bold;'>Término algebraico:</span> Expresión algebraica que consta de un solo elemento, formado por números y letras relacionados únicamente por la multiplicación.</li>
-                <li><span style='color: red; font-weight: bold;'>Característica fundamental:</span> No contiene operaciones de suma, resta o división entre variables.</li>
-                <li><span style='color: red; font-weight: bold;'>Ejemplos:</span> 5x, -3y², 7a³b, -½xy²z, 8</li>
-                <li><span style='color: red; font-weight: bold;'>No son términos algebraicos:</span> x + y, 2x - 3, a/b, √x (estas son expresiones compuestas)</li>
+                <li><span style='color: red; font-weight: bold;'>Términos semejantes:</span> Aquellos términos algebraicos que tienen las <span style='color: red; font-weight: bold;'>mismas variables</span> con los <span style='color: red; font-weight: bold;'>mismos exponentes</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Característica principal:</span> Solo difieren en sus <span style='color: red; font-weight: bold;'>coeficientes</span> y <span style='color: red; font-weight: bold;'>signos</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Importancia:</span> Permiten simplificar expresiones algebraicas mediante la reducción.</li>
+                <li><span style='color: red; font-weight: bold;'>Regla básica:</span> Solo se pueden sumar o restar términos semejantes.</li>
               </ul>
             
-              <h4>Partes de un término algebraico</h4>
+              <h4>Condiciones para que dos términos sean semejantes</h4>
               <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
                 <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Parte</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo en  -5x³</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Características</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Condición</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>¿Se debe cumplir?</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>Signo</span></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Indica si el término es positivo o negativo</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>- (negativo)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Puede ser + (explícito o implícito) o -</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mismas variables</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>SÍ</span></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x²y y -5x²y → mismas variables: x²y</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>Coeficiente</span></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Factor numérico que multiplica a la variable</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Puede ser entero, fraccionario o decimal</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mismos exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>SÍ</span></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4a³ y 7a³ → mismo exponente: 3</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>Variable</span></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Símbolo literal que representa una cantidad desconocida</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Generalmente letras del alfabeto (x, y, z, a, b, c...)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mismo coeficiente</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>NO</span></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2ab y 5ab → son semejantes aunque coeficientes diferentes</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>Exponente</span></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Número que indica la potencia a la que se eleva la variable</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si no se escribe, se sobreentiende que es 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mismo signo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>NO</span></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-3m² y +8m² → son semejantes aunque signos diferentes</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mismo orden de variables</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><span style='color: red; font-weight: bold;'>NO</span></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5xy y 5yx → son semejantes (xy = yx por propiedad conmutativa)</td>
                 </tr>
               </table>
             
-              <h4>Ejemplos detallados de descomposición</h4>
+              <h4>Ejemplos de identificación de términos semejantes</h4>
               
-              <p><strong>Ejemplo 1: Término simple 7y⁴</strong></p>
+              <p><strong>Ejemplo 1: Términos semejantes</strong></p>
+              <ul>
+                <li>3x y -5x → <span style='color: red; font-weight: bold;'>SÍ son semejantes</span> (misma variable x con exponente 1)</li>
+                <li>2a²b y 7a²b → <span style='color: red; font-weight: bold;'>SÍ son semejantes</span> (mismas variables a²b con mismos exponentes)</li>
+                <li>-4y³ y ½y³ → <span style='color: red; font-weight: bold;'>SÍ son semejantes</span> (misma variable y³)</li>
+                <li>8mn y -3mn → <span style='color: red; font-weight: bold;'>SÍ son semejantes</span> (mismas variables mn)</li>
+              </ul>
+              
+              <p><strong>Ejemplo 2: Términos NO semejantes</strong></p>
+              <ul>
+                <li>5x y 3y → <span style='color: red; font-weight: bold;'>NO son semejantes</span> (variables diferentes: x ≠ y)</li>
+                <li>2a² y 4a³ → <span style='color: red; font-weight: bold;'>NO son semejantes</span> (exponentes diferentes: 2 ≠ 3)</li>
+                <li>7xy y 3x²y → <span style='color: red; font-weight: bold;'>NO son semejantes</span> (exponentes de x diferentes: 1 ≠ 2)</li>
+                <li>4ab y 4abc → <span style='color: red; font-weight: bold;'>NO son semejantes</span> (variables diferentes: ab ≠ abc)</li>
+              </ul>
+            
+              <h4>Reducción de términos semejantes</h4>
+              <p><strong>Procedimiento paso a paso:</strong></p>
               <ol>
-                <li><span style='color: red; font-weight: bold;'>Signo:</span> + (implícito, no se escribe)</li>
-                <li><span style='color: red; font-weight: bold;'>Coeficiente:</span> 7</li>
-                <li><span style='color: red; font-weight: bold;'>Variable:</span> y</li>
-                <li><span style='color: red; font-weight: bold;'>Exponente:</span> 4</li>
-                <li><span style='color: red; font-weight: bold;'>Lectura:</span> 'Siete y elevado a la cuarta'</li>
+                <li><span style='color: red; font-weight: bold;'>Identificar</span> todos los términos semejantes en la expresión</li>
+                <li><span style='color: red; font-weight: bold;'>Agrupar</span> los términos semejantes</li>
+                <li><span style='color: red; font-weight: bold;'>Sumar o restar</span> los coeficientes según sus signos</li>
+                <li><span style='color: red; font-weight: bold;'>Mantener</span> la parte literal sin cambios</li>
+                <li><span style='color: red; font-weight: bold;'>Escribir</span> el resultado simplificado</li>
               </ol>
               
-              <p><strong>Ejemplo 2: Término con coeficiente fraccionario -½a²b</strong></p>
+              <p><strong>Ejemplo 3: Reducción simple</strong></p>
+              <p>Simplificar: 3x + 5x - 2x</p>
               <ol>
-                <li><span style='color: red; font-weight: bold;'>Signo:</span> - (negativo)</li>
-                <li><span style='color: red; font-weight: bold;'>Coeficiente:</span> ½ (un medio)</li>
-                <li><span style='color: red; font-weight: bold;'>Variables:</span> a y b</li>
-                <li><span style='color: red; font-weight: bold;'>Exponentes:</span> a² (exponente 2) y b (exponente 1 implícito)</li>
-                <li><span style='color: red; font-weight: bold;'>Lectura:</span> 'Menos un medio a cuadrada b'</li>
+                <li>Todos los términos son semejantes (misma variable x)</li>
+                <li>Coeficientes: 3, 5, -2</li>
+                <li>Suma algebraica: 3 + 5 - 2 = <span style='color: red; font-weight: bold;'>6</span></li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>6x</span></li>
               </ol>
               
-              <p><strong>Ejemplo 3: Término con múltiples variables 3x²y³z</strong></p>
+              <p><strong>Ejemplo 4: Reducción con diferentes términos</strong></p>
+              <p>Simplificar: 2a + 3b - 5a + 4b - 7</p>
               <ol>
-                <li><span style='color: red; font-weight: bold;'>Signo:</span> + (implícito)</li>
-                <li><span style='color: red; font-weight: bold;'>Coeficiente:</span> 3</li>
-                <li><span style='color: red; font-weight: bold;'>Variables:</span> x, y, z</li>
-                <li><span style='color: red; font-weight: bold;'>Exponentes:</span> x² (exponente 2), y³ (exponente 3), z (exponente 1 implícito)</li>
-                <li><span style='color: red; font-weight: bold;'>Lectura:</span> 'Tres x cuadrada y cubica z'</li>
+                <li>Términos con a: 2a, -5a → semejantes</li>
+                <li>Términos con b: 3b, 4b → semejantes</li>
+                <li>Término constante: -7</li>
+                <li>Reducción: (2a - 5a) + (3b + 4b) - 7</li>
+                <li>Cálculo: -3a + 7b - 7</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>-3a + 7b - 7</span></li>
+              </ol>
+            
+              <h4>Ejemplos detallados de reducción</h4>
+              
+              <p><strong>Ejemplo 5: Expresión con múltiples variables</strong></p>
+              <p>Simplificar: 3x²y - 2xy² + 5x²y + 4xy² - 7x²y</p>
+              <ol>
+                <li>Términos con x²y: 3x²y, 5x²y, -7x²y → semejantes</li>
+                <li>Términos con xy²: -2xy², 4xy² → semejantes</li>
+                <li>Reducción: (3x²y + 5x²y - 7x²y) + (-2xy² + 4xy²)</li>
+                <li>Cálculo: (3+5-7)x²y + (-2+4)xy²</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>1x²y + 2xy²</span> o <span style='color: red; font-weight: bold;'>x²y + 2xy²</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 6: Expresión con coeficientes fraccionarios</strong></p>
+              <p>Simplificar: ½a + ⅓b - ¼a + ⅔b</p>
+              <ol>
+                <li>Términos con a: ½a, -¼a → semejantes</li>
+                <li>Términos con b: ⅓b, ⅔b → semejantes</li>
+                <li>Reducción: (½a - ¼a) + (⅓b + ⅔b)</li>
+                <li>MCM para a: ½ - ¼ = 2/4 - 1/4 = <span style='color: red; font-weight: bold;'>¼</span></li>
+                <li>Suma para b: ⅓ + ⅔ = <span style='color: red; font-weight: bold;'>3/3 = 1</span></li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>¼a + b</span></li>
               </ol>
             
               <h4>Casos especiales y consideraciones</h4>
               <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
                 <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Caso</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Caso especial</th>
                   <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Partes identificadas</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente 1 implícito</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x³</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>No se escribe el coeficiente 1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Signo: +, Coeficiente: 1, Variable: x, Exponente: 3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Términos con distinto orden</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>abc = bac = cab (propiedad conmutativa)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3xy y 5yx → SON semejantes</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente -1 implícito</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-y²</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Solo aparece el signo negativo</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Signo: -, Coeficiente: 1, Variable: y, Exponente: 2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficientes decimales</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Se reducen como cualquier número</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.5x + 1.2x = 1.7x</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Exponente 1 implícito</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5a</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>No se escribe el exponente 1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Signo: +, Coeficiente: 5, Variable: a, Exponente: 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Términos opuestos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Se cancelan entre sí</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>7a + (-7a) = 0</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Término constante</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-8</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Solo tiene parte numérica</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Signo: -, Coeficiente: 8, Variable: ninguna, Exponente: 0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variables con exponentes 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El exponente 1 no se escribe pero debe considerarse</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x y x¹ → SON semejantes</td>
                 </tr>
                 <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente fraccionario</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>(2/3)x⁴</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El coeficiente es una fracción</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Signo: +, Coeficiente: 2/3, Variable: x, Exponente: 4</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente decimal</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.75y</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El coeficiente es un decimal</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Signo: +, Coeficiente: 0.75, Variable: y, Exponente: 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Términos con raíces</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Solo son semejantes si tienen el mismo radicando e índice</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2√x y 5√x → SON semejantes</td>
                 </tr>
               </table>
             
-              <h4>Grado de un término algebraico</h4>
+              <h4>Errores comunes en la reducción</h4>
               <ul>
-                <li><span style='color: red; font-weight: bold;'>Grado absoluto:</span> Suma de los exponentes de todas las variables</li>
-                <li><span style='color: red; font-weight: bold;'>Grado relativo:</span> Exponente de una variable específica</li>
-                <li><span style='color: red; font-weight: bold;'>Término constante:</span> Grado 0 (cero)</li>
+                <li><span style='color: red; font-weight: bold;'>Sumar términos no semejantes:</span> 2x + 3y ≠ 5xy</li>
+                <li><span style='color: red; font-weight: bold;'>Sumar exponentes:</span> x² + x³ ≠ x⁵ (deben tener mismo exponente)</li>
+                <li><span style='color: red; font-weight: bold;'>Olvidar signos negativos:</span> -3a + 2a = -a, no 5a</li>
+                <li><span style='color: red; font-weight: bold;'>Confundir multiplicación con suma:</span> x + x = 2x, no x²</li>
+                <li><span style='color: red; font-weight: bold;'>No simplificar completamente:</span> 2x + 3x - x = 4x, no 2x + 3x - x</li>
               </ul>
-              
-              <p><strong>Ejemplos de cálculo de grado:</strong></p>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Término</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Grado absoluto</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Grado relativo respecto a x</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Grado relativo respecto a y</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5x³</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>No aplica</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-2x²y⁴</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2 + 4 = 6</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>7xy²z³</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1 + 2 + 3 = 6</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>9</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                </tr>
-              </table>
-            
-              <h4>Clasificación de términos algebraicos</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Criterio</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tipo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplos</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Por número de variables</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Término simple</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Una sola variable</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3x, -y², 5z³</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Término compuesto</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Dos o más variables</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2xy, -3a²b, 4x³y²z</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Por tipo de coeficiente</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Entero</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente número entero</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>7x, -2y³, 15ab</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Fraccionario</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente fracción</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>½x, -¾y², (2/5)ab</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Por exponentes</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Lineal</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Grado 1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4x, -3y, 2ab</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cuadrático</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Grado 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5x², -2y², 3ab²</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cúbico</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Grado 3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x³, -2y³, 4a²b</td>
-                </tr>
-              </table>
             
               <h4>Ejercicio de aplicación integral</h4>
-              <p>Analizar los siguientes términos algebraicos identificando todas sus partes:</p>
-              <ol>
-                <li>-8x⁴y²</li>
-                <li>½a³b</li>
-                <li>z⁵</li>
-                <li>-0.75mn²</li>
-                <li>12</li>
-              </ol>
+              <p>Simplificar completamente la siguiente expresión:</p>
+              <p>3x² - 2y + 5xy - 4x² + 7y - 3xy + ½x² - ⅓y + 6</p>
               
-              <p><strong>Solución:</strong></p>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Término</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Coeficiente</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Variable(s)</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Exponente(s)</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Grado absoluto</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-8x⁴y²</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>8</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x, y</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4, 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4+2=6</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>½a³b</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>½</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a, b</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3, 1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3+1=4</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>z⁵</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>z</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-0.75mn²</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.75</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>m, n</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1, 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1+2=3</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ninguna</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                </tr>
-              </table>
+              <p><strong>Solución paso a paso:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Agrupar términos semejantes:</span>
+                  <ul>
+                    <li>Términos con x²: 3x², -4x², ½x²</li>
+                    <li>Términos con y: -2y, 7y, -⅓y</li>
+                    <li>Términos con xy: 5xy, -3xy</li>
+                    <li>Término constante: 6</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Reducir cada grupo:</span>
+                  <ul>
+                    <li>x²: 3 - 4 + ½ = -1 + ½ = -½</li>
+                    <li>y: -2 + 7 - ⅓ = 5 - ⅓ = ¹⁵⁄₃ - ⅓ = ¹⁴⁄₃</li>
+                    <li>xy: 5 - 3 = 2</li>
+                    <li>Constante: 6</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Resultado final:</span> <span style='color: red; font-weight: bold;'>-½x² + ¹⁴⁄₃y + 2xy + 6</span></li>
+              </ol>
             
-              <h4>Importancia y aplicaciones</h4>
+              <h4>Aplicaciones prácticas</h4>
               <ul>
-                <li><span style='color: red; font-weight: bold;'>Base del álgebra:</span> Los términos algebraicos son los bloques fundamentales para construir expresiones más complejas</li>
-                <li><span style='color: red; font-weight: bold;'>Simplificación:</span> Permiten reducir expresiones algebraicas complejas</li>
-                <li><span style='color: red; font-weight: bold;'>Operaciones algebraicas:</span> Son esenciales para sumar, restar, multiplicar y dividir expresiones</li>
-                <li><span style='color: red; font-weight: bold;'>Ecuaciones:</span> Los términos son los elementos que componen las ecuaciones</li>
-                <li><span style='color: red; font-weight: bold;'>Modelado matemático:</span> Permiten representar situaciones del mundo real en lenguaje algebraico</li>
+                <li><span style='color: red; font-weight: bold;'>Simplificación de ecuaciones:</span> Reducir términos para resolver ecuaciones más fácilmente</li>
+                <li><span style='color: red; font-weight: bold;'>Expresiones algebraicas:</span> Simplificar polinomios y expresiones complejas</li>
+                <li><span style='color: red; font-weight: bold;'>Problemas verbales:</span> Traducir situaciones del mundo real a expresiones simplificadas</li>
+                <li><span style='color: red; font-weight: bold;'>Cálculo algebraico:</span> Preparar expresiones para operaciones más complejas</li>
+                <li><span style='color: red; font-weight: bold;'>Geometría analítica:</span> Simplificar ecuaciones de rectas y curvas</li>
               </ul>
             
               <h4>Fuentes Bibliográficas</h4>
@@ -947,12 +857,10 @@
                 <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
               </ul>
             `)">1.1.2. Términos semejantes <span class="emoji-small">✅</span>
-            </li>
           </li>
 
-
-            
-<li onclick="abrirModal('1.1.3. Reducción de términos semejantes', `
+            <ul class="tema-list">
+            <li onclick="abrirModal('1.1.3. Reducción de términos semejantes', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el proceso de reducción de términos semejantes mediante la identificación, agrupación y simplificación de expresiones algebraicas.</p>
             
@@ -1193,13 +1101,13 @@
         </ul><br>
           
           
-          <li><b>1.2. Operaciones Algebraicas</b></li>
+          <li><b>1.2. Operaciones Algebraicas</b> <!--span class="emoji-small">✅</span--></li>
             <ul>
-              <li>1.2.1. Suma y sus leyes</li>
-              <li>1.2.2. Multiplicación de términos algebraicos</li>
-              <li>1.2.3. Multiplicación y sus leyes</li>
-              <li>1.2.4. División y sus leyes</li>
-              <li>1.2.5. Potenciación y sus leyes</li>
+              <li>1.2.1. Suma y sus leyes <!--span class="emoji-small">✅</span--></li>
+              <li>1.2.2. Multiplicación de términos algebraicos <!--span class="emoji-small">✅</span--></li>
+              <li>1.2.3. Multiplicación y sus leyes <!--span class="emoji-small">✅</span--></li>
+              <li>1.2.4. División y sus leyes <!--span class="emoji-small">✅</span--></li>
+              <li>1.2.5. Potenciación y sus leyes <!--span class="emoji-small">✅</span--></li>
             </ul>
         </ul>
       </div>
@@ -1208,14 +1116,14 @@
         <div class="tema-num">TEMA 2</div>
         <h3 class="tema-title">Ecuaciones lineales</h3>
         <ul class="tema-list">
-          <li><b>2.1. Ecuaciones con una incógnita de primer grado</b></li>
+          <li><b>2.1. Ecuaciones con una incógnita de primer grado</b> <!--span class="emoji-small">✅</span--></li>
             <ul>
-              <li>2.1.1. Solución de ecuaciones con una incógnita de primer grado</li>
+              <li>2.1.1. Solución de ecuaciones con una incógnita de primer grado <!--span class="emoji-small">✅</span--></li>
             </ul><br>
-          <li><b>2.2. Ecuaciones con dos incógnitas de primer grado</b></li>
+          <li><b>2.2. Ecuaciones con dos incógnitas de primer grado</b> <!--span class="emoji-small">✅</span--></li>
             <ul>
-              <li>2.2.1. Gráfica de ecuaciones con dos incógnitas de segundo grado</li>
-              <li>2.2.2. Solucion de sistemas de dos ecuaciones con dos incógnitas de primer grado</li>
+              <li>2.2.1. Gráfica de ecuaciones con dos incógnitas de segundo grado <!--span class="emoji-small">✅</span--></li>
+              <li>2.2.2. Solucion de sistemas de dos ecuaciones con dos incógnitas de primer grado <!--span class="emoji-small">✅</span--></li>
             </ul>
         </ul>
       </div>
