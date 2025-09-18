@@ -952,8 +952,247 @@
 
 
             
-              <li>1.1.3. Reducción de términos semejantes</li>
-            </ul><br>
+<li onclick="abrirModal('1.1.3. Reducción de términos semejantes', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar el proceso de reducción de términos semejantes mediante la identificación, agrupación y simplificación de expresiones algebraicas.</p>
+            
+              <h4>Definición y concepto fundamental</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Reducción de términos semejantes:</span> Procedimiento algebraico que consiste en <span style='color: red; font-weight: bold;'>simplificar una expresión</span> sumando o restando coeficientes de términos que comparten las mismas variables con los mismos exponentes.</li>
+                <li><span style='color: red; font-weight: bold;'>Propiedad fundamental:</span> Solo se pueden sumar o restar los <span style='color: red; font-weight: bold;'>coeficientes</span> de términos semejantes, manteniendo intacta la <span style='color: red; font-weight: bold;'>parte literal</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Resultado:</span> Una expresión algebraica equivalente pero más simple y compacta.</li>
+              </ul>
+            
+              <h4>Reglas básicas para la reducción</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Regla</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Identificación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Reconocer términos con mismas variables y exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x²y y -5x²y son semejantes</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Agrupación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Reunir términos semejantes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(3x + 2x) + (4y - y)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Operación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Sumar/restar solo coeficientes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x + 2x = 5x</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Conservación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mantener parte literal sin cambios</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5x²y (no 5x³y²)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Signos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Considerar cuidadosamente los signos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-3a + 5a = 2a</td>
+                </tr>
+              </table>
+            
+              <h4>Algoritmo de reducción paso a paso</h4>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Identificar</span> todos los términos semejantes en la expresión</li>
+                <li><span style='color: red; font-weight: bold;'>Agrupar</span> los términos semejantes usando paréntesis o reorganizando</li>
+                <li><span style='color: red; font-weight: bold;'>Sumar/restrar</span> los coeficientes numéricos considerando sus signos</li>
+                <li><span style='color: red; font-weight: bold;'>Mantener</span> la parte literal exactamente igual</li>
+                <li><span style='color: red; font-weight: bold;'>Escribir</span> el resultado ordenado generalmente de mayor a menor grado</li>
+                <li><span style='color: red; font-weight: bold;'>Verificar</span> que no queden términos semejantes por reducir</li>
+              </ol>
+            
+              <h4>Ejemplos básicos de reducción</h4>
+              
+              <p><strong>Ejemplo 1: Reducción simple</strong></p>
+              <p>Reducir: 3x + 5x - 2x + x</p>
+              <ol>
+                <li>Todos los términos son semejantes (variable x)</li>
+                <li>Coeficientes: 3, 5, -2, 1</li>
+                <li>Suma algebraica: 3 + 5 - 2 + 1 = <span style='color: red; font-weight: bold;'>7</span></li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>7x</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Reducción con diferentes variables</strong></p>
+              <p>Reducir: 2a + 3b - 5a + 4b - 7</p>
+              <ol>
+                <li>Términos con a: 2a, -5a</li>
+                <li>Términos con b: 3b, 4b</li>
+                <li>Término constante: -7</li>
+                <li>Reducción: (2a - 5a) + (3b + 4b) - 7</li>
+                <li>Cálculo: -3a + 7b - 7</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>-3a + 7b - 7</span></li>
+              </ol>
+            
+              <h4>Ejemplos intermedios con múltiples variables</h4>
+              
+              <p><strong>Ejemplo 3: Expresión con dos variables</strong></p>
+              <p>Reducir: 3x²y - 2xy² + 5x²y + 4xy² - 7x²y</p>
+              <ol>
+                <li>Términos con x²y: 3x²y, 5x²y, -7x²y</li>
+                <li>Términos con xy²: -2xy², 4xy²</li>
+                <li>Reducción: (3x²y + 5x²y - 7x²y) + (-2xy² + 4xy²)</li>
+                <li>Cálculo: (3+5-7)x²y + (-2+4)xy²</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>x²y + 2xy²</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 4: Expresión con coeficientes fraccionarios</strong></p>
+              <p>Reducir: ½a + ⅓b - ¼a + ⅔b + 2a</p>
+              <ol>
+                <li>Términos con a: ½a, -¼a, 2a</li>
+                <li>Términos con b: ⅓b, ⅔b</li>
+                <li>Convertir a común denominador:
+                  <ul>
+                    <li>a: ½ = 2/4, -¼ = -1/4, 2 = 8/4 → (2/4 - 1/4 + 8/4) = <span style='color: red; font-weight: bold;'>9/4</span></li>
+                    <li>b: ⅓ = 1/3, ⅔ = 2/3 → (1/3 + 2/3) = <span style='color: red; font-weight: bold;'>3/3 = 1</span></li>
+                  </ul>
+                </li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>9/4a + b</span></li>
+              </ol>
+            
+              <h4>Ejemplos avanzados con paréntesis</h4>
+              
+              <p><strong>Ejemplo 5: Expresión con paréntesis</strong></p>
+              <p>Reducir: (3x + 2y - 5) + (2x - 3y + 7) - (x - y + 2)</p>
+              <ol>
+                <li>Eliminar paréntesis:
+                  <ul>
+                    <li>Primer paréntesis: 3x + 2y - 5</li>
+                    <li>Segundo paréntesis: 2x - 3y + 7</li>
+                    <li>Tercer paréntesis: -x + y - 2 (cambiar signos por el negativo)</li>
+                  </ul>
+                </li>
+                <li>Expresión completa: 3x + 2y - 5 + 2x - 3y + 7 - x + y - 2</li>
+                <li>Agrupar términos semejantes:
+                  <ul>
+                    <li>x: 3x + 2x - x = 4x</li>
+                    <li>y: 2y - 3y + y = 0y = 0</li>
+                    <li>Constantes: -5 + 7 - 2 = 0</li>
+                  </ul>
+                </li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>4x</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 6: Expresión compleja</strong></p>
+              <p>Reducir: 2(3x - y) - 3(x + 2y) + 4(2x - 3)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva:
+                  <ul>
+                    <li>2(3x - y) = 6x - 2y</li>
+                    <li>-3(x + 2y) = -3x - 6y</li>
+                    <li>4(2x - 3) = 8x - 12</li>
+                  </ul>
+                </li>
+                <li>Expresión completa: 6x - 2y - 3x - 6y + 8x - 12</li>
+                <li>Agrupar términos semejantes:
+                  <ul>
+                    <li>x: 6x - 3x + 8x = 11x</li>
+                    <li>y: -2y - 6y = -8y</li>
+                    <li>Constantes: -12</li>
+                  </ul>
+                </li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>11x - 8y - 12</span></li>
+              </ol>
+            
+              <h4>Casos especiales en la reducción</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Caso especial</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Términos opuestos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Se anulan entre sí</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5x - 5x = 0</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Coeficiente 1 implícito</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>No olvidar el coeficiente 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x + 2x = 3x (no x3x)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variables en diferente orden</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>abc = bac (conmutatividad)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3ab + 2ba = 5ab</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresiones con decimales</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Operar como con cualquier número</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.5x + 1.2x = 1.7x</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Términos con radicales</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Solo si mismo índice y radicando</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3√2 + 5√2 = 8√2</td>
+                </tr>
+              </table>
+            
+              <h4>Errores comunes y cómo evitarlos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Sumar términos no semejantes:</span> 2x + 3y ≠ 5xy → Solo sumar coeficientes de términos semejantes</li>
+                <li><span style='color: red; font-weight: bold;'>Alterar exponentes:</span> x² + x² = 2x² ≠ 2x⁴ → Los exponentes NO se suman</li>
+                <li><span style='color: red; font-weight: bold;'>Olvidar signos negativos:</span> -3a + 2a = -a ≠ 5a → Prestar atención a los signos</li>
+                <li><span style='color: red; font-weight: bold;'>No reducir completamente:</span> Revisar que no queden términos semejantes</li>
+                <li><span style='color: red; font-weight: bold;'>Confundir con multiplicación:</span> x + x = 2x ≠ x² → La suma no altera exponentes</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Reducir completamente la siguiente expresión:</p>
+              <p>2(3x - 4y) - 3(2x + y) + 5(x - 2) - (3y - 7) + 4(2y - x)</p>
+              
+              <p><strong>Solución paso a paso:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Aplicar propiedad distributiva:</span>
+                  <ul>
+                    <li>2(3x - 4y) = 6x - 8y</li>
+                    <li>-3(2x + y) = -6x - 3y</li>
+                    <li>5(x - 2) = 5x - 10</li>
+                    <li>-(3y - 7) = -3y + 7</li>
+                    <li>4(2y - x) = 8y - 4x</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Reunir todos los términos:</span>
+                  <ul>
+                    <li>6x - 8y - 6x - 3y + 5x - 10 - 3y + 7 + 8y - 4x</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Agrupar términos semejantes:</span>
+                  <ul>
+                    <li>x: 6x - 6x + 5x - 4x = (6-6+5-4)x = 1x</li>
+                    <li>y: -8y - 3y - 3y + 8y = (-8-3-3+8)y = -6y</li>
+                    <li>Constantes: -10 + 7 = -3</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Resultado final:</span> <span style='color: red; font-weight: bold;'>x - 6y - 3</span></li>
+              </ol>
+            
+              <h4>Aplicaciones prácticas</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Resolución de ecuaciones:</span> Simplificar antes de resolver</li>
+                <li><span style='color: red; font-weight: bold;'>Operaciones con polinomios:</span> Preparar para suma, resta o multiplicación</li>
+                <li><span style='color: red; font-weight: bold;'>Problemas de aplicación:</span> Simplificar expresiones que modelan situaciones reales</li>
+                <li><span style='color: red; font-weight: bold;'>Geometría analítica:</span> Reducir ecuaciones de rectas y curvas</li>
+                <li><span style='color: red; font-weight: bold;'>Cálculo diferencial:</span> Simplificar antes de derivar</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+                <li>Ángel, A. R. (2008). <em>Álgebra elemental</em>. Pearson Educación.</li>
+                <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
+              </ul>
+            `)">1.1.3. Reducción de términos semejantes <span class="emoji-small">✅</span>
+          </li>
+        </ul><br>
+          
+          
           <li><b>1.2. Operaciones Algebraicas</b></li>
             <ul>
               <li>1.2.1. Suma y sus leyes</li>
