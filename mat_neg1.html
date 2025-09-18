@@ -1963,9 +1963,342 @@
               </ul>
             `)">1.2.2. Multiplicación de términos algebraicos <span class="emoji-small">✅</span>
           </li>
+
+          <ul class="tema-list">
+            <li onclick="abrirModal('1.2.3. Multiplicación y sus leyes', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la multiplicación algebraica, incluyendo las leyes de signos, exponentes y las propiedades estructurales de esta operación.</p>
+            
+              <h4>Definición y concepto fundamental</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Multiplicación algebraica:</span> Operación binaria que consiste en <span style='color: red; font-weight: bold;'>combinar dos cantidades</span> (factores) para obtener un <span style='color: red; font-weight: bold;'>producto</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Factores:</span> Los elementos que se multiplican: <span style='color: red; font-weight: bold;'>multiplicando × multiplicador = producto</span>.</li>
+                <li><span style='color: red; font-weight: bold;'>Notación:</span> a × b, a ∙ b, a * b, o simplemente ab (yuxtaposición).</li>
+                <li><span style='color: red; font-weight: bold;'>Propiedad fundamental:</span> Representa una <span style='color: red; font-weight: bold;'>suma abreviada</span> de sumandos iguales.</li>
+              </ul>
+            
+              <h4>Leyes fundamentales de la multiplicación</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ley</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Enunciado formal</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Expresión algebraica</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Clausura</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El producto de dos números reales es otro número real</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>∀ a, b ∈ ℝ, a × b ∈ ℝ</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2 × 3 = 6 ∈ ℝ</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Conmutativa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El orden de los factores no altera el producto</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × b = b × a</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5 × 4 = 4 × 5 = 20</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Asociativa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>La forma de agrupar los factores no altera el producto</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(a × b) × c = a × (b × c)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(2 × 3) × 4 = 2 × (3 × 4) = 24</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Distributiva</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Respecto a la suma y resta</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a(b + c) = ab + ac<br>a(b - c) = ab - ac</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3(2 + 4) = 3×2 + 3×4 = 18</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Elemento neutro</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El 1 es el elemento identidad multiplicativo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × 1 = 1 × a = a</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>7 × 1 = 1 × 7 = 7</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Elemento absorbente</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>El 0 absorbe cualquier multiplicación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × 0 = 0 × a = 0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5 × 0 = 0 × 5 = 0</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Inverso multiplicativo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Todo número ≠ 0 tiene inverso</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × (1/a) = 1 (a ≠ 0)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4 × (1/4) = 1</td>
+                </tr>
+              </table>
+            
+              <h4>Ley de signos en la multiplicación</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo del factor 1</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo del factor 2</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Signo del producto</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Regla mnemotécnica</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Más por más = más</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(+3) × (+4) = +12</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Más por menos = menos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(+5) × (-2) = -10</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Menos por más = menos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-3) × (+4) = -12</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Menos por menos = más</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-2) × (-6) = +12</td>
+                </tr>
+              </table>
+            
+              <h4>Leyes de los exponentes en la multiplicación</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ley</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Expresión general</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Producto de potencias con misma base</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>aᵐ × aⁿ = aᵐ⁺ⁿ</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x³ × x⁴ = x⁷</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Se suman los exponentes</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Potencia de potencia</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(aᵐ)ⁿ = aᵐⁿ</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(y²)³ = y⁶</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Se multiplican los exponentes</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Potencia de un producto</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(ab)ⁿ = aⁿbⁿ</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(2x)³ = 8x³</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>La potencia distribuye</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Exponente cero</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a⁰ = 1 (a ≠ 0)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5⁰ = 1, (3x)⁰ = 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cualquier base ≠ 0 elevada a 0 es 1</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Exponente negativo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a⁻ⁿ = 1/aⁿ (a ≠ 0)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x⁻³ = 1/x³</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Significa el recíproco</td>
+                </tr>
+              </table>
+            
+              <h4>Propiedad distributiva (ampliación)</h4>
+              <p>La propiedad distributiva es <span style='color: red; font-weight: bold;'>fundamental en álgebra</span> y tiene varias aplicaciones:</p>
+              
+              <p><strong>Ejemplo 1: Distributiva simple</strong></p>
+              <p>a(b + c) = ab + ac</p>
+              <p>3(x + 2y) = 3x + 6y</p>
+              
+              <p><strong>Ejemplo 2: Distributiva con resta</strong></p>
+              <p>a(b - c) = ab - ac</p>
+              <p>4(2x - 3y) = 8x - 12y</p>
+              
+              <p><strong>Ejemplo 3: Doble distributiva (binomios)</strong></p>
+              <p>(a + b)(c + d) = ac + ad + bc + bd</p>
+              <p>(x + 2)(y + 3) = xy + 3x + 2y + 6</p>
+              
+              <p><strong>Ejemplo 4: Distributiva múltiple</strong></p>
+              <p>a(b + c + d) = ab + ac + ad</p>
+              <p>2x(3y + 4z - 5) = 6xy + 8xz - 10x</p>
+            
+              <h4>Aplicación de las leyes en expresiones algebraicas</h4>
+              
+              <p><strong>Ejemplo 5: Aplicación múltiple de leyes</strong></p>
+              <p>Simplificar: 2x(3x²y) × (-4xy³)</p>
+              <ol>
+                <li>Aplicar propiedad asociativa: [2 × 3 × (-4)] × [x × x² × x] × [y × y³]</li>
+                <li>Calcular coeficientes: 2 × 3 = 6, 6 × (-4) = <span style='color: red; font-weight: bold;'>-24</span></li>
+                <li>Aplicar ley de exponentes: x¹⁺²⁺¹ = x⁴, y¹⁺³ = y⁴</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>-24x⁴y⁴</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 6: Uso de propiedad distributiva</strong></p>
+              <p>Expandir: 3x(2x² - 4xy + y²)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva: 3x(2x²) + 3x(-4xy) + 3x(y²)</li>
+                <li>Multiplicar cada término: 6x³ - 12x²y + 3xy²</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>6x³ - 12x²y + 3xy²</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 7: Multiplicación de binomios</strong></p>
+              <p>Multiplicar: (2x + 3)(4x - 5)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva extendida:
+                  <ul>
+                    <li>2x × 4x = 8x²</li>
+                    <li>2x × (-5) = -10x</li>
+                    <li>3 × 4x = 12x</li>
+                    <li>3 × (-5) = -15</li>
+                  </ul>
+                </li>
+                <li>Combinar términos: 8x² + (-10x + 12x) - 15</li>
+                <li>Simplificar: <span style='color: red; font-weight: bold;'>8x² + 2x - 15</span></li>
+              </ol>
+            
+              <h4>Casos especiales y consideraciones</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Caso especial</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación por -1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cambia el signo de la expresión</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-1 × (2x - 3) = -2x + 3</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación por 0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Siempre resulta en 0 (elemento absorbente)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0 × (5x² - 2x + 1) = 0</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación por 1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>No cambia la expresión (elemento neutro)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1 × (3x - 4) = 3x - 4</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variables con exponente 1 implícito</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x = x¹, y = y¹</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x × x² = x³ (1 + 2 = 3)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación de opuestos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a × (-a) = -a²</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x × (-3x) = -9x²</td>
+                </tr>
+              </table>
+            
+              <h4>Errores comunes en la aplicación de las leyes</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Error común</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Incorrecto</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Correcto</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Sumar exponentes en misma base</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × x³ = x⁶</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × x³ = x⁵</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2 + 3 = 5, no 6</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicar bases diferentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × y³ = (xy)⁵</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² × y³ = x²y³</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Bases diferentes no se combinan</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Distributiva incorrecta</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a(b + c) = ab + c</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a(b + c) = ab + ac</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Debe multiplicar ambos términos</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Signos en multiplicación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-a)(-b) = -ab</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-a)(-b) = ab</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Menos × menos = más</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Exponente cero</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a⁰ = 0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>a⁰ = 1 (a ≠ 0)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cualquier número ≠ 0 elevado a 0 es 1</td>
+                </tr>
+              </table>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Simplificar completamente la expresión aplicando todas las leyes de la multiplicación:</p>
+              <p>2x(3x - 4y)² - (2x - y)(3x + 2y) × 2</p>
+              
+              <p><strong>Solución paso a paso:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Desarrollar (3x - 4y)²:</span>
+                  <ul>
+                    <li>(3x - 4y)² = (3x)² - 2(3x)(4y) + (4y)² = 9x² - 24xy + 16y²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Multiplicar por 2x:</span>
+                  <ul>
+                    <li>2x(9x² - 24xy + 16y²) = 18x³ - 48x²y + 32xy²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Desarrollar (2x - y)(3x + 2y):</span>
+                  <ul>
+                    <li>= 2x(3x) + 2x(2y) - y(3x) - y(2y) = 6x² + 4xy - 3xy - 2y² = 6x² + xy - 2y²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Multiplicar por 2:</span>
+                  <ul>
+                    <li>2(6x² + xy - 2y²) = 12x² + 2xy - 4y²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Restar ambos resultados:</span>
+                  <ul>
+                    <li>(18x³ - 48x²y + 32xy²) - (12x² + 2xy - 4y²) = 18x³ - 48x²y + 32xy² - 12x² - 2xy + 4y²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Ordenar términos:</span>
+                  <ul>
+                    <li>18x³ - 48x²y - 12x² + 32xy² - 2xy + 4y²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Resultado final:</span> <span style='color: red; font-weight: bold;'>18x³ - 48x²y - 12x² + 32xy² - 2xy + 4y²</span></li>
+              </ol>
+            
+              <h4>Aplicaciones prácticas de las leyes de multiplicación</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Cálculo de áreas:</span> Multiplicación de dimensiones (largo × ancho)</li>
+                <li><span style='color: red; font-weight: bold;'>Volúmenes:</span> Multiplicación de tres dimensiones</li>
+                <li><span style='color: red; font-weight: bold;'>Física:</span> Cálculo de trabajo (fuerza × distancia)</li>
+                <li><span style='color: red; font-weight: bold;'>Economía:</span> Cálculo de ingresos (precio × cantidad)</li>
+                <li><span style='color: red; font-weight: bold;'>Probabilidad:</span> Regla de multiplicación para eventos independientes</li>
+                <li><span style='color: red; font-weight: bold;'>Algebra:</span> Factorización y expansión de expresiones</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
+              </ul>
+            `)">1.2.3. Multiplicación y sus leyes<span class="emoji-small">✅</span>
+            </li>
+            
+            
+            
             
             <li>1.2.4. División y sus leyes <!--span class="emoji-small">✅</span--></li>
-              <li>1.2.5. Potenciación y sus leyes <!--span class="emoji-small">✅</span--></li>
+            <li>1.2.5. Potenciación y sus leyes <!--span class="emoji-small">✅</span--></li>
             </ul>
         </ul>
       </div>
