@@ -1101,8 +1101,282 @@
         </ul><br>
           
           
-          <li><b>1.2. Operaciones Algebraicas</b> <!--span class="emoji-small">✅</span--></li>
-            <ul>
+        <ul class="tema-list">
+          <li onclick="abrirModal('1.2. Operaciones Algebraicas', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar las operaciones fundamentales del álgebra: suma, resta, multiplicación, división y potenciación de expresiones algebraicas, aplicando correctamente las reglas y propiedades.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Operaciones algebraicas:</span> Conjunto de procedimientos para manipular expresiones algebraicas mediante las operaciones aritméticas básicas.</li>
+                <li><span style='color: red; font-weight: bold;'>Expresión algebraica:</span> Combinación de números, variables y operaciones matemáticas.</li>
+                <li><span style='color: red; font-weight: bold;'>Propiedad fundamental:</span> Las operaciones siguen las mismas reglas que en aritmética, pero considerando variables y constantes.</li>
+                <li><span style='color: red; font-weight: bold;'>Importancia:</span> Base para la resolución de ecuaciones, factorización y cálculo avanzado.</li>
+              </ul>
+            
+              <h4>Tipos de operaciones algebraicas</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Operación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Símbolo</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Suma</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Adición de términos semejantes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x + 2x = 5x</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Resta</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Sustracción de términos semejantes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5y - 2y = 3y</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>×, ∙</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Producto de coeficientes y suma de exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3x ∙ 2x² = 6x³</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>División</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>÷, /</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cociente de coeficientes y resta de exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6x³ ÷ 2x = 3x²</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Potenciación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>aⁿ</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación repetida de la base</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(2x)³ = 8x³</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Radicación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>√, ⁿ√</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Operación inversa a la potenciación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>√(9x²) = 3x</td>
+                </tr>
+              </table>
+            
+              <h4>Suma y resta de expresiones algebraicas</h4>
+              <p><strong>Reglas fundamentales:</strong></p>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Solo se pueden sumar/restar términos semejantes</span></li>
+                <li>Se suman/restan los <span style='color: red; font-weight: bold;'>coeficientes</span> conservando la <span style='color: red; font-weight: bold;'>parte literal</span></li>
+                <li>Los términos no semejantes <span style='color: red; font-weight: bold;'>se dejan indicados</span></li>
+              </ul>
+              
+              <p><strong>Ejemplo 1: Suma de polinomios</strong></p>
+              <p>Sumar: (3x² + 2x - 5) + (4x² - 3x + 7)</p>
+              <ol>
+                <li>Agrupar términos semejantes: (3x² + 4x²) + (2x - 3x) + (-5 + 7)</li>
+                <li>Sumar coeficientes: 7x² + (-x) + 2</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>7x² - x + 2</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Resta de polinomios</strong></p>
+              <p>Restar: (5a² - 2ab + 3b²) - (2a² + 4ab - b²)</p>
+              <ol>
+                <li>Cambiar signos del sustraendo: 5a² - 2ab + 3b² - 2a² - 4ab + b²</li>
+                <li>Agrupar términos semejantes: (5a² - 2a²) + (-2ab - 4ab) + (3b² + b²)</li>
+                <li>Operar: 3a² - 6ab + 4b²</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>3a² - 6ab + 4b²</span></li>
+              </ol>
+            
+              <h4>Multiplicación de expresiones algebraicas</h4>
+              <p><strong>Reglas fundamentales:</strong></p>
+              <ul>
+                <li>Ley de <span style='color: red; font-weight: bold;'>signos</span>: (+) × (+) = (+), (+) × (-) = (-), (-) × (-) = (+)</li>
+                <li>Ley de <span style='color: red; font-weight: bold;'>exponentes</span>: aᵐ × aⁿ = aᵐ⁺ⁿ</li>
+                <li>Ley <span style='color: red; font-weight: bold;'>distributiva</span>: a(b + c) = ab + ac</li>
+              </ul>
+              
+              <p><strong>Ejemplo 3: Multiplicación de monomios</strong></p>
+              <p>Multiplicar: (3x²y) × (-2xy³) × (4x)</p>
+              <ol>
+                <li>Multiplicar coeficientes: 3 × (-2) × 4 = <span style='color: red; font-weight: bold;'>-24</span></li>
+                <li>Multiplicar variables: x² × x × x = x²⁺¹⁺¹ = x⁴</li>
+                <li>Multiplicar variables: y × y³ = y¹⁺³ = y⁴</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>-24x⁴y⁴</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 4: Multiplicación de polinomios</strong></p>
+              <p>Multiplicar: (2x + 3)(x² - 4x + 5)</p>
+              <ol>
+                <li>Aplicar propiedad distributiva: 2x(x² - 4x + 5) + 3(x² - 4x + 5)</li>
+                <li>Multiplicar: 2x³ - 8x² + 10x + 3x² - 12x + 15</li>
+                <li>Reducir términos semejantes: 2x³ + (-8x² + 3x²) + (10x - 12x) + 15</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>2x³ - 5x² - 2x + 15</span></li>
+              </ol>
+            
+              <h4>División de expresiones algebraicas</h4>
+              <p><strong>Reglas fundamentales:</strong></p>
+              <ul>
+                <li>Ley de <span style='color: red; font-weight: bold;'>signos</span>: (+) ÷ (+) = (+), (+) ÷ (-) = (-), (-) ÷ (-) = (+)</li>
+                <li>Ley de <span style='color: red; font-weight: bold;'>exponentes</span>: aᵐ ÷ aⁿ = aᵐ⁻ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>División de coeficientes</span> y <span style='color: red; font-weight: bold;'>resta de exponentes</span></li>
+              </ul>
+              
+              <p><strong>Ejemplo 5: División de monomios</strong></p>
+              <p>Dividir: (24x⁵y³z²) ÷ (6x²y²z)</p>
+              <ol>
+                <li>Dividir coeficientes: 24 ÷ 6 = <span style='color: red; font-weight: bold;'>4</span></li>
+                <li>Dividir variables: x⁵ ÷ x² = x⁵⁻² = x³</li>
+                <li>Dividir variables: y³ ÷ y² = y³⁻² = y¹ = y</li>
+                <li>Dividir variables: z² ÷ z = z²⁻¹ = z¹ = z</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>4x³yz</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 6: División de polinomios (método tradicional)</strong></p>
+              <p>Dividir: (6x³ + 5x² - 4x + 2) ÷ (2x + 1)</p>
+              <ol>
+                <li>Ordenar términos por grado descendente (ya está ordenado)</li>
+                <li>Dividir primer término: 6x³ ÷ 2x = <span style='color: red; font-weight: bold;'>3x²</span></li>
+                <li>Multiplicar: 3x²(2x + 1) = 6x³ + 3x²</li>
+                <li>Restar: (6x³ + 5x²) - (6x³ + 3x²) = 2x²</li>
+                <li>Bajar siguiente término: 2x² - 4x</li>
+                <li>Repetir proceso hasta completar</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>3x² + x - 2.5</span> con residuo <span style='color: red; font-weight: bold;'>4.5</span></li>
+              </ol>
+            
+              <h4>Potenciación de expresiones algebraicas</h4>
+              <p><strong>Reglas fundamentales:</strong></p>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Potencia de producto</span>: (ab)ⁿ = aⁿbⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Potencia de potencia</span>: (aᵐ)ⁿ = aᵐⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Exponente cero</span>: a⁰ = 1 (a ≠ 0)</li>
+                <li><span style='color: red; font-weight: bold;'>Exponente negativo</span>: a⁻ⁿ = 1/aⁿ</li>
+              </ul>
+              
+              <p><strong>Ejemplo 7: Potencia de monomio</strong></p>
+              <p>Calcular: (2x²y³)⁴</p>
+              <ol>
+                <li>Aplicar potencia a cada factor: 2⁴ × (x²)⁴ × (y³)⁴</li>
+                <li>Calcular: 16 × x⁸ × y¹²</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>16x⁸y¹²</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 8: Potencia de binomio (cuadrado perfecto)</strong></p>
+              <p>Calcular: (3x - 2y)²</p>
+              <ol>
+                <li>Aplicar fórmula: (a - b)² = a² - 2ab + b²</li>
+                <li>Identificar: a = 3x, b = 2y</li>
+                <li>Calcular: (3x)² - 2(3x)(2y) + (2y)²</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>9x² - 12xy + 4y²</span></li>
+              </ol>
+            
+              <h4>Jerarquía de operaciones algebraicas</h4>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Paréntesis y signos de agrupación</span></li>
+                <li><span style='color: red; font-weight: bold;'>Potencias y raíces</span></li>
+                <li><span style='color: red; font-weight: bold;'>Multiplicaciones y divisiones</span> (de izquierda a derecha)</li>
+                <li><span style='color: red; font-weight: bold;'>Sumas y restas</span> (de izquierda a derecha)</li>
+              </ol>
+              
+              <p><strong>Ejemplo 9: Aplicación de jerarquía</strong></p>
+              <p>Simplificar: 3x² + 2x(3x - 4) - (x + 2)²</p>
+              <ol>
+                <li>Potencia: (x + 2)² = x² + 4x + 4</li>
+                <li>Multiplicación: 2x(3x - 4) = 6x² - 8x</li>
+                <li>Reemplazar: 3x² + (6x² - 8x) - (x² + 4x + 4)</li>
+                <li>Eliminar paréntesis: 3x² + 6x² - 8x - x² - 4x - 4</li>
+                <li>Reducir términos: (3x² + 6x² - x²) + (-8x - 4x) - 4</li>
+                <li>Resultado: <span style='color: red; font-weight: bold;'>8x² - 12x - 4</span></li>
+              </ol>
+            
+              <h4>Errores comunes en operaciones algebraicas</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Error</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Incorrecto</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Correcto</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Suma de exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² + x³ = x⁵</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² + x³ (no se pueden sumar)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Distribución incorrecta</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(x + y)² = x² + y²</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x² + 2xy + y²</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>División de exponentes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x⁵ ÷ x² = x³</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>x³ (5-2=3)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Signos en multiplicación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>(-2x)(-3x) = -6x²</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6x² (- × - = +)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Jerarquía de operaciones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2x + 3x × 4 = 20x</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2x + 12x = 14x</td>
+                </tr>
+              </table>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Simplificar completamente la expresión:</p>
+              <p>[2(x - 3)² - 3(2x + 1)(x - 2)] ÷ (x² - 4x + 4) + 5x</p>
+              
+              <p><strong>Solución paso a paso:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Desarrollar operaciones:</span>
+                  <ul>
+                    <li>(x - 3)² = x² - 6x + 9 → 2(x² - 6x + 9) = 2x² - 12x + 18</li>
+                    <li>(2x + 1)(x - 2) = 2x² - 4x + x - 2 = 2x² - 3x - 2 → 3(2x² - 3x - 2) = 6x² - 9x - 6</li>
+                    <li>x² - 4x + 4 = (x - 2)²</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Sustituir en expresión original:</span>
+                  <ul>
+                    <li>[ (2x² - 12x + 18) - (6x² - 9x - 6) ] ÷ (x - 2)² + 5x</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Simplificar numerador:</span>
+                  <ul>
+                    <li>2x² - 12x + 18 - 6x² + 9x + 6 = -4x² - 3x + 24</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Factorizar numerador:</span>
+                  <ul>
+                    <li>-4x² - 3x + 24 = -(4x² + 3x - 24)</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Dividir:</span>
+                  <ul>
+                    <li>[-(4x² + 3x - 24)] ÷ (x - 2)²</li>
+                    <li>Realizar división polinomial o factorizar</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Resultado final:</span> Expresión simplificada según el caso específico</li>
+              </ol>
+            
+              <h4>Aplicaciones prácticas</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Física:</span> Manipulación de fórmulas y ecuaciones</li>
+                <li><span style='color: red; font-weight: bold;'>Ingeniería:</span> Cálculo de estructuras y diseños</li>
+                <li><span style='color: red; font-weight: bold;'>Economía:</span> Modelado de costos y utilidades</li>
+                <li><span style='color: red; font-weight: bold;'>Programación:</span> Simplificación de expresiones en algoritmos</li>
+                <li><span style='color: red; font-weight: bold;'>Estadística:</span> Manipulación de fórmulas estadísticas</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
+              </ul>
+            `)"">1.2. Operaciones Algebraicas <span class="emoji-small">✅</span>
+          </li>
+          
+          <ul>
               <li>1.2.1. Suma y sus leyes <!--span class="emoji-small">✅</span--></li>
               <li>1.2.2. Multiplicación de términos algebraicos <!--span class="emoji-small">✅</span--></li>
               <li>1.2.3. Multiplicación y sus leyes <!--span class="emoji-small">✅</span--></li>
