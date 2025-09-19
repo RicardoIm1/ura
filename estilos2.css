@@ -601,3 +601,19 @@
         .cargando {
             animation: pulse 1.5s infinite;
         }
+.keyword { color: red; font-weight: bold; }
+.result { color: red; font-weight: bold; }
+.step { color: red; font-weight: bold; }
+.exponent-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 15px 0; 
+}
+.exponent-table th, 
+.exponent-table td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+}
+.exponent-table tr:nth-child(odd) { 
+    background-color: #f2f2f2; 
+}
