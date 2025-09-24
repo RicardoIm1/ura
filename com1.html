@@ -215,7 +215,7 @@
                   <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
                 </ul>
             </ul>
-          `)">1.3 Descricpción de componentes  <span class="emoji-small">✅</span>  
+          `)">1.3 Descripción de componentes  <span class="emoji-small">✅</span>  
           </li>
 
           <ul class="tema-list">
@@ -1825,9 +1825,151 @@
               </ul>
             `)">3.4. Proposición de formato <span class="emoji-small">✅</span>
         </li>
-
-         
-        <li>3.5. Formato I</li>
+  
+        <ul class="tema-list">
+          <li onclick="abrirModal('3.5. Formato I', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales y técnicas básicas de formato para la presentación de datos en programas, incluyendo alineación, padding y especificadores simples.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Formato I se refiere a las <span style='color: #e74c3c;'>técnicas básicas de formateo</span> que controlan la presentación visual de datos en salida.</li>
+                <li>Enfocado en <span style='color: #3498db;'>operaciones fundamentales de formato</span> como alineación y relleno.</li>
+                <li>Proporciona la <span style='color: #2ecc71;'>base esencial</span> para formatos más avanzados.</li>
+              </ul>
+            
+              <h4>Conceptos Fundamentales</h4>
+              <ul>
+                <li><strong>Campo de salida:</strong> Espacio reservado para mostrar un valor</li>
+                <li><strong>Ancho de campo:</strong> Número total de caracteres ocupados</li>
+                <li><strong>Alineación:</strong> Posición del texto dentro del campo</li>
+                <li><strong>Carácter de relleno:</strong> Carácter usado para espacios vacíos</li>
+                <li><strong>Precisión:</strong> Número de dígitos decimales mostrados</li>
+              </ul>
+            
+              <h4>Alineación Básica</h4>
+              <ul>
+                <li><strong>Alineación a la izquierda:</strong> Texto comienza en el borde izquierdo</li>
+                <li><strong>Alineación a la derecha:</strong> Texto termina en el borde derecho</li>
+                <li><strong>Centrado:</strong> Texto equidistante de ambos bordes</li>
+                <li><strong>Justificado:</strong> Texto expandido para llenar todo el ancho</li>
+              </ul>
+            
+              <h4>Especificadores de Formato Básicos</h4>
+              <ul>
+                <li><strong>%d:</strong> Entero decimal con signo</li>
+                <li><strong>%f:</strong> Número de punto flotante</li>
+                <li><strong>%s:</strong> Cadena de caracteres</li>
+                <li><strong>%c:</strong> Carácter individual</li>
+                <li><strong>%%:</strong> Literal del símbolo porcentaje</li>
+              </ul>
+            
+              <h4>Modificadores de Ancho y Precisión</h4>
+              <ul>
+                <li><strong>Ancho mínimo:</strong> %10d (10 caracteres mínimo)</li>
+                <li><strong>Precisión decimal:</strong> %.2f (2 decimales)</li>
+                <li><strong>Combinación:</strong> %10.2f (10 caracteres, 2 decimales)</li>
+                <li><strong>Relleno con ceros:</strong> %08d (rellena con ceros a 8 dígitos)</li>
+                <li><strong>Alineación izquierda:</strong> %-10s (alinea a izquierda en 10 espacios)</li>
+              </ul>
+            
+              <h4>Proceso de Formato Básico</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el tipo de dato</span> a formatear</li>
+                <li><span style='color: #e74c3c;'>Seleccionar el especificador</span> apropiado</li>
+                <li><span style='color: #e74c3c;'>Determinar el ancho de campo</span> necesario</li>
+                <li><span style='color: #e74c3c;'>Aplicar alineación y relleno</span></li>
+                <li><span style='color: #e74c3c;'>Generar la salida formateada</span></li>
+              </ol>
+            
+              <h4>Ejemplos de Formato Básico</h4>
+              <ul>
+                <li><strong>Enteros con ancho fijo:</strong>
+                  <ul>
+                    <li>printf('%5d', 42)   → '   42'</li>
+                    <li>printf('%05d', 42)  → '00042'</li>
+                    <li>printf('%-5d', 42)  → '42   '</li>
+                  </ul>
+                </li>
+                <li><strong>Decimales con precisión:</strong>
+                  <ul>
+                    <li>printf('%.2f', 3.14159) → '3.14'</li>
+                    <li>printf('%6.2f', 3.14)   → '  3.14'</li>
+                    <li>printf('%06.2f', 3.14)  → '003.14'</li>
+                  </ul>
+                </li>
+                <li><strong>Cadenas alineadas:</strong>
+                  <ul>
+                    <li>printf('%10s', 'Hola')   → '      Hola'</li>
+                    <li>printf('%-10s', 'Hola')  → 'Hola      '</li>
+                    <li>printf('%.3s', 'Hola')   → 'Hol'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Tablas de Formato Básico</h4>
+              <ul>
+                <li><strong>Creación de columnas alineadas:</strong>
+                  <ul>
+                    <li>printf('%-15s %8.2f', 'Producto A', 25.50)</li>
+                    <li>printf('%-15s %8.2f', 'Producto B', 150.75)</li>
+                  </ul>
+                </li>
+                <li><strong>Encabezados de columnas:</strong>
+                  <ul>
+                    <li>printf('%-15s %8s', 'Nombre', 'Precio')</li>
+                    <li>printf('%-15s %8s', '──────', '──────')</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Caracteres de Relleno Comunes</h4>
+              <ul>
+                <li><strong>Espacios:</strong> Relleno por defecto, más legible</li>
+                <li><strong>Ceros:</strong> Para números, especialmente códigos</li>
+                <li><strong>Guiones:</strong> Para separadores visuales</li>
+                <li><strong>Asteriscos:</strong> Para información confidencial</li>
+                <li><strong>Puntos:</strong> Para alineación decimal</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato Básico</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Mantener consistencia</span> en ancho de columnas</li>
+                <li><span style='color: #e74c3c;'>Usar alineación apropiada</span> para cada tipo de dato</li>
+                <li><span style='color: #e74c3c;'>Evitar truncamiento accidental</span> de información</li>
+                <li><span style='color: #e74c3c;'>Considerar la legibilidad</span> del resultado final</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos complejos</span></li>
+              </ol>
+            
+              <h4>Errores Comunes en Formato Básico</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Ancho insuficiente</span> para datos largos</li>
+                <li><span style='color: #3498db;'>Precisión excesiva</span> que genera ruido visual</li>
+                <li><span style='color: #2ecc71;'>Mezcla de alineaciones</span> en la misma columna</li>
+                <li><span style='color: #f39c12;'>Uso incorrecto de especificadores</span> de tipo</li>
+                <li><span style='color: #9b59b6;'>Falta de separación</span> entre columnas</li>
+              </ul>
+            
+              <h4>Aplicaciones Prácticas</h4>
+              <ul>
+                <li>Reportes tabulares simples</li>
+                <li>Listados de datos alineados</li>
+                <li>Formatos de ticket y recibos</li>
+                <li>Interfaces de línea de comandos</li>
+                <li>Logs y mensajes del sistema</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>Prata, S. (2004). <em>C Primer Plus</em>. Sams Publishing.</li>
+                <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en C</em>. Pearson Educación.</li>
+                <li>Lopez, M. (2019). <em>Formatos de Salida en Programación</em>. Editorial Técnica.</li>
+                <li>IEEE Computer Society. (2020). <em>Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+              </ul>
+            `)">3.5. Formato I <span class="emoji-small">✅</span>
+        </li>
+        
         <li>3.6. Formato F</li>
         <li>3.7. Formato E</li>
         <li>3.8. Capacidades adicionales de formato</li>
