@@ -1518,9 +1518,165 @@
           `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
         </li>
 
+       <ul class=tema-list">
+        <li onclick="abrirModal('3.3. Proposición de control', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de control que permiten dirigir el flujo de ejecución de un programa mediante estructuras de decisión y bucles.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una proposición de control es una <span style='color: #e74c3c;'>instrucción que determina el orden de ejecución</span> de otras instrucciones en un programa.</li>
+                <li>Permite <span style='color: #3498db;'>alterar el flujo secuencial</span> basándose en condiciones o repeticiones.</li>
+                <li>Es esencial para implementar <span style='color: #2ecc71;'>lógica de programación compleja</span> y algoritmos no lineales.</li>
+              </ul>
+            
+              <h4>Tipos de Proposiciones de Control</h4>
+              <ul>
+                <li><strong>Estructuras condicionales:</strong> if, if-else, if-else if, switch-case</li>
+                <li><strong>Estructuras iterativas:</strong> for, while, do-while, for-each</li>
+                <li><strong>Estructuras de salto:</strong> break, continue, return, goto</li>
+                <li><strong>Manejo de excepciones:</strong> try-catch, throw, finally</li>
+              </ul>
+            
+              <h4>Estructuras Condicionales</h4>
+              <ul>
+                <li><strong>IF simple:</strong> Ejecuta código si condición es verdadera
+                  <ul>
+                    <li>if (condición) { /* código */ }</li>
+                  </ul>
+                </li>
+                <li><strong>IF-ELSE:</strong> Ejecuta un bloque u otro según condición
+                  <ul>
+                    <li>if (condición) { /* código A */ } else { /* código B */ }</li>
+                  </ul>
+                </li>
+                <li><strong>IF-ELSE IF:</strong> Múltiples condiciones en cascada
+                  <ul>
+                    <li>if (cond1) { } else if (cond2) { } else { }</li>
+                  </ul>
+                </li>
+                <li><strong>SWITCH-CASE:</strong> Selección múltiple basada en valor
+                  <ul>
+                    <li>switch (variable) { case valor1: break; case valor2: break; default: }</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Estructuras Iterativas (Bucles)</h4>
+              <ul>
+                <li><strong>FOR:</strong> Bucle con inicialización, condición e incremento
+                  <ul>
+                    <li>for (int i=0; i<10; i++) { /* código */ }</li>
+                  </ul>
+                </li>
+                <li><strong>WHILE:</strong> Repite mientras condición sea verdadera
+                  <ul>
+                    <li>while (condición) { /* código */ }</li>
+                  </ul>
+                </li>
+                <li><strong>DO-WHILE:</strong> Ejecuta al menos una vez antes de verificar condición
+                  <ul>
+                    <li>do { /* código */ } while (condición);</li>
+                  </ul>
+                </li>
+                <li><strong>FOR-EACH:</strong> Itera sobre elementos de una colección
+                  <ul>
+                    <li>for (elemento : colección) { /* código */ }</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Instrucciones de Control de Flujo</h4>
+              <ul>
+                <li><strong>BREAK:</strong> Termina la ejecución de un bucle o switch</li>
+                <li><strong>CONTINUE:</strong> Salta a la siguiente iteración de un bucle</li>
+                <li><strong>RETURN:</strong> Retorna valor y termina ejecución de función</li>
+                <li><strong>GOTO:</strong> Salto incondicional (evitar en programación moderna)</li>
+                <li><strong>THROW:</strong> Lanza una excepción para manejo de errores</li>
+              </ul>
+            
+              <h4>Anidamiento de Estructuras de Control</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Bucles dentro de condicionales</span> y viceversa</li>
+                <li><span style='color: #e74c3c;'>Múltiples niveles de anidamiento</span> para lógica compleja</li>
+                <li><span style='color: #e74c3c;'>Estructuras try-catch</span> alrededor de código propenso a errores</li>
+                <li><span style='color: #e74c3c;'>Switch dentro de bucles</span> para procesamiento por casos</li>
+                <li><span style='color: #e74c3c;'>Condicionales dentro de funciones</span> para control de retorno</li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos</h4>
+              <ul>
+                <li><strong>Condicional IF en Python:</strong>
+                  <ul>
+                    <li>if edad >= 18: print('Mayor de edad') else: print('Menor de edad')</li>
+                  </ul>
+                </li>
+                <li><strong>Bucle FOR en Java:</strong>
+                  <ul>
+                    <li>for (int i=0; i<5; i++) { System.out.println('Iteración: ' + i); }</li>
+                  </ul>
+                </li>
+                <li><strong>SWITCH en JavaScript:</strong>
+                  <ul>
+                    <li>switch(dia) { case 1: console.log('Lunes'); break; case 2: console.log('Martes'); break; default: console.log('Otro día'); }</li>
+                  </ul>
+                </li>
+                <li><strong>WHILE con BREAK:</strong>
+                  <ul>
+                    <li>while (true) { if (condición) break; /* código */ }</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Manejo de Excepciones</h4>
+              <ul>
+                <li><strong>TRY-CATCH:</strong> Captura y maneja errores en tiempo de ejecución</li>
+                <li><strong>FINALLY:</strong> Bloque que siempre se ejecuta, haya o no error</li>
+                <li><strong>THROW:</strong> Lanza excepciones personalizadas</li>
+                <li><strong>Múltiples CATCH:</strong> Manejo específico por tipo de excepción</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Control de Flujo</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Evitar bucles infinitos</span> con condiciones de salida claras</li>
+                <li><span style='color: #e74c3c;'>Mantener la legibilidad</span> con indentación consistente</li>
+                <li><span style='color: #e74c3c;'>Limitar el anidamiento excesivo</span> para mayor claridad</li>
+                <li><span style='color: #e74c3c;'>Usar break y continue</span> con moderación y claridad</li>
+                <li><span style='color: #e74c3c;'>Manejar todas las excepciones</span> posibles</li>
+              </ol>
+            
+              <h4>Patrones Comunes de Control</h4>
+              <ul>
+                <li><strong>Validación de entrada:</strong> if anidados para verificar datos</li>
+                <li><strong>Búsqueda en colecciones:</strong> for/while con break al encontrar</li>
+                <li><strong>Menús interactivos:</strong> do-while con switch-case</li>
+                <li><strong>Procesamiento por lotes:</strong> for para iterar sobre arrays</li>
+                <li><strong>Control de estados:</strong> switch para máquinas de estado</li>
+              </ul>
+            
+              <h4>Consideraciones de Rendimiento</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Complejidad algorítmica</span> de estructuras anidadas</li>
+                <li><span style='color: #3498db;'>Optimización de condiciones</span> más probables primero</li>
+                <li><span style='color: #2ecc71;'>Uso eficiente de bucles</span> para grandes volúmenes</li>
+                <li><span style='color: #f39c12;'>Evitar condiciones redundantes</span> o innecesarias</li>
+                <li><span style='color: #9b59b6;'>Cacheo de resultados</span> en condiciones costosas</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+                <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
+                <li>Bloch, J. (2008). <em>Effective Java</em>. Addison-Wesley.</li>
+                <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
+              </ul>
+            `)">3.3. Proposición de control <span class="emoji-small">✅</span>        
+        </li>
+
+
 
          
-        <li>3.3. Proposición de control</li>
         <li>3.4. Proposición de formato</li>
         <li>3.5. Formato I</li>
         <li>3.6. Formato F</li>
