@@ -802,11 +802,292 @@
         </li>
         
         
+      <ul class="tema-list">
+        <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y utilizar las proposiciones de asignación lógica en programación, incluyendo operadores booleanos y su aplicación en condiciones y toma de decisiones.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una proposición de asignación lógica es una <span style='color: #e74c3c;'>instrucción que asigna un valor booleano</span> (verdadero o falso) a una variable.</li>
+                <li>Se basa en la <span style='color: #3498db;'>evaluación de expresiones lógicas</span> que resultan en true o false.</li>
+                <li>Sigue la estructura: <span style='color: #2ecc71;'>variable = expresión_lógica</span></li>
+              </ul>
+            
+              <h4>Operadores Lógicos Fundamentales</h4>
+              <ul>
+                <li><strong>AND (∧):</strong> Verdadero solo si ambos operandos son verdaderos</li>
+                <li><strong>OR (∨):</strong> Falso solo si ambos operandos son falsos</li>
+                <li><strong>NOT (¬):</strong> Invierte el valor de verdad</li>
+                <li><strong>XOR (⊕):</strong> Verdadero si los operandos son diferentes</li>
+              </ul>
+            
+              <h4>Tablas de Verdad</h4>
+              <ul>
+                <li><strong>AND:</strong>
+                  <ul>
+                    <li>true AND true = true</li>
+                    <li>true AND false = false</li>
+                    <li>false AND true = false</li>
+                    <li>false AND false = false</li>
+                  </ul>
+                </li>
+                <li><strong>OR:</strong>
+                  <ul>
+                    <li>true OR true = true</li>
+                    <li>true OR false = true</li>
+                    <li>false OR true = true</li>
+                    <li>false OR false = false</li>
+                  </ul>
+                </li>
+                <li><strong>NOT:</strong>
+                  <ul>
+                    <li>NOT true = false</li>
+                    <li>NOT false = true</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Operadores Relacionales en Asignaciones Lógicas</h4>
+              <ul>
+                <li><strong>Igualdad:</strong> == o === (depende del lenguaje)</li>
+                <li><strong>Desigualdad:</strong> != o !==</li>
+                <li><strong>Mayor que:</strong> ></li>
+                <li><strong>Menor que:</strong> <</li>
+                <li><strong>Mayor o igual que:</strong> >=</li>
+                <li><strong>Menor o igual que:</strong> <=</li>
+              </ul>
+            
+              <h4>Tipos de Asignaciones Lógicas</h4>
+              <ul>
+                <li><strong>Asignación directa:</strong> variable = true/false</li>
+                <li><strong>Asignación por comparación:</strong> variable = (a > b)</li>
+                <li><strong>Asignación con operadores lógicos:</strong> variable = (x && y) || z</li>
+                <li><strong>Asignación condicional:</strong> variable = (condición) ? valor1 : valor2</li>
+              </ul>
+            
+              <h4>Precedencia de Operadores Lógicos</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Paréntesis</span> (máxima prioridad)</li>
+                <li><span style='color: #e74c3c;'>Operadores relacionales</span> (>, <, >=, <=, ==, !=)</li>
+                <li><span style='color: #e74c3c;'>NOT</span> (¬)</li>
+                <li><span style='color: #e74c3c;'>AND</span> (∧)</li>
+                <li><span style='color: #e74c3c;'>OR</span> (∨)</li>
+                <li><span style='color: #e74c3c;'>Asignación</span> (=)</li>
+              </ol>
+            
+              <h4>Ejemplos en Diferentes Lenguajes</h4>
+              <ul>
+                <li><strong>Python:</strong>
+                  <ul>
+                    <li>es_mayor = edad >= 18</li>
+                    <li>es_valido = (nombre != '') and (edad > 0)</li>
+                    <li>es_par = (numero % 2 == 0)</li>
+                  </ul>
+                </li>
+                <li><strong>Java/JavaScript:</strong>
+                  <ul>
+                    <li>boolean aprobado = nota >= 6.0;</li>
+                    <li>boolean puedeVotar = (edad >= 18) && (esCiudadano == true);</li>
+                    <li>boolean esTriangulo = (a + b > c) && (a + c > b) && (b + c > a);</li>
+                  </ul>
+                </li>
+                <li><strong>Asignaciones compuestas:</strong>
+                  <ul>
+                    <li>estado = !estado  // invierte el valor booleano</li>
+                    <li>activado = activado || nuevo_estado  // se activa si alguno es true</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Leyes de la Lógica Booleana</h4>
+              <ul>
+                <li><strong>Ley de identidad:</strong> A AND true = A, A OR false = A</li>
+                <li><strong>Ley de dominación:</strong> A AND false = false, A OR true = true</li>
+                <li><strong>Ley de idempotencia:</strong> A AND A = A, A OR A = A</li>
+                <li><strong>Ley de complemento:</strong> A AND NOT A = false, A OR NOT A = true</li>
+                <li><strong>Leyes de De Morgan:</strong> NOT (A AND B) = NOT A OR NOT B</li>
+              </ul>
+            
+              <h4>Aplicaciones Prácticas</h4>
+              <ul>
+                <li>Validación de datos de entrada</li>
+                <li>Control de flujo en condicionales (if, while)</li>
+                <li>Sistemas de reglas y toma de decisiones</li>
+                <li>Circuitos lógicos y electrónica digital</li>
+                <li>Bases de datos y consultas booleanas</li>
+                <li>Inteligencia artificial y sistemas expertos</li>
+              </ul>
+            
+              <h4>Consideraciones Importantes</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Evaluación de cortocircuito:</span> Algunos lenguajes evalúan solo lo necesario</li>
+                <li><span style='color: #3498db;'>Conversión automática:</span> Cómo se convierten otros tipos a booleanos</li>
+                <li><span style='color: #2ecc71;'>Precisión en comparaciones:</span> Cuidado con comparaciones de punto flotante</li>
+                <li><span style='color: #f39c12;'>Legibilidad:</span> Usar paréntesis para clarificar expresiones complejas</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kleene, S. C. (2002). <em>Mathematical Logic</em>. Dover Publications.</li>
+                <li>Mendelson, E. (2015). <em>Introduction to Mathematical Logic</em>. Chapman and Hall.</li>
+                <li>Boole, G. (1854). <em>An Investigation of the Laws of Thought</em>. Macmillan.</li>
+                <li>Floyd, T. L. (2015). <em>Digital Fundamentals</em>. Pearson Education.</li>
+                <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
+              </ul>
+            `)">2.4. Proposiciones de asignación lógica <span class="emoji-small">✅</span>
+        </li>
+
+
+      <ul class="tema-list">
+        <li onclick="abrirModal('2.5. Proposición de flujo', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender las proposiciones de flujo de control que permiten alterar la secuencia de ejecución de un programa mediante estructuras condicionales e iterativas.</p>
         
-        <li>2.4. Proposiciones de asignación lógica</li>
-        <li>2.5. Proposición de flujo</li>
-        <li>2.6. Diagramas</li>
-      </ul>
+          <h4>Definición</h4>
+          <ul>
+            <li>Una proposición de flujo es una <span style='color: #e74c3c;'>instrucción que controla el orden de ejecución</span> de las sentencias en un programa.</li>
+            <li>Permite <span style='color: #3498db;'>alterar la secuencia lineal</span> de ejecución basándose en condiciones o repeticiones.</li>
+            <li>Es fundamental para implementar <span style='color: #2ecc71;'>lógica de decisión y bucles</span> en programación.</li>
+          </ul>
+        
+          <h4>Tipos de Proposiciones de Flujo</h4>
+          <ul>
+            <li><strong>Estructuras condicionales:</strong> Permiten ejecutar código basado en condiciones</li>
+            <li><strong>Estructuras iterativas:</strong> Permiten repetir código múltiples veces</li>
+            <li><strong>Estructuras de salto:</strong> Permiten transferir el control a otra parte del código</li>
+            <li><strong>Estructuras de selección múltiple:</strong> Para casos con múltiples alternativas</li>
+          </ul>
+        
+          <h4>Estructuras Condicionales</h4>
+          <ul>
+            <li><strong>IF simple:</strong> Ejecuta código si la condición es verdadera
+              <ul>
+                <li>if (condición) { código }</li>
+              </ul>
+            </li>
+            <li><strong>IF-ELSE:</strong> Ejecuta un bloque u otro según la condición
+              <ul>
+                <li>if (condición) { código1 } else { código2 }</li>
+              </ul>
+            </li>
+            <li><strong>IF-ELSE IF:</strong> Múltiples condiciones en cascada
+              <ul>
+                <li>if (cond1) { } else if (cond2) { } else { }</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Estructuras Iterativas (Bucles)</h4>
+          <ul>
+            <li><strong>WHILE:</strong> Repite mientras la condición sea verdadera
+              <ul>
+                <li>while (condición) { código }</li>
+              </ul>
+            </li>
+            <li><strong>DO-WHILE:</strong> Ejecuta al menos una vez y luego repite mientras la condición sea verdadera
+              <ul>
+                <li>do { código } while (condición)</li>
+              </ul>
+            </li>
+            <li><strong>FOR:</strong> Bucle con inicialización, condición e incremento
+              <ul>
+                <li>for (inicialización; condición; incremento) { código }</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Estructuras de Selección Múltiple</h4>
+          <ul>
+            <li><strong>SWITCH-CASE:</strong> Selecciona entre múltiples casos basados en un valor
+              <ul>
+                <li>switch (variable) { case valor1: código; break; case valor2: código; break; default: código; }</li>
+              </ul>
+            </li>
+            <li><strong>Match (en lenguajes modernos):</strong> Pattern matching para selección avanzada</li>
+          </ul>
+        
+          <h4>Instrucciones de Control de Flujo</h4>
+          <ul>
+            <li><strong>BREAK:</strong> Termina la ejecución de un bucle o switch</li>
+            <li><strong>CONTINUE:</strong> Salta a la siguiente iteración de un bucle</li>
+            <li><strong>RETURN:</strong> Retorna un valor y termina la ejecución de una función</li>
+            <li><strong>GOTO:</strong> Salto incondicional (considerado mala práctica en programación moderna)</li>
+          </ul>
+        
+          <h4>Flujo de Ejecución Paso a Paso</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Evaluación de condición</span> en estructuras condicionales</li>
+            <li><span style='color: #e74c3c;'>Ejecución selectiva</span> del bloque correspondiente</li>
+            <li><span style='color: #e74c3c;'>Inicialización y verificación</span> en bucles</li>
+            <li><span style='color: #e74c3c;'>Repetición controlada</span> con condición de terminación</li>
+            <li><span style='color: #e74c3c;'>Salida del flujo controlado</span> y continuación del programa</li>
+          </ol>
+        
+          <h4>Ejemplos Prácticos</h4>
+          <ul>
+            <li><strong>Condicional IF:</strong>
+              <ul>
+                <li>if (edad >= 18) { console.log('Mayor de edad'); } else { console.log('Menor de edad'); }</li>
+              </ul>
+            </li>
+            <li><strong>Bucle FOR:</strong>
+              <ul>
+                <li>for (let i = 0; i < 10; i++) { console.log('Iteración: ' + i); }</li>
+              </ul>
+            </li>
+            <li><strong>Bucle WHILE:</strong>
+              <ul>
+                <li>while (contador < 5) { console.log(contador); contador++; }</li>
+              </ul>
+            </li>
+            <li><strong>SWITCH-CASE:</strong>
+              <ul>
+                <li>switch (diaSemana) { case 1: console.log('Lunes'); break; case 2: console.log('Martes'); break; default: console.log('Otro día'); }</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Anidamiento de Estructuras de Flujo</h4>
+          <ul>
+            <li>Los bucles pueden contener condicionales y viceversa</li>
+            <li>Los condicionales pueden anidarse para lógica compleja</li>
+            <li>Los bucles pueden anidarse para procesar estructuras multidimensionales</li>
+            <li>Es importante mantener la legibilidad del código anidado</li>
+          </ul>
+        
+          <h4>Buenas Prácticas en el Control de Flujo</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Evitar bucles infinitos</span> asegurando condiciones de salida</li>
+            <li><span style='color: #e74c3c;'>Mantener la legibilidad</span> con indentación consistente</li>
+            <li><span style='color: #e74c3c;'>Usar break y continue</span> con moderación</li>
+            <li><span style='color: #e74c3c;'>Preferir estructuras claras</span> sobre código complejo anidado</li>
+            <li><span style='color: #e74c3c;'>Validar condiciones</span> antes de entrar en bucles</li>
+          </ol>
+        
+          <h4>Aplicaciones en Algoritmos</h4>
+          <ul>
+            <li>Búsqueda y filtrado de datos</li>
+            <li>Validación y procesamiento de entradas</li>
+            <li>Implementación de menús y interfaces</li>
+            <li>Procesamiento por lotes y iteraciones</li>
+            <li>Control de estados y máquinas de estado</li>
+          </ul>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+            <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+            <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
+            <li>Gamma, E., et al. (1994). <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>. Addison-Wesley.</li>
+            <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
+          </ul>
+        `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
+        </li>
+
+        <ul class="tema-list">
+          <li>2.6. Diagramas</li>
+        </ul>
     </div>
     
     <div class="tema-card">
