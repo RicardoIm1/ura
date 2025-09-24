@@ -2220,10 +2220,276 @@
               </ul>
             `)">3.7. Formato E <span class="emoji-small">✅</span>
           </li>
-          <li>3.8. Capacidades adicionales de formato</li>
 
+        <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Explorar funcionalidades avanzadas de formato que permiten personalización extensiva, localización internacional y técnicas especializadas para presentación de datos.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Capacidades adicionales de formato incluyen <span style='color: #e74c3c;'>funcionalidades avanzadas más allá de los especificadores básicos</span>.</li>
+                <li>Permiten <span style='color: #3498db;'>personalización extensiva y adaptación a necesidades específicas</span> de presentación.</li>
+                <li>Incluyen <span style='color: #2ecc71;'>técnicas para internacionalización, alineación compleja y formatos especializados</span>.</li>
+              </ul>
+            
+              <h4>Formatos Personalizados Avanzados</h4>
+              <ul>
+                <li><strong>Formatos condicionales:</strong> Cambian según el valor del dato</li>
+                <li><strong>Formatos compuestos:</strong> Combinan múltiples tipos en una salida</li>
+                <li><strong>Formatos anidados:</strong> Incluyen formatos dentro de formatos</li>
+                <li><strong>Formatos dinámicos:</strong> Se generan en tiempo de ejecución</li>
+                <li><strong>Plantillas reutilizables:</strong> Patrones de formato almacenados</li>
+              </ul>
+            
+              <h4>Internacionalización y Localización (i18n/l10n)</h4>
+              <ul>
+                <li><strong>Configuración regional (Locale):</strong> Formatos específicos por país/idioma</li>
+                <li><strong>Moneda:</strong> Símbolos, posición y separadores locales</li>
+                <li><strong>Fechas y horas:</strong> Formatos culturalmente apropiados</li>
+                <li><strong>Números:</strong> Separadores decimales y de miles locales</li>
+                <li><strong>Texto bidireccional:</strong> Soporte para idiomas RTL (derecha a izquierda)</li>
+              </ul>
+            
+              <h4>Formatos Especializados por Tipo de Dato</h4>
+              <ul>
+                <li><strong>Direcciones IP:</strong> Formato IPv4 (192.168.1.1) e IPv6</li>
+                <li><strong>Números telefónicos:</strong> Formatos internacionales E.164</li>
+                <li><strong>ISBN/ISSN:</strong> Formatos estandarizados para publicaciones</li>
+                <li><strong>Códigos de barras:</strong> Representación numérica especializada</li>
+                <li><strong>Coordenadas geográficas:</strong> Grados, minutos, segundos o decimales</li>
+              </ul>
+            
+              <h4>Técnicas de Alineación Avanzada</h4>
+              <ul>
+                <li><strong>Alineación decimal:</strong> Puntos decimales alineados verticalmente</li>
+                <li><strong>Alineación mixta:</strong> Diferentes alineaciones en la misma línea</li>
+                <li><strong>Justificación completa:</strong> Texto expandido para llenar ancho</li>
+                <li><strong>Alineación visual:</strong> Basada en contenido semántico</li>
+                <li><strong>Tablas complejas:</strong> Múltiples niveles de anidamiento</li>
+              </ul>
+            
+              <h4>Proceso de Formato Avanzado</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Analizar requisitos de presentación</span> específicos</li>
+                <li><span style='color: #e74c3c;'>Seleccionar técnicas de formato apropiadas</span></li>
+                <li><span style='color: #e74c3c;'>Configurar parámetros de localización</span></li>
+                <li><span style='color: #e74c3c;'>Implementar lógica de formato condicional</span></li>
+                <li><span style='color: #e74c3c;'>Validar y probar el resultado final</span></li>
+              </ol>
+            
+              <h4>Ejemplos de Formatos Avanzados</h4>
+              <ul>
+                <li><strong>Formato condicional en Python:</strong>
+                  <ul>
+                    <li>valor = -1500.75</li>
+                    <li>print(f'{valor:+,.2f}') → '-1,500.75'</li>
+                    <li>print(f'{valor:>12,}') → '     -1,501'</li>
+                  </ul>
+                </li>
+                <li><strong>Localización en Java:</strong>
+                  <ul>
+                    <li>NumberFormat fmt = NumberFormat.getCurrencyInstance(Locale.FRANCE);</li>
+                    <li>fmt.format(1234.56) → '1 234,56 €'</li>
+                  </ul>
+                </li>
+                <li><strong>Formato personalizado en C#:</strong>
+                  <ul>
+                    <li>DateTime.Now.ToString('yyyy-MM-dd HH:mm:ss') → '2024-01-15 14:30:25'</li>
+                  </ul>
+                </li>
+                <li><strong>Plantillas en JavaScript:</strong>
+                  <ul>
+                    <li>const formatoMoneda = new Intl.NumberFormat('es-MX', {style: 'currency', currency: 'MXN'});</li>
+                    <li>formatoMoneda.format(1500.5) → '$1,500.50'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Formatos para Medidas y Unidades</h4>
+              <ul>
+                <li><strong>Sistema métrico:</strong> km, m, cm, mm con conversiones automáticas</li>
+                <li><strong>Sistema imperial:</strong> millas, pies, pulgadas con fracciones</li>
+                <li><strong>Unidades científicas:</strong> Notación con unidades SI</li>
+                <li><strong>Conversión automática:</strong> Entre sistemas de medida</li>
+                <li><strong>Precisión contextual:</strong> Diferente precisión según unidad</li>
+              </ul>
+            
+              <h4>Formatos Gráficos y Visuales</h4>
+              <ul>
+                <li><strong>Barras de progreso:</strong> Representación visual de porcentajes</li>
+                <li><strong>Colores condicionales:</strong> Cambio de color según valores</li>
+                <li><strong>Iconos e indicadores:</strong> Símbolos visuales para estados</li>
+                <li><strong>Gráficos ASCII:</strong> Representación textual de datos gráficos</li>
+                <li><strong>Tablas formateadas:</strong> Bordes, sombreado, encabezados</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato Avanzado</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Mantener la consistencia</span> en toda la aplicación</li>
+                <li><span style='color: #e74c3c;'>Considerar la accesibilidad</span> para todos los usuarios</li>
+                <li><span style='color: #e74c3c;'>Optimizar el rendimiento</span> de formatos complejos</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos personalizados</span> extensivamente</li>
+                <li><span style='color: #e74c3c;'>Probar con datos extremos</span> y casos límite</li>
+              </ol>
+            
+              <h4>Herramientas y Librerías Avanzadas</h4>
+              <ul>
+                <li><strong>ICU (International Components for Unicode):</strong> Estándar para internacionalización</li>
+                <li><strong>MessageFormat:</strong> Para mensajes complejos con pluralización</li>
+                <li><strong>Plantillas Mustache/Handlebars:</strong> Para formatos reutilizables</li>
+                <li><strong>Librerías de gráficos:</strong> Para visualización avanzada</li>
+                <li><strong>Formatos estándar:</strong> JSON Schema, XML Schema para validación</li>
+              </ul>
+            
+              <h4>Consideraciones de Rendimiento</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Cacheo de objetos de formato</span> para reutilización</li>
+                <li><span style='color: #3498db;'>Compilación de plantillas</span> en tiempo de desarrollo</li>
+                <li><span style='color: #2ecc71;'>Lazy evaluation:</span> Formateo bajo demanda</li>
+                <li><span style='color: #f39c12;'>Optimización de concatenaciones</span> de cadenas</li>
+                <li><span style='color: #9b59b6;'>Uso de StringBuilder</span> para múltiples operaciones</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Unicode Consortium. (2021). <em>Unicode Standard Annex #35: Unicode Locale Data Markup Language</em>.</li>
+                <li>Microsoft Corporation. (2021). <em>Globalization and Localization in .NET</em>. MSDN Documentation.</li>
+                <li>Oracle Corporation. (2021). <em>Internationalization Enhancements in Java</em>. Oracle Java Docs.</li>
+                <li>Mozilla Developer Network. (2021). <em>Internationalization in JavaScript</em>. MDN Web Docs.</li>
+                <li>Python Software Foundation. (2021). <em>locale — Internationalization services</em>. Python Documentation.</li>
+              </ul>
+            `)">3.8. Capacidades adicionales de formato <span class="emoji-small">✅</span>
+        </li>
           
-          <li>3.9. Código holierith</li>
+<li onclick="abrirModal('3.9. Código Hollerith', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el código Hollerith como sistema histórico de representación de datos en tarjetas perforadas y su influencia en el desarrollo de la informática moderna.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>El código Hollerith es un <span style='color: #e74c3c;'>sistema de codificación de caracteres</span> utilizado en tarjetas perforadas para el procesamiento de datos.</li>
+                <li>Fue desarrollado por <span style='color: #3498db;'>Herman Hollerith</span> para el censo de Estados Unidos de 1890.</li>
+                <li>Representa el <span style='color: #2ecc71;'>primer sistema mecanizado de procesamiento de datos</span> que condujo a la fundación de IBM.</li>
+              </ul>
+            
+              <h4>Contexto Histórico</h4>
+              <ul>
+                <li><strong>1890:</strong> Primera aplicación exitosa en el censo estadounidense</li>
+                <li><strong>1896:</strong> Hollerith funda la Tabulating Machine Company</li>
+                <li><strong>1924:</strong> La empresa se convierte en International Business Machines (IBM)</li>
+                <li><strong>1950s-1970s:</strong> Uso extensivo en computación mainframe</li>
+                <li><strong>1980s:</strong> Declive gradual con la llegada de medios magnéticos</li>
+              </ul>
+            
+              <h4>Estructura de la Tarjeta Perforada</h4>
+              <ul>
+                <li><strong>Dimensiones estándar:</strong> 7⅜ × 3¼ pulgadas (187 × 82 mm)</li>
+                <li><strong>Columnas:</strong> 80 columnas para caracteres</li>
+                <li><strong>Filas:</strong> 12 filas de posición de perforación (0-9 más 2 zonas)</li>
+                <li><strong>Material:</strong> Cartulina de alta calidad y durabilidad</li>
+                <li><strong>Capacidad:</strong> 80 caracteres por tarjeta</li>
+              </ul>
+            
+              <h4>Sistema de Codificación</h4>
+              <ul>
+                <li><strong>Zonas:</strong> Filas 12 (Zona superior) y 11 (Zona 9-8)</li>
+                <li><strong>Dígitos:</strong> Filas 0-9 para números y combinaciones</li>
+                <li><strong>Letras:</strong> Combinación de zona + dígito (ej: Zona 12 + Fila 1 = A)</li>
+                <li><strong>Símbolos:</strong> Combinaciones especiales de perforaciones</li>
+                <li><strong>Carácter nulo:</strong> Ausencia de perforaciones</li>
+              </ul>
+            
+              <h4>Proceso de Codificación y Decodificación</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el carácter</span> a representar</li>
+                <li><span style='color: #e74c3c;'>Determinar la combinación</span> de zona y dígito correspondiente</li>
+                <li><span style='color: #e74c3c;'>Perforar las posiciones</span> específicas en la tarjeta</li>
+                <li><span style='color: #e74c3c;'>Verificar la perforación</span> mediante inspección visual o mecánica</li>
+                <li><span style='color: #e74c3c;'>Leer mediante sensores</span> mecánicos o ópticos</li>
+              </ol>
+            
+              <h4>Ejemplos de Codificación Hollerith</h4>
+              <ul>
+                <li><strong>Número 5:</strong> Perforación única en fila 5</li>
+                <li><strong>Letra A:</strong> Perforaciones en zona 12 y fila 1</li>
+                <li><strong>Letra J:</strong> Perforaciones en zona 11 y fila 1</li>
+                <li><strong>Símbolo +:</strong> Perforaciones en zona 12 y filas 6, 8</li>
+                <li><strong>Espacio:</strong> Sin perforaciones en la columna</li>
+              </ul>
+            
+              <h4>Equipos y Máquinas Hollerith</h4>
+              <ul>
+                <li><strong>Perforadora:</strong> Máquina para crear las tarjetas</li>
+                <li><strong>Clasificadora:</strong> Ordenaba tarjetas según criterios</li>
+                <li><strong>Tabuladora:</strong> Contaba y sumaba datos de las tarjetas</li>
+                <li><strong>Reproductora:</strong> Copiaba tarjetas perforadas</li>
+                <li><strong>Intérprete:</strong> Imprimía caracteres en el borde de la tarjeta</li>
+              </ul>
+            
+              <h4>Ventajas del Sistema Hollerith</h4>
+              <ul>
+                <li><strong>Alta velocidad:</strong> Procesamiento más rápido que manual</li>
+                <li><strong>Precisión:</strong> Reducción de errores humanos</li>
+                <li><strong>Reutilizabilidad:</strong> Tarjetas podían reprocesarse</li>
+                <li><strong>Almacenamiento:</strong> Archivo físico permanente</li>
+                <li><strong>Estandarización:</strong> Formato universalmente aceptado</li>
+              </ul>
+            
+              <h4>Limitaciones y Desventajas</h4>
+              <ul>
+                <li><strong>Capacidad limitada:</strong> Solo 80 caracteres por tarjeta</li>
+                <li><strong>Fragilidad:</strong> Daño por manipulación o condiciones ambientales</li>
+                <li><strong>Velocidad:</strong> Lenta comparada con medios electrónicos</li>
+                <li><strong>Costo:</strong> Equipos especializados y mantenimiento</li>
+                <li><strong>Error humano:</strong> Perforaciones incorrectas o dañadas</li>
+              </ul>
+            
+              <h4>Legado e Influencia</h4>
+              <ul>
+                <li><strong>IBM:</strong> Base del imperio empresarial de IBM</li>
+                <li><strong>Formatos modernos:</strong> Influencia en codificaciones como EBCDIC</li>
+                <li><strong>Términos sobrevivientes:</strong> 'Bug' por insectos atrapados en máquinas</li>
+                <li><strong>Arquitectura:</strong> Conceptos que influyeron en diseño de computadoras</li>
+                <li><strong>Museos:</strong> Preservación como patrimonio tecnológico</li>
+              </ul>
+            
+              <h4>Aplicaciones Históricas</h4>
+              <ul>
+                <li><strong>Censos poblacionales:</strong> Estados Unidos y otros países</li>
+                <li><strong>Nóminas y contabilidad:</strong> Empresas y gobiernos</li>
+                <li><strong>Investigación científica:</strong> Procesamiento de datos estadísticos</li>
+                <li><strong>Gestión de inventarios:</strong> Control de almacenes y producción</li>
+                <li><strong>Reservaciones:</strong> Aerolíneas y sistemas de transporte</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en el Uso Histórico</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Verificar perforaciones</span> antes del procesamiento</li>
+                <li><span style='color: #e74c3c;'>Almacenar tarjetas</span> en condiciones controladas</li>
+                <li><span style='color: #e74c3c;'>Utilizar secuencias de control</span> para validación</li>
+                <li><span style='color: #e74c3c;'>Mantener equipos</span> con limpieza y calibración regular</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos</span> de codificación específicos</li>
+              </ol>
+            
+              <h4>Transición a Tecnologías Modernas</h4>
+              <ul>
+                <li><strong>Cintas magnéticas:</strong> Mayor capacidad y velocidad</li>
+                <li><strong>Discos duros:</strong> Acceso aleatorio y mayor densidad</li>
+                <li><strong>Medios ópticos:</strong> CD, DVD para almacenamiento masivo</li>
+                <li><strong>Almacenamiento sólido:</strong> Memorias flash y SSD</li>
+                <li><strong>Cloud computing:</strong> Almacenamiento distribuido y remoto</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Hollerith, H. (1889). <em>An Electric Tabulating System</em>. US Patent 395,782.</li>
+                <li>Austrian, G. D. (1982). <em>Herman Hollerith: Forgotten Giant of Information Processing</em>. Columbia University Press.</li>
+                <li>Pugh, E. W. (1995). <em>Building IBM: Shaping an Industry and Its Technology</em>. MIT Press.</li>
+                <li>Ceruzzi, P. E. (2003). <em>A History of Modern Computing</em>. MIT Press.</li>
+                <li>IBM Archives. (2021). <em>Hollerith Tabulating Machine</em>. IBM Corporation.</li>
+              </ul>
+            `)">3.9. Código Hollerith <span class="emoji-small">✅</span>
+        </li>
       </ul>
     </div>
     
