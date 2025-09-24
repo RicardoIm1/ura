@@ -1970,8 +1970,145 @@
             `)">3.5. Formato I <span class="emoji-small">✅</span>
         </li>
         
-        <li>3.6. Formato F</li>
-        <li>3.7. Formato E</li>
+        <li onclick="abrirModal('3.6. Formato F', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar el formato F para números de punto flotante, incluyendo precisión decimal, notación científica y representación de valores reales en programación.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Formato F se refiere específicamente al <span style='color: #e74c3c;'>formateo de números de punto flotante</span> en programación.</li>
+                <li>Utiliza el especificador <span style='color: #3498db;'>%f para representar valores reales</span> con parte decimal.</li>
+                <li>Permite controlar <span style='color: #2ecc71;'>precisión, redondeo y presentación</span> de números decimales.</li>
+              </ul>
+            
+              <h4>Especificador F Básico</h4>
+              <ul>
+                <li><strong>%f:</strong> Notación de punto fijo por defecto</li>
+                <li><strong>%.nf:</strong> Especifica 'n' dígitos decimales</li>
+                <li><strong>%m.nf:</strong> Ancho total 'm' con 'n' decimales</li>
+                <li><strong>%+f:</strong> Muestra signo siempre</li>
+                <li><strong>% f:</strong> Usa espacio para positivos</li>
+              </ul>
+            
+              <h4>Modificadores de Precisión</h4>
+              <ul>
+                <li><strong>%.0f:</strong> Sin decimales (redondea al entero más cercano)</li>
+                <li><strong>%.2f:</strong> Dos dígitos decimales (para moneda)</li>
+                <li><strong>%.4f:</strong> Cuatro dígitos (precisión media)</li>
+                <li><strong>%.6f:</strong> Seis dígitos (alta precisión)</li>
+                <li><strong>%.*f:</strong> Precisión dinámica mediante variable</li>
+              </ul>
+            
+              <h4>Notaciones para Punto Flotante</h4>
+              <ul>
+                <li><strong>%f:</strong> Notación de punto fijo (3.141593)</li>
+                <li><strong>%e:</strong> Notación científica (3.141593e+00)</li>
+                <li><strong>%g:</strong> Notación automática (elige %f o %e)</li>
+                <li><strong>%E:</strong> Notación científica con E mayúscula</li>
+                <li><strong>%G:</strong> Notación automática con E mayúscula</li>
+              </ul>
+            
+              <h4>Características del Formato F</h4>
+              <ul>
+                <li><strong>Redondeo automático:</strong> Ajusta al número de decimales especificado</li>
+                <li><strong>Relleno con ceros:</strong> Completa decimales faltantes con ceros</li>
+                <li><strong>Separador decimal:</strong> Usa punto (.) como estándar internacional</li>
+                <li><strong>Manejo de signo:</strong> Controla visualización de signo positivo/negativo</li>
+                <li><strong>Alineación:</strong> Por defecto alineado a la derecha</li>
+              </ul>
+            
+              <h4>Proceso de Formateo F</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el valor flotante</span> a formatear</li>
+                <li><span style='color: #e74c3c;'>Determinar la precisión requerida</span> (número de decimales)</li>
+                <li><span style='color: #e74c3c;'>Seleccionar la notación</span> (fija, científica, automática)</li>
+                <li><span style='color: #e74c3c;'>Aplicar redondeo y ajustes</span> según especificaciones</li>
+                <li><span style='color: #e74c3c;'>Generar la representación final</span></li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos de Formato F</h4>
+              <ul>
+                <li><strong>Precisión básica:</strong>
+                  <ul>
+                    <li>printf('%.2f', 3.14159) → '3.14'</li>
+                    <li>printf('%.4f', 2.71828) → '2.7183'</li>
+                    <li>printf('%.0f', 4.75)    → '5'</li>
+                  </ul>
+                </li>
+                <li><strong>Ancho y precisión combinados:</strong>
+                  <ul>
+                    <li>printf('%8.2f', 123.456)  → '  123.46'</li>
+                    <li>printf('%08.2f', 45.67)   → '00045.67'</li>
+                    <li>printf('%-8.2f', 12.34)   → '12.34   '</li>
+                  </ul>
+                </li>
+                <li><strong>Notación científica:</strong>
+                  <ul>
+                    <li>printf('%.2e', 1234567.89) → '1.23e+06'</li>
+                    <li>printf('%.4E', 0.000123)   → '1.2300E-04'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Casos Especiales</h4>
+              <ul>
+                <li><strong>Valores muy grandes:</strong> Notación científica automática</li>
+                <li><strong>Valores muy pequeños:</strong> Precisión extendida</li>
+                <li><strong>Valores infinitos:</strong> 'inf' o 'INF'</li>
+                <li><strong>Valores NaN (Not a Number):</strong> 'nan' o 'NAN'</li>
+                <li><strong>Ceros con signo:</strong> '+0.00' o '-0.00'</li>
+              </ul>
+            
+              <h4>Aplicaciones Específicas</h4>
+              <ul>
+                <li><strong>Cálculos financieros:</strong> Siempre 2 decimales para moneda</li>
+                <li><strong>Mediciones científicas:</strong> Precisión variable según instrumento</li>
+                <li><strong>Gráficos y visualizaciones:</strong> Etiquetas de ejes formateadas</li>
+                <li><strong>Reportes técnicos:</strong> Consistencia en número de decimales</li>
+                <li><strong>Interfaces de usuario:</strong> Formato amigable para usuarios</li>
+              </ul>
+            
+              <h4>Consideraciones de Precisión</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Errores de redondeo:</span> Acumulación en operaciones múltiples</li>
+                <li><span style='color: #3498db;'>Límites de representación:</span> Precisión limitada de float/double</li>
+                <li><span style='color: #2ecc71;'>Comparaciones seguras:</span> Usar tolerancias en lugar de igualdad exacta</li>
+                <li><span style='color: #f39c12;'>Propagación de error:</span> En cálculos en cadena</li>
+                <li><span style='color: #9b59b6;'>Precisión vs. rendimiento:</span> Trade-off en aplicaciones críticas</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato F</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Usar precisión consistente</span> en todo el sistema</li>
+                <li><span style='color: #e74c3c;'>Evitar decimales excesivos</span> que no aportan información</li>
+                <li><span style='color: #e74c3c;'>Considerar el contexto de uso</span> para elegir notación</li>
+                <li><span style='color: #e74c3c;'>Validar rangos esperados</span> antes de formatear</li>
+                <li><span style='color: #e74c3c;'>Documentar decisiones de precisión</span></li>
+              </ol>
+            
+              <h4>Diferencias entre Lenguajes</h4>
+              <ul>
+                <li><strong>C/C++:</strong> printf('%f'), cout con precision()</li>
+                <li><strong>Java:</strong> String.format('%f'), DecimalFormat</li>
+                <li><strong>Python:</strong> format(), f-strings, '%.2f' % valor</li>
+                <li><strong>JavaScript:</strong> toFixed(), toPrecision()</li>
+                <li><strong>C#:</strong> String.Format(),.ToString('F2')</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+                <li>Goldberg, D. (1991). <em>What Every Computer Scientist Should Know About Floating-Point Arithmetic</em>. ACM Computing Surveys.</li>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>Oracle Corporation. (2021). <em>Java DecimalFormat Documentation</em>. Oracle Java Docs.</li>
+                <li>Python Software Foundation. (2021). <em>Format Specification Mini-Language</em>. Python Documentation.</li>
+              </ul>
+            `)">3.6. Formato F <span class="emoji-small">✅</span>
+        </li>
+          
+          
+          
+          <li>3.7. Formato E</li>
         <li>3.8. Capacidades adicionales de formato</li>
         <li>3.9. Código holierith</li>
       </ul>
