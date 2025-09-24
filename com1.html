@@ -599,7 +599,7 @@
           `)">2.1. Descripción general <span class="emoji-small">✅</span>
         </li>
           
-      <ul class"tema-list>          
+        <ul class="tema-list">
         <li onclick="abrirModal('2.2. Tipos de proposiciones', `
             <hr><br>
             <p><strong>Objetivo:</strong> Identificar y clasificar los diferentes tipos de proposiciones lógicas según su estructura y características fundamentales.</p>
@@ -693,6 +693,7 @@
             </ul>
           `)">2.2. Tipos de proposiciones <span class="emoji-small">✅</span>
         </li>
+          
        <ul class="tema-list">
         <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
           <hr><br>
@@ -1084,7 +1085,6 @@
           </ul>
         `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
         </li>
-      </ul>
         
       <ul class="tema-list">
         <li onclick="abrirModal('2.6. Diagramas', `
@@ -1518,7 +1518,7 @@
           `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
         </li>
 
-       <ul class=tema-list">
+       <ul class="tema-list">
         <li onclick="abrirModal('3.3. Proposición de control', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de control que permiten dirigir el flujo de ejecución de un programa mediante estructuras de decisión y bucles.</p>
@@ -1674,10 +1674,166 @@
             `)">3.3. Proposición de control <span class="emoji-small">✅</span>        
         </li>
 
-
+        <li onclick="abrirModal('3.4. Proposición de formato', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de formato que permiten controlar la presentación y estructuración de datos en la salida de programas.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una proposición de formato es una <span style='color: #e74c3c;'>instrucción que especifica cómo deben presentarse</span> los datos en la salida.</li>
+                <li>Permite <span style='color: #3498db;'>controlar la apariencia y estructura</span> de la información mostrada al usuario.</li>
+                <li>Es esencial para crear <span style='color: #2ecc71;'>salidas legibles y profesionales</span> en aplicaciones.</li>
+              </ul>
+            
+              <h4>Elementos de Formato Comunes</h4>
+              <ul>
+                <li><strong>Alineación:</strong> Izquierda, derecha, centrado, justificado</li>
+                <li><strong>Longitud de campo:</strong> Ancho fijo para valores</li>
+                <li><strong>Precisión decimal:</strong> Número de dígitos después del punto</li>
+                <li><strong>Relleno:</strong> Caracteres para completar espacios (espacios, ceros)</li>
+                <li><strong>Separadores:</strong> Comas para miles, puntos para decimales</li>
+                <li><strong>Notación:</strong> Decimal, científica, hexadecimal, octal</li>
+              </ul>
+            
+              <h4>Funciones de Formato por Lenguaje</h4>
+              <ul>
+                <li><strong>Python:</strong>
+                  <ul>
+                    <li>format(): Formato de cadenas con placeholders</li>
+                    <li>f-strings: Interpolación con expresiones</li>
+                    <li>% operator: Formato estilo printf</li>
+                  </ul>
+                </li>
+                <li><strong>Java:</strong>
+                  <ul>
+                    <li>String.format(): Formato similar a printf</li>
+                    <li>System.out.printf(): Salida formateada directa</li>
+                    <li>DecimalFormat: Formato numérico avanzado</li>
+                  </ul>
+                </li>
+                <li><strong>C++:</strong>
+                  <ul>
+                    <li>printf(): Función de formato clásica</li>
+                    <li>cout con manipuladores: setw, setprecision, fixed</li>
+                    <li>sprintf(): Formato a string</li>
+                  </ul>
+                </li>
+                <li><strong>JavaScript:</strong>
+                  <ul>
+                    <li>template literals: Interpolación con backticks</li>
+                    <li>toFixed(), toPrecision(): Formato numérico</li>
+                    <li>Intl.NumberFormat(): Formato internacional</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Especificadores de Formato Principales</h4>
+              <ul>
+                <li><strong>Enteros:</strong> %d (decimal), %x (hex), %o (octal)</li>
+                <li><strong>Flotantes:</strong> %f (fijo), %e (científico), %g (automático)</li>
+                <li><strong>Cadenas:</strong> %s (string), %c (carácter)</li>
+                <li><strong>Booleanos:</strong> Representación como true/false o 1/0</li>
+                <li><strong>Fechas:</strong> Formatos personalizados (dd/mm/aaaa, etc.)</li>
+              </ul>
+            
+              <h4>Proceso de Aplicación de Formato</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el tipo de dato</span> a formatear</li>
+                <li><span style='color: #e74c3c;'>Seleccionar el especificador</span> apropiado</li>
+                <li><span style='color: #e74c3c;'>Definir opciones de formato</span> (ancho, precisión, etc.)</li>
+                <li><span style='color: #e74c3c;'>Aplicar el formato</span> a los datos</li>
+                <li><span style='color: #e74c3c;'>Validar el resultado</span> formateado</li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos de Formato</h4>
+              <ul>
+                <li><strong>Python f-strings:</strong>
+                  <ul>
+                    <li>f'Nombre: {nombre:>10}'  # Alineado a derecha</li>
+                    <li>f'Precio: ${precio:,.2f}'  # Decimal con separadores</li>
+                    <li>f'Porcentaje: {ratio:.1%}'  # Porcentaje con 1 decimal</li>
+                  </ul>
+                </li>
+                <li><strong>Java String.format():</strong>
+                  <ul>
+                    <li>String.format('%,d', 1000000)  // '1,000,000'</li>
+                    <li>String.format('%.2f', 3.14159)  // '3.14'</li>
+                    <li>String.format('%10s', 'Hola')  // '      Hola'</li>
+                  </ul>
+                </li>
+                <li><strong>C++ printf():</strong>
+                  <ul>
+                    <li>printf('%08d', 42)  // '00000042'</li>
+                    <li>printf('%-10s', 'texto')  // 'texto     '</li>
+                    <li>printf('%.3e', 1234.5678)  // '1.235e+03'</li>
+                  </ul>
+                </li>
+                <li><strong>JavaScript template literals:</strong>
+                  <ul>
+                    <li>`Total: $${total.toFixed(2)}`</li>
+                    <li>`Fecha: ${fecha.getDate()}/${fecha.getMonth()+1}`</li>
+                    <li>`Número: ${numero.toString().padStart(5, '0')}`</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Formatos Específicos por Tipo de Dato</h4>
+              <ul>
+                <li><strong>Monetarios:</strong> Símbolo de moneda, separadores, decimales</li>
+                <li><strong>Fechas y horas:</strong> Día/mes/año, formato 12/24 horas</li>
+                <li><strong>Porcentajes:</strong> Multiplicación por 100, símbolo %</li>
+                <li><strong>Números telefónicos:</strong> Formatos internacionales</li>
+                <li><strong>Direcciones IP:</strong> Cuatro octetos separados por puntos</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Mantener consistencia</span> en todo el programa</li>
+                <li><span style='color: #e74c3c;'>Considerar la localización</span> del usuario</li>
+                <li><span style='color: #e74c3c;'>Validar formatos personalizados</span> exhaustivamente</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos complejos</span> para mantenimiento</li>
+                <li><span style='color: #e74c3c;'>Usar constantes para formatos reutilizables</span></li>
+              </ol>
+            
+              <h4>Formatos Internacionales (Localización)</h4>
+              <ul>
+                <li><strong>Fecha:</strong> EE.UU. (mm/dd/aaaa) vs Europa (dd/mm/aaaa)</li>
+                <li><strong>Decimales:</strong> Punto (1.5) vs coma (1,5)</li>
+                <li><strong>Separadores de miles:</strong> Coma (1,000) vs punto (1.000)</li>
+                <li><strong>Moneda:</strong> Posición del símbolo, separadores</li>
+                <li><strong>Horario:</strong> 12h (AM/PM) vs 24h (00:00-23:59)</li>
+              </ul>
+            
+              <h4>Herramientas de Formato Avanzado</h4>
+              <ul>
+                <li><strong>Expresiones regulares:</strong> Para validación y transformación</li>
+                <li><strong>Librerías de internacionalización:</strong> Para soporte multiidioma</li>
+                <li><strong>Plantillas y templates:</strong> Para documentos estructurados</li>
+                <li><strong>Formatos estándar:</strong> JSON, XML, CSV para intercambio</li>
+                <li><strong>CSS/HTML:</strong> Para formato en aplicaciones web</li>
+              </ul>
+            
+              <h4>Consideraciones de Rendimiento</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Costo computacional</span> de operaciones de formato</li>
+                <li><span style='color: #3498db;'>Reutilización de objetos</span> de formato cuando sea posible</li>
+                <li><span style='color: #2ecc71;'>Cacheo de resultados</span> para formatos costosos</li>
+                <li><span style='color: #f39c12;'>Optimización de concatenaciones</span> de cadenas</li>
+                <li><span style='color: #9b59b6;'>Uso de StringBuilder</span> para múltiples operaciones</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+                <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+                <li>Microsoft Corporation. (2021). <em>Standard Numeric Format Strings</em>. MSDN Documentation.</li>
+              </ul>
+            `)">3.4. Proposición de formato <span class="emoji-small">✅</span>
+        </li>
 
          
-        <li>3.4. Proposición de formato</li>
         <li>3.5. Formato I</li>
         <li>3.6. Formato F</li>
         <li>3.7. Formato E</li>
