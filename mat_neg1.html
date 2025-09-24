@@ -3511,22 +3511,104 @@
                 <strong>SOLUCIÓN: x = 3, y = 2</strong>
               </div>
 
-              <h4>📊 Gráfica del Ejemplo 1</h4>
-              <div style='text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;'>
-                <strong>Recta 1:</strong> y = 5 - x (roja)<br>
-                <strong>Recta 2:</strong> y = x - 1 (azul)<br>
-                <strong>Punto de intersección:</strong> (3,2)<br><br>
-                <div style='font-family: monospace; line-height: 1.2;'>
-                  6|    •<br>
-                  5|   / \\<br>
-                  4|  /   \\<br>
-                  3| /     \\<br>
-                  2|/___•___\\  ← Solución (3,2)<br>
-                  1|     / \\<br>
-                  0|____/___\\____<br>
-                  0 1 2 3 4 5 6
-                </div>
-              </div>
+<h4>📈 Representación Gráfica del Ejemplo 1</h4>
+<div style='background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; border: 1px solid #e0e0e0;'>
+    <div style='text-align: center; margin-bottom: 15px;'>
+        <strong style='color: #e74c3c;'>Recta 1: y = 5 - x</strong> | 
+        <strong style='color: #3498db;'>Recta 2: y = x - 1</strong> | 
+        <strong style='color: #27ae60;'>Punto de intersección: (3,2)</strong>
+    </div>
+    
+    <div style='display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;'>
+        <!-- Sistema de coordenadas -->
+        <div style='position: relative; width: 250px; height: 250px; background: white; border: 2px solid #333; border-radius: 5px;'>
+            <!-- Ejes -->
+            <div style='position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #333;'></div>
+            <div style='position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: #333;'></div>
+            
+            <!-- Marcas en los ejes -->
+            <div style='position: absolute; left: 50%; top: 0; transform: translateX(-50%);'>y</div>
+            <div style='position: absolute; left: 100%; top: 50%; transform: translate(-100%, -50%);'>x</div>
+            
+            <!-- Recta 1: y = 5 - x (Roja) -->
+            <div style='position: absolute; width: 100%; height: 2px; background: linear-gradient(to right, transparent, #e74c3c); top: 20%; transform: rotate(-45deg); transform-origin: left center;'></div>
+            
+            <!-- Recta 2: y = x - 1 (Azul) -->
+            <div style='position: absolute; width: 100%; height: 2px; background: linear-gradient(to right, transparent, #3498db); top: 60%; transform: rotate(45deg); transform-origin: left center;'></div>
+            
+            <!-- Punto de intersección -->
+            <div style='position: absolute; left: 60%; top: 40%; width: 12px; height: 12px; background: #27ae60; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 2px #27ae60; transform: translate(-50%, -50%);'></div>
+            
+            <!-- Etiquetas de puntos importantes -->
+            <div style='position: absolute; left: 0%; top: 100%; transform: translateY(5px); font-size: 12px;'>-2</div>
+            <div style='position: absolute; left: 25%; top: 100%; transform: translateY(5px); font-size: 12px;'>-1</div>
+            <div style='position: absolute; left: 50%; top: 100%; transform: translateY(5px); font-size: 12px;'>0</div>
+            <div style='position: absolute; left: 75%; top: 100%; transform: translateY(5px); font-size: 12px;'>1</div>
+            <div style='position: absolute; left: 100%; top: 100%; transform: translateY(5px); font-size: 12px;'>2</div>
+            
+            <div style='position: absolute; left: 100%; top: 0%; transform: translateX(5px); font-size: 12px;'>4</div>
+            <div style='position: absolute; left: 100%; top: 25%; transform: translateX(5px); font-size: 12px;'>3</div>
+            <div style='position: absolute; left: 100%; top: 50%; transform: translateX(5px); font-size: 12px;'>2</div>
+            <div style='position: absolute; left: 100%; top: 75%; transform: translateX(5px); font-size: 12px;'>1</div>
+            <div style='position: absolute; left: 100%; top: 100%; transform: translateX(5px); font-size: 12px;'>0</div>
+        </div>
+        
+        <!-- Tabla de valores -->
+        <div style='min-width: 200px;'>
+            <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
+                <tr style='background: #3498db; color: white;'>
+                    <th style='padding: 8px; border: 1px solid #ddd;'>x</th>
+                    <th style='padding: 8px; border: 1px solid #ddd; color: #e74c3c;'>y₁ = 5-x</th>
+                    <th style='padding: 8px; border: 1px solid #ddd; color: #3498db;'>y₂ = x-1</th>
+                </tr>
+                <tr>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>0</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>5</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>-1</td>
+                </tr>
+                <tr style='background: #f0f0f0;'>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>1</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>4</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>0</td>
+                </tr>
+                <tr>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>2</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>3</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>1</td>
+                </tr>
+                <tr style='background: #d4edda;'>
+                    <td style='padding: 8px; border: 1px solid #ddd; font-weight: bold;'>3</td>
+                    <td style='padding: 8px; border: 1px solid #ddd; font-weight: bold;'>2</td>
+                    <td style='padding: 8px; border: 1px solid #ddd; font-weight: bold;'>2</td>
+                </tr>
+                <tr>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>4</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>1</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>3</td>
+                </tr>
+                <tr style='background: #f0f0f0;'>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>5</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>0</td>
+                    <td style='padding: 8px; border: 1px solid #ddd;'>4</td>
+                </tr>
+            </table>
+            <div style='text-align: center; margin-top: 10px; font-size: 12px; color: #666;'>
+                Los valores de y coinciden cuando x=3, y=2
+            </div>
+        </div>
+    </div>
+    
+    <!-- Análisis de la solución -->
+    <div style='margin-top: 20px; padding: 15px; background: white; border-radius: 5px; border-left: 4px solid #27ae60;'>
+        <strong>🔍 Análisis Gráfico:</strong>
+        <ul style='margin: 10px 0 0 20px;'>
+            <li>La <span style='color: #e74c3c;'>recta roja</span> tiene pendiente negativa (-1)</li>
+            <li>La <span style='color: #3498db;'>recta azul</span> tiene pendiente positiva (+1)</li>
+            <li>El <span style='color: #27ae60;'>punto (3,2)</span> satisface ambas ecuaciones simultáneamente</li>
+            <li>Las rectas son <strong>secantes</strong> (se cortan en un punto)</li>
+        </ul>
+    </div>
+</div>
 
               <h4>⚖️ EJEMPLO 2: Método de Igualación</h4>
               <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
