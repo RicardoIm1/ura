@@ -3451,149 +3451,217 @@
               </ul>
             `)">2.2.1. Gráfica de ecuaciones con dos incógnitas de segundo grado <span class="emoji-small">✅</span>
               </li>
-              
-              
-          <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
+
+            <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
               <hr><br>
-              <p><strong>Objetivo:</strong> Aplicar métodos algebraicos para resolver sistemas de dos ecuaciones lineales con dos incógnitas, comprendiendo cada paso del proceso de solución.</p>
+              <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
             
-              <h4>Definición</h4>
+              <h4>📝 ¿Qué es un Sistema de Ecuaciones?</h4>
               <ul>
-                <li>Un sistema de dos ecuaciones con dos incógnitas consiste en <span style='color: #e74c3c;'>dos ecuaciones lineales que deben satisfacerse simultáneamente</span>.</li>
-                <li>Tiene la forma general: 
-                  <ul>
-                    <li>a₁x + b₁y = c₁</li>
-                    <li>a₂x + b₂y = c₂</li>
-                  </ul>
+                <li>Dos ecuaciones con dos variables que deben cumplirse <span style='color: #e74c3c;'>al mismo tiempo</span></li>
+                <li>Forma general: 
+                  <div style='background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;'>
+                    <strong>a₁x + b₁y = c₁</strong><br>
+                    <strong>a₂x + b₂y = c₂</strong>
+                  </div>
                 </li>
-                <li>La solución es el <span style='color: #3498db;'>par ordenado (x, y)</span> que satisface ambas ecuaciones.</li>
+                <li>La solución es el <span style='color: #3498db;'>punto (x,y)</span> donde las dos rectas se cruzan</li>
               </ul>
-            
-              <h4>Métodos de Solución</h4>
-              <ul>
-                <li><strong>Sustitución:</strong> Despejar una variable y sustituir en la otra ecuación</li>
-                <li><strong>Igualación:</strong> Despejar la misma variable en ambas ecuaciones e igualar</li>
-                <li><strong>Reducción/Eliminación:</strong> Sumar o restar ecuaciones para eliminar una variable</li>
-                <li><strong>Gráfico:</strong> Encontrar el punto de intersección de las rectas</li>
-              </ul>
-            
-              <h4>Ejemplo 1: Método de Sustitución</h4>
-              <p><strong>Sistema:</strong></p>
-              <ul>
-                <li>2x + y = 7  ... (1)</li>
-                <li>x - y = -1 ... (2)</li>
-              </ul>
-              
-              <p><strong>Pasos resueltos:</strong></p>
+
+              <h4>🎯 Métodos de Solución</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background: #3498db; color: white;'>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>Método</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>¿Cómo funciona?</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>Cuándo usarlo</th>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Sustitución</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Despejar una variable y reemplazar</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Cuando una variable es fácil de despejar</td>
+                </tr>
+                <tr style='background: #f8f9fa;'>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Igualación</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Despejar la misma variable en ambas</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Cuando ambas variables son fáciles de despejar</td>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Reducción</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Sumar/restar ecuaciones para eliminar</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Cuando los coeficientes son similares</td>
+                </tr>
+              </table>
+
+              <h4>🔢 EJEMPLO 1: Método de Sustitución (Súper Fácil)</h4>
+              <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
+                <strong>Sistema:</strong><br>
+                <span style='color: #e74c3c;'>x + y = 5</span> ... (1)<br>
+                <span style='color: #3498db;'>x - y = 1</span> ... (2)
+              </div>
+
+              <p><strong>📋 Pasos Resueltos:</strong></p>
               <ol>
-                <li><span style='color: #e74c3c;'>Despejar y en la ecuación (1):</span> y = 7 - 2x</li>
-                <li><span style='color: #e74c3c;'>Sustituir en la ecuación (2):</span> x - (7 - 2x) = -1</li>
-                <li><span style='color: #e74c3c;'>Resolver para x:</span> x - 7 + 2x = -1 → 3x = 6 → x = 2</li>
-                <li><span style='color: #e74c3c;'>Sustituir x en y:</span> y = 7 - 2(2) = 7 - 4 = 3</li>
-                <li><span style='color: #e74c3c;'>Verificar solución:</span> 2(2) + 3 = 7 ✓, 2 - 3 = -1 ✓</li>
+                <li><span style='color: #e74c3c;'>Despejar x en ecuación (1):</span> x = 5 - y</li>
+                <li><span style='color: #e74c3c;'>Sustituir en ecuación (2):</span> (5 - y) - y = 1</li>
+                <li><span style='color: #e74c3c;'>Resolver para y:</span> 5 - 2y = 1 → -2y = -4 → y = 2</li>
+                <li><span style='color: #e74c3c;'>Calcular x:</span> x = 5 - 2 = 3</li>
+                <li><span style='color: #27ae60;'>✅ Verificar:</span> 3 + 2 = 5 ✓, 3 - 2 = 1 ✓</li>
               </ol>
-              <p><strong>Solución:</strong> x = 2, y = 3</p>
-            
-              <h4>Ejemplo 2: Método de Igualación</h4>
-              <p><strong>Sistema:</strong></p>
-              <ul>
-                <li>3x + 2y = 12 ... (1)</li>
-                <li>2x + 3y = 13 ... (2)</li>
-              </ul>
-              
-              <p><strong>Pasos resueltos:</strong></p>
+              <div style='background: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;'>
+                <strong>SOLUCIÓN: x = 3, y = 2</strong>
+              </div>
+
+              <h4>📊 Gráfica del Ejemplo 1</h4>
+              <div style='text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;'>
+                <strong>Recta 1:</strong> y = 5 - x (roja)<br>
+                <strong>Recta 2:</strong> y = x - 1 (azul)<br>
+                <strong>Punto de intersección:</strong> (3,2)<br><br>
+                <div style='font-family: monospace; line-height: 1.2;'>
+                  6|    •<br>
+                  5|   / \\<br>
+                  4|  /   \\<br>
+                  3| /     \\<br>
+                  2|/___•___\\  ← Solución (3,2)<br>
+                  1|     / \\<br>
+                  0|____/___\\____<br>
+                  0 1 2 3 4 5 6
+                </div>
+              </div>
+
+              <h4>⚖️ EJEMPLO 2: Método de Igualación</h4>
+              <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
+                <strong>Sistema:</strong><br>
+                <span style='color: #e74c3c;'>2x + y = 8</span> ... (1)<br>
+                <span style='color: #3498db;'>x - y = 1</span> ... (2)
+              </div>
+
+              <p><strong>📋 Pasos Resueltos:</strong></p>
               <ol>
                 <li><span style='color: #e74c3c;'>Despejar y en ambas ecuaciones:</span></li>
                 <ul>
-                  <li>De (1): 2y = 12 - 3x → y = (12 - 3x)/2</li>
-                  <li>De (2): 3y = 13 - 2x → y = (13 - 2x)/3</li>
+                  <li>De (1): y = 8 - 2x</li>
+                  <li>De (2): y = x - 1</li>
                 </ul>
-                <li><span style='color: #e74c3c;'>Igualar las expresiones:</span> (12 - 3x)/2 = (13 - 2x)/3</li>
-                <li><span style='color: #e74c3c;'>Resolver para x:</span> 3(12 - 3x) = 2(13 - 2x) → 36 - 9x = 26 - 4x → -5x = -10 → x = 2</li>
-                <li><span style='color: #e74c3c;'>Sustituir x en y:</span> y = (12 - 3×2)/2 = (12 - 6)/2 = 6/2 = 3</li>
-                <li><span style='color: #e74c3c;'>Verificar:</span> 3(2) + 2(3) = 12 ✓, 2(2) + 3(3) = 13 ✓</li>
+                <li><span style='color: #e74c3c;'>Igualar:</span> 8 - 2x = x - 1</li>
+                <li><span style='color: #e74c3c;'>Resolver para x:</span> 8 + 1 = x + 2x → 9 = 3x → x = 3</li>
+                <li><span style='color: #e74c3c;'>Calcular y:</span> y = 3 - 1 = 2</li>
+                <li><span style='color: #27ae60;'>✅ Verificar:</span> 2(3) + 2 = 8 ✓, 3 - 2 = 1 ✓</li>
               </ol>
-              <p><strong>Solución:</strong> x = 2, y = 3</p>
-            
-              <h4>Ejemplo 3: Método de Reducción</h4>
-              <p><strong>Sistema:</strong></p>
-              <ul>
-                <li>4x + 3y = 18 ... (1)</li>
-                <li>2x - y = 4  ... (2)</li>
-              </ul>
-              
-              <p><strong>Pasos resueltos:</strong></p>
+              <div style='background: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;'>
+                <strong>SOLUCIÓN: x = 3, y = 2</strong>
+              </div>
+
+              <h4>➕ EJEMPLO 3: Método de Reducción</h4>
+              <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
+                <strong>Sistema:</strong><br>
+                <span style='color: #e74c3c;'>3x + 2y = 12</span> ... (1)<br>
+                <span style='color: #3498db;'>2x + 2y = 10</span> ... (2)
+              </div>
+
+              <p><strong>📋 Pasos Resueltos:</strong></p>
               <ol>
-                <li><span style='color: #e74c3c;'>Multiplicar ecuación (2) por 3:</span> 6x - 3y = 12 ... (3)</li>
-                <li><span style='color: #e74c3c;'>Sumar ecuaciones (1) y (3):</span> (4x + 3y) + (6x - 3y) = 18 + 12 → 10x = 30 → x = 3</li>
-                <li><span style='color: #e74c3c;'>Sustituir x en ecuación (2):</span> 2(3) - y = 4 → 6 - y = 4 → y = 2</li>
-                <li><span style='color: #e74c3c;'>Verificar:</span> 4(3) + 3(2) = 18 ✓, 2(3) - 2 = 4 ✓</li>
+                <li><span style='color: #e74c3c;'>Restar ecuación (2) de (1):</span> (3x + 2y) - (2x + 2y) = 12 - 10</li>
+                <li><span style='color: #e74c3c;'>Simplificar:</span> x = 2</li>
+                <li><span style='color: #e74c3c;'>Sustituir x en (2):</span> 2(2) + 2y = 10 → 4 + 2y = 10</li>
+                <li><span style='color: #e74c3c;'>Resolver para y:</span> 2y = 6 → y = 3</li>
+                <li><span style='color: #27ae60;'>✅ Verificar:</span> 3(2) + 2(3) = 12 ✓, 2(2) + 2(3) = 10 ✓</li>
               </ol>
-              <p><strong>Solución:</strong> x = 3, y = 2</p>
-            
-              <h4>Ejemplo 4: Sistema con Fracciones</h4>
-              <p><strong>Sistema:</strong></p>
-              <ul>
-                <li>(x/2) + (y/3) = 4 ... (1)</li>
-                <li>(x/3) - (y/4) = 1 ... (2)</li>
-              </ul>
-              
-              <p><strong>Pasos resueltos:</strong></p>
-              <ol>
-                <li><span style='color: #e74c3c;'>Eliminar denominadores multiplicando por MCM:</span></li>
+              <div style='background: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;'>
+                <strong>SOLUCIÓN: x = 2, y = 3</strong>
+              </div>
+
+              <h4>📈 Tabla de Valores para Graficar</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background: #3498db; color: white;'>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>x</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>y = 5 - x</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>y = x - 1</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>Punto</th>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>0</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>5</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>-1</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>(0,5) y (0,-1)</td>
+                </tr>
+                <tr style='background: #f8f9fa;'>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>1</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>4</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>0</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>(1,4) y (1,0)</td>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>2</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>3</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>1</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>(2,3) y (2,1)</td>
+                </tr>
+                <tr style='background: #f8f9fa;'>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>3</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>2</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>2</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd; background: #2ecc71; color: white;'><strong>(3,2) ✓ SOLUCIÓN</strong></td>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>4</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>1</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>3</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>(4,1) y (4,3)</td>
+                </tr>
+              </table>
+
+              <h4>🎯 Tipos de Sistemas</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background: #3498db; color: white;'>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>Tipo</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>¿Qué significa?</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>Gráfica</th>
+                  <th style='padding: 10px; border: 1px solid #ddd;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Compatible Determinado</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>1 solución única</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Rectas que se cortan</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>x+y=5, x-y=1</td>
+                </tr>
+                <tr style='background: #f8f9fa;'>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Compatible Indeterminado</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Infinitas soluciones</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Rectas iguales</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>2x+2y=4, x+y=2</td>
+                </tr>
+                <tr>
+                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Incompatible</strong></td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>No tiene solución</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>Rectas paralelas</td>
+                  <td style='padding: 10px; border: 1px solid #ddd;'>x+y=3, x+y=5</td>
+                </tr>
+              </table>
+
+              <h4>💡 Consejos para Resolver</h4>
+              <div style='background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ffc107;'>
+                <strong>✅ Siempre hacer:</strong>
                 <ul>
-                  <li>Ecuación (1) × 6: 3x + 2y = 24 ... (3)</li>
-                  <li>Ecuación (2) × 12: 4x - 3y = 12 ... (4)</li>
+                  <li>Verificar la solución en ambas ecuaciones</li>
+                  <li>Usar el método más fácil para cada sistema</li>
+                  <li>Revisar los signos (+/-) cuidadosamente</li>
+                  <li>Simplificar las ecuaciones primero</li>
                 </ul>
-                <li><span style='color: #e74c3c;'>Resolver sistema (3) y (4) por reducción:</span></li>
+                
+                <strong>❌ Evitar:</strong>
                 <ul>
-                  <li>(3) × 3: 9x + 6y = 72 ... (5)</li>
-                  <li>(4) × 2: 8x - 6y = 24 ... (6)</li>
+                  <li>Olvidar verificar la solución</li>
+                  <li>Errores con signos negativos</li>
+                  <li>No simplificar fracciones</li>
+                  <li>Confundir los valores de x e y</li>
                 </ul>
-                <li><span style='color: #e74c3c;'>Sumar (5) y (6):</span> 17x = 96 → x = 96/17</li>
-                <li><span style='color: #e74c3c;'>Sustituir x en (3):</span> 3(96/17) + 2y = 24 → 288/17 + 2y = 24 → 2y = 24 - 288/17 = (408 - 288)/17 = 120/17 → y = 60/17</li>
-                <li><span style='color: #e74c3c;'>Verificar:</span> (96/17)/2 + (60/17)/3 = 48/17 + 20/17 = 68/17 = 4 ✓</li>
-              </ol>
-              <p><strong>Solución:</strong> x = 96/17, y = 60/17</p>
-            
-              <h4>Tipos de Sistemas</h4>
+              </div>
+
+              <h4>📚 Fuentes de Consulta</h4>
               <ul>
-                <li><strong>Compatible determinado:</strong> Una única solución (rectas que se cortan)</li>
-                <li><strong>Compatible indeterminado:</strong> Infinitas soluciones (rectas coincidentes)</li>
-                <li><strong>Incompatible:</strong> No tiene solución (rectas paralelas)</li>
-              </ul>
-            
-              <h4>Verificación de Soluciones</h4>
-              <ul>
-                <li><strong>Sustitución directa:</strong> Reemplazar en ambas ecuaciones originales</li>
-                <li><strong>Análisis gráfico:</strong> Verificar que el punto pertenece a ambas rectas</li>
-                <li><strong>Consistencia:</strong> Las operaciones deben mantener la igualdad</li>
-              </ul>
-            
-              <h4>Errores Comunes y Cómo Evitarlos</h4>
-              <ul>
-                <li><span style='color: #e74c3c;'>Error en signos:</span> Verificar cuidadosamente operaciones con negativos</li>
-                <li><span style='color: #3498db;'>Olvidar verificar:</span> Siempre comprobar la solución en ambas ecuaciones</li>
-                <li><span style='color: #2ecc71;'>Confundir métodos:</span> Elegir el método más adecuado para cada sistema</li>
-                <li><span style='color: #f39c12;'>No simplificar:</span> Reducir fracciones y términos semejantes</li>
-              </ul>
-            
-              <h4>Aplicaciones Prácticas</h4>
-              <ul>
-                <li><strong>Problemas de edades:</strong> Determinar edades actuales y futuras</li>
-                <li><strong>Mezclas y concentraciones:</strong> Calcular cantidades de componentes</li>
-                <li><strong>Problemas de distancia-velocidad-tiempo:</strong> Encontrar velocidades y distancias</li>
-                <li><strong>Economía:</strong> Punto de equilibrio en costos e ingresos</li>
-                <li><strong>Física:</strong> Sistemas de fuerzas en equilibrio</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Baldor, A. (2017). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
-                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
-                <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
-                <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
+                <li>Baldor, A. <em>Álgebra</em> - Ejercicios resueltos paso a paso</li>
+                <li>Swokowski, E. W. <em>Álgebra y trigonometría</em> - Explicaciones detalladas</li>
+                <li>Stewart, J. <em>Precálculo</em> - Aplicaciones prácticas</li>
               </ul>
             `)">2.2.2. Solucion de sistemas de dos ecuaciones con dos incógnitas de primer grado <span class="emoji-small">✅</span>
             </li>
