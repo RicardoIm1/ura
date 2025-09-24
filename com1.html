@@ -1084,10 +1084,124 @@
           </ul>
         `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
         </li>
-
-        <ul class="tema-list">
-          <li>2.6. Diagramas</li>
-        </ul>
+      </ul>
+      <ul class="tema-list">
+        <li onclick="abrirModal('2.6. Diagramas', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender los diferentes tipos de diagramas utilizados en programación y análisis de sistemas para representar visualmente procesos, estructuras y flujos de información.</p>
+          
+            <h4>Definición</h4>
+            <ul>
+              <li>Un diagrama es una <span style='color: #e74c3c;'>representación gráfica y simbólica</span> que muestra las relaciones entre diferentes componentes de un sistema.</li>
+              <li>Sirve como <span style='color: #3498db;'>herramienta de comunicación visual</span> para documentar, diseñar y analizar procesos.</li>
+              <li>Facilita la <span style='color: #2ecc71;'>comprensión de sistemas complejos</span> mediante abstracción y simplificación.</li>
+            </ul>
+          
+            <h4>Tipos de Diagramas en Programación</h4>
+            <ul>
+              <li><strong>Diagramas de flujo (Flowcharts):</strong> Representan algoritmos y procesos</li>
+              <li><strong>Diagramas UML (Unified Modeling Language):</strong> Para modelado de software orientado a objetos</li>
+              <li><strong>Diagramas de clases:</strong> Muestran la estructura estática del sistema</li>
+              <li><strong>Diagramas de secuencia:</strong> Representan interacciones temporales entre objetos</li>
+              <li><strong>Diagramas de casos de uso:</strong> Describen funcionalidades desde la perspectiva del usuario</li>
+            </ul>
+          
+            <h4>Símbolos de Diagramas de Flujo</h4>
+            <ul>
+              <li><strong>Óvalo:</strong> Inicio/Final del proceso</li>
+              <li><strong>Rectángulo:</strong> Proceso o instrucción</li>
+              <li><strong>Rombo:</strong> Decisión o condición</li>
+              <li><strong>Paralelogramo:</strong> Entrada/Salida de datos</li>
+              <li><strong>Flechas:</strong> Dirección del flujo</li>
+              <li><strong>Círculo:</strong> Conector entre páginas</li>
+            </ul>
+          
+            <h4>Diagramas UML Principales</h4>
+            <ul>
+              <li><strong>Diagrama de clases:</strong> Clases, atributos, métodos y relaciones</li>
+              <li><strong>Diagrama de objetos:</strong> Instancias específicas en un momento dado</li>
+              <li><strong>Diagrama de estados:</strong> Comportamiento de objetos en respuesta a eventos</li>
+              <li><strong>Diagrama de actividades:</strong> Flujo de trabajo entre actividades</li>
+              <li><strong>Diagrama de componentes:</strong> Organización física del sistema</li>
+              <li><strong>Diagrama de despliegue:</strong> Infraestructura hardware del sistema</li>
+            </ul>
+          
+            <h4>Reglas para Crear Diagramas Efectivos</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Definir claramente el propósito</span> del diagrama</li>
+              <li><span style='color: #e74c3c;'>Mantener la simplicidad</span> y evitar el desorden visual</li>
+              <li><span style='color: #e74c3c;'>Usar símbolos estándar</span> reconocidos universalmente</li>
+              <li><span style='color: #e74c3c;'>Asegurar la consistencia</span> en tamaños y estilos</li>
+              <li><span style='color: #e74c3c;'>Incluir leyendas explicativas</span> cuando sea necesario</li>
+            </ol>
+          
+            <h4>Herramientas para Crear Diagramas</h4>
+            <ul>
+              <li><strong>Software especializado:</strong> Microsoft Visio, Lucidchart, Draw.io</li>
+              <li><strong>Herramientas UML:</strong> Enterprise Architect, StarUML, Visual Paradigm</li>
+              <li><strong>Aplicaciones online:</strong> Diagrams.net, Creately, Gliffy</li>
+              <li><strong>Software libre:</strong> Dia, yEd Graph Editor</li>
+              <li><strong>Integradas en IDEs:</strong> PlantUML, herramientas UML en Eclipse/IntelliJ</li>
+            </ul>
+          
+            <h4>Ejemplos de Aplicación</h4>
+            <ul>
+              <li><strong>Diagrama de flujo para login:</strong>
+                <ul>
+                  <li>Inicio → Ingresar usuario/contraseña → Validar → ¿Válido? → Sí: Acceder / No: Mostrar error</li>
+                </ul>
+              </li>
+              <li><strong>Diagrama de clases para sistema bancario:</strong>
+                <ul>
+                  <li>Clases: Cuenta, Cliente, Transacción, Banco</li>
+                  <li>Relaciones: Herencia, Asociación, Composición</li>
+                </ul>
+              </li>
+              <li><strong>Diagrama de secuencia para compra online:</strong>
+                <ul>
+                  <li>Cliente → Sistema → Base de datos → Pasarela de pago → Confirmación</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Ventajas del Uso de Diagramas</h4>
+            <ul>
+              <li><span style='color: #3498db;'>Comunicación clara</span> entre miembros del equipo</li>
+              <li><span style='color: #3498db;'>Detección temprana</span> de errores en el diseño</li>
+              <li><span style='color: #3498db;'>Documentación visual</span> fácil de entender</li>
+              <li><span style='color: #3498db;'>Análisis de procesos</span> y optimización</li>
+              <li><span style='color: #3498db;'>Facilita el mantenimiento</span> del sistema</li>
+            </ul>
+          
+            <h4>Mejores Prácticas en Diagramación</h4>
+            <ul>
+              <li><strong>Flujo consistente:</strong> Mantener dirección uniforme (generalmente de arriba hacia abajo)</li>
+              <li><strong>Etiquetado claro:</strong> Usar nombres descriptivos para elementos</li>
+              <li><strong>Agrupación lógica:</strong> Organizar elementos relacionados cercanos</li>
+              <li><strong>Evitar cruces:</strong> Minimizar el entrecruzamiento de líneas</li>
+              <li><strong>Versiones:</strong> Mantener histórico de cambios importantes</li>
+            </ul>
+          
+            <h4>Diagramas Específicos por Área</h4>
+            <ul>
+              <li><strong>Base de datos:</strong> Diagramas Entidad-Relación (ER)</li>
+              <li><strong>Redes:</strong> Diagramas de topología de red</li>
+              <li><strong>Procesos empresariales:</strong> BPMN (Business Process Model and Notation)</li>
+              <li><strong>Arquitectura:</strong> Diagramas de arquitectura de software</li>
+              <li><strong>Datos:</strong> Diagramas de flujo de datos (DFD)</li>
+            </ul>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Fowler, M. (2004). <em>UML Distilled: A Brief Guide to the Standard Object Modeling Language</em>. Addison-Wesley.</li>
+              <li>Booch, G., Rumbaugh, J., & Jacobson, I. (2005). <em>The Unified Modeling Language User Guide</em>. Addison-Wesley.</li>
+              <li>Yourdon, E. (2006). <em>Just Enough Structured Analysis</em>. Yourdon Press.</li>
+              <li>Harel, D. (1987). <em>Statecharts: A Visual Formalism for Complex Systems</em>. Science of Computer Programming.</li>
+              <li>Object Management Group. (2017). <em>Unified Modeling Language Specification</em>. OMG.</li>
+            </ul>
+          `)">2.6. Diagramas <span class="emoji-small">✅</span>
+        </li>        
+      </ul>
     </div>
     
     <div class="tema-card">
