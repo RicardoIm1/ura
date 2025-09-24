@@ -2106,10 +2106,144 @@
             `)">3.6. Formato F <span class="emoji-small">✅</span>
         </li>
           
+            <li onclick="abrirModal('3.7. Formato E', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar el formato E para notación científica, comprendiendo su sintaxis, aplicaciones y uso en la representación de números muy grandes o muy pequeños.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Formato E se refiere a la <span style='color: #e74c3c;'>notación científica o exponencial</span> para representar números.</li>
+                <li>Utiliza el especificador <span style='color: #3498db;'>%e para valores en formato mantisa-exponente</span>.</li>
+                <li>Es ideal para <span style='color: #2ecc71;'>números extremadamente grandes o pequeños</span> donde la notación decimal es impráctica.</li>
+              </ul>
+            
+              <h4>Estructura de la Notación Científica</h4>
+              <ul>
+                <li><strong>Mantisa:</strong> Parte decimal normalizada (1.0 ≤ |mantisa| < 10.0)</li>
+                <li><strong>Exponente:</strong> Potencia de 10 que escala la mantisa</li>
+                <li><strong>Formato general:</strong> ±m.nnnne±xx</li>
+                <li><strong>Ejemplo:</strong> 6.022e+23 (Número de Avogadro)</li>
+                <li><strong>Ejemplo:</strong> 1.602e-19 (Carga del electrón)</li>
+              </ul>
+            
+              <h4>Especificadores de Notación Científica</h4>
+              <ul>
+                <li><strong>%e:</strong> Notación científica minúscula (1.23e+04)</li>
+                <li><strong>%E:</strong> Notación científica mayúscula (1.23E+04)</li>
+                <li><strong>%.ne:</strong> Precisión de 'n' dígitos en mantisa</li>
+                <li><strong>%m.ne:</strong> Ancho total 'm' con 'n' dígitos de precisión</li>
+                <li><strong>%+e:</strong> Siempre muestra signo</li>
+              </ul>
+            
+              <h4>Normalización en Notación Científica</h4>
+              <ul>
+                <li><strong>Regla básica:</strong> Un dígito antes del punto decimal</li>
+                <li><strong>Rango de mantisa:</strong> Entre 1.0 y 9.999...</li>
+                <li><strong>Ajuste automático:</strong> El sistema normaliza automáticamente</li>
+                <li><strong>Ejemplo:</strong> 1234.56 → 1.23456e+03</li>
+                <li><strong>Ejemplo:</strong> 0.000123 → 1.23e-04</li>
+              </ul>
+            
+              <h4>Ventajas del Formato E</h4>
+              <ul>
+                <li><strong>Compactación:</strong> Representa números grandes en poco espacio</li>
+                <li><strong>Claridad:</strong> Facilita comparación de órdenes de magnitud</li>
+                <li><strong>Prevención de errores:</strong> Evita confusiones con ceros</li>
+                <li><strong>Estandarización:</strong> Formato universalmente reconocido</li>
+                <li><strong>Precisión relativa:</strong> Mantiene cifras significativas</li>
+              </ul>
+            
+              <h4>Proceso de Conversión a Notación Científica</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el número</span> a convertir</li>
+                <li><span style='color: #e74c3c;'>Mover el punto decimal</span> hasta tener un dígito antes del punto</li>
+                <li><span style='color: #e74c3c;'>Contar las posiciones movidas</span> para determinar el exponente</li>
+                <li><span style='color: #e74c3c;'>Aplicar redondeo</span> según la precisión requerida</li>
+                <li><span style='color: #e74c3c;'>Formatear la representación final</span></li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos de Formato E</h4>
+              <ul>
+                <li><strong>Números grandes:</strong>
+                  <ul>
+                    <li>printf('%.2e', 123456789) → '1.23e+08'</li>
+                    <li>printf('%.4E', 299792458) → '2.9979E+08' (velocidad de la luz)</li>
+                    <li>printf('%12.3e', 6.022e23) → '   6.022e+23'</li>
+                  </ul>
+                </li>
+                <li><strong>Números pequeños:</strong>
+                  <ul>
+                    <li>printf('%.3e', 0.000000001) → '1.000e-09'</li>
+                    <li>printf('%.2E', 0.0000000667) → '6.67E-08' (constante gravitacional)</li>
+                    <li>printf('%+10.2e', 0.005) → ' +5.00e-03'</li>
+                  </ul>
+                </li>
+                <li><strong>Precisión variable:</strong>
+                  <ul>
+                    <li>printf('%.0e', 1500) → '2e+03'</li>
+                    <li>printf('%.6e', 3.1415926535) → '3.141593e+00'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Campos de Aplicación</h4>
+              <ul>
+                <li><strong>Física:</strong> Constantes fundamentales, medidas atómicas</li>
+                <li><strong>Química:</strong> Número de Avogadro, constantes de equilibrio</li>
+                <li><strong>Ingeniería:</strong> Tolerancias muy pequeñas, medidas nanométricas</li>
+                <li><strong>Astronomía:</strong> Distancias interestelares, masas planetarias</li>
+                <li><strong>Computación científica:</strong> Algoritmos numéricos, análisis de error</li>
+              </ul>
+            
+              <h4>Comparación con Otros Formatos</h4>
+              <ul>
+                <li><strong>vs. Formato F:</strong> E para rango amplio, F para valores cotidianos</li>
+                <li><strong>vs. Formato G:</strong> E siempre científico, G elige automáticamente</li>
+                <li><strong>vs. Notación de ingeniería:</strong> E usa múltiplos de 3 en exponente</li>
+                <li><strong>vs. Formato decimal:</strong> E más compacto para extremos</li>
+              </ul>
+            
+              <h4>Consideraciones de Uso</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Audiencia objetivo:</strong> Usuarios técnicos vs. generales</li>
+                <li><span style='color: #3498db;'>Contexto de presentación:</strong> Gráficos, tablas, texto</li>
+                <li><span style='color: #2ecc71;'>Consistencia:</strong> Mantener mismo formato en conjuntos de datos</li>
+                <li><span style='color: #f39c12;'>Precisión adecuada:</strong> Ni muy poca ni excesiva</li>
+                <li><span style='color: #9b59b6;'>Límites del sistema:</strong> Rangos de exponente soportados</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato E</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Usar para valores fuera del rango 0.001 a 1000</span></li>
+                <li><span style='color: #e74c3c;'>Mantener cifras significativas consistentes</span></li>
+                <li><span style='color: #e74c3c;'>Incluir siempre el signo del exponente</span></li>
+                <li><span style='color: #e74c3c;'>Validar que la mantisa esté normalizada</span></li>
+                <li><span style='color: #e74c3c;'>Documentar el significado de valores específicos</span></li>
+              </ol>
+            
+              <h4>Manejo de Casos Especiales</h4>
+              <ul>
+                <li><strong>Valores infinitos:</strong> 'inf' o 'INF' en notación científica</li>
+                <li><strong>Valores NaN:</strong> 'nan' o 'NAN'</li>
+                <li><strong>Ceros:</strong> '0.000000e+00' o variantes</li>
+                <li><strong>Límites de precisión:</strong> Redondeo en valores límite</li>
+                <li><strong>Desbordamiento:</strong> Manejo de exponentes muy grandes</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+                <li>Goldberg, D. (1991). <em>What Every Computer Scientist Should Know About Floating-Point Arithmetic</em>. ACM Computing Surveys.</li>
+                <li>Press, W. H., et al. (2007). <em>Numerical Recipes: The Art of Scientific Computing</em>. Cambridge University Press.</li>
+                <li>Higham, N. J. (2002). <em>Accuracy and Stability of Numerical Algorithms</em>. SIAM.</li>
+                <li>Knuth, D. E. (1997). <em>The Art of Computer Programming, Volume 2: Seminumerical Algorithms</em>. Addison-Wesley.</li>
+              </ul>
+            `)">3.7. Formato E <span class="emoji-small">✅</span>
+          </li>
           
           
-          <li>3.7. Formato E</li>
-        <li>3.8. Capacidades adicionales de formato</li>
+          
+          <li>3.8. Capacidades adicionales de formato</li>
         <li>3.9. Código holierith</li>
       </ul>
     </div>
