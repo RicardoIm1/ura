@@ -1085,6 +1085,7 @@
         `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
         </li>
       </ul>
+        
       <ul class="tema-list">
         <li onclick="abrirModal('2.6. Diagramas', `
             <hr><br>
@@ -1358,163 +1359,163 @@
         </li>
   
 
-        
-        <li onclick="abrirModal('3.2. Proposición de salida', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender y utilizar las proposiciones de salida que permiten mostrar resultados, información y datos desde el programa hacia el usuario o dispositivos externos.</p>
-            
-              <h4>Definición</h4>
-              <ul>
-                <li>Una proposición de salida es una <span style='color: #e74c3c;'>instrucción que envía datos</span> desde el programa hacia dispositivos de salida o almacenamiento.</li>
-                <li>Permite <span style='color: #3498db;'>comunicar resultados y información</span> generada por el programa al usuario o a otros sistemas.</li>
-                <li>Es fundamental para <span style='color: #2ecc71;'>visualizar y persistir</span> los resultados del procesamiento.</li>
-              </ul>
-            
-              <h4>Dispositivos de Salida Comunes</h4>
-              <ul>
-                <li><strong>Pantalla/Monitor:</strong> Visualización de texto e interfaces gráficas</li>
-                <li><strong>Impresora:</strong> Salida física en papel</li>
-                <li><strong>Archivos:</strong> Almacenamiento permanente de datos</li>
-                <li><strong>Red:</strong> Envío de datos a servidores o otros dispositivos</li>
-                <li><strong>Altavoces:</strong> Salida de audio y sonidos</li>
-                <li><strong>Puertos serie/paralelo:</strong> Comunicación con dispositivos externos</li>
-              </ul>
-            
-              <h4>Funciones de Salida por Lenguaje</h4>
-              <ul>
-                <li><strong>Python:</strong>
-                  <ul>
-                    <li>print(): Muestra texto en consola</li>
-                    <li>open().write(): Escribe en archivos</li>
-                    <li>sys.stdout.write(): Salida estándar</li>
-                  </ul>
-                </li>
-                <li><strong>Java:</strong>
-                  <ul>
-                    <li>System.out.println(): Imprime línea en consola</li>
-                    <li>System.out.print(): Imprime sin salto de línea</li>
-                    <li>PrintWriter: Para escritura en archivos</li>
-                  </ul>
-                </li>
-                <li><strong>C++:</strong>
-                  <ul>
-                    <li>cout << variable: Salida estándar</li>
-                    <li>printf(): Salida formateada</li>
-                    <li>ofstream: Escritura en archivos</li>
-                  </ul>
-                </li>
-                <li><strong>JavaScript:</strong>
-                  <ul>
-                    <li>console.log(): Salida a consola del navegador</li>
-                    <li>document.write(): Escribe en documento HTML</li>
-                    <li>alert(): Muestra cuadro de diálogo</li>
-                  </ul>
-                </li>
-              </ul>
-            
-              <h4>Formatos de Salida</h4>
-              <ul>
-                <li><strong>Texto plano:</strong> Salida simple sin formato</li>
-                <li><strong>Texto formateado:</strong> Con especificadores de formato</li>
-                <li><strong>HTML/XML:</strong> Para aplicaciones web</li>
-                <li><strong>JSON/CSV:</strong> Intercambio de datos estructurados</li>
-                <li><strong>Gráficos/Imágenes:</strong> Visualización gráfica de datos</li>
-                <li><strong>Binario:</strong> Datos en formato crudo</li>
-              </ul>
-            
-              <h4>Proceso de Generación de Salida</h4>
-              <ol>
-                <li><span style='color: #e74c3c;'>Preparación de datos</span> a mostrar o almacenar</li>
-                <li><span style='color: #e74c3c;'>Formateo y estructuración</span> según el destino</li>
-                <li><span style='color: #e74c3c;'>Selección del dispositivo</span> de salida apropiado</li>
-                <li><span style='color: #e74c3c;'>Transmisión o escritura</span> de los datos</li>
-                <li><span style='color: #e74c3c;'>Verificación de éxito</span> de la operación</li>
-              </ol>
-            
-              <h4>Especificadores de Formato Comunes</h4>
-              <ul>
-                <li><strong>Enteros:</strong> %d (decimal), %x (hexadecimal), %o (octal)</li>
-                <li><strong>Decimales:</strong> %f (flotante), %.2f (2 decimales)</li>
-                <li><strong>Cadenas:</strong> %s (string)</li>
-                <li><strong>Caracteres:</strong> %c (char)</li>
-                <li><strong>Booleanos:</strong> Representación como true/false o 1/0</li>
-                <li><strong>Fechas:</strong> Formatos específicos (dd/mm/aaaa, etc.)</li>
-              </ul>
-            
-              <h4>Ejemplos Prácticos</h4>
-              <ul>
-                <li><strong>Salida básica en Python:</strong>
-                  <ul>
-                    <li>print('Hola, mundo!')</li>
-                    <li>print(f'El resultado es: {resultado}')</li>
-                    <li>print('Nombre:', nombre, 'Edad:', edad)</li>
-                  </ul>
-                </li>
-                <li><strong>Salida formateada en C++:</strong>
-                  <ul>
-                    <li>cout << 'Valor: ' << valor << endl;</li>
-                    <li>printf('Promedio: %.2f', promedio);</li>
-                  </ul>
-                </li>
-                <li><strong>Escritura en archivo:</strong>
-                  <ul>
-                    <li>with open(\"reporte.txt\", \"w\") as archivo:</li>
-                    <li>archivo.write(\"Datos del sistema\n\")</li>
-                  </ul>
-                </li>
-                <li><strong>Salida HTML en JavaScript:</strong>
-                  <ul>
-                    <li>document.getElementById(\"resultado\").innerHTML = mensaje;</li>
-                  </ul>
-                </li>
-              </ul>
-            
-              <h4>Manejo de Errores en Salida</h4>
-              <ul>
-                <li><strong>Dispositivo no disponible:</strong> Verificar conectividad</li>
-                <li><strong>Espacio insuficiente:</strong> En disco o memoria</li>
-                <li><strong>Permisos denegados:</strong> Para escritura en archivos</li>
-                <li><strong>Formato incompatible:</strong> Con el dispositivo de destino</li>
-                <li><strong>Timeout:</strong> En operaciones de red</li>
-              </ul>
-            
-              <h4>Buenas Prácticas en Salida de Datos</h4>
-              <ol>
-                <li><span style='color: #e74c3c;'>Formatear la salida para legibilidad</span></li>
-                <li><span style='color: #e74c3c;'>Incluir mensajes informativos y claros</span></li>
-                <li><span style='color: #e74c3c;'>Manejar adecuadamente los caracteres especiales</span></li>
-                <li><span style='color: #e74c3c;'>Verificar permisos y disponibilidad</span> de dispositivos</li>
-                <li><span style='color: #e74c3c;'>Implementar logs y registro de actividades</span></li>
-              </ol>
-            
-              <h4>Aplicaciones de Salida de Datos</h4>
-              <ul>
-                <li>Generación de reportes y documentos</li>
-                <li>Interfaces de usuario y dashboards</li>
-                <li>Exportación de datos a diferentes formatos</li>
-                <li>Comunicación entre sistemas y APIs</li>
-                <li>Registro de logs y auditoría</li>
-                <li>Visualización gráfica de información</li>
-              </ul>
-            
-              <h4>Consideraciones de Rendimiento</h4>
-              <ul>
-                <li><span style='color: #e74c3c;'>Bufferización:</span> Optimización de operaciones I/O</li>
-                <li><span style='color: #3498db;'>Asincronía:</span> No bloquear el programa durante salidas lentas</li>
-                <li><span style='color: #2ecc71;'>Compresión:</span> Reducción del tamaño de datos de salida</li>
-                <li><span style='color: #f39c12;'>Caché:</span> Almacenamiento temporal para salidas frecuentes</li>
-                <li><span style='color: #9b59b6;'>Streaming:</span> Transmisión continua de datos</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
-                <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
-                <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
-                <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
-                <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
-              </ul>
-            `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
+        <ul class="tema-list">
+          <li onclick="abrirModal('3.2. Proposición de salida', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender y utilizar las proposiciones de salida que permiten mostrar resultados, información y datos desde el programa hacia el usuario o dispositivos externos.</p>
+          
+            <h4>Definición</h4>
+            <ul>
+              <li>Una proposición de salida es una <span style='color: #e74c3c;'>instrucción que envía datos</span> desde el programa hacia dispositivos de salida o almacenamiento.</li>
+              <li>Permite <span style='color: #3498db;'>comunicar resultados y información</span> generada por el programa al usuario o a otros sistemas.</li>
+              <li>Es fundamental para <span style='color: #2ecc71;'>visualizar y persistir</span> los resultados del procesamiento.</li>
+            </ul>
+          
+            <h4>Dispositivos de Salida Comunes</h4>
+            <ul>
+              <li><strong>Pantalla/Monitor:</strong> Visualización de texto e interfaces gráficas</li>
+              <li><strong>Impresora:</strong> Salida física en papel</li>
+              <li><strong>Archivos:</strong> Almacenamiento permanente de datos</li>
+              <li><strong>Red:</strong> Envío de datos a servidores o otros dispositivos</li>
+              <li><strong>Altavoces:</strong> Salida de audio y sonidos</li>
+              <li><strong>Puertos serie/paralelo:</strong> Comunicación con dispositivos externos</li>
+            </ul>
+          
+            <h4>Funciones de Salida por Lenguaje</h4>
+            <ul>
+              <li><strong>Python:</strong>
+                <ul>
+                  <li>print(): Muestra texto en consola</li>
+                  <li>open().write(): Escribe en archivos</li>
+                  <li>sys.stdout.write(): Salida estándar</li>
+                </ul>
+              </li>
+              <li><strong>Java:</strong>
+                <ul>
+                  <li>System.out.println(): Imprime línea en consola</li>
+                  <li>System.out.print(): Imprime sin salto de línea</li>
+                  <li>PrintWriter: Para escritura en archivos</li>
+                </ul>
+              </li>
+              <li><strong>C++:</strong>
+                <ul>
+                  <li>cout << variable: Salida estándar</li>
+                  <li>printf(): Salida formateada</li>
+                  <li>ofstream: Escritura en archivos</li>
+                </ul>
+              </li>
+              <li><strong>JavaScript:</strong>
+                <ul>
+                  <li>console.log(): Salida a consola del navegador</li>
+                  <li>document.write(): Escribe en documento HTML</li>
+                  <li>alert(): Muestra cuadro de diálogo</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Formatos de Salida</h4>
+            <ul>
+              <li><strong>Texto plano:</strong> Salida simple sin formato</li>
+              <li><strong>Texto formateado:</strong> Con especificadores de formato</li>
+              <li><strong>HTML/XML:</strong> Para aplicaciones web</li>
+              <li><strong>JSON/CSV:</strong> Intercambio de datos estructurados</li>
+              <li><strong>Gráficos/Imágenes:</strong> Visualización gráfica de datos</li>
+              <li><strong>Binario:</strong> Datos en formato crudo</li>
+            </ul>
+          
+            <h4>Proceso de Generación de Salida</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Preparación de datos</span> a mostrar o almacenar</li>
+              <li><span style='color: #e74c3c;'>Formateo y estructuración</span> según el destino</li>
+              <li><span style='color: #e74c3c;'>Selección del dispositivo</span> de salida apropiado</li>
+              <li><span style='color: #e74c3c;'>Transmisión o escritura</span> de los datos</li>
+              <li><span style='color: #e74c3c;'>Verificación de éxito</span> de la operación</li>
+            </ol>
+          
+            <h4>Especificadores de Formato Comunes</h4>
+            <ul>
+              <li><strong>Enteros:</strong> %d (decimal), %x (hexadecimal), %o (octal)</li>
+              <li><strong>Decimales:</strong> %f (flotante), %.2f (2 decimales)</li>
+              <li><strong>Cadenas:</strong> %s (string)</li>
+              <li><strong>Caracteres:</strong> %c (char)</li>
+              <li><strong>Booleanos:</strong> Representación como true/false o 1/0</li>
+              <li><strong>Fechas:</strong> Formatos específicos (dd/mm/aaaa, etc.)</li>
+            </ul>
+          
+            <h4>Ejemplos Prácticos</h4>
+            <ul>
+              <li><strong>Salida básica en Python:</strong>
+                <ul>
+                  <li>print('Hola, mundo!')</li>
+                  <li>print(f'El resultado es: {resultado}')</li>
+                  <li>print('Nombre:', nombre, 'Edad:', edad)</li>
+                </ul>
+              </li>
+              <li><strong>Salida formateada en C++:</strong>
+                <ul>
+                  <li>cout << 'Valor: ' << valor << endl;</li>
+                  <li>printf('Promedio: %.2f', promedio);</li>
+                </ul>
+              </li>
+              <li><strong>Escritura en archivo:</strong>
+                <ul>
+                  <li>with open('reporte.txt', 'w') as archivo:</li>
+                  <li>archivo.write('Datos del sistema\n')</li>
+                </ul>
+              </li>
+              <li><strong>Salida HTML en JavaScript:</strong>
+                <ul>
+                  <li>document.getElementById('resultado').innerHTML = mensaje;</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Manejo de Errores en Salida</h4>
+            <ul>
+              <li><strong>Dispositivo no disponible:</strong> Verificar conectividad</li>
+              <li><strong>Espacio insuficiente:</strong> En disco o memoria</li>
+              <li><strong>Permisos denegados:</strong> Para escritura en archivos</li>
+              <li><strong>Formato incompatible:</strong> Con el dispositivo de destino</li>
+              <li><strong>Timeout:</strong> En operaciones de red</li>
+            </ul>
+          
+            <h4>Buenas Prácticas en Salida de Datos</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Formatear la salida para legibilidad</span></li>
+              <li><span style='color: #e74c3c;'>Incluir mensajes informativos y claros</span></li>
+              <li><span style='color: #e74c3c;'>Manejar adecuadamente los caracteres especiales</span></li>
+              <li><span style='color: #e74c3c;'>Verificar permisos y disponibilidad</span> de dispositivos</li>
+              <li><span style='color: #e74c3c;'>Implementar logs y registro de actividades</span></li>
+            </ol>
+          
+            <h4>Aplicaciones de Salida de Datos</h4>
+            <ul>
+              <li>Generación de reportes y documentos</li>
+              <li>Interfaces de usuario y dashboards</li>
+              <li>Exportación de datos a diferentes formatos</li>
+              <li>Comunicación entre sistemas y APIs</li>
+              <li>Registro de logs y auditoría</li>
+              <li>Visualización gráfica de información</li>
+            </ul>
+          
+            <h4>Consideraciones de Rendimiento</h4>
+            <ul>
+              <li><span style='color: #e74c3c;'>Bufferización:</span> Optimización de operaciones I/O</li>
+              <li><span style='color: #3498db;'>Asincronía:</span> No bloquear el programa durante salidas lentas</li>
+              <li><span style='color: #2ecc71;'>Compresión:</span> Reducción del tamaño de datos de salida</li>
+              <li><span style='color: #f39c12;'>Caché:</span> Almacenamiento temporal para salidas frecuentes</li>
+              <li><span style='color: #9b59b6;'>Streaming:</span> Transmisión continua de datos</li>
+            </ul>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+              <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
+              <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
+              <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+              <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
+            </ul>
+          `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
         </li>
 
 
