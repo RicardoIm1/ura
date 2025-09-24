@@ -693,8 +693,116 @@
             </ul>
           `)">2.2. Tipos de proposiciones <span class="emoji-small">✅</span>
         </li>
+       <ul class="tema-list">
+        <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de asignación aritmética en programación, incluyendo su sintaxis, operadores y uso en algoritmos.</p>
         
-        <li>2.3. Proposiciones de asignación aritmética</li>
+          <h4>Definición</h4>
+          <ul>
+            <li>Una proposición de asignación aritmética es una <span style='color: #e74c3c;'>instrucción que asigna un valor</span> a una variable mediante una expresión aritmética.</li>
+            <li>Es una de las <span style='color: #3498db;'>operaciones fundamentales</span> en la mayoría de los lenguajes de programación.</li>
+            <li>Sigue la estructura: <span style='color: #2ecc71;'>variable = expresión_aritmética</span></li>
+          </ul>
+        
+          <h4>Sintaxis Básica</h4>
+          <ul>
+            <li><strong>Operador de asignación:</strong> = (igual) en la mayoría de lenguajes</li>
+            <li><strong>Variable destino:</strong> Recibe el resultado de la expresión</li>
+            <li><strong>Expresión aritmética:</strong> Combinación de variables, constantes y operadores</li>
+            <li><strong>Terminador:</strong> ; (punto y coma) en lenguajes como C, Java, JavaScript</li>
+          </ul>
+        
+          <h4>Operadores Aritméticos</h4>
+          <ul>
+            <li><strong>Suma:</strong> + (ejemplo: x = a + b)</li>
+            <li><strong>Resta:</strong> - (ejemplo: y = c - d)</li>
+            <li><strong>Multiplicación:</strong> * (ejemplo: z = e * f)</li>
+            <li><strong>División:</strong> / (ejemplo: w = g / h)</li>
+            <li><strong>Módulo:</strong> % (resto de la división, ejemplo: r = i % j)</li>
+            <li><strong>Potenciación:</strong> ** o ^ (depende del lenguaje)</li>
+          </ul>
+        
+          <h4>Tipos de Asignación Aritmética</h4>
+          <ul>
+            <li><strong>Asignación simple:</strong> Variable = expresión</li>
+            <li><strong>Asignación compuesta:</strong> Combinación con operadores (+=, -=, *=, /=)</li>
+            <li><strong>Asignación múltiple:</strong> Varias variables en una sola instrucción</li>
+            <li><strong>Asignación con incremento/decremento:</strong> ++, -- (prefijo y sufijo)</li>
+          </ul>
+        
+          <h4>Reglas de Precedencia de Operadores</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Paréntesis</span> (siempre tienen la máxima prioridad)</li>
+            <li><span style='color: #e74c3c;'>Potenciación</span> (si está disponible)</li>
+            <li><span style='color: #e74c3c;'>Multiplicación, División y Módulo</span> (de izquierda a derecha)</li>
+            <li><span style='color: #e74c3c;'>Suma y Resta</span> (de izquierda a derecha)</li>
+            <li><span style='color: #e74c3c;'>Asignación</span> (generalmente la menor prioridad)</li>
+          </ol>
+        
+          <h4>Ejemplos en Diferentes Lenguajes</h4>
+          <ul>
+            <li><strong>Python:</strong>
+              <ul>
+                <li>x = 5 + 3 * 2  # x = 11</li>
+                <li>y = (5 + 3) * 2  # y = 16</li>
+                <li>z = 10 // 3  # división entera, z = 3</li>
+              </ul>
+            </li>
+            <li><strong>Java/C/JavaScript:</strong>
+              <ul>
+                <li>int a = 10 + 5 * 2;  // a = 20</li>
+                <li>double b = 15.0 / 4.0;  // b = 3.75</li>
+                <li>int c = 17 % 5;  // c = 2</li>
+              </ul>
+            </li>
+            <li><strong>Asignaciones compuestas:</strong>
+              <ul>
+                <li>total += precio  // equivalente a total = total + precio</li>
+                <li>contador -= 1  // equivalente a contador = contador - 1</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Errores Comunes y Consideraciones</h4>
+          <ul>
+            <li><span style='color: #e74c3c;'>División por cero:</span> Provoca error en tiempo de ejecución</li>
+            <li><span style='color: #3498db;'>Desbordamiento:</span> Cuando el resultado excede el rango de la variable</li>
+            <li><span style='color: #2ecc71;'>Precisión en números decimales:</span> Errores de redondeo en operaciones con float/double</li>
+            <li><span style='color: #f39c12;'>Variables no inicializadas:</span> Usar variables sin valor asignado previamente</li>
+          </ul>
+        
+          <h4>Aplicaciones Prácticas</h4>
+          <ul>
+            <li>Cálculos matemáticos en programas científicos</li>
+            <li>Procesamiento de datos numéricos</li>
+            <li>Contadores y acumuladores en bucles</li>
+            <li>Conversiones de unidades</li>
+            <li>Cálculos financieros y estadísticos</li>
+          </ul>
+        
+          <h4>Buenas Prácticas</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Usar paréntesis</span> para clarificar la precedencia</li>
+            <li><span style='color: #e74c3c;'>Inicializar variables</span> antes de usarlas</li>
+            <li><span style='color: #e74c3c;'>Elegir el tipo de dato apropiado</span> para el cálculo</li>
+            <li><span style='color: #e74c3c;'>Validar divisiones</span> para evitar división por cero</li>
+            <li><span style='color: #e74c3c;'>Comentar operaciones complejas</span> para mejor legibilidad</li>
+          </ol>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+            <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
+            <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+            <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
+            <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+          </ul>
+        `)">2.3. Proposiciones de asignación aritmética <span class="emoji-small">✅</span>
+        </li>
+        
+        
+        
         <li>2.4. Proposiciones de asignación lógica</li>
         <li>2.5. Proposición de flujo</li>
         <li>2.6. Diagramas</li>
