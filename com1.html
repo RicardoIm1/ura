@@ -1208,7 +1208,157 @@
       <div class="tema-num">TEMA 3</div>
       <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
       <ul class="tema-list">
-        <li>3.1. Proposición de entrada</li>
+        <li onclick="abrirModal('3.1. Proposición de entrada', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender y utilizar las proposiciones de entrada que permiten capturar datos del usuario o de fuentes externas para su procesamiento en programas.</p>
+        
+          <h4>Definición</h4>
+          <ul>
+            <li>Una proposición de entrada es una <span style='color: #e74c3c;'>instrucción que permite leer datos</span> desde dispositivos de entrada hacia la memoria del programa.</li>
+            <li>Facilita la <span style='color: #3498db;'>interacción usuario-programa</span> mediante la captura de información externa.</li>
+            <li>Es esencial para crear programas <span style='color: #2ecc71;'>dinámicos y interactivos</span> que respondan a entradas variables.</li>
+          </ul>
+        
+          <h4>Dispositivos de Entrada Comunes</h4>
+          <ul>
+            <li><strong>Teclado:</strong> Entrada de texto y comandos</li>
+            <li><strong>Mouse:</strong> Entrada de coordenadas y clics</li>
+            <li><strong>Archivos:</strong> Lectura de datos desde almacenamiento</li>
+            <li><strong>Red:</strong> Recepción de datos desde servidores</li>
+            <li><strong>Sensores:</strong> Captura de datos del entorno físico</li>
+            <li><strong>Micrófono:</strong> Entrada de audio</li>
+          </ul>
+        
+          <h4>Funciones de Entrada por Lenguaje</h4>
+          <ul>
+            <li><strong>Python:</strong>
+              <ul>
+                <li>input(): Lee una línea de texto desde teclado</li>
+                <li>open().read(): Lee datos desde archivos</li>
+              </ul>
+            </li>
+            <li><strong>Java:</strong>
+              <ul>
+                <li>Scanner.nextLine(): Lee entrada del usuario</li>
+                <li>System.console().readLine(): Entrada desde consola</li>
+              </ul>
+            </li>
+            <li><strong>C++:</strong>
+              <ul>
+                <li>cin >> variable: Entrada estándar</li>
+                <li>getline(cin, variable): Lee línea completa</li>
+              </ul>
+            </li>
+            <li><strong>JavaScript:</strong>
+              <ul>
+                <li>prompt(): Cuadro de diálogo para entrada</li>
+                <li>addEventListener(): Captura eventos de entrada</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Tipos de Datos de Entrada</h4>
+          <ul>
+            <li><strong>Texto:</strong> Cadenas de caracteres (strings)</li>
+            <li><strong>Numéricos:</strong> Enteros, decimales, flotantes</li>
+            <li><strong>Booleanos:</strong> Valores verdadero/falso</li>
+            <li><strong>Fechas y horas:</strong> Información temporal</li>
+            <li><strong>Archivos binarios:</strong> Imágenes, documentos, etc.</li>
+            <li><strong>Estructurados:</strong> JSON, XML, CSV</li>
+          </ul>
+        
+          <h4>Proceso de Captura de Entrada</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Solicitud de entrada</span> al usuario o sistema</li>
+            <li><span style='color: #e74c3c;'>Espera y recepción</span> de los datos</li>
+            <li><span style='color: #e74c3c;'>Validación y verificación</span> de la entrada</li>
+            <li><span style='color: #e74c3c;'>Conversión de tipo</span> si es necesario</li>
+            <li><span style='color: #e74c3c;'>Almacenamiento en variables</span> para su uso</li>
+          </ol>
+        
+          <h4>Validación de Entrada</h4>
+          <ul>
+            <li><strong>Verificación de tipo:</strong> Confirmar que los datos tienen el formato esperado</li>
+            <li><strong>Rangos permitidos:</strong> Validar que los valores estén dentro de límites aceptables</li>
+            <li><strong>Formato específico:</strong> Verificar patrones como emails, teléfonos, etc.</li>
+            <li><strong>Entrada obligatoria:</strong> Asegurar que se proporcionen datos requeridos</li>
+            <li><strong>Sanitización:</strong> Eliminar caracteres peligrosos o maliciosos</li>
+          </ul>
+        
+          <h4>Ejemplos Prácticos</h4>
+          <ul>
+            <li><strong>Entrada básica en Python:</strong>
+              <ul>
+                <li>nombre = input('Ingrese su nombre: ')</li>
+                <li>edad = int(input('Ingrese su edad: '))</li>
+              </ul>
+            </li>
+            <li><strong>Entrada con validación en Java:</strong>
+              <ul>
+                <li>Scanner sc = new Scanner(System.in);</li>
+                <li>System.out.print('Ingrese número: ');</li>
+                <li>while (!sc.hasNextInt()) { sc.next(); }</li>
+                <li>int numero = sc.nextInt();</li>
+              </ul>
+            </li>
+            <li><strong>Entrada desde archivo:</strong>
+              <ul>
+                <li>with open('datos.txt', 'r') as archivo:</li>
+                <li>contenido = archivo.read()</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Manejo de Errores en Entrada</h4>
+          <ul>
+            <li><strong>Excepciones por tipo incorrecto:</strong> Capturar errores de conversión</li>
+            <li><strong>Valores fuera de rango:</strong> Mensajes de error específicos</li>
+            <li><strong>Entrada vacía o nula:</strong> Manejo de casos especiales</li>
+            <li><strong>Archivos no encontrados:</strong> Verificación de existencia</li>
+            <li><strong>Timeouts:</strong> Límites de tiempo para respuesta</li>
+          </ul>
+        
+          <h4>Buenas Prácticas en Entrada de Datos</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Siempre validar la entrada</span> antes de procesarla</li>
+            <li><span style='color: #e74c3c;'>Proporcionar mensajes claros</span> al solicitar datos</li>
+            <li><span style='color: #e74c3c;'>Usar tipos de datos apropiados</span> para cada entrada</li>
+            <li><span style='color: #e74c3c;'>Manejar excepciones adecuadamente</span></li>
+            <li><span style='color: #e74c3c;'>Limitar y sanitizar entradas</span> por seguridad</li>
+          </ol>
+        
+          <h4>Aplicaciones de Entrada de Datos</h4>
+          <ul>
+            <li>Formularios web y aplicaciones de escritorio</li>
+            <li>Sistemas de autenticación y login</li>
+            <li>Procesamiento de archivos y bases de datos</li>
+            <li>Interfaces de usuario gráficas (GUI)</li>
+            <li>Sistemas de control y monitoreo</li>
+            <li>Aplicaciones móviles con entrada táctil</li>
+          </ul>
+        
+          <h4>Consideraciones de Seguridad</h4>
+          <ul>
+            <li><span style='color: #e74c3c;'>Prevención de inyección SQL</span> en bases de datos</li>
+            <li><span style='color: #3498db;'>Validación contra XSS</span> (Cross-Site Scripting)</li>
+            <li><span style='color: #2ecc71;'>Sanitización de entradas HTML</span></li>
+            <li><span style='color: #f39c12;'>Límites de tamaño</span> para prevenir desbordamientos</li>
+            <li><span style='color: #9b59b6;'>Autenticación y autorización</span> de fuentes de entrada</li>
+          </ul>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+            <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
+            <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
+            <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+            <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+          </ul>
+        `)">3.1. Proposición de entrada <span class="emoji-small">✅</span>
+        </li>
+  
+
+        
         <li>3.2. Proposición de salida</li>
         <li>3.3. Proposición de control</li>
         <li>3.4. Proposición de formato</li>
