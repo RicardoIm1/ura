@@ -3444,57 +3444,48 @@
                 <li>La gráfica correspondiente es una curva en lugar de una línea recta.</li>
               </ul>
             
-              <h4>Elementos de la Gráfica</h4>
-              <ul>
-                <li><strong>Vértice:</strong> Punto de máximo o mínimo de la curva.</li>
-                <li><strong>Eje de simetría:</strong> Línea que divide la gráfica en dos partes iguales.</li>
-                <li><strong>Puntos de corte con los ejes:</strong> Intersecciones con los ejes X e Y.</li>
-                <li><strong>Focos y directrices:</strong> Elementos característicos de las cónicas.</li>
-                <li><strong>Asíntotas:</strong> Líneas a las que la curva se aproxima indefinidamente (en hipérbolas).</li>
-              </ul>
+          <h4>Elementos de la Gráfica</h4>
+          <svg width='400' height='300' viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'>
+            <!-- Ejes -->
+            <line x1='0' y1='150' x2='400' y2='150' stroke='black' stroke-width='1'/> <!-- Eje X -->
+            <line x1='200' y1='0' x2='200' y2='300' stroke='black' stroke-width='1'/> <!-- Eje Y -->
+          
+            <!-- Parábola -->
+            <path d='M100,250 Q200,50 300,250' fill='none' stroke='blue' stroke-width='2'/>
+          
+            <!-- Vértice -->
+            <circle cx='200' cy='50' r='5' fill='red'/>
+            <text x='210' y='50' font-size='12' fill='red'>Vértice</text>
+          
+            <!-- Eje de simetría -->
+            <line x1='200' y1='0' x2='200' y2='300' stroke='red' stroke-dasharray='5,5'/>
+            <text x='210' y='160' font-size='12' fill='red'>Eje de simetría</text>
+          
+            <!-- Corte con eje Y -->
+            <circle cx='200' cy='150' r='4' fill='green/>
+            <text x='210' y='150' font-size='12' fill='green'>Corte Y</text>
+          
+            <!-- Cortes con eje X -->
+            <circle cx='120' cy='150' r='4' fill='green'/>
+            <circle cx='280' cy='150' r='4' fill='green'/>
+            <text x='100' y='140' font-size='12' fill='green'>Cortes X</text>
+          
+            <!-- Foco (aproximado) -->
+            <circle cx='200' cy='100' r='5' fill='purple'/>
+            <text x='210' y='100' font-size='12' fill='purple'>Foco</text>
+          
+            <!-- Directriz -->
+            <line x1='100' y1='250' x2='300' y2='250' stroke='purple' stroke-dasharray='4,4'/>
+            <text x='310' y='250' font-size='12' fill='purple'>Directriz</text>
+          </svg>
 
-              <h4>Elementos de la Gráfica</h4>
-<svg width='400' height='300' viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'>
-  <!-- Ejes -->
-  <line x1='0' y1='150' x2='400' y2='150' stroke='black' stroke-width='1'/> <!-- Eje X -->
-  <line x1='200' y1='0' x2='200' y2='300' stroke='black' stroke-width='1'/> <!-- Eje Y -->
-
-  <!-- Parábola -->
-  <path d='M100,250 Q200,50 300,250' fill='none' stroke='blue' stroke-width='2'/>
-
-  <!-- Vértice -->
-  <circle cx='200' cy='50' r='5' fill='red'/>
-  <text x='210' y='50' font-size='12' fill='red'>Vértice</text>
-
-  <!-- Eje de simetría -->
-  <line x1='200' y1='0' x2='200' y2='300' stroke='red' stroke-dasharray='5,5'/>
-  <text x='210' y='160' font-size='12' fill='red'>Eje de simetría</text>
-
-  <!-- Corte con eje Y -->
-  <circle cx='200' cy='150' r='4' fill='green/>
-  <text x='210' y='150' font-size='12' fill='green'>Corte Y</text>
-
-  <!-- Cortes con eje X -->
-  <circle cx='120' cy='150' r='4' fill='green'/>
-  <circle cx='280' cy='150' r='4' fill='green'/>
-  <text x='100' y='140' font-size='12' fill='green'>Cortes X</text>
-
-  <!-- Foco (aproximado) -->
-  <circle cx='200' cy='100' r='5' fill='purple'/>
-  <text x='210' y='100' font-size='12' fill='purple'>Foco</text>
-
-  <!-- Directriz -->
-  <line x1='100' y1='250' x2='300' y2='250' stroke='purple' stroke-dasharray='4,4'/>
-  <text x='310' y='250' font-size='12' fill='purple'>Directriz</text>
-</svg>
-
-<ul>
-  <li><strong>Vértice:</strong> Punto de máximo o mínimo de la curva.</li>
-  <li><strong>Eje de simetría:</strong> Línea que divide la gráfica en dos partes iguales.</li>
-  <li><strong>Puntos de corte con los ejes:</strong> Intersecciones con los ejes X e Y.</li>
-  <li><strong>Focos y directrices:</strong> Elementos característicos de las cónicas.</li>
-  <li><strong>Asíntotas:</strong> Líneas a las que la curva se aproxima indefinidamente (en hipérbolas).</li>
-</ul>
+          <ul>
+            <li><strong>Vértice:</strong> Punto de máximo o mínimo de la curva.</li>
+            <li><strong>Eje de simetría:</strong> Línea que divide la gráfica en dos partes iguales.</li>
+            <li><strong>Puntos de corte con los ejes:</strong> Intersecciones con los ejes X e Y.</li>
+            <li><strong>Focos y directrices:</strong> Elementos característicos de las cónicas.</li>
+            <li><strong>Asíntotas:</strong> Líneas a las que la curva se aproxima indefinidamente (en hipérbolas).</li>
+          </ul>
 
               <h4>Pasos para Graficar</h4>
               <ol>
