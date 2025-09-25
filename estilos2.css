@@ -733,7 +733,7 @@
     }
     .math-table td {
       padding: 10px 12px;
-      border-bottom: 1px solid #ecf0f1;
+      /* border-bottom: 1px solid #ecf0f1; */
     }
     .math-table tr:nth-child(even) {
       background: #f8f9fa;
