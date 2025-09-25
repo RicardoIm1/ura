@@ -6,57 +6,7 @@
   <title>Ejercicios de Diagramas de Flujo</title>
   <link rel="stylesheet" href="estilos2.css">
   <style>
-   :root {
-      --primary: #2563eb;
-      --secondary: #7c3aed;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --light: #f8fafc;
-      --dark: #1e293b;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-    }
-    
-    body {
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-      color: var(--dark);
-      line-height: 1.6;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-    
-    h1 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 2.5rem;
-    } 
-    
-    .subtitle {
-      color: var(--dark);
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-    
+    /* Solo CSS indispensable que no está en estilos2.css */
     .exercises-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -70,7 +20,7 @@
       padding: 25px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s, box-shadow 0.3s;
-      border-left: 5px solid var(--primary);
+      border-left: 5px solid var(--apple-vibrant-blue);
     }
     
     .exercise-card:hover {
@@ -79,7 +29,7 @@
     }
     
     .exercise-title {
-      color: var(--primary);
+      color: var(--apple-vibrant-blue);
       margin-bottom: 15px;
       font-size: 1.4rem;
       display: flex;
@@ -89,7 +39,7 @@
     
     .exercise-description {
       margin-bottom: 20px;
-      color: var(--dark);
+      color: var(--apple-dark-gray);
     }
     
     .difficulty {
@@ -105,32 +55,7 @@
     .medium { background: #fef3c7; color: #92400e; }
     .hard { background: #fee2e2; color: #991b1b; }
     
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-      text-decoration: none;
-    }
-    
-    .btn:hover {
-      background: #1d4ed8;
-    }
-    
-    .btn-secondary {
-      background: var(--secondary);
-    }
-    
-    .btn-secondary:hover {
-      background: #6d28d9;
-    }
-    
-    /* Modal */
+    /* Modal específico para diagramas */
     .modal {
       display: none;
       position: fixed;
@@ -141,18 +66,18 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       overflow-y: auto;
-      transition: opacity 0.3s ease;
     }
     
     .modal-content {
       background: white;
       margin: 40px auto;
-      border-radius: 12px;
+      border-radius: 18px;
       padding: 30px;
       max-width: 900px;
       width: 90%;
       animation: slideDown 0.4s ease;
       position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
     
     @keyframes slideDown {
@@ -166,13 +91,13 @@
       top: 15px;
       font-size: 1.8rem;
       font-weight: bold;
-      color: #64748b;
+      color: var(--apple-dark-gray);
       cursor: pointer;
       z-index: 1001;
     }
     
     .close-btn:hover {
-      color: #ef4444;
+      color: var(--apple-vibrant-orange);
     }
     
     .flowchart-container {
@@ -188,15 +113,15 @@
     }
     
     .flowchart-diagram {
-      background: #f8fafc;
-      border-radius: 8px;
+      background: var(--apple-light-gray);
+      border-radius: 12px;
       padding: 20px;
       border: 2px dashed #cbd5e1;
     }
     
     .symbols-guide {
       background: #f0f9ff;
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 25px;
       margin-top: 30px;
     }
@@ -214,7 +139,7 @@
       gap: 10px;
       padding: 10px;
       background: white;
-      border-radius: 6px;
+      border-radius: 8px;
     }
     
     .symbol {
@@ -234,64 +159,85 @@
     .input { background: #8b5cf6; }
     .connector { background: #f59e0b; border-radius: 50%; }
     
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      color: #64748b;
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 100%/* 768px */) {
-      .exercises-grid { grid-template-columns: 1fr; }
-      .flowchart-container { flex-direction: column; }
-      .modal-content { margin: 20px auto; padding: 20px; }
+    /* Responsive específico */
+    @media (max-width: 768px) {
+      .exercises-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+      }
+      
+      .flowchart-container { 
+        flex-direction: column; 
+        gap: 20px;
+      }
+      
+      .modal-content { 
+        margin: 20px auto; 
+        padding: 20px; 
+      }
+      
+      .exercise-card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Ejercicios de Diagramas de Flujo</h1>
-      <p class="subtitle">Practica y domina la representación gráfica de algoritmos</p>
+      <div class="header-content">
+        <div class="header-title">Ejercicios de Diagramas de Flujo</div>
+      </div>
     </header>
+
+    <section style="text-align: center; margin: 40px 0 30px;">
+      <h1 style="color: var(--apple-vibrant-blue); margin-bottom: 10px;">Ejercicios de Diagramas de Flujo</h1>
+      <p class="subtitle" style="color: var(--apple-dark-gray); font-size: 1.2rem;">
+        Practica y domina la representación gráfica de algoritmos
+      </p>
+    </section>
 
     <section class="exercises-grid">
       <div class="exercise-card">
         <h2 class="exercise-title"><span>🔢</span> Ejercicio 1: Número Par o Impar</h2>
         <span class="difficulty easy">Fácil</span>
         <p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p>
-        <button class="aplle-button" onclick="showExercise(1)">Ver Ejercicio</button>
+        <button class="apple-button" onclick="showExercise(1)">Ver Ejercicio</button>
       </div>
+      
       <div class="exercise-card">
         <h2 class="exercise-title"><span>📊</span> Ejercicio 2: Calcular Promedio</h2>
         <span class="difficulty easy">Fácil</span>
         <p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p>
-        <button class="aplle-button" onclick="showExercise(2)">Ver Ejercicio</button>
+        <button class="apple-button" onclick="showExercise(2)">Ver Ejercicio</button>
       </div>
+      
       <div class="exercise-card">
         <h2 class="exercise-title"><span>🔍</span> Ejercicio 3: Número Mayor</h2>
         <span class="difficulty medium">Medio</span>
         <p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p>
-        <button class="aplle-button" onclick="showExercise(3)">Ver Ejercicio</button>
+        <button class="apple-button" onclick="showExercise(3)">Ver Ejercicio</button>
       </div>
+      
       <div class="exercise-card">
         <h2 class="exercise-title"><span>🔄</span> Ejercicio 4: Serie Fibonacci</h2>
         <span class="difficulty medium">Medio</span>
         <p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p>
-        <button class="aplle-button" onclick="showExercise(4)">Ver Ejercicio</button>
+        <button class="apple-button" onclick="showExercise(4)">Ver Ejercicio</button>
       </div>
+      
       <div class="exercise-card">
         <h2 class="exercise-title"><span>🎯</span> Ejercicio 5: Adivina el Número</h2>
         <span class="difficulty hard">Difícil</span>
         <p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p>
-        <button class="aplle-button" onclick="showExercise(5)">Ver Ejercicio</button>
+        <button class="apple-button" onclick="showExercise(5)">Ver Ejercicio</button>
       </div>
+      
       <div class="exercise-card">
         <h2 class="exercise-title"><span>📈</span> Ejercicio 6: Estadísticas Básicas</h2>
         <span class="difficulty hard">Difícil</span>
         <p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p>
-        <button class="baplle-button" onclick="showExercise(6)">Ver Ejercicio</button>
+        <button class="apple-button" onclick="showExercise(6)">Ver Ejercicio</button>
       </div>
     </section>
 
@@ -299,34 +245,36 @@
     <div id="exercise-modal" class="modal">
       <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h2 id="exercise-detail-title" style="color: var(--primary); margin-bottom: 15px;"></h2>
-        <p id="exercise-detail-description"></p>
+        <h2 id="exercise-detail-title" style="color: var(--apple-vibrant-blue); margin-bottom: 15px;"></h2>
+        <p id="exercise-detail-description" style="color: var(--apple-dark-gray);"></p>
 
         <div class="flowchart-container">
           <div class="flowchart-problem">
-            <h3>📝 Enunciado del Problema</h3>
-            <p id="problem-statement"></p>
+            <h3 style="color: var(--apple-vibrant-blue);">📝 Enunciado del Problema</h3>
+            <p id="problem-statement" style="margin-top: 10px;"></p>
 
-            <h3 style="margin-top: 20px;">🎯 Objetivos de Aprendizaje</h3>
+            <h3 style="margin-top: 20px; color: var(--apple-vibrant-blue);">🎯 Objetivos de Aprendizaje</h3>
             <ul id="learning-objectives" style="margin-top: 10px; padding-left: 20px;"></ul>
 
-            <h3 style="margin-top: 20px;">💡 Pistas y Sugerencias</h3>
+            <h3 style="margin-top: 20px; color: var(--apple-vibrant-blue);">💡 Pistas y Sugerencias</h3>
             <ul id="hints" style="margin-top: 10px; padding-left: 20px;"></ul>
 
             <div style="margin-top: 25px;">
-              <button class="btn" onclick="showSolution()">Ver Solución Propuesta</button>
-              <button class="btn btn-secondary" onclick="resetSolution()" style="margin-left: 10px;">Ocultar Solución</button>
+              <button class="apple-button" onclick="showSolution()" style="margin-right: 10px;">Ver Solución Propuesta</button>
+              <button class="apple-button" onclick="resetSolution()" style="background-color: var(--apple-vibrant-orange);">Ocultar Solución</button>
             </div>
           </div>
 
           <div class="flowchart-diagram">
-            <h3>📊 Área de Trabajo</h3>
-            <p style="margin: 15px 0; font-style: italic; color: #64748b;">Dibuja tu diagrama de flujo aquí o en papel.</p>
+            <h3 style="color: var(--apple-vibrant-blue);">📊 Área de Trabajo</h3>
+            <p style="margin: 15px 0; font-style: italic; color: var(--apple-dark-gray);">
+              Dibuja tu diagrama de flujo aquí o en papel según las indicaciones de tu profesor.
+            </p>
             <div id="drawing-area" style="height: 300px; background: white; border: 1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
               Área para dibujar el diagrama
             </div>
             <div id="proposed-solution" style="display: none; margin-top: 20px;">
-              <h4>Solución Propuesta:</h4>
+              <h4 style="color: var(--apple-vibrant-green);">Solución Propuesta:</h4>
               <div id="solution-content" style="background: #f0f9ff; padding: 15px; border-radius: 6px; margin-top: 10px;"></div>
             </div>
           </div>
@@ -335,8 +283,8 @@
     </div>
 
     <section class="symbols-guide">
-      <h3>📐 Símbolos de Diagramas de Flujo</h3>
-      <p>Conoce los símbolos estándar utilizados en la creación de diagramas de flujo:</p>
+      <h3 style="color: var(--apple-vibrant-blue);">📐 Símbolos de Diagramas de Flujo</h3>
+      <p style="color: var(--apple-dark-gray);">Conoce los símbolos estándar utilizados en la creación de diagramas de flujo:</p>
       
       <div class="symbols-grid">
         <div class="symbol-item">
