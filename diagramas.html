@@ -126,36 +126,12 @@
     </section>
 
     <section class="exercises-grid" id="exercisesGrid">
-      <article class="exercise-card" role="button" tabindex="0" data-id="1">
-        <h2 class="exercise-title"><span>🔢</span> Ejercicio 1: Número Par o Impar</h2>
-        <span class="difficulty easy">Fácil</span>
-        <p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p>
-      </article>
-      <article class="exercise-card" role="button" tabindex="0" data-id="2">
-        <h2 class="exercise-title"><span>📊</span> Ejercicio 2: Calcular Promedio</h2>
-        <span class="difficulty easy">Fácil</span>
-        <p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p>
-      </article>
-      <article class="exercise-card" role="button" tabindex="0" data-id="3">
-        <h2 class="exercise-title"><span>🔍</span> Ejercicio 3: Número Mayor</h2>
-        <span class="difficulty medium">Medio</span>
-        <p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p>
-      </article>
-      <article class="exercise-card" role="button" tabindex="0" data-id="4">
-        <h2 class="exercise-title"><span>🔄</span> Ejercicio 4: Serie Fibonacci</h2>
-        <span class="difficulty medium">Medio</span>
-        <p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p>
-      </article>
-      <article class="exercise-card" role="button" tabindex="0" data-id="5">
-        <h2 class="exercise-title"><span>🎯</span> Ejercicio 5: Adivina el Número</h2>
-        <span class="difficulty hard">Difícil</span>
-        <p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p>
-      </article>
-      <article class="exercise-card" role="button" tabindex="0" data-id="6">
-        <h2 class="exercise-title"><span>📈</span> Ejercicio 6: Estadísticas Básicas</h2>
-        <span class="difficulty hard">Difícil</span>
-        <p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p>
-      </article>
+      <article class="exercise-card" role="button" tabindex="0" data-id="1"><h2 class="exercise-title"><span>🔢</span> Ejercicio 1: Número Par o Impar</h2><span class="difficulty easy">Fácil</span><p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p></article>
+      <article class="exercise-card" role="button" tabindex="0" data-id="2"><h2 class="exercise-title"><span>📊</span> Ejercicio 2: Calcular Promedio</h2><span class="difficulty easy">Fácil</span><p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p></article>
+      <article class="exercise-card" role="button" tabindex="0" data-id="3"><h2 class="exercise-title"><span>🔍</span> Ejercicio 3: Número Mayor</h2><span class="difficulty medium">Medio</span><p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p></article>
+      <article class="exercise-card" role="button" tabindex="0" data-id="4"><h2 class="exercise-title"><span>🔄</span> Ejercicio 4: Serie Fibonacci</h2><span class="difficulty medium">Medio</span><p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p></article>
+      <article class="exercise-card" role="button" tabindex="0" data-id="5"><h2 class="exercise-title"><span>🎯</span> Ejercicio 5: Adivina el Número</h2><span class="difficulty hard">Difícil</span><p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p></article>
+      <article class="exercise-card" role="button" tabindex="0" data-id="6"><h2 class="exercise-title"><span>📈</span> Ejercicio 6: Estadísticas Básicas</h2><span class="difficulty hard">Difícil</span><p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p></article>
     </section>
 
     <!-- Modal -->
@@ -203,89 +179,74 @@
   </div>
 
   <script>
-    /* ejercicios: igual que antes (tu bloque grande con objetivos, hints y solution) */
+    /* ====== Datos de los ejercicios ====== */
+    const exercises = {
+      1: {title:"Número Par o Impar",description:"Determinar si un número es par o impar",problem:"Escribe un algoritmo que solicite al usuario un número entero y determine si es par o impar.",objectives:["Practicar el uso de estructuras condicionales","Aplicar el operador módulo para determinar paridad","Manejar entrada y salida de datos básicos"],hints:["Recuerda que un número es par si el residuo de dividirlo entre 2 es 0","Utiliza el símbolo de decisión para evaluar la condición","No olvides los símbolos de inicio y fin del diagrama"],solution:`<strong>Diagrama de flujo propuesto:</strong><br><br>1. INICIO<br>2. Leer número (N)<br>3. Si N % 2 == 0 entonces<br>4. &nbsp;&nbsp;Mostrar "El número es par"<br>5. Sino<br>6. &nbsp;&nbsp;Mostrar "El número es impar"<br>7. FIN`},
+      2: {title:"Calcular Promedio",description:"Calcular promedio y determinar aprobación",problem:"Diseña un algoritmo que reciba tres calificaciones, calcule el promedio y determine si el alumno aprobó (promedio ≥ 6) o reprobó.",objectives:["Practicar operaciones aritméticas básicas","Utilizar variables para almacenar múltiples valores","Combinar condiciones con cálculos"],hints:["El promedio se calcula sumando las tres calificaciones y dividiendo entre 3","Utiliza una variable para almacenar el resultado del promedio","Considera qué pasa si el promedio es exactamente 6"],solution:`<strong>Diagrama de flujo propuesto:</strong><br><br>1. INICIO<br>2. Leer calificación1, calificación2, calificación3<br>3. promedio = (c1+c2+c3)/3<br>4. Si promedio ≥ 6 entonces<br>5. &nbsp;&nbsp;Mostrar "Aprobado"<br>6. Sino<br>7. &nbsp;&nbsp;Mostrar "Reprobado"<br>8. FIN`},
+      3: {title:"Número Mayor",description:"Encontrar el mayor de tres números",problem:"Crear un algoritmo que encuentre e imprima el número mayor de tres valores diferentes.",objectives:["Manejar múltiples condiciones anidadas","Comparar valores numéricos","Trabajar con variables auxiliares"],hints:["Puedes comparar los números de dos en dos","Utiliza una variable para almacenar el valor mayor temporal","Considera qué pasa si hay números iguales"],solution:`<strong>Diagrama de flujo propuesto:</strong><br><br>1. INICIO<br>2. Leer A, B, C<br>3. Si A > B y A > C entonces mayor=A<br>4. Sino si B > C entonces mayor=B<br>5. Sino mayor=C<br>6. Mostrar mayor<br>7. FIN`},
+      4: {title:"Serie Fibonacci",description:"Generar serie Fibonacci",problem:"Elabora un algoritmo que genere los primeros N términos de la serie Fibonacci.",objectives:["Implementar estructuras repetitivas","Comprender la secuencia Fibonacci","Manejar variables que cambian en cada iteración"],hints:["La serie comienza con 0 y 1","Necesitarás un contador","Considera N=1 o N=2 como casos especiales"],solution:`<strong>Diagrama de flujo propuesto:</strong><br><br>1. INICIO<br>2. Leer N<br>3. a=0, b=1<br>4. Mostrar a, b<br>5. Repetir hasta N:<br>6. &nbsp;&nbsp;c=a+b<br>7. &nbsp;&nbsp;Mostrar c<br>8. &nbsp;&nbsp;a=b<br>9. &nbsp;&nbsp;b=c<br>10. FIN`},
+      5: {title:"Adivina el Número",description:"Juego de adivinanza de números",problem:"Juego donde la compu genera un número entre 1 y 100 y el usuario debe adivinarlo.",objectives:["Trabajar con números aleatorios","Implementar bucles condicionales","Manejar interacción con el usuario"],hints:["Necesitas número secreto y variable intento","El bucle se repite hasta acertar","Cuenta los intentos"],solution:`<strong>Diagrama de flujo propuesto:</strong><br><br>1. INICIO<br>2. numeroSecreto=aleatorio(1,100)<br>3. intentos=0<br>4. Repetir hasta acertar:<br>5. &nbsp;&nbsp;Leer intento<br>6. &nbsp;&nbsp;intentos++<br>7. &nbsp;&nbsp;Comparar con secreto<br>8. FIN`},
+      6: {title:"Estadísticas Básicas",description:"Calcular promedio, máximo y mínimo",problem:"Algoritmo que lee una lista hasta que el usuario ingrese 0 y calcula promedio, máximo y mínimo.",objectives:["Manejar listas de longitud variable","Calcular múltiples estadísticas","Trabajar con valores iniciales"],hints:["Inicializa max y min","Necesitas contadores","El 0 termina la entrada"],solution:`<strong>Diagrama de flujo propuesto:</strong><br><br>1. INICIO<br>2. suma=0, cont=0, max=-inf, min=inf<br>3. Leer num<br>4. Mientras num!=0:<br>5. &nbsp;&nbsp;suma+=num, cont++<br>6. &nbsp;&nbsp;Si num>max entonces max=num<br>7. &nbsp;&nbsp;Si num<min entonces min=num<br>8. Leer num<br>9. promedio=suma/cont<br>10. Mostrar promedio, max, min<br>11. FIN`}
+    };
 
-    const exercises = { /* ... (el mismo objeto que ya tienes) ... */ };
-
-    const modal = document.getElementById('exercise-modal');
-    const closeBtn = document.getElementById('closeBtn');
-    const showSolutionBtn = document.getElementById('showSolutionBtn');
-    const hideSolutionBtn = document.getElementById('hideSolutionBtn');
-    const proposedSolution = document.getElementById('proposed-solution');
-    const solutionContent = document.getElementById('solution-content');
-    let lastActiveCard = null;
-    let currentExerciseId = null;
+    /* ====== Modal y lógica ====== */
+    const modal=document.getElementById('exercise-modal');
+    const closeBtn=document.getElementById('closeBtn');
+    const showSolutionBtn=document.getElementById('showSolutionBtn');
+    const hideSolutionBtn=document.getElementById('hideSolutionBtn');
+    const proposedSolution=document.getElementById('proposed-solution');
+    const solutionContent=document.getElementById('solution-content');
+    let lastActiveCard=null,currentExerciseId=null;
 
     function openModal(){
       modal.removeAttribute('hidden');
-      void modal.offsetWidth; // reflow
+      void modal.offsetWidth;
       modal.classList.add('open');
       modal.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow='hidden';
       closeBtn.focus();
     }
-
     function closeModal(){
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-      setTimeout(()=> {
-        if (!modal.classList.contains('open')) modal.setAttribute('hidden','');
-      }, 280);
-      if (lastActiveCard) lastActiveCard.focus();
-      currentExerciseId = null;
+      document.body.style.overflow='';
+      setTimeout(()=>{ if(!modal.classList.contains('open')) modal.setAttribute('hidden',''); },280);
+      if(lastActiveCard) lastActiveCard.focus();
+      currentExerciseId=null;
     }
-
     function showExercise(id){
-      const ex = exercises[id];
-      if (!ex) return;
-      currentExerciseId = id;
-      document.getElementById('exercise-detail-title').textContent = `Ejercicio ${id}: ${ex.title}`;
-      document.getElementById('exercise-detail-description').textContent = ex.description;
-      document.getElementById('problem-statement').textContent = ex.problem;
-
-      const objectivesList = document.getElementById('learning-objectives');
-      objectivesList.innerHTML = '';
-      ex.objectives.forEach(o => { let li=document.createElement('li'); li.textContent=o; objectivesList.appendChild(li); });
-
-      const hintsList = document.getElementById('hints');
-      hintsList.innerHTML = '';
-      ex.hints.forEach(h => { let li=document.createElement('li'); li.textContent=h; hintsList.appendChild(li); });
-
-      proposedSolution.classList.remove('visible');
-      proposedSolution.setAttribute('aria-hidden','true');
-      solutionContent.innerHTML = '';
-
+      const ex=exercises[id]; if(!ex) return; currentExerciseId=id;
+      document.getElementById('exercise-detail-title').textContent=`Ejercicio ${id}: ${ex.title}`;
+      document.getElementById('exercise-detail-description').textContent=ex.description;
+      document.getElementById('problem-statement').textContent=ex.problem;
+      const objectivesList=document.getElementById('learning-objectives');
+      objectivesList.innerHTML=''; ex.objectives.forEach(o=>{let li=document.createElement('li'); li.textContent=o; objectivesList.appendChild(li);});
+      const hintsList=document.getElementById('hints');
+      hintsList.innerHTML=''; ex.hints.forEach(h=>{let li=document.createElement('li'); li.textContent=h; hintsList.appendChild(li);});
+      proposedSolution.classList.remove('visible'); proposedSolution.setAttribute('aria-hidden','true'); solutionContent.innerHTML='';
       openModal();
     }
-
     function showSolution(){
-      if (!currentExerciseId) return;
-      solutionContent.innerHTML = exercises[currentExerciseId].solution;
-      proposedSolution.classList.add('visible');
-      proposedSolution.setAttribute('aria-hidden','false');
-      proposedSolution.scrollIntoView({behavior:'smooth', block:'center'});
+      if(!currentExerciseId) return;
+      solutionContent.innerHTML=exercises[currentExerciseId].solution;
+      proposedSolution.classList.add('visible'); proposedSolution.setAttribute('aria-hidden','false');
+      proposedSolution.scrollIntoView({behavior:'smooth',block:'center'});
     }
     function hideSolution(){
-      proposedSolution.classList.remove('visible');
-      proposedSolution.setAttribute('aria-hidden','true');
-      solutionContent.innerHTML='';
-      showSolutionBtn.focus();
+      proposedSolution.classList.remove('visible'); proposedSolution.setAttribute('aria-hidden','true');
+      solutionContent.innerHTML=''; showSolutionBtn.focus();
     }
 
-    document.querySelectorAll('.exercise-card').forEach(card => {
-      const id = card.getAttribute('data-id');
-      card.addEventListener('click', () => { lastActiveCard=card; showExercise(parseInt(id,10)); });
-      card.addEventListener('keydown', e => {
-        if (e.key==='Enter' || e.key===' ') { e.preventDefault(); lastActiveCard=card; showExercise(parseInt(id,10)); }
-      });
+    document.querySelectorAll('.exercise-card').forEach(card=>{
+      const id=card.getAttribute('data-id');
+      card.addEventListener('click',()=>{ lastActiveCard=card; showExercise(parseInt(id,10)); });
+      card.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); lastActiveCard=card; showExercise(parseInt(id,10)); } });
     });
-
-    closeBtn.addEventListener('click', closeModal);
-    showSolutionBtn.addEventListener('click', showSolution);
-    hideSolutionBtn.addEventListener('click', hideSolution);
-    modal.addEventListener('click', e => { if (e.target===modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+    closeBtn.addEventListener('click',closeModal);
+    showSolutionBtn.addEventListener('click',showSolution);
+    hideSolutionBtn.addEventListener('click',hideSolution);
+    modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&modal.classList.contains('open')) closeModal(); });
   </script>
 </body>
 </html>
