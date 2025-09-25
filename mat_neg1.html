@@ -2930,358 +2930,354 @@
         <ul class="tema-list">
         <ul class="tema-list">
           <li onclick="abrirModal('2.1. Ecuaciones con una incógnita de primer grado', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender y resolver ecuaciones de primer grado con una incógnita, aplicando las propiedades de igualdad y los procedimientos algebraicos adecuados.</p>
-            
-              <h4>Definición y concepto fundamental</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Ecuación de primer grado:</span> Igualdad algebraica que contiene una o más incógnitas elevadas a la potencia 1.</li>
-                <li><span style='color: red; font-weight: bold;'>Forma general:</span> ax + b = 0, donde:
-                  <ul>
-                    <li>a y b son constantes (a ≠ 0)</li>
-                    <li>x es la incógnita</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Solución o raíz:</span> Valor numérico que satisface la igualdad cuando se sustituye en lugar de la incógnita.</li>
-                <li><span style='color: red; font-weight: bold;'>Grado 1:</span> La incógnita está elevada al exponente 1.</li>
-              </ul>
-            
-              <h4>Elementos de una ecuación</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Elemento</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo en 3x + 5 = 11</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Miembros</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Las dos expresiones separadas por el signo =</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3x + 5 (primer miembro) y 11 (segundo miembro)</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Términos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cada uno de los sumandos que forman los miembros</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3x, 5, 11</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Incógnita</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Valor desconocido que se debe determinar</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Solución</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Valor que satisface la ecuación</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x = 2</td>
-                </tr>
-              </table>
-            
-              <h4>Propiedades de las igualdades</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Propiedad</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Enunciado</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Reflexiva</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Toda expresión es igual a sí misma</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a = a</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Simétrica</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si a = b, entonces b = a</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si x = 5, entonces 5 = x</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Transitiva</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si a = b y b = c, entonces a = c</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si x = y y y = 3, entonces x = 3</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Uniformidad</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si a = b, entonces a + c = b + c</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si x = 5, entonces x + 2 = 5 + 2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cancelativa</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si a + c = b + c, entonces a = b</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Si x + 3 = 8 + 3, entonces x = 8</td>
-                </tr>
-              </table>
-            
-              <h4>Procedimiento para resolver ecuaciones de primer grado</h4>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Simplificar</span> ambos miembros de la ecuación si es necesario</li>
-                <li><span style='color: red; font-weight: bold;'>Agrupar</span> los términos con incógnita en un miembro y los constantes en el otro</li>
-                <li><span style='color: red; font-weight: bold;'>Realizar</span> las operaciones necesarias para aislar la incógnita</li>
-                <li><span style='color: red; font-weight: bold;'>Verificar</span> la solución sustituyendo en la ecuación original</li>
-              </ol>
-            
-              <h4>Ejemplos detallados de resolución</h4>
-              
-              <p><strong>Ejemplo 1: Ecuación simple</strong></p>
-              <p>Resolver: 3x + 5 = 11</p>
-              <ol>
-                <li>Restar 5 a ambos miembros: 3x + 5 - 5 = 11 - 5</li>
-                <li>Simplificar: 3x = 6</li>
-                <li>Dividir ambos miembros entre 3: 3x/3 = 6/3</li>
-                <li>Simplificar: <span style='color: red; font-weight: bold;'>x = 2</span></li>
-                <li>Verificación: 3(2) + 5 = 6 + 5 = 11 ✓</li>
-              </ol>
-              
-              <p><strong>Ejemplo 2: Ecuación con paréntesis</strong></p>
-              <p>Resolver: 2(x - 3) + 4 = 3x - 1</p>
-              <ol>
-                <li>Eliminar paréntesis: 2x - 6 + 4 = 3x - 1</li>
-                <li>Simplificar: 2x - 2 = 3x - 1</li>
-                <li>Restar 2x a ambos miembros: 2x - 2 - 2x = 3x - 1 - 2x</li>
-                <li>Simplificar: -2 = x - 1</li>
-                <li>Sumar 1 a ambos miembros: -2 + 1 = x - 1 + 1</li>
-                <li>Simplificar: <span style='color: red; font-weight: bold;'>x = -1</span></li>
-                <li>Verificación: 2(-1-3)+4 = 2(-4)+4 = -8+4 = -4; 3(-1)-1 = -3-1 = -4 ✓</li>
-              </ol>
-              
-              <p><strong>Ejemplo 3: Ecuación con fracciones</strong></p>
-              <p>Resolver: $\frac{2x}{3} - \frac{1}{2} = \frac{x}{4} + 2$</p>
-              <ol>
-                <li>Encontrar MCM de denominadores: MCM(3,2,4) = 12</li>
-                <li>Multiplicar ambos miembros por 12: $12(\frac{2x}{3} - \frac{1}{2}) = 12(\frac{x}{4} + 2)$</li>
-                <li>Distribuir: 8x - 6 = 3x + 24</li>
-                <li>Restar 3x a ambos miembros: 8x - 6 - 3x = 3x + 24 - 3x</li>
-                <li>Simplificar: 5x - 6 = 24</li>
-                <li>Sumar 6 a ambos miembros: 5x - 6 + 6 = 24 + 6</li>
-                <li>Simplificar: 5x = 30</li>
-                <li>Dividir entre 5: <span style='color: red; font-weight: bold;'>x = 6</span></li>
-                <li>Verificación: $\frac{2(6)}{3} - \frac{1}{2} = 4 - 0.5 = 3.5$; $\frac{6}{4} + 2 = 1.5 + 2 = 3.5$ ✓</li>
-              </ol>
-            
-              <h4>Tipos de ecuaciones de primer grado</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tipo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Forma</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Solución</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación lineal simple</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>ax + b = 0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x - 6 = 0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x = 3</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación con paréntesis</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a(bx + c) = d</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3(2x - 1) = 15</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x = 3</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación con fracciones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$\frac{ax}{b} + c = d$</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$\frac{2x}{3} + 1 = 5$</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x = 6</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación con decimales</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>ax + b.c = d.e</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.5x + 1.2 = 3.7</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x = 5</td>
-                </tr>
-              </table>
-            
-              <h4>Casos especiales en ecuaciones de primer grado</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Caso</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Interpretación</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación compatible determinada</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tiene una única solución</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x + 3 = 7</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x = 2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación compatible indeterminada</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tiene infinitas soluciones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x + 4 = 2(x + 2)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0 = 0 (identidad)</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ecuación incompatible</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>No tiene solución</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x + 3 = x + 5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3 = 5 (contradicción)</td>
-                </tr>
-              </table>
-            
-              <h4>Errores comunes en la resolución de ecuaciones</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Error</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Incorrecto</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Correcto</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>No aplicar la misma operación a ambos miembros</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x = 6 → x = 6 - 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x = 6 → x = 6/2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Debe dividirse entre 2, no restar 2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Error de signos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-3x = 9 → x = 3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-3x = 9 → x = -3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Al dividir entre negativo, cambia el signo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Error al eliminar paréntesis</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2(x + 3) = 2x + 3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2(x + 3) = 2x + 6</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Debe multiplicarse ambos términos</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Error con fracciones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$\frac{x}{2} = 4$ → x = 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$\frac{x}{2} = 4$ → x = 8</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Debe multiplicarse por 2, no dividirse</td>
-                </tr>
-              </table>
-            
-              <h4>Ejercicio de aplicación integral</h4>
-              <p>Resolver la siguiente ecuación y verificar la solución:</p>
-              <p>$\frac{3(x - 2)}{4} - \frac{2x + 1}{3} = \frac{5x - 1}{6} - 2$</p>
-              
-              <p><strong>Solución paso a paso:</strong></p>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Encontrar MCM de denominadores:</span> MCM(4,3,6) = 12</li>
-                <li><span style='color: red; font-weight: bold;'>Multiplicar ambos miembros por 12:</span>
-                  <ul>
-                    <li>$12[\frac{3(x-2)}{4} - \frac{2x+1}{3}] = 12[\frac{5x-1}{6} - 2]$</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Distribuir y simplificar:</span>
-                  <ul>
-                    <li>$9(x-2) - 4(2x+1) = 2(5x-1) - 24$</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Eliminar paréntesis:</span>
-                  <ul>
-                    <li>$9x - 18 - 8x - 4 = 10x - 2 - 24$</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Simplificar ambos miembros:</span>
-                  <ul>
-                    <li>$x - 22 = 10x - 26$</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Restar x a ambos miembros:</span>
-                  <ul>
-                    <li>$-22 = 9x - 26$</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Sumar 26 a ambos miembros:</span>
-                  <ul>
-                    <li>$4 = 9x$</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Dividir entre 9:</span>
-                  <ul>
-                    <li><span style='color: red; font-weight: bold;'>x = 4/9</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Verificación:</span> Sustituir x = 4/9 en la ecuación original y comprobar que se cumple la igualdad</li>
-              </ol>
-            
-              <h4>Aplicaciones prácticas de ecuaciones de primer grado</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Problemas de edades:</span> Determinar edades actuales o futuras</li>
-                <li><span style='color: red; font-weight: bold;'>Problemas de mezclas:</span> Calcular cantidades y concentraciones</li>
-                <li><span style='color: red; font-weight: bold;'>Problemas de distancia, velocidad y tiempo:</span> d = v × t</li>
-                <li><span style='color: red; font-weight: bold;'>Problemas económicos:</span> Cálculo de precios, descuentos y ganancias</li>
-                <li><span style='color: red; font-weight: bold;'>Problemas geométricos:</span> Cálculo de dimensiones de figuras</li>
-                <li><span style='color: red; font-weight: bold;'>Problemas de proporciones:</span> Regla de tres y porcentajes</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
-                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
-                <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
-              </ul>
-            `)"><b>2.1. Ecuaciones con una incógnita de primer grado</b> <span class="emoji-small">✅</span>
-          </li>
-          
-          
-          
-          
-          
-          <ul>
+<hr><br>
+<p><strong>Objetivo:</strong> Comprender y resolver ecuaciones de primer grado con una incógnita, aplicando las propiedades de igualdad y los procedimientos algebraicos adecuados.</p>
+
+<h4>Definición y concepto fundamental</h4>
+<ul>
+  <li><strong>Ecuación de primer grado:</strong> Igualdad algebraica que contiene una o más incógnitas elevadas a la potencia 1.</li>
+  <li><strong>Forma general:</strong> ax + b = 0, donde:
+    <ul>
+      <li>a y b son constantes (a ≠ 0)</li>
+      <li>x es la incógnita</li>
+    </ul>
+  </li>
+  <li><strong>Solución o raíz:</strong> Valor numérico que satisface la igualdad cuando se sustituye en lugar de la incógnita.</li>
+  <li><strong>Grado 1:</strong> La incógnita está elevada al exponente 1.</li>
+</ul>
+
+<h4>Elementos de una ecuación</h4>
+<table>
+  <tr>
+    <th>Elemento</th>
+    <th>Definición</th>
+    <th>Ejemplo en 3x + 5 = 11</th>
+  </tr>
+  <tr>
+    <td>Miembros</td>
+    <td>Las dos expresiones separadas por el signo =</td>
+    <td>3x + 5 (primer miembro) y 11 (segundo miembro)</td>
+  </tr>
+  <tr>
+    <td>Términos</td>
+    <td>Cada uno de los sumandos que forman los miembros</td>
+    <td>3x, 5, 11</td>
+  </tr>
+  <tr>
+    <td>Incógnita</td>
+    <td>Valor desconocido que se debe determinar</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>Solución</td>
+    <td>Valor que satisface la ecuación</td>
+    <td>x = 2</td>
+  </tr>
+</table>
+
+<h4>Propiedades de las igualdades</h4>
+<table>
+  <tr>
+    <th>Propiedad</th>
+    <th>Enunciado</th>
+    <th>Ejemplo</th>
+  </tr>
+  <tr>
+    <td>Reflexiva</td>
+    <td>Toda expresión es igual a sí misma</td>
+    <td>a = a</td>
+  </tr>
+  <tr>
+    <td>Simétrica</td>
+    <td>Si a = b, entonces b = a</td>
+    <td>Si x = 5, entonces 5 = x</td>
+  </tr>
+  <tr>
+    <td>Transitiva</td>
+    <td>Si a = b y b = c, entonces a = c</td>
+    <td>Si x = y y y = 3, entonces x = 3</td>
+  </tr>
+  <tr>
+    <td>Uniformidad</td>
+    <td>Si a = b, entonces a + c = b + c</td>
+    <td>Si x = 5, entonces x + 2 = 5 + 2</td>
+  </tr>
+  <tr>
+    <td>Cancelativa</td>
+    <td>Si a + c = b + c, entonces a = b</td>
+    <td>Si x + 3 = 8 + 3, entonces x = 8</td>
+  </tr>
+</table>
+
+<h4>Procedimiento para resolver ecuaciones de primer grado</h4>
+<ol>
+  <li><strong>Simplificar</strong> ambos miembros de la ecuación si es necesario</li>
+  <li><strong>Agrupar</strong> los términos con incógnita en un miembro y los constantes en el otro</li>
+  <li><strong>Realizar</strong> las operaciones necesarias para aislar la incógnita</li>
+  <li><strong>Verificar</strong> la solución sustituyendo en la ecuación original</li>
+</ol>
+
+<h4>Ejemplos detallados de resolución</h4>
+
+<p><strong>Ejemplo 1: Ecuación simple</strong></p>
+<p>Resolver: 3x + 5 = 11</p>
+<ol>
+  <li>Restar 5 a ambos miembros: 3x + 5 - 5 = 11 - 5</li>
+  <li>Simplificar: 3x = 6</li>
+  <li>Dividir ambos miembros entre 3: 3x/3 = 6/3</li>
+  <li>Simplificar: <strong>x = 2</strong></li>
+  <li>Verificación: 3(2) + 5 = 6 + 5 = 11 ✓</li>
+</ol>
+
+<p><strong>Ejemplo 2: Ecuación con paréntesis</strong></p>
+<p>Resolver: 2(x - 3) + 4 = 3x - 1</p>
+<ol>
+  <li>Eliminar paréntesis: 2x - 6 + 4 = 3x - 1</li>
+  <li>Simplificar: 2x - 2 = 3x - 1</li>
+  <li>Restar 2x a ambos miembros: 2x - 2 - 2x = 3x - 1 - 2x</li>
+  <li>Simplificar: -2 = x - 1</li>
+  <li>Sumar 1 a ambos miembros: -2 + 1 = x - 1 + 1</li>
+  <li>Simplificar: <strong>x = -1</strong></li>
+  <li>Verificación: 2(-1-3)+4 = 2(-4)+4 = -8+4 = -4; 3(-1)-1 = -3-1 = -4 ✓</li>
+</ol>
+
+<p><strong>Ejemplo 3: Ecuación con fracciones</strong></p>
+<p>Resolver: $\frac{2x}{3} - \frac{1}{2} = \frac{x}{4} + 2$</p>
+<ol>
+  <li>Encontrar MCM de denominadores: MCM(3,2,4) = 12</li>
+  <li>Multiplicar ambos miembros por 12: $12(\frac{2x}{3} - \frac{1}{2}) = 12(\frac{x}{4} + 2)$</li>
+  <li>Distribuir: 8x - 6 = 3x + 24</li>
+  <li>Restar 3x a ambos miembros: 8x - 6 - 3x = 3x + 24 - 3x</li>
+  <li>Simplificar: 5x - 6 = 24</li>
+  <li>Sumar 6 a ambos miembros: 5x - 6 + 6 = 24 + 6</li>
+  <li>Simplificar: 5x = 30</li>
+  <li>Dividir entre 5: <strong>x = 6</strong></li>
+  <li>Verificación: $\frac{2(6)}{3} - \frac{1}{2} = 4 - 0.5 = 3.5$; $\frac{6}{4} + 2 = 1.5 + 2 = 3.5$ ✓</li>
+</ol>
+
+<h4>Tipos de ecuaciones de primer grado</h4>
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th>Forma</th>
+    <th>Ejemplo</th>
+    <th>Solución</th>
+  </tr>
+  <tr>
+    <td>Ecuación lineal simple</td>
+    <td>ax + b = 0</td>
+    <td>2x - 6 = 0</td>
+    <td>x = 3</td>
+  </tr>
+  <tr>
+    <td>Ecuación con paréntesis</td>
+    <td>a(bx + c) = d</td>
+    <td>3(2x - 1) = 15</td>
+    <td>x = 3</td>
+  </tr>
+  <tr>
+    <td>Ecuación con fracciones</td>
+    <td>$\frac{ax}{b} + c = d$</td>
+    <td>$\frac{2x}{3} + 1 = 5$</td>
+    <td>x = 6</td>
+  </tr>
+  <tr>
+    <td>Ecuación con decimales</td>
+    <td>ax + b.c = d.e</td>
+    <td>0.5x + 1.2 = 3.7</td>
+    <td>x = 5</td>
+  </tr>
+</table>
+
+<h4>Casos especiales en ecuaciones de primer grado</h4>
+<table>
+  <tr>
+    <th>Caso</th>
+    <th>Explicación</th>
+    <th>Ejemplo</th>
+    <th>Interpretación</th>
+  </tr>
+  <tr>
+    <td>Ecuación compatible determinada</td>
+    <td>Tiene una única solución</td>
+    <td>2x + 3 = 7</td>
+    <td>x = 2</td>
+  </tr>
+  <tr>
+    <td>Ecuación compatible indeterminada</td>
+    <td>Tiene infinitas soluciones</td>
+    <td>2x + 4 = 2(x + 2)</td>
+    <td>0 = 0 (identidad)</td>
+  </tr>
+  <tr>
+    <td>Ecuación incompatible</td>
+    <td>No tiene solución</td>
+    <td>x + 3 = x + 5</td>
+    <td>3 = 5 (contradicción)</td>
+  </tr>
+</table>
+
+<h4>Errores comunes en la resolución de ecuaciones</h4>
+<table>
+  <tr>
+    <th>Error</th>
+    <th>Incorrecto</th>
+    <th>Correcto</th>
+    <th>Explicación</th>
+  </tr>
+  <tr>
+    <td>No aplicar la misma operación a ambos miembros</td>
+    <td>2x = 6 → x = 6 - 2</td>
+    <td>2x = 6 → x = 6/2</td>
+    <td>Debe dividirse entre 2, no restar 2</td>
+  </tr>
+  <tr>
+    <td>Error de signos</td>
+    <td>-3x = 9 → x = 3</td>
+    <td>-3x = 9 → x = -3</td>
+    <td>Al dividir entre negativo, cambia el signo</td>
+  </tr>
+  <tr>
+    <td>Error al eliminar paréntesis</td>
+    <td>2(x + 3) = 2x + 3</td>
+    <td>2(x + 3) = 2x + 6</td>
+    <td>Debe multiplicarse ambos términos</td>
+  </tr>
+  <tr>
+    <td>Error con fracciones</td>
+    <td>$\frac{x}{2} = 4$ → x = 2</td>
+    <td>$\frac{x}{2} = 4$ → x = 8</td>
+    <td>Debe multiplicarse por 2, no dividirse</td>
+  </tr>
+</table>
+
+<h4>Ejercicio de aplicación integral</h4>
+<p>Resolver la siguiente ecuación y verificar la solución:</p>
+<p>$\frac{3(x - 2)}{4} - \frac{2x + 1}{3} = \frac{5x - 1}{6} - 2$</p>
+
+<p><strong>Solución paso a paso:</strong></p>
+<ol>
+  <li><strong>Encontrar MCM de denominadores:</strong> MCM(4,3,6) = 12</li>
+  <li><strong>Multiplicar ambos miembros por 12:</strong>
+    <ul>
+      <li>$12[\frac{3(x-2)}{4} - \frac{2x+1}{3}] = 12[\frac{5x-1}{6} - 2]$</li>
+    </ul>
+  </li>
+  <li><strong>Distribuir y simplificar:</strong>
+    <ul>
+      <li>$9(x-2) - 4(2x+1) = 2(5x-1) - 24$</li>
+    </ul>
+  </li>
+  <li><strong>Eliminar paréntesis:</strong>
+    <ul>
+      <li>$9x - 18 - 8x - 4 = 10x - 2 - 24$</li>
+    </ul>
+  </li>
+  <li><strong>Simplificar ambos miembros:</strong>
+    <ul>
+      <li>$x - 22 = 10x - 26$</li>
+    </ul>
+  </li>
+  <li><strong>Restar x a ambos miembros:</strong>
+    <ul>
+      <li>$-22 = 9x - 26$</li>
+    </ul>
+  </li>
+  <li><strong>Sumar 26 a ambos miembros:</strong>
+    <ul>
+      <li>$4 = 9x$</li>
+    </ul>
+  </li>
+  <li><strong>Dividir entre 9:</strong>
+    <ul>
+      <li><strong>x = 4/9</strong></li>
+    </ul>
+  </li>
+  <li><strong>Verificación:</strong> Sustituir x = 4/9 en la ecuación original y comprobar que se cumple la igualdad</li>
+</ol>
+
+<h4>Aplicaciones prácticas de ecuaciones de primer grado</h4>
+<ul>
+  <li><strong>Problemas de edades:</strong> Determinar edades actuales o futuras</li>
+  <li><strong>Problemas de mezclas:</strong> Calcular cantidades y concentraciones</li>
+  <li><strong>Problemas de distancia, velocidad y tiempo:</strong> d = v × t</li>
+  <li><strong>Problemas económicos:</strong> Cálculo de precios, descuentos y ganancias</li>
+  <li><strong>Problemas geométricos:</strong> Cálculo de dimensiones de figuras</li>
+  <li><strong>Problemas de proporciones:</strong> Regla de tres y porcentajes</li>
+</ul>
+
+<h4>Fuentes Bibliográficas</h4>
+<ul>
+  <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+  <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+  <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
+  <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
+</ul>
+`)"><b>2.1. Ecuaciones con una incógnita de primer grado</b> <span class="emoji-small">✅</span>
+</li>
+
+<ul>
 <li onclick="abrirModal('2.1.1. Solución de ecuaciones con una incógnita de primer grado', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender y aplicar los métodos para resolver ecuaciones algebraicas de primer grado con una incógnita.</p>
-            
-              <h4>Definición</h4>
-              <ul>
-                <li>Una ecuación de primer grado con una incógnita es una igualdad algebraica que contiene una variable elevada a la primera potencia.</li>
-                <li>Tiene la forma general: ax + b = 0, donde 'a' y 'b' son números reales y a ≠ 0.</li>
-                <li>La solución es el valor de la variable que hace que la igualdad sea verdadera.</li>
-              </ul>
-            
-              <h4>Métodos de Solución</h4>
-              <ul>
-                <li><strong>Método de transposición:</strong> Consiste en 'pasar términos' de un lado a otro de la igualdad aplicando operaciones inversas.</li>
-                <li><strong>Método de simplificación:</strong> Reducir términos semejantes antes de despejar la incógnita.</li>
-                <li><strong>Método de igualación:</strong> Útil cuando se tienen dos ecuaciones igualadas a la misma variable.</li>
-                <li><strong>Método gráfico:</strong> Representar la ecuación en un plano cartesiano para encontrar su raíz (punto de corte con el eje x).</li>
-              </ul>
-            
-              <h4>Propiedades Utilizadas</h4>
-              <ul>
-                <li>Propiedad de la igualdad: Lo que se hace a un lado de la ecuación debe hacerse al otro.</li>
-                <li>Propiedad aditiva: Sumar o restar la misma cantidad a ambos lados.</li>
-                <li>Propiedad multiplicativa: Multiplicar o dividir ambos lados por la misma cantidad (excepto cero).</li>
-                <li>Propiedad distributiva: Para eliminar paréntesis en expresiones algebraicas.</li>
-              </ul>
-            
-              <h4>Pasos para Resolver</h4>
-              <ol>
-                <li>Simplificar ambos lados de la ecuación si es necesario (eliminar paréntesis, combinar términos semejantes).</li>
-                <li>Mover todos los términos con variable a un lado de la igualdad y los constantes al otro.</li>
-                <li>Realizar las operaciones necesarias para aislar la variable.</li>
-                <li>Verificar la solución sustituyendo el valor encontrado en la ecuación original.</li>
-              </ol>
-            
-              <h4>Ejemplos</h4>
-              <ul>
-                <li>Ecuación simple: 3x + 5 = 11 → 3x = 6 → x = 2</li>
-                <li>Ecuación con paréntesis: 2(x - 3) = 10 → 2x - 6 = 10 → 2x = 16 → x = 8</li>
-                <li>Ecuación con fracciones: (x/2) + 3 = 7 → x/2 = 4 → x = 8</li>
-                <li>Ecuación con variables en ambos lados: 5x - 3 = 2x + 9 → 3x = 12 → x = 4</li>
-                <li>Ecuación con coeficientes decimales: 0.5x + 1.2 = 3.7 → 0.5x = 2.5 → x = 5</li>
-              </ul>
-            
-              <h4>Aplicaciones</h4>
-              <ul>
-                <li>Resolución de problemas de la vida cotidiana que involucran relaciones lineales.</li>
-                <li>Fundamento para la resolución de sistemas de ecuaciones.</li>
-                <li>Base para el estudio de funciones lineales en matemáticas superiores.</li>
-                <li>Aplicaciones en física, economía, ingeniería y otras ciencias.</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
-                <li>Baldor, A. (2017). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
-                <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
-              </ul>
-            `)">2.1.1. Solución de ecuaciones con una incógnita de primer grado <span class="emoji-small">✅</span>
-          </li>
+<hr><br>
+<p><strong>Objetivo:</strong> Comprender y aplicar los métodos para resolver ecuaciones algebraicas de primer grado con una incógnita.</p>
+
+<h4>Definición</h4>
+<ul>
+  <li>Una ecuación de primer grado con una incógnita es una igualdad algebraica que contiene una variable elevada a la primera potencia.</li>
+  <li>Tiene la forma general: ax + b = 0, donde 'a' y 'b' son números reales y a ≠ 0.</li>
+  <li>La solución es el valor de la variable que hace que la igualdad sea verdadera.</li>
+</ul>
+
+<h4>Métodos de Solución</h4>
+<ul>
+  <li><strong>Método de transposición:</strong> Consiste en 'pasar términos' de un lado a otro de la igualdad aplicando operaciones inversas.</li>
+  <li><strong>Método de simplificación:</strong> Reducir términos semejantes antes de despejar la incógnita.</li>
+  <li><strong>Método de igualación:</strong> Útil cuando se tienen dos ecuaciones igualadas a la misma variable.</li>
+  <li><strong>Método gráfico:</strong> Representar la ecuación en un plano cartesiano para encontrar su raíz (punto de corte con el eje x).</li>
+</ul>
+
+<h4>Propiedades Utilizadas</h4>
+<ul>
+  <li>Propiedad de la igualdad: Lo que se hace a un lado de la ecuación debe hacerse al otro.</li>
+  <li>Propiedad aditiva: Sumar o restar la misma cantidad a ambos lados.</li>
+  <li>Propiedad multiplicativa: Multiplicar o dividir ambos lados por la misma cantidad (excepto cero).</li>
+  <li>Propiedad distributiva: Para eliminar paréntesis en expresiones algebraicas.</li>
+</ul>
+
+<h4>Pasos para Resolver</h4>
+<ol>
+  <li>Simplificar ambos lados de la ecuación si es necesario (eliminar paréntesis, combinar términos semejantes).</li>
+  <li>Mover todos los términos con variable a un lado de la igualdad y los constantes al otro.</li>
+  <li>Realizar las operaciones necesarias para aislar la variable.</li>
+  <li>Verificar la solución sustituyendo el valor encontrado en la ecuación original.</li>
+</ol>
+
+<h4>Ejemplos</h4>
+<ul>
+  <li>Ecuación simple: 3x + 5 = 11 → 3x = 6 → x = 2</li>
+  <li>Ecuación con paréntesis: 2(x - 3) = 10 → 2x - 6 = 10 → 2x = 16 → x = 8</li>
+  <li>Ecuación con fracciones: (x/2) + 3 = 7 → x/2 = 4 → x = 8</li>
+  <li>Ecuación con variables en ambos lados: 5x - 3 = 2x + 9 → 3x = 12 → x = 4</li>
+  <li>Ecuación con coeficientes decimales: 0.5x + 1.2 = 3.7 → 0.5x = 2.5 → x = 5</li>
+</ul>
+
+<h4>Aplicaciones</h4>
+<ul>
+  <li>Resolución de problemas de la vida cotidiana que involucran relaciones lineales.</li>
+  <li>Fundamento para la resolución de sistemas de ecuaciones.</li>
+  <li>Base para el estudio de funciones lineales en matemáticas superiores.</li>
+  <li>Aplicaciones en física, economía, ingeniería y otras ciencias.</li>
+</ul>
+
+<h4>Fuentes Bibliográficas</h4>
+<ul>
+  <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
+  <li>Baldor, A. (2017). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+  <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+  <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
+</ul>
+`)">2.1.1. Solución de ecuaciones con una incógnita de primer grado <span class="emoji-small">✅</span>
+</li>
           
           <ul class="tema-list">
             <li onclick="abrirModal('2.2. Ecuaciones con dos incógnitas de primer grado', `
