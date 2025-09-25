@@ -1,210 +1,531 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicios de Diagramas de Flujo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ejercicios de Diagramas de Flujo — Corregido</title>
+
+  <!-- tu CSS principal (mantén el archivo estilos2.css en la misma carpeta) -->
   <link rel="stylesheet" href="estilos2.css">
+
+  <!-- ajustes específicos y variables faltantes -->
   <style>
-    /* Solo ajustes extra */
-    .exercises-grid {
+    :root{
+      /* Mapea variables usadas en este HTML a las que ya tienes en estilos2.css */
+      --apple-vibrant-blue: var(--apple-blue);
+      --apple-vibrant-orange: #ff7a00;
+      --apple-vibrant-green: #10b981;
+    }
+
+    /* Grid de tarjetas */
+    .exercises-grid{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 22px;
       margin-bottom: 40px;
     }
 
-    .exercise-card {
+    /* La card es clicable: actúa como botón */
+    .exercise-card{
       background: white;
       border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-left: 5px solid var(--apple-blue);
+      padding: 22px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transition: transform .22s ease, box-shadow .22s ease;
+      border-left: 5px solid var(--apple-vibrant-blue);
       cursor: pointer;
-    }
-
-    .exercise-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .exercise-title {
-      color: var(--apple-blue);
-      margin-bottom: 15px;
-      font-size: 1.4rem;
+      outline: none;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 10px;
     }
-
-    .exercise-description {
-      margin-bottom: 20px;
-      color: var(--apple-dark-gray);
+    .exercise-card:hover,
+    .exercise-card:focus{
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
-    .difficulty {
-      display: inline-block;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
+    .exercise-title{ color: var(--apple-vibrant-blue); font-size:1.15rem; display:flex; gap:10px; align-items:center; }
+    .exercise-description{ color: var(--apple-dark-gray); }
 
-    .easy { background: #d1fae5; color: #065f46; }
-    .medium { background: #fef3c7; color: #92400e; }
-    .hard { background: #fee2e2; color: #991b1b; }
+    .difficulty{ display:inline-block; padding:6px 12px; border-radius:20px; font-weight:600; font-size:0.85rem; }
 
-    /* Modal corregido */
-    .modal {
-      display: none;
+    /* Modal (siempre en DOM) pero inicialmente oculto por atributo hidden */
+    .modal{
       position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      overflow-y: auto;
+      inset: 0;
+      z-index: 2000;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: rgba(0,0,0,0.62);
+      /* Oculto por default vía atributo hidden (markup). */
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+    .modal.open{
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
 
-    .modal-content {
+    .modal-content{
+      width: min(980px, 94%);
+      max-height: 86vh;
+      overflow: auto;
       background: white;
-      border-radius: 18px;
-      padding: 30px;
-      max-width: 900px;
-      width: 90%;
-      animation: slideDown 0.4s ease;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      padding: 24px 26px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+      transform: translateY(-8px) scale(.995);
+      transition: transform .25s ease;
+    }
+    .modal.open .modal-content{
+      transform: translateY(0) scale(1);
     }
 
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .close-btn {
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      font-size: 1.8rem;
-      font-weight: bold;
+    .close-btn{
+      position: sticky;
+      top: 8px;
+      float: right;
+      font-size: 1.6rem;
+      font-weight: 700;
       color: var(--apple-dark-gray);
       cursor: pointer;
+      border: none;
+      background: transparent;
     }
+    .close-btn:hover{ color: var(--apple-vibrant-blue); }
 
-    .close-btn:hover {
-      color: var(--apple-blue);
+    /* contenidos internos */
+    .flowchart-container{ display:flex; gap:20px; flex-wrap:wrap; margin-top:14px; }
+    .flowchart-problem, .flowchart-diagram{ flex:1 1 300px; min-width:260px; }
+    #drawing-area{ height: 300px; background: white; border: 1px solid #cbd5e1; border-radius: 6px; display:flex; align-items:center; justify-content:center; color:#94a3b8; }
+
+    /* propuesta de solución oculta por defecto */
+    .proposed-solution{ display:none; margin-top:16px; }
+    .proposed-solution.visible{ display:block; }
+
+    /* botones internos del modal estilo Apple */
+    .apple-button{ display:inline-block; background:var(--apple-vibrant-blue); color:white; text-decoration:none; padding:10px 16px; border-radius:999px; font-weight:600; cursor:pointer; border:none; }
+    .apple-button.alt{ background: var(--apple-vibrant-orange); color:white; }
+
+    /* Responsive */
+    @media (max-width:760px){
+      .modal-content{ padding:18px; width:96%; max-height:92vh; }
+      #drawing-area{ height:220px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="header-content">
-        <div class="header-title">Ejercicios de Diagramas de Flujo</div>
-      </div>
+      <div class="header-content"><div class="header-title">Ejercicios de Diagramas de Flujo</div></div>
     </header>
 
-    <section style="text-align: center; margin: 40px 0 30px;">
-      <h1 style="color: var(--apple-blue); margin-bottom: 10px;">Ejercicios de Diagramas de Flujo</h1>
-      <p class="subtitle" style="color: var(--apple-dark-gray); font-size: 1.2rem;">
-        Practica y domina la representación gráfica de algoritmos
-      </p>
+    <section style="text-align:center; margin:36px 0 18px;">
+      <h1 style="color:var(--apple-vibrant-blue); margin-bottom:6px;">Ejercicios de Diagramas de Flujo</h1>
+      <p class="subtitle" style="color:var(--apple-dark-gray); font-size:1.05rem;">Practica y domina la representación gráfica de algoritmos</p>
     </section>
 
-    <section class="exercises-grid">
-      <div class="exercise-card" onclick="showExercise(1)">
+    <section class="exercises-grid" id="exercisesGrid">
+      <!-- tarjetas: la card completa actúa como botón -->
+      <article class="exercise-card" role="button" tabindex="0" data-id="1" aria-pressed="false">
         <h2 class="exercise-title"><span>🔢</span> Ejercicio 1: Número Par o Impar</h2>
         <span class="difficulty easy">Fácil</span>
         <p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p>
-      </div>
-      
-      <div class="exercise-card" onclick="showExercise(2)">
+      </article>
+
+      <article class="exercise-card" role="button" tabindex="0" data-id="2" aria-pressed="false">
         <h2 class="exercise-title"><span>📊</span> Ejercicio 2: Calcular Promedio</h2>
         <span class="difficulty easy">Fácil</span>
         <p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p>
-      </div>
-      
-      <div class="exercise-card" onclick="showExercise(3)">
+      </article>
+
+      <article class="exercise-card" role="button" tabindex="0" data-id="3" aria-pressed="false">
         <h2 class="exercise-title"><span>🔍</span> Ejercicio 3: Número Mayor</h2>
         <span class="difficulty medium">Medio</span>
         <p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p>
-      </div>
-      
-      <div class="exercise-card" onclick="showExercise(4)">
+      </article>
+
+      <article class="exercise-card" role="button" tabindex="0" data-id="4" aria-pressed="false">
         <h2 class="exercise-title"><span>🔄</span> Ejercicio 4: Serie Fibonacci</h2>
         <span class="difficulty medium">Medio</span>
         <p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p>
-      </div>
-      
-      <div class="exercise-card" onclick="showExercise(5)">
+      </article>
+
+      <article class="exercise-card" role="button" tabindex="0" data-id="5" aria-pressed="false">
         <h2 class="exercise-title"><span>🎯</span> Ejercicio 5: Adivina el Número</h2>
         <span class="difficulty hard">Difícil</span>
         <p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p>
-      </div>
-      
-      <div class="exercise-card" onclick="showExercise(6)">
+      </article>
+
+      <article class="exercise-card" role="button" tabindex="0" data-id="6" aria-pressed="false">
         <h2 class="exercise-title"><span>📈</span> Ejercicio 6: Estadísticas Básicas</h2>
         <span class="difficulty hard">Difícil</span>
         <p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p>
-      </div>
+      </article>
     </section>
 
-    <!-- Modal -->
-    <div id="exercise-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h2 id="exercise-detail-title" style="color: var(--apple-blue); margin-bottom: 15px;"></h2>
-        <p id="exercise-detail-description" style="color: var(--apple-dark-gray);"></p>
+    <!-- Modal: inicialmente oculto por atributo hidden para evitar flashes en carga -->
+    <div id="exercise-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+      <div class="modal-content" role="document" aria-labelledby="exercise-detail-title">
+        <button class="close-btn" id="closeBtn" aria-label="Cerrar">&times;</button>
+
+        <h2 id="exercise-detail-title" style="color:var(--apple-vibrant-blue); margin-bottom:10px;"></h2>
+        <p id="exercise-detail-description" style="color:var(--apple-dark-gray); margin-bottom:6px;"></p>
 
         <div class="flowchart-container">
           <div class="flowchart-problem">
-            <h3 style="color: var(--apple-blue);">📝 Enunciado del Problema</h3>
-            <p id="problem-statement" style="margin-top: 10px;"></p>
+            <h3 style="color:var(--apple-vibrant-blue); margin-bottom:8px;">📝 Enunciado del Problema</h3>
+            <p id="problem-statement" style="color:var(--apple-dark-gray);"></p>
+
+            <h3 style="color:var(--apple-vibrant-blue); margin-top:16px;">🎯 Objetivos de Aprendizaje</h3>
+            <ul id="learning-objectives" style="color:var(--apple-dark-gray); margin-top:8px; padding-left:18px;"></ul>
+
+            <h3 style="color:var(--apple-vibrant-blue); margin-top:14px;">💡 Pistas y Sugerencias</h3>
+            <ul id="hints" style="color:var(--apple-dark-gray); margin-top:8px; padding-left:18px;"></ul>
+
+            <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+              <button id="showSolutionBtn" class="apple-button">Ver Solución Propuesta</button>
+              <button id="hideSolutionBtn" class="apple-button alt">Ocultar Solución</button>
+            </div>
+          </div>
+
+          <div class="flowchart-diagram">
+            <h3 style="color:var(--apple-vibrant-blue); margin-bottom:8px;">📊 Área de Trabajo</h3>
+            <p style="margin:8px 0; color:var(--apple-dark-gray); font-style:italic;">Dibuja tu diagrama de flujo aquí o en papel según las indicaciones.</p>
+            <div id="drawing-area">Área para dibujar el diagrama</div>
+
+            <div id="proposed-solution" class="proposed-solution" aria-hidden="true">
+              <h4 style="color:var(--apple-vibrant-green); margin-top:12px;">Solución Propuesta:</h4>
+              <div id="solution-content" style="background:#f0f9ff; padding:12px; border-radius:6px; margin-top:8px; color:var(--apple-dark-gray);"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <footer>
-      <p>Ejercicios de Diagramas de Flujo - Práctica de Algoritmos y Programación</p>
+    <footer style="margin-top:28px;">
+      <p style="color:var(--apple-dark-gray);">Ejercicios de Diagramas de Flujo - Práctica de Algoritmos y Programación</p>
     </footer>
   </div>
 
   <script>
+    /*************** Datos ***************/
     const exercises = {
-      1: { title: "Número Par o Impar", description: "Determinar si un número es par o impar", problem: "Escribe un algoritmo que solicite un número entero y determine si es par o impar." },
-      2: { title: "Calcular Promedio", description: "Calcular promedio y determinar aprobación", problem: "Diseña un algoritmo que reciba tres calificaciones y calcule el promedio." },
-      3: { title: "Número Mayor", description: "Encontrar el mayor de tres números", problem: "Crear un algoritmo que imprima el mayor de tres valores." },
-      4: { title: "Serie Fibonacci", description: "Generar serie Fibonacci", problem: "Elabora un algoritmo que genere los primeros N términos de la serie." },
-      5: { title: "Adivina el Número", description: "Juego de adivinanza de números", problem: "Diseña un algoritmo para adivinar un número aleatorio entre 1 y 100." },
-      6: { title: "Estadísticas Básicas", description: "Calcular promedio, máximo y mínimo", problem: "Crear un algoritmo que calcule estadísticas básicas de una lista de números." }
+      1: {
+        title: "Número Par o Impar",
+        description: "Determinar si un número es par o impar",
+        problem: "Escribe un algoritmo que solicite al usuario un número entero y determine si es par o impar. Muestra el resultado en pantalla.",
+        objectives: [
+          "Practicar el uso de estructuras condicionales",
+          "Aplicar el operador módulo para determinar paridad",
+          "Manejar entrada y salida de datos básicos"
+        ],
+        hints: [
+          "Recuerda que un número es par si el residuo de dividirlo entre 2 es 0",
+          "Utiliza el símbolo de decisión para evaluar la condición",
+          "No olvides los símbolos de inicio y fin del diagrama"
+        ],
+        solution: `
+          <strong>Diagrama de flujo propuesto:</strong><br><br>
+          1. INICIO<br>
+          2. Leer número (N)<br>
+          3. Si N % 2 == 0 entonces<br>
+          4. &nbsp;&nbsp;Mostrar "El número es par"<br>
+          5. Sino<br>
+          6. &nbsp;&nbsp;Mostrar "El número es impar"<br>
+          7. FIN
+        `
+      },
+      2: {
+        title: "Calcular Promedio",
+        description: "Calcular promedio y determinar aprobación",
+        problem: "Diseña un algoritmo que reciba tres calificaciones, calcule el promedio y determine si el alumno aprobó (promedio ≥ 6) o reprobó.",
+        objectives: [
+          "Practicar operaciones aritméticas básicas",
+          "Utilizar variables para almacenar múltiples valores",
+          "Combinar condiciones con cálculos"
+        ],
+        hints: [
+          "El promedio se calcula sumando las tres calificaciones y dividiendo entre 3",
+          "Utiliza una variable para almacenar el resultado del promedio",
+          "Considera qué pasa si el promedio es exactamente 6"
+        ],
+        solution: `
+          <strong>Diagrama de flujo propuesto:</strong><br><br>
+          1. INICIO<br>
+          2. Leer calificación1, calificación2, calificación3<br>
+          3. promedio = (calificación1 + calificación2 + calificación3) / 3<br>
+          4. Si promedio ≥ 6 entonces<br>
+          5. &nbsp;&nbsp;Mostrar "Aprobado con promedio: " + promedio<br>
+          6. Sino<br>
+          7. &nbsp;&nbsp;Mostrar "Reprobado con promedio: " + promedio<br>
+          8. FIN
+        `
+      },
+      3: {
+        title: "Número Mayor",
+        description: "Encontrar el mayor de tres números",
+        problem: "Crear un algoritmo que encuentre e imprima el número mayor de tres valores diferentes proporcionados por el usuario.",
+        objectives: [
+          "Manejar múltiples condiciones anidadas",
+          "Comparar valores numéricos",
+          "Trabajar con variables auxiliares"
+        ],
+        hints: [
+          "Puedes comparar los números de dos en dos",
+          "Utiliza una variable para almacenar el valor mayor temporal",
+          "Considera qué pasa si hay números iguales"
+        ],
+        solution: `
+          <strong>Diagrama de flujo propuesto:</strong><br><br>
+          1. INICIO<br>
+          2. Leer A, B, C<br>
+          3. Si A > B entonces<br>
+          4. &nbsp;&nbsp;Si A > C entonces<br>
+          5. &nbsp;&nbsp;&nbsp;&nbsp;mayor = A<br>
+          6. &nbsp;&nbsp;Sino<br>
+          7. &nbsp;&nbsp;&nbsp;&nbsp;mayor = C<br>
+          8. Sino<br>
+          9. &nbsp;&nbsp;Si B > C entonces<br>
+          10. &nbsp;&nbsp;&nbsp;&nbsp;mayor = B<br>
+          11. &nbsp;&nbsp;Sino<br>
+          12. &nbsp;&nbsp;&nbsp;&nbsp;mayor = C<br>
+          13. Mostrar "El número mayor es: " + mayor<br>
+          14. FIN
+        `
+      },
+      4: {
+        title: "Serie Fibonacci",
+        description: "Generar serie Fibonacci",
+        problem: "Elabora un algoritmo que genere los primeros N términos de la serie Fibonacci, donde N es un número proporcionado por el usuario.",
+        objectives: [
+          "Implementar estructuras repetitivas (bucles)",
+          "Comprender la secuencia Fibonacci",
+          "Manejar variables que cambian en cada iteración"
+        ],
+        hints: [
+          "La serie Fibonacci comienza con 0 y 1, cada término siguiente es la suma de los dos anteriores",
+          "Necesitarás un contador para controlar el número de términos a generar",
+          "Considera casos especiales como N=1 o N=2"
+        ],
+        solution: `
+          <strong>Diagrama de flujo propuesto:</strong><br><br>
+          1. INICIO<br>
+          2. Leer N (número de términos)<br>
+          3. Si N <= 0 entonces Mostrar "Error" y FIN<br>
+          4. a = 0, b = 1<br>
+          5. Mostrar a<br>
+          6. Si N > 1 entonces Mostrar b<br>
+          7. contador = 2<br>
+          8. Mientras contador < N hacer:<br>
+          9. &nbsp;&nbsp;c = a + b<br>
+          10. &nbsp;&nbsp;Mostrar c<br>
+          11. &nbsp;&nbsp;a = b<br>
+          12. &nbsp;&nbsp;b = c<br>
+          13. &nbsp;&nbsp;contador = contador + 1<br>
+          14. FIN
+        `
+      },
+      5: {
+        title: "Adivina el Número",
+        description: "Juego de adivinanza de números",
+        problem: "Diseña un algoritmo para un juego donde la computadora genera un número aleatorio entre 1 y 100, y el usuario debe adivinarlo. El programa debe dar pistas de 'mayor' o 'menor' hasta que el usuario acierte.",
+        objectives: [
+          "Trabajar con números aleatorios",
+          "Implementar bucles condicionales",
+          "Manejar interacción continuada con el usuario"
+        ],
+        hints: [
+          "Necesitarás una variable para el número aleatorio y otra para el intento del usuario",
+          "El bucle debe continuar hasta que el usuario adivine correctamente",
+          "Considera contar el número de intentos"
+        ],
+        solution: `
+          <strong>Diagrama de flujo propuesto:</strong><br><br>
+          1. INICIO<br>
+          2. numeroSecreto = aleatorio(1, 100)<br>
+          3. intentos = 0<br>
+          4. Repetir:<br>
+          5. &nbsp;&nbsp;Leer intentoUsuario<br>
+          6. &nbsp;&nbsp;intentos = intentos + 1<br>
+          7. &nbsp;&nbsp;Si intentoUsuario == numeroSecreto entonces<br>
+          8. &nbsp;&nbsp;&nbsp;&nbsp;Mostrar "¡Correcto! Intentos: " + intentos<br>
+          9. &nbsp;&nbsp;Sino Si intentoUsuario < numeroSecreto entonces<br>
+          10. &nbsp;&nbsp;&nbsp;&nbsp;Mostrar "Mayor"<br>
+          11. &nbsp;&nbsp;Sino<br>
+          12. &nbsp;&nbsp;&nbsp;&nbsp;Mostrar "Menor"<br>
+          13. Hasta que intentoUsuario == numeroSecreto<br>
+          14. FIN
+        `
+      },
+      6: {
+        title: "Estadísticas Básicas",
+        description: "Calcular promedio, máximo y mínimo",
+        problem: "Crear un algoritmo que lea una lista de números (hasta que el usuario ingrese 0) y calcule el promedio, el valor máximo y el valor mínimo de todos los números ingresados.",
+        objectives: [
+          "Manejar listas de datos de longitud variable",
+          "Calcular múltiples estadísticas en un solo algoritmo",
+          "Trabajar con valores iniciales para máximo y mínimo"
+        ],
+        hints: [
+          "Inicializa el máximo con un valor muy pequeño y el mínimo con un valor muy grande",
+          "Necesitarás contadores para saber cuántos números se ingresaron",
+          "El 0 debe servir como señal para terminar la entrada, no debe incluirse en los cálculos"
+        ],
+        solution: `
+          <strong>Diagrama de flujo propuesto:</strong><br><br>
+          1. INICIO<br>
+          2. suma = 0, contador = 0, maximo = -infinito, minimo = infinito<br>
+          3. Leer numero<br>
+          4. Mientras numero != 0 hacer:<br>
+          5. &nbsp;&nbsp;suma = suma + numero<br>
+          6. &nbsp;&nbsp;contador = contador + 1<br>
+          7. &nbsp;&nbsp;Si numero > maximo entonces maximo = numero<br>
+          8. &nbsp;&nbsp;Si numero < minimo entonces minimo = numero<br>
+          9. &nbsp;&nbsp;Leer numero<br>
+          10. Si contador > 0 entonces:<br>
+          11. &nbsp;&nbsp;promedio = suma / contador<br>
+          12. &nbsp;&nbsp;Mostrar "Promedio: " + promedio<br>
+          13. &nbsp;&nbsp;Mostrar "Máximo: " + maximo<br>
+          14. &nbsp;&nbsp;Mostrar "Mínimo: " + minimo<br>
+          15. Sino<br>
+          16. &nbsp;&nbsp;Mostrar "No se ingresaron números"<br>
+          17. FIN
+        `
+      }
     };
 
-    function showExercise(id) {
+    /*************** Lógica del modal y accesibilidad ***************/
+    const modal = document.getElementById('exercise-modal');
+    const modalContent = modal.querySelector('.modal-content');
+    const closeBtn = document.getElementById('closeBtn');
+    const showSolutionBtn = document.getElementById('showSolutionBtn');
+    const hideSolutionBtn = document.getElementById('hideSolutionBtn');
+    const proposedSolution = document.getElementById('proposed-solution');
+    const solutionContent = document.getElementById('solution-content');
+
+    let lastActiveCard = null;
+    let currentExerciseId = null;
+
+    // Abrir modal: primero quitar atributo hidden (evita flashes en carga), luego añadir clase open
+    function openModal(){
+      modal.removeAttribute('hidden');
+      // Forzar reflow por seguridad
+      void modal.offsetWidth;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      // poner foco en el botón cerrar para accesibilidad
+      closeBtn.focus();
+    }
+
+    // Cerrar modal: quitar clase open para hacer la transición y tras la transición volver a poner hidden
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      // esperar la duración de la transición antes de volver a ocultar por completo
+      setTimeout(()=> {
+        // si ya no está abierto, re-aplicar hidden
+        if (!modal.classList.contains('open')) modal.setAttribute('hidden','');
+      }, 280);
+      // devolver foco a la tarjeta que lo abrió
+      if (lastActiveCard) lastActiveCard.focus();
+      currentExerciseId = null;
+    }
+
+    // Rellena y muestra ejercicio
+    function showExercise(id){
       const ex = exercises[id];
+      if (!ex) return;
+      currentExerciseId = id;
+
       document.getElementById('exercise-detail-title').textContent = `Ejercicio ${id}: ${ex.title}`;
       document.getElementById('exercise-detail-description').textContent = ex.description;
       document.getElementById('problem-statement').textContent = ex.problem;
-      document.getElementById('exercise-modal').style.display = 'flex';
+
+      // lista de objetivos
+      const objectivesList = document.getElementById('learning-objectives');
+      objectivesList.innerHTML = '';
+      ex.objectives.forEach(o => {
+        const li = document.createElement('li'); li.textContent = o; objectivesList.appendChild(li);
+      });
+
+      // lista de hints
+      const hintsList = document.getElementById('hints');
+      hintsList.innerHTML = '';
+      ex.hints.forEach(h => {
+        const li = document.createElement('li'); li.textContent = h; hintsList.appendChild(li);
+      });
+
+      // ocultar solución al abrir
+      proposedSolution.classList.remove('visible');
+      proposedSolution.setAttribute('aria-hidden','true');
+      solutionContent.innerHTML = ''; // vacío por ahora
+
+      openModal();
     }
 
-    function closeModal() {
-      document.getElementById('exercise-modal').style.display = 'none';
+    // Mostrar la solución (rellenar HTML)
+    function showSolution(){
+      if (!currentExerciseId) return;
+      solutionContent.innerHTML = exercises[currentExerciseId].solution;
+      proposedSolution.classList.add('visible');
+      proposedSolution.setAttribute('aria-hidden','false');
+      // mover el foco a la solución para lectura
+      proposedSolution.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    function hideSolution(){
+      proposedSolution.classList.remove('visible');
+      proposedSolution.setAttribute('aria-hidden','true');
+      solutionContent.innerHTML = '';
+      // devolver foco al botón de ver solución
+      showSolutionBtn.focus();
     }
 
-    window.onclick = function(event) {
-      const modal = document.getElementById('exercise-modal');
-      if (event.target === modal) {
+    /*************** Eventos ***************/
+    // tarjetas: clic y teclado (Enter / Space)
+    document.querySelectorAll('.exercise-card').forEach(card => {
+      const id = card.getAttribute('data-id');
+      card.addEventListener('click', (e) => {
+        lastActiveCard = card;
+        showExercise(parseInt(id,10));
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          lastActiveCard = card;
+          showExercise(parseInt(id,10));
+        }
+      });
+    });
+
+    // Cerrar con botón
+    closeBtn.addEventListener('click', closeModal);
+
+    // Mostrar / ocultar solución
+    showSolutionBtn.addEventListener('click', showSolution);
+    hideSolutionBtn.addEventListener('click', hideSolution);
+
+    // Cerrar al dar click fuera del contenido (overlay)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
         closeModal();
       }
-    }
+    });
+
+    // Evitamos que el modal se abra al cargar por accidente: no hay llamadas automáticas a showExercise()
+    // (El modal está con [hidden] en el markup por defecto: ningún parpadeo)
   </script>
 </body>
 </html>
