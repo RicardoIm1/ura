@@ -2295,7 +2295,6 @@
             `)">1.2.3. Multiplicación y sus leyes<span class="emoji-small">✅</span>
             </li>
 
-                      <ul class="tema-list">
             <li onclick="abrirModal('1.2.4. División y sus leyes', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la división algebraica, incluyendo las leyes de signos, exponentes y las propiedades estructurales de esta operación.</p>
@@ -2651,343 +2650,338 @@
             `)">1.2.4. División y sus leyes <span class="emoji-small">✅</span>
             </li>
 
-
-
-            
-          <ul class="tema-list">
-          <li onclick="abrirModal('1.2.5. Potenciación y sus leyes', `
-    <hr><br>
-    <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la potenciación algebraica, incluyendo las reglas de exponentes enteros, fraccionarios y las propiedades de las operaciones con potencias.</p>
-    
-    <h4>Definición y concepto fundamental</h4>
-    <ul>
-        <li><span class='keyword'>Potenciación:</span> Operación que consiste en <span class='keyword'>multiplicar un número (base)</span> por sí mismo <span class='keyword'>varias veces (exponente)</span>.</li>
-        <li><span class='keyword'>Términos:</span> <span class='keyword'>aⁿ = b</span> donde:
-            <ul>
-                <li>a = <span class='keyword'>base</span> (número que se multiplica)</li>
-                <li>n = <span class='keyword'>exponente</span> (veces que se multiplica la base)</li>
-                <li>b = <span class='keyword'>potencia</span> (resultado de la operación)</li>
-            </ul>
-        </li>
-        <li><span class='keyword'>Notación:</span> aⁿ (a elevado a la n)</li>
-        <li><span class='keyword'>Lectura:</span> 'a elevado a la n' o 'a a la n'</li>
-    </ul>
-    
-    <h4>Leyes fundamentales de los exponentes</h4>
-    <table class='exponent-table'>
-        <tr>
-            <th>Ley</th>
-            <th>Expresión algebraica</th>
-            <th>Ejemplo</th>
-            <th>Explicación</th>
-        </tr>
-        <tr>
-            <td>Producto de potencias con misma base</td>
-            <td>aᵐ × aⁿ = aᵐ⁺ⁿ</td>
-            <td>x³ × x⁴ = x⁷</td>
-            <td>Se suman los exponentes</td>
-        </tr>
-        <tr>
-            <td>Cociente de potencias con misma base</td>
-            <td>aᵐ ÷ aⁿ = aᵐ⁻ⁿ</td>
-            <td>y⁵ ÷ y² = y³</td>
-            <td>Se restan los exponentes</td>
-        </tr>
-        <tr>
-            <td>Potencia de potencia</td>
-            <td>(aᵐ)ⁿ = aᵐⁿ</td>
-            <td>(z²)³ = z⁶</td>
-            <td>Se multiplican los exponentes</td>
-        </tr>
-        <tr>
-            <td>Potencia de un producto</td>
-            <td>(ab)ⁿ = aⁿbⁿ</td>
-            <td>(2x)³ = 8x³</td>
-            <td>La potencia distribuye</td>
-        </tr>
-        <tr>
-            <td>Potencia de un cociente</td>
-            <td>(a/b)ⁿ = aⁿ/bⁿ</td>
-            <td>(x/y)² = x²/y²</td>
-            <td>La potencia distribuye</td>
-        </tr>
-        <tr>
-            <td>Exponente cero</td>
-            <td>a⁰ = 1 (a ≠ 0)</td>
-            <td>5⁰ = 1, (3x)⁰ = 1</td>
-            <td>Cualquier base ≠ 0 elevada a 0 es 1</td>
-        </tr>
-        <tr>
-            <td>Exponente negativo</td>
-            <td>a⁻ⁿ = 1/aⁿ (a ≠ 0)</td>
-            <td>x⁻³ = 1/x³</td>
-            <td>Significa el recíproco</td>
-        </tr>
-        <tr>
-            <td>Exponente fraccionario</td>
-            <td>aᵐ/ⁿ = ⁿ√(aᵐ)</td>
-            <td>x¹/² = √x</td>
-            <td>Representa una raíz</td>
-        </tr>
-    </table>
-    
-    <h4>Casos especiales de exponentes</h4>
-    <table class='exponent-table'>
-        <tr>
-            <th>Caso</th>
-            <th>Regla</th>
-            <th>Ejemplo</th>
-            <th>Explicación</th>
-        </tr>
-        <tr>
-            <td>Exponente 1</td>
-            <td>a¹ = a</td>
-            <td>7¹ = 7, x¹ = x</td>
-            <td>Cualquier número a la 1 es igual a sí mismo</td>
-        </tr>
-        <tr>
-            <td>Base 1</td>
-            <td>1ⁿ = 1</td>
-            <td>1⁵ = 1, 1¹⁰⁰ = 1</td>
-            <td>1 elevado a cualquier potencia es 1</td>
-        </tr>
-        <tr>
-            <td>Base 0 con exponente positivo</td>
-            <td>0ⁿ = 0 (n > 0)</td>
-            <td>0⁵ = 0, 0³ = 0</td>
-            <td>0 elevado a cualquier exponente positivo es 0</td>
-        </tr>
-        <tr>
-            <td>Exponente par con base negativa</td>
-            <td>(-a)ⁿ = aⁿ (n par)</td>
-            <td>(-3)² = 9, (-2)⁴ = 16</td>
-            <td>Resultado positivo con exponente par</td>
-        </tr>
-        <tr>
-            <td>Exponente impar con base negativa</td>
-            <td>(-a)ⁿ = -aⁿ (n impar)</td>
-            <td>(-3)³ = -27, (-2)⁵ = -32</td>
-            <td>Resultado negativo con exponente impar</td>
-        </tr>
-    </table>
-    
-    <h4>Aplicación de las leyes en expresiones algebraicas</h4>
-    
-    <p><strong>Ejemplo 1: Producto de potencias con misma base</strong></p>
-    <p>Simplificar: x³ × x⁴ × x²</p>
-    <ol>
-        <li>Aplicar ley: aᵐ × aⁿ × aᵖ = aᵐ⁺ⁿ⁺ᵖ</li>
-        <li>Sumar exponentes: 3 + 4 + 2 = <span class='result'>9</span></li>
-        <li>Resultado: <span class='result'>x⁹</span></li>
-    </ol>
-    
-    <p><strong>Ejemplo 2: Cociente de potencias con misma base</strong></p>
-    <p>Simplificar: y⁷ ÷ y³</p>
-    <ol>
-        <li>Aplicar ley: aᵐ ÷ aⁿ = aᵐ⁻ⁿ</li>
-        <li>Restar exponentes: 7 - 3 = <span class='result'>4</span></li>
-        <li>Resultado: <span class='result'>y⁴</span></li>
-    </ol>
-    
-    <p><strong>Ejemplo 3: Potencia de potencia</strong></p>
-    <p>Simplificar: (z²)⁵</p>
-    <ol>
-        <li>Aplicar ley: (aᵐ)ⁿ = aᵐⁿ</li>
-        <li>Multiplicar exponentes: 2 × 5 = <span class='result'>10</span></li>
-        <li>Resultado: <span class='result'>z¹⁰</span></li>
-    </ol>
-    
-    <h4>Ejemplos con múltiples leyes</h4>
-    
-    <p><strong>Ejemplo 4: Combinación de leyes</strong></p>
-    <p>Simplificar: (2x³y²)⁴</p>
-    <ol>
-        <li>Aplicar potencia de producto: (ab)ⁿ = aⁿbⁿ</li>
-        <li>= 2⁴ × (x³)⁴ × (y²)⁴</li>
-        <li>Calcular: 16 × x¹² × y⁸</li>
-        <li>Resultado: <span class='result'>16x¹²y⁸</span></li>
-    </ol>
-    
-    <p><strong>Ejemplo 5: Expresión con exponentes negativos</strong></p>
-    <p>Simplificar: (3a⁻²b³)⁻²</p>
-    <ol>
-        <li>Aplicar potencia de producto: 3⁻² × (a⁻²)⁻² × (b³)⁻²</li>
-        <li>Aplicar potencia de potencia: 3⁻² × a⁴ × b⁻⁶</li>
-        <li>Aplicar exponentes negativos: (1/3²) × a⁴ × (1/b⁶)</li>
-        <li>Resultado: <span class='result'>a⁴/(9b⁶)</span></li>
-    </ol>
-    
-    <p><strong>Ejemplo 6: Expresión compleja</strong></p>
-    <p><strong>Simplificar:</strong> (2x²·y⁻³)⁴ ÷ (4x⁻¹·y²)²</p>
-<ol>
-  <li>
-    <strong>Numerador:</strong><br>
-    (2x²·y⁻³)⁴ = 2⁴ · x⁸ · y⁻¹² = <strong>16x⁸·y⁻¹²</strong>
-  </li>
-  <li>
-    <strong>Denominador:</strong><br>
-    (4x⁻¹·y²)² = 4² · x⁻² · y⁴ = <strong>16x⁻²·y⁴</strong>
-  </li>
-  <li>
-    <strong>División:</strong><br>
-    (16x⁸·y⁻¹²) ÷ (16x⁻²·y⁴) = x⁸ ÷ x⁻² · y⁻¹² ÷ y⁴
-  </li>
-  <li>
-    <strong>Simplificar exponentes:</strong><br>
-    x⁸ ÷ x⁻² = x⁸⁺² = x¹⁰<br>
-    y⁻¹² ÷ y⁴ = y⁻¹²⁻⁴ = y⁻¹⁶
-  </li>
-  <li>
-    <strong>Resultado final:</strong><br>
-    <span class="result">x¹⁰ ÷ y¹⁶</span> &nbsp; ó &nbsp; <span class="result">x¹⁰⁄y¹⁶</span>
-  </li>
-</ol>
-
-    
-    <h4>Operaciones con exponentes fraccionarios</h4>
-    
-    <p><strong>Ejemplo 7: Exponentes fraccionarios</strong></p>
-    <p><strong>Simplificar:</strong> 8 elevado a ⅔</p>
-<ol>
-  <li>
-    <strong>Convertir a raíz:</strong><br>
-    8²⁄³ = raíz cúbica de 8² → √³(64)
-  </li>
-  <li>
-    <strong>Calcular potencia:</strong><br>
-    8² = 64
-  </li>
-  <li>
-    <strong>Raíz cúbica de 64:</strong><br>
-    √³(64) = 4 &nbsp; (porque 4³ = 64)
-  </li>
-  <li>
-    <strong>Resultado:</strong><br>
-    <span class="result">4</span>
-  </li>
-</ol>
-
-<p><strong>Ejemplo 8: Expresión con radicales</strong></p>
-<p><strong>Simplificar:</strong> raíz cuarta de (16·x⁸·y¹²) → √⁴(16x⁸y¹²)</p>
-<ol>
-  <li>
-    <strong>Convertir a exponente fraccionario:</strong><br>
-    (16x⁸y¹²)¹⁄⁴
-  </li>
-  <li>
-    <strong>Aplicar la potencia a cada factor:</strong><br>
-    16¹⁄⁴ · x⁸⁄⁴ · y¹²⁄⁴
-  </li>
-  <li>
-    <strong>Simplificar:</strong><br>
-    2 · x² · y³
-  </li>
-  <li>
-    <strong>Resultado:</strong><br>
-    <span class="result">2x²y³</span>
-  </li>
-</ol>
-
-    
-    <h4>Errores comunes en la potenciación</h4>
-    <table class='exponent-table'>
-        <tr>
-            <th>Error común</th>
-            <th>Incorrecto</th>
-            <th>Correcto</th>
-            <th>Explicación</th>
-        </tr>
-        <tr>
-            <td>Multiplicar bases diferentes</td>
-            <td>x² × y³ = (xy)⁵</td>
-            <td>x² × y³ = x²y³</td>
-            <td>Bases diferentes no se combinan</td>
-        </tr>
-        <tr>
-            <td>Sumar exponentes en suma</td>
-            <td>x² + x³ = x⁵</td>
-            <td>x² + x³ (no se simplifica)</td>
-            <td>No es multiplicación, no aplica ley</td>
-        </tr>
-        <tr>
-            <td>Distribuir exponente en suma</td>
-            <td>(x + y)² = x² + y²</td>
-            <td>(x + y)² = x² + 2xy + y²</td>
-            <td>Es un producto notable, no distributivo</td>
-        </tr>
-        <tr>
-            <td>Exponente cero</td>
-            <td>a⁰ = 0</td>
-            <td>a⁰ = 1 (a ≠ 0)</td>
-            <td>Por definición, cualquier base ≠ 0 elevada a 0 es 1</td>
-        </tr>
-        <tr>
-            <td>Signos con exponentes</td>
-            <td>(-x)² = -x²</td>
-            <td>(-x)² = x²</td>
-            <td>Exponente par hace positivo el resultado</td>
-        </tr>
-    </table>
-    
-    <h4>Ejercicio de aplicación integral</h4>
-    <p>Simplificar completamente la expresión:</p>
-    <p><strong>Simplificar:</strong><br>
-(3x⁻²·y³)² × (2x⁴·y⁻¹)⁻³ ÷ [(6x⁻³·y²)⁰ × raíz cúbica de (8x⁹·y⁻⁶)]
-</p>
-
-<p><strong>Solución paso a paso:</strong></p>
-<ol>
-  <li>
-    <strong>Exponente cero:</strong><br>
-    (6x⁻³·y²)⁰ = 1
-  </li>
-  <li>
-    <strong>Raíz cúbica:</strong><br>
-    √³(8x⁹·y⁻⁶) = (8x⁹·y⁻⁶)¹⁄³ = 2x³·y⁻²
-  </li>
-  <li>
-    <strong>Primer numerador:</strong><br>
-    (3x⁻²·y³)² = 9x⁻⁴·y⁶
-  </li>
-  <li>
-    <strong>Segundo numerador:</strong><br>
-    (2x⁴·y⁻¹)⁻³ = 1 ÷ (2³·x¹²·y⁻³) = y³ ÷ (8x¹²)
-  </li>
-  <li>
-    <strong>Multiplicar numeradores:</strong><br>
-    9x⁻⁴·y⁶ × (y³ ÷ 8x¹²) = (9y⁹) ÷ (8x¹⁶)
-  </li>
-  <li>
-    <strong>Dividir entre el denominador:</strong><br>
-    [(9y⁹) ÷ (8x¹⁶)] ÷ (2x³·y⁻²) = (9y⁹) ÷ (8x¹⁶) × 1 ÷ (2x³·y⁻²)<br>
-    = (9y⁹·y²) ÷ (16x¹⁶·x³) = <strong>9y¹¹ ÷ 16x¹⁹</strong>
-  </li>
-  <li>
-    <strong>Resultado final:</strong><br>
-    <span class="result">9y¹¹⁄16x¹⁹</span>
-  </li>
-</ol>
-
-    
-    <h4>Aplicaciones prácticas de la potenciación</h4>
-    <ul>
-        <li><span class='keyword'>Cálculo de áreas y volúmenes:</span> Cuadrados, cubos, esferas</li>
-        <li><span class='keyword'>Interés compuesto:</span> Crecimiento exponencial de inversiones</li>
-        <li><span class='keyword'>Crecimiento poblacional:</span> Modelado de poblaciones</li>
-        <li><span class='keyword'>Física:</span> Leyes de gravitación, energía cinética</li>
-        <li><span class='keyword'>Química:</span> Cálculos de pH, concentraciones</li>
-        <li><span class='keyword'>Informática:</span> Algoritmos de complejidad exponencial</li>
-    </ul>
-    
-    <h4>Fuentes Bibliográficas</h4>
-    <ul>
-        <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-        <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
-        <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
-        <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
-    </ul>
-`)">1.2.5. Potenciación y sus leyes <span class="emoji-small">✅</span>
-</li>
+            <li onclick="abrirModal('1.2.5. Potenciación y sus leyes', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la potenciación algebraica, incluyendo las reglas de exponentes enteros, fraccionarios y las propiedades de las operaciones con potencias.</p>
+            <h4>Definición y concepto fundamental</h4>
+              <ul>
+                  <li><span class='keyword'>Potenciación:</span> Operación que consiste en <span class='keyword'>multiplicar un número (base)</span> por sí mismo <span class='keyword'>varias veces (exponente)</span>.</li>
+                  <li><span class='keyword'>Términos:</span> <span class='keyword'>aⁿ = b</span> donde:
+                      <ul>
+                          <li>a = <span class='keyword'>base</span> (número que se multiplica)</li>
+                          <li>n = <span class='keyword'>exponente</span> (veces que se multiplica la base)</li>
+                          <li>b = <span class='keyword'>potencia</span> (resultado de la operación)</li>
+                      </ul>
+                  </li>
+                  <li><span class='keyword'>Notación:</span> aⁿ (a elevado a la n)</li>
+                  <li><span class='keyword'>Lectura:</span> 'a elevado a la n' o 'a a la n'</li>
+              </ul>
+              
+              <h4>Leyes fundamentales de los exponentes</h4>
+              <table class='exponent-table'>
+                  <tr>
+                      <th>Ley</th>
+                      <th>Expresión algebraica</th>
+                      <th>Ejemplo</th>
+                      <th>Explicación</th>
+                  </tr>
+                  <tr>
+                      <td>Producto de potencias con misma base</td>
+                      <td>aᵐ × aⁿ = aᵐ⁺ⁿ</td>
+                      <td>x³ × x⁴ = x⁷</td>
+                      <td>Se suman los exponentes</td>
+                  </tr>
+                  <tr>
+                      <td>Cociente de potencias con misma base</td>
+                      <td>aᵐ ÷ aⁿ = aᵐ⁻ⁿ</td>
+                      <td>y⁵ ÷ y² = y³</td>
+                      <td>Se restan los exponentes</td>
+                  </tr>
+                  <tr>
+                      <td>Potencia de potencia</td>
+                      <td>(aᵐ)ⁿ = aᵐⁿ</td>
+                      <td>(z²)³ = z⁶</td>
+                      <td>Se multiplican los exponentes</td>
+                  </tr>
+                  <tr>
+                      <td>Potencia de un producto</td>
+                      <td>(ab)ⁿ = aⁿbⁿ</td>
+                      <td>(2x)³ = 8x³</td>
+                      <td>La potencia distribuye</td>
+                  </tr>
+                  <tr>
+                      <td>Potencia de un cociente</td>
+                      <td>(a/b)ⁿ = aⁿ/bⁿ</td>
+                      <td>(x/y)² = x²/y²</td>
+                      <td>La potencia distribuye</td>
+                  </tr>
+                  <tr>
+                      <td>Exponente cero</td>
+                      <td>a⁰ = 1 (a ≠ 0)</td>
+                      <td>5⁰ = 1, (3x)⁰ = 1</td>
+                      <td>Cualquier base ≠ 0 elevada a 0 es 1</td>
+                  </tr>
+                  <tr>
+                      <td>Exponente negativo</td>
+                      <td>a⁻ⁿ = 1/aⁿ (a ≠ 0)</td>
+                      <td>x⁻³ = 1/x³</td>
+                      <td>Significa el recíproco</td>
+                  </tr>
+                  <tr>
+                      <td>Exponente fraccionario</td>
+                      <td>aᵐ/ⁿ = ⁿ√(aᵐ)</td>
+                      <td>x¹/² = √x</td>
+                      <td>Representa una raíz</td>
+                  </tr>
+              </table>
+              
+              <h4>Casos especiales de exponentes</h4>
+              <table class='exponent-table'>
+                  <tr>
+                      <th>Caso</th>
+                      <th>Regla</th>
+                      <th>Ejemplo</th>
+                      <th>Explicación</th>
+                  </tr>
+                  <tr>
+                      <td>Exponente 1</td>
+                      <td>a¹ = a</td>
+                      <td>7¹ = 7, x¹ = x</td>
+                      <td>Cualquier número a la 1 es igual a sí mismo</td>
+                  </tr>
+                  <tr>
+                      <td>Base 1</td>
+                      <td>1ⁿ = 1</td>
+                      <td>1⁵ = 1, 1¹⁰⁰ = 1</td>
+                      <td>1 elevado a cualquier potencia es 1</td>
+                  </tr>
+                  <tr>
+                      <td>Base 0 con exponente positivo</td>
+                      <td>0ⁿ = 0 (n > 0)</td>
+                      <td>0⁵ = 0, 0³ = 0</td>
+                      <td>0 elevado a cualquier exponente positivo es 0</td>
+                  </tr>
+                  <tr>
+                      <td>Exponente par con base negativa</td>
+                      <td>(-a)ⁿ = aⁿ (n par)</td>
+                      <td>(-3)² = 9, (-2)⁴ = 16</td>
+                      <td>Resultado positivo con exponente par</td>
+                  </tr>
+                  <tr>
+                      <td>Exponente impar con base negativa</td>
+                      <td>(-a)ⁿ = -aⁿ (n impar)</td>
+                      <td>(-3)³ = -27, (-2)⁵ = -32</td>
+                      <td>Resultado negativo con exponente impar</td>
+                  </tr>
+              </table>
+              
+              <h4>Aplicación de las leyes en expresiones algebraicas</h4>
+              
+              <p><strong>Ejemplo 1: Producto de potencias con misma base</strong></p>
+              <p>Simplificar: x³ × x⁴ × x²</p>
+              <ol>
+                  <li>Aplicar ley: aᵐ × aⁿ × aᵖ = aᵐ⁺ⁿ⁺ᵖ</li>
+                  <li>Sumar exponentes: 3 + 4 + 2 = <span class='result'>9</span></li>
+                  <li>Resultado: <span class='result'>x⁹</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Cociente de potencias con misma base</strong></p>
+              <p>Simplificar: y⁷ ÷ y³</p>
+              <ol>
+                  <li>Aplicar ley: aᵐ ÷ aⁿ = aᵐ⁻ⁿ</li>
+                  <li>Restar exponentes: 7 - 3 = <span class='result'>4</span></li>
+                  <li>Resultado: <span class='result'>y⁴</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Potencia de potencia</strong></p>
+              <p>Simplificar: (z²)⁵</p>
+              <ol>
+                  <li>Aplicar ley: (aᵐ)ⁿ = aᵐⁿ</li>
+                  <li>Multiplicar exponentes: 2 × 5 = <span class='result'>10</span></li>
+                  <li>Resultado: <span class='result'>z¹⁰</span></li>
+              </ol>
+              
+              <h4>Ejemplos con múltiples leyes</h4>
+              
+              <p><strong>Ejemplo 4: Combinación de leyes</strong></p>
+              <p>Simplificar: (2x³y²)⁴</p>
+              <ol>
+                  <li>Aplicar potencia de producto: (ab)ⁿ = aⁿbⁿ</li>
+                  <li>= 2⁴ × (x³)⁴ × (y²)⁴</li>
+                  <li>Calcular: 16 × x¹² × y⁸</li>
+                  <li>Resultado: <span class='result'>16x¹²y⁸</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 5: Expresión con exponentes negativos</strong></p>
+              <p>Simplificar: (3a⁻²b³)⁻²</p>
+              <ol>
+                  <li>Aplicar potencia de producto: 3⁻² × (a⁻²)⁻² × (b³)⁻²</li>
+                  <li>Aplicar potencia de potencia: 3⁻² × a⁴ × b⁻⁶</li>
+                  <li>Aplicar exponentes negativos: (1/3²) × a⁴ × (1/b⁶)</li>
+                  <li>Resultado: <span class='result'>a⁴/(9b⁶)</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 6: Expresión compleja</strong></p>
+              <p><strong>Simplificar:</strong> (2x²·y⁻³)⁴ ÷ (4x⁻¹·y²)²</p>
+          <ol>
+            <li>
+              <strong>Numerador:</strong><br>
+              (2x²·y⁻³)⁴ = 2⁴ · x⁸ · y⁻¹² = <strong>16x⁸·y⁻¹²</strong>
+            </li>
+            <li>
+              <strong>Denominador:</strong><br>
+              (4x⁻¹·y²)² = 4² · x⁻² · y⁴ = <strong>16x⁻²·y⁴</strong>
+            </li>
+            <li>
+              <strong>División:</strong><br>
+              (16x⁸·y⁻¹²) ÷ (16x⁻²·y⁴) = x⁸ ÷ x⁻² · y⁻¹² ÷ y⁴
+            </li>
+            <li>
+              <strong>Simplificar exponentes:</strong><br>
+              x⁸ ÷ x⁻² = x⁸⁺² = x¹⁰<br>
+              y⁻¹² ÷ y⁴ = y⁻¹²⁻⁴ = y⁻¹⁶
+            </li>
+            <li>
+              <strong>Resultado final:</strong><br>
+              <span class="result">x¹⁰ ÷ y¹⁶</span> &nbsp; ó &nbsp; <span class="result">x¹⁰⁄y¹⁶</span>
+            </li>
+          </ol>
+          
+              
+              <h4>Operaciones con exponentes fraccionarios</h4>
+              
+              <p><strong>Ejemplo 7: Exponentes fraccionarios</strong></p>
+              <p><strong>Simplificar:</strong> 8 elevado a ⅔</p>
+          <ol>
+            <li>
+              <strong>Convertir a raíz:</strong><br>
+              8²⁄³ = raíz cúbica de 8² → √³(64)
+            </li>
+            <li>
+              <strong>Calcular potencia:</strong><br>
+              8² = 64
+            </li>
+            <li>
+              <strong>Raíz cúbica de 64:</strong><br>
+              √³(64) = 4 &nbsp; (porque 4³ = 64)
+            </li>
+            <li>
+              <strong>Resultado:</strong><br>
+              <span class="result">4</span>
+            </li>
+          </ol>
+          
+          <p><strong>Ejemplo 8: Expresión con radicales</strong></p>
+          <p><strong>Simplificar:</strong> raíz cuarta de (16·x⁸·y¹²) → √⁴(16x⁸y¹²)</p>
+          <ol>
+            <li>
+              <strong>Convertir a exponente fraccionario:</strong><br>
+              (16x⁸y¹²)¹⁄⁴
+            </li>
+            <li>
+              <strong>Aplicar la potencia a cada factor:</strong><br>
+              16¹⁄⁴ · x⁸⁄⁴ · y¹²⁄⁴
+            </li>
+            <li>
+              <strong>Simplificar:</strong><br>
+              2 · x² · y³
+            </li>
+            <li>
+              <strong>Resultado:</strong><br>
+              <span class="result">2x²y³</span>
+            </li>
+          </ol>
+          
+              
+              <h4>Errores comunes en la potenciación</h4>
+              <table class='exponent-table'>
+                  <tr>
+                      <th>Error común</th>
+                      <th>Incorrecto</th>
+                      <th>Correcto</th>
+                      <th>Explicación</th>
+                  </tr>
+                  <tr>
+                      <td>Multiplicar bases diferentes</td>
+                      <td>x² × y³ = (xy)⁵</td>
+                      <td>x² × y³ = x²y³</td>
+                      <td>Bases diferentes no se combinan</td>
+                  </tr>
+                  <tr>
+                      <td>Sumar exponentes en suma</td>
+                      <td>x² + x³ = x⁵</td>
+                      <td>x² + x³ (no se simplifica)</td>
+                      <td>No es multiplicación, no aplica ley</td>
+                  </tr>
+                  <tr>
+                      <td>Distribuir exponente en suma</td>
+                      <td>(x + y)² = x² + y²</td>
+                      <td>(x + y)² = x² + 2xy + y²</td>
+                      <td>Es un producto notable, no distributivo</td>
+                  </tr>
+                  <tr>
+                      <td>Exponente cero</td>
+                      <td>a⁰ = 0</td>
+                      <td>a⁰ = 1 (a ≠ 0)</td>
+                      <td>Por definición, cualquier base ≠ 0 elevada a 0 es 1</td>
+                  </tr>
+                  <tr>
+                      <td>Signos con exponentes</td>
+                      <td>(-x)² = -x²</td>
+                      <td>(-x)² = x²</td>
+                      <td>Exponente par hace positivo el resultado</td>
+                  </tr>
+              </table>
+              
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Simplificar completamente la expresión:</p>
+              <p><strong>Simplificar:</strong><br>
+          (3x⁻²·y³)² × (2x⁴·y⁻¹)⁻³ ÷ [(6x⁻³·y²)⁰ × raíz cúbica de (8x⁹·y⁻⁶)]
+          </p>
+          
+          <p><strong>Solución paso a paso:</strong></p>
+          <ol>
+            <li>
+              <strong>Exponente cero:</strong><br>
+              (6x⁻³·y²)⁰ = 1
+            </li>
+            <li>
+              <strong>Raíz cúbica:</strong><br>
+              √³(8x⁹·y⁻⁶) = (8x⁹·y⁻⁶)¹⁄³ = 2x³·y⁻²
+            </li>
+            <li>
+              <strong>Primer numerador:</strong><br>
+              (3x⁻²·y³)² = 9x⁻⁴·y⁶
+            </li>
+            <li>
+              <strong>Segundo numerador:</strong><br>
+              (2x⁴·y⁻¹)⁻³ = 1 ÷ (2³·x¹²·y⁻³) = y³ ÷ (8x¹²)
+            </li>
+            <li>
+              <strong>Multiplicar numeradores:</strong><br>
+              9x⁻⁴·y⁶ × (y³ ÷ 8x¹²) = (9y⁹) ÷ (8x¹⁶)
+            </li>
+            <li>
+              <strong>Dividir entre el denominador:</strong><br>
+              [(9y⁹) ÷ (8x¹⁶)] ÷ (2x³·y⁻²) = (9y⁹) ÷ (8x¹⁶) × 1 ÷ (2x³·y⁻²)<br>
+              = (9y⁹·y²) ÷ (16x¹⁶·x³) = <strong>9y¹¹ ÷ 16x¹⁹</strong>
+            </li>
+            <li>
+              <strong>Resultado final:</strong><br>
+              <span class="result">9y¹¹⁄16x¹⁹</span>
+            </li>
+          </ol>
+          
+              
+              <h4>Aplicaciones prácticas de la potenciación</h4>
+              <ul>
+                  <li><span class='keyword'>Cálculo de áreas y volúmenes:</span> Cuadrados, cubos, esferas</li>
+                  <li><span class='keyword'>Interés compuesto:</span> Crecimiento exponencial de inversiones</li>
+                  <li><span class='keyword'>Crecimiento poblacional:</span> Modelado de poblaciones</li>
+                  <li><span class='keyword'>Física:</span> Leyes de gravitación, energía cinética</li>
+                  <li><span class='keyword'>Química:</span> Cálculos de pH, concentraciones</li>
+                  <li><span class='keyword'>Informática:</span> Algoritmos de complejidad exponencial</li>
+              </ul>
+              
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                  <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+                  <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
+                  <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
+                  <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
+              </ul>
+          `)">1.2.5. Potenciación y sus leyes <span class="emoji-small">✅</span>
+          </li>
         </ul>
       </div>
 
