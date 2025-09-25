@@ -4,102 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicios de Diagramas de Flujo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="estilos2.css">   
+  <link rel="stylesheet" href="estilos2.css">
   <style>
-    :root {
-      --apple-black: #1d1d1f;
-      --apple-dark-gray: #86868b;
-      --apple-light-gray: #f5f5f7;
-      --apple-blue: #0071e3;
-      --apple-blue-hover: #0077ed;
-      --apple-gradient: linear-gradient(135deg, var(--apple-vibrant-blue), #8A2BE2);
-      --apple-border-radius: 12px;
-      --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      --apple-vibrant-blue: #0077CC;
-      --apple-vibrant-orange: #FF9500;
-      --apple-vibrant-green: #34C759;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    }
-    
-    body {
-      background: #ffffff;
-      color: var(--apple-black);
-      line-height: 1.47059;
-      font-weight: 400;
-      letter-spacing: -0.022em;
-    }
-    
-    /* Header estilo Apple */
-    header {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 0 22px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .header-title {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--apple-black);
-    }
-
-    .header-logo {
-      height: 40px;
-      width: auto;
-      margin-top: 5px;
-    }    
-    /* Hero section */
-    .hero {
-      background: var(--apple-gradient);
-      color: white;
-      padding: 120px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-    }
-    
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.003em;
-      position: relative;
-      z-index: 2;
-    }
+    /* SOLO CSS ESPECÍFICO para esta página - NO duplicar estilos de estilos2.css */
     
     .hero-subtitle {
       font-size: 24px;
@@ -111,32 +18,6 @@
       z-index: 2;
     }
     
-    /* Container general */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 22px;
-    }
-    
-    .section-title {
-      font-size: 40px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 60px;
-      letter-spacing: -0.003em;
-    }
-    
-    .section-subtitle {
-      text-align: center;
-      font-size: 21px;
-      color: var(--apple-dark-gray);
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* Grid de ejercicios */
     .exercises-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -166,9 +47,6 @@
       color: var(--apple-vibrant-blue);
       margin-bottom: 15px;
       font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
     
     .exercise-description {
@@ -189,6 +67,14 @@
     .easy { background: #d1fae5; color: #065f46; }
     .medium { background: #fef3c7; color: #92400e; }
     .hard { background: #fee2e2; color: #991b1b; }
+    
+    .exercise-action {
+      color: var(--apple-vibrant-blue);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: auto;
+      padding-top: 10px;
+    }
     
     /* Modal específico para diagramas */
     .modal {
@@ -302,37 +188,6 @@
     .input { background: var(--apple-vibrant-orange); }
     .connector { background: #f59e0b; border-radius: 50%; }
     
-    /* Botón estilo Apple */
-    .apple-button {
-      display: inline-block;
-      background-color: var(--apple-vibrant-blue);
-      color: white;
-      text-decoration: none;
-      font-size: 1.25rem;
-      font-weight: 500;
-      padding: 14px 30px;
-      border-radius: 980px;
-      transition: var(--apple-transition);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      margin-top: 2rem;
-      position: relative;
-      z-index: 2;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .apple-button:hover {
-      background-color: var(--apple-vibrant-green);
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-    }
-    
-    .apple-button:active {
-      transform: scale(0.98);
-      background-color: rgba(255, 255, 255, 0.95);
-    }
-    
-    /* Mejoras adicionales */
     .modal-section-title {
       color: var(--apple-vibrant-blue);
       margin: 25px 0 15px;
@@ -359,16 +214,14 @@
       line-height: 1.6;
     }
     
-    /* Footer */
-    footer {
+    .section-subtitle {
       text-align: center;
-      padding: 40px 22px;
-      font-size: 17px;
+      font-size: 21px;
       color: var(--apple-dark-gray);
-      background: var(--apple-light-gray);
-      margin-top: 80px;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     /* Responsive específico */
@@ -408,7 +261,7 @@
 </head>
 <body>
   <!-- Header estilo Apple -->
-<header>
+  <header>
     <div class="header-content">
       <a href="index.html">
         <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
@@ -550,6 +403,7 @@
   </footer>
 
   <script>
+    // (El JavaScript permanece igual)
     // Datos de los ejercicios
     const exercises = {
       1: {
