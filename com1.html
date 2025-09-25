@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Computación I - Universidad URA</title>
   <link rel="stylesheet" href="estilos2.css">
 </head>
+  
 <body>
+  
   <header>
     <div class="header-content">
       <a href="index.html">
@@ -202,7 +205,7 @@
             `)">1.4 Lectura de entrada  <span class="emoji-small">✅</span>
            </li>
 
-          <li <li onclick="abrirModal('1.5 Unidad de memoria', `
+           <li onclick="abrirModal('1.5 Unidad de memoria', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender la función, tipos y características de la memoria en un sistema computacional.</p>
             
@@ -250,7 +253,7 @@
             `)">1.5 Unidad de memoria <span class="emoji-small">✅</span>
           </li>
 
-          <li <li onclick="abrirModal('1.6 Almacenamiento en código', `
+          <li onclick="abrirModal('1.6 Almacenamiento en código', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar los métodos y formatos utilizados para almacenar información en sistemas digitales mediante codificación.</p>
             
@@ -298,7 +301,7 @@
             `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
           </li>
           
-          <li <li onclick="abrirModal('1.7 Números binarios', `
+          <li onclick="abrirModal('1.7 Números binarios', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
             
@@ -396,7 +399,7 @@
             `)">1.8. Organización de los componentes fundamentales del computador <span class="emoji-small">✅</span>
           </li>
 
-          <li  onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
+          <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar la estructura, tipos y funcionamiento de las instrucciones en lenguaje de máquina que ejecuta directamente el procesador.</p>
             
@@ -2298,7 +2301,7 @@
             `)">3.8. Capacidades adicionales de formato <span class="emoji-small">✅</span>
         </li>
           
-<li onclick="abrirModal('3.9. Código Hollerith', `
+            <li onclick="abrirModal('3.9. Código Hollerith', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el código Hollerith como sistema histórico de representación de datos en tarjetas perforadas y su influencia en el desarrollo de la informática moderna.</p>
             
@@ -2430,19 +2433,413 @@
       </ul>
     </div>
     
-    <div class="tema-card">
-      <div class="tema-num">TEMA 4</div>
-      <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
-      <ul class="tema-list">
-        <li>4.1. Introducción</li>
-        <li>4.2. Definiciones</li>
-        <li>4.3. Tipos de subprogramas</li>
-        <li>4.4. Formación de un subprograma</li>
-        <li>4.5. Subprogramas de función</li>
-        <li>4.6. Subprogramas de subrutinas</li>
-        <li>4.7. Subprogramas combinados</li>
-      </ul>
-    </div>
+        <div class="tema-card">
+            <div class="tema-num">TEMA 4</div>
+            <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
+            <ul class="tema-list">
+                <li onclick="abrirModal('4.1 Introducción', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Comprender la importancia de la programación modular y cómo las funciones y subrutinas mejoran la organización del código.</p>
+                
+                    <h4>¿Por qué necesitamos funciones?</h4>
+                    <ul>
+                        <li>Imagina que estás construyendo una casa: en lugar de hacer todo de una vez, divides el trabajo en partes (cimientos, paredes, techo).</li>
+                        <li>En programación pasa igual: las funciones nos permiten dividir un programa grande en partes más pequeñas y manejables.</li>
+                        <li>Esto hace que el código sea más fácil de entender, mantener y reparar.</li>
+                    </ul>
+                
+                    <h4>Ventajas de usar funciones</h4>
+                    <ul>
+                        <li><strong>Reutilización:</strong> Escribes una vez, usas muchas veces.</li>
+                        <li><strong>Organización:</strong> Código más ordenado y fácil de leer.</li>
+                        <li><strong>Depuración más fácil:</strong> Si hay un error, sabes dónde buscar.</li>
+                        <li><strong>Trabajo en equipo:</strong> Cada programador puede trabajar en una función diferente.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Ejemplo práctico:</strong><br>
+                        Sin funciones: Tienes que calcular el área de un círculo 10 veces en tu programa, y escribes la fórmula 10 veces.<br>
+                        Con funciones: Escribes la fórmula una vez en una función, y la llamas 10 veces.
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en C++</em>. Pearson.</li>
+                        <li>Joyanes, L. (2018). <em>Fundamentos de programación</em>. McGraw-Hill.</li>
+                    </ul>
+                `)">4.1. Introducción</li>
+                
+                <li onclick="abrirModal('4.2 Definiciones', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Conocer los conceptos básicos y la terminología relacionada con funciones y subprogramas.</p>
+                
+                    <h4>¿Qué es un subprograma?</h4>
+                    <ul>
+                        <li>Es un <strong>bloque de código</strong> que realiza una tarea específica.</li>
+                        <li>Es como una <strong>mini-receta</strong> dentro de una receta más grande.</li>
+                        <li>Se puede <strong>llamar</strong> (usar) desde diferentes partes del programa principal.</li>
+                    </ul>
+                
+                    <h4>Términos importantes</h4>
+                    <ul>
+                        <li><strong>Función:</strong> Subprograma que devuelve un valor.</li>
+                        <li><strong>Subrutina:</strong> Subprograma que NO devuelve un valor (solo realiza acciones).</li>
+                        <li><strong>Parámetros:</strong> Datos que le pasamos al subprograma para que trabaje con ellos.</li>
+                        <li><strong>Argumentos:</strong> Los valores concretos que pasamos cuando llamamos al subprograma.</li>
+                        <li><strong>Retorno:</strong> Valor que devuelve una función después de ejecutarse.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Analogía de la cocina:</strong><br>
+                        <strong>Función:</strong> Como un horno que recibe una masa (parámetro) y devuelve un pastel (valor de retorno).<br>
+                        <strong>Subrutina:</strong> Como lavar los platos: realizas una acción, pero no devuelves nada.
+                    </div>
+                
+                    <div class=\"code-block\">
+                        // Ejemplo en pseudocódigo<br>
+                        FUNCIÓN sumar(a, b) {<br>
+                        &nbsp;&nbsp;RETORNAR a + b<br>
+                        }<br><br>
+                        
+                        // Llamada a la función<br>
+                        resultado = sumar(5, 3)  // resultado vale 8
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Barnes, J., & Kolling, M. (2016). <em>Programación orientada a objetos con Java</em>. Pearson.</li>
+                        <li>López, M. (2019). <em>Introducción a la programación</em>. Editorial Universitaria.</li>
+                    </ul>
+                `)">4.2. Definiciones</li>
+                
+                <li onclick="abrirModal('4.3 Tipos de subprogramas', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Identificar los diferentes tipos de subprogramas y cuándo usar cada uno.</p>
+                
+                    <h4>Clasificación por lo que devuelven</h4>
+                    <ul>
+                        <li><strong>Funciones (devuelven valor):</strong> Como una calculadora que siempre te da un resultado.</li>
+                        <li><strong>Subrutinas (no devuelven valor):</strong> Como una alarma que suena pero no te da información.</li>
+                    </ul>
+                
+                    <h4>Clasificación por cómo se usan</h4>
+                    <ul>
+                        <li><strong>Integradas (built-in):</strong> Vienen con el lenguaje de programación.</li>
+                        <li><strong>Definidas por el usuario:</strong> Las crea el programador según sus necesidades.</li>
+                    </ul>
+                
+                    <h4>Clasificación por su visibilidad</h4>
+                    <ul>
+                        <li><strong>Públicas:</strong> Se pueden usar desde cualquier parte del programa.</li>
+                        <li><strong>Privadas:</strong> Solo se pueden usar dentro de cierto contexto.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Ejemplos de la vida real:</strong><br>
+                        <strong>Función integrada:</strong> Como la función \"sqrt\" (raíz cuadrada) que ya viene en matemáticas.<br>
+                        <strong>Función personalizada:</strong> Como una receta secreta de tu abuela para hacer galletas.
+                    </div>
+                
+                    <div class=\"code-block\">
+                        // Ejemplos en diferentes lenguajes<br>
+                        <br>
+                        // Python - Función integrada<br>
+                        longitud = len(\"Hola\")  // len es una función integrada<br>
+                        <br>
+                        // Python - Función definida por usuario<br>
+                        def saludar(nombre):<br>
+                        &nbsp;&nbsp;return \"Hola \" + nombre<br>
+                        <br>
+                        mensaje = saludar(\"Ana\")  // mensaje vale \"Hola Ana\"
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Gaddis, T. (2017). <em>Starting Out with Programming Logic and Design</em>. Pearson.</li>
+                        <li>Zelle, J. M. (2017). <em>Python Programming: An Introduction to Computer Science</em>. Franklin.</li>
+                    </ul>
+                `)">4.3. Tipos de subprogramas</li>
+                
+                <li onclick="abrirModal('4.4 Formación de un subprograma', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Aprender las partes que componen un subprograma y cómo crearlo correctamente.</p>
+                
+                    <h4>Partes de un subprograma</h4>
+                    <ul>
+                        <li><strong>Encabezado/Cabecera:</strong> El \"nombre\" y \"firma\" del subprograma.</li>
+                        <li><strong>Parámetros:</strong> Las \"variables\" que recibe para trabajar.</li>
+                        <li><strong>Cuerpo:</strong> Las instrucciones que realiza.</li>
+                        <li><strong>Valor de retorno (opcional):</strong> Lo que devuelve al terminar.</li>
+                    </ul>
+                
+                    <h4>Pasos para crear un subprograma</h4>
+                    <ul>
+                        <li><strong>Paso 1:</strong> Decidir qué va a hacer el subprograma.</li>
+                        <li><strong>Paso 2:</strong> Elegir un nombre descriptivo.</li>
+                        <li><strong>Paso 3:</strong> Definir qué parámetros necesita.</li>
+                        <li><strong>Paso 4:</strong> Escribir las instrucciones en el cuerpo.</li>
+                        <li><strong>Paso 5:</strong> Decidir si devuelve algún valor.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Analogía de una receta de cocina:</strong><br>
+                        <strong>Encabezado:</strong> \"Preparar jugo de naranja\"<br>
+                        <strong>Parámetros:</strong> naranjas, azúcar, agua<br>
+                        <strong>Cuerpo:</strong> Exprimir naranjas, mezclar ingredientes...<br>
+                        <strong>Retorno:</strong> El jugo listo para servir
+                    </div>
+                
+                    <div class=\"code-block\">
+                        // Estructura general de una función<br>
+                        TIPO-DATO nombreFuncion(parámetro1, parámetro2, ...) {<br>
+                        &nbsp;&nbsp;// CUERPO - Instrucciones aquí<br>
+                        &nbsp;&nbsp;// ...<br>
+                        &nbsp;&nbsp;return valor;  // Opcional<br>
+                        }<br>
+                        <br>
+                        // Ejemplo concreto<br>
+                        float calcularAreaCirculo(float radio) {<br>
+                        &nbsp;&nbsp;float area = 3.1416 * radio * radio;<br>
+                        &nbsp;&nbsp;return area;<br>
+                        }
+                    </div>
+                
+                    <h4>Buenas prácticas</h4>
+                    <ul>
+                        <li>Usar nombres descriptivos (calcularPromedio, no funcion1).</li>
+                        <li>Un subprograma debe hacer solo UNA cosa bien.</li>
+                        <li>Documentar qué hace el subprograma.</li>
+                        <li>Manejar posibles errores en los parámetros.</li>
+                    </ul>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+                        <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
+                    </ul>
+                `)">4.4. Formación de un subprograma</li>
+                
+                <li onclick="abrirModal('4.5 Subprogramas de función', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Dominar el uso de funciones que devuelven valores y entender su utilidad.</p>
+                
+                    <h4>Características de las funciones</h4>
+                    <ul>
+                        <li><strong>Siempre devuelven un valor</strong> (de lo contrario, serían subrutinas).</li>
+                        <li>Se pueden usar en expresiones matemáticas.</li>
+                        <li>Pueden llamarse a sí mismas (recursión).</li>
+                        <li>Pueden devolver diferentes tipos de datos.</li>
+                    </ul>
+                
+                    <h4>¿Cuándo usar una función?</h4>
+                    <ul>
+                        <li>Cuando necesitas <strong>calcular algo</strong> y obtener un resultado.</li>
+                        <li>Cuando una operación se <strong>repite muchas veces</strong> en tu programa.</li>
+                        <li>Cuando quieres <strong>simplificar cálculos complejos</strong>.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Ejemplo del mundo real:</strong><br>
+                        Una <strong>calculadora de impuestos</strong> es una función perfecta:<br>
+                        - Recibe: tu salario (parámetro)<br>
+                        - Calcula: cuánto impuesto debes pagar<br>
+                        - Devuelve: el monto a pagar (valor de retorno)
+                    </div>
+                
+                    <div class=\"code-block\">
+                        // Ejemplos de funciones útiles<br>
+                        <br>
+                        // Función para calcular el IVA<br>
+                        float calcularIVA(float precio) {<br>
+                        &nbsp;&nbsp;return precio * 0.16;<br>
+                        }<br>
+                        <br>
+                        // Función para verificar si un número es par<br>
+                        boolean esPar(int numero) {<br>
+                        &nbsp;&nbsp;return (numero % 2 == 0);<br>
+                        }<br>
+                        <br>
+                        // Uso de las funciones<br>
+                        float iva = calcularIVA(100);  // iva vale 16<br>
+                        if (esPar(10)) {  // Esto será verdadero<br>
+                        &nbsp;&nbsp;print(\"El número es par\");<br>
+                        }
+                    </div>
+                
+                    <h4>Ventajas específicas de las funciones</h4>
+                    <ul>
+                        <li>Permiten crear <strong>expresiones más legibles</strong>.</li>
+                        <li>Facilitan las <strong>pruebas unitarias</strong>.</li>
+                        <li>Mejoran el <strong>rendimiento</strong> al evitar código repetido.</li>
+                    </ul>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Roberts, E. (2011). <em>Programming Abstractions in C++</em>. Pearson.</li>
+                        <li>Sedgewick, R., & Wayne, K. (2017). <em>Computer Science: An Interdisciplinary Approach</em>. Addison-Wesley.</li>
+                    </ul>
+                `)">4.5. Subprogramas de función</li>
+                
+                <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Comprender el uso de subrutinas y cuándo son más apropiadas que las funciones.</p>
+                
+                    <h4>¿Qué son las subrutinas?</h4>
+                    <ul>
+                        <li>Son subprogramas que <strong>realizan acciones</strong> pero <strong>no devuelven valores</strong>.</li>
+                        <li>Se enfocan en <strong>hacer</strong> algo en lugar de <strong>calcular</strong> algo.</li>
+                        <li>También se llaman <strong>procedimientos</strong> o <strong>métodos void</strong>.</li>
+                    </ul>
+                
+                    <h4>¿Cuándo usar una subrutina?</h4>
+                    <ul>
+                        <li>Cuando necesitas <strong>mostrar información</strong> en pantalla.</li>
+                        <li>Para <strong>modificar variables globales</strong> o estructuras de datos.</li>
+                        <li>Cuando realizas una <strong>serie de pasos</strong> que no producen un resultado calculable.</li>
+                        <li>Para <strong>configurar</strong> o <strong>inicializar</strong> partes del programa.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Ejemplo de la vida real:</strong><br>
+                        Un <strong>robot limpiador</strong> es como una subrutina:<br>
+                        - Recibe: la instrucción \"limpiar la casa\"<br>
+                        - Realiza: pasa la aspiradora, trapea, etc.<br>
+                        - No devuelve: ningún valor, solo deja la casa limpia
+                    </div>
+                
+                    <div class=\"code-block\">
+                        // Ejemplos de subrutinas útiles<br>
+                        <br>
+                        // Subrutina para mostrar un menú<br>
+                        void mostrarMenu() {<br>
+                        &nbsp;&nbsp;print(\"1. Agregar contacto\");<br>
+                        &nbsp;&nbsp;print(\"2. Buscar contacto\");<br>
+                        &nbsp;&nbsp;print(\"3. Salir\");<br>
+                        }<br>
+                        <br>
+                        // Subrutina para inicializar el juego<br>
+                        void inicializarJuego() {<br>
+                        &nbsp;&nbsp;cargarImagenes();<br>
+                        &nbsp;&nbsp;reproducirMusica();<br>
+                        &nbsp;&nbsp;mostrarPantallaInicio();<br>
+                        }<br>
+                        <br>
+                        // Uso de subrutinas<br>
+                        mostrarMenu();  // Simplemente muestra el menú<br>
+                        inicializarJuego();  // Prepara todo para jugar
+                    </div>
+                
+                    <h4>Diferencias clave con las funciones</h4>
+                    <ul>
+                        <li><strong>Funciones:</strong> Se usan en expresiones (derecha del =).</li>
+                        <li><strong>Subrutinas:</strong> Se llaman como instrucciones independientes.</li>
+                        <li><strong>Funciones:</strong> Devuelven un valor que puedes guardar.</li>
+                        <li><strong>Subrutinas:</strong> Realizan acciones directamente.</li>
+                    </ul>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Forouzan, B. A., & Gilberg, R. F. (2017). <em>Computer Science: A Structured Programming Approach</em>. Cengage.</li>
+                        <li>Dale, N., & Weems, C. (2010). <em>Programming and Problem Solving with C++</em>. Jones & Bartlett.</li>
+                    </ul>
+                `)">4.6. Subprogramas de subrutinas</li>
+                
+                <li onclick="abrirModal('4.7 Subprogramas combinados', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Aprender a combinar diferentes tipos de subprogramas para crear soluciones más complejas.</p>
+                
+                    <h4>¿Qué son los subprogramas combinados?</h4>
+                    <ul>
+                        <li>Son <strong>sistemas</strong> donde múltiples subprogramas trabajan juntos.</li>
+                        <li>Las funciones y subrutinas se <strong>llaman entre sí</strong> para resolver problemas complejos.</li>
+                        <li>Crean una <strong>estructura modular</strong> que facilita el desarrollo de programas grandes.</li>
+                    </ul>
+                
+                    <h4>Ventajas de la combinación</h4>
+                    <ul>
+                        <li><strong>Divide y vencerás:</strong> Problemas grandes se dividen en pequeños.</li>
+                        <li><strong>Reutilización máxima:</strong> Un subprograma puede usarse en múltiples proyectos.</li>
+                        <li><strong>Mantenimiento más fácil:</strong> Cambias una parte sin afectar las demás.</li>
+                        <li><strong>Trabajo en equipo:</strong> Cada programador trabaja en subprogramas diferentes.</li>
+                    </ul>
+                
+                    <div class=\"example\">
+                        <strong>Analogía de una fábrica de autos:</strong><br>
+                        Cada estación (subprograma) hace una parte:<br>
+                        - Estación 1: Fabricar chasis (subrutina)<br>
+                        - Estación 2: Pintar auto (subrutina)<br>
+                        - Estación 3: Calcular costo (función)<br>
+                        - Estación 4: Controlar calidad (función)<br>
+                        Todas juntas producen un auto completo.
+                    </div>
+                
+                    <div class=\"code-block\">
+                        // Ejemplo: Sistema de gestión de estudiantes<br>
+                        <br>
+                        // Subprogramas individuales<br>
+                        void agregarEstudiante() { ... }<br>
+                        float calcularPromedio(int[] calificaciones) { ... }<br>
+                        void mostrarReporte() { ... }<br>
+                        boolean aproboMateria(float promedio) { ... }<br>
+                        <br>
+                        // Subprograma principal que combina todos<br>
+                        void gestionarEstudiantes() {<br>
+                        &nbsp;&nbsp;agregarEstudiante();<br>
+                        &nbsp;&nbsp;float promedio = calcularPromedio(calificaciones);<br>
+                        &nbsp;&nbsp;if (aproboMateria(promedio)) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;print(\"¡Felicidades, aprobaste!\");<br>
+                        &nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;mostrarReporte();<br>
+                        }
+                    </div>
+                
+                    <h4>Estrategias para combinar subprogramas</h4>
+                    <ul>
+                        <li><strong>Top-down:</strong> Empiezas con el problema general y lo divides.</li>
+                        <li><strong>Bottom-up:</strong> Creas subprogramas pequeños y los unes.</li>
+                        <li><strong>Modular:</strong> Agrupas subprogramas relacionados en módulos.</li>
+                    </ul>
+                
+                    <h4>Ejemplo práctico completo</h4>
+                    <div class=\"code-block\">
+                        // Sistema simple de calculadora<br>
+                        <br>
+                        // Funciones básicas<br>
+                        float sumar(float a, float b) { return a + b; }<br>
+                        float restar(float a, float b) { return a - b; }<br>
+                        <br>
+                        // Subrutinas de interfaz<br>
+                        void mostrarResultado(float resultado) { ... }<br>
+                        void mostrarError() { ... }<br>
+                        <br>
+                        // Función principal que combina todo<br>
+                        void calculadora() {<br>
+                        &nbsp;&nbsp;float num1 = leerNumero();<br>
+                        &nbsp;&nbsp;float num2 = leerNumero();<br>
+                        &nbsp;&nbsp;char operacion = leerOperacion();<br>
+                        &nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;float resultado;<br>
+                        &nbsp;&nbsp;if (operacion == '+') {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;resultado = sumar(num1, num2);<br>
+                        &nbsp;&nbsp;} else if (operacion == '-') {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;resultado = restar(num1, num2);<br>
+                        &nbsp;&nbsp;} else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;mostrarError();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+                        &nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;mostrarResultado(resultado);<br>
+                        }
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Pressman, R. S. (2014). <em>Software Engineering: A Practitioner's Approach</em>. McGraw-Hill.</li>
+                        <li>Sommerville, I. (2016). <em>Software Engineering</em>. Pearson.</li>
+                    </ul>
+                `)">4.7. Subprogramas combinados</li>
+            </ul>
+        </div>
+
     
     <div class="tema-card">
       <div class="tema-num">TEMA 5</div>
