@@ -1,326 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios de Diagramas de Flujo</title>
-    <link rel="stylesheet" href="estilos2.css">
-    <style>        
-        .subtitle {
-            color: var(--dark);
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-        
-        .exercises-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .exercise-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 5px solid var(--primary);
-        }
-        
-        .exercise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .exercise-title {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .exercise-title i {
-            font-size: 1.6rem;
-        }
-        
-        .exercise-description {
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .difficulty {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .easy { background: #d1fae5; color: #065f46; }
-        .medium { background: #fef3c7; color: #92400e; }
-        .hard { background: #fee2e2; color: #991b1b; }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-            text-decoration: none;
-        }
-        
-        .btn:hover {
-            background: #1d4ed8;
-        }
-        
-        .btn-secondary {
-            background: var(--secondary);
-        }
-        
-        .btn-secondary:hover {
-            background: #6d28d9;
-        }
-        
-        .flowchart-section {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .flowchart-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        
-        .flowchart-problem {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .flowchart-diagram {
-            flex: 1;
-            min-width: 300px;
-            background: #f8fafc;
-            border-radius: 8px;
-            padding: 20px;
-            border: 2px dashed #cbd5e1;
-        }
-        
-        .symbols-guide {
-            background: #f0f9ff;
-            border-radius: 8px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-        
-        .symbols-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .symbol-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
-        }
-        
-        .symbol {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .terminal { background: #ef4444; }
-        .process { background: #3b82f6; }
-        .decision { background: #10b981; transform: rotate(45deg); width: 40px; height: 40px; }
-        .input { background: #8b5cf6; }
-        .connector { background: #f59e0b; border-radius: 50%; }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .exercises-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .flowchart-container {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de Diagramas de Flujo</title>
+  <link rel="stylesheet" href="estilos2.css">
+  <style>
+    .subtitle {
+      color: var(--dark);
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .exercises-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .exercise-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 5px solid var(--primary);
+    }
+
+    .exercise-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .exercise-title {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .exercise-description {
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .difficulty {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .easy { background: #d1fae5; color: #065f46; }
+    .medium { background: #fef3c7; color: #92400e; }
+    .hard { background: #fee2e2; color: #991b1b; }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+    }
+
+    .btn-secondary:hover {
+      background: #6d28d9;
+    }
+
+    /* Modal */
+    /* .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      background: white;
+      margin: auto;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 900px;
+      animation: slideDown 0.4s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .close-btn {
+      float: right;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #64748b;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #ef4444;
+    }
+ */
+    .flowchart-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .flowchart-problem, .flowchart-diagram {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .flowchart-diagram {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 20px;
+      border: 2px dashed #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      .exercises-grid { grid-template-columns: 1fr; }
+      .flowchart-container { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Ejercicios de Diagramas de Flujo</h1>
-            <p class="subtitle">Practica y domina la representación gráfica de algoritmos</p>
-        </header>
-        
-        <section class="exercises-grid">
-            <div class="exercise-card">
-                <h2 class="exercise-title">
-                    <span>🔢</span> Ejercicio 1: Número Par o Impar
-                </h2>
-                <span class="difficulty easy">Fácil</span>
-                <p class="exercise-description">
-                    Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.
-                </p>
-                <button class="btn" onclick="showExercise(1)">Ver Ejercicio</button>
+  <div class="container">
+    <header>
+      <h1>Ejercicios de Diagramas de Flujo</h1>
+      <p class="subtitle">Practica y domina la representación gráfica de algoritmos</p>
+    </header>
+
+    <section class="exercises-grid">
+      <div class="exercise-card">
+        <h2 class="exercise-title"><span>🔢</span> Ejercicio 1: Número Par o Impar</h2>
+        <span class="difficulty easy">Fácil</span>
+        <p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p>
+        <button class="btn" onclick="showExercise(1)">Ver Ejercicio</button>
+      </div>
+      <div class="exercise-card">
+        <h2 class="exercise-title"><span>📊</span> Ejercicio 2: Calcular Promedio</h2>
+        <span class="difficulty easy">Fácil</span>
+        <p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p>
+        <button class="btn" onclick="showExercise(2)">Ver Ejercicio</button>
+      </div>
+      <div class="exercise-card">
+        <h2 class="exercise-title"><span>🔍</span> Ejercicio 3: Número Mayor</h2>
+        <span class="difficulty medium">Medio</span>
+        <p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p>
+        <button class="btn" onclick="showExercise(3)">Ver Ejercicio</button>
+      </div>
+      <div class="exercise-card">
+        <h2 class="exercise-title"><span>🔄</span> Ejercicio 4: Serie Fibonacci</h2>
+        <span class="difficulty medium">Medio</span>
+        <p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p>
+        <button class="btn" onclick="showExercise(4)">Ver Ejercicio</button>
+      </div>
+      <div class="exercise-card">
+        <h2 class="exercise-title"><span>🎯</span> Ejercicio 5: Adivina el Número</h2>
+        <span class="difficulty hard">Difícil</span>
+        <p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p>
+        <button class="btn" onclick="showExercise(5)">Ver Ejercicio</button>
+      </div>
+      <div class="exercise-card">
+        <h2 class="exercise-title"><span>📈</span> Ejercicio 6: Estadísticas Básicas</h2>
+        <span class="difficulty hard">Difícil</span>
+        <p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p>
+        <button class="btn" onclick="showExercise(6)">Ver Ejercicio</button>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="exercise-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="exercise-detail-title" style="color: var(--primary); margin-bottom: 15px;"></h2>
+        <p id="exercise-detail-description"></p>
+
+        <div class="flowchart-container">
+          <div class="flowchart-problem">
+            <h3>📝 Enunciado del Problema</h3>
+            <p id="problem-statement"></p>
+
+            <h3 style="margin-top: 20px;">🎯 Objetivos de Aprendizaje</h3>
+            <ul id="learning-objectives" style="margin-top: 10px; padding-left: 20px;"></ul>
+
+            <h3 style="margin-top: 20px;">💡 Pistas y Sugerencias</h3>
+            <ul id="hints" style="margin-top: 10px; padding-left: 20px;"></ul>
+
+            <div style="margin-top: 25px;">
+              <button class="btn" onclick="showSolution()">Ver Solución Propuesta</button>
             </div>
-            
-            <div class="exercise-card">
-                <h2 class="exercise-title">
-                    <span>📊</span> Ejercicio 2: Calcular Promedio
-                </h2>
-                <span class="difficulty easy">Fácil</span>
-                <p class="exercise-description">
-                    Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó (promedio ≥ 6).
-                </p>
-                <button class="btn" onclick="showExercise(2)">Ver Ejercicio</button>
+          </div>
+
+          <div class="flowchart-diagram">
+            <h3>📊 Área de Trabajo</h3>
+            <p style="margin: 15px 0; font-style: italic; color: #64748b;">Dibuja tu diagrama de flujo aquí o en papel.</p>
+            <div id="drawing-area" style="height: 300px; background: white; border: 1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+              Área para dibujar el diagrama
             </div>
-            
-            <div class="exercise-card">
-                <h2 class="exercise-title">
-                    <span>🔍</span> Ejercicio 3: Número Mayor
-                </h2>
-                <span class="difficulty medium">Medio</span>
-                <p class="exercise-description">
-                    Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.
-                </p>
-                <button class="btn" onclick="showExercise(3)">Ver Ejercicio</button>
+            <div id="proposed-solution" style="display: none; margin-top: 20px;">
+              <h4>Solución Propuesta:</h4>
+              <div id="solution-content" style="background: #f0f9ff; padding: 15px; border-radius: 6px; margin-top: 10px;"></div>
             </div>
-            
-            <div class="exercise-card">
-                <h2 class="exercise-title">
-                    <span>🔄</span> Ejercicio 4: Serie Fibonacci
-                </h2>
-                <span class="difficulty medium">Medio</span>
-                <p class="exercise-description">
-                    Crear un diagrama que genere los primeros N números de la serie Fibonacci, donde N es proporcionado por el usuario.
-                </p>
-                <button class="btn" onclick="showExercise(4)">Ver Ejercicio</button>
-            </div>
-            
-            <div class="exercise-card">
-                <h2 class="exercise-title">
-                    <span>🎯</span> Ejercicio 5: Adivina el Número
-                </h2>
-                <span class="difficulty hard">Difícil</span>
-                <p class="exercise-description">
-                    Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100, con pistas de "mayor" o "menor".
-                </p>
-                <button class="btn" onclick="showExercise(5)">Ver Ejercicio</button>
-            </div>
-            
-            <div class="exercise-card">
-                <h2 class="exercise-title">
-                    <span>📈</span> Ejercicio 6: Estadísticas Básicas
-                </h2>
-                <span class="difficulty hard">Difícil</span>
-                <p class="exercise-description">
-                    Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números ingresados por el usuario.
-                </p>
-                <button class="btn" onclick="showExercise(6)">Ver Ejercicio</button>
-            </div>
-        </section>
-        
-        <section id="exercise-detail" class="flowchart-section" style="display: none;">
-            <h2 id="exercise-detail-title" style="color: var(--primary); margin-bottom: 15px;"></h2>
-            <p id="exercise-detail-description"></p>
-            
-            <div class="flowchart-container">
-                <div class="flowchart-problem">
-                    <h3>📝 Enunciado del Problema</h3>
-                    <p id="problem-statement" style="margin-top: 10px;"></p>
-                    
-                    <h3 style="margin-top: 20px;">🎯 Objetivos de Aprendizaje</h3>
-                    <ul id="learning-objectives" style="margin-top: 10px; padding-left: 20px;"></ul>
-                    
-                    <h3 style="margin-top: 20px;">💡 Pistas y Sugerencias</h3>
-                    <ul id="hints" style="margin-top: 10px; padding-left: 20px;"></ul>
-                    
-                    <div style="margin-top: 25px;">
-                        <button class="btn" onclick="showSolution()">Ver Solución Propuesta</button>
-                        <button class="btn btn-secondary" onclick="resetExercise()" style="margin-left: 10px;">Nuevo Ejercicio</button>
-                    </div>
-                </div>
-                
-                <div class="flowchart-diagram">
-                    <h3>📊 Área de Trabajo</h3>
-                    <p style="margin: 15px 0; font-style: italic; color: #64748b;">
-                        Dibuja tu diagrama de flujo aquí o en papel según las indicaciones de tu profesor.
-                    </p>
-                    <div id="drawing-area" style="height: 300px; background: white; border: 1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
-                        Área para dibujar el diagrama
-                    </div>
-                    <div id="proposed-solution" style="display: none; margin-top: 20px;">
-                        <h4>Solución Propuesta:</h4>
-                        <div id="solution-content" style="background: #f0f9ff; padding: 15px; border-radius: 6px; margin-top: 10px;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="symbols-guide">
-            <h3>📐 Símbolos de Diagramas de Flujo</h3>
-            <p>Conoce los símbolos estándar utilizados en la creación de diagramas de flujo:</p>
-            
-            <div class="symbols-grid">
-                <div class="symbol-item">
-                    <div class="symbol terminal">○</div>
-                    <span>Inicio/Fin</span>
-                </div>
-                <div class="symbol-item">
-                    <div class="symbol process">□</div>
-                    <span>Proceso</span>
-                </div>
-                <div class="symbol-item">
-                    <div class="symbol decision">◇</div>
-                    <span>Decisión</span>
-                </div>
-                <div class="symbol-item">
-                    <div class="symbol input">▱</div>
-                    <span>Entrada/Salida</span>
-                </div>
-                <div class="symbol-item">
-                    <div class="symbol connector">○</div>
-                    <span>Conector</span>
-                </div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>Ejercicios de Diagramas de Flujo - Práctica de Algoritmos y Programación</p>
-        </footer>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <footer>
+      <p>Ejercicios de Diagramas de Flujo - Práctica de Algoritmos y Programación</p>
+    </footer>
+  </div>
 
     <script>
         // Datos de los ejercicios
