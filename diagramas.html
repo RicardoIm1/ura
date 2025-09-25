@@ -4,17 +4,133 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicios de Diagramas de Flujo</title>
-  <link rel="stylesheet" href="estilos2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* CSS específico para esta página */
+    :root {
+      --apple-black: #1d1d1f;
+      --apple-dark-gray: #86868b;
+      --apple-light-gray: #f5f5f7;
+      --apple-blue: #0071e3;
+      --apple-blue-hover: #0077ed;
+      --apple-gradient: linear-gradient(135deg, var(--apple-vibrant-blue), #8A2BE2);
+      --apple-border-radius: 12px;
+      --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      --apple-vibrant-blue: #0077CC;
+      --apple-vibrant-orange: #FF9500;
+      --apple-vibrant-green: #34C759;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+    
+    body {
+      background: #ffffff;
+      color: var(--apple-black);
+      line-height: 1.47059;
+      font-weight: 400;
+      letter-spacing: -0.022em;
+    }
+    
+    /* Header estilo Apple */
+    header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 22px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--apple-black);
+    }
+    
+    /* Hero section */
+    .hero {
+      background: var(--apple-gradient);
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    }
+    
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.003em;
+      position: relative;
+      z-index: 2;
+    }
+    
     .hero-subtitle {
       font-size: 24px;
       font-weight: 400;
       max-width: 700px;
       margin: 0 auto 30px;
       color: rgba(255, 255, 255, 0.9);
+      position: relative;
+      z-index: 2;
     }
     
+    /* Container general */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 22px;
+    }
+    
+    .section-title {
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 60px;
+      letter-spacing: -0.003em;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 21px;
+      color: var(--apple-dark-gray);
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Grid de ejercicios */
     .exercises-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -32,6 +148,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
     }
     
     .exercise-card:hover {
@@ -179,6 +296,75 @@
     .input { background: var(--apple-vibrant-orange); }
     .connector { background: #f59e0b; border-radius: 50%; }
     
+    /* Botón estilo Apple */
+    .apple-button {
+      display: inline-block;
+      background-color: var(--apple-vibrant-blue);
+      color: white;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 500;
+      padding: 14px 30px;
+      border-radius: 980px;
+      transition: var(--apple-transition);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .apple-button:hover {
+      background-color: var(--apple-vibrant-green);
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .apple-button:active {
+      transform: scale(0.98);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    /* Mejoras adicionales */
+    .modal-section-title {
+      color: var(--apple-vibrant-blue);
+      margin: 25px 0 15px;
+      font-size: 1.3rem;
+    }
+    
+    #drawing-area {
+      height: 300px; 
+      background: white; 
+      border: 1px solid #cbd5e1; 
+      border-radius: 6px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: #94a3b8;
+      margin: 15px 0;
+    }
+    
+    #solution-content {
+      background: #f0f9ff; 
+      padding: 15px; 
+      border-radius: 6px; 
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 22px;
+      font-size: 17px;
+      color: var(--apple-dark-gray);
+      background: var(--apple-light-gray);
+      margin-top: 80px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
     /* Responsive específico */
     @media (max-width: 768px) {
       .exercises-grid { 
@@ -207,54 +393,21 @@
       .hero-subtitle {
         font-size: 19px;
       }
-    }
-    
-    /* Mejoras adicionales */
-    .section-subtitle {
-      text-align: center;
-      font-size: 21px;
-      color: var(--apple-dark-gray);
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .exercise-emoji {
-      font-size: 1.5rem;
-    }
-    
-    .modal-section-title {
-      color: var(--apple-vibrant-blue);
-      margin: 25px 0 15px;
-      font-size: 1.3rem;
-    }
-    
-    #drawing-area {
-      height: 300px; 
-      background: white; 
-      border: 1px solid #cbd5e1; 
-      border-radius: 6px; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: #94a3b8;
-      margin: 15px 0;
-    }
-    
-    #solution-content {
-      background: #f0f9ff; 
-      padding: 15px; 
-      border-radius: 6px; 
-      margin-top: 10px;
-      line-height: 1.6;
+      
+      .section-title {
+        font-size: 32px;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Header estilo Apple -->
   <header>
+<header>
     <div class="header-content">
+      <a href="index.html">
+        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+      </a>
       <div class="header-title">Ejercicios de Diagramas de Flujo</div>
     </div>
   </header>
@@ -270,49 +423,49 @@
   <div class="container">
     <section id="exercises">
       <h2 class="section-title">Ejercicios Disponibles</h2>
-      <p class="section-subtitle">Selecciona un ejercicio para ver su descripción detallada, objetivos de aprendizaje y solución propuesta.</p>
+      <p class="section-subtitle">Haz clic en cualquier ejercicio para ver su descripción detallada, objetivos de aprendizaje y solución propuesta.</p>
       
       <div class="exercises-grid">
-        <div class="exercise-card">
-          <h2 class="exercise-title"><span class="exercise-emoji">🔢</span> Ejercicio 1: Número Par o Impar</h2>
+        <div class="exercise-card" onclick="showExercise(1)">
+          <h2 class="exercise-title">Ejercicio 1: Número Par o Impar</h2>
           <span class="difficulty easy">Fácil</span>
           <p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p>
-          <button class="apple-button" onclick="showExercise(1)">Ver Ejercicio</button>
+          <div class="exercise-action">Haz clic para ver detalles</div>
         </div>
         
-        <div class="exercise-card">
-          <h2 class="exercise-title"><span class="exercise-emoji">📊</span> Ejercicio 2: Calcular Promedio</h2>
+        <div class="exercise-card" onclick="showExercise(2)">
+          <h2 class="exercise-title">Ejercicio 2: Calcular Promedio</h2>
           <span class="difficulty easy">Fácil</span>
           <p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p>
-          <button class="apple-button" onclick="showExercise(2)">Ver Ejercicio</button>
+          <div class="exercise-action">Haz clic para ver detalles</div>
         </div>
         
-        <div class="exercise-card">
-          <h2 class="exercise-title"><span class="exercise-emoji">🔍</span> Ejercicio 3: Número Mayor</h2>
+        <div class="exercise-card" onclick="showExercise(3)">
+          <h2 class="exercise-title">Ejercicio 3: Número Mayor</h2>
           <span class="difficulty medium">Medio</span>
           <p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p>
-          <button class="apple-button" onclick="showExercise(3)">Ver Ejercicio</button>
+          <div class="exercise-action">Haz clic para ver detalles</div>
         </div>
         
-        <div class="exercise-card">
-          <h2 class="exercise-title"><span class="exercise-emoji">🔄</span> Ejercicio 4: Serie Fibonacci</h2>
+        <div class="exercise-card" onclick="showExercise(4)">
+          <h2 class="exercise-title">Ejercicio 4: Serie Fibonacci</h2>
           <span class="difficulty medium">Medio</span>
           <p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p>
-          <button class="apple-button" onclick="showExercise(4)">Ver Ejercicio</button>
+          <div class="exercise-action">Haz clic para ver detalles</div>
         </div>
         
-        <div class="exercise-card">
-          <h2 class="exercise-title"><span class="exercise-emoji">🎯</span> Ejercicio 5: Adivina el Número</h2>
+        <div class="exercise-card" onclick="showExercise(5)">
+          <h2 class="exercise-title">Ejercicio 5: Adivina el Número</h2>
           <span class="difficulty hard">Difícil</span>
           <p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p>
-          <button class="apple-button" onclick="showExercise(5)">Ver Ejercicio</button>
+          <div class="exercise-action">Haz clic para ver detalles</div>
         </div>
         
-        <div class="exercise-card">
-          <h2 class="exercise-title"><span class="exercise-emoji">📈</span> Ejercicio 6: Estadísticas Básicas</h2>
+        <div class="exercise-card" onclick="showExercise(6)">
+          <h2 class="exercise-title">Ejercicio 6: Estadísticas Básicas</h2>
           <span class="difficulty hard">Difícil</span>
           <p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p>
-          <button class="apple-button" onclick="showExercise(6)">Ver Ejercicio</button>
+          <div class="exercise-action">Haz clic para ver detalles</div>
         </div>
       </div>
     </section>
@@ -326,13 +479,13 @@
 
         <div class="flowchart-container">
           <div class="flowchart-problem">
-            <h3 class="modal-section-title">📝 Enunciado del Problema</h3>
+            <h3 class="modal-section-title">Enunciado del Problema</h3>
             <p id="problem-statement" style="margin-top: 10px;"></p>
 
-            <h3 class="modal-section-title">🎯 Objetivos de Aprendizaje</h3>
+            <h3 class="modal-section-title">Objetivos de Aprendizaje</h3>
             <ul id="learning-objectives" style="margin-top: 10px; padding-left: 20px;"></ul>
 
-            <h3 class="modal-section-title">💡 Pistas y Sugerencias</h3>
+            <h3 class="modal-section-title">Pistas y Sugerencias</h3>
             <ul id="hints" style="margin-top: 10px; padding-left: 20px;"></ul>
 
             <div style="margin-top: 25px;">
@@ -342,7 +495,7 @@
           </div>
 
           <div class="flowchart-diagram">
-            <h3 class="modal-section-title">📊 Área de Trabajo</h3>
+            <h3 class="modal-section-title">Área de Trabajo</h3>
             <p style="margin: 15px 0; font-style: italic; color: var(--apple-dark-gray);">
               Dibuja tu diagrama de flujo aquí o en papel según las indicaciones de tu profesor.
             </p>
@@ -359,7 +512,7 @@
     </div>
 
     <section class="symbols-guide">
-      <h3 style="color: var(--apple-vibrant-blue);">📐 Símbolos de Diagramas de Flujo</h3>
+      <h3 style="color: var(--apple-vibrant-blue);">Símbolos de Diagramas de Flujo</h3>
       <p style="color: var(--apple-dark-gray);">Conoce los símbolos estándar utilizados en la creación de diagramas de flujo:</p>
       
       <div class="symbols-grid">
