@@ -3542,274 +3542,149 @@
               </li>
 
             <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
-            
-              <h4>📝 ¿Qué es un Sistema de Ecuaciones?</h4>
-              <ul>
-                <li>Dos ecuaciones con dos variables que deben cumplirse <span style='color: #e74c3c;'>al mismo tiempo</span></li>
-                <li>Forma general: 
-                  <div style='background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;'>
-                    <strong>a₁x + b₁y = c₁</strong><br>
-                    <strong>a₂x + b₂y = c₂</strong>
-                  </div>
-                </li>
-                <li>La solución es el <span style='color: #3498db;'>punto (x,y)</span> donde las dos rectas se cruzan</li>
-              </ul>
+  <hr>
+  <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
 
-              <h4>🎯 Métodos de Solución</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background: #3498db; color: white;'>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>Método</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>¿Cómo funciona?</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>Cuándo usarlo</th>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Sustitución</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Despejar una variable y reemplazar</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Cuando una variable es fácil de despejar</td>
-                </tr>
-                <tr style='background: #f8f9fa;'>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Igualación</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Despejar la misma variable en ambas</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Cuando ambas variables son fáciles de despejar</td>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Reducción</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Sumar/restar ecuaciones para eliminar</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Cuando los coeficientes son similares</td>
-                </tr>
-              </table>
+  <h4>📝 ¿Qué es un Sistema de Ecuaciones?</h4>
+  <ul>
+    <li>Dos ecuaciones con dos variables que deben cumplirse <u>simultáneamente</u>.</li>
+    <li>Forma general:<br>
+      a₁x + b₁y = c₁ <br>
+      a₂x + b₂y = c₂
+    </li>
+    <li>La solución es el <b>punto (x,y)</b> donde ambas rectas se cruzan.</li>
+  </ul>
 
-              <h4>🔢 EJEMPLO 1: Método de Sustitución (Súper Fácil)</h4>
-              <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
-                <strong>Sistema:</strong><br>
-                <span style='color: #e74c3c;'>x + y = 5</span> ... (1)<br>
-                <span style='color: #3498db;'>x - y = 1</span> ... (2)
-              </div>
+  <h4>🎯 Métodos de Solución</h4>
+  <table border='1' cellpadding='6'>
+    <tr>
+      <th>Método</th>
+      <th>¿Cómo funciona?</th>
+      <th>Cuándo usarlo</th>
+    </tr>
+    <tr>
+      <td><b>Sustitución</b></td>
+      <td>Despejar una variable y reemplazar</td>
+      <td>Cuando una variable es fácil de aislar</td>
+    </tr>
+    <tr>
+      <td><b>Igualación</b></td>
+      <td>Despejar la misma variable en ambas</td>
+      <td>Cuando ambas son fáciles de despejar</td>
+    </tr>
+    <tr>
+      <td><b>Reducción</b></td>
+      <td>Sumar o restar ecuaciones para eliminar</td>
+      <td>Cuando los coeficientes son semejantes</td>
+    </tr>
+  </table>
 
-              <p><strong>📋 Pasos Resueltos:</strong></p>
-              <ol>
-                <li><span style='color: #e74c3c;'>Despejar x en ecuación (1):</span> x = 5 - y</li>
-                <li><span style='color: #e74c3c;'>Sustituir en ecuación (2):</span> (5 - y) - y = 1</li>
-                <li><span style='color: #e74c3c;'>Resolver para y:</span> 5 - 2y = 1 → -2y = -4 → y = 2</li>
-                <li><span style='color: #e74c3c;'>Calcular x:</span> x = 5 - 2 = 3</li>
-                <li><span style='color: #27ae60;'>✅ Verificar:</span> 3 + 2 = 5 ✓, 3 - 2 = 1 ✓</li>
-              </ol>
-              <div style='background: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;'>
-                <strong>SOLUCIÓN: x = 3, y = 2</strong>
-              </div>
+  <h4>🔢 EJEMPLO 1: Método de Sustitución</h4>
+  Sistema:  
+  (1) x + y = 5  
+  (2) x - y = 1  
 
-              <h4>📈 Representación Gráfica del Sistema</h4>
-              <div style='background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; border: 1px solid #e0e0e0;'>
-                  <div style='text-align: center; margin-bottom: 15px;'>
-                      <strong style='color: #e74c3c;'>y = 5 - x</strong> | 
-                      <strong style='color: #3498db;'>y = x - 1</strong> | 
-                      <strong style='color: #27ae60;'>Solución: (3,2)</strong>
-                  </div>
-                  
-                  <!-- Gráfica simplificada y correcta -->
-                  <div style='text-align: center; margin: 20px 0;'>
-                      <div style='display: inline-block; position: relative; background: white; padding: 20px; border-radius: 5px;'>
-                          <!-- Plano cartesiano simple -->
-                          <div style='font-family: monospace; line-height: 1; font-size: 14px; color: #333;'>
-                              <div style='margin-bottom: 5px;'>y ↑</div>
-                              <div>5 │&nbsp;&nbsp;• (0,5)</div>
-                              <div>4 │&nbsp;&nbsp;•</div>
-                              <div>3 │&nbsp;&nbsp;•</div>
-                              <div style='color: #27ae60;'>2 │&nbsp;&nbsp;• (3,2) ← SOLUCIÓN</div>
-                              <div>1 │&nbsp;&nbsp;•</div>
-                              <div>0 ┼──┼──┼──┼──┼──┼──→ x</div>
-                              <div>&nbsp;&nbsp;&nbsp;-1 0 1 2 <span style='color: #27ae60;'>3</span> 4 5</div>
-                              <div style='margin-top: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• (0,-1)</div>
-                          </div>
-                      </div>
-                  </div>
-              
-                  <!-- Tabla de valores limpia -->
-                  <div style='max-width: 300px; margin: 0 auto;'>
-                      <table style='width: 100%; border-collapse: collapse; font-size: 14px; background: white;'>
-                          <tr style='background: #34495e; color: white;'>
-                              <th style='padding: 10px; border: 1px solid #ddd;'>x</th>
-                              <th style='padding: 10px; border: 1px solid #ddd;'>y₁ = 5-x</th>
-                              <th style='padding: 10px; border: 1px solid #ddd;'>y₂ = x-1</th>
-                          </tr>
-                          <tr>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>0</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>5</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>-1</td>
-                          </tr>
-                          <tr>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>1</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>4</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>0</td>
-                          </tr>
-                          <tr>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>2</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>3</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>1</td>
-                          </tr>
-                          <tr style='background: #27ae60; color: white;'>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: bold;'>3</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: bold;'>2</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: bold;'>2</td>
-                          </tr>
-                          <tr>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>4</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>1</td>
-                              <td style='padding: 8px; border: 1px solid #ddd; text-align: center;'>3</td>
-                          </tr>
-                      </table>
-                  </div>
-              
-                  <!-- Explicación matemática clara -->
-                  <div style='margin-top: 20px; padding: 15px; background: white; border-radius: 5px; border-left: 4px solid #3498db;'>
-                      <strong>📐 Interpretación Geométrica:</strong>
-                      <div style='margin-top: 10px;'>
-                          <div style='color: #e74c3c; margin: 5px 0;'>• <strong>Recta 1 (y = 5 - x):</strong> Pendiente = -1, intercepto y = 5</div>
-                          <div style='color: #3498db; margin: 5px 0;'>• <strong>Recta 2 (y = x - 1):</strong> Pendiente = 1, intercepto y = -1</div>
-                          <div style='color: #27ae60; margin: 5px 0;'>• <strong>Intersección:</strong> Ambas ecuaciones son verdaderas cuando x=3, y=2</div>
-                      </div>
-                  </div>
-              </div>
+  <p><b>Pasos:</b></p>
+  <ol>
+    <li>De (1): x = 5 - y</li>
+    <li>Sustituir en (2): (5 - y) - y = 1</li>
+    <li>5 - 2y = 1 ⇔ -2y = -4 ⇔ y = 2</li>
+    <li>x = 5 - 2 = 3</li>
+    <li>Verificación:  
+      3 + 2 = 5 ✓  
+      3 - 2 = 1 ✓
+    </li>
+  </ol>
+  ∴ Solución: (x, y) = (3, 2)
 
-            <h4>⚖️ EJEMPLO 2: Método de Igualación</h4>
-              <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
-                <strong>Sistema:</strong><br>
-                <span style='color: #e74c3c;'>2x + y = 8</span> ... (1)<br>
-                <span style='color: #3498db;'>x - y = 1</span> ... (2)
-              </div>
+  <h4>📈 Representación Gráfica</h4>
+  Ecuaciones:  
+  y = 5 - x  
+  y = x - 1  
+  Solución: (3, 2)
 
-              <p><strong>📋 Pasos Resueltos:</strong></p>
-              <ol>
-                <li><span style='color: #e74c3c;'>Despejar y en ambas ecuaciones:</span></li>
-                <ul>
-                  <li>De (1): y = 8 - 2x</li>
-                  <li>De (2): y = x - 1</li>
-                </ul>
-                <li><span style='color: #e74c3c;'>Igualar:</span> 8 - 2x = x - 1</li>
-                <li><span style='color: #e74c3c;'>Resolver para x:</span> 8 + 1 = x + 2x → 9 = 3x → x = 3</li>
-                <li><span style='color: #e74c3c;'>Calcular y:</span> y = 3 - 1 = 2</li>
-                <li><span style='color: #27ae60;'>✅ Verificar:</span> 2(3) + 2 = 8 ✓, 3 - 2 = 1 ✓</li>
-              </ol>
-              <div style='background: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;'>
-                <strong>SOLUCIÓN: x = 3, y = 2</strong>
-              </div>
+  <h4>🔢 EJEMPLO 2: Método de Igualación</h4>
+  Sistema:  
+  (1) 2x + y = 8  
+  (2) x - y = 1  
 
-              <h4>➕ EJEMPLO 3: Método de Reducción</h4>
-              <div style='background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;'>
-                <strong>Sistema:</strong><br>
-                <span style='color: #e74c3c;'>3x + 2y = 12</span> ... (1)<br>
-                <span style='color: #3498db;'>2x + 2y = 10</span> ... (2)
-              </div>
+  <p><b>Pasos:</b></p>
+  <ol>
+    <li>De (1): y = 8 - 2x</li>
+    <li>De (2): y = x - 1</li>
+    <li>Igualar: 8 - 2x = x - 1</li>
+    <li>8 + 1 = 3x ⇔ x = 3</li>
+    <li>y = 3 - 1 = 2</li>
+    <li>Verificación:  
+      2·3 + 2 = 8 ✓  
+      3 - 2 = 1 ✓
+    </li>
+  </ol>
+  ∴ Solución: (3, 2)
 
-              <p><strong>📋 Pasos Resueltos:</strong></p>
-              <ol>
-                <li><span style='color: #e74c3c;'>Restar ecuación (2) de (1):</span> (3x + 2y) - (2x + 2y) = 12 - 10</li>
-                <li><span style='color: #e74c3c;'>Simplificar:</span> x = 2</li>
-                <li><span style='color: #e74c3c;'>Sustituir x en (2):</span> 2(2) + 2y = 10 → 4 + 2y = 10</li>
-                <li><span style='color: #e74c3c;'>Resolver para y:</span> 2y = 6 → y = 3</li>
-                <li><span style='color: #27ae60;'>✅ Verificar:</span> 3(2) + 2(3) = 12 ✓, 2(2) + 2(3) = 10 ✓</li>
-              </ol>
-              <div style='background: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;'>
-                <strong>SOLUCIÓN: x = 2, y = 3</strong>
-              </div>
+  <h4>➕ EJEMPLO 3: Método de Reducción</h4>
+  Sistema:  
+  (1) 3x + 2y = 12  
+  (2) 2x + 2y = 10  
 
-              <h4>📈 Tabla de Valores para Graficar</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background: #3498db; color: white;'>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>x</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>y = 5 - x</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>y = x - 1</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>Punto</th>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>0</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>5</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>-1</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>(0,5) y (0,-1)</td>
-                </tr>
-                <tr style='background: #f8f9fa;'>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>1</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>4</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>0</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>(1,4) y (1,0)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>2</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>3</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>1</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>(2,3) y (2,1)</td>
-                </tr>
-                <tr style='background: #f8f9fa;'>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>3</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>2</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>2</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd; background: #2ecc71; color: white;'><strong>(3,2) ✓ SOLUCIÓN</strong></td>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>4</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>1</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>3</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>(4,1) y (4,3)</td>
-                </tr>
-              </table>
+  <p><b>Pasos:</b></p>
+  <ol>
+    <li>(1) - (2): (3x+2y) - (2x+2y) = 12 - 10</li>
+    <li>x = 2</li>
+    <li>Sustituir en (2): 2·2 + 2y = 10 ⇔ 4 + 2y = 10</li>
+    <li>2y = 6 ⇔ y = 3</li>
+    <li>Verificación:  
+      3·2 + 2·3 = 12 ✓  
+      2·2 + 2·3 = 10 ✓
+    </li>
+  </ol>
+  ∴ Solución: (2, 3)
 
-              <h4>🎯 Tipos de Sistemas</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background: #3498db; color: white;'>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>Tipo</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>¿Qué significa?</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>Gráfica</th>
-                  <th style='padding: 10px; border: 1px solid #ddd;'>Ejemplo</th>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Compatible Determinado</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>1 solución única</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Rectas que se cortan</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>x+y=5, x-y=1</td>
-                </tr>
-                <tr style='background: #f8f9fa;'>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Compatible Indeterminado</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Infinitas soluciones</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Rectas iguales</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>2x+2y=4, x+y=2</td>
-                </tr>
-                <tr>
-                  <td style='padding: 10px; border: 1px solid #ddd;'><strong>Incompatible</strong></td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>No tiene solución</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>Rectas paralelas</td>
-                  <td style='padding: 10px; border: 1px solid #ddd;'>x+y=3, x+y=5</td>
-                </tr>
-              </table>
+  <h4>🎯 Tipos de Sistemas</h4>
+  <table border='1' cellpadding='6'>
+    <tr>
+      <th>Tipo</th>
+      <th>Significado</th>
+      <th>Gráfica</th>
+      <th>Ejemplo</th>
+    </tr>
+    <tr>
+      <td><b>Compatible Determinado</b></td>
+      <td>1 solución</td>
+      <td>Rectas que se cortan</td>
+      <td>x + y = 5, x - y = 1</td>
+    </tr>
+    <tr>
+      <td><b>Compatible Indeterminado</b></td>
+      <td>Infinitas soluciones</td>
+      <td>Rectas coincidentes</td>
+      <td>2x + 2y = 4, x + y = 2</td>
+    </tr>
+    <tr>
+      <td><b>Incompatible</b></td>
+      <td>Sin solución</td>
+      <td>Rectas paralelas</td>
+      <td>x + y = 3, x + y = 5</td>
+    </tr>
+  </table>
 
-              <h4>💡 Consejos para Resolver</h4>
-              <div style='background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ffc107;'>
-                <strong>✅ Siempre hacer:</strong>
-                <ul>
-                  <li>Verificar la solución en ambas ecuaciones</li>
-                  <li>Usar el método más fácil para cada sistema</li>
-                  <li>Revisar los signos (+/-) cuidadosamente</li>
-                  <li>Simplificar las ecuaciones primero</li>
-                </ul>
-                
-                <strong>❌ Evitar:</strong>
-                <ul>
-                  <li>Olvidar verificar la solución</li>
-                  <li>Errores con signos negativos</li>
-                  <li>No simplificar fracciones</li>
-                  <li>Confundir los valores de x e y</li>
-                </ul>
-              </div>
+  <h4>💡 Consejos</h4>
+  ✓ Verificar la solución en ambas ecuaciones<br>
+  ✓ Elegir el método más sencillo<br>
+  ✓ Revisar signos (+/−)<br>
+  ✓ Simplificar primero<br><br>
+  ✗ No olvidar verificar<br>
+  ✗ Cuidado con los signos<br>
+  ✗ No confundir x e y
 
-              <h4>📚 Fuentes de Consulta</h4>
-              <ul>
-                <li>Baldor, A. <em>Álgebra</em> - Ejercicios resueltos paso a paso</li>
-                <li>Swokowski, E. W. <em>Álgebra y trigonometría</em> - Explicaciones detalladas</li>
-                <li>Stewart, J. <em>Precálculo</em> - Aplicaciones prácticas</li>
-              </ul>
-            `)">2.2.2. Solucion de sistemas de dos ecuaciones con dos incógnitas de primer grado <span class="emoji-small">✅</span>
-            </li>
+  <h4>📚 Fuentes</h4>
+  <ul>
+    <li>Baldor, A. <i>Álgebra</i></li>
+    <li>Swokowski, E. W. <i>Álgebra y trigonometría</i></li>
+    <li>Stewart, J. <i>Precálculo</i></li>
+  </ul>
+`)">2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado ✅</li>
+
           </ul>
         </ul>
       </div>
