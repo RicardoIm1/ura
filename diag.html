@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Diagramas de Flujo</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --light: #f8fafc;
+            --dark: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: var(--dark);
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .exercise-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .exercise-title {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .exercise-title i {
+            font-size: 1.6rem;
+        }
+        
+        .exercise-description {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .difficulty {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .easy { background: #d1fae5; color: #065f46; }
+        .medium { background: #fef3c7; color: #92400e; }
+        .hard { background: #fee2e2; color: #991b1b; }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #6d28d9;
+        }
+        
+        .flowchart-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .flowchart-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .flowchart-problem {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .flowchart-diagram {
+            flex: 1;
+            min-width: 300px;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px dashed #cbd5e1;
+        }
+        
+        .symbols-guide {
+            background: #f0f9ff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .symbol-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+        }
+        
+        .symbol {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .terminal { background: #ef4444; }
+        .process { background: #3b82f6; }
+        .decision { background: #10b981; transform: rotate(45deg); width: 40px; height: 40px; }
+        .input { background: #8b5cf6; }
+        .connector { background: #f59e0b; border-radius: 50%; }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flowchart-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ejercicios de Diagramas de Flujo</h1>
+            <p class="subtitle">Practica y domina la representación gráfica de algoritmos</p>
+        </header>
+        
+        <section class="exercises-grid">
+            <div class="exercise-card">
+                <h2 class="exercise-title">
+                    <span>🔢</span> Ejercicio 1: Número Par o Impar
+                </h2>
+                <span class="difficulty easy">Fácil</span>
+                <p class="exercise-description">
+                    Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.
+                </p>
+                <button class="btn" onclick="showExercise(1)">Ver Ejercicio</button>
+            </div>
+            
+            <div class="exercise-card">
+                <h2 class="exercise-title">
+                    <span>📊</span> Ejercicio 2: Calcular Promedio
+                </h2>
+                <span class="difficulty easy">Fácil</span>
+                <p class="exercise-description">
+                    Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó (promedio ≥ 6).
+                </p>
+                <button class="btn" onclick="showExercise(2)">Ver Ejercicio</button>
+            </div>
+            
+            <div class="exercise-card">
+                <h2 class="exercise-title">
+                    <span>🔍</span> Ejercicio 3: Número Mayor
+                </h2>
+                <span class="difficulty medium">Medio</span>
+                <p class="exercise-description">
+                    Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.
+                </p>
+                <button class="btn" onclick="showExercise(3)">Ver Ejercicio</button>
+            </div>
+            
+            <div class="exercise-card">
+                <h2 class="exercise-title">
+                    <span>🔄</span> Ejercicio 4: Serie Fibonacci
+                </h2>
+                <span class="difficulty medium">Medio</span>
+                <p class="exercise-description">
+                    Crear un diagrama que genere los primeros N números de la serie Fibonacci, donde N es proporcionado por el usuario.
+                </p>
+                <button class="btn" onclick="showExercise(4)">Ver Ejercicio</button>
+            </div>
+            
+            <div class="exercise-card">
+                <h2 class="exercise-title">
+                    <span>🎯</span> Ejercicio 5: Adivina el Número
+                </h2>
+                <span class="difficulty hard">Difícil</span>
+                <p class="exercise-description">
+                    Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100, con pistas de "mayor" o "menor".
+                </p>
+                <button class="btn" onclick="showExercise(5)">Ver Ejercicio</button>
+            </div>
+            
+            <div class="exercise-card">
+                <h2 class="exercise-title">
+                    <span>📈</span> Ejercicio 6: Estadísticas Básicas
+                </h2>
+                <span class="difficulty hard">Difícil</span>
+                <p class="exercise-description">
+                    Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números ingresados por el usuario.
+                </p>
+                <button class="btn" onclick="showExercise(6)">Ver Ejercicio</button>
+            </div>
+        </section>
+        
+        <section id="exercise-detail" class="flowchart-section" style="display: none;">
+            <h2 id="exercise-detail-title" style="color: var(--primary); margin-bottom: 15px;"></h2>
+            <p id="exercise-detail-description"></p>
+            
+            <div class="flowchart-container">
+                <div class="flowchart-problem">
+                    <h3>📝 Enunciado del Problema</h3>
+                    <p id="problem-statement" style="margin-top: 10px;"></p>
+                    
+                    <h3 style="margin-top: 20px;">🎯 Objetivos de Aprendizaje</h3>
+                    <ul id="learning-objectives" style="margin-top: 10px; padding-left: 20px;"></ul>
+                    
+                    <h3 style="margin-top: 20px;">💡 Pistas y Sugerencias</h3>
+                    <ul id="hints" style="margin-top: 10px; padding-left: 20px;"></ul>
+                    
+                    <div style="margin-top: 25px;">
+                        <button class="btn" onclick="showSolution()">Ver Solución Propuesta</button>
+                        <button class="btn btn-secondary" onclick="resetExercise()" style="margin-left: 10px;">Nuevo Ejercicio</button>
+                    </div>
+                </div>
+                
+                <div class="flowchart-diagram">
+                    <h3>📊 Área de Trabajo</h3>
+                    <p style="margin: 15px 0; font-style: italic; color: #64748b;">
+                        Dibuja tu diagrama de flujo aquí o en papel según las indicaciones de tu profesor.
+                    </p>
+                    <div id="drawing-area" style="height: 300px; background: white; border: 1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                        Área para dibujar el diagrama
+                    </div>
+                    <div id="proposed-solution" style="display: none; margin-top: 20px;">
+                        <h4>Solución Propuesta:</h4>
+                        <div id="solution-content" style="background: #f0f9ff; padding: 15px; border-radius: 6px; margin-top: 10px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="symbols-guide">
+            <h3>📐 Símbolos de Diagramas de Flujo</h3>
+            <p>Conoce los símbolos estándar utilizados en la creación de diagramas de flujo:</p>
+            
+            <div class="symbols-grid">
+                <div class="symbol-item">
+                    <div class="symbol terminal">○</div>
+                    <span>Inicio/Fin</span>
+                </div>
+                <div class="symbol-item">
+                    <div class="symbol process">□</div>
+                    <span>Proceso</span>
+                </div>
+                <div class="symbol-item">
+                    <div class="symbol decision">◇</div>
+                    <span>Decisión</span>
+                </div>
+                <div class="symbol-item">
+                    <div class="symbol input">▱</div>
+                    <span>Entrada/Salida</span>
+                </div>
+                <div class="symbol-item">
+                    <div class="symbol connector">○</div>
+                    <span>Conector</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Ejercicios de Diagramas de Flujo - Práctica de Algoritmos y Programación</p>
+        </footer>
+    </div>
+
+    <script>
+        // Datos de los ejercicios
+        const exercises = {
+            1: {
+                title: "Número Par o Impar",
+                description: "Determinar si un número es par o impar",
+                problem: "Escribe un algoritmo que solicite al usuario un número entero y determine si es par o impar. Muestra el resultado en pantalla.",
+                objectives: [
+                    "Practicar el uso de estructuras condicionales",
+                    "Aplicar el operador módulo para determinar paridad",
+                    "Manejar entrada y salida de datos básicos"
+                ],
+                hints: [
+                    "Recuerda que un número es par si el residuo de dividirlo entre 2 es 0",
+                    "Utiliza el símbolo de decisión para evaluar la condición",
+                    "No olvides los símbolos de inicio y fin del diagrama"
+                ],
+                solution: `
+                    <strong>Diagrama de flujo propuesto:</strong><br><br>
+                    1. INICIO<br>
+                    2. Leer número (N)<br>
+                    3. Si N % 2 == 0 entonces<br>
+                    4. &nbsp;&nbsp;Mostrar "El número es par"<br>
+                    5. Sino<br>
+                    6. &nbsp;&nbsp;Mostrar "El número es impar"<br>
+                    7. FIN<br><br>
+                    <em>Nota: El operador % calcula el residuo de la división.</em>
+                `
+            },
+            2: {
+                title: "Calcular Promedio",
+                description: "Calcular promedio y determinar aprobación",
+                problem: "Diseña un algoritmo que reciba tres calificaciones, calcule el promedio y determine si el alumno aprobó (promedio ≥ 6) o reprobó.",
+                objectives: [
+                    "Practicar operaciones aritméticas básicas",
+                    "Utilizar variables para almacenar múltiples valores",
+                    "Combinar condiciones con cálculos"
+                ],
+                hints: [
+                    "El promedio se calcula sumando las tres calificaciones y dividiendo entre 3",
+                    "Utiliza una variable para almacenar el resultado del promedio",
+                    "Considera qué pasa si el promedio es exactamente 6"
+                ],
+                solution: `
+                    <strong>Diagrama de flujo propuesto:</strong><br><br>
+                    1. INICIO<br>
+                    2. Leer calificación1, calificación2, calificación3<br>
+                    3. promedio = (calificación1 + calificación2 + calificación3) / 3<br>
+                    4. Si promedio ≥ 6 entonces<br>
+                    5. &nbsp;&nbsp;Mostrar "Aprobado con promedio: " + promedio<br>
+                    6. Sino<br>
+                    7. &nbsp;&nbsp;Mostrar "Reprobado con promedio: " + promedio<br>
+                    8. FIN
+                `
+            },
+            3: {
+                title: "Número Mayor",
+                description: "Encontrar el mayor de tres números",
+                problem: "Crear un algoritmo que encuentre e imprima el número mayor de tres valores diferentes proporcionados por el usuario.",
+                objectives: [
+                    "Manejar múltiples condiciones anidadas",
+                    "Comparar valores numéricos",
+                    "Trabajar con variables auxiliares"
+                ],
+                hints: [
+                    "Puedes comparar los números de dos en dos",
+                    "Utiliza una variable para almacenar el valor mayor temporal",
+                    "Considera qué pasa si hay números iguales"
+                ],
+                solution: `
+                    <strong>Diagrama de flujo propuesto:</strong><br><br>
+                    1. INICIO<br>
+                    2. Leer A, B, C<br>
+                    3. Si A > B entonces<br>
+                    4. &nbsp;&nbsp;Si A > C entonces<br>
+                    5. &nbsp;&nbsp;&nbsp;&nbsp;mayor = A<br>
+                    6. &nbsp;&nbsp;Sino<br>
+                    7. &nbsp;&nbsp;&nbsp;&nbsp;mayor = C<br>
+                    8. Sino<br>
+                    9. &nbsp;&nbsp;Si B > C entonces<br>
+                    10. &nbsp;&nbsp;&nbsp;&nbsp;mayor = B<br>
+                    11. &nbsp;&nbsp;Sino<br>
+                    12. &nbsp;&nbsp;&nbsp;&nbsp;mayor = C<br>
+                    13. Mostrar "El número mayor es: " + mayor<br>
+                    14. FIN
+                `
+            },
+            4: {
+                title: "Serie Fibonacci",
+                description: "Generar serie Fibonacci",
+                problem: "Elabora un algoritmo que genere los primeros N términos de la serie Fibonacci, donde N es un número proporcionado por el usuario.",
+                objectives: [
+                    "Implementar estructuras repetitivas (bucles)",
+                    "Comprender la secuencia Fibonacci",
+                    "Manejar variables que cambian en cada iteración"
+                ],
+                hints: [
+                    "La serie Fibonacci comienza con 0 y 1, cada término siguiente es la suma de los dos anteriores",
+                    "Necesitarás un contador para controlar el número de términos a generar",
+                    "Considera casos especiales como N=1 o N=2"
+                ],
+                solution: `
+                    <strong>Diagrama de flujo propuesto:</strong><br><br>
+                    1. INICIO<br>
+                    2. Leer N (número de términos)<br>
+                    3. Si N <= 0 entonces Mostrar "Error" y FIN<br>
+                    4. a = 0, b = 1<br>
+                    5. Mostrar a<br>
+                    6. Si N > 1 entonces Mostrar b<br>
+                    7. contador = 2<br>
+                    8. Mientras contador < N hacer:<br>
+                    9. &nbsp;&nbsp;c = a + b<br>
+                    10. &nbsp;&nbsp;Mostrar c<br>
+                    11. &nbsp;&nbsp;a = b<br>
+                    12. &nbsp;&nbsp;b = c<br>
+                    13. &nbsp;&nbsp;contador = contador + 1<br>
+                    14. FIN
+                `
+            },
+            5: {
+                title: "Adivina el Número",
+                description: "Juego de adivinanza de números",
+                problem: "Diseña un algoritmo para un juego donde la computadora genera un número aleatorio entre 1 y 100, y el usuario debe adivinarlo. El programa debe dar pistas de 'mayor' o 'menor' hasta que el usuario acierte.",
+                objectives: [
+                    "Trabajar con números aleatorios",
+                    "Implementar bucles condicionales",
+                    "Manejar interacción continuada con el usuario"
+                ],
+                hints: [
+                    "Necesitarás una variable para el número aleatorio y otra para el intento del usuario",
+                    "El bucle debe continuar hasta que el usuario adivine correctamente",
+                    "Considera contar el número de intentos"
+                ],
+                solution: `
+                    <strong>Diagrama de flujo propuesto:</strong><br><br>
+                    1. INICIO<br>
+                    2. numeroSecreto = aleatorio(1, 100)<br>
+                    3. intentos = 0<br>
+                    4. Repetir:<br>
+                    5. &nbsp;&nbsp;Leer intentoUsuario<br>
+                    6. &nbsp;&nbsp;intentos = intentos + 1<br>
+                    7. &nbsp;&nbsp;Si intentoUsuario == numeroSecreto entonces<br>
+                    8. &nbsp;&nbsp;&nbsp;&nbsp;Mostrar "¡Correcto! Intentos: " + intentos<br>
+                    9. &nbsp;&nbsp;Sino Si intentoUsuario < numeroSecreto entonces<br>
+                    10. &nbsp;&nbsp;&nbsp;&nbsp;Mostrar "Mayor"<br>
+                    11. &nbsp;&nbsp;Sino<br>
+                    12. &nbsp;&nbsp;&nbsp;&nbsp;Mostrar "Menor"<br>
+                    13. Hasta que intentoUsuario == numeroSecreto<br>
+                    14. FIN
+                `
+            },
+            6: {
+                title: "Estadísticas Básicas",
+                description: "Calcular promedio, máximo y mínimo",
+                problem: "Crear un algoritmo que lea una lista de números (hasta que el usuario ingrese 0) y calcule el promedio, el valor máximo y el valor mínimo de todos los números ingresados.",
+                objectives: [
+                    "Manejar listas de datos de longitud variable",
+                    "Calcular múltiples estadísticas en un solo algoritmo",
+                    "Trabajar con valores iniciales para máximo y mínimo"
+                ],
+                hints: [
+                    "Inicializa el máximo con un valor muy pequeño y el mínimo con un valor muy grande",
+                    "Necesitarás contadores para saber cuántos números se ingresaron",
+                    "El 0 debe servir como señal para terminar la entrada, no debe incluirse en los cálculos"
+                ],
+                solution: `
+                    <strong>Diagrama de flujo propuesto:</strong><br><br>
+                    1. INICIO<br>
+                    2. suma = 0, contador = 0, maximo = -infinito, minimo = infinito<br>
+                    3. Leer numero<br>
+                    4. Mientras numero != 0 hacer:<br>
+                    5. &nbsp;&nbsp;suma = suma + numero<br>
+                    6. &nbsp;&nbsp;contador = contador + 1<br>
+                    7. &nbsp;&nbsp;Si numero > maximo entonces maximo = numero<br>
+                    8. &nbsp;&nbsp;Si numero < minimo entonces minimo = numero<br>
+                    9. &nbsp;&nbsp;Leer numero<br>
+                    10. Si contador > 0 entonces:<br>
+                    11. &nbsp;&nbsp;promedio = suma / contador<br>
+                    12. &nbsp;&nbsp;Mostrar "Promedio: " + promedio<br>
+                    13. &nbsp;&nbsp;Mostrar "Máximo: " + maximo<br>
+                    14. &nbsp;&nbsp;Mostrar "Mínimo: " + minimo<br>
+                    15. Sino<br>
+                    16. &nbsp;&nbsp;Mostrar "No se ingresaron números"<br>
+                    17. FIN
+                `
+            }
+        };
+
+        // Función para mostrar el ejercicio seleccionado
+        function showExercise(exerciseId) {
+            const exercise = exercises[exerciseId];
+            document.getElementById('exercise-detail-title').textContent = `Ejercicio ${exerciseId}: ${exercise.title}`;
+            document.getElementById('exercise-detail-description').textContent = exercise.description;
+            document.getElementById('problem-statement').textContent = exercise.problem;
+            
+            // Objetivos de aprendizaje
+            const objectivesList = document.getElementById('learning-objectives');
+            objectivesList.innerHTML = '';
+            exercise.objectives.forEach(obj => {
+                const li = document.createElement('li');
+                li.textContent = obj;
+                objectivesList.appendChild(li);
+            });
+            
+            // Pistas y sugerencias
+            const hintsList = document.getElementById('hints');
+            hintsList.innerHTML = '';
+            exercise.hints.forEach(hint => {
+                const li = document.createElement('li');
+                li.textContent = hint;
+                hintsList.appendChild(li);
+            });
+            
+            // Ocultar solución si estaba visible
+            document.getElementById('proposed-solution').style.display = 'none';
+            
+            // Mostrar la sección de detalle
+            document.getElementById('exercise-detail').style.display = 'block';
+            
+            // Scroll hacia la sección de detalle
+            document.getElementById('exercise-detail').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Función para mostrar la solución
+        function showSolution() {
+            document.getElementById('proposed-solution').style.display = 'block';
+            // En una implementación real, aquí cargaríamos la solución específica
+            document.getElementById('solution-content').innerHTML = exercises[1].solution;
+        }
+
+        // Función para resetear el ejercicio
+        function resetExercise() {
+            document.getElementById('proposed-solution').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
