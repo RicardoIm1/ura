@@ -1,143 +1,337 @@
 <!DOCTYPE html>
 <html lang="es">
-  
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Primer Parcial Computación I - Universidad URA</title>
-  <!-- <link rel="stylesheet" href="estilos.css"> -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Primer Parcial - Computación I</title>
+
+  <!-- Usa tu hoja de estilos proporcionada -->
+  <link rel="stylesheet" href="estilos2.css">
+
+  <!-- Pequeñas mejoras específicas para esta página y para impresión carta -->
   <style>
-    /* ====== Estilos generales ====== */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
+    /* Ajustes visuales puntuales (complementarios a estilos2.css) */
+    body {
+      background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,252,1) 100%);
+      padding-bottom: 40px;
+    }
 
-/* ====== Encabezado ====== */
-header {
-  background: #003366;
-  color: #fff;
-  padding: 10px 20px;
-}
+    .exam-sheet {
+      max-width: 820px;
+      margin: 36px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(10,20,40,0.06);
+      padding: 28px 34px;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
 
-.header-content {
-  display: flex;
-  align-items: center;
-}
+    .exam-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
 
-.header-logo {
-  height: 60px;
-  margin-right: 15px;
-}
+    .exam-title {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-.header-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+    .exam-title h1 {
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
 
-/* ====== Hero Section ====== */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(to right, #0055a5, #007acc);
-  color: #fff;
-}
+    .exam-meta {
+      text-align: right;
+      font-size: 14px;
+      color: var(--apple-dark-gray);
+    }
 
-.hero h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
+    .line-input {
+      display: block;
+      width: 100%;
+      height: 30px;
+      border-bottom: 2px solid rgba(0,0,0,0.12);
+      margin-top: 6px;
+    }
 
-.hero h2 {
-  margin: 10px 0 0;
-  font-size: 1.3rem;
-  font-weight: 300;
-}
+    .hint {
+      font-size: 13px;
+      color: var(--apple-dark-gray);
+      margin-top: 6px;
+      font-style: italic;
+    }
 
-/* ====== Contenido ====== */
-.container {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
+    .question {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(249,250,252,1), rgba(255,255,255,1));
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    }
 
-iframe {
-  width: 100%;
-  height: 1000px; /* Ajusta según lo que dure el documento */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    .question h3 {
+      font-size: 16px;
+      margin: 0 0 12px 0;
+    }
 
-/* ====== Footer ====== */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #003366;
-  color: #fff;
-  font-size: 0.9rem;
-  margin-top: 40px;
-}
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-left: 4px;
+    }
 
-/* ====== Estilos para impresión ====== */
-@media print {
-  body {
-    background: #fff;
-    color: #000;
-  }
+    .option-label {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: var(--apple-transition);
+      border: 1px solid rgba(0,0,0,0.04);
+      background: white;
+    }
 
-  header, .hero, footer {
-    text-align: center;
-    color: #000;
-    background: none;
-    border-bottom: 2px solid #000;
-    padding-bottom: 10px;
-  }
+    .option-label:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    }
 
-  .header-logo {
-    height: 50px;
-  }
+    .option-input {
+      transform: translateY(2px);
+      width: 18px;
+      height: 18px;
+    }
 
-  iframe {
-    width: 100%;
-    height: auto;
-    border: none;
-  }
+    .question-footer {
+      margin-top: 10px;
+      color: var(--apple-dark-gray);
+      font-size: 13px;
+    }
 
-  @page {
-    size: letter;
-    margin: 1in;
-  }
-}
+    .controls {
+      display:flex;
+      gap:12px;
+      margin-top: 20px;
+      justify-content: flex-end;
+    }
 
+    .print-note {
+      font-size: 13px;
+      color: var(--apple-dark-gray);
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    /* Prevent card break inside across pages when printing */
+    .question, .exam-header, .ticket-card {
+      page-break-inside: avoid;
+      -webkit-region-break-inside: avoid;
+    }
+
+    /* PRINT STYLES */
+    @page {
+      size: letter portrait;
+      margin: 18mm 16mm;
+    }
+
+    @media print {
+      body { background: white; }
+      .exam-sheet {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 6mm 6mm 8mm 6mm;
+      }
+      header, .controls { display: none; } /* hide interactive header / buttons in print */
+      .question { background: transparent; box-shadow: none; border: none; padding: 8px 0; }
+      .option-label { border: none; padding: 6px 0; }
+      .option-input { transform:none; }
+      .exam-meta { text-align: left; }
+      .line-input {
+        height: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.18);
+      }
+      .print-note { display:none; }
+    }
+
+    /* Responsive smaller screens */
+    @media (max-width:720px) {
+      .exam-sheet { margin: 20px; padding: 18px; }
+      .exam-title h1 { font-size: 18px; }
+      .exam-meta { font-size: 13px; }
+    }
   </style>
 </head>
-  
 <body>
-  
+  <!-- Header digital (oculto en impresión) -->
   <header>
     <div class="header-content">
-      <a href="index.html">
-        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
-      </a>
-      <div class="header-title">Computación I</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;border-radius:10px;background:var(--apple-vibrant-blue);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px">C</div>
+        <div>
+          <div class="header-title">INAR0104 — Computación I</div>
+          <div style="font-size:12px;color:var(--apple-dark-gray)">Primer examen parcial — Formato imprimible</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="apple-button no-style-link" onclick="window.print()" title="Imprimir examen">🖨 Imprimir</button>
+      </div>
     </div>
   </header>
 
-  <div class="hero">
-    <h1>Computación I</h1>
-    <h2>INAR0104</h2>
-  </div>
+  <!-- Hoja del examen -->
+  <main class="exam-sheet" role="main" aria-labelledby="exam-title">
+    <div class="exam-header">
+      <div class="exam-title">
+        <h1 id="exam-title">PRIMER EXAMEN PARCIAL DE COMPUTACIÓN I — INAR0104</h1>
+        <div style="color:var(--apple-dark-gray)">Asegúrate de escribir con claridad: el papel es testigo y el tiempo, un aliado.</div>
+      </div>
 
-  <section class="container">
-    <iframe src="https://docs.google.com/document/d/e/2PACX-1vTcRJBJ2oJj1Syg2yQk4irhdGOyTlcz1-G9XuQK1TrNytZx9NQzvIo3hI798qORrRHwhMPq6B9T7JNb/pub?embedded=true"></iframe>
-  </section>
+      <div class="exam-meta">
+        <div><strong>Nombre:</strong></div>
+        <div><span class="line-input" contenteditable="true" aria-label="Nombre del estudiante"></span></div>
 
-<footer>
-  © 2025 Universidad URA – Asignatura Computación I
-</footer>
+        <div style="height:10px"></div>
+
+        <div><strong>Fecha:</strong></div>
+        <div><span class="line-input" contenteditable="true" aria-label="Fecha"></span></div>
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid rgba(0,0,0,0.06);margin:18px 0">
+
+    <p style="font-size:15px;color:var(--apple-dark-gray)">SELECCIONA LA RESPUESTA CORRECTA:</p>
+
+    <!-- Preguntas: extraídas del docx -->
+    <!-- Pregunta 1 -->
+    <section class="question" aria-labelledby="q1">
+      <h3 id="q1">1 / 8 ¿Cuál es la diferencia fundamental entre la computación análoga y la computación digital, según los temas de introducción?</h3>
+      <div class="options" role="radiogroup" aria-labelledby="q1-options">
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 1. La computación análoga sólo puede realizar cálculos matemáticos simples, y la digital maneja lógica compleja.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 2. La computación análoga es obsoleta y fue reemplazada por la digital, que es más rápida.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 3. La computación análoga procesa señales continuas, mientras que la digital procesa señales discretas.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 4. La computación digital utiliza transistores, mientras que la análoga utilizaba bulbos.</label>
+      </div>
+      <div class="question-footer hint">Pista: Piensa en la diferencia entre una rampa y una escalera para representar un cambio de altura.</div>
+    </section>
+
+    <!-- Pregunta 2 -->
+    <section class="question" aria-labelledby="q2">
+      <h3 id="q2">2 / 8 ¿Qué sistema numérico es la base para el "Almacenamiento en código" en los computadores digitales modernos?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 1. Decimal (base 10)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 2. Binario (base 2)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 3. Octal (base 8)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 4. Hexadecimal (base 16)</label>
+      </div>
+      <div class="question-footer hint">Pista: Considera el sistema numérico que se alinea con los dos estados físicos (encendido/apagado) de un transistor.</div>
+    </section>
+
+    <!-- Pregunta 3 -->
+    <section class="question" aria-labelledby="q3">
+      <h3 id="q3">3 / 8 En la "Organización de los componentes fundamentales del computador", ¿cuál es la función principal de la Unidad de Memoria?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 1. Almacenar temporalmente las instrucciones y los datos que están siendo utilizados por el procesador.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 2. Permitir la comunicación con el usuario a través de dispositivos como el teclado y el monitor.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 3. Controlar y coordinar las operaciones de todos los demás componentes del computador.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 4. Realizar todos los cálculos aritméticos y lógicos.</label>
+      </div>
+      <div class="question-footer hint">Pista: Piensa en dónde debe guardar el computador la información con la que está trabajando en este preciso momento.</div>
+    </section>
+
+    <!-- Pregunta 4 -->
+    <section class="question" aria-labelledby="q4">
+      <h3 id="q4">4 / 8 ¿Qué describe mejor las "Instrucciones en lenguaje de máquina"?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 1. Código escrito en un lenguaje de alto nivel como Java, Python o C++.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 2. Comandos abreviados en inglés, como <code>ADD</code>, <code>STORE</code> o <code>JUMP</code>.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 3. Un conjunto de diagramas de flujo que representan la lógica del programa.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 4. Secuencias de números binarios que el procesador puede ejecutar directamente.</label>
+      </div>
+      <div class="question-footer hint">Pista: Es el único lenguaje que el procesador entiende de forma nativa.</div>
+    </section>
+
+    <!-- Pregunta 5 -->
+    <section class="question" aria-labelledby="q5">
+      <h3 id="q5">5 / 8 Dentro del tema de Programación, ¿cuál de las siguientes opciones es un ejemplo de una "Proposición de asignación aritmética"?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 1. <code>si (promedio &gt; 6) entonces imprimir "Aprobado"</code></label>
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 2. <code>leer(nombre_usuario)</code></label>
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 3. <code>es_mayor_de_edad = (edad &gt;= 18)</code></label>
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 4. <code>promedio = (nota1 + nota2) / 2</code></label>
+      </div>
+      <div class="question-footer hint">Pista: Busca la opción que resuelve una operación matemática y guarda el resultado en una variable.</div>
+    </section>
+
+    <!-- Pregunta 6 -->
+    <section class="question" aria-labelledby="q6">
+      <h3 id="q6">6 / 8 ¿Cuál es el propósito de una "Proposición de flujo" en un programa?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 1. Para declarar variables y especificar su tipo de dato.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 2. Para controlar el orden en que se ejecutan las instrucciones, permitiendo decisiones y repeticiones.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 3. Para organizar el código con comentarios y espacios en blanco para mejorar la legibilidad.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 4. Para realizar operaciones matemáticas complejas.</label>
+      </div>
+      <div class="question-footer hint">Pista: Piensa en cómo un programa puede tomar diferentes caminos o repetir una acción varias veces.</div>
+    </section>
+
+    <!-- Pregunta 7 -->
+    <section class="question" aria-labelledby="q7">
+      <h3 id="q7">7 / 8 Una "Proposición de asignación lógica" típicamente resulta en una variable que almacena uno de dos posibles valores. ¿Cuáles son?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 1. Cadena de texto o Número</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 2. 0 o 1</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 3. Verdadero o Falso</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 4. Positivo o Negativo</label>
+      </div>
+      <div class="question-footer hint">Pista: Este tipo de proposición responde a una pregunta que solo puede contestarse con "sí" o "no".</div>
+    </section>
+
+    <!-- Pregunta 8 -->
+    <section class="question" aria-labelledby="q8">
+      <h3 id="q8">8 / 8 Según el temario, los "Diagramas" son una parte del tema de Programación. ¿Cuál es su función principal en este contexto?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 1. Medir la eficiencia y el uso de memoria del programa.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 2. Compilar el programa para que el computador pueda ejecutarlo.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 3. Escribir el código final del programa de una manera más gráfica.</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 4. Representar visualmente la secuencia de pasos y la lógica de un algoritmo.</label>
+      </div>
+      <div class="question-footer hint">Pista: Es una herramienta que ayuda a planificar la solución antes de empezar a programar.</div>
+    </section>
+
+    <div class="controls" role="region" aria-label="Controles">
+      <div style="flex:1">
+        <div class="print-note">Consejo: para impresión a color usa configuración por defecto; para tinta, selecciona "Imprimir en escala de grises".</div>
+      </div>
+      <div>
+        <button class="apple-button" onclick="window.print()">🖨 Imprimir</button>
+      </div>
+    </div>
+  </main>
+
+  <footer style="max-width:820px;margin:20px auto 70px auto;text-align:center;color:var(--apple-dark-gray)">
+    <div style="font-size:13px">Documento generado con cariño — listos para la tinta y para la mirada curiosa.</div>
+  </footer>
+
+  <!-- Pequeño script para mejorar/usabilidad: no imprime nada en background -->
+  <script>
+    // Mejora: permitir que ENTER en campos line input no haga nada raro
+    document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
+      el.addEventListener('keydown', e=>{
+        if(e.key === 'Enter') e.preventDefault();
+      });
+    });
+  </script>
 </body>
 </html>
