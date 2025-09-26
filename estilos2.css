@@ -622,9 +622,9 @@
         
             /* Modal */
 
-    .modal {
+    /*.modal {
       display: none; /* oculto por defecto */
-      position: fixed;
+      /*position: fixed;
       z-index: 1000;
       left: 0;
       top: 0;
@@ -635,12 +635,12 @@
       box-sizing: border-box;
 
       /* Centrado con flex, pero solo cuando se active */
-      align-items: center;
+      /*align-items: center;
       justify-content: center;
     }
 
     /* Clase activa para mostrar modal */
-    .modal.show {
+    /*.modal.show {
       display: flex;
     }
             #modal-info {
@@ -706,14 +706,14 @@
               cursor: pointer;
             }
             /* Ajuste de listas dentro del modal */
-            #modal-text ul {
+            /*#modal-text ul {
               margin-left: 20px;
               margin-bottom: 15px;
             }
             #modal-text h4 {
               margin-top: 20px;
               margin-bottom: 10px;
-            }
+            }*/
 
     .math-module {
       font-family: "Segoe UI", "Cambria Math", sans-serif;
