@@ -237,14 +237,6 @@
             color: var(--apple-dark-gray);
             padding: 8px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-                cursor:pointer;
-        }
-        
-        .tema-list li {
-            font-size: 17px;
-            color: var(--apple-dark-gray);
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             cursor: pointer;
             transition: all 0.3s ease; /* Transición suave */
         }
@@ -261,13 +253,7 @@
             display: inline-block;
             vertical-align: middle;
         }
-
-        /* Reducir tamaño del emoji
-        .tema-list li::before {
-            font-size: 0.4em;
-            margin-right: 5px;
-        }*/
-        
+  
         .tema-list li:last-child {
             border-bottom: none;
         }
@@ -787,5 +773,3 @@
       font-weight: 700;
       font-size: 1.1em;
     }
-  
-
