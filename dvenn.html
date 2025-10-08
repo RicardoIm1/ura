@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Venn - Problema de Tres Conjuntos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .problem-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problem-title {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .problem-text {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .data-table th {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .highlight {
+            background-color: #e8f4fc;
+            font-weight: 600;
+            color: #2980b9;
+        }
+        
+        .solution-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .solution-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .solution-title {
+            font-size: 1.5rem;
+            color: #2ecc71;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .solution-step {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .step-text {
+            display: inline;
+            line-height: 1.6;
+        }
+        
+        .result {
+            font-weight: 600;
+            color: #e74c3c;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff5f5;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .venn-container {
+            flex: 1.5;
+            min-width: 400px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .venn-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .venn-title {
+            font-size: 1.5rem;
+            color: #9b59b6;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .venn-diagram {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 20px auto;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            mix-blend-mode: multiply;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .math {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .physics {
+            width: 200px;
+            height: 200px;
+            background-color: #2ecc71;
+            top: 50px;
+            left: 150px;
+        }
+        
+        .chemistry {
+            width: 200px;
+            height: 200px;
+            background-color: #9b59b6;
+            top: 120px;
+            left: 100px;
+        }
+        
+        .intersection {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .math-only {
+            top: 80px;
+            left: 30px;
+        }
+        
+        .physics-only {
+            top: 80px;
+            left: 230px;
+        }
+        
+        .chemistry-only {
+            top: 200px;
+            left: 170px;
+        }
+        
+        .math-physics {
+            top: 100px;
+            left: 150px;
+        }
+        
+        .math-chemistry {
+            top: 150px;
+            left: 80px;
+        }
+        
+        .physics-chemistry {
+            top: 150px;
+            left: 180px;
+        }
+        
+        .all-three {
+            top: 130px;
+            left: 130px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .legend-math {
+            background-color: #3498db;
+        }
+        
+        .legend-physics {
+            background-color: #2ecc71;
+        }
+        
+        .legend-chemistry {
+            background-color: #9b59b6;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .reset-btn {
+            background-color: #e74c3c;
+        }
+        
+        .reset-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .venn-diagram {
+                width: 300px;
+                height: 250px;
+            }
+            
+            .math, .physics, .chemistry {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .math {
+                top: 50px;
+                left: 30px;
+            }
+            
+            .physics {
+                top: 50px;
+                left: 120px;
+            }
+            
+            .chemistry {
+                top: 100px;
+                left: 75px;
+            }
+            
+            .intersection {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Problema de Conjuntos con Tres Conjuntos</h1>
+        </header>
+        
+        <div class="content">
+            <div class="problem-section">
+                <h2 class="problem-title">Enunciado del Problema</h2>
+                <p class="problem-text">
+                    En una encuesta realizada a 100 estudiantes sobre las materias que estudian:
+                </p>
+                
+                <table class="data-table">
+                    <tr>
+                        <th>Conjunto</th>
+                        <th>Cantidad</th>
+                    </tr>
+                    <tr>
+                        <td>Matemáticas</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>Física</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Química</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>Matemáticas y Física</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>Matemáticas y Química</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Física y Química</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Las tres materias</td>
+                        <td>10</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>¿Solo Matemáticas?</td>
+                        <td>?</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="solution-section">
+                <h2 class="solution-title">Resolución Paso a Paso</h2>
+                
+                <div class="solution-step">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Empezamos con la intersección triple: 10 estudiantes</span>
+                </div>
+                
+                <div class="solution-step">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Matemáticas y Física (sin Química): 30 - 10 = 20</span>
+                </div>
+                
+                <div class="solution-step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Matemáticas y Química (sin Física): 20 - 10 = 10</span>
+                </div>
+                
+                <div class="solution-step">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Física y Química (sin Matemáticas): 15 - 10 = 5</span>
+                </div>
+                
+                <div class="solution-step">
+                    <span class="step-number">5</span>
+                    <span class="step-text">Solo Matemáticas: 60 - 20 - 10 - 10 = 20</span>
+                </div>
+                
+                <div class="solution-step">
+                    <span class="step-number">6</span>
+                    <span class="step-text">Solo Física: 50 - 20 - 5 - 10 = 15</span>
+                </div>
+                
+                <div class="solution-step">
+                    <span class="step-number">7</span>
+                    <span class="step-text">Solo Química: 40 - 10 - 5 - 10 = 15</span>
+                </div>
+                
+                <div class="result">
+                    Respuesta: 20 estudiantes estudian solo Matemáticas
+                </div>
+            </div>
+            
+            <div class="venn-container">
+                <h2 class="venn-title">Diagrama de Venn</h2>
+                
+                <div class="venn-diagram">
+                    <div class="circle math">Matemáticas</div>
+                    <div class="circle physics">Física</div>
+                    <div class="circle chemistry">Química</div>
+                    
+                    <div class="intersection math-only">20</div>
+                    <div class="intersection physics-only">15</div>
+                    <div class="intersection chemistry-only">15</div>
+                    <div class="intersection math-physics">20</div>
+                    <div class="intersection math-chemistry">10</div>
+                    <div class="intersection physics-chemistry">5</div>
+                    <div class="intersection all-three">10</div>
+                </div>
+                
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color legend-math"></div>
+                        <span>Matemáticas</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-physics"></div>
+                        <span>Física</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-chemistry"></div>
+                        <span>Química</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="animateBtn">Animar Diagrama</button>
+                    <button id="resetBtn" class="reset-btn">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateBtn = document.getElementById('animateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const circles = document.querySelectorAll('.circle');
+            const intersections = document.querySelectorAll('.intersection');
+            
+            // Función para animar el diagrama
+            function animateDiagram() {
+                // Reiniciar animaciones
+                circles.forEach(circle => {
+                    circle.style.transform = 'scale(1)';
+                    circle.style.opacity = '0.7';
+                });
+                
+                intersections.forEach(intersection => {
+                    intersection.style.opacity = '0';
+                });
+                
+                // Animar círculos
+                setTimeout(() => {
+                    circles[0].style.transform = 'scale(1.1)';
+                    circles[0].style.opacity = '0.9';
+                }, 300);
+                
+                setTimeout(() => {
+                    circles[1].style.transform = 'scale(1.1)';
+                    circles[1].style.opacity = '0.9';
+                }, 600);
+                
+                setTimeout(() => {
+                    circles[2].style.transform = 'scale(1.1)';
+                    circles[2].style.opacity = '0.9';
+                }, 900);
+                
+                // Animar intersecciones
+                setTimeout(() => {
+                    intersections.forEach((intersection, index) => {
+                        setTimeout(() => {
+                            intersection.style.opacity = '1';
+                            intersection.style.transform = 'scale(1.1)';
+                            setTimeout(() => {
+                                intersection.style.transform = 'scale(1)';
+                            }, 300);
+                        }, index * 200);
+                    });
+                }, 1200);
+                
+                // Resaltar la respuesta
+                setTimeout(() => {
+                    const mathOnly = document.querySelector('.math-only');
+                    mathOnly.style.backgroundColor = '#ffeaa7';
+                    mathOnly.style.padding = '5px 10px';
+                    mathOnly.style.borderRadius = '5px';
+                    mathOnly.style.fontSize = '1.2rem';
+                }, 2500);
+            }
+            
+            // Función para reiniciar el diagrama
+            function resetDiagram() {
+                circles.forEach(circle => {
+                    circle.style.transform = 'scale(1)';
+                    circle.style.opacity = '0.7';
+                });
+                
+                intersections.forEach(intersection => {
+                    intersection.style.opacity = '1';
+                    intersection.style.backgroundColor = 'transparent';
+                    intersection.style.padding = '0';
+                    intersection.style.borderRadius = '0';
+                    intersection.style.fontSize = '';
+                });
+            }
+            
+            // Event listeners
+            animateBtn.addEventListener('click', animateDiagram);
+            resetBtn.addEventListener('click', resetDiagram);
+            
+            // Animar al cargar la página
+            setTimeout(animateDiagram, 1000);
+        });
+    </script>
+</body>
+</html>
