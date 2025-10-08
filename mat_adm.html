@@ -3903,12 +3903,21 @@
             
               <h4>Propiedades matemáticas</h4>
               <ul>
-                <li><span style='color: red; font-weight: bold;'>No negatividad:</span> δ(t) ≥ 0 para todo t, ya que el capital no debe decrecer</li>
-                <li><span style='color: red; font-weight: bold;'>Relación con tasa efectiva:</span> i = e^δ - 1 y δ = ln(1 + i)</li>
-                <li><span style='color: red; font-weight: bold;'>Relación con tasa nominal:</span> δ = limₘ→∞ j₍ₘ₎ cuando m → ∞</li>
-                <li><span style='color: red; font-weight: bold;'>Aditividad:</span> ∫₀ᵗ δ(s)ds = ln a(t) - ln a(0)</li>
-                <li><span style='color: red; font-weight: bold;'>Valor acumulado:</span> A(t) = A(0) × e^(∫₀ᵗ δ(s)ds)</li>
-              </ul>
+                <li><span style='color: red; font-weight: bold;'>No negatividad:</span> 
+                    δ(t) ≥ 0 para todo t (el capital no debe decrecer)</li>
+                
+                <li><span style='color: red; font-weight: bold;'>Relación con tasa efectiva:</span> 
+                    i = e<sup>δ</sup> - 1 y δ = ln(1 + i)</li>
+                
+                <li><span style='color: red; font-weight: bold;'>Relación con tasa nominal:</span> 
+                    δ = límite de j<sub>(m)</sub> cuando m tiende a infinito</li>
+                
+                <li><span style='color: red; font-weight: bold;'>Aditividad:</span> 
+                    Integral desde 0 hasta t de δ(s)ds = ln[a(t)] - ln[a(0)]</li>
+                
+                <li><span style='color: red; font-weight: bold;'>Valor acumulado:</span> 
+                    A(t) = A(0) × e<sup>integral desde 0 hasta t de δ(s)ds</sup></li>
+            </ul>
             
               <h4>Fórmulas fundamentales</h4>
               <ul>
