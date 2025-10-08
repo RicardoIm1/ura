@@ -1567,19 +1567,73 @@
               </ol>
             
               <h4>Ejemplo: Graficar f(x) = x² - 4x + 3</h4>
-              <ol>
-                <li>Dominio: Todos los reales (-∞, ∞)</li>
-                <li>Intersecciones:
-                  <ul>
-                    <li>Con eje Y: f(0)=3 → (0,3)</li>
-                    <li>Con eje X: x²-4x+3=0 → (x-1)(x-3)=0 → (1,0), (3,0)</li>
-                  </ul>
+            
+            <div class='function-display'>
+                f(x) = x² - 4x + 3
+            </div>
+            
+            <ol>
+                <li>
+                    <strong>Dominio:</strong> Todos los números reales (-∞, ∞)
                 </li>
-                <li>Vértice: x=-b/2a=4/2=2, f(2)=4-8+3=-1 → (2,-1)</li>
-                <li>Es una parábola que abre hacia arriba (a>0)</li>
-                <li>Puntos adicionales: f(4)=16-16+3=3 → (4,3)</li>
-                <li>Trazar los puntos y dibujar la parábola</li>
-              </ol>
+                <li>
+                    <strong>Intersecciones:</strong>
+                    <ul>
+                        <li class='point-highlight intercepts'>
+                            <strong>Con eje Y:</strong> f(0) = 0² - 4(0) + 3 = 3 → (0, 3)
+                        </li>
+                        <li class='point-highlight intercepts'>
+                            <strong>Con eje X:</strong> x² - 4x + 3 = 0 → (x-1)(x-3) = 0 → (1, 0), (3, 0)
+                        </li>
+                    </ul>
+                </li>
+                <li class='point-highlight vertex'>
+                    <strong>Vértice:</strong> x = -b/2a = 4/2 = 2, f(2) = 4 - 8 + 3 = -1 → (2, -1)
+                </li>
+                <li>
+                    <strong>Concavidad:</strong> Es una parábola que abre hacia arriba (a > 0)
+                </li>
+                <li class='point-highlight'>
+                    <strong>Puntos adicionales:</strong> f(4) = 16 - 16 + 3 = 3 → (4, 3)
+                </li>
+                <li>
+                    <strong>Procedimiento:</strong> Trazar los puntos y dibujar la parábola
+                </li>
+            </ol>
+        </div>
+        
+        <div class='card graph-container'>
+            <h4>Gráfica de la Función</h4>
+            
+            <div class='graph-wrapper'>
+                <canvas id='quadraticChart'></canvas>
+            </div>
+            
+            <div class='key-points'>
+                <div class='key-point'>
+                    <div class='point-color y-intercept'></div>
+                    <span>Intersección con Y: (0, 3)</span>
+                </div>
+                <div class='key-point'>
+                    <div class='point-color x-intercept'></div>
+                    <span>Intersecciones con X: (1, 0), (3, 0)</span>
+                </div>
+                <div class='key-point'>
+                    <div class='point-color vertex-point'></div>
+                    <span>Vértice: (2, -1)</span>
+                </div>
+                <div class='key-point'>
+                    <div class='point-color additional-point'></div>
+                    <span>Punto adicional: (4, 3)</span>
+                </div>
+            </div>
+            
+            <div class='graph-controls'>
+                <button id='animateBtn'>Animar Gráfica</button>
+                <button id='resetBtn' class='reset-btn'>Reiniciar</button>
+            </div>
+        </div>
+    </div>
             
               <h4>Análisis de Comportamiento en los Extremos</h4>
               <ul>
@@ -4536,6 +4590,365 @@
     modalClose.addEventListener('click', cerrarModal);
     modalOverlay.addEventListener('click', cerrarModal);
   </script>
+
+          
+<!--Esta es la grafica de 2.4 Grafica de una funcion  -->
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .explanation {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .graph-container {
+            flex: 1.5;
+            min-width: 400px;
+        }
+        
+        h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .function-display {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 10px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .point-highlight {
+            background-color: #e8f4fc;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 5px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .vertex {
+            background-color: #e8f6f3;
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .intercepts {
+            background-color: #fef9e7;
+            border-left: 4px solid #f1c40f;
+        }
+        
+        .graph-wrapper {
+            position: relative;
+            height: 400px;
+            margin-top: 20px;
+        }
+        
+        .graph-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .reset-btn {
+            background-color: #e74c3c;
+        }
+        
+        .reset-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .key-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .key-point {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .point-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+        
+        .y-intercept {
+            background-color: #f1c40f;
+        }
+        
+        .x-intercept {
+            background-color: #e74c3c;
+        }
+        
+        .vertex-point {
+            background-color: #2ecc71;
+        }
+        
+        .additional-point {
+            background-color: #9b59b6;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .graph-wrapper {
+                height: 300px;
+            }
+        }
+    </style>
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración de la gráfica
+            const ctx = document.getElementById('quadraticChart').getContext('2d');
+            
+            // Puntos clave de la función
+            const keyPoints = [
+                { x: 0, y: 3, label: '(0, 3)', color: '#f1c40f' },
+                { x: 1, y: 0, label: '(1, 0)', color: '#e74c3c' },
+                { x: 2, y: -1, label: '(2, -1)', color: '#2ecc71' },
+                { x: 3, y: 0, label: '(3, 0)', color: '#e74c3c' },
+                { x: 4, y: 3, label: '(4, 3)', color: '#9b59b6' }
+            ];
+            
+            // Generar datos para la curva
+            const data = [];
+            for (let x = -1; x <= 5; x += 0.1) {
+                const y = x*x - 4*x + 3;
+                data.push({ x, y });
+            }
+            
+            // Crear la gráfica
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [
+                        {
+                            label: 'f(x) = x² - 4x + 3',
+                            data: data,
+                            borderColor: '#3498db',
+                            backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Puntos clave',
+                            data: keyPoints,
+                            backgroundColor: keyPoints.map(point => point.color),
+                            borderColor: keyPoints.map(point => point.color),
+                            pointRadius: 6,
+                            pointHoverRadius: 8,
+                            showLine: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'x',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            min: -1,
+                            max: 5
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'f(x)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            min: -2,
+                            max: 5
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if (context.datasetIndex === 1) {
+                                        const point = keyPoints[context.dataIndex];
+                                        return `${point.label}: f(${point.x}) = ${point.y}`;
+                                    }
+                                    const x = context.parsed.x;
+                                    const y = context.parsed.y;
+                                    return `f(${x.toFixed(1)}) = ${y.toFixed(2)}`;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+            
+            // Funcionalidad de los botones
+            const animateBtn = document.getElementById('animateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            
+            animateBtn.addEventListener('click', function() {
+                // Reiniciar la animación
+                chart.data.datasets[0].data = [];
+                chart.update();
+                
+                // Animar la gráfica punto por punto
+                setTimeout(() => {
+                    chart.data.datasets[0].data = data;
+                    chart.update();
+                }, 500);
+            });
+            
+            resetBtn.addEventListener('click', function() {
+                // Reiniciar la gráfica
+                chart.data.datasets[0].data = data;
+                chart.update();
+            });
+            
+            // Añadir etiquetas a los puntos clave
+            Chart.register({
+                id: 'keyPointLabels',
+                afterDraw: function(chart) {
+                    const ctx = chart.ctx;
+                    ctx.save();
+                    ctx.font = 'bold 12px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+                    
+                    keyPoints.forEach(point => {
+                        const meta = chart.getDatasetMeta(1);
+                        const pointElement = meta.data[keyPoints.indexOf(point)];
+                        
+                        if (pointElement) {
+                            const x = pointElement.x;
+                            const y = pointElement.y;
+                            
+                            // Dibujar etiqueta
+                            ctx.fillStyle = point.color;
+                            ctx.fillText(point.label, x, y - 10);
+                        }
+                    });
+                    
+                    ctx.restore();
+                }
+            });
+            
+            // Actualizar el gráfico para mostrar las etiquetas
+            chart.update();
+        });
+    </script>
 
   <footer>
     © 2025 Universidad URA – Asignatura Matemáticas Para la Administración.
