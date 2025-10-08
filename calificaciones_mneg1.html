@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones - Matemáticas Para Los Negocios I</title>
+  <link rel="stylesheet" href="estilos2.css">
+  <style>
+    .tabla-calificaciones {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .tabla-calificaciones th {
+      background: var(--apple-gradient);
+      color: white;
+      text-align: left;
+      padding: 14px 16px;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .tabla-calificaciones td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--apple-black);
+      font-size: 15px;
+    }
+
+    .tabla-calificaciones tr:nth-child(even) {
+      background-color: var(--apple-light-gray);
+    }
+
+    .tabla-calificaciones tr:hover {
+      background-color: rgba(0, 119, 204, 0.08);
+      transition: 0.3s ease;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background: var(--apple-vibrant-blue);
+      padding: 12px 24px;
+      border-radius: 980px;
+      transition: var(--apple-transition);
+    }
+
+    .back-button:hover {
+      background: var(--apple-vibrant-green);
+      transform: scale(1.05);
+    }
+
+    td[contenteditable="true"] {
+      background-color: rgba(255,255,255,0.6);
+      cursor: text;
+    }
+
+    td[contenteditable="true"]:focus {
+      outline: 2px solid var(--apple-vibrant-blue);
+      background-color: rgba(0, 119, 204, 0.05);
+    }
+
+    td.total, td.promedio {
+      font-weight: 600;
+      text-align: center;
+      color: var(--apple-vibrant-blue);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">
+        <a href="#" target="_blank" style="text-decoration: none; color: inherit;">
+          Matemáticas Para Los Negocios I
+        </a>
+      </div>
+    </div>
+  </header>
+
+ <section class="container">
+    <h2 class="section-title">Evaluación</h2>
+    <div class="evaluacion-grid">
+
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">40%</div>
+          <p class="evaluacion-desc">Dos exámenes parciales</p>  
+        </div>
+     
+        <div class="evaluacion-item tema-card">
+          <div class="evaluacion-porcentaje">20%</div>
+          <p class="evaluacion-desc">Actividades bajo conducción de un académico</p>
+        </div>
+        <div class="evaluacion-item tema-card">
+          <div class="evaluacion-porcentaje">20%</div>
+          <p class="evaluacion-desc">Actividades independientes</p>
+        </div>
+        <div class="evaluacion-item tema-card">
+          <div class="evaluacion-porcentaje">20%</div>
+          <p class="evaluacion-desc">Examen final</p>
+        </div>
+    
+      </div>
+    </div>
+  </section>
+  
+  <section class="container">
+    <h1 class="section-title">Calificaciones de Matemáticas para los Negocios I</h1>
+
+    <table class="tabla-calificaciones" id="tablaCalificaciones">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Primer Parcial</th>
+          <th>Segundo Parcial</th>
+          <th>Actividades bajo conducción de un académico</th>
+          <th>Actividades independientes</th>
+          <th>Examen Final</th>
+          <th>Total</th>
+          <th>Promedio Final</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alvarado Torales Margareth</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Cortez Zavala Marisol</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Delgado Angélica Maria</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Espinoza López Jazmin</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>García Ramírez Oswaldo</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>López Gallegos Lizeth</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>López Orozco Miroslava</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Lugo Hernández Karolina Jazmin</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Machuca S. Tania Yoselin</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Mariscal G. Evelyn Suzett</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Ramírez Villegas Sheila Abigail</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+        <tr><td>Soltero Chavarín Abraham</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td class="total"></td><td class="promedio"></td></tr>
+      </tbody>
+    </table>
+
+    <a href="mat_adm.html" class="back-button">⬅ Volver al inicio</a>
+  </section>
+
+  <footer>
+    © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
+  </footer>
+
+  <script>
+    function calcularTotalesYPromedios() {
+      const filas = document.querySelectorAll("#tablaCalificaciones tbody tr");
+
+      filas.forEach(fila => {
+        const celdas = fila.querySelectorAll("td[contenteditable='true']");
+        let suma = 0;
+        let conteo = 0;
+
+        celdas.forEach(celda => {
+          const valor = parseFloat(celda.textContent.trim());
+          if (!isNaN(valor)) {
+            suma += valor;
+            conteo++;
+          }
+        });
+
+        const totalCelda = fila.querySelector(".total");
+        const promedioCelda = fila.querySelector(".promedio");
+
+        totalCelda.textContent = conteo > 0 ? suma : "";
+        promedioCelda.textContent = conteo > 0 ? Math.ceil(suma / conteo) : "";
+      });
+    }
+
+    document.querySelector("#tablaCalificaciones").addEventListener("input", calcularTotalesYPromedios);
+    window.addEventListener("DOMContentLoaded", calcularTotalesYPromedios);
+  </script>
+</body>
+</html>
