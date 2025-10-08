@@ -316,6 +316,22 @@
             line-height: 1.5;
             opacity: 0.85;
         }
+
+        .card-link {
+          text-decoration: none;
+          color: inherit; /* Mantiene colores originales */
+          display: block; /* Hace que ocupe toda el área de la card */
+        }
+        
+        .card-link .card {
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card-link .card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
         
         /* Evaluación section */
         .evaluacion-grid {
