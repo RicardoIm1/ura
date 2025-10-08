@@ -11,48 +11,41 @@
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
   .loguito {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 12px 20px;
-      margin: 10px 0;
-      background-color: #f8f9fa;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-  }
-  
-  .loguito:hover {
-      background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
-      border-color: #007bff;
-  }
-  
-  .loguito img {
-      border-radius: 8px;
-      object-fit: cover;
-      filter: grayscale(20%);
-      transition: filter 0.3s ease;
-  }
-  
-  .loguito:hover img {
-      filter: grayscale(0%);
-  }
-  
-  .loguito a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: 500;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-  }
-  
-  .loguito:hover a {
-      color: #007bff;
-  }
+    display: inline-block;
+    margin: 10px 15px 10px 0;
+    transition: all 0.3s ease;
+}
+
+.loguito a {
+    display: block;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.loguito:hover a {
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    border-color: #007bff;
+}
+
+.loguito img {
+    width: 120px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+.loguito:hover img {
+    filter: grayscale(0%);
+}
   
     /* Modal */
   #modal-info {
@@ -3911,21 +3904,17 @@
           <h3>Uso de software</h3>
           <p>Uso de software de aplicación matemática en dispositivos móviles para negocios.</p>
           
-          <div class="loguito">
-            <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" width="50%" height="auto">
-            <a href="https://www.geogebra.org/classic?lang=es">GeoGebra</a>
+           <div class="loguito">
+              <a href="https://www.geogebra.org/classic?lang=es">
+                  <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" alt="GeoGebra">
+              </a>
           </div>
           
           <div class="loguito">
-            <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png" width="50%" height="auto">
-            <a href="https://www.desmos.com/calculator?lang=es">Desmos</a>
+              <a href="https://www.desmos.com/calculator?lang=es">
+                  <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png" alt="Desmos">
+              </a>
           </div>
-          
-          <div class="loguito">
-            <img src="https://gades-solutions.com/wp-content/uploads/2019/05/grafer.jpg" width="50%" height="auto">
-            <a href="">Grapher</a>
-          </div>
-        
         </div>
         
         <div class="card">
