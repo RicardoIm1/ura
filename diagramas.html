@@ -6,8 +6,6 @@
   <title>Ejercicios de Diagramas de Flujo</title>
   <link rel="stylesheet" href="estilos2.css">
   <style>
-    /* SOLO CSS ESPECÍFICO para esta página - NO duplicar estilos de estilos2.css */
-    
     .hero-subtitle {
       font-size: 24px;
       font-weight: 400;
@@ -17,14 +15,14 @@
       position: relative;
       z-index: 2;
     }
-    
+
     .exercises-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 25px;
       margin: 60px 0;
     }
-    
+
     .exercise-card {
       background: white;
       border-radius: var(--apple-border-radius);
@@ -33,28 +31,25 @@
       transition: var(--apple-transition);
       border-left: 5px solid var(--apple-vibrant-blue);
       height: 100%;
-      display: flex;
-      flex-direction: column;
       cursor: pointer;
     }
-    
+
     .exercise-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0, 119, 204, 0.15);
     }
-    
+
     .exercise-title {
       color: var(--apple-vibrant-blue);
       margin-bottom: 15px;
       font-size: 1.4rem;
     }
-    
+
     .exercise-description {
       margin-bottom: 20px;
       color: var(--apple-dark-gray);
-      flex-grow: 1;
     }
-    
+
     .difficulty {
       display: inline-block;
       padding: 5px 12px;
@@ -63,31 +58,27 @@
       font-weight: 600;
       margin-bottom: 15px;
     }
-    
+
     .easy { background: #d1fae5; color: #065f46; }
     .medium { background: #fef3c7; color: #92400e; }
     .hard { background: #fee2e2; color: #991b1b; }
-    
+
     .exercise-action {
       color: var(--apple-vibrant-blue);
       font-size: 0.9rem;
       font-weight: 500;
-      margin-top: auto;
-      padding-top: 10px;
     }
 
-    /* 🌟 Modal elegante centrado con fondo cristalizado */
+    /* 🌟 Modal elegante centrado */
     .modal {
-      display: none; /* Oculto por defecto */
+      display: none;
       position: fixed;
       z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
       justify-content: center;
       align-items: center;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0,0,0,0.3);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       padding: 20px;
@@ -116,20 +107,18 @@
       max-width: 900px;
       width: 100%;
       position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       max-height: 90vh;
       overflow-y: auto;
     }
 
     .close-btn {
       position: absolute;
-      right: 20px;
-      top: 15px;
+      right: 20px; top: 15px;
       font-size: 1.8rem;
       font-weight: bold;
       color: var(--apple-dark-gray);
       cursor: pointer;
-      z-index: 1001;
       transition: var(--apple-transition);
     }
     .close-btn:hover {
@@ -138,123 +127,37 @@
     }
 
     .flowchart-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 20px;
+      display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px;
     }
-    
-    .flowchart-problem, .flowchart-diagram {
-      flex: 1;
-      min-width: 300px;
-    }
-    
+    .flowchart-problem, .flowchart-diagram { flex: 1; min-width: 300px; }
     .flowchart-diagram {
       background: var(--apple-light-gray);
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 12px; padding: 20px;
       border: 2px dashed #cbd5e1;
     }
 
-    .symbols-guide {
-      background: #f0f9ff;
-      border-radius: 12px;
-      padding: 25px;
-      margin-top: 30px;
-    }
-    
-    .symbols-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-    
-    .symbol-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      background: white;
-      border-radius: 8px;
-      transition: var(--apple-transition);
-    }
-    
-    .symbol-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .symbol {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 6px;
-      font-weight: bold;
-      color: white;
-    }
-    
-    .terminal { background: #ef4444; }
-    .process { background: var(--apple-vibrant-blue); }
-    .decision { background: var(--apple-vibrant-green); transform: rotate(45deg); width: 40px; height: 40px; }
-    .input { background: var(--apple-vibrant-orange); }
-    .connector { background: #f59e0b; border-radius: 50%; }
-    
     .modal-section-title {
       color: var(--apple-vibrant-blue);
       margin: 25px 0 15px;
       font-size: 1.3rem;
     }
-    
+
     #drawing-area {
-      height: 300px; 
-      background: white; 
-      border: 1px solid #cbd5e1; 
-      border-radius: 6px; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
+      height: 300px;
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
       color: #94a3b8;
       margin: 15px 0;
     }
-    
+
     #solution-content {
-      background: #f0f9ff; 
-      padding: 15px; 
-      border-radius: 6px; 
+      background: #f0f9ff;
+      padding: 15px;
+      border-radius: 6px;
       margin-top: 10px;
       line-height: 1.6;
-    }
-    
-    .section-subtitle {
-      text-align: center;
-      font-size: 21px;
-      color: var(--apple-dark-gray);
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (max-width: 768px) {
-      .exercises-grid { 
-        grid-template-columns: 1fr; 
-        gap: 20px;
-      }
-      .flowchart-container { 
-        flex-direction: column; 
-        gap: 20px;
-      }
-      .modal-content { 
-        margin: 20px auto; 
-        padding: 20px; 
-      }
-      .exercise-card { padding: 20px; }
-      .hero h1 { font-size: 40px; }
-      .hero-subtitle { font-size: 19px; }
-      .section-title { font-size: 32px; }
     }
   </style>
 </head>
@@ -262,7 +165,7 @@
   <header>
     <div class="header-content">
       <a href="index.html">
-        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logo" class="header-logo">
       </a>
       <div class="header-title">Ejercicios de Diagramas de Flujo</div>
     </div>
@@ -271,120 +174,111 @@
   <section class="hero">
     <h1>Ejercicios de Diagramas de Flujo</h1>
     <p class="hero-subtitle">Practica y domina la representación gráfica de algoritmos con estos ejercicios progresivos</p>
-    <a href="#exercises" class="apple-button">Comenzar a Practicar</a>
   </section>
 
   <div class="container">
-    <section id="exercises">
-      <h2 class="section-title">Ejercicios Disponibles</h2>
-      <p class="section-subtitle">Haz clic en cualquier ejercicio para ver su descripción detallada, objetivos de aprendizaje y solución propuesta.</p>
-      
-      <div class="exercises-grid">
-        <div class="exercise-card" onclick="showExercise(1)">
-          <h2 class="exercise-title">Ejercicio 1: Número Par o Impar</h2>
-          <span class="difficulty easy">Fácil</span>
-          <p class="exercise-description">Crear un diagrama de flujo que determine si un número ingresado por el usuario es par o impar.</p>
-          <div class="exercise-action">Haz clic para ver detalles</div>
-        </div>
-        <div class="exercise-card" onclick="showExercise(2)">
-          <h2 class="exercise-title">Ejercicio 2: Calcular Promedio</h2>
-          <span class="difficulty easy">Fácil</span>
-          <p class="exercise-description">Diseñar un diagrama que calcule el promedio de 3 calificaciones y determine si el alumno aprobó.</p>
-          <div class="exercise-action">Haz clic para ver detalles</div>
-        </div>
-        <div class="exercise-card" onclick="showExercise(3)">
-          <h2 class="exercise-title">Ejercicio 3: Número Mayor</h2>
-          <span class="difficulty medium">Medio</span>
-          <p class="exercise-description">Elaborar un diagrama que encuentre el número mayor entre tres valores diferentes ingresados por el usuario.</p>
-          <div class="exercise-action">Haz clic para ver detalles</div>
-        </div>
-        <div class="exercise-card" onclick="showExercise(4)">
-          <h2 class="exercise-title">Ejercicio 4: Serie Fibonacci</h2>
-          <span class="difficulty medium">Medio</span>
-          <p class="exercise-description">Crear un diagrama que genere los primeros N números de la serie Fibonacci.</p>
-          <div class="exercise-action">Haz clic para ver detalles</div>
-        </div>
-        <div class="exercise-card" onclick="showExercise(5)">
-          <h2 class="exercise-title">Ejercicio 5: Adivina el Número</h2>
-          <span class="difficulty hard">Difícil</span>
-          <p class="exercise-description">Diseñar un diagrama para un juego donde el usuario debe adivinar un número aleatorio entre 1 y 100.</p>
-          <div class="exercise-action">Haz clic para ver detalles</div>
-        </div>
-        <div class="exercise-card" onclick="showExercise(6)">
-          <h2 class="exercise-title">Ejercicio 6: Estadísticas Básicas</h2>
-          <span class="difficulty hard">Difícil</span>
-          <p class="exercise-description">Elaborar un diagrama que calcule el promedio, máximo y mínimo de una lista de números.</p>
-          <div class="exercise-action">Haz clic para ver detalles</div>
-        </div>
+    <div class="exercises-grid">
+      <div class="exercise-card" onclick="showExercise(1)">
+        <h2 class="exercise-title">Ejercicio 1: Número Par o Impar</h2>
+        <span class="difficulty easy">Fácil</span>
+        <p class="exercise-description">Determina si un número ingresado es par o impar.</p>
+        <div class="exercise-action">Haz clic para ver detalles</div>
       </div>
-    </section>
+      <div class="exercise-card" onclick="showExercise(2)">
+        <h2 class="exercise-title">Ejercicio 2: Promedio</h2>
+        <span class="difficulty easy">Fácil</span>
+        <p class="exercise-description">Calcula el promedio de tres calificaciones y muestra si aprueba.</p>
+        <div class="exercise-action">Haz clic para ver detalles</div>
+      </div>
+      <div class="exercise-card" onclick="showExercise(3)">
+        <h2 class="exercise-title">Ejercicio 3: Mayor de Tres</h2>
+        <span class="difficulty medium">Medio</span>
+        <p class="exercise-description">Encuentra el número mayor entre tres valores.</p>
+        <div class="exercise-action">Haz clic para ver detalles</div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Modal -->
-    <div id="exercise-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h2 id="exercise-detail-title"></h2>
-        <p id="exercise-detail-description" style="color: var(--apple-dark-gray);"></p>
-        <div class="flowchart-container">
-          <div class="flowchart-problem">
-            <h3 class="modal-section-title">Enunciado del Problema</h3>
-            <p id="problem-statement"></p>
-            <h3 class="modal-section-title">Objetivos de Aprendizaje</h3>
-            <ul id="learning-objectives"></ul>
-            <h3 class="modal-section-title">Pistas y Sugerencias</h3>
-            <ul id="hints"></ul>
-            <div style="margin-top:25px;">
-              <button class="apple-button" onclick="showSolution()" style="margin-right:10px;">Ver Solución Propuesta</button>
-              <button class="apple-button" onclick="resetSolution()" style="background-color:var(--apple-vibrant-orange);">Ocultar Solución</button>
-            </div>
-          </div>
-          <div class="flowchart-diagram">
-            <h3 class="modal-section-title">Área de Trabajo</h3>
-            <div id="drawing-area">Área para dibujar el diagrama</div>
-            <div id="proposed-solution" style="display:none;">
-              <h4 style="color: var(--apple-vibrant-green);">Solución Propuesta:</h4>
-              <div id="solution-content"></div>
-            </div>
+  <!-- Modal -->
+  <div id="exercise-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="exercise-detail-title"></h2>
+      <p id="exercise-detail-description" style="color: var(--apple-dark-gray);"></p>
+      <div class="flowchart-container">
+        <div class="flowchart-problem">
+          <h3 class="modal-section-title">Enunciado</h3>
+          <p id="problem-statement"></p>
+          <h3 class="modal-section-title">Objetivos</h3>
+          <ul id="learning-objectives"></ul>
+          <h3 class="modal-section-title">Pistas</h3>
+          <ul id="hints"></ul>
+          <button class="apple-button" onclick="showSolution()">Ver Solución</button>
+        </div>
+        <div class="flowchart-diagram">
+          <h3 class="modal-section-title">Área de Trabajo</h3>
+          <div id="drawing-area">Aquí puedes imaginar tu diagrama...</div>
+          <div id="proposed-solution" style="display:none;">
+            <h4 style="color: var(--apple-vibrant-green);">Solución Propuesta:</h4>
+            <div id="solution-content"></div>
           </div>
         </div>
       </div>
     </div>
-
-    <section class="symbols-guide">
-      <h3 style="color: var(--apple-vibrant-blue);">Símbolos de Diagramas de Flujo</h3>
-      <p style="color: var(--apple-dark-gray);">Conoce los símbolos estándar utilizados en la creación de diagramas de flujo:</p>
-      <div class="symbols-grid">
-        <div class="symbol-item"><div class="symbol terminal">○</div><span>Inicio/Fin</span></div>
-        <div class="symbol-item"><div class="symbol process">□</div><span>Proceso</span></div>
-        <div class="symbol-item"><div class="symbol decision">◇</div><span>Decisión</span></div>
-        <div class="symbol-item"><div class="symbol input">▱</div><span>Entrada/Salida</span></div>
-        <div class="symbol-item"><div class="symbol connector">○</div><span>Conector</span></div>
-      </div>
-    </section>
-          
-    <a href="com1.html" class="back-button">⬅ Volver</a>
-    <footer><p>Ejercicios de Diagramas de Flujo - Práctica de Algoritmos y Programación</p></footer>
   </div>
 
   <script>
-    const exercises = { /* ... mismo contenido de ejercicios ... */ };
+    const exercises = {
+      1: {
+        title: "Número Par o Impar",
+        description: "Determina si un número ingresado es par o impar.",
+        problem: "Solicita un número entero al usuario y muestra si es par o impar.",
+        objectives: ["Usar operadores módulo (%)", "Aplicar estructura condicional IF"],
+        hints: ["Un número es par si al dividir entre 2 su residuo es 0"],
+        solution: "Inicio → Leer N → Si N%2=0 → Mostrar 'Par' → Si no → Mostrar 'Impar' → Fin"
+      },
+      2: {
+        title: "Calcular Promedio",
+        description: "Calcula el promedio de tres calificaciones y determina si el alumno aprueba.",
+        problem: "Solicita tres calificaciones, calcula su promedio y muestra si es >=70 (Aprobado) o Reprobado.",
+        objectives: ["Sumar tres valores", "Dividir entre 3", "Usar condicional IF"],
+        hints: ["Promedio = (C1+C2+C3)/3"],
+        solution: "Inicio → Leer C1,C2,C3 → Prom=(C1+C2+C3)/3 → Si Prom>=70 → 'Aprobado' → Si no → 'Reprobado' → Fin"
+      },
+      3: {
+        title: "Número Mayor",
+        description: "Encuentra el número mayor entre tres valores diferentes.",
+        problem: "Lee tres números distintos y muestra cuál es el mayor.",
+        objectives: ["Comparar valores", "Anidar condiciones"],
+        hints: ["Usar IF anidados o estructura múltiple"],
+        solution: "Inicio → Leer A,B,C → Si A>B y A>C → 'A mayor' → Si B>A y B>C → 'B mayor' → Si no → 'C mayor' → Fin"
+      }
+    };
 
     let currentExerciseId = null;
 
     function showExercise(id) {
       currentExerciseId = id;
       const ex = exercises[id];
-      document.getElementById('exercise-detail-title').textContent = `Ejercicio ${id}: ${ex.title}`;
+      document.getElementById('exercise-detail-title').textContent = ex.title;
       document.getElementById('exercise-detail-description').textContent = ex.description;
       document.getElementById('problem-statement').textContent = ex.problem;
 
       const objList = document.getElementById('learning-objectives');
       objList.innerHTML = '';
-      ex.objectives.forEach(o => { const li = document.createElement('li'); li.textContent = o; objList.appendChild(li); });
+      ex.objectives.forEach(o => {
+        const li = document.createElement('li');
+        li.textContent = o;
+        objList.appendChild(li);
+      });
 
       const hintList = document.getElementById('hints');
       hintList.innerHTML = '';
-      ex.hints.forEach(h => { const li = document.createElement('li'); li.textContent = h; hintList.appendChild(li); });
+      ex.hints.forEach(h => {
+        const li = document.createElement('li');
+        li.textContent = h;
+        hintList.appendChild(li);
+      });
 
       document.getElementById('proposed-solution').style.display = 'none';
       document.getElementById('exercise-modal').classList.add('show');
@@ -397,12 +291,8 @@
     function showSolution() {
       if (!currentExerciseId) return;
       const sol = document.getElementById('solution-content');
-      sol.innerHTML = exercises[currentExerciseId].solution;
+      sol.textContent = exercises[currentExerciseId].solution;
       document.getElementById('proposed-solution').style.display = 'block';
-    }
-
-    function resetSolution() {
-      document.getElementById('proposed-solution').style.display = 'none';
     }
 
     window.onclick = e => {
