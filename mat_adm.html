@@ -10,6 +10,42 @@
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
+    .loguito {
+    display: inline-block;
+    margin: 10px 15px 10px 0;
+    transition: all 0.3s ease;
+}
+
+.loguito a {
+    display: block;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.loguito:hover a {
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    border-color: #007bff;
+}
+
+.loguito img {
+    width: 120px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+.loguito:hover img {
+    filter: grayscale(0%);
+}
    /* Modal */
 #modal-info {
   position: fixed;
@@ -4500,7 +4536,7 @@
         </a>
         
         <div class="card">
-          <h3>Uso de software</h3>
+          <h3><span class="emoji-small">✅</span> Uso de software</h3>
           <p>Uso de software de aplicación matemática en dispositivos móviles para negocios.</p>
           
            <div class="loguito">
@@ -4542,7 +4578,7 @@
         
         <a href="trabajo_final.html" target="_blank" rel="noopener noreferrer" class="card-link">
           <div class="card">
-            <h3>Trabajo final</h3>
+            <h3><span class="emoji-small">✅</span> Trabajo final</h3>
             <p>Elaboración de trabajo final sobre la relación que tienen las matemáticas y los negocios además de su importancia en los tiempos actuales</p>
           </div>
         </a>
