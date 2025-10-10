@@ -360,6 +360,14 @@
             font-size: 17px;
             color: var(--apple-dark-gray);
         }
+
+        .numerote{
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--apple-vibrant-green);
+            margin-bottom: 15px;
+                
+        }
         
         /* Formulario estilo Apple */
         .ticket-card {
