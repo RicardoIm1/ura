@@ -13,40 +13,45 @@
     .loguito {
     display: inline-block;
     margin: 10px 15px 10px 0;
-    transition: all 0.3s ease;
-}
+        transition: all 0.3s ease;
+    }
+    
+    .loguito a {
+        display: block;
+        text-decoration: none;
+        border-radius: 12px;
+        padding: 8px;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        transition: all 0.3s ease;
+    }
+    
+    .loguito:hover a {
+        background-color: #ffffff;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        transform: translateY(-3px);
+        border-color: #007bff;
+    }
+    
+    .loguito img {
+        width: 120px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        filter: grayscale(30%);
+        transition: filter 0.3s ease;
+    }
 
-.loguito a {
-    display: block;
-    text-decoration: none;
-    border-radius: 12px;
-    padding: 8px;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    transition: all 0.3s ease;
-}
-
-.loguito:hover a {
-    background-color: #ffffff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transform: translateY(-3px);
-    border-color: #007bff;
-}
-
-.loguito img {
-    width: 120px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    filter: grayscale(30%);
-    transition: filter 0.3s ease;
-}
-
-.loguito:hover img {
-    filter: grayscale(0%);
-}
-   /* Modal */
+    .librito img {
+      height: 100px;
+    }
+    
+    .loguito:hover img {
+        filter: grayscale(0%);
+    }
+   
+    /* Modal */
 #modal-info {
   position: fixed;
   top: 0;
@@ -4556,8 +4561,8 @@
         <div class="card">
           <h3>Leer</h3>
           <p>Lecturas comentadas sobre las matemáticas y su aplicación en los negocios.</p>
-           <div class="loguito">
-              <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank" rel="noopener noreferrer">📖 Storytelling con datos - Cole Nussbaumer Knaflic</a><br><br><br>
+           <div class="loguito librito">
+              <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                   <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg" alt="storytelling">
               </a>
           </div>
