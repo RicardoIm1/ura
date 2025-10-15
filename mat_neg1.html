@@ -3609,156 +3609,155 @@
               </li>
 
             <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
-  <hr><br>
-  <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
+              <hr><br>
+              <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
 
-  <h4>📝 ¿Qué es un Sistema de Ecuaciones?</h4>
-  <ul>
-    <li>Dos ecuaciones con dos variables que deben cumplirse <u>simultáneamente</u>.</li>
-    <li>Forma general:<br>
-      a₁x + b₁y = c₁ <br>
-      a₂x + b₂y = c₂
-    </li>
-    <li>La solución es el <b>punto (x,y)</b> donde ambas rectas se cruzan.</li>
-  </ul>
-
-  <h4>🎯 Métodos de Solución</h4>
-  <table class='math-table'>
-    <tr>
-      <th>Método</th>
-      <th>¿Cómo funciona?</th>
-      <th>Cuándo usarlo</th>
-    </tr>
-    <tr>
-      <td><b>Sustitución</b></td>
-      <td>Despejar una variable y reemplazar</td>
-      <td>Cuando una variable es fácil de aislar</td>
-    </tr>
-    <tr>
-      <td><b>Igualación</b></td>
-      <td>Despejar la misma variable en ambas</td>
-      <td>Cuando ambas son fáciles de despejar</td>
-    </tr>
-    <tr>
-      <td><b>Reducción</b></td>
-      <td>Sumar o restar ecuaciones para eliminar</td>
-      <td>Cuando los coeficientes son semejantes</td>
-    </tr>
-  </table>
-
-<div class='tema-card'>
-  <h4>🔢 EJEMPLO 1: Método de Sustitución</h4>
-  Sistema:  
-  (1) x + y = 5  
-  (2) x - y = 1  
-
-  <p><b>Pasos:</b></p>
-  <ol>
-    <li>De (1): x = 5 - y</li>
-    <li>Sustituir en (2): (5 - y) - y = 1</li>
-    <li>5 - 2y = 1 ⇔ -2y = -4 ⇔ y = 2</li>
-    <li>x = 5 - 2 = 3</li>
-    <li>Verificación:  
-      3 + 2 = 5 ✓  
-      3 - 2 = 1 ✓
-    </li>
-  </ol>
-  ∴ Solución: (x, y) = (3, 2)
-
-  <h4>📈 Representación Gráfica</h4>
-  Ecuaciones:  
-  y = 5 - x  
-  y = x - 1  
-  Solución: (3, 2)
-</div>
-
-<div class='tema-card'>
-  <h4>🔢 EJEMPLO 2: Método de Igualación</h4>
-  Sistema:  
-  (1) 2x + y = 8  
-  (2) x - y = 1  
-
-  <p><b>Pasos:</b></p>
-  <ol>
-    <li>De (1): y = 8 - 2x</li>
-    <li>De (2): y = x - 1</li>
-    <li>Igualar: 8 - 2x = x - 1</li>
-    <li>8 + 1 = 3x ⇔ x = 3</li>
-    <li>y = 3 - 1 = 2</li>
-    <li>Verificación:  
-      2·3 + 2 = 8 ✓  
-      3 - 2 = 1 ✓
-    </li>
-  </ol>
-  ∴ Solución: (3, 2)
-</div>
-
-<div class='tema-card'>
-  <h4>➕ EJEMPLO 3: Método de Reducción</h4>
-  Sistema:  
-  (1) 3x + 2y = 12  
-  (2) 2x + 2y = 10  
-
-  <p><b>Pasos:</b></p>
-  <ol>
-    <li>(1) - (2): (3x+2y) - (2x+2y) = 12 - 10</li>
-    <li>x = 2</li>
-    <li>Sustituir en (2): 2·2 + 2y = 10 ⇔ 4 + 2y = 10</li>
-    <li>2y = 6 ⇔ y = 3</li>
-    <li>Verificación:  
-      3·2 + 2·3 = 12 ✓  
-      2·2 + 2·3 = 10 ✓
-    </li>
-  </ol>
-  ∴ Solución: (2, 3)
-  </div>
-
-  <h4>🎯 Tipos de Sistemas</h4>
-  <table class='math-table'>
-    <tr>
-      <th>Tipo</th>
-      <th>Significado</th>
-      <th>Gráfica</th>
-      <th>Ejemplo</th>
-    </tr>
-    <tr>
-      <td><b>Compatible Determinado</b></td>
-      <td>1 solución</td>
-      <td>Rectas que se cortan</td>
-      <td>x + y = 5, x - y = 1</td>
-    </tr>
-    <tr>
-      <td><b>Compatible Indeterminado</b></td>
-      <td>Infinitas soluciones</td>
-      <td>Rectas coincidentes</td>
-      <td>2x + 2y = 4, x + y = 2</td>
-    </tr>
-    <tr>
-      <td><b>Incompatible</b></td>
-      <td>Sin solución</td>
-      <td>Rectas paralelas</td>
-      <td>x + y = 3, x + y = 5</td>
-    </tr>
-  </table>
-
-  <h4>💡 Consejos</h4>
-  ✓ Verificar la solución en ambas ecuaciones<br>
-  ✓ Elegir el método más sencillo<br>
-  ✓ Revisar signos (+/−)<br>
-  ✓ Simplificar primero<br><br>
-  ✗ No olvidar verificar<br>
-  ✗ Cuidado con los signos<br>
-  ✗ No confundir x e y
-
-  <h4>📚 Fuentes</h4>
-  <ul>
-    <li>Baldor, A. <i>Álgebra</i></li>
-    <li>Swokowski, E. W. <i>Álgebra y trigonometría</i></li>
-    <li>Stewart, J. <i>Precálculo</i></li>
-  </ul>
-`)">2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado <span class="emoji-small">✅</span>
+              <h4>📝 ¿Qué es un Sistema de Ecuaciones?</h4>
+              <ul>
+                <li>Dos ecuaciones con dos variables que deben cumplirse <u>simultáneamente</u>.</li>
+                <li>Forma general:<br>
+                  a₁x + b₁y = c₁ <br>
+                  a₂x + b₂y = c₂
+                </li>
+                <li>La solución es el <b>punto (x,y)</b> donde ambas rectas se cruzan.</li>
+              </ul>
+            
+              <h4>🎯 Métodos de Solución</h4>
+              <table class='math-table'>
+                <tr>
+                  <th>Método</th>
+                  <th>¿Cómo funciona?</th>
+                  <th>Cuándo usarlo</th>
+                </tr>
+                <tr>
+                  <td><b>Sustitución</b></td>
+                  <td>Despejar una variable y reemplazar</td>
+                  <td>Cuando una variable es fácil de aislar</td>
+                </tr>
+                <tr>
+                  <td><b>Igualación</b></td>
+                  <td>Despejar la misma variable en ambas</td>
+                  <td>Cuando ambas son fáciles de despejar</td>
+                </tr>
+                <tr>
+                  <td><b>Reducción</b></td>
+                  <td>Sumar o restar ecuaciones para eliminar</td>
+                  <td>Cuando los coeficientes son semejantes</td>
+                </tr>
+              </table>
+            
+            <div class='tema-card'>
+              <h4>🔢 EJEMPLO 1: Método de Sustitución</h4>
+              Sistema:  
+              (1) x + y = 5  
+              (2) x - y = 1  
+            
+              <p><b>Pasos:</b></p>
+              <ol>
+                <li>De (1): x = 5 - y</li>
+                <li>Sustituir en (2): (5 - y) - y = 1</li>
+                <li>5 - 2y = 1 ⇔ -2y = -4 ⇔ y = 2</li>
+                <li>x = 5 - 2 = 3</li>
+                <li>Verificación:  
+                  3 + 2 = 5 ✓  
+                  3 - 2 = 1 ✓
+                </li>
+              </ol>
+              ∴ Solución: (x, y) = (3, 2)
+            
+              <h4>📈 Representación Gráfica</h4>
+              Ecuaciones:  
+              y = 5 - x  
+              y = x - 1  
+              Solución: (3, 2)
+            </div>
+            
+            <div class='tema-card'>
+              <h4>🔢 EJEMPLO 2: Método de Igualación</h4>
+              Sistema:  
+              (1) 2x + y = 8  
+              (2) x - y = 1  
+            
+              <p><b>Pasos:</b></p>
+              <ol>
+                <li>De (1): y = 8 - 2x</li>
+                <li>De (2): y = x - 1</li>
+                <li>Igualar: 8 - 2x = x - 1</li>
+                <li>8 + 1 = 3x ⇔ x = 3</li>
+                <li>y = 3 - 1 = 2</li>
+                <li>Verificación:  
+                  2·3 + 2 = 8 ✓  
+                  3 - 2 = 1 ✓
+                </li>
+              </ol>
+              ∴ Solución: (3, 2)
+            </div>
+            
+            <div class='tema-card'>
+              <h4>➕ EJEMPLO 3: Método de Reducción</h4>
+              Sistema:  
+              (1) 3x + 2y = 12  
+              (2) 2x + 2y = 10  
+            
+              <p><b>Pasos:</b></p>
+              <ol>
+                <li>(1) - (2): (3x+2y) - (2x+2y) = 12 - 10</li>
+                <li>x = 2</li>
+                <li>Sustituir en (2): 2·2 + 2y = 10 ⇔ 4 + 2y = 10</li>
+                <li>2y = 6 ⇔ y = 3</li>
+                <li>Verificación:  
+                  3·2 + 2·3 = 12 ✓  
+                  2·2 + 2·3 = 10 ✓
+                </li>
+              </ol>
+              ∴ Solución: (2, 3)
+              </div>
+            
+              <h4>🎯 Tipos de Sistemas</h4>
+              <table class='math-table'>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Significado</th>
+                  <th>Gráfica</th>
+                  <th>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td><b>Compatible Determinado</b></td>
+                  <td>1 solución</td>
+                  <td>Rectas que se cortan</td>
+                  <td>x + y = 5, x - y = 1</td>
+                </tr>
+                <tr>
+                  <td><b>Compatible Indeterminado</b></td>
+                  <td>Infinitas soluciones</td>
+                  <td>Rectas coincidentes</td>
+                  <td>2x + 2y = 4, x + y = 2</td>
+                </tr>
+                <tr>
+                  <td><b>Incompatible</b></td>
+                  <td>Sin solución</td>
+                  <td>Rectas paralelas</td>
+                  <td>x + y = 3, x + y = 5</td>
+                </tr>
+              </table>
+            
+              <h4>💡 Consejos</h4>
+              ✓ Verificar la solución en ambas ecuaciones<br>
+              ✓ Elegir el método más sencillo<br>
+              ✓ Revisar signos (+/−)<br>
+              ✓ Simplificar primero<br><br>
+              ✗ No olvidar verificar<br>
+              ✗ Cuidado con los signos<br>
+              ✗ No confundir x e y
+            
+              <h4>📚 Fuentes</h4>
+              <ul>
+                <li>Baldor, A. <i>Álgebra</i></li>
+                <li>Swokowski, E. W. <i>Álgebra y trigonometría</i></li>
+                <li>Stewart, J. <i>Precálculo</i></li>
+              </ul>
+            `)">2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado <span class="emoji-small">✅</span>
             </li>
-
           </ul>
         </ul>
       </div>
@@ -3775,8 +3774,51 @@
             <ul>
               <li>3.2.1. Forma común</li>
               <li>3.2.2. Forma punto-pendiente</li>
-            </ul><br>
-          <li><b>3.3. Funciones lineales</b></li>
+            </ul><br><li onclick="abrirModal('3.3. Funciones Lineales', `
+<div class=math-module>
+  <h3>3.3. Funciones Lineales en los Negocios</h3>
+  <p><strong>Objetivo:</strong> Comprender y aplicar las funciones lineales para analizar ingresos, costos, utilidades y puntos de equilibrio en empresas, usando ejemplos prácticos, gráficas y tablas.</p>
+
+  <h4>📈 ¿Qué son las Funciones Lineales?</h4>
+  <ul>
+    <li>Relaciones matemáticas donde el cambio es <u>constante</u> y proporcional</li>
+    <li>Forma general: y = mx + b, donde m es la pendiente y b es el intercepto</li>
+    <li>En negocios: Representan ingresos, costos, oferta, demanda y utilidades</li>
+  </ul>
+
+  <h4>🎯 Aplicaciones en los Negocios</h4>
+  <table class=math-table>
+    <tr>
+      <th>Concepto</th>
+      <th>Fórmula</th>
+      <th>¿Qué representa?</th>
+    </tr>
+    <tr>
+      <td><b>Ingreso</b></td>
+      <td>I(x) = p × x</td>
+      <td>Dinero por ventas</td>
+    </tr>
+    <tr>
+      <td><b>Costo</b></td>
+      <td>C(x) = CF + CV × x</td>
+      <td>Gastos de producción</td>
+    </tr>
+    <tr>
+      <td><b>Utilidad</b></td>
+      <td>U(x) = I(x) - C(x)</td>
+      <td>Ganancia o pérdida</td>
+    </tr>
+    <tr>
+      <td><b>Oferta</b></td>
+      <td>Qₒ = a + bP</td>
+      <td>Cantidad que productores ofrecen</td>
+    </tr>
+    <tr>
+      <td><b>Demanda</b></td>
+      <td>Qₔ = c - dP</td>
+      <td>Cantidad que consumidores compran</td>
+    </tr>
+  </table>
             <ul>
               <li>3.3.1. Ingreso</li>
               <li>3.3.2. Costo</li>
