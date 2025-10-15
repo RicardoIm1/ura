@@ -3779,52 +3779,128 @@
           
           <li onclick="abrirModal('3.3. Funciones Lineales', `
             <div class=math-module>
-              <h3>3.3. Funciones Lineales en los Negocios</h3>
-              <p><strong>Objetivo:</strong> Comprender y aplicar las funciones lineales para analizar ingresos, costos, utilidades y puntos de equilibrio en empresas, usando ejemplos prácticos, gráficas y tablas.</p>
-            
-              <h4>📈 ¿Qué son las Funciones Lineales?</h4>
-              <ul>
-                <li>Relaciones matemáticas donde el cambio es <u>constante</u> y proporcional</li>
-                <li>Forma general: y = mx + b, donde m es la pendiente y b es el intercepto</li>
-                <li>En negocios: Representan ingresos, costos, oferta, demanda y utilidades</li>
-              </ul>
-            
-              <h4>🎯 Aplicaciones en los Negocios</h4>
-              <table class=math-table>
-                <tr>
-                  <th>Concepto</th>
-                  <th>Fórmula</th>
-                  <th>¿Qué representa?</th>
-                </tr>
-                <tr>
-                  <td><b>Ingreso</b></td>
-                  <td>I(x) = p × x</td>
-                  <td>Dinero por ventas</td>
-                </tr>
-                <tr>
-                  <td><b>Costo</b></td>
-                  <td>C(x) = CF + CV × x</td>
-                  <td>Gastos de producción</td>
-                </tr>
-                <tr>
-                  <td><b>Utilidad</b></td>
-                  <td>U(x) = I(x) - C(x)</td>
-                  <td>Ganancia o pérdida</td>
-                </tr>
-                <tr>
-                  <td><b>Oferta</b></td>
-                  <td>Qₒ = a + bP</td>
-                  <td>Cantidad que productores ofrecen</td>
-                </tr>
-                <tr>
-                  <td><b>Demanda</b></td>
-                  <td>Qₔ = c - dP</td>
-                  <td>Cantidad que consumidores compran</td>
-                </tr>
-              </table>
-            </ul>
-            `)">3.3. Funciones Lineales <span class="emoji-small">✅</span>
-            </li>
+              <div class=reading-time>
+                <svg width=20 height=20 viewBox=0 0 20 20 style=display:inline-block;vertical-align:middle;margin-right:8px;>
+                  <circle cx=10 cy=10 r=9 fill=none stroke=#4CAF50 stroke-width=2></circle>
+                  <circle cx=10 cy=10 r=9 fill=none stroke=#E0E0E0 stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform=rotate(-90 10 10)></circle>
+                  <text x=10 y=13 text-anchor=middle font-size=8 font-family=sans-serif fill=#333>7 min</text>
+                </svg>
+                <span>Tiempo estimado de lectura: 7 minutos</span>
+              </div>
+              
+                <p><strong>Objetivo:</strong> Comprender y aplicar las funciones lineales para analizar ingresos, costos, utilidades y puntos de equilibrio en empresas, usando ejemplos prácticos, gráficas y tablas.</p>
+              
+                <h4>¿Qué son las Funciones Lineales?</h4>
+                <ul>
+                  <li>Relaciones matemáticas donde el cambio es constante y proporcional</li>
+                  <li>Forma general: y = mx + b, donde m es la pendiente y b es el intercepto</li>
+                  <li>En negocios: Representan ingresos, costos, oferta, demanda y utilidades</li>
+                  <li>Característica fundamental: Tasa de cambio constante que se mantiene igual en todos los puntos</li>
+                </ul>
+              
+                <h4>Fundamento Teórico de las Funciones Lineales</h4>
+                <p>Las funciones lineales constituyen el modelo matemático más elemental para representar relaciones proporcionales entre variables. Según Haeussler, Ernest F. y Paul, Richard S. en <em>Matemáticas para Administración y Economía</em> (2015), estas funciones son fundamentales en análisis empresarial porque permiten modelar comportamientos predecibles y constantes en diversas situaciones económicas.</p>
+                
+                <p>La estructura y = mx + b, donde m representa la pendiente (tasa de cambio) y b el intercepto con el eje y (valor inicial), proporciona un marco versátil para analizar escenarios empresariales. La pendiente m indica cuánto cambia la variable dependiente y por cada unidad que cambia la variable independiente x.</p>
+              
+                <h4>Aplicaciones en los Negocios</h4>
+                <table class=math-table>
+                  <tr>
+                    <th>Concepto</th>
+                    <th>Fórmula</th>
+                    <th>¿Qué representa?</th>
+                    <th>Componentes Clave</th>
+                  </tr>
+                  <tr>
+                    <td><b>Ingreso</b></td>
+                    <td>I(x) = p × x</td>
+                    <td>Dinero total generado por ventas</td>
+                    <td>p: precio unitario, x: cantidad vendida</td>
+                  </tr>
+                  <tr>
+                    <td><b>Costo</b></td>
+                    <td>C(x) = CF + CV × x</td>
+                    <td>Gastos totales de producción</td>
+                    <td>CF: costos fijos, CV: costo variable unitario</td>
+                  </tr>
+                  <tr>
+                    <td><b>Utilidad</b></td>
+                    <td>U(x) = I(x) - C(x)</td>
+                    <td>Ganancia o pérdida neta</td>
+                    <td>Diferencia entre ingresos y costos</td>
+                  </tr>
+                  <tr>
+                    <td><b>Oferta</b></td>
+                    <td>Qₒ = a + bP</td>
+                    <td>Cantidad que productores están dispuestos a ofrecer</td>
+                    <td>a: intercepto, b: sensibilidad al precio</td>
+                  </tr>
+                  <tr>
+                    <td><b>Demanda</b></td>
+                    <td>Qₔ = c - dP</td>
+                    <td>Cantidad que consumidores están dispuestos a comprar</td>
+                    <td>c: demanda máxima, d: elasticidad precio</td>
+                  </tr>
+                </table>
+                
+                <h4>Análisis del Punto de Equilibrio</h4>
+                <p>El punto de equilibrio representa el nivel de producción donde los ingresos totales igualan a los costos totales, resultando en utilidad cero. Según Salas, Hinojosa y Cuevas en <em>Matemáticas Administrativas</em> (2017), este análisis es crucial para determinar la viabilidad de proyectos y establecer metas de ventas mínimas.</p>
+                
+                <p>Para calcular el punto de equilibrio:</p>
+                <ul>
+                  <li>Establecer I(x) = C(x)</li>
+                  <li>Resolver p × x = CF + CV × x</li>
+                  <li>Despejar x: x = CF ÷ (p - CV)</li>
+                </ul>
+                
+                <h4>Ejemplo Práctico: Empresa de Fabricación</h4>
+                <p>Consideremos una empresa que fabrica lámparas artesanales:</p>
+                <ul>
+                  <li>Costos fijos mensuales: $5,000 (alquiler, servicios, salarios fijos)</li>
+                  <li>Costo variable por lámpara: $25 (materiales, mano de obra variable)</li>
+                  <li>Precio de venta por lámpara: $75</li>
+                </ul>
+                
+                <p><strong>Funciones lineales aplicadas:</strong></p>
+                <ul>
+                  <li>Función de costos: C(x) = 5000 + 25x</li>
+                  <li>Función de ingresos: I(x) = 75x</li>
+                  <li>Función de utilidad: U(x) = 75x - (5000 + 25x) = 50x - 5000</li>
+                </ul>
+                
+                <p><strong>Punto de equilibrio:</strong> 5000 ÷ (75 - 25) = 100 lámparas mensuales</p>
+                
+                <h4>Interpretación Gráfica</h4>
+                <p>Al graficar estas funciones lineales, se observa:</p>
+                <ul>
+                  <li>La función de costos tiene intercepto en $5,000 y pendiente de $25</li>
+                  <li>La función de ingresos pasa por el origen con pendiente de $75</li>
+                  <li>El punto de intersección entre ambas funciones representa el punto de equilibrio</li>
+                  <li>La función de utilidad cruza el eje x en el punto de equilibrio</li>
+                </ul>
+                
+                <h4>Limitaciones y Consideraciones</h4>
+                <p>Aunque las funciones lineales son herramientas poderosas, es importante reconocer sus limitaciones. Según Chiang, Alpha C. en <em>Métodos Fundamentales de Economía Matemática</em> (2006), en la realidad muchas relaciones económicas pueden no ser perfectamente lineales, especialmente en rangos extensos de producción o precios.</p>
+                
+                <p>Las funciones lineales son más apropiadas para:</p>
+                <ul>
+                  <li>Análisis a corto plazo</li>
+                  <li>Rangos limitados de producción</li>
+                  <li>Mercados con competencia perfecta</li>
+                  <li>Empresas con estructuras de costos simples</li>
+                </ul>
+                
+                <h4>Fuentes Bibliográficas</h4>
+                <ol>
+                  <li>Haeussler, Ernest F. y Paul, Richard S. (2015). Matemáticas para Administración y Economía. Pearson Educación.</li>
+                  <li>Salas, J., Hinojosa, M. A. y Cuevas, G. (2017). Matemáticas Administrativas. McGraw-Hill Interamericana.</li>
+                  <li>Chiang, Alpha C. (2006). Métodos Fundamentales de Economía Matemática. McGraw-Hill.</li>
+                  <li>Budnick, Frank S. (2007). Matemáticas Aplicadas para Administración, Economía y Ciencias Sociales. McGraw-Hill.</li>
+                </ol>
+                
+              </div>
+              `)">3.3. Funciones Lineales <span class="emoji-small">✅</span>
+              </li>
           
             <ul>
               <li>3.3.1. Ingreso</li>
