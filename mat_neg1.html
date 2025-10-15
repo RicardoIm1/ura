@@ -3777,419 +3777,139 @@
               
             </ul><br>
 
-<li onclick="abrirModal('3.3. Funciones Lineales', `
-  <hr><br>
-  <div class=math-module style=font-family:var(--font-family);line-height:1.6;>
-
-    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;color:var(--text-color);>
-      <svg width=24 height=24 viewBox=0 0 20 20 style=margin-right:10px;>
-        <circle cx=10 cy=10 r=9 fill=none stroke=var(--primary-color) stroke-width=2></circle>
-        <circle cx=10 cy=10 r=9 fill=none stroke=var(--accent-color) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform=rotate(-90 10 10)></circle>
-        <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--text-color)>7 min</text>
-      </svg>
-      <span style=font-weight:bold;>Tiempo estimado: 7 min</span>
-    </div>
-
-    <div class=learning-objective style=background:var(--light-bg);padding:12px;border-left:4px solid var(--primary-color);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-      <i class='fas fa-bullseye' style=color:var(--primary-color);margin-right:8px;></i>
-      <span><strong>Objetivo:</strong> Entender y aplicar funciones lineales en análisis de ingresos, costos y utilidades mediante ejemplos, tablas y gráficas.</span>
-    </div>
-
-    <div class=content-section style=margin-bottom:20px;>
-      <h4 style=margin-bottom:10px;><i class='fas fa-chart-line' style=color:var(--primary-color);margin-right:6px;></i>¿Qué son las Funciones Lineales?</h4>
-      <div class=feature-grid style=display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;>
-        <div class=feature-card style=background:var(--card-bg);padding:10px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.08);>
-          <i class='fas fa-ruler-combined' style=color:var(--accent-color);margin-bottom:6px;></i>
-          <h5 style=margin:5px 0;>Relación Constante</h5>
-          <p style=font-size:13px;>Cambio proporcional y constante entre variables</p>
-        </div>
-        <div class=feature-card style=background:var(--card-bg);padding:10px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.08);>
-          <i class='fas fa-calculator' style=color:var(--secondary-color);margin-bottom:6px;></i>
-          <h5 style=margin:5px 0;>Forma General</h5>
-          <p style=font-size:13px;>y = mx + b<br>m: pendiente, b: intercepto</p>
-        </div>
-        <div class=feature-card style=background:var(--card-bg);padding:10px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.08);>
-          <i class='fas fa-briefcase' style=color:var(--primary-color);margin-bottom:6px;></i>
-          <h5 style=margin:5px 0;>Aplicación en Negocios</h5>
-          <p style=font-size:13px;>Ingresos, costos y utilidades</p>
-        </div>
-        <div class=feature-card style=background:var(--card-bg);padding:10px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.08);>
-          <i class='fas fa-tachometer-alt' style=color:var(--accent-color);margin-bottom:6px;></i>
-          <h5 style=margin:5px 0;>Tasa Constante</h5>
-          <p style=font-size:13px;>Razón de cambio que permanece igual</p>
-        </div>
-      </div>
-    </div>
-
-    <div class=graph-container style=margin-bottom:20px;>
-      <h4 style=margin-bottom:10px;><i class='fas fa-project-diagram' style=color:var(--primary-color);margin-right:6px;></i>Estructura de Función Lineal</h4>
-      <svg viewBox=0 0 400 250 class=math-graph style=width:100%;height:auto;>
-        <line x1=50 y1=200 x2=350 y2=200 stroke=var(--border-color) stroke-width=2></line>
-        <line x1=50 y1=200 x2=50 y2=50 stroke=var(--border-color) stroke-width=2></line>
-        <line x1=50 y1=200 x2=350 y2=50 stroke=var(--primary-color) stroke-width=4></line>
-      </svg>
-    </div>
-
-    <div class=content-section style=margin-bottom:20px;>
-      <h4 style=margin-bottom:10px;><i class='fas fa-chart-bar' style=color:var(--secondary-color);margin-right:6px;></i>Aplicaciones en Negocios</h4>
-      <table class=math-table style=width:100%;border-collapse:collapse;text-align:left;>
-        <thead>
-          <tr style=background:var(--table-header);>
-            <th style=padding:8px;border:1px solid var(--border-color);>Concepto</th>
-            <th style=padding:8px;border:1px solid var(--border-color);>Fórmula</th>
-            <th style=padding:8px;border:1px solid var(--border-color);>Significado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style=background:var(--table-row);>
-            <td style=padding:8px;border:1px solid var(--border-color);>Ingreso</td>
-            <td style=padding:8px;border:1px solid var(--border-color);>I(x) = p × x</td>
-            <td style=padding:8px;border:1px solid var(--border-color);>Total ventas</td>
-          </tr>
-          <tr style=background:var(--table-row-alt);>
-            <td style=padding:8px;border:1px solid var(--border-color);>Costo</td>
-            <td style=padding:8px;border:1px solid var(--border-color);>C(x) = CF + CV × x</td>
-            <td style=padding:8px;border:1px solid var(--border-color);>Gastos totales</td>
-          </tr>
-          <tr style=background:var(--table-row);>
-            <td style=padding:8px;border:1px solid var(--border-color);>Utilidad</td>
-            <td style=padding:8px;border:1px solid var(--border-color);>U(x) = I(x) - C(x)</td>
-            <td style=padding:8px;border:1px solid var(--border-color);>Ganancia neta</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class=bibliography-section style=margin-top:20px;>
-      <h4 style=margin-bottom:10px;><i class='fas fa-book' style=color:var(--primary-color);margin-right:6px;></i>Referencias</h4>
-      <ul style=padding-left:18px;line-height:1.5;>
-        <li>Haeussler, Ernest F. y Paul, Richard S. (2015). Matemáticas para Administración y Economía.</li>
-        <li>Salas, J., Hinojosa, M. A. y Cuevas, G. (2017). Matemáticas Administrativas.</li>
-        <li>Chiang, Alpha C. (2006). Métodos Fundamentales de Economía Matemática.</li>
-      </ul>
-    </div>
-
-  </div>
-`)">
-  <b>3.3. Funciones Lineales</b> <span class=emoji-small>✅</span>
-</li>
-
-
-          
-<li onclick="abrirModal('3.3.1. Ingreso', `
-<hr><br>
-<div class=math-module>
-  <div class=reading-time>
-    <svg width=20 height=20 viewBox=0 0 20 20 style=display:inline-block;vertical-align:middle;margin-right:8px;>
-      <circle cx=10 cy=10 r=9 fill=none stroke=var(--primary-color) stroke-width=2></circle>
-      <circle cx=10 cy=10 r=9 fill=none stroke=var(--border-color) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=21.2743 transform=rotate(-90 10 10)></circle>
-      <text x=10 y=13 text-anchor=middle font-size=8 font-family=var(--font-family) fill=var(--text-color)>5 min</text>
-    </svg>
-    <span>Tiempo estimado de lectura: 5 minutos</span>
+<li onclick="abrirModal('3.3. Funciones Lineales', '
+  <h2 class=\"modal-title\">Funciones Lineales</h2>
+  <div class=\"learning-objective\">
+    <strong>Objetivo:</strong> Comprender cómo una variación constante entre dos variables
+    se traduce en una línea recta y se expresa con
+    <span class=\"math\">\(y = m \cdot x + b\)</span>.
   </div>
 
-  <div class=learning-objective>
-    <i class='fas fa-bullseye'></i>
-    <p><strong>Objetivo:</strong> Comprender el concepto de ingreso en los negocios, su cálculo mediante funciones lineales y su aplicación en la toma de decisiones empresariales.</p>
-  </div>
-  
-  <div class=content-section>
-    <h4><i class='fas fa-money-bill-wave'></i> ¿Qué es el Ingreso?</h4>
-    <div class=feature-grid>
-      <div class=feature-card>
-        <i class='fas fa-cash-register'></i>
-        <h5>Definición</h5>
-        <p>Total de dinero generado por la venta de bienes o servicios</p>
-      </div>
-      <div class=feature-card>
-        <i class='fas fa-chart-line'></i>
-        <h5>Función Lineal</h5>
-        <p>I(x) = p × x<br>Relación directamente proporcional</p>
-      </div>
-      <div class=feature-card>
-        <i class='fas fa-balance-scale'></i>
-        <h5>Importancia</h5>
-        <p>Indicador clave del desempeño comercial y base para calcular utilidades</p>
-      </div>
-      <div class=feature-card>
-        <i class='fas fa-calculator'></i>
-        <h5>Variables</h5>
-        <p><b>p:</b> Precio unitario<br><b>x:</b> Cantidad vendida</p>
-      </div>
+  <div class=\"feature-grid\">
+    <div class=\"feature-card\">
+      <h5>Pendiente (<span class=\"math\">m</span>)</h5>
+      <p>Cambio de <em>y</em> cuando <em>x</em> crece en una unidad.</p>
+    </div>
+    <div class=\"feature-card\">
+      <h5>Ordenada al origen (<span class=\"math\">b</span>)</h5>
+      <p>Valor de <em>y</em> cuando <em>x = 0</em>.</p>
+    </div>
+    <div class=\"feature-card\">
+      <h5>Representación gráfica</h5>
+      <p>Una línea recta con inclinación fija.</p>
+    </div>
+    <div class=\"feature-card\">
+      <h5>Aplicación práctica</h5>
+      <p>Modela costos fijos + variables, proyecciones de datos.</p>
     </div>
   </div>
 
-  <div class=graph-container>
-    <h4><i class='fas fa-project-diagram'></i> Comportamiento del Ingreso</h4>
-    <div class=graph-wrapper>
-      <div class=graph-legend>
-        <div class=legend-item>
-          <span class=color-dot style=background-color:var(--primary-color)></span>
-          <span>Función de Ingreso: I(x) = px</span>
-        </div>
-        <div class=legend-item>
-          <span class=color-dot style=background-color:var(--accent-color)></span>
-          <span>Puntos de referencia</span>
-        </div>
-      </div>
-      <svg viewBox=0 0 400 250 class=math-graph>
-        <!-- Ejes coordenados -->
-        <line x1=50 y1=200 x2=350 y2=200 stroke=var(--border-color) stroke-width=2 marker-end=url(#arrowhead) />
-        <line x1=50 y1=200 x2=50 y2=50 stroke=var(--border-color) stroke-width=2 marker-end=url(#arrowhead) />
-        
-        <!-- Escalas eje X (Unidades) -->
-        <g class=axis-markers>
-          <line x1=100 y1=200 x2=100 y2=205 stroke=var(--border-color) stroke-width=2 />
-          <line x1=200 y1=200 x2=200 y2=205 stroke=var(--border-color) stroke-width=2 />
-          <line x1=300 y1=200 x2=300 y2=205 stroke=var(--border-color) stroke-width=2 />
-          <text x=100 y=220 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>50</text>
-          <text x=200 y=220 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>100</text>
-          <text x=300 y=220 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>150</text>
-          <text x=200 y=240 text-anchor=middle font-family=var(--font-family) font-size=14 fill=var(--text-color)>Unidades Vendidas (x)</text>
-        </g>
-        
-        <!-- Escalas eje Y (Ingreso) -->
-        <g class=axis-markers>
-          <line x1=50 y1=150 x2=45 y2=150 stroke=var(--border-color) stroke-width=2 />
-          <line x1=50 y1=100 x2=45 y2=100 stroke=var(--border-color) stroke-width=2 />
-          <line x1=50 y1=50 x2=45 y2=50 stroke=var(--border-color) stroke-width=2 />
-          <text x=35 y=150 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>$3,750</text>
-          <text x=35 y=100 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>$7,500</text>
-          <text x=35 y=50 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>$11,250</text>
-          <text x=15 y=125 text-anchor=middle font-family=var(--font-family) font-size=14 fill=var(--text-color) transform=rotate(-90 15,125)>Ingreso ($)</text>
-        </g>
-        
-        <!-- Líneas de guía -->
-        <g class=grid-lines>
-          <line x1=50 y1=150 x2=350 y2=150 stroke=var(--border-color) stroke-width=1 stroke-dasharray=5,5 opacity=0.6 />
-          <line x1=50 y1=100 x2=350 y2=100 stroke=var(--border-color) stroke-width=1 stroke-dasharray=5,5 opacity=0.6 />
-          <line x1=50 y1=50 x2=350 y2=50 stroke=var(--border-color) stroke-width=1 stroke-dasharray=5,5 opacity=0.6 />
-        </g>
-        
-        <!-- Función de Ingreso (precio $75) -->
-        <line x1=50 y1=200 x2=350 y2=50 stroke=var(--primary-color) stroke-width=4 class=main-function />
-        
-        <!-- Puntos de referencia -->
-        <g class=data-points>
-          <circle cx=100 cy=150 r=5 fill=var(--accent-color) stroke=white stroke-width=2 />
-          <circle cx=200 cy=100 r=5 fill=var(--accent-color) stroke=white stroke-width=2 />
-          <circle cx=300 cy=50 r=5 fill=var(--accent-color) stroke=white stroke-width=2 />
-        </g>
-        
-        <!-- Anotaciones -->
-        <g class=annotations>
-          <text x=110 y=140 text-anchor=start font-family=var(--font-family) font-size=11 fill=var(--accent-color)>(50, $3,750)</text>
-          <text x=210 y=90 text-anchor=start font-family=var(--font-family) font-size=11 fill=var(--accent-color)>(100, $7,500)</text>
-          <text x=310 y=40 text-anchor=start font-family=var(--font-family) font-size=11 fill=var(--accent-color)>(150, $11,250)</text>
-          
-          <!-- Pendiente -->
-          <line x1=200 y1=95 x2=200 y2=45 stroke=var(--secondary-color) stroke-width=2 stroke-dasharray=4,4 />
-          <text x=220 y=70 text-anchor=middle font-family=var(--font-family) font-size=11 fill=var(--secondary-color)>Pendiente = $75</text>
-        </g>
-        
-        <defs>
-          <marker id=arrowhead markerWidth=10 markerHeight=7 refX=9 refY=3.5 orient=auto>
-            <polygon points=0 0, 10 3.5, 0 7 fill=var(--border-color) />
-          </marker>
-        </defs>
-      </svg>
+  <canvas id=\"chart-lineal\" width=\"500\" height=\"300\"></canvas>
+  <script>
+    const ctxL = document.getElementById('chart-lineal').getContext('2d');
+    new Chart(ctxL, {
+      type: 'line',
+      data: {
+        labels: [0, 1, 2, 3, 4],
+        datasets: [{
+          label: 'y = 2x + 3',
+          data: [3, 5, 7, 9, 11],
+          borderColor: '#0077CC',
+          backgroundColor: 'transparent',
+          tension: 0
+        }]
+      },
+      options: {
+        scales: {
+          x: { title: { display: true, text: 'x' } },
+          y: { title: { display: true, text: 'y' } }
+        },
+        plugins: { legend: { position: 'top' } }
+      }
+    });
+  </script>
+
+  <div class=\"references\">
+    <h4>Referencias</h4>
+    <ul>
+      <li>Haeussler, E. F.; Paul, R. S. (2015). Matemáticas para Administración y Economía.</li>
+      <li>Chiang, A. C. (2006). Métodos Fundamentales de Economía Matemática.</li>
+    </ul>
+  </div>
+')"><b>3.3. Funciones Lineales</b></li>
+
+
+<li onclick="abrirModal('3.3.1. Ingreso', '
+  <h2 class=\"modal-title\">Ingreso en Negocios</h2>
+  <div class=\"learning-objective\">
+    <strong>Objetivo:</strong> Aprender a calcular el ingreso total con
+    <span class=\"math\">\(I(x) = p \cdot x\)</span>, donde <em>p</em> es el precio unitario
+    y <em>x</em> la cantidad vendida.
+  </div>
+
+  <div class=\"feature-grid\">
+    <div class=\"feature-card\">
+      <h5>Definición</h5>
+      <p>Total de dinero generado por ventas.</p>
+    </div>
+    <div class=\"feature-card\">
+      <h5>Fórmula</h5>
+      <p><span class=\"math\">I(x) = p \cdot x</span></p>
+    </div>
+    <div class=\"feature-card\">
+      <h5>Variables</h5>
+      <p><span class=\"math\">p</span>: precio por unidad;<br>
+         <span class=\"math\">x</span>: unidades vendidas.</p>
+    </div>
+    <div class=\"feature-card\">
+      <h5>Importancia</h5>
+      <p>Base para calcular utilidades y tomar decisiones.</p>
     </div>
   </div>
 
-  <div class=content-section>
-    <h4><i class='fas fa-calculator'></i> Fórmula y Componentes</h4>
-    <div class=formula-card>
-      <div class=formula-main>
-        <h3>I(x) = p × x</h3>
-        <p>Función Lineal de Ingreso</p>
-      </div>
-      <div class=formula-components>
-        <div class=component>
-          <span class=component-symbol>I(x)</span>
-          <span class=component-description>Ingreso total en función de x</span>
-        </div>
-        <div class=component>
-          <span class=component-symbol>p</span>
-          <span class=component-description>Precio unitario de venta ($)</span>
-        </div>
-        <div class=component>
-          <span class=component-symbol>x</span>
-          <span class=component-description>Cantidad de unidades vendidas</span>
-        </div>
-      </div>
-    </div>
+  <canvas id=\"chart-ingreso\" width=\"500\" height=\"300\"></canvas>
+  <script>
+    const ctxI = document.getElementById('chart-ingreso').getContext('2d');
+    const p = 150;
+    const xs = [0, 50, 100, 150, 200];
+    new Chart(ctxI, {
+      type: 'line',
+      data: {
+        labels: xs,
+        datasets: [{
+          label: 'I(x) = 150x',
+          data: xs.map(v => v * p),
+          borderColor: '#0071E3',
+          backgroundColor: 'transparent',
+          tension: 0
+        }]
+      },
+      options: {
+        scales: {
+          x: { title: { display: true, text: 'Unidades vendidas' } },
+          y: { title: { display: true, text: 'Ingreso ($)' } }
+        },
+        plugins: { legend: { position: 'bottom' } }
+      }
+    });
+  </script>
+
+  <div class=\"example\">
+    <h4>Ejemplo práctico</h4>
+    <ol>
+      <li>Precio unitario <em>p</em> = $150.</li>
+      <li>Si <em>x</em> = 100 → <span class=\"math\">I(100) = 150 × 100 = $15,000</span>.</li>
+      <li>Si <em>x</em> = 200 → <span class=\"math\">I(200) = 150 × 200 = $30,000</span>.</li>
+    </ol>
   </div>
 
-  <div class=case-study>
-    <h4><i class='fas fa-industry'></i> Ejemplo Práctico: Empresa Tecnológica</h4>
-    <div class=company-details>
-      <div class=detail-card>
-        <i class='fas fa-laptop'></i>
-        <h5>TechSolutions Inc.</h5>
-        <ul>
-          <li><strong>Producto:</strong> Software de gestión empresarial</li>
-          <li><strong>Precio de venta:</strong> $150 por licencia</li>
-          <li><strong>Proyección de ventas:</strong> 0-200 licencias/mes</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class=calculation-steps>
-      <h5><i class='fas fa-calculator'></i> Cálculo de Ingresos por Niveles</h5>
-      <div class=step>
-        <span class=step-number>1</span>
-        <p><strong>Fórmula base:</strong> I(x) = 150x</p>
-      </div>
-      <div class=step>
-        <span class=step-number>2</span>
-        <p><strong>Ventas mínimas (50 unidades):</strong> I(50) = 150 × 50 = $7,500</p>
-      </div>
-      <div class=step>
-        <span class=step-number>3</span>
-        <p><strong>Ventas esperadas (100 unidades):</strong> I(100) = 150 × 100 = $15,000</p>
-      </div>
-      <div class=step>
-        <span class=step-number>4</span>
-        <p><strong>Ventas máximas (200 unidades):</strong> I(200) = 150 × 200 = $30,000</p>
-      </div>
-    </div>
-
-    <div class=table-responsive>
-      <table class=math-table>
-        <thead>
-          <tr>
-            <th><i class='fas fa-chart-bar'></i> Escenario</th>
-            <th><i class='fas fa-boxes'></i> Unidades (x)</th>
-            <th><i class='fas fa-calculator'></i> Cálculo</th>
-            <th><i class='fas fa-dollar-sign'></i> Ingreso Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class=table-row-highlight>
-            <td><b>Pesimista</b></td>
-            <td>50</td>
-            <td>150 × 50</td>
-            <td><b>$7,500</b></td>
-          </tr>
-          <tr class=table-row-highlight>
-            <td><b>Realista</b></td>
-            <td>100</td>
-            <td>150 × 100</td>
-            <td><b>$15,000</b></td>
-          </tr>
-          <tr class=table-row-highlight>
-            <td><b>Optimista</b></td>
-            <td>200</td>
-            <td>150 × 200</td>
-            <td><b>$30,000</b></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class=\"references\">
+    <h4>Fuentes</h4>
+    <ul>
+      <li>Salas, J.; Hinojosa, M. A.; Cuevas, G. (2017). Matemáticas Administrativas.</li>
+    </ul>
   </div>
-
-  <div class=content-section>
-    <h4><i class='fas fa-lightbulb'></i> Aplicaciones en la Toma de Decisiones</h4>
-    <div class=applications-grid>
-      <div class=application-card>
-        <i class='fas fa-bullseye'></i>
-        <h5>Establecimiento de Metas</h5>
-        <p>Definir objetivos de ventas basados en proyecciones de ingreso requerido</p>
-      </div>
-      <div class=application-card>
-        <i class='fas fa-chart-pie'></i>
-        <h5>Análisis de Rentabilidad</h5>
-        <p>Comparar ingresos proyectados con costos para determinar viabilidad</p>
-      </div>
-      <div class=application-card>
-        <i class='fas fa-tags'></i>
-        <h5>Estrategias de Precio</h5>
-        <p>Evaluar impacto de cambios de precio en el ingreso total</p>
-      </div>
-      <div class=application-card>
-        <i class='fas fa-expand-arrows-alt'></i>
-        <h5>Planificación de Crecimiento</h5>
-        <p>Proyectar necesidades de expansión basadas en curvas de ingreso</p>
-      </div>
-    </div>
-  </div>
-
-  <div class=limitations-section>
-    <h4><i class='fas fa-exclamation-triangle'></i> Consideraciones Importantes</h4>
-    <div class=limitations-grid>
-      <div class=limitation-card>
-        <i class='fas fa-chart-line'></i>
-        <h5>Demanda Elástica</h5>
-        <p>El modelo asume precio constante, pero en realidad el precio afecta la demanda</p>
-      </div>
-      <div class=limitation-card>
-        <i class='fas fa-percentage'></i>
-        <h5>Descuentos por Volumen</h5>
-        <p>En la práctica, grandes volúmenes pueden requerir reducciones de precio</p>
-      </div>
-      <div class=limitation-card>
-        <i class='fas fa-calendar-alt'></i>
-        <h5>Estacionalidad</h5>
-        <p>Las ventas reales muestran variaciones estacionales no capturadas</p>
-      </div>
-      <div class=limitation-card>
-        <i class='fas fa-users'></i>
-        <h5>Competencia</h5>
-        <p>La entrada de competidores puede afectar precios y volúmenes de venta</p>
-      </div>
-    </div>
-  </div>
-
-  <div class=interactive-example>
-    <h4><i class='fas fa-play-circle'></i> Simulador de Ingresos</h4>
-    <div class=simulator-card>
-      <div class=simulator-controls>
-        <div class=control-group>
-          <label for=price-input><i class='fas fa-tag'></i> Precio Unitario ($):</label>
-          <input type=number id=price-input value=150 min=1 max=1000 step=10>
-        </div>
-        <div class=control-group>
-          <label for=units-input><i class='fas fa-boxes'></i> Unidades Vendidas:</label>
-          <input type=range id=units-input value=100 min=0 max=200 step=10>
-          <span id=units-display>100 unidades</span>
-        </div>
-      </div>
-      <div class=simulator-result>
-        <div class=result-card>
-          <i class='fas fa-dollar-sign'></i>
-          <h3 id=revenue-result>$15,000</h3>
-          <p>Ingreso Total Proyectado</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class=bibliography-section>
-    <h4><i class='fas fa-book'></i> Fuentes de Referencia</h4>
-    <div class=source-cards>
-      <div class=source-card>
-        <div class=source-icon>
-          <i class='fas fa-graduation-cap'></i>
-        </div>
-        <div class=source-info>
-          <h5>Análisis de Ingresos en PyMEs</h5>
-          <p>Gómez, M. y Rodríguez, P. (2020). Estrategias para la maximización de ingresos. Editorial Empresarial.</p>
-        </div>
-      </div>
-      <div class=source-card>
-        <div class=source-icon>
-          <i class='fas fa-chart-line'></i>
-        </div>
-        <div class=source-info>
-          <h5>Matemáticas Financieras Aplicadas</h5>
-          <p>López, R. (2019). Modelos lineales para proyección de ingresos. McGraw-Hill.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`)"><b>3.3.1. Ingreso </b> <span class=emoji-small>💰</span>
-</li>
+')"><b>3.3.1. Ingreso</b></li>
               
               <li>3.3.2. Costo</li>
               <li>3.3.3. Utilidad</li>
