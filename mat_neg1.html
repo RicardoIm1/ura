@@ -3779,7 +3779,7 @@
         <li>3.2.2. Forma punto-pendiente</li>
       </ul>
     </li>
-    
+
     <li onclick="abrirModal('3.3. Funciones lineales', `
       <hr><br>
       <div class='math-module'>
@@ -4053,10 +4053,238 @@
     </div>
   </div>
   `);"><b>3.3.1. Ingreso</b> <span class=emoji-small>✅</span>
-</li>  
-            <ul>
-              <li>3.3.2. Costo</li>
-              <li>3.3.3. Utilidad</li>
+</li> 
+    
+<li onclick="abrirModal('3.3.2. Costo', `
+  <hr><br>
+  <div class='math-module'>
+    
+    <!-- Tiempo estimado -->
+    <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+      <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 15 minutos'>
+      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='0' transform='rotate(-90 10 10)'></circle>
+      <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>15 min</text>
+      </svg>
+      <span style='font-weight:bold;'>Tiempo estimado: 15 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+      <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+      <span><strong>Objetivo:</strong> Comprender los diferentes tipos de costos en economía y producción, modelar funciones de costo total, fijo y variable, calcular costos marginales y promedios, y analizar su relación con las decisiones óptimas de producción.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+      <p>El costo representa los gastos incurridos por una empresa en la producción de bienes o servicios. Se divide en costos fijos (independientes del nivel de producción) y costos variables (dependientes de la cantidad producida). El análisis de costos es fundamental para determinar el nivel de producción que maximiza el beneficio, donde el costo marginal iguala al ingreso marginal.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Tabla de costos lineales -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Costos de producción - Función lineal</h4>
+      <p>Una empresa tiene costos fijos de $500 y costos variables de $30 por unidad. La función de costo total es: C(x) = 500 + 30x</p>
+      <table class='math-table'>
+        <thead>
+          <tr>
+            <th>Unidades (x)</th>
+            <th>Costo Fijo (CF)</th>
+            <th>Costo Variable (CV)</th>
+            <th>Costo Total C(x)</th>
+            <th>Costo Marginal</th>
+            <th>Costo Promedio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>$500</td><td>$0</td><td>$500</td><td>$30</td><td>-</td></tr>
+          <tr><td>10</td><td>$500</td><td>$300</td><td>$800</td><td>$30</td><td>$80</td></tr>
+          <tr><td>20</td><td>$500</td><td>$600</td><td>$1,100</td><td>$30</td><td>$55</td></tr>
+          <tr><td>30</td><td>$500</td><td>$900</td><td>$1,400</td><td>$30</td><td>$46.67</td></tr>
+          <tr><td>40</td><td>$500</td><td>$1,200</td><td>$1,700</td><td>$30</td><td>$42.50</td></tr>
+          <tr><td>50</td><td>$500</td><td>$1,500</td><td>$2,000</td><td>$30</td><td>$40.00</td></tr>
+        </tbody>
+      </table>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El costo marginal es constante ($30) en funciones lineales. El costo promedio disminuye a medida que aumenta la producción debido a la distribución de costos fijos entre más unidades.</p>
+    </div>
+    
+    <!-- Gráfica 1: Costos lineales -->
+    <div class='graph-container' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Funciones de costo lineal C(x) = 500 + 30x</h4>
+      <svg viewBox='0 0 400 320' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+        <!-- Ejes coordenados -->
+        <line x1='50' y1='270' x2='350' y2='270' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        <line x1='50' y1='270' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        
+        <!-- Marcas del eje X (Unidades) -->
+        <line x1='100' y1='265' x2='100' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='100' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
+        <line x1='150' y1='265' x2='150' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='150' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+        <line x1='200' y1='265' x2='200' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='200' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
+        <line x1='250' y1='265' x2='250' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='250' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+        <line x1='300' y1='265' x2='300' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='300' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
+        
+        <!-- Marcas del eje Y (Costo) -->
+        <line x1='45' y1='220' x2='55' y2='220' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='225' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,000</text>
+        <line x1='45' y1='170' x2='55' y2='170' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='175' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,500</text>
+        <line x1='45' y1='120' x2='55' y2='120' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='125' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,000</text>
+        <line x1='45' y1='70' x2='55' y2='70' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='75' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,500</text>
+        
+        <!-- Línea de costo fijo -->
+        <line x1='50' y1='220' x2='350' y2='220' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,5'></line>
+        <text x='300' y='215' font-size='12' fill='var(--apple-vibrant-orange)'>Costo Fijo = $500</text>
+        
+        <!-- Línea de costo total -->
+        <line x1='50' y1='220' x2='350' y2='70' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+        
+        <!-- Línea de costo variable -->
+        <line x1='50' y1='220' x2='350' y2='120' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='3,3'></line>
+        
+        <!-- Puntos de datos -->
+        <circle cx='100' cy='200' r='3' fill='var(--apple-vibrant-blue)'></circle>
+        <circle cx='150' cy='180' r='3' fill='var(--apple-vibrant-blue)'></circle>
+        <circle cx='200' cy='160' r='3' fill='var(--apple-vibrant-blue)'></circle>
+        <circle cx='250' cy='140' r='3' fill='var(--apple-vibrant-blue)'></circle>
+        <circle cx='300' cy='120' r='3' fill='var(--apple-vibrant-blue)'></circle>
+        
+        <!-- Etiquetas de ejes -->
+        <text x='200' y='310' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Producidas (x)</text>
+        <text x='15' y='160' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,160)'>Costo ($)</text>
+        
+        <!-- Leyenda -->
+        <rect x='250' y='40' width='100' height='60' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+        <line x1='260' y1='55' x2='280' y2='55' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+        <text x='290' y='60' font-size='12' fill='var(--apple-dark-gray)'>Costo Total</text>
+        <line x1='260' y1='70' x2='280' y2='70' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='3,3'></line>
+        <text x='290' y='75' font-size='12' fill='var(--apple-dark-gray)'>Costo Variable</text>
+        <line x1='260' y1='85' x2='280' y2='85' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,5'></line>
+        <text x='290' y='90' font-size='12' fill='var(--apple-dark-gray)'>Costo Fijo</text>
+      </svg>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El costo total comienza en el nivel de costo fijo y aumenta linealmente. La distancia vertical entre costo total y costo fijo representa el costo variable.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Costos cuadráticos -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Costos con rendimientos decrecientes</h4>
+      <p>Cuando existen rendimientos decrecientes, el costo total puede ser cuadrático: C(x) = 1000 + 20x + 0.5x²</p>
+      <table class='math-table'>
+        <thead>
+          <tr>
+            <th>Unidades (x)</th>
+            <th>Costo Fijo</th>
+            <th>Costo Variable</th>
+            <th>Costo Total</th>
+            <th>Costo Marginal</th>
+            <th>Costo Promedio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>$1,000</td><td>$0</td><td>$1,000</td><td>$20</td><td>-</td></tr>
+          <tr><td>10</td><td>$1,000</td><td>$250</td><td>$1,250</td><td>$30</td><td>$125</td></tr>
+          <tr><td>20</td><td>$1,000</td><td>$600</td><td>$1,600</td><td>$40</td><td>$80</td></tr>
+          <tr><td>30</td><td>$1,000</td><td>$1,050</td><td>$2,050</td><td>$50</td><td>$68.33</td></tr>
+          <tr><td>40</td><td>$1,000</td><td>$1,600</td><td>$2,600</td><td>$60</td><td>$65.00</td></tr>
+          <tr><td>50</td><td>$1,000</td><td>$2,250</td><td>$3,250</td><td>$70</td><td>$65.00</td></tr>
+        </tbody>
+      </table>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El costo marginal aumenta con la producción debido a los rendimientos decrecientes. El costo promedio alcanza un mínimo y luego comienza a aumentar.</p>
+    </div>
+    
+    <!-- Gráfica 2: Costos cuadráticos -->
+    <div class='graph-container' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Función de costo cuadrático C(x) = 1000 + 20x + 0.5x²</h4>
+      <svg viewBox='0 0 400 320' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+        <!-- Ejes coordenados -->
+        <line x1='50' y1='270' x2='350' y2='270' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        <line x1='50' y1='270' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        
+        <!-- Marcas del eje X (Unidades) -->
+        <line x1='100' y1='265' x2='100' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='100' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
+        <line x1='150' y1='265' x2='150' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='150' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+        <line x1='200' y1='265' x2='200' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='200' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
+        <line x1='250' y1='265' x2='250' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='250' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+        <line x1='300' y1='265' x2='300' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='300' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
+        
+        <!-- Marcas del eje Y (Costo) -->
+        <line x1='45' y1='220' x2='55' y2='220' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='225' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,500</text>
+        <line x1='45' y1='170' x2='55' y2='170' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='175' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,000</text>
+        <line x1='45' y1='120' x2='55' y2='120' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='125' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,500</text>
+        <line x1='45' y1='70' x2='55' y2='70' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='75' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$3,000</text>
+        
+        <!-- Curva de costo total cuadrático -->
+        <path d='M 50,220 
+                 C 100,215 120,200 150,195
+                 C 180,190 200,170 220,160
+                 C 240,150 270,130 300,120
+                 C 330,110 350,100 350,100' 
+              stroke='var(--apple-vibrant-blue)' 
+              stroke-width='3' 
+              fill='none' />
+        
+        <!-- Línea de costo fijo -->
+        <line x1='50' y1='220' x2='350' y2='220' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,5'></line>
+        
+        <!-- Puntos importantes -->
+        <circle cx='300' cy='120' r='5' fill='var(--apple-vibrant-red)'></circle>
+        <text x='320' y='115' font-size='12' fill='var(--apple-vibrant-red)'>C(x) = $3,250</text>
+        
+        <!-- Etiquetas de ejes -->
+        <text x='200' y='310' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Producidas (x)</text>
+        <text x='15' y='160' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,160)'>Costo Total C(x)</text>
+        
+        <!-- Ecuación -->
+        <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>C(x) = 1000 + 20x + 0.5x²</text>
+      </svg>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La curva de costo total es cóncava hacia arriba, indicando que los costos aumentan a tasa creciente debido a los rendimientos decrecientes en la producción.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+      <ul style='padding-left:18px;line-height:1.6;'>
+        <li><strong>Análisis de punto de equilibrio:</strong> Determinar el nivel de producción donde los ingresos igualan a los costos totales.</li>
+        <li><strong>Decisiones de producción:</strong> Utilizar el costo marginal para determinar el nivel óptimo de producción que maximiza el beneficio.</li>
+        <li><strong>Presupuestación empresarial:</strong> Planificar gastos basándose en funciones de costo para diferentes niveles de producción.</li>
+        <li><strong>Economías de escala:</strong> Analizar cómo el costo promedio cambia con el volumen de producción para decisiones de expansión.</li>
+        <li><strong>Fijación de precios:</strong> Establecer precios que cubran costos totales y generen beneficio, considerando la estructura de costos.</li>
+        <li><strong>Evaluación de inversiones:</strong> Analizar costos de proyectos considerando costos fijos iniciales vs. costos variables operativos.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class='bibliography-section' style='margin-top:20px;'>
+      <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+      <ul style='padding-left:18px;line-height:1.5;'>
+        <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
+        <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
+        <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
+        <li>Samuelson, P. A., & Nordhaus, W. D. (2009). Economics. McGraw-Hill.</li>
+        <li>Besanko, D., & Braeutigam, R. (2020). Microeconomics. Wiley.</li>
+        <li>Khan Academy: Microeconomics - Cost Curves. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>3.3.2. Costo</b> <span class='emoji-small'>📊</span>
+</li>
+    
+    <li>3.3.3. Utilidad</li>
               <li>3.3.4. Punto de equilibrio de una empresa</li>
               <li>3.3.5. Ley de la oferta</li>
               <li>3.3.6. Ley de la demanda</li>
