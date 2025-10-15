@@ -3779,206 +3779,173 @@
           
           <li onclick="abrirModal('3.3. Funciones Lineales', `
             <div class=math-module>
-              <div class='reading-time'>
-              <svg width='20' height='20' viewBox='0 0 20 20' style='display:inline-block;vertical-align:middle;margin-right:8px;'>
-                <circle cx='10' cy='10' r='9' fill='none' stroke='var(--primary-color)' stroke-width='2'></circle>
-                <circle cx='10' cy='10' r='9' fill='none' stroke='var(--border-color)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='28.2743' transform='rotate(-90 10 10)'></circle>
-                <text x='10' y='13' text-anchor='middle' font-size='8' font-family='var(--font-family)' fill='var(--text-color)'>7 min</text>
-              </svg>
-              <span>Tiempo estimado de lectura: 7 minutos</span>
-            </div>
-    
-              <p><strong>Objetivo:</strong> Comprender y aplicar las funciones lineales para analizar ingresos, costos, utilidades y puntos de equilibrio en empresas, usando ejemplos prácticos, gráficas y tablas.</p>
-            
-              <h4>¿Qué son las Funciones Lineales?</h4>
-              <ul>
-                <li>Relaciones matemáticas donde el cambio es constante y proporcional</li>
-                <li>Forma general: y = mx + b, donde m es la pendiente y b es el intercepto</li>
-                <li>En negocios: Representan ingresos, costos, oferta, demanda y utilidades</li>
-                <li>Característica fundamental: Tasa de cambio constante que se mantiene igual en todos los puntos</li>
-              </ul>
-            
-              <h4>Fundamento Teórico de las Funciones Lineales</h4>
-              <p>Las funciones lineales constituyen el modelo matemático más elemental para representar relaciones proporcionales entre variables. Según Haeussler, Ernest F. y Paul, Richard S. en <em>Matemáticas para Administración y Economía</em> (2015), estas funciones son fundamentales en análisis empresarial porque permiten modelar comportamientos predecibles y constantes en diversas situaciones económicas.</p>
+                      <div class=reading-time>
+          <svg width=20 height=20 viewBox=0 0 20 20 style=display:inline-block;vertical-align:middle;margin-right:8px;>
+            <circle cx=10 cy=10 r=9 fill=none stroke=var(--primary-color) stroke-width=2></circle>
+            <circle cx=10 cy=10 r=9 fill=none stroke=var(--border-color) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform=rotate(-90 10 10)></circle>
+            <text x=10 y=13 text-anchor=middle font-size=8 font-family=var(--font-family) fill=var(--text-color)>7 min</text>
+          </svg>
+          <span>Tiempo estimado de lectura: 7 minutos</span>
+        </div>
+
+          <p><strong>Objetivo:</strong> Comprender y aplicar las funciones lineales para analizar ingresos, costos, utilidades y puntos de equilibrio en empresas, usando ejemplos prácticos, gráficas y tablas.</p>
+        
+          <h4>¿Qué son las Funciones Lineales?</h4>
+          <ul>
+            <li>Relaciones matemáticas donde el cambio es constante y proporcional</li>
+            <li>Forma general: y = mx + b, donde m es la pendiente y b es el intercepto</li>
+            <li>En negocios: Representan ingresos, costos, oferta, demanda y utilidades</li>
+            <li>Característica fundamental: Tasa de cambio constante que se mantiene igual en todos los puntos</li>
+          </ul>
+
+          <div class=graph-container>
+            <h4>Estructura de una Función Lineal</h4>
+            <svg viewBox=0 0 400 300 class=math-graph>
+              <!-- Ejes principales -->
+              <line x1=50 y1=250 x2=350 y2=250 stroke=var(--border-color) stroke-width=2 />
+              <line x1=50 y1=250 x2=50 y2=50 stroke=var(--border-color) stroke-width=2 />
               
-              <p>La estructura y = mx + b, donde m representa la pendiente (tasa de cambio) y b el intercepto con el eje y (valor inicial), proporciona un marco versátil para analizar escenarios empresariales. La pendiente m indica cuánto cambia la variable dependiente y por cada unidad que cambia la variable independiente x.</p>
-    
-              <div class='graph-container'>
-                <h4>Representación Gráfica de y = mx + b</h4>
-                <svg viewBox='0 0 400 300' class='math-graph'>
-                  <!-- Ejes coordenados -->
-                  <line x1='50' y1='250' x2='350' y2='250' stroke='var(--border-color)' stroke-width='2'/>
-                  <line x1='50' y1='250' x2='50' y2='50' stroke='var(--border-color)' stroke-width='2'/>
-                  
-                  <!-- Marcas en eje X -->
-                  <line x1='100' y1='245' x2='100' y2='255' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='150' y1='245' x2='150' y2='255' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='200' y1='245' x2='200' y2='255' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='250' y1='245' x2='250' y2='255' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='300' y1='245' x2='300' y2='255' stroke='var(--border-color)' stroke-width='1'/>
-                  
-                  <!-- Marcas en eje Y -->
-                  <line x1='45' y1='200' x2='55' y2='200' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='45' y1='150' x2='55' y2='150' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='45' y1='100' x2='55' y2='100' stroke='var(--border-color)' stroke-width='1'/>
-                  
-                  <!-- Función lineal ejemplo -->
-                  <line x1='50' y1='230' x2='330' y2='70' stroke='var(--primary-color)' stroke-width='3' stroke-dasharray='5,5'/>
-                  
-                  <!-- Puntos clave -->
-                  <circle cx='50' cy='230' r='4' fill='var(--accent-color)'/>
-                  <circle cx='150' cy='180' r='4' fill='var(--accent-color)'/>
-                  <circle cx='250' cy='130' r='4' fill='var(--accent-color)'/>
-                  
-                  <!-- Etiquetas -->
-                  <text x='30' y='235' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>b</text>
-                  <text x='360' y='255' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>x</text>
-                  <text x='35' y='40' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>y</text>
-                  <text x='200' y='280' font-family='var(--font-family)' font-size='14' fill='var(--text-color)'>Variable Independiente (x)</text>
-                  <text x='20' y='150' font-family='var(--font-family)' font-size='14' fill='var(--text-color)' transform='rotate(-90 20,150)'>Variable Dependiente (y)</text>
-                </svg>
-              </div>
-            
-              <h4>Aplicaciones en los Negocios</h4>
-              <table class='math-table'>
-                <tr>
-                  <th>Concepto</th>
-                  <th>Fórmula</th>
-                  <th>¿Qué representa?</th>
-                  <th>Componentes Clave</th>
-                </tr>
-                <tr>
-                  <td><b>Ingreso</b></td>
-                  <td>I(x) = p × x</td>
-                  <td>Dinero total generado por ventas</td>
-                  <td>p: precio unitario, x: cantidad vendida</td>
-                </tr>
-                <tr>
-                  <td><b>Costo</b></td>
-                  <td>C(x) = CF + CV × x</td>
-                  <td>Gastos totales de producción</td>
-                  <td>CF: costos fijos, CV: costo variable unitario</td>
-                </tr>
-                <tr>
-                  <td><b>Utilidad</b></td>
-                  <td>U(x) = I(x) - C(x)</td>
-                  <td>Ganancia o pérdida neta</td>
-                  <td>Diferencia entre ingresos y costos</td>
-                </tr>
-                <tr>
-                  <td><b>Oferta</b></td>
-                  <td>Qₒ = a + bP</td>
-                  <td>Cantidad que productores están dispuestos a ofrecer</td>
-                  <td>a: intercepto, b: sensibilidad al precio</td>
-                </tr>
-                <tr>
-                  <td><b>Demanda</b></td>
-                  <td>Qₔ = c - dP</td>
-                  <td>Cantidad que consumidores están dispuestos a comprar</td>
-                  <td>c: demanda máxima, d: elasticidad precio</td>
-                </tr>
-              </table>
+              <!-- Marcaciones eje X -->
+              <text x=100 y=270 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>1</text>
+              <text x=200 y=270 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>2</text>
+              <text x=300 y=270 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>3</text>
               
-              <h4>Análisis del Punto de Equilibrio</h4>
-              <p>El punto de equilibrio representa el nivel de producción donde los ingresos totales igualan a los costos totales, resultando en utilidad cero. Según Salas, Hinojosa y Cuevas en <em>Matemáticas Administrativas</em> (2017), este análisis es crucial para determinar la viabilidad de proyectos y establecer metas de ventas mínimas.</p>
+              <!-- Marcaciones eje Y -->
+              <text x=30 y=200 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>m+b</text>
+              <text x=30 y=150 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>2m+b</text>
+              <text x=30 y=100 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>3m+b</text>
               
-              <p>Para calcular el punto de equilibrio:</p>
-              <ul>
-                <li>Establecer I(x) = C(x)</li>
-                <li>Resolver p × x = CF + CV × x</li>
-                <li>Despejar x: x = CF ÷ (p - CV)</li>
-              </ul>
+              <!-- Líneas de guía horizontales -->
+              <line x1=50 y1=200 x2=350 y2=200 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
+              <line x1=50 y1=150 x2=350 y2=150 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
+              <line x1=50 y1=100 x2=350 y2=100 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
               
-              <h4>Ejemplo Práctico: Empresa de Fabricación</h4>
-              <p>Consideremos una empresa que fabrica lámparas artesanales:</p>
-              <ul>
-                <li>Costos fijos mensuales: $5,000 (alquiler, servicios, salarios fijos)</li>
-                <li>Costo variable por lámpara: $25 (materiales, mano de obra variable)</li>
-                <li>Precio de venta por lámpara: $75</li>
-              </ul>
+              <!-- Función lineal y = mx + b -->
+              <line x1=50 y1=250 x2=350 y2=50 stroke=var(--primary-color) stroke-width=3 />
               
-              <p><strong>Funciones lineales aplicadas:</strong></p>
-              <ul>
-                <li>Función de costos: C(x) = 5000 + 25x</li>
-                <li>Función de ingresos: I(x) = 75x</li>
-                <li>Función de utilidad: U(x) = 75x - (5000 + 25x) = 50x - 5000</li>
-              </ul>
+              <!-- Puntos de la función -->
+              <circle cx=50 cy=250 r=4 fill=var(--accent-color) />
+              <circle cx=150 cy=200 r=4 fill=var(--accent-color) />
+              <circle cx=250 cy=150 r=4 fill=var(--accent-color) />
+              <circle cx=350 cy=100 r=4 fill=var(--accent-color) />
               
-              <p><strong>Punto de equilibrio:</strong> 5000 ÷ (75 - 25) = 100 lámparas mensuales</p>
-    
-              <div class='graph-container'>
-                <h4>Análisis Gráfico del Punto de Equilibrio</h4>
-                <svg viewBox='0 0 400 350' class='math-graph'>
-                  <!-- Ejes coordenados -->
-                  <line x1='50' y1='300' x2='350' y2='300' stroke='var(--border-color)' stroke-width='2'/>
-                  <line x1='50' y1='300' x2='50' y2='50' stroke='var(--border-color)' stroke-width='2'/>
-                  
-                  <!-- Líneas horizontales de guía -->
-                  <line x1='50' y1='250' x2='350' y2='250' stroke='var(--border-color)' stroke-width='1' stroke-dasharray='3,3'/>
-                  <line x1='50' y1='200' x2='350' y2='200' stroke='var(--border-color)' stroke-width='1' stroke-dasharray='3,3'/>
-                  <line x1='50' y1='150' x2='350' y2='150' stroke='var(--border-color)' stroke-width='1' stroke-dasharray='3,3'/>
-                  <line x1='50' y1='100' x2='350' y2='100' stroke='var(--border-color)' stroke-width='1' stroke-dasharray='3,3'/>
-                  
-                  <!-- Función de Costos C(x) = 5000 + 25x -->
-                  <line x1='50' y1='300' x2='350' y2='175' stroke='var(--secondary-color)' stroke-width='3'/>
-                  
-                  <!-- Función de Ingresos I(x) = 75x -->
-                  <line x1='50' y1='300' x2='350' y2='62.5' stroke='var(--primary-color)' stroke-width='3'/>
-                  
-                  <!-- Punto de Equilibrio -->
-                  <circle cx='150' cy='200' r='6' fill='var(--accent-color)'/>
-                  <line x1='150' y1='200' x2='150' y2='300' stroke='var(--accent-color)' stroke-width='1' stroke-dasharray='4,4'/>
-                  <line x1='50' y1='200' x2='150' y2='200' stroke='var(--accent-color)' stroke-width='1' stroke-dasharray='4,4'/>
-                  
-                  <!-- Etiquetas -->
-                  <text x='150' y='320' font-family='var(--font-family)' font-size='12' fill='var(--text-color)' text-anchor='middle'>100</text>
-                  <text x='360' y='305' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>Cantidad (x)</text>
-                  <text x='30' y='45' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>Dinero ($)</text>
-                  
-                  <!-- Leyenda -->
-                  <rect x='200' y='60' width='120' height='60' fill='var(--background-color)' stroke='var(--border-color)' stroke-width='1'/>
-                  <line x1='210' y1='75' x2='230' y2='75' stroke='var(--primary-color)' stroke-width='2'/>
-                  <text x='240' y='80' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>Ingresos</text>
-                  
-                  <line x1='210' y1='95' x2='230' y2='95' stroke='var(--secondary-color)' stroke-width='2'/>
-                  <text x='240' y='100' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>Costos</text>
-                  
-                  <circle cx='220' cy='115' r='4' fill='var(--accent-color)'/>
-                  <text x='240' y='120' font-family='var(--font-family)' font-size='12' fill='var(--text-color)'>Equilibrio</text>
-                </svg>
-              </div>
+              <!-- Etiquetas de componentes -->
+              <text x=25 y=235 text-anchor=middle font-family=var(--font-family) font-size=10 fill=var(--text-color)>b</text>
+              <line x1=40 y1=250 x2=40 y2=200 stroke=var(--accent-color) stroke-width=1 stroke-dasharray=3,3 />
+              <text x=160 y=185 text-anchor=middle font-family=var(--font-family) font-size=10 fill=var(--text-color)>m</text>
+              <line x1=150 y1=195 x2=150 y2=150 stroke=var(--accent-color) stroke-width=1 stroke-dasharray=3,3 />
+            </svg>
+          </div>
+        
+          <h4>Aplicaciones en los Negocios</h4>
+          <table class=math-table>
+            <tr>
+              <th>Concepto</th>
+              <th>Fórmula</th>
+              <th>¿Qué representa?</th>
+              <th>Componentes Clave</th>
+            </tr>
+            <tr>
+              <td><b>Ingreso</b></td>
+              <td>I(x) = p × x</td>
+              <td>Dinero total generado por ventas</td>
+              <td>p: precio unitario, x: cantidad vendida</td>
+            </tr>
+            <tr>
+              <td><b>Costo</b></td>
+              <td>C(x) = CF + CV × x</td>
+              <td>Gastos totales de producción</td>
+              <td>CF: costos fijos, CV: costo variable unitario</td>
+            </tr>
+            <tr>
+              <td><b>Utilidad</b></td>
+              <td>U(x) = I(x) - C(x)</td>
+              <td>Ganancia o pérdida neta</td>
+              <td>Diferencia entre ingresos y costos</td>
+            </tr>
+          </table>
+          
+          <h4>Ejemplo Práctico: Análisis de Punto de Equilibrio</h4>
+          <p>Empresa manufacturera con:</p>
+          <ul>
+            <li>Costos fijos: $5,000 mensuales</li>
+            <li>Costo variable unitario: $25</li>
+            <li>Precio de venta: $75 por unidad</li>
+          </ul>
+          
+          <div class=graph-container>
+            <h4>Punto de Equilibrio - Análisis Gráfico</h4>
+            <svg viewBox=0 0 400 350 class=math-graph>
+              <!-- Ejes coordenados -->
+              <line x1=50 y1=300 x2=350 y2=300 stroke=var(--border-color) stroke-width=2 />
+              <line x1=50 y1=300 x2=50 y2=50 stroke=var(--border-color) stroke-width=2 />
               
-              <h4>Interpretación Gráfica</h4>
-              <p>Al graficar estas funciones lineales, se observa:</p>
-              <ul>
-                <li>La función de costos tiene intercepto en $5,000 y pendiente de $25</li>
-                <li>La función de ingresos pasa por el origen con pendiente de $75</li>
-                <li>El punto de intersección entre ambas funciones representa el punto de equilibrio</li>
-                <li>La función de utilidad cruza el eje x en el punto de equilibrio</li>
-              </ul>
+              <!-- Escalas y etiquetas eje X -->
+              <text x=100 y=320 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>50</text>
+              <text x=200 y=320 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>100</text>
+              <text x=300 y=320 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>150</text>
+              <text x=200 y=340 text-anchor=middle font-family=var(--font-family) font-size=14 fill=var(--text-color)>Unidades Vendidas (x)</text>
               
-              <h4>Limitaciones y Consideraciones</h4>
-              <p>Aunque las funciones lineales son herramientas poderosas, es importante reconocer sus limitaciones. Según Chiang, Alpha C. en <em>Métodos Fundamentales de Economía Matemática</em> (2006), en la realidad muchas relaciones económicas pueden no ser perfectamente lineales, especialmente en rangos extensos de producción o precios.</p>
+              <!-- Escalas y etiquetas eje Y -->
+              <text x=25 y=250 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>5k</text>
+              <text x=25 y=200 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>7.5k</text>
+              <text x=25 y=150 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>10k</text>
+              <text x=25 y=100 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--text-color)>12.5k</text>
+              <text x=15 y=175 text-anchor=middle font-family=var(--font-family) font-size=14 fill=var(--text-color) transform=rotate(-90 15,175)>Dinero ($)</text>
               
-              <p>Las funciones lineales son más apropiadas para:</p>
-              <ul>
-                <li>Análisis a corto plazo</li>
-                <li>Rangos limitados de producción</li>
-                <li>Mercados con competencia perfecta</li>
-                <li>Empresas con estructuras de costos simples</li>
-              </ul>
+              <!-- Líneas de guía horizontales -->
+              <line x1=50 y1=250 x2=350 y2=250 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
+              <line x1=50 y1=200 x2=350 y2=200 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
+              <line x1=50 y1=150 x2=350 y2=150 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
+              <line x1=50 y1=100 x2=350 y2=100 stroke=var(--border-color) stroke-width=1 stroke-dasharray=4,4 />
               
-              <h4>Fuentes Bibliográficas</h4>
-              <ol class='bibliography'>
-                <li>Haeussler, Ernest F. y Paul, Richard S. (2015). Matemáticas para Administración y Economía. Pearson Educación.</li>
-                <li>Salas, J., Hinojosa, M. A. y Cuevas, G. (2017). Matemáticas Administrativas. McGraw-Hill Interamericana.</li>
-                <li>Chiang, Alpha C. (2006). Métodos Fundamentales de Economía Matemática. McGraw-Hill.</li>
-                <li>Budnick, Frank S. (2007). Matemáticas Aplicadas para Administración, Economía y Ciencias Sociales. McGraw-Hill.</li>
-              </ol>
+              <!-- Función de Costos C(x) = 5000 + 25x -->
+              <line x1=50 y1=300 x2=350 y2=175 stroke=var(--secondary-color) stroke-width=3 />
               
-            </div>
-            `)"><b>3.3. Funciones Lineales</b> <span class='emoji-small'>✅</span>
-            </li>
+              <!-- Función de Ingresos I(x) = 75x -->
+              <line x1=50 y1=300 x2=350 y2=62.5 stroke=var(--primary-color) stroke-width=3 />
+              
+              <!-- Punto de Equilibrio -->
+              <circle cx=200 cy=200 r=6 fill=var(--accent-color) />
+              <line x1=200 y1=200 x2=200 y2=300 stroke=var(--accent-color) stroke-width=1 stroke-dasharray=4,4 />
+              <line x1=50 y1=200 x2=200 y2=200 stroke=var(--accent-color) stroke-width=1 stroke-dasharray=4,4 />
+              
+              <!-- Anotaciones del punto de equilibrio -->
+              <text x=200 y=190 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--accent-color)>Punto de Equilibrio</text>
+              <text x=200 y=210 text-anchor=middle font-family=var(--font-family) font-size=10 fill=var(--accent-color)>(100, $7,500)</text>
+              
+              <!-- Zonas de ganancia/pérdida -->
+              <text x=280 y=120 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--success-color)>Zona de Ganancia</text>
+              <text x=120 y=270 text-anchor=middle font-family=var(--font-family) font-size=12 fill=var(--error-color)>Zona de Pérdida</text>
+            </svg>
+          </div>
+          
+          <p><strong>Cálculo del punto de equilibrio:</strong></p>
+          <ul>
+            <li>I(x) = C(x) → 75x = 5000 + 25x</li>
+            <li>50x = 5000 → x = 100 unidades</li>
+            <li>Ingreso en equilibrio: 75 × 100 = $7,500</li>
+          </ul>
+          
+          <h4>Limitaciones y Consideraciones Prácticas</h4>
+          <p>Según Chiang, Alpha C. en <em>Métodos Fundamentales de Economía Matemática</em> (2006), las funciones lineales presentan limitaciones en escenarios reales:</p>
+          <ul>
+            <li>No capturan economías de escala</li>
+            <li>Asumen costos variables constantes</li>
+            <li>Ignoran cambios en la demanda por precio</li>
+            <li>Son aproximaciones válidas solo en rangos limitados</li>
+          </ul>
+          
+          <h4>Fuentes Bibliográficas</h4>
+          <ol class=bibliography>
+            <li>Haeussler, Ernest F. y Paul, Richard S. (2015). Matemáticas para Administración y Economía. Pearson Educación.</li>
+            <li>Salas, J., Hinojosa, M. A. y Cuevas, G. (2017). Matemáticas Administrativas. McGraw-Hill Interamericana.</li>
+            <li>Chiang, Alpha C. (2006). Métodos Fundamentales de Economía Matemática. McGraw-Hill.</li>
+          </ol>
+          
+        </div>
+        `)>3.3. Funciones Lineales <span class=emoji-small>✅</span>
+        </li>
           
             <ul>
               <li>3.3.1. Ingreso</li>
