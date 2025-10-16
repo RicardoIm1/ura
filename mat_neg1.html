@@ -5920,52 +5920,48 @@
             <!-- Gráfica 2: Múltiples puntos válidos -->
             <div class='graph-container' style='margin-bottom:20px;'>
               <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Múltiples representaciones punto-pendiente para la misma recta</h4>
-              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-                <!-- Ejes coordenados -->
-                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              <svg viewBox=0 0 400 300 style=width:100%;height:auto;background:#f5f5f7;border-radius:8px;>
+                <defs>
+                  <marker id=arrowhead markerWidth=5 markerHeight=4 refX=4 refY=2 orient=auto>
+                    <polygon points='0 0,5 2,0 4' fill=#666/>
+                  </marker>
+                </defs>
                 
-                <!-- Recta: y = 2x - 1 -->
-                <line x1='75' y1='125' x2='325' y2='225' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                <line x1=50 y1=250 x2=350 y2=250 stroke=#666 stroke-width=2 marker-end=url(#arrowhead)/>
+                <line x1=200 y1=50 x2=200 y2=250 stroke=#666 stroke-width=2 marker-end=url(#arrowhead)/>
                 
-                <!-- Diferentes puntos de referencia -->
-                <circle cx='125' cy='150' r='4' fill='var(--apple-vibrant-red)'></circle>
-                <text x='135' y='145' font-size='10' fill='var(--apple-vibrant-red)'>P₁(1,1)</text>
+                <line x1=75 y1=100 x2=325 y2=200 stroke=#007AFF stroke-width=3 stroke-linecap=round/>
                 
-                <circle cx='175' cy='175' r='4' fill='var(--apple-vibrant-green)'></circle>
-                <text x='185' y='170' font-size='10' fill='var(--apple-vibrant-green)'>P₂(2,3)</text>
+                <circle cx=150 cy=150 r=4 fill=#FF3B30 stroke=white stroke-width=1/>
+                <circle cx=200 cy=175 r=4 fill=#34C759 stroke=white stroke-width=1/>
+                <circle cx=250 cy=200 r=4 fill=#FF9500 stroke=white stroke-width=1/>
                 
-                <circle cx='225' cy='200' r='4' fill='var(--apple-vibrant-orange)'></circle>
-                <text x='235' y='195' font-size='10' fill='var(--apple-vibrant-orange)'>P₃(3,5)</text>
+                <circle cx=112 cy=125 r=5 fill=#AF52DE stroke=white stroke-width=1/>
+                <text x=125 y=120 font-size=11 font-weight=500 fill=#AF52DE>(0,-1)</text>
                 
-                <circle cx='100' cy='125' r='4' fill='var(--apple-vibrant-purple)'></circle>
-                <text x='110' y='120' font-size='10' fill='var(--apple-vibrant-purple)'>P₄(0,-1)</text>
+                <circle cx=125 cy=250 r=5 fill=#A2845E stroke=white stroke-width=1/>
+                <text x=140 y=245 font-size=11 font-weight=500 fill=#A2845E>(0.5,0)</text>
                 
-                <!-- Triángulos de pendiente desde cada punto -->
-                <line x1='125' y1='150' x2='175' y2='150' stroke='var(--apple-vibrant-red)' stroke-width='1' stroke-dasharray='3,3'></line>
-                <line x1='175' y1='150' x2='175' y2='175' stroke='var(--apple-vibrant-red)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <line x1=150 y1=150 x2=200 y2=150 stroke=#FF9500 stroke-width=1.5 stroke-dasharray=4,2/>
+                <line x1=200 y1=150 x2=200 y2=175 stroke=#34C759 stroke-width=1.5 stroke-dasharray=4,2/>
+                <text x=175 y=145 text-anchor=middle font-size=10 font-weight=500 fill=#666>Δx=1</text>
+                <text x=210 y=162 text-anchor=middle font-size=10 font-weight=500 fill=#666>Δy=2</text>
                 
-                <line x1='175' y1='175' x2='225' y2='175' stroke='var(--apple-vibrant-green)' stroke-width='1' stroke-dasharray='3,3'></line>
-                <line x1='225' y1='175' x2='225' y2='200' stroke='var(--apple-vibrant-green)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <rect x=240 y=25 width=150 height=90 fill=white stroke=#DDD stroke-width=1.5 rx=6/>
+                <text x=245 y=40 font-size=12 font-weight=600 fill=#1D1D1F>Misma recta representada como:</text>
+                <g font-size=10 fill=#444>
+                  <text x=245 y=55 fill=#007AFF>• y = 2x - 1 (Pendiente-Ordenada)</text>
+                  <text x=245 y=67 fill=#34C759>• y - 3 = 2(x - 2) (Punto-Pendiente)</text>
+                  <text x=245 y=79 fill=#FF9500>• 2x - y - 1 = 0 (Forma Común)</text>
+                  <text x=245 y=91 fill=#AF52DE>• x/0.5 + y/(-1) = 1 (Simétrica)</text>
+                  <text x=245 y=103 font-size=9 fill=#666>Todas representan la misma recta</text>
+                </g>
                 
-                <!-- Leyenda de ecuaciones -->
-                <rect x='250' y='30' width='140' height='120' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
-                <text x='255' y='45' font-size='10' fill='var(--apple-dark-gray)'><strong>Misma recta, diferentes formas:</strong></text>
-                <text x='255' y='60' font-size='9' fill='var(--apple-vibrant-red)'>• y - 1 = 2(x - 1)</text>
-                <text x='255' y='70' font-size='9' fill='var(--apple-vibrant-green)'>• y - 3 = 2(x - 2)</text>
-                <text x='255' y='80' font-size='9' fill='var(--apple-vibrant-orange)'>• y - 5 = 2(x - 3)</text>
-                <text x='255' y='90' font-size='9' fill='var(--apple-vibrant-purple)'>• y + 1 = 2(x - 0)</text>
-                <text x='255' y='100' font-size='9' fill='var(--apple-dark-gray)'>• y = 2x - 1 (Simplificada)</text>
-                <text x='255' y='110' font-size='9' fill='var(--apple-dark-gray)'>• 2x - y - 1 = 0 (General)</text>
-                <text x='255' y='125' font-size='8' fill='var(--apple-dark-gray)'>Todas representan: y = 2x - 1</text>
+                <text x=200 y=270 text-anchor=middle font-size=14 font-weight=600 fill=#333>Eje X</text>
+                <text x=25 y=150 text-anchor=middle font-size=14 font-weight=600 fill=#333 transform=rotate(-90 25,150)>Eje Y</text>
                 
-                <!-- Pendiente constante -->
-                <text x='150' y='140' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m = 2</text>
-                <text x='200' y='165' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m = 2</text>
-                
-                <!-- Etiquetas de ejes -->
-                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
-                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+                <circle cx=200 cy=250 r=3 fill=#666/>
+                <text x=190 y=265 font-size=10 fill=#666>(0,0)</text>
               </svg>
               <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Una misma recta puede expresarse de múltiples formas punto-pendiente, dependiendo del punto de referencia elegido. Sin embargo, todas estas formas son equivalentes y se simplifican a la misma ecuación y = 2x - 1. La pendiente m = 2 es constante para todos los puntos.</p>
             </div>
