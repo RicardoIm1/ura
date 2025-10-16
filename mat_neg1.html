@@ -4576,90 +4576,282 @@
       `);">3.3.3. Utilidad <span class='emoji-small'>✅</span>
     </li>
         
-    <li onclick="abrirModal('3.3.4. Punto de equilibrio de una empresa', `
-    <hr><br>
-      <div class=math-module>
-        <div class=reading-time>
-          <svg width=24 height=24 viewBox=0 0 20 20 style=margin-right:10px>
-            <circle cx=10 cy=10 r=9 fill=none stroke=var(--primary-color) stroke-width=2></circle>
-            <circle cx=10 cy=10 r=9 fill=none stroke=var(--accent-color) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1371 transform=rotate(-90 10 10)></circle>
-            <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--text-color)>15 min</text>
+    <li onclick="abrirModal('3.3.4. Punto de Equilibrio de una Empresa', `
+      <hr><br>
+      <div class='math-module'>
+        
+        <!-- Tiempo estimado -->
+        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 20 minutos'>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='0' transform='rotate(-90 10 10)'></circle>
+          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>20 min</text>
           </svg>
-          <span style=font-weight:bold>Tiempo estimado: 15 min</span>
+          <span style='font-weight:bold;'>Tiempo estimado: 20 minutos</span>
         </div>
         
-        <div class=learning-objective>
-          <i class=fas fa-bullseye></i>
-          <p><strong>Objetivo:</strong> Comprender el concepto de punto de equilibrio, su fórmula, interpretación gráfica y aplicación en decisiones empresariales.</p>
+        <!-- Objetivo -->
+        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+          <span><strong>Objetivo:</strong> Comprender el concepto de punto de equilibrio en microeconomía y administración, calcular analíticamente y gráficamente el nivel de producción donde los ingresos igualan a los costos, analizar el margen de seguridad y aplicar estos conceptos en la toma de decisiones empresariales y planificación financiera.</span>
         </div>
         
-        <div class=content-section>
-          <h4><i class=fas fa-balance-scale></i> ¿Qué es el Punto de Equilibrio?</h4>
-          <p>Es el nivel de ventas en el que los ingresos totales igualan a los costos totales. A partir de ese punto, la empresa comienza a generar utilidades. Es una herramienta clave para evaluar la viabilidad financiera de productos o servicios.</p>
+        <!-- Idea principal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+          <p>El punto de equilibrio representa el nivel de producción y ventas donde los ingresos totales igualan a los costos totales, resultando en una utilidad de cero. Es un concepto fundamental en el análisis costo-volumen-utilidad que permite a las empresas determinar el volumen mínimo de ventas necesario para evitar pérdidas, evaluar la viabilidad de proyectos y planificar estrategias de crecimiento considerando la estructura de costos fijos y variables.</p>
         </div>
         
-        <div class=content-section>
-          <h4><i class=fas fa-calculator></i> Ejercicio paso a paso</h4>
-          <p><strong>Ejemplo:</strong> Una empresa tiene costos fijos de $4,000, vende cada unidad a $80 y su costo variable por unidad es de $40.</p>
-        
-        <div class=math-step>
-          <span class=step>1</span> <strong>Fórmula:</strong> PE = CF / (P - CV)<br>
-          <span class=math-equation>PE = 4000 / (80 - 40) = 100 unidades</span>
-        </div>
-        
-        <div class=math-step>
-          <span class=step>2</span> <strong>Tabla de ingresos y costos:</strong>
-          <table class=math-table>
+        <!-- Ejercicio 1: Cálculo analítico del punto de equilibrio -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Cálculo analítico del punto de equilibrio</h4>
+          <p>Una empresa produce sillas con costos fijos de $5,000 mensuales, costos variables de $30 por silla y precio de venta de $80 por silla.</p>
+          <table class='math-table'>
             <thead>
-              <tr><th>Unidades</th><th>Costos Totales ($)</th><th>Ingresos Totales ($)</th></tr>
+              <tr>
+                <th>Concepto</th>
+                <th>Fórmula</th>
+                <th>Cálculo</th>
+                <th>Resultado</th>
+                <th>Interpretación</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><td>0</td><td>4000</td><td>0</td></tr>
-              <tr><td>50</td><td>6000</td><td>4000</td></tr>
-              <tr><td><b>100</b></td><td><b>8000</b></td><td><b>8000</b></td></tr>
-              <tr><td>150</td><td>10000</td><td>12000</td></tr>
+              <tr>
+                <td>Punto de equilibrio en unidades</td>
+                <td>Q = CF / (P - CVu)</td>
+                <td>Q = 5000 / (80 - 30)</td>
+                <td>100 sillas</td>
+                <td>Producción mínima para no perder</td>
+              </tr>
+              <tr>
+                <td>Punto de equilibrio en dinero</td>
+                <td>IT = P × Q</td>
+                <td>IT = 80 × 100</td>
+                <td>$8,000</td>
+                <td>Ventas mínimas requeridas</td>
+              </tr>
+              <tr>
+                <td>Margen de contribución unitario</td>
+                <td>MCu = P - CVu</td>
+                <td>MCu = 80 - 30</td>
+                <td>$50</td>
+                <td>Contribución por unidad a costos fijos</td>
+              </tr>
+              <tr>
+                <td>Margen de seguridad (si vende 150)</td>
+                <td>MS = (Ventas - Equilibrio) / Ventas</td>
+                <td>MS = (150 - 100) / 150</td>
+                <td>33.3%</td>
+                <td>Reducción tolerable antes de pérdidas</td>
+              </tr>
             </tbody>
           </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El punto de equilibrio depende críticamente de la diferencia entre precio y costo variable unitario (margen de contribución). A mayor margen, menor punto de equilibrio.</p>
         </div>
-              
-        <div class=math-step>
-          <span class=step>3</span> <strong>Gráfica SVG:</strong>
-          <svg viewBox=0 0 400 250 class=math-graph>
-            <line x1=50 y1=200 x2=350 y2=200 stroke=var(--border-color) stroke-width=2></line>
-            <line x1=50 y1=200 x2=50 y2=50 stroke=var(--border-color) stroke-width=2></line>
-            <polyline points=50,200 150,150 250,100 350,50 stroke=var(--accent-color) stroke-width=3 fill=none></polyline>
-            <polyline points=50,200 150,175 250,150 350,125 stroke=var(--primary-color) stroke-width=3 fill=none></polyline>
-            <circle cx=250 cy=150 r=5 fill=var(--vibrant-blue) />
-              <text x=260 y=145 font-size=12 fill=var(--vibrant-blue)>Punto de equilibrio</text>
+        
+        <!-- Gráfica 1: Punto de equilibrio básico -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Análisis gráfico del punto de equilibrio</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Marcas del eje X (Unidades) -->
+            <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='100' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
+            <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='150' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>100</text>
+            <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='200' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>150</text>
+            <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='250' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>200</text>
+            <line x1='300' y1='295' x2='300' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='300' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>250</text>
+            
+            <!-- Marcas del eje Y (Dinero $) -->
+            <line x1='45' y1='250' x2='55' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='255' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$5,000</text>
+            <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$10,000</text>
+            <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$15,000</text>
+            <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$20,000</text>
+            
+            <!-- Línea de costos fijos -->
+            <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,5'></line>
+            
+            <!-- Línea de costos totales -->
+            <line x1='50' y1='250' x2='350' y2='100' stroke='var(--apple-vibrant-red)' stroke-width='3'></line>
+            
+            <!-- Línea de ingresos totales -->
+            <line x1='50' y1='300' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+            
+            <!-- Punto de equilibrio -->
+            <circle cx='150' cy='200' r='6' fill='var(--apple-vibrant-green)'></circle>
+            <line x1='150' y1='200' x2='150' y2='300' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            <line x1='50' y1='200' x2='150' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            
+            <!-- Zonas de pérdida y ganancia -->
+            <polygon points='50,250 150,200 150,300 50,300' fill='var(--apple-light-red)' fill-opacity='0.3' stroke='none'></polygon>
+            <polygon points='150,200 350,100 350,50 150,300' fill='var(--apple-light-green)' fill-opacity='0.3' stroke='none'></polygon>
+            
+            <!-- Etiquetas -->
+            <text x='150' y='190' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>Punto de Equilibrio</text>
+            <text x='100' y='280' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)' transform='rotate(-90 100,280)'>Zona de Pérdida</text>
+            <text x='250' y='180' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)' transform='rotate(-90 250,180)'>Zona de Ganancia</text>
+            
+            <!-- Etiquetas de ejes -->
+            <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Producidas y Vendidas (Q)</text>
+            <text x='15' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,175)'>Ingresos y Costos ($)</text>
+            
+            <!-- Leyenda -->
+            <rect x='240' y='60' width='150' height='80' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <line x1='250' y1='75' x2='270' y2='75' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+            <text x='280' y='80' font-size='12' fill='var(--apple-dark-gray)'>Ingresos Totales</text>
+            <line x1='250' y1='90' x2='270' y2='90' stroke='var(--apple-vibrant-red)' stroke-width='3'></line>
+            <text x='280' y='95' font-size='12' fill='var(--apple-dark-gray)'>Costos Totales</text>
+            <line x1='250' y1='105' x2='270' y2='105' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,5'></line>
+            <text x='280' y='110' font-size='12' fill='var(--apple-dark-gray)'>Costos Fijos</text>
+            <rect x='250' y='120' width='20' height='15' fill='var(--apple-light-red)' fill-opacity='0.3' stroke='var(--apple-dark-gray)' stroke-width='0.5'></rect>
+            <text x='280' y='132' font-size='12' fill='var(--apple-dark-gray)'>Zona de Pérdida</text>
           </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El punto de equilibrio ocurre donde la línea de ingresos cruza la línea de costos totales. Por debajo de este punto hay pérdidas (área roja), por encima hay ganancias (área verde).</p>
         </div>
         
-        <div class=math-verification>
-          <p><strong>¿Qué notar?</strong> La línea de ingresos (verde) y la de costos (naranja) se cruzan en el punto de equilibrio. A la izquierda hay pérdidas, a la derecha hay ganancias.</p>
+        <!-- Ejercicio 2: Análisis de sensibilidad -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-bar' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Análisis de sensibilidad del punto de equilibrio</h4>
+          <p>Análisis de cómo cambios en costos fijos, costos variables y precio afectan el punto de equilibrio:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Escenario</th>
+                <th>Cambio</th>
+                <th>Nuevo Punto de Equilibrio</th>
+                <th>Variación</th>
+                <th>Impacto en la empresa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Base</td>
+                <td>CF=$5,000, CVu=$30, P=$80</td>
+                <td>100 unidades</td>
+                <td>Referencia</td>
+                <td>Situación inicial</td>
+              </tr>
+              <tr>
+                <td>Aumento costos fijos</td>
+                <td>CF aumenta a $6,000</td>
+                <td>120 unidades</td>
+                <td>+20%</td>
+                <td>Mayor riesgo operativo</td>
+              </tr>
+              <tr>
+                <td>Aumento costos variables</td>
+                <td>CVu aumenta a $40</td>
+                <td>125 unidades</td>
+                <td>+25%</td>
+                <td>Menor competitividad</td>
+              </tr>
+              <tr>
+                <td>Aumento precio</td>
+                <td>P aumenta a $90</td>
+                <td>83 unidades</td>
+                <td>-17%</td>
+                <td>Mayor rentabilidad</td>
+              </tr>
+              <tr>
+                <td>Mejora eficiencia</td>
+                <td>CVu reduce a $25</td>
+                <td>91 unidades</td>
+                <td>-9%</td>
+                <td>Ventaja competitiva</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El punto de equilibrio es más sensible a cambios en el margen de contribución (precio - costo variable) que a cambios en costos fijos. Mejoras en eficiencia reducen significativamente el punto de equilibrio.</p>
         </div>
         
-        <div class=content-section>
-        <h4><i class=fas fa-industry></i> Aplicaciones reales</h4>
-          <ul>
-            <li><strong>Startups:</strong> Determinan cuántos productos deben vender para cubrir su inversión inicial.</li>
-            <li><strong>Hospitales:</strong> Calculan cuántos servicios deben prestar para cubrir sus costos operativos.</li>
-            <li><strong>Educación:</strong> Instituciones privadas estiman cuántos alumnos necesitan para no operar con pérdidas.</li>
-            <li><strong>Negociación:</strong> Permite justificar precios mínimos ante clientes o inversionistas.</li>
+        <!-- Gráfica 2: Análisis de sensibilidad -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Sensibilidad del punto de equilibrio a cambios en variables</h4>
+          <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='80' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='80' y1='250' x2='80' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Escenarios en eje Y -->
+            <line x1='75' y1='200' x2='85' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='60' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>Base</text>
+            <line x1='75' y1='150' x2='85' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='60' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>+Precio</text>
+            <line x1='75' y1='100' x2='85' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='60' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>-CVu</text>
+            <line x1='75' y1='50' x2='85' y2='50' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='60' y='55' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>+CF</text>
+            
+            <!-- Barras de punto de equilibrio -->
+            <rect x='100' y='180' width='120' height='20' fill='var(--apple-vibrant-blue)'></rect>
+            <text x='160' y='193' text-anchor='middle' font-size='12' fill='white'>100</text>
+            
+            <rect x='100' y='130' width='100' height='20' fill='var(--apple-vibrant-green)'></rect>
+            <text x='150' y='143' text-anchor='middle' font-size='12' fill='white'>83</text>
+            
+            <rect x='100' y='80' width='110' height='20' fill='var(--apple-vibrant-green)'></rect>
+            <text x='155' y='93' text-anchor='middle' font-size='12' fill='white'>91</text>
+            
+            <rect x='100' y='30' width='144' height='20' fill='var(--apple-vibrant-red)'></rect>
+            <text x='172' y='43' text-anchor='middle' font-size='12' fill='white'>120</text>
+            
+            <!-- Línea de referencia -->
+            <line x1='220' y1='50' x2='220' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            <text x='230' y='150' text-anchor='start' font-size='12' fill='var(--apple-dark-gray)'>Punto Equilibrio Base</text>
+            
+            <!-- Etiquetas -->
+            <text x='220' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades de Equilibrio</text>
+            <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Escenarios</text>
+            
+            <!-- Anotaciones -->
+            <text x='300' y='140' text-anchor='start' font-size='12' fill='var(--apple-vibrant-green)'>Mejora: -17%</text>
+            <text x='300' y='90' text-anchor='start' font-size='12' fill='var(--apple-vibrant-green)'>Mejora: -9%</text>
+            <text x='300' y='40' text-anchor='start' font-size='12' fill='var(--apple-vibrant-red)'>Empeora: +20%</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Los aumentos de precio y reducciones de costos variables mejoran el punto de equilibrio (barras verdes), mientras aumentos en costos fijos lo empeoran (barra roja). La empresa debe enfocarse en optimizar el margen de contribución.</p>
+        </div>
+        
+        <!-- Aplicaciones reales -->
+        <div class='content-content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+          <ul style='padding-left:18px;line-height:1.6;'>
+            <li><strong>Planificación financiera:</strong> Las empresas utilizan el análisis de punto de equilibrio para establecer metas de ventas realistas y evaluar la viabilidad de nuevos proyectos.</li>
+            <li><strong>Toma de decisiones de precios:</strong> Determinación de precios mínimos aceptables considerando la estructura de costos y el volumen esperado.</li>
+            <li><strong>Control de costos:</strong> Identificación de áreas donde reducciones de costos tienen mayor impacto en la rentabilidad.</li>
+            <li><strong>Evaluación de inversiones:</strong> Análisis de cómo nuevas inversiones en tecnología o capacidad afectan el punto de equilibrio.</li>
+            <li><strong>Gestión de riesgo:</strong> Cálculo del margen de seguridad para evaluar la vulnerabilidad de la empresa a fluctuaciones del mercado.</li>
+            <li><strong>Análisis de rentabilidad por producto:</strong> Determinación de qué productos contribuyen más rápidamente a cubrir costos fijos.</li>
+            <li><strong>Negociación con proveedores:</strong> Evaluación del impacto de cambios en costos de insumos en la rentabilidad global.</li>
           </ul>
         </div>
-  
-        <div class=bibliography-section>
-          <h4><i class=fas fa-book></i> Bibliografía confiable</h4>
-          <ul>
-            <li>Horngren, C. T., Sundem, G. L., & Stratton, W. O. (2006). <em>Contabilidad administrativa</em>. Pearson Educación.</li>
-            <li>Gitman, L. J., & Zutter, C. J. (2012). <em>Principios de administración financiera</em>. Pearson.</li>
-            <li><a href=https:online.hbs.edu/blog/post/break-even-analysis target=_blank>Harvard Business School Online: Break-Even Analysis</a></li>
-            <li><a href=https:www.unav.edu/web/gestion-empresarial/punto-de-equilibrio target=_blank>Universidad de Navarra: Punto de Equilibrio</a></li>
+        
+        <!-- Bibliografía -->
+        <div class='bibliography-section' style='margin-top:20px;'>
+          <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+          <ul style='padding-left:18px;line-height:1.5;'>
+            <li>Horngren, C. T., Datar, S. M., & Rajan, M. V. (2018). Cost Accounting: A Managerial Emphasis. Pearson.</li>
+            <li>Garrison, R. H., Noreen, E. W., & Brewer, P. C. (2020). Managerial Accounting. McGraw-Hill.</li>
+            <li>Brigham, E. F., & Houston, J. F. (2021). Fundamentals of Financial Management. Cengage Learning.</li>
+            <li>Shim, J. K., & Siegel, J. G. (2019). Managerial Accounting. Routledge.</li>
+            <li>Kaplan, R. S., & Atkinson, A. A. (2015). Advanced Management Accounting. Pearson.</li>
+            <li>Khan Academy: Break-even Analysis. www.khanacademy.org</li>
           </ul>
         </div>
-        `);">3.3.4. Punto de equilibrio de una empresa <span class=emoji-small>✅</span>
+      </div>
+      `);"><b>3.3.4. Punto de Equilibrio de una Empresa</b> <span class='emoji-small'>✅</span>
     </li>
-
         
     <li>3.3.5. Ley de la oferta</li>
     <li>3.3.6. Ley de la demanda</li>
