@@ -8229,326 +8229,663 @@
   </ul><br>
 </div>  
       
-      <div class="tema-card">
-        <div class="tema-num">TEMA 4</div>
-        <h3 class="tema-title">Ecuaciones de segundo grado con una incógnita</h3>
-        <ul class="tema-list">
-<li onclick="abrirModal('4.1. Ecuaciones de Segundo Grado', `
-  <hr><br>
-  <div class='math-module'>
-    
-    <!-- Tiempo estimado -->
-    <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
-      <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 25 minutos'>
-      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
-      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
-      <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>25 min</text>
-      </svg>
-      <span style='font-weight:bold;'>Tiempo estimado: 25 minutos</span>
-    </div>
-    
-    <!-- Objetivo -->
-    <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
-      <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
-      <span><strong>Objetivo:</strong> Comprender la estructura y propiedades de las ecuaciones cuadráticas, dominar los métodos de solución (fórmula general, factorización y completar el cuadrado), analizar el discriminante para determinar la naturaleza de las raíces, y aplicar estos conceptos en problemas matemáticos y situaciones del mundo real.</span>
-    </div>
-    
-    <!-- Idea principal -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
-      <p>Una ecuación de segundo grado o cuadrática es una ecuación algebraica de la forma ax² + bx + c = 0, donde a, b y c son coeficientes reales y a ≠ 0. Estas ecuaciones representan parábolas en el plano cartesiano y tienen como máximo dos soluciones reales llamadas raíces. El discriminante (Δ = b² - 4ac) determina la naturaleza de estas raíces: si Δ > 0 hay dos raíces reales distintas, si Δ = 0 hay una raíz real doble, y si Δ < 0 hay dos raíces complejas conjugadas. La resolución de ecuaciones cuadráticas es fundamental en matemáticas y tiene aplicaciones en física, ingeniería, economía y muchas otras disciplinas.</p>
-    </div>
-    
-    <!-- Ejercicio 1: Fórmula general y discriminante -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Aplicación de la fórmula general</h4>
-      <p>Resolución de ecuaciones cuadráticas usando la fórmula x = [-b ± √(b² - 4ac)]/(2a):</p>
-      <table class='math-table'>
-        <thead>
-          <tr>
-            <th>Ecuación</th>
-            <th>Coeficientes</th>
-            <th>Discriminante Δ = b² - 4ac</th>
-            <th>Raíces</th>
-            <th>Naturaleza de Raíces</th>
-            <th>Procedimiento Detallado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>x² - 5x + 6 = 0</td>
-            <td>a=1, b=-5, c=6</td>
-            <td>Δ = (-5)² - 4(1)(6) = 25 - 24 = 1</td>
-            <td>x = [5 ± √1]/2 = [5 ± 1]/2<br>x₁ = 3, x₂ = 2</td>
-            <td>Dos raíces reales distintas</td>
-            <td>Δ > 0 → raíces reales diferentes</td>
-          </tr>
-          <tr>
-            <td>x² - 4x + 4 = 0</td>
-            <td>a=1, b=-4, c=4</td>
-            <td>Δ = (-4)² - 4(1)(4) = 16 - 16 = 0</td>
-            <td>x = [4 ± √0]/2 = 4/2 = 2</td>
-            <td>Una raíz real doble</td>
-            <td>Δ = 0 → raíz real única (doble)</td>
-          </tr>
-          <tr>
-            <td>x² + 2x + 5 = 0</td>
-            <td>a=1, b=2, c=5</td>
-            <td>Δ = (2)² - 4(1)(5) = 4 - 20 = -16</td>
-            <td>x = [-2 ± √(-16)]/2 = [-2 ± 4i]/2<br>x₁ = -1 + 2i, x₂ = -1 - 2i</td>
-            <td>Dos raíces complejas conjugadas</td>
-            <td>Δ < 0 → raíces complejas</td>
-          </tr>
-          <tr>
-            <td>2x² - 8x + 6 = 0</td>
-            <td>a=2, b=-8, c=6</td>
-            <td>Δ = (-8)² - 4(2)(6) = 64 - 48 = 16</td>
-            <td>x = [8 ± √16]/4 = [8 ± 4]/4<br>x₁ = 3, x₂ = 1</td>
-            <td>Dos raíces reales distintas</td>
-            <td>Simplificar antes de calcular</td>
-          </tr>
-          <tr>
-            <td>3x² + 6x + 3 = 0</td>
-            <td>a=3, b=6, c=3</td>
-            <td>Δ = (6)² - 4(3)(3) = 36 - 36 = 0</td>
-            <td>x = [-6 ± √0]/6 = -6/6 = -1</td>
-            <td>Una raíz real doble</td>
-            <td>Raíz doble en x = -1</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El discriminante Δ = b² - 4ac es crucial para determinar el tipo de soluciones. Cuando Δ es un cuadrado perfecto, las raíces son racionales. La fórmula general funciona para cualquier ecuación cuadrática, pero métodos más simples pueden ser más eficientes en casos específicos.</p>
-    </div>
-    
-    <!-- Gráfica 1: Comportamiento según el discriminante -->
-    <div class='graph-container' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Comportamiento de parábolas según el discriminante</h4>
-      <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-        <!-- Ejes coordenados -->
-        <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+<div class="tema-card">
+  <div class="tema-num">TEMA 4</div>
+  <h3 class="tema-title">Ecuaciones de segundo grado con una incógnita</h3>
+  <ul class="tema-list">
+    <li onclick="abrirModal('4.1. Ecuaciones de Segundo Grado', `
+      <hr><br>
+      <div class='math-module'>
         
-        <!-- Caso 1: Δ > 0 (Dos raíces reales) -->
-        <g transform='translate(0,0)'>
-          <!-- Parábola y = x² - 3x + 2 (raíces en x=1 y x=2) -->
-          <path d='M 60,250 Q 125,50 190,250' stroke='var(--apple-vibrant-blue)' stroke-width='2' fill='none'></path>
-          <circle cx='100' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
-          <circle cx='150' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
-          <text x='100' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=1</text>
-          <text x='150' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=2</text>
-          <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Δ > 0</text>
-          <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>2 raíces reales</text>
-        </g>
+        <!-- Tiempo estimado -->
+        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 25 minutos'>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
+          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>25 min</text>
+          </svg>
+          <span style='font-weight:bold;'>Tiempo estimado: 25 minutos</span>
+        </div>
         
-        <!-- Caso 2: Δ = 0 (Una raíz real doble) -->
-        <g transform='translate(200,0)'>
-          <!-- Parábola y = x² - 2x + 1 (raíz doble en x=1) -->
-          <path d='M 60,250 Q 125,175 190,250' stroke='var(--apple-vibrant-green)' stroke-width='2' fill='none'></path>
-          <circle cx='125' cy='175' r='3' fill='var(--apple-vibrant-orange)'></circle>
-          <text x='125' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x=1</text>
-          <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>Δ = 0</text>
-          <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>1 raíz real doble</text>
-        </g>
+        <!-- Objetivo -->
+        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+          <span><strong>Objetivo:</strong> Comprender la estructura y propiedades de las ecuaciones cuadráticas, dominar los métodos de solución (fórmula general, factorización y completar el cuadrado), analizar el discriminante para determinar la naturaleza de las raíces, y aplicar estos conceptos en problemas matemáticos y situaciones del mundo real.</span>
+        </div>
         
-        <!-- Caso 3: Δ < 0 (Raíces complejas) -->
-        <g transform='translate(100,175)'>
-          <!-- Parábola y = x² + 1 (sin raíces reales) -->
-          <path d='M 60,250 Q 125,150 190,250' stroke='var(--apple-vibrant-purple)' stroke-width='2' fill='none'></path>
-          <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)'>Δ < 0</text>
-          <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>0 raíces reales</text>
-          <text x='125' y='130' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>2 raíces complejas</text>
-        </g>
+        <!-- Idea principal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+          <p>Una ecuación de segundo grado o cuadrática es una ecuación algebraica de la forma ax² + bx + c = 0, donde a, b y c son coeficientes reales y a ≠ 0. Estas ecuaciones representan parábolas en el plano cartesiano y tienen como máximo dos soluciones reales llamadas raíces. El discriminante (Δ = b² - 4ac) determina la naturaleza de estas raíces: si Δ > 0 hay dos raíces reales distintas, si Δ = 0 hay una raíz real doble, y si Δ < 0 hay dos raíces complejas conjugadas. La resolución de ecuaciones cuadráticas es fundamental en matemáticas y tiene aplicaciones en física, ingeniería, economía y muchas otras disciplinas.</p>
+        </div>
         
-        <!-- Líneas divisorias -->
-        <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
-        <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+        <!-- Ejercicio 1: Fórmula general y discriminante -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Aplicación de la fórmula general</h4>
+          <p>Resolución de ecuaciones cuadráticas usando la fórmula x = [-b ± √(b² - 4ac)]/(2a):</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Ecuación</th>
+                <th>Coeficientes</th>
+                <th>Discriminante Δ = b² - 4ac</th>
+                <th>Raíces</th>
+                <th>Naturaleza de Raíces</th>
+                <th>Procedimiento Detallado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>x² - 5x + 6 = 0</td>
+                <td>a=1, b=-5, c=6</td>
+                <td>Δ = (-5)² - 4(1)(6) = 25 - 24 = 1</td>
+                <td>x = [5 ± √1]/2 = [5 ± 1]/2<br>x₁ = 3, x₂ = 2</td>
+                <td>Dos raíces reales distintas</td>
+                <td>Δ > 0 → raíces reales diferentes</td>
+              </tr>
+              <tr>
+                <td>x² - 4x + 4 = 0</td>
+                <td>a=1, b=-4, c=4</td>
+                <td>Δ = (-4)² - 4(1)(4) = 16 - 16 = 0</td>
+                <td>x = [4 ± √0]/2 = 4/2 = 2</td>
+                <td>Una raíz real doble</td>
+                <td>Δ = 0 → raíz real única (doble)</td>
+              </tr>
+              <tr>
+                <td>x² + 2x + 5 = 0</td>
+                <td>a=1, b=2, c=5</td>
+                <td>Δ = (2)² - 4(1)(5) = 4 - 20 = -16</td>
+                <td>x = [-2 ± √(-16)]/2 = [-2 ± 4i]/2<br>x₁ = -1 + 2i, x₂ = -1 - 2i</td>
+                <td>Dos raíces complejas conjugadas</td>
+                <td>Δ < 0 → raíces complejas</td>
+              </tr>
+              <tr>
+                <td>2x² - 8x + 6 = 0</td>
+                <td>a=2, b=-8, c=6</td>
+                <td>Δ = (-8)² - 4(2)(6) = 64 - 48 = 16</td>
+                <td>x = [8 ± √16]/4 = [8 ± 4]/4<br>x₁ = 3, x₂ = 1</td>
+                <td>Dos raíces reales distintas</td>
+                <td>Simplificar antes de calcular</td>
+              </tr>
+              <tr>
+                <td>3x² + 6x + 3 = 0</td>
+                <td>a=3, b=6, c=3</td>
+                <td>Δ = (6)² - 4(3)(3) = 36 - 36 = 0</td>
+                <td>x = [-6 ± √0]/6 = -6/6 = -1</td>
+                <td>Una raíz real doble</td>
+                <td>Raíz doble en x = -1</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El discriminante Δ = b² - 4ac es crucial para determinar el tipo de soluciones. Cuando Δ es un cuadrado perfecto, las raíces son racionales. La fórmula general funciona para cualquier ecuación cuadrática, pero métodos más simples pueden ser más eficientes en casos específicos.</p>
+        </div>
         
-        <!-- Título general -->
-        <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Relación entre el Discriminante y las Raíces de Ecuaciones Cuadráticas</text>
-      </svg>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cuando Δ > 0, la parábola corta el eje X en dos puntos (raíces reales distintas). Cuando Δ = 0, la parábola es tangente al eje X (raíz doble). Cuando Δ < 0, la parábola no corta el eje X (raíces complejas).</p>
-    </div>
-    
-    <!-- Ejercicio 2: Métodos alternativos de solución -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-puzzle-piece' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Métodos alternativos de solución</h4>
-      <p>Resolución de ecuaciones cuadráticas usando factorización y completando el cuadrado:</p>
-      <table class='math-table'>
-        <thead>
-          <tr>
-            <th>Método</th>
-            <th>Ecuación</th>
-            <th>Procedimiento Paso a Paso</th>
-            <th>Solución</th>
-            <th>Condiciones de Aplicación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Factorización</td>
-            <td>x² - 5x + 6 = 0</td>
-            <td>1. Buscar dos números que multipliquen a 6 y sumen -5<br>2. Los números son -2 y -3<br>3. Factorizar: (x - 2)(x - 3) = 0<br>4. Aplicar propiedad del producto cero</td>
-            <td>x = 2, x = 3</td>
-            <td>Cuando es fácil encontrar factores</td>
-          </tr>
-          <tr>
-            <td>Completar Cuadrado</td>
-            <td>x² + 6x + 5 = 0</td>
-            <td>1. Mover constante: x² + 6x = -5<br>2. Completar cuadrado: (6/2)² = 9<br>3. Sumar a ambos lados: x² + 6x + 9 = 4<br>4. Factorizar: (x + 3)² = 4<br>5. Aplicar raíz cuadrada</td>
-            <td>x = -1, x = -5</td>
-            <td>Útil para derivar fórmula general</td>
-          </tr>
-          <tr>
-            <td>Factor Común</td>
-            <td>2x² + 8x = 0</td>
-            <td>1. Extraer factor común: 2x(x + 4) = 0<br>2. Aplicar propiedad del producto cero</td>
-            <td>x = 0, x = -4</td>
-            <td>Cuando c = 0</td>
-          </tr>
-          <tr>
-            <td>Diferencia de Cuadrados</td>
-            <td>x² - 9 = 0</td>
-            <td>1. Reconocer diferencia: x² - 3² = 0<br>2. Factorizar: (x - 3)(x + 3) = 0</td>
-            <td>x = 3, x = -3</td>
-            <td>Cuando b = 0 y c es cuadrado perfecto</td>
-          </tr>
-          <tr>
-            <td>Completar Cuadrado Avanzado</td>
-            <td>2x² - 8x + 6 = 0</td>
-            <td>1. Dividir por a: x² - 4x + 3 = 0<br>2. Completar: (x² - 4x + 4) = 1<br>3. Factorizar: (x - 2)² = 1</td>
-            <td>x = 3, x = 1</td>
-            <td>Cuando a ≠ 1</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La factorización es el método más eficiente cuando es evidente, pero no siempre es posible. Completar el cuadrado es sistemático y ayuda a entender la derivación de la fórmula general. La elección del método depende de la estructura específica de la ecuación.</p>
-    </div>
-    
-    <!-- Gráfica 2: Proceso de completar el cuadrado -->
-    <div class='graph-container' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Visualización del proceso de completar el cuadrado</h4>
-      <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-        <!-- Ejes coordenados -->
-        <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        <!-- Gráfica 1: Comportamiento según el discriminante -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Comportamiento de parábolas según el discriminante</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Caso 1: Δ > 0 (Dos raíces reales) -->
+            <g transform='translate(0,0)'>
+              <!-- Parábola y = x² - 3x + 2 (raíces en x=1 y x=2) -->
+              <path d='M 60,250 Q 125,50 190,250' stroke='var(--apple-vibrant-blue)' stroke-width='2' fill='none'></path>
+              <circle cx='100' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='150' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <text x='100' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=1</text>
+              <text x='150' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=2</text>
+              <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Δ > 0</text>
+              <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>2 raíces reales</text>
+            </g>
+            
+            <!-- Caso 2: Δ = 0 (Una raíz real doble) -->
+            <g transform='translate(200,0)'>
+              <!-- Parábola y = x² - 2x + 1 (raíz doble en x=1) -->
+              <path d='M 60,250 Q 125,175 190,250' stroke='var(--apple-vibrant-green)' stroke-width='2' fill='none'></path>
+              <circle cx='125' cy='175' r='3' fill='var(--apple-vibrant-orange)'></circle>
+              <text x='125' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x=1</text>
+              <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>Δ = 0</text>
+              <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>1 raíz real doble</text>
+            </g>
+            
+            <!-- Caso 3: Δ < 0 (Raíces complejas) -->
+            <g transform='translate(100,175)'>
+              <!-- Parábola y = x² + 1 (sin raíces reales) -->
+              <path d='M 60,250 Q 125,150 190,250' stroke='var(--apple-vibrant-purple)' stroke-width='2' fill='none'></path>
+              <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)'>Δ < 0</text>
+              <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>0 raíces reales</text>
+              <text x='125' y='130' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>2 raíces complejas</text>
+            </g>
+            
+            <!-- Líneas divisorias -->
+            <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+            <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+            
+            <!-- Título general -->
+            <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Relación entre el Discriminante y las Raíces de Ecuaciones Cuadráticas</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cuando Δ > 0, la parábola corta el eje X en dos puntos (raíces reales distintas). Cuando Δ = 0, la parábola es tangente al eje X (raíz doble). Cuando Δ < 0, la parábola no corta el eje X (raíces complejas).</p>
+        </div>
         
-        <!-- Parábola original: y = x² + 4x + 1 -->
-        <path d='M 100,250 Q 150,150 200,170 Q 250,150 300,250' stroke='var(--apple-vibrant-blue)' stroke-width='2' fill='none' stroke-dasharray='5,3'></path>
+        <!-- Ejercicio 2: Métodos alternativos de solución -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-puzzle-piece' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Métodos alternativos de solución</h4>
+          <p>Resolución de ecuaciones cuadráticas usando factorización y completando el cuadrado:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Ecuación</th>
+                <th>Procedimiento Paso a Paso</th>
+                <th>Solución</th>
+                <th>Condiciones de Aplicación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Factorización</td>
+                <td>x² - 5x + 6 = 0</td>
+                <td>1. Buscar dos números que multipliquen a 6 y sumen -5<br>2. Los números son -2 y -3<br>3. Factorizar: (x - 2)(x - 3) = 0<br>4. Aplicar propiedad del producto cero</td>
+                <td>x = 2, x = 3</td>
+                <td>Cuando es fácil encontrar factores</td>
+              </tr>
+              <tr>
+                <td>Completar Cuadrado</td>
+                <td>x² + 6x + 5 = 0</td>
+                <td>1. Mover constante: x² + 6x = -5<br>2. Completar cuadrado: (6/2)² = 9<br>3. Sumar a ambos lados: x² + 6x + 9 = 4<br>4. Factorizar: (x + 3)² = 4<br>5. Aplicar raíz cuadrada</td>
+                <td>x = -1, x = -5</td>
+                <td>Útil para derivar fórmula general</td>
+              </tr>
+              <tr>
+                <td>Factor Común</td>
+                <td>2x² + 8x = 0</td>
+                <td>1. Extraer factor común: 2x(x + 4) = 0<br>2. Aplicar propiedad del producto cero</td>
+                <td>x = 0, x = -4</td>
+                <td>Cuando c = 0</td>
+              </tr>
+              <tr>
+                <td>Diferencia de Cuadrados</td>
+                <td>x² - 9 = 0</td>
+                <td>1. Reconocer diferencia: x² - 3² = 0<br>2. Factorizar: (x - 3)(x + 3) = 0</td>
+                <td>x = 3, x = -3</td>
+                <td>Cuando b = 0 y c es cuadrado perfecto</td>
+              </tr>
+              <tr>
+                <td>Completar Cuadrado Avanzado</td>
+                <td>2x² - 8x + 6 = 0</td>
+                <td>1. Dividir por a: x² - 4x + 3 = 0<br>2. Completar: (x² - 4x + 4) = 1<br>3. Factorizar: (x - 2)² = 1</td>
+                <td>x = 3, x = 1</td>
+                <td>Cuando a ≠ 1</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La factorización es el método más eficiente cuando es evidente, pero no siempre es posible. Completar el cuadrado es sistemático y ayuda a entender la derivación de la fórmula general. La elección del método depende de la estructura específica de la ecuación.</p>
+        </div>
         
-        <!-- Parábola completada: y = (x + 2)² - 3 -->
-        <path d='M 100,280 Q 150,120 200,120 Q 250,120 300,280' stroke='var(--apple-vibrant-green)' stroke-width='3' fill='none'></path>
+        <!-- Gráfica 2: Proceso de completar el cuadrado -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Visualización del proceso de completar el cuadrado</h4>
+          <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Parábola original: y = x² + 4x + 1 -->
+            <path d='M 100,250 Q 150,150 200,170 Q 250,150 300,250' stroke='var(--apple-vibrant-blue)' stroke-width='2' fill='none' stroke-dasharray='5,3'></path>
+            
+            <!-- Parábola completada: y = (x + 2)² - 3 -->
+            <path d='M 100,280 Q 150,120 200,120 Q 250,120 300,280' stroke='var(--apple-vibrant-green)' stroke-width='3' fill='none'></path>
+            
+            <!-- Vértice de la parábola completada -->
+            <circle cx='200' cy='120' r='4' fill='var(--apple-vibrant-red)'></circle>
+            <text x='210' cy='115' font-size='12' fill='var(--apple-vibrant-red)'>V(-2,-3)</text>
+            
+            <!-- Líneas de referencia para el vértice -->
+            <line x1='200' y1='120' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            <line x1='50' y1='120' x2='200' y2='120' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            
+            <!-- Representación geométrica del proceso -->
+            <rect x='250' y='50' width='140' height='100' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <text x='255' y='65' font-size='10' fill='var(--apple-dark-gray)'><strong>Proceso de Completar Cuadrado:</strong></text>
+            <text x='255' y='80' font-size='9' fill='var(--apple-vibrant-blue)'>1. x² + 4x + 1 = 0</text>
+            <text x='255' y='90' font-size='9' fill='var(--apple-vibrant-blue)'>2. x² + 4x = -1</text>
+            <text x='255' y='100' font-size='9' fill='var(--apple-vibrant-green)'>3. x² + 4x + 4 = 3</text>
+            <text x='255' y='110' font-size='9' fill='var(--apple-vibrant-green)'>4. (x + 2)² = 3</text>
+            <text x='255' y='120' font-size='9' fill='var(--apple-vibrant-red)'>5. x = -2 ± √3</text>
+            <text x='255' y='130' font-size='9' fill='var(--apple-dark-gray)'>Vértice: (-2, -3)</text>
+            
+            <!-- Raíces aproximadas -->
+            <circle cx='167' cy='250' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='233' cy='250' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <text x='160' y='240' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x ≈ -3.73</text>
+            <text x='240' y='240' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x ≈ -0.27</text>
+            
+            <!-- Etiquetas de ejes -->
+            <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+            <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Completar el cuadrado transforma la ecuación general ax² + bx + c = 0 en la forma vértice a(x - h)² + k = 0, revelando directamente el vértice de la parábola (h, k). Este proceso muestra geométricamente cómo se 'completa' el cuadrado perfecto al añadir (b/2a)².</p>
+        </div>
         
-        <!-- Vértice de la parábola completada -->
-        <circle cx='200' cy='120' r='4' fill='var(--apple-vibrant-red)'></circle>
-        <text x='210' cy='115' font-size='12' fill='var(--apple-vibrant-red)'>V(-2,-3)</text>
+        <!-- Ejercicio 3: Aplicaciones en problemas del mundo real -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-rocket' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Aplicaciones en contextos reales</h4>
+          <p>Resolución de problemas aplicados que involucran ecuaciones cuadráticas:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Contexto</th>
+                <th>Problema</th>
+                <th>Modelado Matemático</th>
+                <th>Solución</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Física</td>
+                <td>Un proyectil se lanza con v₀=20 m/s. ¿Cuándo alcanza 15m de altura?</td>
+                <td>h(t) = -5t² + 20t = 15<br>-5t² + 20t - 15 = 0</td>
+                <td>t = [ -20 ± √(400 - 300) ] / (-10)<br>t = 1s y t = 3s</td>
+                <td>Alcanza 15m a los 1s (subiendo) y 3s (bajando)</td>
+              </tr>
+              <tr>
+                <td>Geometría</td>
+                <td>Área de rectángulo: 24 m², perímetro: 20 m. Hallar dimensiones.</td>
+                <td>xy = 24, 2x + 2y = 20 → y = 10 - x<br>x(10 - x) = 24<br>x² - 10x + 24 = 0</td>
+                <td>(x - 4)(x - 6) = 0<br>x = 4m, y = 6m</td>
+                <td>Las dimensiones son 4m × 6m</td>
+              </tr>
+              <tr>
+                <td>Economía</td>
+                <td>Beneficio B(x) = -2x² + 40x - 72. Maximizar beneficio.</td>
+                <td>Vértice en x = -b/(2a) = -40/(2×-2) = 10</td>
+                <td>B(10) = -2(100) + 40(10) - 72 = 128</td>
+                <td>Máximo beneficio: $128 con 10 unidades</td>
+              </tr>
+              <tr>
+                <td>Ingeniería</td>
+                <td>Puente colgante con cable parabólico y=0.01x²-2x+100. Altura mínima.</td>
+                <td>Vértice en x = -b/(2a) = 2/(2×0.01) = 100</td>
+                <td>y(100) = 0.01(10000) - 2(100) + 100 = 0</td>
+                <td>Altura mínima: 0m en el centro (diseño específico)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las ecuaciones cuadráticas modelan fenómenos donde hay un punto de máximo o mínimo (vértice de la parábola). En problemas físicos, las dos soluciones suelen tener significado físico (ej: tiempo de subida y bajada). El vértice proporciona información optimizada en problemas de maximización/minimización.</p>
+        </div>
         
-        <!-- Líneas de referencia para el vértice -->
-        <line x1='200' y1='120' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
-        <line x1='50' y1='120' x2='200' y2='120' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+        <!-- Aplicaciones reales -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+          <ul style='padding-left:18px;line-height:1.6;'>
+            <li><strong>Ingeniería civil:</strong> Diseño de arcos parabólicos en puentes y cálculo de tensiones en estructuras.</li>
+            <li><strong>Física:</strong> Modelado de movimiento parabólico de proyectiles y análisis de trayectorias.</li>
+            <li><strong>Economía:</strong> Optimización de funciones de costo, ingreso y beneficio en microeconomía.</li>
+            <li><strong>Arquitectura:</strong> Diseño de superficies parabólicas en reflectores y antenas.</li>
+            <li><strong>Robótica:</strong> Planificación de trayectorias parabólicas para brazos robóticos.</li>
+            <li><strong>Telecomunicaciones:</strong> Cálculo de alcance óptimo en antenas parabólicas.</li>
+            <li><strong>Deportes:</strong> Análisis de trayectorias de balones en fútbol, baloncesto y golf.</li>
+            <li><strong>Medio ambiente:</strong> Modelado de dispersión de contaminantes en la atmósfera.</li>
+          </ul>
+        </div>
         
-        <!-- Representación geométrica del proceso -->
-        <rect x='250' y='50' width='140' height='100' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
-        <text x='255' y='65' font-size='10' fill='var(--apple-dark-gray)'><strong>Proceso de Completar Cuadrado:</strong></text>
-        <text x='255' y='80' font-size='9' fill='var(--apple-vibrant-blue)'>1. x² + 4x + 1 = 0</text>
-        <text x='255' y='90' font-size='9' fill='var(--apple-vibrant-blue)'>2. x² + 4x = -1</text>
-        <text x='255' y='100' font-size='9' fill='var(--apple-vibrant-green)'>3. x² + 4x + 4 = 3</text>
-        <text x='255' y='110' font-size='9' fill='var(--apple-vibrant-green)'>4. (x + 2)² = 3</text>
-        <text x='255' y='120' font-size='9' fill='var(--apple-vibrant-red)'>5. x = -2 ± √3</text>
-        <text x='255' y='130' font-size='9' fill='var(--apple-dark-gray)'>Vértice: (-2, -3)</text>
+        <!-- Bibliografía -->
+        <div class='bibliography-section' style='margin-top:20px;'>
+          <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+          <ul style='padding-left:18px;line-height:1.5;'>
+            <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+            <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+            <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+            <li>Lehmann, C. H. (2019). Álgebra. Limusa.</li>
+            <li>Baldor, A. (2019). Álgebra. Patria.</li>
+            <li>Khan Academy: Quadratic equations and functions. www.khanacademy.org</li>
+          </ul>
+        </div>
+      </div>
+      `);"><b>4.1. Ecuaciones de Segundo Grado</b> <span class='emoji-small'>✅</span>
+    </li>
+              
+    <li onclick="abrirModal('4.1.1. Ecuaciones Completas', `
+      <hr><br>
+      <div class='math-module'>
         
-        <!-- Raíces aproximadas -->
-        <circle cx='167' cy='250' r='3' fill='var(--apple-vibrant-orange)'></circle>
-        <circle cx='233' cy='250' r='3' fill='var(--apple-vibrant-orange)'></circle>
-        <text x='160' y='240' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x ≈ -3.73</text>
-        <text x='240' y='240' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x ≈ -0.27</text>
+        <!-- Tiempo estimado -->
+        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 20 minutos'>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='0' transform='rotate(-90 10 10)'></circle>
+          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>20 min</text>
+          </svg>
+          <span style='font-weight:bold;'>Tiempo estimado: 20 minutos</span>
+        </div>
         
-        <!-- Etiquetas de ejes -->
-        <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
-        <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
-      </svg>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Completar el cuadrado transforma la ecuación general ax² + bx + c = 0 en la forma vértice a(x - h)² + k = 0, revelando directamente el vértice de la parábola (h, k). Este proceso muestra geométricamente cómo se 'completa' el cuadrado perfecto al añadir (b/2a)².</p>
-    </div>
-    
-    <!-- Ejercicio 3: Aplicaciones en problemas del mundo real -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-rocket' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Aplicaciones en contextos reales</h4>
-      <p>Resolución de problemas aplicados que involucran ecuaciones cuadráticas:</p>
-      <table class='math-table'>
-        <thead>
-          <tr>
-            <th>Contexto</th>
-            <th>Problema</th>
-            <th>Modelado Matemático</th>
-            <th>Solución</th>
-            <th>Interpretación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Física</td>
-            <td>Un proyectil se lanza con v₀=20 m/s. ¿Cuándo alcanza 15m de altura?</td>
-            <td>h(t) = -5t² + 20t = 15<br>-5t² + 20t - 15 = 0</td>
-            <td>t = [ -20 ± √(400 - 300) ] / (-10)<br>t = 1s y t = 3s</td>
-            <td>Alcanza 15m a los 1s (subiendo) y 3s (bajando)</td>
-          </tr>
-          <tr>
-            <td>Geometría</td>
-            <td>Área de rectángulo: 24 m², perímetro: 20 m. Hallar dimensiones.</td>
-            <td>xy = 24, 2x + 2y = 20 → y = 10 - x<br>x(10 - x) = 24<br>x² - 10x + 24 = 0</td>
-            <td>(x - 4)(x - 6) = 0<br>x = 4m, y = 6m</td>
-            <td>Las dimensiones son 4m × 6m</td>
-          </tr>
-          <tr>
-            <td>Economía</td>
-            <td>Beneficio B(x) = -2x² + 40x - 72. Maximizar beneficio.</td>
-            <td>Vértice en x = -b/(2a) = -40/(2×-2) = 10</td>
-            <td>B(10) = -2(100) + 40(10) - 72 = 128</td>
-            <td>Máximo beneficio: $128 con 10 unidades</td>
-          </tr>
-          <tr>
-            <td>Ingeniería</td>
-            <td>Puente colgante con cable parabólico y=0.01x²-2x+100. Altura mínima.</td>
-            <td>Vértice en x = -b/(2a) = 2/(2×0.01) = 100</td>
-            <td>y(100) = 0.01(10000) - 2(100) + 100 = 0</td>
-            <td>Altura mínima: 0m en el centro (diseño específico)</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las ecuaciones cuadráticas modelan fenómenos donde hay un punto de máximo o mínimo (vértice de la parábola). En problemas físicos, las dos soluciones suelen tener significado físico (ej: tiempo de subida y bajada). El vértice proporciona información optimizada en problemas de maximización/minimización.</p>
-    </div>
-    
-    <!-- Aplicaciones reales -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
-      <ul style='padding-left:18px;line-height:1.6;'>
-        <li><strong>Ingeniería civil:</strong> Diseño de arcos parabólicos en puentes y cálculo de tensiones en estructuras.</li>
-        <li><strong>Física:</strong> Modelado de movimiento parabólico de proyectiles y análisis de trayectorias.</li>
-        <li><strong>Economía:</strong> Optimización de funciones de costo, ingreso y beneficio en microeconomía.</li>
-        <li><strong>Arquitectura:</strong> Diseño de superficies parabólicas en reflectores y antenas.</li>
-        <li><strong>Robótica:</strong> Planificación de trayectorias parabólicas para brazos robóticos.</li>
-        <li><strong>Telecomunicaciones:</strong> Cálculo de alcance óptimo en antenas parabólicas.</li>
-        <li><strong>Deportes:</strong> Análisis de trayectorias de balones en fútbol, baloncesto y golf.</li>
-        <li><strong>Medio ambiente:</strong> Modelado de dispersión de contaminantes en la atmósfera.</li>
-      </ul>
-    </div>
-    
-    <!-- Bibliografía -->
-    <div class='bibliography-section' style='margin-top:20px;'>
-      <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
-      <ul style='padding-left:18px;line-height:1.5;'>
-        <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
-        <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
-        <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
-        <li>Lehmann, C. H. (2019). Álgebra. Limusa.</li>
-        <li>Baldor, A. (2019). Álgebra. Patria.</li>
-        <li>Khan Academy: Quadratic equations and functions. www.khanacademy.org</li>
-      </ul>
-    </div>
-  </div>
-  `);"><b>4.1. Ecuaciones de Segundo Grado</b> <span class='emoji-small'>✅</span>
-</li>
+        <!-- Objetivo -->
+        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+          <span><strong>Objetivo:</strong> Comprender la estructura y propiedades de las ecuaciones cuadráticas completas, dominar métodos específicos para su resolución, analizar casos especiales según los coeficientes, y aplicar estrategias eficientes para resolver problemas que involucran este tipo de ecuaciones en contextos matemáticos y aplicados.</span>
+        </div>
+        
+        <!-- Idea principal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+          <p>Una ecuación cuadrática completa es aquella que contiene los tres términos: el término cuadrático (ax²), el término lineal (bx) y el término independiente (c), es decir, tiene la forma general ax² + bx + c = 0 con a ≠ 0 y donde b y c son diferentes de cero. Estas ecuaciones representan parábolas completas en el plano cartesiano y pueden resolverse mediante múltiples métodos, siendo la fórmula general el método universal. La presencia de los tres coeficientes permite analizar propiedades como el vértice, el eje de simetría y las intersecciones con los ejes coordenados de manera completa.</p>
+        </div>
+        
+        <!-- Ejercicio 1: Identificación y clasificación -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Identificación y clasificación de ecuaciones completas</h4>
+          <p>Análisis de diferentes ecuaciones cuadráticas para determinar si son completas:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Ecuación</th>
+                <th>Coeficientes</th>
+                <th>Tipo</th>
+                <th>Justificación</th>
+                <th>Método Recomendado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2x² + 5x - 3 = 0</td>
+                <td>a=2, b=5, c=-3</td>
+                <td>Completa</td>
+                <td>Tiene los tres términos: cuadrático, lineal e independiente</td>
+                <td>Fórmula general o factorización</td>
+              </tr>
+              <tr>
+                <td>x² - 4x + 4 = 0</td>
+                <td>a=1, b=-4, c=4</td>
+                <td>Completa</td>
+                <td>Presenta los tres coeficientes diferentes de cero</td>
+                <td>Factorización (trinomio cuadrado perfecto)</td>
+              </tr>
+              <tr>
+                <td>3x² + 7x = 0</td>
+                <td>a=3, b=7, c=0</td>
+                <td>Incompleta</td>
+                <td>Falta el término independiente (c=0)</td>
+                <td>Factor común</td>
+              </tr>
+              <tr>
+                <td>5x² - 20 = 0</td>
+                <td>a=5, b=0, c=-20</td>
+                <td>Incompleta</td>
+                <td>Falta el término lineal (b=0)</td>
+                <td>Despeje directo</td>
+              </tr>
+              <tr>
+                <td>-x² + 3x + 10 = 0</td>
+                <td>a=-1, b=3, c=10</td>
+                <td>Completa</td>
+                <td>Tiene los tres términos, aunque a es negativo</td>
+                <td>Fórmula general</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Una ecuación cuadrática es completa cuando los tres coeficientes a, b y c son diferentes de cero. Las ecuaciones incompletas pueden resolverse con métodos más simples, mientras que las completas generalmente requieren la fórmula general o técnicas específicas de factorización.</p>
+        </div>
+        
+        <!-- Gráfica 1: Comparación entre ecuaciones completas e incompletas -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Comportamiento de ecuaciones completas vs incompletas</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Caso 1: Ecuación completa -->
+            <g transform='translate(0,0)'>
+              <!-- Parábola y = x² - 3x + 2 -->
+              <path d='M 60,250 Q 125,50 190,250' stroke='var(--apple-vibrant-blue)' stroke-width='3' fill='none'></path>
+              <circle cx='100' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='150' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='125' cy='112' r='3' fill='var(--apple-vibrant-green)'></circle>
+              <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Completa</text>
+              <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>y = x² - 3x + 2</text>
+              <text x='100' y='190' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-red)'>x=1</text>
+              <text x='150' y='190' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-red)'>x=2</text>
+              <text x='140' y='105' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-green)'>V(1.5,-0.25)</text>
+            </g>
+            
+            <!-- Caso 2: Ecuación incompleta (falta c) -->
+            <g transform='translate(200,0)'>
+              <!-- Parábola y = x² - 3x -->
+              <path d='M 60,250 Q 125,112 190,250' stroke='var(--apple-vibrant-orange)' stroke-width='2' fill='none' stroke-dasharray='5,3'></path>
+              <circle cx='100' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='150' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='125' cy='112' r='3' fill='var(--apple-vibrant-green)'></circle>
+              <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)'>Incompleta</text>
+              <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>y = x² - 3x</text>
+              <text x='100' y='190' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-red)'>x=0</text>
+              <text x='150' y='190' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-red)'>x=3</text>
+              <text x='140' y='105' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-green)'>V(1.5,-2.25)</text>
+            </g>
+            
+            <!-- Caso 3: Ecuación incompleta (falta b) -->
+            <g transform='translate(100,175)'>
+              <!-- Parábola y = x² - 4 -->
+              <path d='M 60,250 Q 125,150 190,250' stroke='var(--apple-vibrant-purple)' stroke-width='2' fill='none' stroke-dasharray='5,3'></path>
+              <circle cx='100' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='150' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
+              <circle cx='125' cy='150' r='3' fill='var(--apple-vibrant-green)'></circle>
+              <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)'>Incompleta</text>
+              <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>y = x² - 4</text>
+              <text x='100' y='190' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-red)'>x=-2</text>
+              <text x='150' y='190' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-red)'>x=2</text>
+              <text x='140' y='145' text-anchor='middle' font-size='8' fill='var(--apple-vibrant-green)'>V(0,-4)</text>
+            </g>
+            
+            <!-- Líneas divisorias -->
+            <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+            <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+            
+            <!-- Leyenda -->
+            <rect x='250' y='200' width='140' height='80' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <circle cx='260' y='215' r='3' fill='var(--apple-vibrant-red)'></circle>
+            <text x='270' y='220' font-size='9' fill='var(--apple-dark-gray)'>Raíces (intersección X)</text>
+            <circle cx='260' y='230' r='3' fill='var(--apple-vibrant-green)'></circle>
+            <text x='270' y='235' font-size='9' fill='var(--apple-dark-gray)'>Vértice</text>
+            <line x1='260' y1='245' x2='270' y2='245' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+            <text x='280' y='250' font-size='9' fill='var(--apple-dark-gray)'>Ecuación completa</text>
+            <line x1='260' y1='260' x2='270' y2='260' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,3'></line>
+            <text x='280' y='265' font-size='9' fill='var(--apple-dark-gray)'>Ecuación incompleta</text>
+            
+            <!-- Título general -->
+            <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Comparación entre Ecuaciones Cuadráticas Completas e Incompletas</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las ecuaciones completas tienen vértices que no están sobre los ejes coordenados y presentan desplazamientos tanto horizontal como vertical. Las incompletas siempre tienen al menos un punto especial (vértice o raíz) ubicado sobre alguno de los ejes coordenados.</p>
+        </div>
+        
+        <!-- Ejercicio 2: Resolución sistemática de ecuaciones completas -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-cogs' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Resolución sistemática de ecuaciones completas</h4>
+          <p>Aplicación de diferentes métodos para resolver ecuaciones cuadráticas completas:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Ecuación</th>
+                <th>Procedimiento Paso a Paso</th>
+                <th>Solución</th>
+                <th>Ventajas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fórmula General</td>
+                <td>2x² - 7x + 3 = 0</td>
+                <td>1. Identificar: a=2, b=-7, c=3<br>2. Calcular Δ: (-7)² - 4(2)(3) = 49 - 24 = 25<br>3. Aplicar fórmula: x = [7 ± √25]/4<br>4. Simplificar: x = [7 ± 5]/4</td>
+                <td>x₁ = 3, x₂ = 0.5</td>
+                <td>Método universal, siempre funciona</td>
+              </tr>
+              <tr>
+                <td>Factorización</td>
+                <td>x² - 5x + 6 = 0</td>
+                <td>1. Buscar dos números que multipliquen a 6 y sumen -5<br>2. Los números son -2 y -3<br>3. Factorizar: (x - 2)(x - 3) = 0<br>4. Aplicar propiedad del producto cero</td>
+                <td>x = 2, x = 3</td>
+                <td>Rápido cuando los factores son evidentes</td>
+              </tr>
+              <tr>
+                <td>Completar Cuadrado</td>
+                <td>x² + 6x + 5 = 0</td>
+                <td>1. Mover constante: x² + 6x = -5<br>2. Completar: (6/2)² = 9<br>3. Sumar: x² + 6x + 9 = 4<br>4. Factorizar: (x + 3)² = 4<br>5. Raíz cuadrada: x + 3 = ±2</td>
+                <td>x = -1, x = -5</td>
+                <td>Revela el vértice directamente</td>
+              </tr>
+              <tr>
+                <td>Fórmula General Simplificada</td>
+                <td>4x² - 4x - 3 = 0</td>
+                <td>1. Identificar: a=4, b=-4, c=-3<br>2. Δ = (-4)² - 4(4)(-3) = 16 + 48 = 64<br>3. x = [4 ± √64]/8 = [4 ± 8]/8<br>4. Simplificar fracciones</td>
+                <td>x₁ = 1.5, x₂ = -0.5</td>
+                <td>Eficiente con coeficientes pares</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La elección del método depende de la estructura específica de la ecuación. La factorización es más rápida cuando es evidente, pero la fórmula general garantiza la solución en todos los casos. Completar el cuadrado es particularmente útil para encontrar el vértice.</p>
+        </div>
+        
+        <!-- Gráfica 2: Proceso de resolución visual -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Proceso de resolución de ecuación completa</h4>
+          <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Parábola: y = x² - 4x + 3 -->
+            <path d='M 100,250 Q 150,100 200,150 Q 250,100 300,250' stroke='var(--apple-vibrant-blue)' stroke-width='3' fill='none'></path>
+            
+            <!-- Raíces -->
+            <circle cx='150' cy='250' r='4' fill='var(--apple-vibrant-red)'></circle>
+            <circle cx='250' cy='250' r='4' fill='var(--apple-vibrant-red)'></circle>
+            
+            <!-- Vértice -->
+            <circle cx='200' cy='150' r='4' fill='var(--apple-vibrant-green)'></circle>
+            
+            <!-- Eje de simetría -->
+            <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-vibrant-orange)' stroke-width='1' stroke-dasharray='5,3'></line>
+            
+            <!-- Puntos de referencia para la resolución -->
+            <circle cx='133' cy='233' r='2' fill='var(--apple-dark-gray)'></circle>
+            <circle cx='167' cy='183' r='2' fill='var(--apple-dark-gray)'></circle>
+            <circle cx='233' cy='183' r='2' fill='var(--apple-dark-gray)'></circle>
+            <circle cx='267' cy='233' r='2' fill='var(--apple-dark-gray)'></circle>
+            
+            <!-- Información de la ecuación -->
+            <rect x='250' y='30' width='140' height='120' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <text x='255' y='45' font-size='10' fill='var(--apple-dark-gray)'><strong>Ecuación: x² - 4x + 3 = 0</strong></text>
+            <text x='255' y='60' font-size='9' fill='var(--apple-vibrant-blue)'>Coeficientes:</text>
+            <text x='255' y='70' font-size='9' fill='var(--apple-dark-gray)'>• a = 1 (término cuadrático)</text>
+            <text x='255' y='80' font-size='9' fill='var(--apple-dark-gray)'>• b = -4 (término lineal)</text>
+            <text x='255' y='90' font-size='9' fill='var(--apple-dark-gray)'>• c = 3 (término independiente)</text>
+            <text x='255' y='105' font-size='9' fill='var(--apple-vibrant-red)'>Raíces: x = 1, x = 3</text>
+            <text x='255' y='115' font-size='9' fill='var(--apple-vibrant-green)'>Vértice: (2, -1)</text>
+            <text x='255' y='125' font-size='9' fill='var(--apple-vibrant-orange)'>Eje simetría: x = 2</text>
+            <text x='255' y='135' font-size='9' fill='var(--apple-dark-gray)'>Discriminante: Δ = 4</text>
+            
+            <!-- Etiquetas en el gráfico -->
+            <text x='145' y='240' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=1</text>
+            <text x='255' y='240' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=3</text>
+            <text x='210' y='145' text-anchor='start' font-size='10' fill='var(--apple-vibrant-green)'>V(2,-1)</text>
+            <text x='210' y='100' text-anchor='start' font-size='10' fill='var(--apple-vibrant-orange)'>x=2</text>
+            
+            <!-- Etiquetas de ejes -->
+            <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+            <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> En una ecuación completa, el vértice no está sobre los ejes coordenados. Las raíces son simétricas respecto al eje de simetría. La parábola abre hacia arriba cuando a > 0 y hacia abajo cuando a < 0. La posición del vértice depende de los tres coeficientes.</p>
+        </div>
+        
+        <!-- Ejercicio 3: Casos especiales y aplicaciones -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-rocket' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Casos especiales y aplicaciones prácticas</h4>
+          <p>Análisis de casos especiales y resolución de problemas aplicados:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Caso Especial</th>
+                <th>Ecuación</th>
+                <th>Característica</th>
+                <th>Solución</th>
+                <th>Aplicación Práctica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Raíces Racionales</td>
+                <td>6x² - 5x + 1 = 0</td>
+                <td>Discriminante es cuadrado perfecto</td>
+                <td>x = 1/2, x = 1/3</td>
+                <td>Problemas de proporciones y mezclas</td>
+              </tr>
+              <tr>
+                <td>Raíces Irracionales</td>
+                <td>x² - 2x - 1 = 0</td>
+                <td>Discriminante positivo no cuadrado</td>
+                <td>x = 1 ± √2</td>
+                <td>Cálculos geométricos exactos</td>
+              </tr>
+              <tr>
+                <td>Coeficientes Fraccionarios</td>
+                <td>½x² + ⅓x - ¼ = 0</td>
+                <td>Multiplicar por MCM para eliminar fracciones</td>
+                <td>6x² + 4x - 3 = 0 → Fórmula general</td>
+                <td>Problemas de física con unidades fraccionarias</td>
+              </tr>
+              <tr>
+                <td>Coeficientes Decimales</td>
+                <td>0.5x² - 1.2x + 0.7 = 0</td>
+                <td>Multiplicar por 10 para trabajar con enteros</td>
+                <td>5x² - 12x + 7 = 0 → x = 1, x = 1.4</td>
+                <td>Modelado económico con datos decimales</td>
+              </tr>
+              <tr>
+                <td>Aplicación Física</td>
+                <td>-4.9t² + 20t + 10 = 0</td>
+                <td>Ecuación de movimiento parabólico</td>
+                <td>t = [-20 ± √(400 + 196)]/(-9.8)<br>t ≈ 4.5s (tiempo de vuelo)</td>
+                <td>Calculo de tiempo de vuelo de proyectiles</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las ecuaciones con coeficientes fraccionarios o decimales pueden transformarse en ecuaciones equivalentes con coeficientes enteros multiplicando por el mínimo común múltiplo. En aplicaciones físicas, es crucial verificar que las soluciones tengan sentido en el contexto del problema (ej: tiempos positivos).</p>
+        </div>
+        
+        <!-- Aplicaciones reales -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+          <ul style='padding-left:18px;line-height:1.6;'>
+            <li><strong>Ingeniería estructural:</strong> Cálculo de tensiones y deformaciones en vigas sometidas a cargas distribuidas.</li>
+            <li><strong>Economía:</strong> Optimización de funciones de costo y beneficio en producción empresarial.</li>
+            <li><strong>Física:</strong> Modelado de movimiento parabólico de proyectiles y análisis de trayectorias.</li>
+            <li><strong>Arquitectura:</strong> Diseño de arcos parabólicos y cálculo de dimensiones óptimas.</li>
+            <li><strong>Telecomunicaciones:</strong> Cálculo de alcance y cobertura en antenas parabólicas.</li>
+            <li><strong>Medio ambiente:</strong> Modelado de dispersión de contaminantes en la atmósfera.</li>
+            <li><strong>Robótica:</strong> Planificación de trayectorias parabólicas para brazos robóticos.</li>
+            <li><strong>Deportes:</strong> Análisis de trayectorias óptimas en lanzamientos y tiros.</li>
+          </ul>
+        </div>
+        
+        <!-- Bibliografía -->
+        <div class='bibliography-section' style='margin-top:20px;'>
+          <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+          <ul style='padding-left:18px;line-height:1.5;'>
+            <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+            <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+            <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+            <li>Lehmann, C. H. (2019). Álgebra. Limusa.</li>
+            <li>Baldor, A. (2019). Álgebra. Patria.</li>
+            <li>Khan Academy: Quadratic equations and functions. www.khanacademy.org</li>
+          </ul>
+        </div>
+      </div>
+      `);"><b>4.1.1. Ecuaciones Completas</b> <span class='emoji-small'>✅</span>
+    </li>
           
-          <li>4.1.1. Ecuaciones completas</li>
           <li>4.1.2. Ecuaciones incompletas</li>
           <br>
           <li><b>4.2. Solución de ecuaciones de segundo grado</b></li>
