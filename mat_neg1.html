@@ -4267,7 +4267,337 @@
       <div class="tema-num">TEMA 3</div>
       <h3 class="tema-title">Linea Recta</h3>
       <ul class="tema-list">
-          <li><b>3.1. Pendiente de una recta</b></li>
+        <li onclick="abrirModal('3.1. Pendiente de una Recta', `
+          <hr><br>
+          <div class='math-module'>
+            
+            <!-- Tiempo estimado -->
+            <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+              <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 20 minutos'>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='0' transform='rotate(-90 10 10)'></circle>
+              <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>20 min</text>
+              </svg>
+              <span style='font-weight:bold;'>Tiempo estimado: 20 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+              <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+              <span><strong>Objetivo:</strong> Comprender el concepto de pendiente como medida de inclinación de una recta, calcular pendientes usando diferentes métodos, interpretar el significado geométrico y aplicado de la pendiente, y analizar rectas paralelas y perpendiculares mediante sus pendientes.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+              <p>La pendiente de una recta es una medida numérica que cuantifica su inclinación respecto al eje horizontal. Se define como el cambio vertical (elevación) dividido entre el cambio horizontal (avance) entre dos puntos cualesquiera de la recta. Matemáticamente, para dos puntos (x₁,y₁) y (x₂,y₂), la pendiente m = (y₂ - y₁)/(x₂ - x₁). La pendiente determina completamente la dirección y grado de inclinación de una recta, siendo positiva para rectas crecientes, negativa para decrecientes, cero para horizontales e indefinida para verticales.</p>
+            </div>
+            
+            <!-- Ejercicio 1: Cálculo de pendientes -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Cálculo de pendientes entre puntos</h4>
+              <p>Cálculo de pendientes usando la fórmula m = (y₂ - y₁)/(x₂ - x₁):</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Puntos</th>
+                    <th>Fórmula</th>
+                    <th>Cálculo</th>
+                    <th>Pendiente (m)</th>
+                    <th>Interpretación Geométrica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>A(2,3) y B(5,7)</td>
+                    <td>(7-3)/(5-2)</td>
+                    <td>4/3</td>
+                    <td>m = 4/3 ≈ 1.33</td>
+                    <td>Recta creciente: por cada 3 unidades horizontales, sube 4 verticales</td>
+                  </tr>
+                  <tr>
+                    <td>C(1,8) y D(4,2)</td>
+                    <td>(2-8)/(4-1)</td>
+                    <td>-6/3</td>
+                    <td>m = -2</td>
+                    <td>Recta decreciente: por cada 1 unidad horizontal, baja 2 verticales</td>
+                  </tr>
+                  <tr>
+                    <td>E(-2,5) y F(3,5)</td>
+                    <td>(5-5)/(3-(-2))</td>
+                    <td>0/5</td>
+                    <td>m = 0</td>
+                    <td>Recta horizontal: sin inclinación vertical</td>
+                  </tr>
+                  <tr>
+                    <td>G(4,1) y H(4,6)</td>
+                    <td>(6-1)/(4-4)</td>
+                    <td>5/0</td>
+                    <td>m = indefinida</td>
+                    <td>Recta vertical: inclinación infinita</td>
+                  </tr>
+                  <tr>
+                    <td>I(-1,-2) y J(3,4)</td>
+                    <td>(4-(-2))/(3-(-1))</td>
+                    <td>6/4</td>
+                    <td>m = 3/2 = 1.5</td>
+                    <td>Recta creciente: pendiente positiva moderada</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La pendiente es constante para cualquier par de puntos en una misma recta. El signo de la pendiente indica si la recta es creciente (positiva) o decreciente (negativa). Una pendiente cero significa horizontal, y una indefinida significa vertical.</p>
+            </div>
+            
+            <!-- Gráfica 1: Tipos de pendientes -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Diferentes tipos de pendientes</h4>
+              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Cuadrante 1: Pendiente positiva -->
+                <g transform='translate(0,0)'>
+                  <line x1='50' y1='100' x2='150' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                  <text x='100' y='120' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>m > 0</text>
+                  <text x='100' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Creciente</text>
+                  <!-- Triángulo de pendiente -->
+                  <polygon points='80,80 80,70 90,70' fill='var(--apple-vibrant-green)' opacity='0.7'></polygon>
+                  <text x='85' y='65' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Δy</text>
+                  <polygon points='80,80 90,80 90,70' fill='var(--apple-vibrant-orange)' opacity='0.7'></polygon>
+                  <text x='95' y='85' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Δx</text>
+                </g>
+                
+                <!-- Cuadrante 2: Pendiente negativa -->
+                <g transform='translate(200,0)'>
+                  <line x1='50' y1='50' x2='150' y2='100' stroke='var(--apple-vibrant-red)' stroke-width='3'></line>
+                  <text x='100' y='120' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-red)'>m < 0</text>
+                  <text x='100' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Decreciente</text>
+                </g>
+                
+                <!-- Cuadrante 3: Pendiente cero -->
+                <g transform='translate(0,175)'>
+                  <line x1='50' y1='50' x2='150' y2='50' stroke='var(--apple-vibrant-purple)' stroke-width='3'></line>
+                  <text x='100' y='70' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)'>m = 0</text>
+                  <text x='100' y='85' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Horizontal</text>
+                </g>
+                
+                <!-- Cuadrante 4: Pendiente indefinida -->
+                <g transform='translate(200,175)'>
+                  <line x1='100' y1='50' x2='100' y2='150' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
+                  <text x='100' y='170' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)'>m = ∞</text>
+                  <text x='100' y='185' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Vertical</text>
+                </g>
+                
+                <!-- Líneas divisorias -->
+                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+                
+                <!-- Título general -->
+                <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Tipos de Pendientes de Rectas</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La pendiente positiva indica que y aumenta cuando x aumenta, la negativa que y disminuye cuando x aumenta, cero significa y constante, e indefinida significa x constante. El triángulo muestra la relación Δy/Δx que define la pendiente.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Pendiente en forma de ecuación -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-superscript' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Identificación de pendiente en ecuaciones</h4>
+              <p>Extracción de la pendiente de diferentes formas de ecuaciones lineales:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Forma de Ecuación</th>
+                    <th>Ecuación Ejemplo</th>
+                    <th>Pendiente (m)</th>
+                    <th>Procedimiento</th>
+                    <th>Interpretación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pendiente-Ordenada</td>
+                    <td>y = 2x + 5</td>
+                    <td>m = 2</td>
+                    <td>Coeficiente de x</td>
+                    <td>Por cada unidad en x, y aumenta 2 unidades</td>
+                  </tr>
+                  <tr>
+                    <td>Punto-Pendiente</td>
+                    <td>y - 3 = 4(x - 1)</td>
+                    <td>m = 4</td>
+                    <td>Coeficiente de (x - x₁)</td>
+                    <td>Pendiente constante de 4</td>
+                  </tr>
+                  <tr>
+                    <td>General</td>
+                    <td>3x + 2y = 6</td>
+                    <td>m = -3/2</td>
+                    <td>Despejar y: y = (-3/2)x + 3</td>
+                    <td>Por cada 2 unidades en x, y disminuye 3</td>
+                  </tr>
+                  <tr>
+                    <td>Dos Puntos</td>
+                    <td>P(1,2), Q(4,8)</td>
+                    <td>m = (8-2)/(4-1) = 2</td>
+                    <td>Fórmula m = (y₂-y₁)/(x₂-x₁)</td>
+                    <td>Recta que pasa por ambos puntos</td>
+                  </tr>
+                  <tr>
+                    <td>Horizontal</td>
+                    <td>y = 7</td>
+                    <td>m = 0</td>
+                    <td>No hay término en x</td>
+                    <td>Recta paralela al eje x</td>
+                  </tr>
+                  <tr>
+                    <td>Vertical</td>
+                    <td>x = 4</td>
+                    <td>m = indefinida</td>
+                    <td>No se puede despejar y</td>
+                    <td>Recta paralela al eje y</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> En la forma pendiente-ordenada (y = mx + b), la pendiente es directamente el coeficiente de x. En otras formas, es necesario manipular algebraicamente la ecuación para identificar la pendiente.</p>
+            </div>
+            
+            <!-- Gráfica 2: Comparación de pendientes -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Comparación de diferentes valores de pendiente</h4>
+              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Recta con m = 1/2 -->
+                <line x1='50' y1='200' x2='350' y2='100' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
+                <text x='300' y='120' font-size='12' fill='var(--apple-vibrant-blue)'>m = 1/2</text>
+                
+                <!-- Recta con m = 1 -->
+                <line x1='50' y1='225' x2='350' y2='75' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
+                <text x='300' y='95' font-size='12' fill='var(--apple-vibrant-green)'>m = 1</text>
+                
+                <!-- Recta con m = 2 -->
+                <line x1='50' y1='240' x2='350' y2='60' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+                <text x='300' y='80' font-size='12' fill='var(--apple-vibrant-orange)'>m = 2</text>
+                
+                <!-- Recta con m = -1/2 -->
+                <line x1='50' y1='100' x2='350' y2='200' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+                <text x='300' y='180' font-size='12' fill='var(--apple-vibrant-red)'>m = -1/2</text>
+                
+                <!-- Recta con m = -1 -->
+                <line x1='50' y1='75' x2='350' y2='225' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+                <text x='300' y='205' font-size='12' fill='var(--apple-vibrant-purple)'>m = -1</text>
+                
+                <!-- Recta con m = -2 -->
+                <line x1='50' y1='60' x2='350' y2='240' stroke='var(--apple-vibrant-brown)' stroke-width='2'></line>
+                <text x='300' y='220' font-size='12' fill='var(--apple-vibrant-brown)'>m = -2</text>
+                
+                <!-- Punto de referencia -->
+                <circle cx='200' cy='150' r='3' fill='var(--apple-dark-gray)'></circle>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+                
+                <!-- Leyenda -->
+                <rect x='250' y='30' width='140' height='80' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+                <text x='260' y='45' font-size='10' fill='var(--apple-dark-gray)'><strong>Valor absoluto de m:</strong></text>
+                <text x='260' y='60' font-size='9' fill='var(--apple-dark-gray)'>• |m| pequeño → recta más plana</text>
+                <text x='260' y='70' font-size='9' fill='var(--apple-dark-gray)'>• |m| grande → recta más inclinada</text>
+                <text x='260' y='80' font-size='9' fill='var(--apple-dark-gray)'>• |m| = 1 → ángulo de 45°</text>
+                <text x='260' y='90' font-size='9' fill='var(--apple-dark-gray)'>• m > 0 → creciente</text>
+                <text x='260' y='100' font-size='9' fill='var(--apple-dark-gray)'>• m < 0 → decreciente</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El valor absoluto de la pendiente determina la inclinación: mayor |m| significa mayor inclinación. Las pendientes positivas (arriba) son crecientes, las negativas (abajo) son decrecientes. Todas pasan por el mismo punto de referencia.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Aplicaciones de la pendiente -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-mountain' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Interpretación aplicada de pendientes</h4>
+              <p>Interpretación de pendientes en contextos del mundo real:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Contexto</th>
+                    <th>Variables</th>
+                    <th>Pendiente</th>
+                    <th>Interpretación</th>
+                    <th>Ejemplo Numérico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Velocidad</td>
+                    <td>Distancia vs. Tiempo</td>
+                    <td>m = Δd/Δt</td>
+                    <td>Velocidad constante</td>
+                    <td>m = 5 m/s: avanza 5 metros por segundo</td>
+                  </tr>
+                  <tr>
+                    <td>Pendiente de carretera</td>
+                    <td>Altura vs. Distancia horizontal</td>
+                    <td>m = Δh/Δx</td>
+                    <td>Inclinación del terreno</td>
+                    <td>m = 0.08: sube 8m por cada 100m horizontales</td>
+                  </tr>
+                  <tr>
+                    <td>Costo de producción</td>
+                    <td>Costo total vs. Unidades</td>
+                    <td>m = ΔC/ΔQ</td>
+                    <td>Costo marginal</td>
+                    <td>m = 3 $/unidad: cada unidad cuesta $3 adicional</td>
+                  </tr>
+                  <tr>
+                    <td>Demanda</td>
+                    <td>Precio vs. Cantidad</td>
+                    <td>m = ΔP/ΔQ</td>
+                    <td>Relación precio-cantidad</td>
+                    <td>m = -2 $/unidad: precio baja $2 por unidad adicional</td>
+                  </tr>
+                  <tr>
+                    <td>Crecimiento poblacional</td>
+                    <td>Población vs. Tiempo</td>
+                    <td>m = ΔP/Δt</td>
+                    <td>Tasa de crecimiento</td>
+                    <td>m = 1000 personas/año: crece 1000 personas anuales</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La pendiente siempre representa una tasa de cambio: cómo cambia la variable dependiente por unidad de cambio en la variable independiente. Las unidades de la pendiente son cruciales para la interpretación correcta.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+              <ul style='padding-left:18px;line-height:1.6;'>
+                <li><strong>Ingeniería civil:</strong> Cálculo de pendientes en carreteras, rampas y tejados para garantizar seguridad y funcionalidad.</li>
+                <li><strong>Economía:</strong> Análisis de tasas de cambio en costos, ingresos y utilidades marginales.</li>
+                <li><strong>Física:</strong> Determinación de velocidades y aceleraciones a partir de gráficas posición-tiempo.</li>
+                <li><strong>Geografía y topografía:</strong> Medición de inclinaciones de terrenos para cartografía y planificación urbana.</li>
+                <li><strong>Arquitectura:</strong> Diseño de escaleras, rampas y superficies inclinadas con pendientes específicas.</li>
+                <li><strong>Programación:</strong> Cálculo de pendientes en gráficos computarizados y animaciones.</li>
+                <li><strong>Estadística:</strong> Determinación de la pendiente en líneas de tendencia y análisis de regresión.</li>
+                <li><strong>Deportes:</strong> Diseño de pistas de ski, ciclismo y atletismo con pendientes adecuadas.</li>
+              </ul>
+            </div>
+            
+            <!-- Bibliografía -->
+            <div class='bibliography-section' style='margin-top:20px;'>
+              <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+              <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+                <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+                <li>Lehmann, C. H. (2019). Geometría Analítica. Limusa.</li>
+                <li>Anton, H., Bivens, I., & Davis, S. (2020). Cálculo: Trascendentes Tempranas. Limusa.</li>
+                <li>Khan Academy: Slope and rate of change. www.khanacademy.org</li>
+              </ul>
+            </div>
+          </div>
+          `);"><b>3.1. Pendiente de una Recta</b> <span class='emoji-small'>✅</span>
+        </li>
+        
           <li>3.1.1. Rectas paralelas y perpendiculares</li>
           <li><b>3.2. Ecuaciones de la recta</b></li>
           <li>3.2.1. Forma común</li>
