@@ -3763,106 +3763,108 @@
       </div>
       
       <div class="tema-card">
-  <div class="tema-num">TEMA 3</div>
-  <h3 class="tema-title">Linea recta</h3>
-  <ul class="tema-list">
-    <li>
-      <b>3.1. Pendiente de una recta</b>
-      <ul>
-        <li>3.1.1. Rectas paralelas y perpendiculares</li>
-      </ul>
-    </li>
-    <li>
-      <b>3.2. Ecuaciones de la recta</b>
-      <ul>
-        <li>3.2.1. Forma común</li>
-        <li>3.2.2. Forma punto-pendiente</li>
-      </ul>
-    </li>
-
-    <li onclick="abrirModal('3.3. Funciones lineales', `
-      <hr><br>
-      <div class='math-module'>
+        <div class="tema-num">TEMA 3</div>
+        <h3 class="tema-title">Linea recta</h3>
+          <ul class="tema-list">
+            <li>
+              <b>3.1. Pendiente de una recta</b>
+              <ul>
+                <li>3.1.1. Rectas paralelas y perpendiculares</li>
+              </ul>
+            </li>
+            <li>
+              <b>3.2. Ecuaciones de la recta</b>
+              <ul>
+                <li>3.2.1. Forma común</li>
+                <li>3.2.2. Forma punto-pendiente</li>
+              </ul>
+            </li>
         
-        <!-- Tiempo estimado -->
-        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
-          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 8 minutos'>
-          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
-          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='28.2743' transform='rotate(-90 10 10)'></circle>
-          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>8 min</text>
-          </svg>
-          <span style='font-weight:bold;'>Tiempo estimado: 8 minutos</span>
-        </div>
-        
-        <!-- Objetivo -->
-        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
-          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
-          <span><strong>Objetivo:</strong> Comprender la estructura algebraica y gráfica de las funciones lineales, su interpretación como modelos de cambio constante y su aplicación en contextos científicos, económicos y tecnológicos.</span>
-        </div>
-        
-        <!-- Idea principal -->
-        <div class='content-section' style='margin-bottom:20px;'>
-          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
-          <p>Una función lineal describe una relación entre dos variables donde el cambio es constante. Se representa como f(x) = mx + b, donde m es la pendiente (tasa de cambio) y b es el valor inicial. Su gráfica es una recta, y se utiliza para modelar fenómenos como velocidad constante, costos fijos más variables, o crecimiento uniforme.</p>
-        </div>
-        
-        <!-- Ejercicio: Tabla de valores -->
-        <div class='content-section' style='margin-bottom:20px;'>
-        <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Tabla de valores para f(x) = 3x - 2</h4>
-          <table class='math-table'>
-            <thead>
-              <tr><th>x</th><th>f(x)</th><th>Comentario</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>-2</td><td>-8</td><td>f(-2) = 3(-2) - 2 = -6 - 2 = -8</td></tr>
-              <tr><td>-1</td><td>-5</td><td>f(-1) = 3(-1) - 2 = -3 - 2 = -5</td></tr>
-              <tr><td>0</td><td>-2</td><td>f(0) = 3(0) - 2 = 0 - 2 = -2</td></tr>
-              <tr><td>1</td><td>1</td><td>f(1) = 3(1) - 2 = 3 - 2 = 1</td></tr>
-              <tr><td>2</td><td>4</td><td>f(2) = 3(2) - 2 = 6 - 2 = 4</td></tr>
-            </tbody>
-          </table>
-        </div>
-      
-        <!-- Ejercicio: Gráfica SVG -->
-        <div class='graph-container' style='margin-bottom:20px;'>
-        <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Ejercicio 2: Gráfica de f(x) = 3x - 2</h4>
-          <svg viewBox='0 0 400 250' class='math-graph' style='width:100%;height:auto;'>
-          <line x1='50' y1='200' x2='350' y2='200' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-          <line x1='50' y1='200' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-          <line x1='50' y1='200' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
-          <circle cx='100' cy='170' r='4' fill='var(--apple-vibrant-orange)'></circle>
-          <circle cx='150' cy='140' r='4' fill='var(--apple-vibrant-orange)'></circle>
-          <circle cx='200' cy='110' r='4' fill='var(--apple-vibrant-orange)'></circle>
-          <circle cx='250' cy='80' r='4' fill='var(--apple-vibrant-orange)'></circle>
-          <text x='260' y='75' font-size='12' fill='var(--apple-dark-gray)'>f(x) = 3x - 2</text>
-          </svg>
-        </div>
-      
-        <!-- Aplicaciones reales -->
-        <div class='content-section' style='margin-bottom:20px;'>
-        <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
-          <ul style='padding-left:18px;line-height:1.6;'>
-            <li><strong>Economía:</strong> Modelar ingresos lineales según unidades vendidas.</li>
-            <li><strong>Física:</strong> Describir movimiento rectilíneo uniforme (MRU).</li>
-            <li><strong>Ingeniería:</strong> Estimar costos de producción con componentes fijos y variables.</li>
-            <li><strong>Biología:</strong> Crecimiento celular en ambientes controlados.</li>
-          </ul>
-        </div>
-      
-        <!-- Bibliografía -->
-        <div class='bibliography-section' style='margin-top:20px;'>
-        <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
-        <ul style='padding-left:18px;line-height:1.5;'>
-        <li>Stewart, J. (2015). Cálculo. Cengage Learning.</li>
-        <li>Larson, R. y Edwards, B. (2014). Algebra Lineal y Matrices. McGraw-Hill.</li>
-        <li>Anton, H. (2013). Elementary Linear Algebra. Wiley.</li>
-        <li>Khan Academy: Funciones lineales. www.khanacademy.org</li>
-        </ul>
+            <li onclick="abrirModal('3.3. Funciones lineales', `
+              <hr><br>
+              <div class='math-module'>
+                
+                <!-- Tiempo estimado -->
+                <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+                  <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 8 minutos'>
+                  <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+                  <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='28.2743' transform='rotate(-90 10 10)'></circle>
+                  <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>8 min</text>
+                  </svg>
+                  <span style='font-weight:bold;'>Tiempo estimado: 8 minutos</span>
+                </div>
+                
+                <!-- Objetivo -->
+                <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+                  <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+                  <span><strong>Objetivo:</strong> Comprender la estructura algebraica y gráfica de las funciones lineales, su interpretación como modelos de cambio constante y su aplicación en contextos científicos, económicos y tecnológicos.</span>
+                </div>
+                
+                <!-- Idea principal -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+                  <p>Una función lineal describe una relación entre dos variables donde el cambio es constante. Se representa como f(x) = mx + b, donde m es la pendiente (tasa de cambio) y b es el valor inicial. Su gráfica es una recta, y se utiliza para modelar fenómenos como velocidad constante, costos fijos más variables, o crecimiento uniforme.</p>
+                </div>
+                
+                <!-- Ejercicio: Tabla de valores -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Tabla de valores para f(x) = 3x - 2</h4>
+                  <table class='math-table'>
+                    <thead>
+                      <tr><th>x</th><th>f(x)</th><th>Comentario</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>-2</td><td>-8</td><td>f(-2) = 3(-2) - 2 = -6 - 2 = -8</td></tr>
+                      <tr><td>-1</td><td>-5</td><td>f(-1) = 3(-1) - 2 = -3 - 2 = -5</td></tr>
+                      <tr><td>0</td><td>-2</td><td>f(0) = 3(0) - 2 = 0 - 2 = -2</td></tr>
+                      <tr><td>1</td><td>1</td><td>f(1) = 3(1) - 2 = 3 - 2 = 1</td></tr>
+                      <tr><td>2</td><td>4</td><td>f(2) = 3(2) - 2 = 6 - 2 = 4</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              
+                <!-- Ejercicio: Gráfica SVG -->
+                <div class='graph-container' style='margin-bottom:20px;'>
+                <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Ejercicio 2: Gráfica de f(x) = 3x - 2</h4>
+                  <svg viewBox='0 0 400 250' class='math-graph' style='width:100%;height:auto;'>
+                  <line x1='50' y1='200' x2='350' y2='200' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                  <line x1='50' y1='200' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                  <line x1='50' y1='200' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                  <circle cx='100' cy='170' r='4' fill='var(--apple-vibrant-orange)'></circle>
+                  <circle cx='150' cy='140' r='4' fill='var(--apple-vibrant-orange)'></circle>
+                  <circle cx='200' cy='110' r='4' fill='var(--apple-vibrant-orange)'></circle>
+                  <circle cx='250' cy='80' r='4' fill='var(--apple-vibrant-orange)'></circle>
+                  <text x='260' y='75' font-size='12' fill='var(--apple-dark-gray)'>f(x) = 3x - 2</text>
+                  </svg>
+                </div>
+              
+                <!-- Aplicaciones reales -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+                  <ul style='padding-left:18px;line-height:1.6;'>
+                    <li><strong>Economía:</strong> Modelar ingresos lineales según unidades vendidas.</li>
+                    <li><strong>Física:</strong> Describir movimiento rectilíneo uniforme (MRU).</li>
+                    <li><strong>Ingeniería:</strong> Estimar costos de producción con componentes fijos y variables.</li>
+                    <li><strong>Biología:</strong> Crecimiento celular en ambientes controlados.</li>
+                  </ul>
+                </div>
+              
+                <!-- Bibliografía -->
+                <div class='bibliography-section' style='margin-top:20px;'>
+                <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+                <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Stewart, J. (2015). Cálculo. Cengage Learning.</li>
+                <li>Larson, R. y Edwards, B. (2014). Algebra Lineal y Matrices. McGraw-Hill.</li>
+                <li>Anton, H. (2013). Elementary Linear Algebra. Wiley.</li>
+                <li>Khan Academy: Funciones lineales. www.khanacademy.org</li>
+                </ul>
+              </div>
+            </div>
+            `);">
+            <b>3.3. Funciones lineales</b> <span class=emoji-small>✅</span>
+          </li>
         </div>
       </div>
-      `);">
-      <b>3.3. Funciones lineales</b> <span class=emoji-small>✅</span>
-    </li>
 
     <li onclick="abrirModal('3.3.1. Ingreso', `
     <hr><br>
