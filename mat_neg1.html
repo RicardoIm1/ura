@@ -3053,131 +3053,170 @@
 
       <div class="tema-card">
         <div class="tema-num">TEMA 2</div>
-        <h3 class="tema-title">Ecuaciones lineales</h3>
-        <ul class="tema-list">
-        <ul class="tema-list">
-                  
-        <li onclick='abrirModal("2.1. Ecuaciones con una incógnita de primer grado", `
-        <hr><br>
-        <div class="math-module">
-          <div class="math-header">
-            <p><strong>Objetivo:</strong> Comprender y resolver ecuaciones de primer grado con una incógnita, aplicando las propiedades de igualdad y los procedimientos algebraicos adecuados.</p>
-          </div>
+          <h3 class="tema-title">Ecuaciones lineales</h3>
+          <ul class="tema-list">
+            <li onclick='abrirModal("2.1. Ecuaciones con una incógnita de primer grado", `
+            <hr><br>
+            <div class="math-module">
+              <div class="math-header">
+                <p><strong>Objetivo:</strong> Comprender y resolver ecuaciones de primer grado con una incógnita, aplicando las propiedades de igualdad y los procedimientos algebraicos adecuados.</p>
+              </div>
+                <h4>Definición y concepto fundamental</h4>
+                <ul>
+                  <li><span class="math-term">Ecuación de primer grado:</span> Igualdad algebraica que contiene una o más incógnitas elevadas a la potencia 1.</li>
+                  <li><span class="math-term">Forma general:</span> 
+                    <div class="math-equation">ax + b = 0</div>
+                    donde:
+                    <ul>
+                      <li>a y b son constantes (a ≠ 0)</li>
+                      <li>x es la incógnita</li>
+                    </ul>
+                  </li>
+                  <li><span class="math-term">Solución o raíz:</span> Valor numérico que satisface la igualdad cuando se sustituye en lugar de la incógnita.</li>
+                  <li><span class="math-term">Grado 1:</span> La incógnita está elevada al exponente 1.</li>
+                </ul>
         
-          <h4>Definición y concepto fundamental</h4>
-          <ul>
-            <li><span class="math-term">Ecuación de primer grado:</span> Igualdad algebraica que contiene una o más incógnitas elevadas a la potencia 1.</li>
-            <li><span class="math-term">Forma general:</span> 
-              <div class="math-equation">ax + b = 0</div>
-              donde:
-              <ul>
-                <li>a y b son constantes (a ≠ 0)</li>
-                <li>x es la incógnita</li>
-              </ul>
-            </li>
-            <li><span class="math-term">Solución o raíz:</span> Valor numérico que satisface la igualdad cuando se sustituye en lugar de la incógnita.</li>
-            <li><span class="math-term">Grado 1:</span> La incógnita está elevada al exponente 1.</li>
+                <h4>Elementos de una ecuación</h4>
+                <table class="math-table">
+                  <tr>
+                    <th>Elemento</th>
+                    <th>Definición</th>
+                    <th>Ejemplo en 3x + 5 = 11</th>
+                  </tr>
+                  <tr>
+                    <td><span class="math-term">Miembros</span></td>
+                    <td>Las dos expresiones separadas por el signo =</td>
+                    <td>3x + 5 (primer miembro) y 11 (segundo miembro)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="math-term">Términos</span></td>
+                    <td>Cada uno de los sumandos que forman los miembros</td>
+                    <td>3x, 5, 11</td>
+                  </tr>
+                  <tr>
+                    <td><span class="math-term">Incógnita</span></td>
+                    <td>Valor desconocido que se debe determinar</td>
+                    <td>x</td>
+                  </tr>
+                  <tr>
+                    <td><span class="math-term">Solución</span></td>
+                    <td>Valor que satisface la ecuación</td>
+                    <td class="math-solution">x = 2</td>
+                  </tr>
+                </table>
+        
+              <h4>Propiedades de las igualdades</h4>
+              <table class="math-table">
+                <tr>
+                  <th>Propiedad</th>
+                  <th>Enunciado</th>
+                  <th>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td><span class="math-term">Reflexiva</span></td>
+                  <td>Toda expresión es igual a sí misma</td>
+                  <td class="math-equation">a = a</td>
+                </tr>
+                <tr>
+                  <td><span class="math-term">Simétrica</span></td>
+                  <td>Si a = b, entonces b = a</td>
+                  <td class="math-equation">Si x = 5, entonces 5 = x</td>
+                </tr>
+                <tr>
+                  <td><span class="math-term">Transitiva</span></td>
+                  <td>Si a = b y b = c, entonces a = c</td>
+                  <td class="math-equation">Si x = y y y = 3, entonces x = 3</td>
+                </tr>
+                <tr>
+                  <td><span class="math-term">Uniformidad</span></td>
+                  <td>Si a = b, entonces a + c = b + c</td>
+                  <td class="math-equation">Si x = 5, entonces x + 2 = 5 + 2</td>
+                </tr>
+                <tr>
+                  <td><span class="math-term">Cancelativa</span></td>
+                  <td>Si a + c = b + c, entonces a = b</td>
+                  <td class="math-equation">Si x + 3 = 8 + 3, entonces x = 8</td>
+                </tr>
+              </table>
+        
+              <h4>Procedimiento para resolver ecuaciones de primer grado</h4>
+              <ol>
+                <li class="math-step"><span class="math-highlight">Simplificar</span> ambos miembros de la ecuación si es necesario</li>
+              <li class="math-step"><span class="math-highlight">Agrupar</span> los términos con incógnita en un miembro y los constantes en el otro</li>
+              <li class="math-step"><span class="math-highlight">Realizar</span> las operaciones necesarias para aislar la incógnita</li>
+              <li class="math-step"><span class="math-highlight">Verificar</span> la solución sustituyendo en la ecuación original</li>
+              </ol>
+              
+              <h4>Ejemplos detallados de resolución</h4>
+              
+              <div class="tema-card">
+                <p><strong>Ejemplo 1: Ecuación simple</strong></p>
+                <p class="math-equation">Resolver: 3x + 5 = 11</p>
+                <ol>
+                  <li>Restar 5 a ambos miembros: 3x + 5 - 5 = 11 - 5</li>
+                  <li>Simplificar: 3x = 6</li>
+                  <li>Dividir ambos miembros entre 3: 3x/3 = 6/3</li>
+                  <li>Simplificar: <span class="math-solution">x = 2</span></li>
+                  <li class="math-verification">Verificación: 3(2) + 5 = 6 + 5 = 11 ✓</li>
+                </ol>
+              </div>
+              
+              <div class="tema-card">
+                <p><strong>Ejemplo 2: Ecuación con paréntesis</strong></p>
+                <p class="math-equation">Resolver: 2(x - 3) + 4 = 3x - 1</p>
+                <ol>
+                  <li>Eliminar paréntesis: 2x - 6 + 4 = 3x - 1</li>
+                  <li>Simplificar: 2x - 2 = 3x - 1</li>
+                  <li>Restar 2x a ambos miembros: 2x - 2 - 2x = 3x - 1 - 2x</li>
+                  <li>Simplificar: -2 = x - 1</li>
+                  <li>Sumar 1 a ambos miembros: -2 + 1 = x - 1 + 1</li>
+                  <li>Simplificar: <span class="math-solution">x = -1</span></li>
+                  <li class="math-verification">Verificación: 2(-1-3)+4 = 2(-4)+4 = -8+4 = -4; 3(-1)-1 = -3-1 = -4 ✓</li>
+                </ol>
+              </div>
+              
+              <div class="tema-card">
+                <p><strong>Ejemplo 3: Ecuación con fracciones</strong></p>
+                <p class="math-equation">Resolver: (2x)/3 - 1/2 = x/4 + 2</p>
+                <ol>
+                  <li>Encontrar MCM de denominadores: MCM(3,2,4) = 12</li>
+                  <li>Multiplicar ambos miembros por 12: 12[(2x)/3 - 1/2] = 12[x/4 + 2]</li>
+                  <li>Distribuir: 8x - 6 = 3x + 24</li>
+                  <li>Restar 3x a ambos miembros: 8x - 6 - 3x = 3x + 24 - 3x</li>
+                  <li>Simplificar: 5x - 6 = 24</li>
+                </ol>
+              </div>
+              </ul> <!-- Cierre de la lista desordenada -->
+        
+              <h4>Ejemplos detallados de resolución</h4>
+        
+            <div class="tema-card">
+              <p><strong>Ejemplo 1: Ecuación simple</strong></p>
+              <p class="math-equation">Resolver: 3x + 5 = 11</p>
+              <ol>
+                <li>Restar 5 a ambos miembros: 3x + 5 - 5 = 11 - 5</li>
+                <li>Simplificar: 3x = 6</li>
+                <li>Dividir ambos miembros entre 3: 3x/3 = 6/3</li>
+                <li>Simplificar: <span class="math-solution">x = 2</span></li>
+                <li class="math-verification">Verificación: 3(2) + 5 = 6 + 5 = 11 ✓</li>
+              </ol>
+            </div>
+          
+            <div class="tema-card">
+              <p><strong>Ejemplo 2: Ecuación con paréntesis</strong></p>
+              <p class="math-equation">Resolver: 2(x - 3) + 4 = 3x - 1</p>
+              <ol>
+                <li>Eliminar paréntesis: 2x - 6 + 4 = 3x - 1</li>
+                <li>Simplificar: 2x - 2 = 3x - 1</li>
+                <li>Restar 2x a ambos miembros: 2x - 2 - 2x = 3x - 1 - 2x</li>
+                <li>Simplificar: -2 = x - 1</li>
+                <li>Sumar 1 a ambos miembros: -2 + 1 = x - 1 + 1</li>
+                <li>Simplificar: <span class="math-solution">x = -1</span></li>
+                <li class="math-verification">Verificación: 2(-1-3)+4 = 2(-4)+4 = -8+4 = -4; 3(-1)-1 = -3-1 = -4 ✓</li>
+              </ol>
+            </div>
           </ul>
-        
-          <h4>Elementos de una ecuación</h4>
-          <table class="math-table">
-            <tr>
-              <th>Elemento</th>
-              <th>Definición</th>
-              <th>Ejemplo en 3x + 5 = 11</th>
-            </tr>
-            <tr>
-              <td><span class="math-term">Miembros</span></td>
-              <td>Las dos expresiones separadas por el signo =</td>
-              <td>3x + 5 (primer miembro) y 11 (segundo miembro)</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Términos</span></td>
-              <td>Cada uno de los sumandos que forman los miembros</td>
-              <td>3x, 5, 11</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Incógnita</span></td>
-              <td>Valor desconocido que se debe determinar</td>
-              <td>x</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Solución</span></td>
-              <td>Valor que satisface la ecuación</td>
-              <td class="math-solution">x = 2</td>
-            </tr>
-          </table>
-        
-          <h4>Propiedades de las igualdades</h4>
-          <table class="math-table">
-            <tr>
-              <th>Propiedad</th>
-              <th>Enunciado</th>
-              <th>Ejemplo</th>
-            </tr>
-            <tr>
-              <td><span class="math-term">Reflexiva</span></td>
-              <td>Toda expresión es igual a sí misma</td>
-              <td class="math-equation">a = a</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Simétrica</span></td>
-              <td>Si a = b, entonces b = a</td>
-              <td class="math-equation">Si x = 5, entonces 5 = x</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Transitiva</span></td>
-              <td>Si a = b y b = c, entonces a = c</td>
-              <td class="math-equation">Si x = y y y = 3, entonces x = 3</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Uniformidad</span></td>
-              <td>Si a = b, entonces a + c = b + c</td>
-              <td class="math-equation">Si x = 5, entonces x + 2 = 5 + 2</td>
-            </tr>
-            <tr>
-              <td><span class="math-term">Cancelativa</span></td>
-              <td>Si a + c = b + c, entonces a = b</td>
-              <td class="math-equation">Si x + 3 = 8 + 3, entonces x = 8</td>
-            </tr>
-          </table>
-        
-          <h4>Procedimiento para resolver ecuaciones de primer grado</h4>
-          <ol>
-            <li class="math-step"><span class="math-highlight">Simplificar</span> ambos miembros de la ecuación si es necesario</li>
-            <li class="math-step"><span class="math-highlight">Agrupar</span> los términos con incógnita en un miembro y los constantes en el otro</li>
-            <li class="math-step"><span class="math-highlight">Realizar</span> las operaciones necesarias para aislar la incógnita</li>
-            <li class="math-step"><span class="math-highlight">Verificar</span> la solución sustituyendo en la ecuación original</li>
-          </ol>
-        
-          <h4>Ejemplos detallados de resolución</h4>
-        
-          <div class="tema-card">
-            <p><strong>Ejemplo 1: Ecuación simple</strong></p>
-            <p class="math-equation">Resolver: 3x + 5 = 11</p>
-            <ol>
-              <li>Restar 5 a ambos miembros: 3x + 5 - 5 = 11 - 5</li>
-              <li>Simplificar: 3x = 6</li>
-              <li>Dividir ambos miembros entre 3: 3x/3 = 6/3</li>
-              <li>Simplificar: <span class="math-solution">x = 2</span></li>
-              <li class="math-verification">Verificación: 3(2) + 5 = 6 + 5 = 11 ✓</li>
-            </ol>
-          </div>
-        
-          <div class="tema-card">
-            <p><strong>Ejemplo 2: Ecuación con paréntesis</strong></p>
-            <p class="math-equation">Resolver: 2(x - 3) + 4 = 3x - 1</p>
-            <ol>
-              <li>Eliminar paréntesis: 2x - 6 + 4 = 3x - 1</li>
-              <li>Simplificar: 2x - 2 = 3x - 1</li>
-              <li>Restar 2x a ambos miembros: 2x - 2 - 2x = 3x - 1 - 2x</li>
-              <li>Simplificar: -2 = x - 1</li>
-              <li>Sumar 1 a ambos miembros: -2 + 1 = x - 1 + 1</li>
-              <li>Simplificar: <span class="math-solution">x = -1</span></li>
-              <li class="math-verification">Verificación: 2(-1-3)+4 = 2(-4)+4 = -8+4 = -4; 3(-1)-1 = -3-1 = -4 ✓</li>
-            </ol>
-          </div>
-        
+          
           <div class="tema-card">
             <p><strong>Ejemplo 3: Ecuación con fracciones</strong></p>
             <p class="math-equation">Resolver: (2x)/3 - 1/2 = x/4 + 2</p>
@@ -3863,199 +3902,204 @@
             `);">
             <b>3.3. Funciones lineales</b> <span class=emoji-small>✅</span>
           </li>
-        </div>
       </div>
 
-    <li onclick="abrirModal('3.3.1. Ingreso', `
-    <hr><br>
-    <div class='math-module'>
+      <div class="tema-card">
+        <div class="tema-num">TEMA 3</div>
+        <h3 class="tema-title">Linea Recta</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('3.3.1. Ingreso', `
+          <hr><br>
+            <div class='math-module'>
     
-    <!-- Tiempo estimado -->
-    <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
-      <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 12 minutos'>
-      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
-      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
-      <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>12 min</text>
-      </svg>
-      <span style='font-weight:bold;'>Tiempo estimado: 12 minutos</span>
-    </div>
-    
-    <!-- Objetivo -->
-    <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
-      <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
-      <span><strong>Objetivo:</strong> Comprender el concepto de ingreso en economía y negocios, modelar funciones de ingreso lineal y cuadrática, calcular ingreso marginal, y analizar la relación entre precio, cantidad y elasticidad de demanda para optimizar decisiones empresariales.</span>
-    </div>
-    
-    <!-- Idea principal -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
-      <p>El ingreso representa el dinero que recibe una empresa por la venta de sus productos o servicios. Se calcula como el producto del precio unitario por la cantidad vendida. En microeconomía, el ingreso total (R) depende de la función de demanda, y su análisis permite determinar el nivel de producción que maximiza las ganancias, considerando tanto costos como comportamiento del mercado.</p>
-    </div>
-    
-    <!-- Ejercicio 1: Tabla de ingresos lineales -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Ingreso lineal - Producto con precio fijo</h4>
-      <p>Una empresa vende un producto a $50 por unidad. El ingreso total R(x) = 50x, donde x es el número de unidades vendidas.</p>
-      <table class='math-table'>
-        <thead>
-          <tr><th>Unidades (x)</th><th>Ingreso Total R(x)</th><th>Ingreso Marginal</th><th>Comentario</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>0</td><td>$0</td><td>$50</td><td>Punto de partida, sin ventas</td></tr>
-          <tr><td>10</td><td>$500</td><td>$50</td><td>Ingreso crece proporcionalmente</td></tr>
-          <tr><td>20</td><td>$1,000</td><td>$50</td><td>Relación lineal perfecta</td></tr>
-          <tr><td>30</td><td>$1,500</td><td>$50</td><td>Ingreso marginal constante</td></tr>
-          <tr><td>40</td><td>$2,000</td><td>$50</td><td>Cada unidad añade $50 al ingreso</td></tr>
-        </tbody>
-      </table>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> En este modelo lineal, el ingreso marginal (ingreso adicional por vender una unidad más) es constante e igual al precio.</p>
-    </div>
-    
-    <!-- Gráfica 1: Ingreso lineal -->
-    <div class='graph-container' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Función de ingreso lineal R(x) = 50x</h4>
-      <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-        <!-- Ejes coordenados -->
-        <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        <line x1='50' y1='250' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        
-        <!-- Marcas del eje X (Unidades) -->
-        <line x1='100' y1='245' x2='100' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='100' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
-        <line x1='150' y1='245' x2='150' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='150' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
-        <line x1='200' y1='245' x2='200' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='200' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
-        <line x1='250' y1='245' x2='250' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='250' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
-        <line x1='300' y1='245' x2='300' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='300' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
-        
-        <!-- Marcas del eje Y (Ingreso) -->
-        <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,000</text>
-        <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,000</text>
-        <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$3,000</text>
-        
-        <!-- Línea de ingreso -->
-        <line x1='50' y1='250' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
-        
-        <!-- Etiquetas de ejes -->
-        <text x='200' y='290' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Vendidas (x)</text>
-        <text x='15' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,150)'>Ingreso Total R(x)</text>
-        
-        <!-- Puntos de datos -->
-        <circle cx='100' cy='200' r='4' fill='var(--apple-vibrant-orange)'></circle>
-        <circle cx='150' cy='150' r='4' fill='var(--apple-vibrant-orange)'></circle>
-        <circle cx='200' cy='100' r='4' fill='var(--apple-vibrant-orange)'></circle>
-        <circle cx='250' cy='50' r='4' fill='var(--apple-vibrant-orange)'></circle>
-        
-        <!-- Ecuación -->
-        <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>R(x) = 50x</text>
-      </svg>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La función de ingreso lineal forma una recta con pendiente positiva que pasa por el origen. La pendiente representa el ingreso marginal constante.</p>
-    </div>
-    
-    <!-- Ejercicio 2: Ingreso cuadrático -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Ingreso con demanda lineal</h4>
-      <p>Cuando el precio depende de la cantidad vendida (demanda lineal): p(x) = 100 - 2x. El ingreso total es R(x) = x · p(x) = 100x - 2x².</p>
-      <table class='math-table'>
-        <thead>
-          <tr><th>Unidades (x)</th><th>Precio p(x)</th><th>Ingreso Total R(x)</th><th>Ingreso Marginal</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>0</td><td>$100</td><td>$0</td><td>$100</td></tr>
-          <tr><td>10</td><td>$80</td><td>$800</td><td>$60</td></tr>
-          <tr><td>20</td><td>$60</td><td>$1,200</td><td>$20</td></tr>
-          <tr><td>25</td><td>$50</td><td>$1,250</td><td>$0</td></tr>
-          <tr><td>30</td><td>$40</td><td>$1,200</td><td>-$20</td></tr>
-          <tr><td>40</td><td>$20</td><td>$800</td><td>-$60</td></tr>
-        </tbody>
-      </table>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El ingreso marginal disminuye a medida que aumentan las ventas, volviéndose negativo después del punto de maximización (x=25).</p>
-    </div>
-    
-    <!-- Gráfica 2: Ingreso cuadrático -->
-    <div class='graph-container' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Función de ingreso cuadrático R(x) = 100x - 2x²</h4>
-      <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-        <!-- Ejes coordenados -->
-        <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        <line x1='50' y1='250' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        
-        <!-- Marcas del eje X (Unidades) -->
-        <line x1='100' y1='245' x2='100' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='100' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
-        <line x1='150' y1='245' x2='150' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='150' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
-        <line x1='200' y1='245' x2='200' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='200' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
-        <line x1='250' y1='245' x2='250' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='250' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
-        <line x1='300' y1='245' x2='300' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='300' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
-        
-        <!-- Marcas del eje Y (Ingreso) -->
-        <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,000</text>
-        <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,500</text>
-        <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
-        <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,000</text>
-        
-        <!-- Curva de ingreso cuadrático -->
-        <path d='M 50,250 
-                 C 100,250 120,200 150,200
-                 C 180,200 200,150 200,150
-                 C 220,150 250,100 250,100
-                 C 280,100 300,150 350,250' 
-              stroke='var(--apple-vibrant-blue)' 
-              stroke-width='3' 
-              fill='none' />
-        
-        <!-- Punto máximo -->
-        <circle cx='200' cy='150' r='6' fill='var(--apple-vibrant-red)'></circle>
-        <text x='220' y='140' font-size='12' fill='var(--apple-vibrant-red)'>Máximo: (25, $1,250)</text>
-        
-        <!-- Etiquetas de ejes -->
-        <text x='200' y='290' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Vendidas (x)</text>
-        <text x='15' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,150)'>Ingreso Total R(x)</text>
-        
-        <!-- Ecuación -->
-        <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>R(x) = 100x - 2x²</text>
-      </svg>
-      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La función de ingreso forma una parábola cóncava hacia abajo con un punto máximo. Este máximo representa la cantidad que maximiza el ingreso total.</p>
-    </div>
-    
-    <!-- Aplicaciones reales -->
-    <div class='content-section' style='margin-bottom:20px;'>
-      <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
-      <ul style='padding-left:18px;line-height:1.6;'>
-        <li><strong>Fijación de precios:</strong> Las empresas utilizan funciones de ingreso para determinar precios óptimos que maximicen ingresos considerando la elasticidad de la demanda.</li>
-        <li><strong>Planificación de producción:</strong> Análisis de ingreso marginal vs. costo marginal para determinar el nivel de producción óptimo.</li>
-        <li><strong>Estrategias de descuento:</strong> Modelado de cómo los descuentos por volumen afectan el ingreso total y la rentabilidad.</li>
-        <li><strong>Análisis de mercado:</strong> Evaluación de diferentes estructuras de mercado (competencia perfecta, monopolio, oligopolio) y su impacto en las funciones de ingreso.</li>
-        <li><strong>Presupuestos y pronósticos:</strong> Proyección de ingresos futuros basados en tendencias de ventas y condiciones del mercado.</li>
-      </ul>
-    </div>
-    
-    <!-- Bibliografía -->
-    <div class='bibliography-section' style='margin-top:20px;'>
-      <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
-      <ul style='padding-left:18px;line-height:1.5;'>
-        <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
-        <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
-        <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
-        <li>Samuelson, P. A., & Nordhaus, W. D. (2009). Economics. McGraw-Hill.</li>
-        <li>Khan Academy: Microeconomics - Revenue, Costs, and Profit. www.khanacademy.org</li>
-      </ul>
-    </div>
-  </div>
-  `);">3.3.1. Ingreso <span class=emoji-small>✅</span>
-</li> 
+          <!-- Tiempo estimado -->
+          <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+            <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 12 minutos'>
+            <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+            <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
+            <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>12 min</text>
+            </svg>
+            <span style='font-weight:bold;'>Tiempo estimado: 12 minutos</span>
+          </div>
+          
+          <!-- Objetivo -->
+          <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+            <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+            <span><strong>Objetivo:</strong> Comprender el concepto de ingreso en economía y negocios, modelar funciones de ingreso lineal y cuadrática, calcular ingreso marginal, y analizar la relación entre precio, cantidad y elasticidad de demanda para optimizar decisiones empresariales.</span>
+          </div>
+          
+          <!-- Idea principal -->
+          <div class='content-section' style='margin-bottom:20px;'>
+            <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+            <p>El ingreso representa el dinero que recibe una empresa por la venta de sus productos o servicios. Se calcula como el producto del precio unitario por la cantidad vendida. En microeconomía, el ingreso total (R) depende de la función de demanda, y su análisis permite determinar el nivel de producción que maximiza las ganancias, considerando tanto costos como comportamiento del mercado.</p>
+          </div>
+          
+          <!-- Ejercicio 1: Tabla de ingresos lineales -->
+          <div class='content-section' style='margin-bottom:20px;'>
+            <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Ingreso lineal - Producto con precio fijo</h4>
+            <p>Una empresa vende un producto a $50 por unidad. El ingreso total R(x) = 50x, donde x es el número de unidades vendidas.</p>
+            <table class='math-table'>
+              <thead>
+                <tr><th>Unidades (x)</th><th>Ingreso Total R(x)</th><th>Ingreso Marginal</th><th>Comentario</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>0</td><td>$0</td><td>$50</td><td>Punto de partida, sin ventas</td></tr>
+                <tr><td>10</td><td>$500</td><td>$50</td><td>Ingreso crece proporcionalmente</td></tr>
+                <tr><td>20</td><td>$1,000</td><td>$50</td><td>Relación lineal perfecta</td></tr>
+                <tr><td>30</td><td>$1,500</td><td>$50</td><td>Ingreso marginal constante</td></tr>
+                <tr><td>40</td><td>$2,000</td><td>$50</td><td>Cada unidad añade $50 al ingreso</td></tr>
+              </tbody>
+            </table>
+            <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> En este modelo lineal, el ingreso marginal (ingreso adicional por vender una unidad más) es constante e igual al precio.</p>
+          </div>
+          
+          <!-- Gráfica 1: Ingreso lineal -->
+          <div class='graph-container' style='margin-bottom:20px;'>
+            <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Función de ingreso lineal R(x) = 50x</h4>
+            <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+              <!-- Ejes coordenados -->
+              <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              <line x1='50' y1='250' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              
+              <!-- Marcas del eje X (Unidades) -->
+              <line x1='100' y1='245' x2='100' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='100' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
+              <line x1='150' y1='245' x2='150' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='150' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+              <line x1='200' y1='245' x2='200' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='200' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
+              <line x1='250' y1='245' x2='250' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='250' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+              <line x1='300' y1='245' x2='300' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='300' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
+              
+              <!-- Marcas del eje Y (Ingreso) -->
+              <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,000</text>
+              <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,000</text>
+              <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$3,000</text>
+              
+              <!-- Línea de ingreso -->
+              <line x1='50' y1='250' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+              
+              <!-- Etiquetas de ejes -->
+              <text x='200' y='290' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Vendidas (x)</text>
+              <text x='15' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,150)'>Ingreso Total R(x)</text>
+              
+              <!-- Puntos de datos -->
+              <circle cx='100' cy='200' r='4' fill='var(--apple-vibrant-orange)'></circle>
+              <circle cx='150' cy='150' r='4' fill='var(--apple-vibrant-orange)'></circle>
+              <circle cx='200' cy='100' r='4' fill='var(--apple-vibrant-orange)'></circle>
+              <circle cx='250' cy='50' r='4' fill='var(--apple-vibrant-orange)'></circle>
+              
+              <!-- Ecuación -->
+              <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>R(x) = 50x</text>
+            </svg>
+            <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La función de ingreso lineal forma una recta con pendiente positiva que pasa por el origen. La pendiente representa el ingreso marginal constante.</p>
+          </div>
+          
+          <!-- Ejercicio 2: Ingreso cuadrático -->
+          <div class='content-section' style='margin-bottom:20px;'>
+            <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Ingreso con demanda lineal</h4>
+            <p>Cuando el precio depende de la cantidad vendida (demanda lineal): p(x) = 100 - 2x. El ingreso total es R(x) = x · p(x) = 100x - 2x².</p>
+            <table class='math-table'>
+              <thead>
+                <tr><th>Unidades (x)</th><th>Precio p(x)</th><th>Ingreso Total R(x)</th><th>Ingreso Marginal</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>0</td><td>$100</td><td>$0</td><td>$100</td></tr>
+                <tr><td>10</td><td>$80</td><td>$800</td><td>$60</td></tr>
+                <tr><td>20</td><td>$60</td><td>$1,200</td><td>$20</td></tr>
+                <tr><td>25</td><td>$50</td><td>$1,250</td><td>$0</td></tr>
+                <tr><td>30</td><td>$40</td><td>$1,200</td><td>-$20</td></tr>
+                <tr><td>40</td><td>$20</td><td>$800</td><td>-$60</td></tr>
+              </tbody>
+            </table>
+            <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El ingreso marginal disminuye a medida que aumentan las ventas, volviéndose negativo después del punto de maximización (x=25).</p>
+          </div>
+          
+          <!-- Gráfica 2: Ingreso cuadrático -->
+          <div class='graph-container' style='margin-bottom:20px;'>
+            <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Función de ingreso cuadrático R(x) = 100x - 2x²</h4>
+            <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+              <!-- Ejes coordenados -->
+              <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              <line x1='50' y1='250' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              
+              <!-- Marcas del eje X (Unidades) -->
+              <line x1='100' y1='245' x2='100' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='100' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
+              <line x1='150' y1='245' x2='150' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='150' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+              <line x1='200' y1='245' x2='200' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='200' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
+              <line x1='250' y1='245' x2='250' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='250' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+              <line x1='300' y1='245' x2='300' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='300' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
+              
+              <!-- Marcas del eje Y (Ingreso) -->
+              <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,000</text>
+              <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$1,500</text>
+              <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2,000</text>
+              
+              <!-- Curva de ingreso cuadrático -->
+              <path d='M 50,250 
+                      C 100,250 120,200 150,200
+                      C 180,200 200,150 200,150
+                      C 220,150 250,100 250,100
+                      C 280,100 300,150 350,250' 
+                    stroke='var(--apple-vibrant-blue)' 
+                    stroke-width='3' 
+                    fill='none' />
+              
+              <!-- Punto máximo -->
+              <circle cx='200' cy='150' r='6' fill='var(--apple-vibrant-red)'></circle>
+              <text x='220' y='140' font-size='12' fill='var(--apple-vibrant-red)'>Máximo: (25, $1,250)</text>
+              
+              <!-- Etiquetas de ejes -->
+              <text x='200' y='290' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Unidades Vendidas (x)</text>
+              <text x='15' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,150)'>Ingreso Total R(x)</text>
+              
+              <!-- Ecuación -->
+              <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>R(x) = 100x - 2x²</text>
+            </svg>
+            <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La función de ingreso forma una parábola cóncava hacia abajo con un punto máximo. Este máximo representa la cantidad que maximiza el ingreso total.</p>
+          </div>
+          
+          <!-- Aplicaciones reales -->
+          <div class='content-section' style='margin-bottom:20px;'>
+            <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+            <ul style='padding-left:18px;line-height:1.6;'>
+              <li><strong>Fijación de precios:</strong> Las empresas utilizan funciones de ingreso para determinar precios óptimos que maximicen ingresos considerando la elasticidad de la demanda.</li>
+              <li><strong>Planificación de producción:</strong> Análisis de ingreso marginal vs. costo marginal para determinar el nivel de producción óptimo.</li>
+              <li><strong>Estrategias de descuento:</strong> Modelado de cómo los descuentos por volumen afectan el ingreso total y la rentabilidad.</li>
+              <li><strong>Análisis de mercado:</strong> Evaluación de diferentes estructuras de mercado (competencia perfecta, monopolio, oligopolio) y su impacto en las funciones de ingreso.</li>
+              <li><strong>Presupuestos y pronósticos:</strong> Proyección de ingresos futuros basados en tendencias de ventas y condiciones del mercado.</li>
+            </ul>
+          </div>
+          
+          <!-- Bibliografía -->
+          <div class='bibliography-section' style='margin-top:20px;'>
+            <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+            <ul style='padding-left:18px;line-height:1.5;'>
+              <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
+              <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
+              <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
+              <li>Samuelson, P. A., & Nordhaus, W. D. (2009). Economics. McGraw-Hill.</li>
+              <li>Khan Academy: Microeconomics - Revenue, Costs, and Profit. www.khanacademy.org</li>
+            </ul>
+          </div>
+        </div>
+        `);">3.3.1. Ingreso <span class=emoji-small>✅</span>
+      </li>
+          
+          <!-- Tema 3.3.2 Costo --> 
     
 <li onclick="abrirModal('3.3.2. Costo', `
   <hr><br>
