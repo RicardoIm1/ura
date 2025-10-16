@@ -4470,51 +4470,55 @@
             <!-- Gráfica 2: Comparación de diferentes valores de pendiente -->
             <div class='graph-container' style='margin-bottom:20px;'>
               <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Comparación de diferentes valores de pendiente</h4>
-              <svg viewBox=0 0 400 300 style=width:100%;height:auto;background:#f5f5f7;border-radius:8px;>
-                <!-- Ejes coordenados -->
-                <line x1=50 y1=250 x2=350 y2=250 stroke=#555 stroke-width=2/>
-                <line x1=200 y1=50 x2=200 y2=250 stroke=#555 stroke-width=2/>
-              
-                <!-- Rectas con distintas pendientes -->
-                <line x1=50 y1=200 x2=350 y2=100 stroke=#007AFF stroke-width=2/>
-                <text x=300 y=120 font-size=12 fill=#007AFF>m = 1/2 = 0.5</text>
-              
-                <line x1=50 y1=225 x2=350 y2=75 stroke=#34C759 stroke-width=2/>
-                <text x=300 y=95 font-size=12 fill=#34C759>m = 1</text>
-              
-                <line x1=50 y1=240 x2=350 y2=60 stroke=#FF9500 stroke-width=2/>
-                <text x=300 y=80 font-size=12 fill=#FF9500>m = 2</text>
-              
-                <line x1=50 y1=100 x2=350 y2=200 stroke=#FF3B30 stroke-width=2/>
-                <text x=300 y=180 font-size=12 fill=#FF3B30>m = -1/2 = -0.5</text>
-              
-                <line x1=50 y1=75 x2=350 y2=225 stroke=#AF52DE stroke-width=2/>
-                <text x=300 y=205 font-size=12 fill=#AF52DE>m = -1</text>
-              
-                <line x1=50 y1=60 x2=350 y2=240 stroke=#A2845E stroke-width=2/>
-                <text x=300 y=220 font-size=12 fill=#A2845E>m = -2</text>
-              
-                <!-- Punto de referencia -->
-                <circle cx=200 cy=150 r=3 fill=#555/>
-              
-                <!-- Triángulos de pendiente -->
-                <line x1=200 y1=150 x2=250 y2=150 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
-                <line x1=250 y1=150 x2=250 y2=100 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
-                <line x1=250 y1=150 x2=250 y2=200 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
-              
-                <!-- Etiquetas de ejes -->
-                <text x=200 y=270 text-anchor=middle font-size=14 fill=#333>Eje X</text>
-                <text x=30 y=150 text-anchor=middle font-size=14 fill=#333 transform=rotate(-90 30,150)>Eje Y</text>
-              
-                <!-- Leyenda explicativa -->
-                <rect x=250 y=30 width=140 height=90 fill=white stroke=#999 stroke-width=1 rx=5/>
-                <text x=260 y=45 font-size=10 fill=#333>Valor absoluto de m:</text>
-                <text x=260 y=60 font-size=9 fill=#666>• |m| pequeño → recta más plana</text>
-                <text x=260 y=70 font-size=9 fill=#666>• |m| grande → recta más inclinada</text>
-                <text x=260 y=80 font-size=9 fill=#666>• |m| = 1 → ángulo de 45°</text>
-                <text x=260 y=90 font-size=9 fill=#666>• m > 0 → función creciente</text>
-                <text x=260 y=100 font-size=9 fill=#666>• m < 0 → función decreciente</text>
-              </svg>
+              <svg viewBox=0 0 400 300 width=100% height=auto>
+  <!-- Fondo con esquinas redondeadas -->
+  <rect x=0 y=0 width=400 height=300 rx=8 ry=8 fill=#f5f5f7/>
+
+  <!-- Ejes coordenados -->
+  <line x1=50 y1=250 x2=350 y2=250 stroke=#555 stroke-width=2/>
+  <line x1=200 y1=50 x2=200 y2=250 stroke=#555 stroke-width=2/>
+
+  <!-- Rectas con distintas pendientes -->
+  <line x1=50 y1=200 x2=350 y2=100 stroke=#007AFF stroke-width=2/>
+  <text x=300 y=120 font-size=12 fill=#007AFF>m = 1/2 = 0.5</text>
+
+  <line x1=50 y1=225 x2=350 y2=75 stroke=#34C759 stroke-width=2/>
+  <text x=300 y=95 font-size=12 fill=#34C759>m = 1</text>
+
+  <line x1=50 y1=240 x2=350 y2=60 stroke=#FF9500 stroke-width=2/>
+  <text x=300 y=80 font-size=12 fill=#FF9500>m = 2</text>
+
+  <line x1=50 y1=100 x2=350 y2=200 stroke=#FF3B30 stroke-width=2/>
+  <text x=300 y=180 font-size=12 fill=#FF3B30>m = -1/2 = -0.5</text>
+
+  <line x1=50 y1=75 x2=350 y2=225 stroke=#AF52DE stroke-width=2/>
+  <text x=300 y=205 font-size=12 fill=#AF52DE>m = -1</text>
+
+  <line x1=50 y1=60 x2=350 y2=240 stroke=#A2845E stroke-width=2/>
+  <text x=300 y=220 font-size=12 fill=#A2845E>m = -2</text>
+
+  <!-- Punto de referencia -->
+  <circle cx=200 cy=150 r=3 fill=#555/>
+
+  <!-- Triángulos de pendiente -->
+  <line x1=200 y1=150 x2=250 y2=150 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
+  <line x1=250 y1=150 x2=250 y2=100 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
+  <line x1=250 y1=150 x2=250 y2=200 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
+
+  <!-- Etiquetas de ejes -->
+  <text x=200 y=270 text-anchor=middle font-size=14 fill=#333>Eje X</text>
+  <text x=30 y=150 text-anchor=middle font-size=14 fill=#333 transform=rotate(-90 30,150)>Eje Y</text>
+
+  <!-- Leyenda explicativa -->
+  <rect x=250 y=30 width=140 height=90 fill=white stroke=#999 stroke-width=1 rx=5/>
+  <text x=260 y=45 font-size=10 fill=#333>Valor absoluto de m:</text>
+  <text x=260 y=60 font-size=9 fill=#666>• |m| pequeño → recta más plana</text>
+  <text x=260 y=70 font-size=9 fill=#666>• |m| grande → recta más inclinada</text>
+  <text x=260 y=80 font-size=9 fill=#666>• |m| = 1 → ángulo de 45°</text>
+  <text x=260 y=90 font-size=9 fill=#666>• m > 0 → función creciente</text>
+  <text x=260 y=100 font-size=9 fill=#666>• m < 0 → función decreciente</text>
+</svg>
+
 
               <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El valor absoluto de la pendiente determina la inclinación: mayor |m| significa mayor inclinación. Las pendientes positivas (arriba) son crecientes, las negativas (abajo) son decrecientes. Todas pasan por el mismo punto de referencia, demostrando que diferentes pendientes generan diferentes comportamientos desde un mismo punto.</p>
             </div>
