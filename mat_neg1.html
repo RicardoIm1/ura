@@ -5348,8 +5348,349 @@
           </div>
           `);"><b>3.2. Ecuaciones de la Recta</b> <span class='emoji-small'>✅</span>
         </li>
-        <li>3.2.1. Forma común</li>
-          <li>3.2.2. Forma punto-pendiente</li>
+        
+        <li onclick="abrirModal('3.2.1. Forma Común', `
+          <hr><br>
+          <div class='math-module'>
+            
+            <!-- Tiempo estimado -->
+            <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+              <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 15 minutos'>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='21.2055' transform='rotate(-90 10 10)'></circle>
+              <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>15 min</text>
+              </svg>
+              <span style='font-weight:bold;'>Tiempo estimado: 15 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+              <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+              <span><strong>Objetivo:</strong> Comprender y utilizar la forma común de la ecuación de la recta (Ax + By + C = 0), identificar sus coeficientes y sus significados geométricos, convertir entre la forma común y otras formas de ecuaciones lineales, y aplicar esta representación en problemas algebraicos y geométricos.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+              <p>La forma común o general de la ecuación de la recta se expresa como Ax + By + C = 0, donde A, B y C son números reales y A y B no son simultáneamente cero. Esta forma es particularmente útil para análisis algebraicos, cálculo de distancias de puntos a rectas, y determinación de posiciones relativas entre rectas. Los coeficientes A, B y C contienen información geométrica sobre la recta, y la forma permite un tratamiento sistemático en sistemas de ecuaciones y problemas de geometría analítica.</p>
+            </div>
+            
+            <!-- Ejercicio 1: Identificación de coeficientes -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Identificación de coeficientes en la forma común</h4>
+              <p>Análisis de ecuaciones en forma común y determinación de sus coeficientes:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Ecuación</th>
+                    <th>Coeficiente A</th>
+                    <th>Coeficiente B</th>
+                    <th>Coeficiente C</th>
+                    <th>Forma Estándar</th>
+                    <th>Interpretación Geométrica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2x + 3y - 6 = 0</td>
+                    <td>A = 2</td>
+                    <td>B = 3</td>
+                    <td>C = -6</td>
+                    <td>2x + 3y - 6 = 0</td>
+                    <td>Recta con pendiente -⅔</td>
+                  </tr>
+                  <tr>
+                    <td>x - 2y + 4 = 0</td>
+                    <td>A = 1</td>
+                    <td>B = -2</td>
+                    <td>C = 4</td>
+                    <td>x - 2y + 4 = 0</td>
+                    <td>Recta con pendiente ½</td>
+                  </tr>
+                  <tr>
+                    <td>3x + 5 = 0</td>
+                    <td>A = 3</td>
+                    <td>B = 0</td>
+                    <td>C = 5</td>
+                    <td>3x + 5 = 0</td>
+                    <td>Recta vertical: x = -⁵⁄₃</td>
+                  </tr>
+                  <tr>
+                    <td>4y - 8 = 0</td>
+                    <td>A = 0</td>
+                    <td>B = 4</td>
+                    <td>C = -8</td>
+                    <td>4y - 8 = 0</td>
+                    <td>Recta horizontal: y = 2</td>
+                  </tr>
+                  <tr>
+                    <td>-x + 2y - 1 = 0</td>
+                    <td>A = -1</td>
+                    <td>B = 2</td>
+                    <td>C = -1</td>
+                    <td>-x + 2y - 1 = 0</td>
+                    <td>Recta con pendiente ½</td>
+                  </tr>
+                  <tr>
+                    <td>5x - 2y = 0</td>
+                    <td>A = 5</td>
+                    <td>B = -2</td>
+                    <td>C = 0</td>
+                    <td>5x - 2y = 0</td>
+                    <td>Recta por el origen</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cuando B = 0, la recta es vertical. Cuando A = 0, la recta es horizontal. Cuando C = 0, la recta pasa por el origen. La pendiente se calcula como m = -A/B cuando B ≠ 0.</p>
+            </div>
+            
+            <!-- Gráfica 1: Representación de la forma común -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Representación gráfica de 2x + 3y - 6 = 0</h4>
+              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Escalas del eje X -->
+                <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='100' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='150' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+                <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='200' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='250' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>4</text>
+                
+                <!-- Escalas del eje Y -->
+                <line x1='45' y1='250' x2='55' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='255' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+                <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                
+                <!-- Recta: 2x + 3y - 6 = 0 → y = -⅔x + 2 -->
+                <line x1='50' y1='233' x2='350' y2='67' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Intersección con eje X (y=0) -->
+                <circle cx='200' cy='300' r='4' fill='var(--apple-vibrant-red)'></circle>
+                <text x='210' y='295' font-size='12' fill='var(--apple-vibrant-red)'>Int. X: (3,0)</text>
+                
+                <!-- Intersección con eje Y (x=0) -->
+                <circle cx='50' cy='233' r='4' fill='var(--apple-vibrant-green)'></circle>
+                <text x='60' y='228' font-size='12' fill='var(--apple-vibrant-green)'>Int. Y: (0,2)</text>
+                
+                <!-- Triángulo de pendiente -->
+                <line x1='200' y1='200' x2='200' y2='167' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='3,3'></line>
+                <line x1='200' y1='167' x2='250' y2='167' stroke='var(--apple-vibrant-purple)' stroke-width='2' stroke-dasharray='3,3'></line>
+                <text x='195' y='183' text-anchor='end' font-size='10' fill='var(--apple-vibrant-orange)'>Δy = -2</text>
+                <text x='225' y='160' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-purple)'>Δx = 3</text>
+                <text x='225' y='180' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>m = -⅔</text>
+                
+                <!-- Puntos de verificación -->
+                <circle cx='125' cy='267' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='275' cy='133' r='2' fill='var(--apple-dark-gray)'></circle>
+                
+                <!-- Ecuación -->
+                <text x='300' y='100' font-size='14' fill='var(--apple-dark-gray)'>2x + 3y - 6 = 0</text>
+                <text x='300' y='120' font-size='12' fill='var(--apple-vibrant-blue)'>A=2, B=3, C=-6</text>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='15' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,175)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La recta corta el eje X en (3,0) y el eje Y en (0,2). La pendiente m = -A/B = -⅔ se visualiza en el triángulo: por cada 3 unidades en X, la recta baja 2 unidades en Y. Los coeficientes A, B y C determinan completamente la posición y orientación de la recta.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Conversión a forma común -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-exchange-alt' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Conversión de otras formas a forma común</h4>
+              <p>Transformación de diferentes formas de ecuaciones lineales a la forma común Ax + By + C = 0:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Forma Original</th>
+                    <th>Ecuación</th>
+                    <th>Procedimiento</th>
+                    <th>Forma Común Resultante</th>
+                    <th>Coeficientes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pendiente-Ordenada</td>
+                    <td>y = 3x - 4</td>
+                    <td>Restar y ambos lados:<br>0 = 3x - 4 - y</td>
+                    <td>3x - y - 4 = 0</td>
+                    <td>A=3, B=-1, C=-4</td>
+                  </tr>
+                  <tr>
+                    <td>Punto-Pendiente</td>
+                    <td>y - 2 = -½(x + 1)</td>
+                    <td>Desarrollar y ordenar:<br>y - 2 = -½x - ½<br>½x + y - ³⁄₂ = 0<br>Multiplicar por 2</td>
+                    <td>x + 2y - 3 = 0</td>
+                    <td>A=1, B=2, C=-3</td>
+                  </tr>
+                  <tr>
+                    <td>Simétrica</td>
+                    <td>x/4 + y/2 = 1</td>
+                    <td>Multiplicar por 4:<br>x + 2y = 4</td>
+                    <td>x + 2y - 4 = 0</td>
+                    <td>A=1, B=2, C=-4</td>
+                  </tr>
+                  <tr>
+                    <td>Dos Puntos</td>
+                    <td>P(1,3), Q(4,5)</td>
+                    <td>Pendiente: m=⅔<br>Ecuación: y-3=⅔(x-1)<br>Multiplicar por 3: 3y-9=2x-2</td>
+                    <td>2x - 3y + 7 = 0</td>
+                    <td>A=2, B=-3, C=7</td>
+                  </tr>
+                  <tr>
+                    <td>Con pendiente y punto</td>
+                    <td>m=2, P(-1,3)</td>
+                    <td>y-3=2(x+1)<br>y-3=2x+2</td>
+                    <td>2x - y + 5 = 0</td>
+                    <td>A=2, B=-1, C=5</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La conversión a forma común generalmente implica llevar todos los términos al lado izquierdo de la ecuación y ordenarlos como Ax + By + C = 0. Es conveniente eliminar fracciones y asegurar que A sea positivo cuando sea posible.</p>
+            </div>
+            
+            <!-- Gráfica 2: Comparación de formas -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Misma recta en diferentes formas</h4>
+              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Recta: y = 2x - 1 (en diferentes formas) -->
+                <line x1='75' y1='100' x2='325' y2='200' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Puntos importantes -->
+                <circle cx='150' cy='150' r='3' fill='var(--apple-vibrant-red)'></circle>
+                <circle cx='200' cy='175' r='3' fill='var(--apple-vibrant-green)'></circle>
+                <circle cx='250' cy='200' r='3' fill='var(--apple-vibrant-orange)'></circle>
+                
+                <!-- Intersección con Y -->
+                <circle cx='112' cy='125' r='4' fill='var(--apple-vibrant-purple)'></circle>
+                <text x='122' y='120' font-size='10' fill='var(--apple-vibrant-purple)'>(0,-1)</text>
+                
+                <!-- Intersección con X -->
+                <circle cx='125' cy='250' r='4' fill='var(--apple-vibrant-brown)'></circle>
+                <text x='135' y='245' font-size='10' fill='var(--apple-vibrant-brown)'>(0.5,0)</text>
+                
+                <!-- Representaciones de la ecuación -->
+                <rect x='250' y='30' width='140' height='80' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+                <text x='255' y='45' font-size='10' fill='var(--apple-dark-gray)'><strong>Misma recta representada como:</strong></text>
+                <text x='255' y='60' font-size='9' fill='var(--apple-vibrant-blue)'>• y = 2x - 1 (Pendiente-Ordenada)</text>
+                <text x='255' y='70' font-size='9' fill='var(--apple-vibrant-green)'>• y - 3 = 2(x - 2) (Punto-Pendiente)</text>
+                <text x='255' y='80' font-size='9' fill='var(--apple-vibrant-orange)'>• 2x - y - 1 = 0 (Forma Común)</text>
+                <text x='255' y='90' font-size='9' fill='var(--apple-vibrant-purple)'>• x/0.5 + y/(-1) = 1 (Simétrica)</text>
+                <text x='255' y='100' font-size='9' fill='var(--apple-dark-gray)'>Todas representan la misma recta</text>
+                
+                <!-- Elementos geométricos -->
+                <line x1='150' y1='150' x2='200' y2='150' stroke='var(--apple-vibrant-orange)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <line x1='200' y1='150' x2='200' y2='175' stroke='var(--apple-vibrant-green)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <text x='175' y='145' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Δx=1</text>
+                <text x='210' y='162' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Δy=2</text>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Una misma recta puede expresarse de múltiples formas equivalentes. La forma común 2x - y - 1 = 0 contiene la misma información que y = 2x - 1, pero organizada de manera diferente. La elección de la forma depende del problema específico a resolver.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Aplicaciones de la forma común -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-cogs' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Aplicaciones y propiedades de la forma común</h4>
+              <p>Uso de la forma común en problemas geométricos y algebraicos:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Aplicación</th>
+                    <th>Procedimiento</th>
+                    <th>Fórmula</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Distancia punto-recta</td>
+                    <td>Usar fórmula de distancia</td>
+                    <td>d = |Ax₀ + By₀ + C|/√(A²+B²)</td>
+                    <td>P(1,2) a 3x+4y-5=0</td>
+                    <td>d = |3(1)+4(2)-5|/√(9+16) = 6/5</td>
+                  </tr>
+                  <tr>
+                    <td>Rectas paralelas</td>
+                    <td>Mismos coeficientes A y B</td>
+                    <td>A₁/B₁ = A₂/B₂</td>
+                    <td>2x+3y-1=0 y 4x+6y+5=0</td>
+                    <td>Paralelas: 2/3 = 4/6</td>
+                  </tr>
+                  <tr>
+                    <td>Rectas perpendiculares</td>
+                    <td>Producto de pendientes = -1</td>
+                    <td>A₁A₂ + B₁B₂ = 0</td>
+                    <td>2x+3y-1=0 y 3x-2y+4=0</td>
+                    <td>Perpendiculares: 2(3)+3(-2)=0</td>
+                  </tr>
+                  <tr>
+                    <td>Intersección con ejes</td>
+                    <td>Hacer x=0 o y=0</td>
+                    <td>Eje X: (-C/A, 0)<br>Eje Y: (0, -C/B)</td>
+                    <td>2x+3y-6=0</td>
+                    <td>X: (3,0), Y: (0,2)</td>
+                  </tr>
+                  <tr>
+                    <td>Pertenencia de punto</td>
+                    <td>Verificar ecuación</td>
+                    <td>Ax₀ + By₀ + C = 0</td>
+                    <td>¿(2,1) en x+y-3=0?</td>
+                    <td>2+1-3=0 ✓ Pertenece</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La forma común es especialmente útil para calcular distancias, determinar paralelismo y perpendicularidad, y trabajar con sistemas de ecuaciones. La fórmula de distancia punto-recta es particularmente elegante en esta forma.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+              <ul style='padding-left:18px;line-height:1.6;'>
+                <li><strong>Ingeniería civil:</strong> Cálculo de distancias mínimas en planificación urbana y diseño de carreteras.</li>
+                <li><strong>Programación gráfica:</strong> Algoritmos para detección de colisiones y cálculo de distancias en videojuegos.</li>
+                <li><strong>Robótica:</strong> Planificación de trayectorias y evitación de obstáculos usando distancias a líneas.</li>
+                <li><strong>Arquitectura:</strong> Verificación de paralelismo y perpendicularidad en planos estructurales.</li>
+                <li><strong>Econometría:</strong> Análisis de regresión lineal donde la forma común facilita el tratamiento matricial.</li>
+                <li><strong>Geolocalización:</strong> Cálculo de distancias de puntos a rutas lineales en sistemas GPS.</li>
+                <li><strong>Óptica:</strong> Modelado de trayectorias de rayos de luz y reflexiones en superficies planas.</li>
+                <li><strong>Machine Learning:</strong> Implementación de clasificadores lineales y máquinas de soporte vectorial.</li>
+              </ul>
+            </div>
+            
+            <!-- Bibliografía -->
+            <div class='bibliography-section' style='margin-top:20px;'>
+              <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+              <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+                <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+                <li>Lehmann, C. H. (2019). Geometría Analítica. Limusa.</li>
+                <li>Anton, H., Bivens, I., & Davis, S. (2020). Cálculo: Trascendentes Tempranas. Limusa.</li>
+                <li>Khan Academy: Standard form of linear equations. www.khanacademy.org</li>
+              </ul>
+            </div>
+          </div>
+          `);">3.2.1. Forma Común <span class='emoji-small'>✅</span>
+        </li>
+
+        <li>3.2.2. Forma punto-pendiente</li>
         
           <li onclick="abrirModal('3.3. Funciones lineales', `
             <hr><br>
