@@ -5312,10 +5312,363 @@
           </ul>
         </div>
       </div>
-      `);"><b>3.3.4. Punto de Equilibrio de una Empresa</b> <span class='emoji-small'>✅</span>
+      `);">3.3.4. Punto de Equilibrio de una Empresa <span class='emoji-small'>✅</span>
+    </li>
+
+    <li onclick="abrirModal('3.3.5. Ley de la Oferta', `
+      <hr><br>
+      <div class='math-module'>
+        
+        <!-- Tiempo estimado -->
+        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 20 minutos'>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='0' transform='rotate(-90 10 10)'></circle>
+          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>20 min</text>
+          </svg>
+          <span style='font-weight:bold;'>Tiempo estimado: 20 minutos</span>
+        </div>
+        
+        <!-- Objetivo -->
+        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+          <span><strong>Objetivo:</strong> Comprender la ley de la oferta en microeconomía, modelar funciones de oferta lineales y no lineales, analizar los determinantes de la oferta, calcular la elasticidad-precio de la oferta y aplicar estos conceptos para predecir el comportamiento de productores en diferentes estructuras de mercado.</span>
+        </div>
+        
+        <!-- Idea principal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+          <p>La ley de la oferta establece que, manteniendo constantes los demás factores (ceteris paribus), existe una relación directa entre el precio de un bien y la cantidad que los productores están dispuestos a ofrecer en el mercado. A mayor precio, mayor incentivo para producir y vender, resultando en una curva de oferta con pendiente positiva. Esta relación se modela matemáticamente mediante funciones que capturan cómo los productores responden a cambios en precios, costos de producción, tecnología y expectativas del mercado.</p>
+        </div>
+        
+        <!-- Ejercicio 1: Función de oferta lineal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Función de oferta lineal Qs = 20 + 5P</h4>
+          <p>Análisis de una función de oferta lineal donde Qs representa la cantidad ofrecida y P el precio:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Precio (P)</th>
+                <th>Cantidad Ofrecida (Qs)</th>
+                <th>Ingreso Total</th>
+                <th>Precio Mínimo</th>
+                <th>Comportamiento del Productor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$0</td>
+                <td>20 unidades</td>
+                <td>$0</td>
+                <td>Punto de cierre</td>
+                <td>Producción mínima para mantener mercado</td>
+              </tr>
+              <tr>
+                <td>$2</td>
+                <td>30 unidades</td>
+                <td>$60</td>
+                <td>Por encima de costos variables</td>
+                <td>Incentivo moderado para producir</td>
+              </tr>
+              <tr>
+                <td>$5</td>
+                <td>45 unidades</td>
+                <td>$225</td>
+                <td>Rentable</td>
+                <td>Producción atractiva</td>
+              </tr>
+              <tr>
+                <td>$8</td>
+                <td>60 unidades</td>
+                <td>$480</td>
+                <td>Muy rentable</td>
+                <td>Máximo uso de capacidad</td>
+              </tr>
+              <tr>
+                <td>$10</td>
+                <td>70 unidades</td>
+                <td>$700</td>
+                <td>Alta rentabilidad</td>
+                <td>Inversión en expansión</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La cantidad ofrecida aumenta linealmente con el precio. A precio cero, todavía hay una producción base (20 unidades), lo que puede representar producción para mantener presencia en el mercado o cumplir contratos.</p>
+        </div>
+        
+        <!-- Gráfica 1: Curva de oferta lineal -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Curva de oferta lineal Qs = 20 + 5P</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Marcas del eje X (Cantidad) -->
+            <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='100' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+            <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='150' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+            <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='200' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>60</text>
+            <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='250' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>80</text>
+            <line x1='300' y1='295' x2='300' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='300' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>100</text>
+            
+            <!-- Marcas del eje Y (Precio $) -->
+            <line x1='45' y1='250' x2='55' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='255' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$2</text>
+            <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$5</text>
+            <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$8</text>
+            <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$11</text>
+            
+            <!-- Curva de oferta -->
+            <line x1='50' y1='300' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+            
+            <!-- Puntos de datos -->
+            <circle cx='100' cy='250' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='150' cy='200' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='200' cy='150' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='250' cy='100' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            
+            <!-- Flechas de movimiento -->
+            <path d='M 180,170 L 190,160 L 180,150' fill='var(--apple-vibrant-green)'></path>
+            <text x='200' y='165' font-size='12' fill='var(--apple-vibrant-green)'>Aumento de precio</text>
+            
+            <path d='M 120,230 L 130,240 L 140,230' fill='var(--apple-vibrant-green)'></path>
+            <text x='100' y='245' font-size='12' fill='var(--apple-vibrant-green)'>Aumento de cantidad</text>
+            
+            <!-- Etiquetas de ejes -->
+            <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Cantidad Ofrecida (Qs)</text>
+            <text x='15' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,175)'>Precio (P)</text>
+            
+            <!-- Ecuación -->
+            <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>Qs = 20 + 5P</text>
+            
+            <!-- Zona de precios no rentables -->
+            <polygon points='50,300 50,250 100,250 100,300' fill='var(--apple-light-red)' fill-opacity='0.2' stroke='none'></polygon>
+            <text x='75' y='280' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Zona no rentable</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La curva de oferta tiene pendiente positiva, reflejando la ley de la oferta. A precios muy bajos (zona roja), la producción puede no ser rentable, pero los productores podrían continuar produciendo para cubrir costos fijos o mantener participación de mercado.</p>
+        </div>
+        
+        <!-- Ejercicio 2: Elasticidad de la oferta -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Cálculo de elasticidad-precio de la oferta</h4>
+          <p>La elasticidad-precio de la oferta mide la sensibilidad de la cantidad ofrecida ante cambios en el precio:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Escenario</th>
+                <th>Cambio de Precio</th>
+                <th>Cambio de Cantidad</th>
+                <th>Elasticidad (Es)</th>
+                <th>Tipo de Oferta</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Producto A</td>
+                <td>P: $10 → $12 (+20%)</td>
+                <td>Q: 100 → 120 (+20%)</td>
+                <td>20%/20% = 1.0</td>
+                <td>Elasticidad unitaria</td>
+                <td>Cambio proporcional igual</td>
+              </tr>
+              <tr>
+                <td>Producto B</td>
+                <td>P: $8 → $10 (+25%)</td>
+                <td>Q: 50 → 70 (+40%)</td>
+                <td>40%/25% = 1.6</td>
+                <td>Oferta elástica</td>
+                <td>Muy sensible al precio</td>
+              </tr>
+              <tr>
+                <td>Producto C</td>
+                <td>P: $15 → $18 (+20%)</td>
+                <td>Q: 80 → 84 (+5%)</td>
+                <td>5%/20% = 0.25</td>
+                <td>Oferta inelástica</td>
+                <td>Poca respuesta al precio</td>
+              </tr>
+              <tr>
+                <td>Producto D</td>
+                <td>P: $20 → $40 (+100%)</td>
+                <td>Q: 30 → 30 (0%)</td>
+                <td>0%/100% = 0</td>
+                <td>Perfectamente inelástica</td>
+                <td>Producción fija</td>
+              </tr>
+              <tr>
+                <td>Producto E</td>
+                <td>P: $5 → $5.01 (+0.2%)</td>
+                <td>Q: 0 → 100 (∞%)</td>
+                <td>∞</td>
+                <td>Perfectamente elástica</td>
+                <td>Precio mínimo para producir</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La elasticidad depende de la capacidad de los productores para ajustar la producción. Ofertas elásticas (Es > 1) indican flexibilidad productiva, mientras ofertas inelásticas (Es < 1) sugieren limitaciones en la capacidad de producción.</p>
+        </div>
+        
+        <!-- Gráfica 2: Tipos de elasticidad de oferta -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Diferentes grados de elasticidad-precio de la oferta</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Sistema de coordenadas para los cinco casos -->
+            
+            <!-- Caso 1: Oferta elástica (Es > 1) -->
+            <g transform='translate(0,0)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='60' x2='80' y2='30' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Elástica (Es > 1)</text>
+            </g>
+            
+            <!-- Caso 2: Oferta inelástica (Es < 1) -->
+            <g transform='translate(100,0)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='70' x2='80' y2='40' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Inelástica (Es < 1)</text>
+            </g>
+            
+            <!-- Caso 3: Elasticidad unitaria (Es = 1) -->
+            <g transform='translate(200,0)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='65' x2='80' y2='35' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Unitaria (Es = 1)</text>
+            </g>
+            
+            <!-- Caso 4: Perfectamente elástica (Es = ∞) -->
+            <g transform='translate(0,120)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='50' x2='80' y2='50' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Perfectamente elástica</text>
+            </g>
+            
+            <!-- Caso 5: Perfectamente inelástica (Es = 0) -->
+            <g transform='translate(100,120)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Perfectamente inelástica</text>
+            </g>
+            
+            <!-- Título general -->
+            <text x='200' y='180' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Grados de Elasticidad-Precio de la Oferta</text>
+            
+            <!-- Explicación de ejes -->
+            <text x='200' y='200' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>Eje X: Cantidad | Eje Y: Precio</text>
+            
+            <!-- Leyenda explicativa -->
+            <rect x='220' y='220' width='160' height='100' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <text x='230' y='235' font-size='10' fill='var(--apple-dark-gray)'><strong>Factores que afectan la elasticidad:</strong></text>
+            <text x='230' y='250' font-size='9' fill='var(--apple-dark-gray)'>• Flexibilidad de producción</text>
+            <text x='230' y='260' font-size='9' fill='var(--apple-dark-gray)'>• Disponibilidad de insumos</text>
+            <text x='230' y='270' font-size='9' fill='var(--apple-dark-gray)'>• Horizonte temporal</text>
+            <text x='230' y='280' font-size='9' fill='var(--apple-dark-gray)'>• Capacidad instalada ociosa</text>
+            <text x='230' y='290' font-size='9' fill='var(--apple-dark-gray)'>• Almacenamiento del producto</text>
+            <text x='230' y='300' font-size='9' fill='var(--apple-dark-gray)'>• Movilidad de factores</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La pendiente de la curva de oferta está relacionada con su elasticidad, pero no son lo mismo. Una oferta más horizontal indica mayor elasticidad, mientras una más vertical indica menor elasticidad. La elasticidad también puede variar a lo largo de la misma curva de oferta.</p>
+        </div>
+        
+        <!-- Ejercicio 3: Desplazamientos vs. movimientos -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-arrows-alt-h' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Desplazamientos de la curva de oferta vs. movimientos a lo largo</h4>
+          <p>Análisis de los factores que causan desplazamientos de la curva completa versus movimientos a lo largo de la curva:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Tipo de Cambio</th>
+                <th>Causa</th>
+                <th>Efecto en la Curva</th>
+                <th>Ejemplo</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Movimiento a lo largo</td>
+                <td>Cambio en el precio del bien</td>
+                <td>Nos movemos sobre la misma curva</td>
+                <td>Precio del trigo aumenta</td>
+                <td>Aumenta cantidad ofrecida de trigo</td>
+              </tr>
+              <tr>
+                <td>Desplazamiento derecho</td>
+                <td>Disminución costos de producción</td>
+                <td>Curva completa se desplaza derecha</td>
+                <td>Nueva tecnología agrícola</td>
+                <td>Más trigo ofrecido a cada precio</td>
+              </tr>
+              <tr>
+                <td>Desplazamiento izquierdo</td>
+                <td>Aumento costos de producción</td>
+                <td>Curva completa se desplaza izquierda</td>
+                <td>Sequía afecta cultivos</td>
+                <td>Menos trigo ofrecido a cada precio</td>
+              </tr>
+              <tr>
+                <td>Desplazamiento derecho</td>
+                <td>Aumento número de productores</td>
+                <td>Curva completa se desplaza derecha</td>
+                <td>Nuevos agricultores en mercado</td>
+                <td>Mayor oferta agregada</td>
+              </tr>
+              <tr>
+                <td>Desplazamiento izquierdo</td>
+                <td>Expectativas de precios futuros</td>
+                <td>Curva completa se desplaza izquierda</td>
+                <td>Expectativa de mejores precios mañana</td>
+                <td>Reducción oferta actual</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Los movimientos a lo largo de la curva reflejan respuestas a cambios de precio (ley de la oferta), mientras los desplazamientos de la curva completa indican cambios en los determinantes subyacentes de la oferta. Esta distinción es crucial para el análisis económico.</p>
+        </div>
+        
+        <!-- Aplicaciones reales -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+          <ul style='padding-left:18px;line-height:1.6;'>
+            <li><strong>Política agrícola:</strong> Análisis de cómo subsidios a productores o mejoras tecnológicas desplazan la curva de oferta de alimentos.</li>
+            <li><strong>Mercado energético:</strong> Estudio de la oferta de petróleo y cómo responde a cambios de precio (elasticidad) y a descubrimientos de nuevos yacimientos (desplazamientos).</li>
+            <li><strong>Planificación empresarial:</strong> Decisiones de producción basadas en expectativas de precios futuros y costos de insumos.</li>
+            <li><strong>Política comercial:</strong> Análisis de cómo aranceles y cuotas de importación afectan la oferta doméstica de bienes.</li>
+            <li><strong>Mercado laboral:</strong> Estudio de la oferta de trabajo y cómo responde a cambios salariales (curva de oferta laboral).</li>
+            <li><strong>Bienes perecederos:</strong> Análisis de la oferta de productos agrícolas estacionales y su respuesta limitada a cambios de precio a corto plazo.</li>
+            <li><strong>Tecnología y manufactura:</strong> Impacto de la automatización y robótica en la capacidad de oferta industrial.</li>
+            <li><strong>Política ambiental:</strong> Efecto de regulaciones ambientales en los costos de producción y oferta de diferentes industrias.</li>
+          </ul>
+        </div>
+        
+        <!-- Bibliografía -->
+        <div class='bibliography-section' style='margin-top:20px;'>
+          <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+          <ul style='padding-left:18px;line-height:1.5;'>
+            <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
+            <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
+            <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
+            <li>Samuelson, P. A., & Nordhaus, W. D. (2009). Economics. McGraw-Hill.</li>
+            <li>Krugman, P., & Wells, R. (2021). Economics. Worth Publishers.</li>
+            <li>Case, K. E., Fair, R. C., & Oster, S. E. (2019). Principles of Economics. Pearson.</li>
+            <li>Khan Academy: Supply, demand and market equilibrium. www.khanacademy.org</li>
+          </ul>
+        </div>
+      </div>
+      `);"><b>3.3.5. Ley de la Oferta</b> <span class='emoji-small'>✅</span>
     </li>
         
-    <li>3.3.5. Ley de la oferta</li>
     <li>3.3.6. Ley de la demanda</li>
     <li>3.3.7. Punto de equilibrio de mercado</li>
   </ul><br>
