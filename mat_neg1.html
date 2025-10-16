@@ -3539,114 +3539,331 @@
             `)"><b>2.2. Ecuaciones con dos incógnitas de primer grado</b> <span class="emoji-small">✅</span>
             </li>
 
-              <li onclick="abrirModal('2.2.1. Gráfica de ecuaciones con dos incógnitas de segundo grado', `
+            <li onclick="abrirModal('2.2.1. Gráfica de Ecuaciones con Dos Incógnitas de Segundo Grado', `
               <hr><br>
-              <p><strong>Objetivo:</strong> Comprender y representar gráficamente ecuaciones cuadráticas con dos variables, identificando sus elementos característicos.</p>
-            
-              <h4>Definición</h4>
-              <ul>
-                <li>Una ecuación de segundo grado con dos incógnitas tiene la forma general: <span style='color: #e74c3c;'>ax² + bxy + cy² + dx + ey + f = 0</span></li>
-                <li>Representa una <span style='color: #3498db;'>sección cónica</span> en el plano cartesiano (parábola, elipse, hipérbola o casos degenerados).</li>
-                <li>La gráfica correspondiente es una curva en lugar de una línea recta.</li>
-              </ul>
-            
-          <h4>Elementos de la Gráfica</h4>
-          <svg width='400' height='300' viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'>
-            <!-- Ejes -->
-            <line x1='0' y1='150' x2='400' y2='150' stroke='black' stroke-width='1'/> <!-- Eje X -->
-            <line x1='200' y1='0' x2='200' y2='300' stroke='black' stroke-width='1'/> <!-- Eje Y -->
-          
-            <!-- Parábola -->
-            <path d='M100,250 Q200,50 300,250' fill='none' stroke='blue' stroke-width='2'/>
-          
-            <!-- Vértice -->
-            <circle cx='200' cy='50' r='5' fill='red'/>
-            <text x='210' y='50' font-size='12' fill='red'>Vértice</text>
-          
-            <!-- Eje de simetría -->
-            <line x1='200' y1='0' x2='200' y2='300' stroke='red' stroke-dasharray='5,5'/>
-            <text x='210' y='160' font-size='12' fill='red'>Eje de simetría</text>
-          
-            <!-- Corte con eje Y -->
-            <circle cx='200' cy='150' r='4' fill='green/>
-            <text x='210' y='150' font-size='12' fill='green'>Corte Y</text>
-          
-            <!-- Cortes con eje X -->
-            <circle cx='120' cy='150' r='4' fill='green'/>
-            <circle cx='280' cy='150' r='4' fill='green'/>
-            <text x='100' y='140' font-size='12' fill='green'>Cortes X</text>
-          
-            <!-- Foco (aproximado) -->
-            <circle cx='200' cy='100' r='5' fill='purple'/>
-            <text x='210' y='100' font-size='12' fill='purple'>Foco</text>
-          
-            <!-- Directriz -->
-            <line x1='100' y1='250' x2='300' y2='250' stroke='purple' stroke-dasharray='4,4'/>
-            <text x='310' y='250' font-size='12' fill='purple'>Directriz</text>
-          </svg>
-
-          <ul>
-            <li><strong>Vértice:</strong> Punto de máximo o mínimo de la curva.</li>
-            <li><strong>Eje de simetría:</strong> Línea que divide la gráfica en dos partes iguales.</li>
-            <li><strong>Puntos de corte con los ejes:</strong> Intersecciones con los ejes X e Y.</li>
-            <li><strong>Focos y directrices:</strong> Elementos característicos de las cónicas.</li>
-            <li><strong>Asíntotas:</strong> Líneas a las que la curva se aproxima indefinidamente (en hipérbolas).</li>
-          </ul>
-
-              <h4>Pasos para Graficar</h4>
-              <ol>
-                <li><span style='color: #e74c3c;'>Identificar el tipo de cónica</span> según los coeficientes de la ecuación.</li>
-                <li><span style='color: #e74c3c;'>Completar el cuadrado</span> para transformar la ecuación a su forma canónica.</li>
-                <li><span style='color: #e74c3c;'>Encontrar el centro o vértice</span> de la cónica.</li>
-                <li><span style='color: #e74c3c;'>Determinar los puntos de corte</span> con los ejes coordenados.</li>
-                <li><span style='color: #e74c3c;'>Calcular puntos adicionales</span> para precisar la forma de la curva.</li>
-                <li><span style='color: #e74c3c;'>Trazar la gráfica</span> uniendo los puntos de manera adecuada.</li>
-              </ol>
-            
-              <h4>Tipos de Cónicas y sus Ecuaciones</h4>
-              <ul>
-                <li><strong>Parábola:</strong> y = ax² + bx + c o x = ay² + by + c</li>
-                <li><strong>Elipse:</strong> (x-h)²/a² + (y-k)²/b² = 1</li>
-                <li><strong>Hipérbola:</strong> (x-h)²/a² - (y-k)²/b² = 1 o (y-k)²/b² - (x-h)²/a² = 1</li>
-                <li><strong>Circunferencia:</strong> (x-h)² + (y-k)² = r² (caso particular de elipse)</li>
-              </ul>
-            
-              <h4>Ejemplos de Gráficas</h4>
-              <ul>
-                <li><strong>Parábola:</strong> y = x² - 4x + 3 (abre hacia arriba, vértice en (2, -1))</li>
-                <li><strong>Elipse:</strong> x²/9 + y²/4 = 1 (centro en (0,0), eje mayor 6 unidades)</li>
-                <li><strong>Hipérbola:</strong> x²/4 - y²/9 = 1 (centro en (0,0), asíntotas y = ±(3/2)x)</li>
-                <li><strong>Circunferencia:</strong> x² + y² = 25 (centro en (0,0), radio 5)</li>
-                <li><strong>Parábola horizontal:</strong> x = y² - 2y - 3 (abre hacia la derecha)</li>
-              </ul>
-            
-              <h4>Aplicaciones</h4>
-              <ul>
-                <li>Diseño de antenas parabólicas y espejos.</li>
-                <li>Trayectorias de proyectiles (parábolas).</li>
-                <li>Órbitas planetarias (elipses).</li>
-                <li>Sistemas de navegación (hipérbolas).</li>
-                <li>Arquitectura y diseño de estructuras.</li>
-              </ul>
-            
-              <h4>Herramientas de Graficación</h4>
-              <ul>
-                <li>Software especializado: GeoGebra, Desmos, Grapher.</li>
-                <li>Calculadoras gráficas Texas Instruments, Casio.</li>
-                <li>Librerías de programación: Matplotlib (Python), ggplot2 (R).</li>
-                <li>Aplicaciones web para visualización matemática.</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Stewart, J. (2012). <em>Cálculo de una variable: Trascendentes tempranas</em>. Cengage Learning.</li>
-                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
-                <li>Lehmann, C. H. (2013). <em>Geometría analítica</em>. Limusa.</li>
-                <li>Simmons, G. F. (2016). <em>Cálculo con geometría analítica</em>. McGraw-Hill.</li>
-              </ul>
-            `)">2.2.1. Gráfica de ecuaciones con dos incógnitas de segundo grado <span class="emoji-small">✅</span>
-              </li>
-
+              <div class='math-module'>
+                
+                <!-- Tiempo estimado -->
+                <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+                  <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 25 minutos'>
+                  <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+                  <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
+                  <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>25 min</text>
+                  </svg>
+                  <span style='font-weight:bold;'>Tiempo estimado: 25 minutos</span>
+                </div>
+                
+                <!-- Objetivo -->
+                <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+                  <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+                  <span><strong>Objetivo:</strong> Comprender y graficar ecuaciones cuadráticas con dos variables, identificar las cónicas resultantes (parábolas, elipses, hipérbolas y circunferencias), determinar sus elementos característicos (vértices, focos, directrices) y aplicar métodos sistemáticos para analizar y representar estas curvas en el plano cartesiano.</span>
+                </div>
+                
+                <!-- Idea principal -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+                  <p>Las ecuaciones de segundo grado con dos incógnitas (x², y², xy) representan curvas cónicas en el plano cartesiano. Estas curvas -parábolas, elipses, circunferencias e hipérbolas- surgen de cortar un cono doble con un plano y tienen propiedades geométricas únicas determinadas por los coeficientes de la ecuación general Ax² + Bxy + Cy² + Dx + Ey + F = 0. El análisis del discriminante B² - 4AC permite clasificar la cónica resultante.</p>
+                </div>
+                
+                <!-- Ejercicio 1: Clasificación de cónicas -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Clasificación de ecuaciones de segundo grado</h4>
+                  <p>Análisis del discriminante B² - 4AC para determinar el tipo de cónica:</p>
+                  <table class='math-table'>
+                    <thead>
+                      <tr>
+                        <th>Ecuación</th>
+                        <th>Coeficientes</th>
+                        <th>Discriminante</th>
+                        <th>Tipo de Cónica</th>
+                        <th>Características</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>x² + y² = 25</td>
+                        <td>A=1, B=0, C=1</td>
+                        <td>0² - 4(1)(1) = -4</td>
+                        <td>Circunferencia</td>
+                        <td>B=0 y A=C</td>
+                      </tr>
+                      <tr>
+                        <td>x²/9 + y²/4 = 1</td>
+                        <td>A=1/9, B=0, C=1/4</td>
+                        <td>0² - 4(1/9)(1/4) = -1/9</td>
+                        <td>Elipse</td>
+                        <td>B=0, A y C mismo signo</td>
+                      </tr>
+                      <tr>
+                        <td>y = x² - 4x + 3</td>
+                        <td>A=1, B=0, C=0</td>
+                        <td>0² - 4(1)(0) = 0</td>
+                        <td>Parábola</td>
+                        <td>Un término cuadrático</td>
+                      </tr>
+                      <tr>
+                        <td>x²/4 - y²/9 = 1</td>
+                        <td>A=1/4, B=0, C=-1/9</td>
+                        <td>0² - 4(1/4)(-1/9) = 1/9</td>
+                        <td>Hipérbola</td>
+                        <td>A y C signos opuestos</td>
+                      </tr>
+                      <tr>
+                        <td>xy = 6</td>
+                        <td>A=0, B=1, C=0</td>
+                        <td>1² - 4(0)(0) = 1</td>
+                        <td>Hipérbola rotada</td>
+                        <td>Término xy presente</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El discriminante determina la naturaleza de la cónica: negativo para elipses/circunferencias, cero para parábolas, positivo para hipérbolas. La presencia del término xy indica rotación.</p>
+                </div>
+                
+                <!-- Gráfica 1: Comparación de cónicas -->
+                <div class='graph-container' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Las cuatro cónicas fundamentales</h4>
+                  <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                    <!-- Sistema de coordenadas -->
+                    <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    
+                    <!-- Cuadrante 1: Circunferencia -->
+                    <circle cx='125' cy='100' r='25' stroke='var(--apple-vibrant-blue)' stroke-width='2' fill='none'></circle>
+                    <text x='125' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>x² + y² = 25</text>
+                    <text x='80' y='85' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Circunferencia</text>
+                    
+                    <!-- Cuadrante 2: Elipse -->
+                    <ellipse cx='275' cy='100' rx='30' ry='20' stroke='var(--apple-vibrant-green)' stroke-width='2' fill='none'></ellipse>
+                    <text x='275' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>x²/9 + y²/4 = 1</text>
+                    <text x='320' y='85' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>Elipse</text>
+                    
+                    <!-- Cuadrante 3: Parábola -->
+                    <path d='M 100,200 Q 125,150 150,200' stroke='var(--apple-vibrant-orange)' stroke-width='2' fill='none'></path>
+                    <path d='M 100,250 Q 125,300 150,250' stroke='var(--apple-vibrant-orange)' stroke-width='2' fill='none'></path>
+                    <text x='125' y='280' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>y = x²</text>
+                    <text x='80' y='230' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)'>Parábola</text>
+                    
+                    <!-- Cuadrante 4: Hipérbola -->
+                    <path d='M 250,150 L 350,50' stroke='var(--apple-vibrant-red)' stroke-width='2' fill='none'></path>
+                    <path d='M 250,150 L 350,250' stroke='var(--apple-vibrant-red)' stroke-width='2' fill='none'></path>
+                    <path d='M 250,200 L 150,50' stroke='var(--apple-vibrant-red)' stroke-width='2' fill='none'></path>
+                    <path d='M 250,200 L 150,350' stroke='var(--apple-vibrant-red)' stroke-width='2' fill='none'></path>
+                    <text x='275' y='280' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>x² - y² = 1</text>
+                    <text x='320' y='230' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-red)'>Hipérbola</text>
+                    
+                    <!-- Líneas divisorias -->
+                    <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+                    <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+                    
+                    <!-- Título -->
+                    <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Las Cuatro Cónicas Fundamentales</text>
+                  </svg>
+                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cada cónica tiene forma distintiva: circunferencia (distancia constante), elipse (suma de distancias constante), parábola (distancia igual a directriz), hipérbola (diferencia de distancias constante).</p>
+                </div>
+                
+                <!-- Ejercicio 2: Graficación paso a paso -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Graficación de parábola y = x² - 4x + 3</h4>
+                  <p>Procedimiento sistemático para graficar una ecuación cuadrática:</p>
+                  <table class='math-table'>
+                    <thead>
+                      <tr>
+                        <th>Paso</th>
+                        <th>Procedimiento</th>
+                        <th>Cálculo</th>
+                        <th>Resultado</th>
+                        <th>Propósito</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Encontrar vértice</td>
+                        <td>x = -b/2a = 4/2 = 2<br>y = (2)² - 4(2) + 3 = -1</td>
+                        <td>V(2, -1)</td>
+                        <td>Punto máximo/mínimo</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Intersección con eje Y</td>
+                        <td>x = 0 → y = 3</td>
+                        <td>(0, 3)</td>
+                        <td>Punto de corte con Y</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Intersección con eje X</td>
+                        <td>y = 0 → x² - 4x + 3 = 0<br>x = 1, x = 3</td>
+                        <td>(1, 0), (3, 0)</td>
+                        <td>Raíces de la ecuación</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Puntos adicionales</td>
+                        <td>x = -1 → y = 8<br>x = 4 → y = 3</td>
+                        <td>(-1, 8), (4, 3)</td>
+                        <td>Forma de la curva</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Eje de simetría</td>
+                        <td>x = 2</td>
+                        <td>Línea vertical</td>
+                        <td>Simetría de la parábola</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El vértice proporciona el punto extremo, las intersecciones con ejes dan puntos clave, y puntos adicionales definen la curvatura. La parábola es simétrica respecto al eje vertical que pasa por el vértice.</p>
+                </div>
+                
+                <!-- Gráfica 2: Parábola detallada -->
+                <div class='graph-container' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Parábola y = x² - 4x + 3 con elementos</h4>
+                  <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                    <!-- Ejes coordenados -->
+                    <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                    <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                    
+                    <!-- Escalas -->
+                    <line x1='150' y1='245' x2='150' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    <text x='150' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                    <line x1='250' y1='245' x2='250' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    <text x='250' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                    <line x1='100' y1='245' x2='100' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    <text x='100' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>-1</text>
+                    
+                    <line x1='195' y1='200' x2='205' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    <text x='185' y='203' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                    <line x1='195' y1='150' x2='205' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                    <text x='185' y='153' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                    
+                    <!-- Parábola y = x² - 4x + 3 -->
+                    <path d='M 50,150 
+                             Q 125,100 150,150 
+                             Q 175,200 200,225 
+                             Q 225,200 250,150 
+                             Q 275,100 350,150' 
+                          stroke='var(--apple-vibrant-blue)' 
+                          stroke-width='3' 
+                          fill='none' />
+                    
+                    <!-- Vértice -->
+                    <circle cx='200' cy='225' r='4' fill='var(--apple-vibrant-red)'></circle>
+                    <text x='210' y='220' font-size='12' fill='var(--apple-vibrant-red)'>V(2,-1)</text>
+                    
+                    <!-- Intersecciones con X -->
+                    <circle cx='150' cy='250' r='4' fill='var(--apple-vibrant-green)'></circle>
+                    <text x='140' y='240' font-size='12' fill='var(--apple-vibrant-green)'>(1,0)</text>
+                    <circle cx='250' cy='250' r='4' fill='var(--apple-vibrant-green)'></circle>
+                    <text x='260' y='240' font-size='12' fill='var(--apple-vibrant-green)'>(3,0)</text>
+                    
+                    <!-- Intersección con Y -->
+                    <circle cx='100' cy='150' r='4' fill='var(--apple-vibrant-orange)'></circle>
+                    <text x='90' y='140' font-size='12' fill='var(--apple-vibrant-orange)'>(0,3)</text>
+                    
+                    <!-- Eje de simetría -->
+                    <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-vibrant-purple)' stroke-width='1' stroke-dasharray='5,3'></line>
+                    <text x='210' y='100' font-size='12' fill='var(--apple-vibrant-purple)'>x = 2</text>
+                    
+                    <!-- Puntos adicionales -->
+                    <circle cx='50' cy='150' r='3' fill='var(--apple-dark-gray)'></circle>
+                    <circle cx='350' cy='150' r='3' fill='var(--apple-dark-gray)'></circle>
+                    
+                    <!-- Etiquetas de ejes -->
+                    <text x='200' y='290' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                    <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+                    
+                    <!-- Ecuación -->
+                    <text x='300' y='100' font-size='14' fill='var(--apple-dark-gray)'>y = x² - 4x + 3</text>
+                  </svg>
+                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La parábola abre hacia arriba (coeficiente de x² positivo), tiene vértice en (2,-1), corta el eje X en x=1 y x=3, y es simétrica respecto a la línea x=2. Los puntos identificados permiten trazar la curva con precisión.</p>
+                </div>
+                
+                <!-- Ejercicio 3: Elipse y hipérbola -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-shapes' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Elementos de elipses e hipérbolas</h4>
+                  <p>Identificación de elementos característicos en ecuaciones canónicas:</p>
+                  <table class='math-table'>
+                    <thead>
+                      <tr>
+                        <th>Cónica</th>
+                        <th>Ecuación</th>
+                        <th>Centro</th>
+                        <th>Vértices</th>
+                        <th>Focos</th>
+                        <th>Excentricidad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Elipse</td>
+                        <td>x²/16 + y²/9 = 1</td>
+                        <td>(0,0)</td>
+                        <td>(±4,0), (0,±3)</td>
+                        <td>(±√7, 0)</td>
+                        <td>√7/4 ≈ 0.66</td>
+                      </tr>
+                      <tr>
+                        <td>Elipse</td>
+                        <td>(x-1)²/9 + (y+2)²/4 = 1</td>
+                        <td>(1,-2)</td>
+                        <td>(4,-2), (-2,-2)<br>(1,0), (1,-4)</td>
+                        <td>(1±√5, -2)</td>
+                        <td>√5/3 ≈ 0.75</td>
+                      </tr>
+                      <tr>
+                        <td>Hipérbola</td>
+                        <td>x²/9 - y²/4 = 1</td>
+                        <td>(0,0)</td>
+                        <td>(±3,0)</td>
+                        <td>(±√13, 0)</td>
+                        <td>√13/3 ≈ 1.20</td>
+                      </tr>
+                      <tr>
+                        <td>Hipérbola</td>
+                        <td>y²/16 - x²/9 = 1</td>
+                        <td>(0,0)</td>
+                        <td>(0,±4)</td>
+                        <td>(0,±5)</td>
+                        <td>5/4 = 1.25</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las elipses tienen excentricidad menor que 1, las hipérbolas mayor que 1. El centro determina la traslación, los vértices están en los extremos de los ejes, y los focos cumplen propiedades de distancia específicas para cada cónica.</p>
+                </div>
+                
+                <!-- Aplicaciones reales -->
+                <div class='content-section' style='margin-bottom:20px;'>
+                  <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+                  <ul style='padding-left:18px;line-height:1.6;'>
+                    <li><strong>Óptica y astronomía:</strong> Las parábolas se usan en telescopios reflectores y antenas parabólicas para concentrar señales en el foco.</li>
+                    <li><strong>Ingeniería civil:</strong> Arcos parabólicos en puentes y estructuras distribuyen eficientemente las cargas.</li>
+                    <li><strong>Mecánica orbital:</strong> Las órbitas planetarias son elípticas (primera ley de Kepler), con el sol en uno de los focos.</li>
+                    <li><strong>Arquitectura:</strong> Cúpulas elípticas y estructuras hiperbólicas en edificios emblemáticos.</li>
+                    <li><strong>Navegación:</strong> Sistemas de navegación LORAN usan propiedades hiperbólicas para determinar posición.</li>
+                    <li><strong>Diseño automotriz:</strong> Faros parabólicos en vehículos para direccionar la luz eficientemente.</li>
+                    <li><strong>Acústica:</strong> Galerías de susurro con paredes elípticas que concentran el sonido.</li>
+                    <li><strong>Economía:</strong> Curvas de oferta y demanda que siguen comportamientos parabólicos.</li>
+                  </ul>
+                </div>
+                
+                <!-- Bibliografía -->
+                <div class='bibliography-section' style='margin-top:20px;'>
+                  <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+                  <ul style='padding-left:18px;line-height:1.5;'>
+                    <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+                    <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+                    <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+                    <li>Lehmann, C. H. (2019). Geometría Analítica. Limusa.</li>
+                    <li>Anton, H., Bivens, I., & Davis, S. (2020). Cálculo: Trascendentes Tempranas. Limusa.</li>
+                    <li>Khan Academy: Secciones Cónicas. www.khanacademy.org</li>
+                  </ul>
+                </div>
+              </div>
+              `);"><b>2.2.1. Gráfica de Ecuaciones con Dos Incógnitas de Segundo Grado</b> <span class='emoji-small'>✅</span>
+            </li>
+              
             <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
               <hr><br>
               <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
