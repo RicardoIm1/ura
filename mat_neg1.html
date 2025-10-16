@@ -5669,10 +5669,734 @@
       `);"><b>3.3.5. Ley de la Oferta</b> <span class='emoji-small'>✅</span>
     </li>
         
-    <li>3.3.6. Ley de la demanda</li>
-    <li>3.3.7. Punto de equilibrio de mercado</li>
+    <li onclick="abrirModal('3.3.6. Ley de la Demanda', `
+      <hr><br>
+      <div class='math-module'>
+        
+        <!-- Tiempo estimado -->
+        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 22 minutos'>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='5.65487' transform='rotate(-90 10 10)'></circle>
+          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>22 min</text>
+          </svg>
+          <span style='font-weight:bold;'>Tiempo estimado: 22 minutos</span>
+        </div>
+        
+        <!-- Objetivo -->
+        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+          <span><strong>Objetivo:</strong> Comprender la ley de la demanda en microeconomía, modelar funciones de demanda lineales y no lineales, analizar los determinantes de la demanda, calcular la elasticidad-precio de la demanda, y aplicar estos conceptos para predecir el comportamiento de consumidores en diferentes contextos de mercado.</span>
+        </div>
+        
+        <!-- Idea principal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+          <p>La ley de la demanda establece que, manteniendo constantes los demás factores (ceteris paribus), existe una relación inversa entre el precio de un bien y la cantidad que los consumidores están dispuestos a demandar. A mayor precio, menor cantidad demandada debido al efecto sustitución y efecto ingreso. Esta relación se representa mediante una curva de demanda con pendiente negativa, que captura cómo los consumidores ajustan sus decisiones de compra ante cambios en precios, ingresos, gustos y precios de bienes relacionados.</p>
+        </div>
+        
+        <!-- Ejercicio 1: Función de demanda lineal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Función de demanda lineal Qd = 100 - 2P</h4>
+          <p>Análisis de una función de demanda lineal donde Qd representa la cantidad demandada y P el precio:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Precio (P)</th>
+                <th>Cantidad Demandada (Qd)</th>
+                <th>Gasto Total</th>
+                <th>Precio Máximo</th>
+                <th>Comportamiento del Consumidor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$0</td>
+                <td>100 unidades</td>
+                <td>$0</td>
+                <td>Bien libre</td>
+                <td>Demanda máxima por precio cero</td>
+              </tr>
+              <tr>
+                <td>$10</td>
+                <td>80 unidades</td>
+                <td>$800</td>
+                <td>Accesible</td>
+                <td>Alta demanda por precio bajo</td>
+              </tr>
+              <tr>
+                <td>$25</td>
+                <td>50 unidades</td>
+                <td>$1,250</td>
+                <td>Punto medio</td>
+                <td>Demanda moderada</td>
+              </tr>
+              <tr>
+                <td>$40</td>
+                <td>20 unidades</td>
+                <td>$800</td>
+                <td>Precio alto</td>
+                <td>Solo consumidores con alto poder adquisitivo</td>
+              </tr>
+              <tr>
+                <td>$50</td>
+                <td>0 unidades</td>
+                <td>$0</td>
+                <td>Precio de reserva</td>
+                <td>Demanda cero, precio prohibitivo</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La cantidad demandada disminuye linealmente con el precio. El gasto total sigue un patrón de parábola invertida, aumentando hasta un máximo y luego disminuyendo. El precio de $50 representa el punto donde la demanda se hace cero.</p>
+        </div>
+        
+        <!-- Gráfica 1: Curva de demanda lineal -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Curva de demanda lineal Qd = 100 - 2P</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Marcas del eje X (Cantidad) -->
+            <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='100' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>25</text>
+            <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='150' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>50</text>
+            <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='200' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>75</text>
+            <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='250' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>100</text>
+            
+            <!-- Marcas del eje Y (Precio $) -->
+            <line x1='45' y1='250' x2='55' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='255' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$10</text>
+            <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$20</text>
+            <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$30</text>
+            <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$40</text>
+            <line x1='45' y1='50' x2='55' y2='50' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='55' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$50</text>
+            
+            <!-- Curva de demanda -->
+            <line x1='250' y1='50' x2='50' y2='300' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+            
+            <!-- Puntos de datos -->
+            <circle cx='250' cy='50' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='200' cy='100' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='150' cy='150' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='100' cy='200' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='50' cy='250' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            
+            <!-- Flechas de movimiento -->
+            <path d='M 180,120 L 170,130 L 180,140' fill='var(--apple-vibrant-red)'></path>
+            <text x='160' y='135' font-size='12' fill='var(--apple-vibrant-red)'>Aumento de precio</text>
+            
+            <path d='M 120,180 L 110,170 L 100,180' fill='var(--apple-vibrant-red)'></path>
+            <text x='80' y='175' font-size='12' fill='var(--apple-vibrant-red)'>Disminución de cantidad</text>
+            
+            <!-- Punto de gasto máximo -->
+            <circle cx='150' cy='150' r='5' fill='var(--apple-vibrant-green)'></circle>
+            <text x='170' y='145' font-size='12' fill='var(--apple-vibrant-green)'>Gasto máximo</text>
+            
+            <!-- Etiquetas de ejes -->
+            <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Cantidad Demandada (Qd)</text>
+            <text x='15' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,175)'>Precio (P)</text>
+            
+            <!-- Ecuación -->
+            <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>Qd = 100 - 2P</text>
+            
+            <!-- Zona de precios prohibitivos -->
+            <polygon points='50,50 50,100 100,100 100,50' fill='var(--apple-light-red)' fill-opacity='0.2' stroke='none'></polygon>
+            <text x='75' y='80' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Precios altos</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La curva de demanda tiene pendiente negativa, reflejando la ley de la demanda. El punto verde marca donde el gasto total es máximo (P=$25, Qd=50). A precios muy altos (zona roja), la demanda se reduce significativamente.</p>
+        </div>
+        
+        <!-- Ejercicio 2: Elasticidad de la demanda -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Cálculo de elasticidad-precio de la demanda</h4>
+          <p>La elasticidad-precio de la demanda mide la sensibilidad de la cantidad demandada ante cambios en el precio:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Tipo de Bien</th>
+                <th>Cambio de Precio</th>
+                <th>Cambio de Cantidad</th>
+                <th>Elasticidad (Ed)</th>
+                <th>Tipo de Demanda</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bien de lujo</td>
+                <td>P: $100 → $120 (+20%)</td>
+                <td>Q: 50 → 30 (-40%)</td>
+                <td>|-40%/20%| = 2.0</td>
+                <td>Elástica (Ed > 1)</td>
+                <td>Muy sensible al precio</td>
+              </tr>
+              <tr>
+                <td>Bien normal</td>
+                <td>P: $10 → $11 (+10%)</td>
+                <td>Q: 100 → 95 (-5%)</td>
+                <td>|-5%/10%| = 0.5</td>
+                <td>Inelástica (Ed < 1)</td>
+                <td>Poca sensibilidad al precio</td>
+              </tr>
+              <tr>
+                <td>Bien específico</td>
+                <td>P: $5 → $10 (+100%)</td>
+                <td>Q: 80 → 40 (-50%)</td>
+                <td>|-50%/100%| = 0.5</td>
+                <td>Inelástica</td>
+                <td>Cambio proporcional menor</td>
+              </tr>
+              <tr>
+                <td>Medicina vital</td>
+                <td>P: $20 → $40 (+100%)</td>
+                <td>Q: 100 → 100 (0%)</td>
+                <td>|0%/100%| = 0</td>
+                <td>Perfectamente inelástica</td>
+                <td>Demanda completamente insensible</td>
+              </tr>
+              <tr>
+                <td>Bien homogéneo</td>
+                <td>P: $1 → $1.01 (+1%)</td>
+                <td>Q: 1000 → 0 (-100%)</td>
+                <td>|-100%/1%| = 100</td>
+                <td>Perfectamente elástica</td>
+                <td>Demanda infinitamente sensible</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La elasticidad depende de la disponibilidad de sustitutos, la proporción del gasto en el bien, y si el bien es de necesidad o lujo. Bienes con muchos sustitutos tienden a tener demanda más elástica.</p>
+        </div>
+        
+        <!-- Gráfica 2: Tipos de elasticidad de demanda -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Diferentes grados de elasticidad-precio de la demanda</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Sistema de coordenadas para los cinco casos -->
+            
+            <!-- Caso 1: Demanda elástica (Ed > 1) -->
+            <g transform='translate(0,0)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='30' x2='80' y2='80' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Elástica (Ed > 1)</text>
+            </g>
+            
+            <!-- Caso 2: Demanda inelástica (Ed < 1) -->
+            <g transform='translate(100,0)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='40' x2='80' y2='80' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Inelástica (Ed < 1)</text>
+            </g>
+            
+            <!-- Caso 3: Elasticidad unitaria (Ed = 1) -->
+            <g transform='translate(200,0)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='35' x2='80' y2='80' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Unitaria (Ed = 1)</text>
+            </g>
+            
+            <!-- Caso 4: Perfectamente elástica (Ed = ∞) -->
+            <g transform='translate(0,120)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='50' x2='80' y2='50' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Perfectamente elástica</text>
+            </g>
+            
+            <!-- Caso 5: Perfectamente inelástica (Ed = 0) -->
+            <g transform='translate(100,120)'>
+              <line x1='30' y1='80' x2='80' y2='80' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+              <line x1='30' y1='80' x2='30' y2='30' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+              <text x='55' y='90' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Perfectamente inelástica</text>
+            </g>
+            
+            <!-- Título general -->
+            <text x='200' y='180' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Grados de Elasticidad-Precio de la Demanda</text>
+            
+            <!-- Explicación de ejes -->
+            <text x='200' y='200' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>Eje X: Cantidad | Eje Y: Precio</text>
+            
+            <!-- Leyenda explicativa -->
+            <rect x='220' y='220' width='160' height='100' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <text x='230' y='235' font-size='10' fill='var(--apple-dark-gray)'><strong>Factores que afectan la elasticidad:</strong></text>
+            <text x='230' y='250' font-size='9' fill='var(--apple-dark-gray)'>• Disponibilidad de sustitutos</text>
+            <text x='230' y='260' font-size='9' fill='var(--apple-dark-gray)'>• Proporción del ingreso gastada</text>
+            <text x='230' y='270' font-size='9' fill='var(--apple-dark-gray)'>• Naturaleza del bien (necesidad/lujo)</text>
+            <text x='230' y='280' font-size='9' fill='var(--apple-dark-gray)'>• Horizonte temporal</text>
+            <text x='230' y='290' font-size='9' fill='var(--apple-dark-gray)'>• Definición del mercado</text>
+            <text x='230' y='300' font-size='9' fill='var(--apple-dark-gray)'>• Hábitos de consumo</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La pendiente de la curva de demanda no es igual a su elasticidad. Una demanda más horizontal indica mayor elasticidad, mientras una más vertical indica menor elasticidad. La elasticidad también varía a lo largo de una curva de demanda lineal.</p>
+        </div>
+        
+        <!-- Ejercicio 3: Efecto ingreso y efecto sustitución -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-exchange-alt' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Efecto ingreso y efecto sustitución</h4>
+          <p>Descomposición de la respuesta del consumidor ante un cambio de precio en dos efectos:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Escenario</th>
+                <th>Efecto Sustitución</th>
+                <th>Efecto Ingreso</th>
+                <th>Efecto Total</th>
+                <th>Ejemplo Práctico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Precio disminuye</td>
+                <td>Bien se vuelve relativamente más barato → Aumenta cantidad demandada</td>
+                <td>Poder adquisitivo aumenta → Puede aumentar o disminuir demanda</td>
+                <td>Aumento neto en cantidad demandada</td>
+                <td>Precio de smartphones baja: se compran más (sustitución) y con el dinero sobrante se puede comprar más (ingreso)</td>
+              </tr>
+              <tr>
+                <td>Precio aumenta</td>
+                <td>Bien se vuelve relativamente más caro → Disminuye cantidad demandada</td>
+                <td>Poder adquisitivo disminuye → Efecto ambiguo</td>
+                <td>Disminución neta en cantidad demandada</td>
+                <td>Precio de gasolina sube: se usa menos (sustitución) y con menos dinero se compra menos de todo (ingreso)</td>
+              </tr>
+              <tr>
+                <td>Bien normal</td>
+                <td>Mismo sentido que efecto total</td>
+                <td>Refuerza efecto sustitución</td>
+                <td>Ley de demanda se cumple</td>
+                <td>Alimentos, ropa, entretenimiento</td>
+              </tr>
+              <tr>
+                <td>Bien inferior</td>
+                <td>Mismo sentido que efecto total</td>
+                <td>Contrarresta efecto sustitución</td>
+                <td>Ley de demanda se cumple (pero menos)</td>
+                <td>Transporte público, productos genéricos</td>
+              </tr>
+              <tr>
+                <td>Bien Giffen</td>
+                <td>Mismo sentido que efecto total</td>
+                <td>Domina sobre efecto sustitución</td>
+                <td>Ley de demanda NO se cumple</td>
+                <td>Alimentos básicos en situaciones extremas de pobreza</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El efecto sustitución siempre opera en la dirección opuesta al cambio de precio, mientras el efecto ingreso puede reforzar o contrarrestar este efecto dependiendo de si el bien es normal o inferior. Los bienes Giffen son casos teóricos raros donde el efecto ingreso domina.</p>
+        </div>
+        
+        <!-- Aplicaciones reales -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+          <ul style='padding-left:18px;line-height:1.6;'>
+            <li><strong>Política de precios:</strong> Las empresas utilizan el conocimiento de la elasticidad para optimizar precios y maximizar ingresos.</li>
+            <li><strong>Política fiscal:</strong> Los gobiernos analizan la elasticidad para predecir la recaudación de impuestos y diseñar impuestos eficientes.</li>
+            <li><strong>Marketing y publicidad:</strong> Estrategias para hacer los productos menos elásticos mediante diferenciación y creación de lealtad de marca.</li>
+            <li><strong>Política agrícola:</strong> Análisis de la demanda de productos agrícolas, que suele ser inelástica, para diseñar programas de apoyo.</li>
+            <li><strong>Salud pública:</strong> Estudio de la demanda de tabaco, alcohol y alimentos no saludables para diseñar políticas de impuestos y regulación.</li>
+            <li><strong>Transporte urbano:</strong> Análisis de la demanda de transporte público y privado para planificar infraestructura y tarifas.</li>
+            <li><strong>Energía y medio ambiente:</strong> Estudio de la demanda de energía para diseñar políticas de conservación e impuestos al carbono.</li>
+            <li><strong>Comercio internacional:</strong> Análisis de cómo cambios en tipos de cambio afectan la demanda de exportaciones e importaciones.</li>
+          </ul>
+        </div>
+        
+        <!-- Bibliografía -->
+        <div class='bibliography-section' style='margin-top:20px;'>
+          <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+          <ul style='padding-left:18px;line-height:1.5;'>
+            <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
+            <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
+            <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
+            <li>Samuelson, P. A., & Nordhaus, W. D. (2009). Economics. McGraw-Hill.</li>
+            <li>Frank, R. H., & Cartwright, E. (2020). Microeconomics and Behavior. McGraw-Hill.</li>
+            <li>Perloff, J. M. (2020). Microeconomics. Pearson.</li>
+            <li>Khan Academy: Elasticity of demand and supply. www.khanacademy.org</li>
+          </ul>
+        </div>
+      </div>
+      `);"><b>3.3.6. Ley de la Demanda</b> <span class='emoji-small'>✅</span>
+    </li>
+        
+    <li onclick="abrirModal('3.3.7. Punto de Equilibrio de Mercado', `
+      <hr><br>
+      <div class='math-module'>
+        
+        <!-- Tiempo estimado -->
+        <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+          <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 25 minutos'>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+          <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
+          <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>25 min</text>
+          </svg>
+          <span style='font-weight:bold;'>Tiempo estimado: 25 minutos</span>
+        </div>
+        
+        <!-- Objetivo -->
+        <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+          <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+          <span><strong>Objetivo:</strong> Comprender el concepto de equilibrio de mercado en microeconomía, determinar analítica y gráficamente el precio y cantidad de equilibrio, analizar los efectos de excedentes y escasez, y aplicar el modelo de oferta y demanda para predecir cambios en mercados reales ante diferentes perturbaciones.</span>
+        </div>
+        
+        <!-- Idea principal -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+          <p>El equilibrio de mercado ocurre cuando la cantidad demandada por los consumidores iguala a la cantidad ofrecida por los productores a un precio determinado. Este punto representa una situación estable donde no hay presión para que el precio cambie. El equilibrio se alcanza mediante el mecanismo de precios, que actúa como señal que coordina las decisiones de compradores y vendedores. Cuando el mercado está en desequilibrio, surgen excedentes (exceso de oferta) o escasez (exceso de demanda), creando fuerzas que empujan al mercado hacia el equilibrio.</p>
+        </div>
+        
+        <!-- Ejercicio 1: Determinación del equilibrio -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Cálculo analítico del equilibrio de mercado</h4>
+          <p>Determinación del precio y cantidad de equilibrio para un mercado con funciones lineales:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Concepto</th>
+                <th>Función</th>
+                <th>Procedimiento</th>
+                <th>Resultado</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Función de Demanda</td>
+                <td>Qd = 100 - 2P</td>
+                <td>Relación inversa precio-cantidad</td>
+                <td>Pendiente negativa</td>
+                <td>Ley de la demanda</td>
+              </tr>
+              <tr>
+                <td>Función de Oferta</td>
+                <td>Qs = 20 + 3P</td>
+                <td>Relación directa precio-cantidad</td>
+                <td>Pendiente positiva</td>
+                <td>Ley de la oferta</td>
+              </tr>
+              <tr>
+                <td>Condición de Equilibrio</td>
+                <td>Qd = Qs</td>
+                <td>100 - 2P = 20 + 3P</td>
+                <td>80 = 5P</td>
+                <td>Igualar oferta y demanda</td>
+              </tr>
+              <tr>
+                <td>Precio de Equilibrio</td>
+                <td>P* = 80/5</td>
+                <td>P* = 16</td>
+                <td>$16 por unidad</td>
+                <td>Precio que vacía el mercado</td>
+              </tr>
+              <tr>
+                <td>Cantidad de Equilibrio</td>
+                <td>Q* = 100 - 2(16)</td>
+                <td>Q* = 68 unidades</td>
+                <td>68 unidades</td>
+                <td>Cantidad transada en equilibrio</td>
+              </tr>
+              <tr>
+                <td>Verificación</td>
+                <td>Qs = 20 + 3(16)</td>
+                <td>Qs = 68 unidades</td>
+                <td>Qd = Qs = 68</td>
+                <td>Equilibrio confirmado</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El equilibrio se encuentra igualando las funciones de oferta y demanda. El precio de equilibrio ($16) y la cantidad de equilibrio (68 unidades) representan el único punto donde las intenciones de compradores y vendedores coinciden completamente.</p>
+        </div>
+        
+        <!-- Gráfica 1: Equilibrio de mercado básico -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Equilibrio de mercado Qd = 100 - 2P, Qs = 20 + 3P</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Marcas del eje X (Cantidad) -->
+            <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='100' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+            <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='150' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+            <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='200' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>60</text>
+            <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='250' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>80</text>
+            <line x1='300' y1='295' x2='300' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='300' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>100</text>
+            
+            <!-- Marcas del eje Y (Precio $) -->
+            <line x1='45' y1='250' x2='55' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='255' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$10</text>
+            <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$20</text>
+            <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$30</text>
+            <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+            <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>$40</text>
+            
+            <!-- Curva de demanda Qd = 100 - 2P -->
+            <line x1='250' y1='50' x2='50' y2='300' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+            
+            <!-- Curva de oferta Qs = 20 + 3P -->
+            <line x1='50' y1='233' x2='350' y2='67' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
+            
+            <!-- Punto de equilibrio -->
+            <circle cx='184' cy='184' r='5' fill='var(--apple-vibrant-green)'></circle>
+            
+            <!-- Líneas de referencia al equilibrio -->
+            <line x1='184' y1='184' x2='184' y2='300' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            <line x1='50' y1='184' x2='184' y2='184' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            
+            <!-- Etiquetas de las curvas -->
+            <text x='300' y='100' font-size='12' fill='var(--apple-vibrant-blue)'>Demanda: Qd = 100 - 2P</text>
+            <text x='150' y='80' font-size='12' fill='var(--apple-vibrant-orange)'>Oferta: Qs = 20 + 3P</text>
+            
+            <!-- Etiqueta del punto equilibrio -->
+            <text x='200' y='170' font-size='12' fill='var(--apple-vibrant-green)'>Equilibrio: P*=$16, Q*=68</text>
+            
+            <!-- Excedente del consumidor -->
+            <polygon points='50,184 184,184 50,50' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='none'></polygon>
+            <text x='100' y='150' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)' transform='rotate(-45 100,150)'>Excedente Consumidor</text>
+            
+            <!-- Excedente del productor -->
+            <polygon points='50,184 184,184 50,233' fill='var(--apple-light-orange)' fill-opacity='0.3' stroke='none'></polygon>
+            <text x='100' y='220' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)' transform='rotate(45 100,220)'>Excedente Productor</text>
+            
+            <!-- Etiquetas de ejes -->
+            <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Cantidad (Q)</text>
+            <text x='15' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,175)'>Precio (P)</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El equilibrio ocurre donde las curvas de oferta y demanda se intersectan. Las áreas azul y naranja representan el excedente del consumidor y productor respectivamente, que miden el bienestar generado por el intercambio voluntario.</p>
+        </div>
+        
+        <!-- Ejercicio 2: Desequilibrios de mercado -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-balance-scale' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Análisis de excedentes y escasez</h4>
+          <p>Comparación de situaciones de desequilibrio y sus efectos en el mercado:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Situación</th>
+                <th>Precio</th>
+                <th>Cantidad Demandada</th>
+                <th>Cantidad Ofrecida</th>
+                <th>Desequilibrio</th>
+                <th>Fuerzas del Mercado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Equilibrio</td>
+                <td>$16</td>
+                <td>68 unidades</td>
+                <td>68 unidades</td>
+                <td>0 (equilibrio)</td>
+                <td>Precio estable</td>
+              </tr>
+              <tr>
+                <td>Precio Alto</td>
+                <td>$25</td>
+                <td>50 unidades</td>
+                <td>95 unidades</td>
+                <td>Excedente: 45 unidades</td>
+                <td>Presión a la baja en precios</td>
+              </tr>
+              <tr>
+                <td>Precio Bajo</td>
+                <td>$10</td>
+                <td>80 unidades</td>
+                <td>50 unidades</td>
+                <td>Escasez: 30 unidades</td>
+                <td>Presión al alza en precios</td>
+              </tr>
+              <tr>
+                <td>Precio Muy Alto</td>
+                <td>$40</td>
+                <td>20 unidades</td>
+                <td>140 unidades</td>
+                <td>Excedente: 120 unidades</td>
+                <td>Fuerte presión bajista</td>
+              </tr>
+              <tr>
+                <td>Precio Muy Bajo</td>
+                <td>$5</td>
+                <td>90 unidades</td>
+                <td>35 unidades</td>
+                <td>Escasez: 55 unidades</td>
+                <td>Fuerte presión alcista</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Los excedentes (precios altos) crean inventarios no vendidos que presionan los precios a la baja. Las escaseces (precios bajos) crean competencia entre compradores que presionan los precios al alza. Ambos mecanismos conducen al equilibrio.</p>
+        </div>
+        
+        <!-- Gráfica 2: Desequilibrios de mercado -->
+        <div class='graph-container' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Excedentes y escasez en el mercado</h4>
+          <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+            <!-- Ejes coordenados -->
+            <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+            
+            <!-- Curva de demanda -->
+            <line x1='250' y1='50' x2='50' y2='300' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
+            
+            <!-- Curva de oferta -->
+            <line x1='50' y1='233' x2='350' y2='67' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+            
+            <!-- Punto de equilibrio -->
+            <circle cx='184' cy='184' r='3' fill='var(--apple-vibrant-green)'></circle>
+            
+            <!-- Situación 1: Excedente (Precio alto) -->
+            <line x1='50' y1='150' x2='350' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            <circle cx='130' cy='150' r='3' fill='var(--apple-vibrant-blue)'></circle>
+            <circle cx='260' cy='150' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <line x1='130' y1='145' x2='130' y2='155' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+            <line x1='260' y1='145' x2='260' y2='155' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+            <text x='195' y='140' font-size='10' fill='var(--apple-vibrant-red)'>Excedente</text>
+            
+            <!-- Situación 2: Escasez (Precio bajo) -->
+            <line x1='50' y1='220' x2='350' y2='220' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+            <circle cx='170' cy='220' r='3' fill='var(--apple-vibrant-orange)'></circle>
+            <circle cx='210' cy='220' r='3' fill='var(--apple-vibrant-blue)'></circle>
+            <line x1='170' y1='215' x2='170' y2='225' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+            <line x1='210' y1='215' x2='210' y2='225' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+            <text x='190' y='210' font-size='10' fill='var(--apple-vibrant-purple)'>Escasez</text>
+            
+            <!-- Flechas de ajuste -->
+            <path d='M 200,130 L 190,120 L 200,110' fill='var(--apple-vibrant-red)'></path>
+            <text x='210' y='120' font-size='10' fill='var(--apple-vibrant-red)'>Precio baja</text>
+            
+            <path d='M 190,240 L 180,250 L 190,260' fill='var(--apple-vibrant-purple)'></path>
+            <text x='200' y='255' font-size='10' fill='var(--apple-vibrant-purple)'>Precio sube</text>
+            
+            <!-- Etiquetas -->
+            <text x='300' y='100' font-size='12' fill='var(--apple-vibrant-blue)'>Demanda</text>
+            <text x='150' y='80' font-size='12' fill='var(--apple-vibrant-orange)'>Oferta</text>
+            <text x='184' y='170' font-size='10' fill='var(--apple-vibrant-green)'>Equilibrio</text>
+            
+            <!-- Leyenda -->
+            <rect x='250' y='200' width='140' height='80' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+            <line x1='260' y1='215' x2='270' y2='215' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+            <text x='280' y='220' font-size='10' fill='var(--apple-dark-gray)'>Excedente (Qo > Qd)</text>
+            <line x1='260' y1='230' x2='270' y2='230' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+            <text x='280' y='235' font-size='10' fill='var(--apple-dark-gray)'>Escasez (Qd > Qo)</text>
+            <circle cx='265' cy='245' r='3' fill='var(--apple-vibrant-green)'></circle>
+            <text x='280' y='250' font-size='10' fill='var(--apple-dark-gray)'>Equilibrio (Qd = Qo)</text>
+            <path d='M 260,260 L 270,255 L 260,250' fill='var(--apple-vibrant-red)'></path>
+            <text x='280' y='260' font-size='10' fill='var(--apple-dark-gray)'>Ajuste hacia equilibrio</text>
+          </svg>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El mercado tiende naturalmente hacia el equilibrio mediante el mecanismo de precios. Los excedentes indican que el precio está por encima del equilibrio, mientras las escaseces indican que está por debajo. Las flechas muestran la dirección del ajuste.</p>
+        </div>
+        
+        <!-- Ejercicio 3: Cambios en oferta y demanda -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-arrows-alt' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Efectos de desplazamientos en oferta y demanda</h4>
+          <p>Análisis de cómo cambios en los determinantes afectan el equilibrio de mercado:</p>
+          <table class='math-table'>
+            <thead>
+              <tr>
+                <th>Cambio</th>
+                <th>Efecto en Curva</th>
+                <th>Precio Equilibrio</th>
+                <th>Cantidad Equilibrio</th>
+                <th>Ejemplo Real</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aumento demanda</td>
+                <td>Desplazamiento derecho demanda</td>
+                <td>Aumenta</td>
+                <td>Aumenta</td>
+                <td>Mayor popularidad de smartphones</td>
+              </tr>
+              <tr>
+                <td>Disminución demanda</td>
+                <td>Desplazamiento izquierda demanda</td>
+                <td>Disminuye</td>
+                <td>Disminuye</td>
+                <td>Caída en demanda de carbón</td>
+              </tr>
+              <tr>
+                <td>Aumento oferta</td>
+                <td>Desplazamiento derecho oferta</td>
+                <td>Disminuye</td>
+                <td>Aumenta</td>
+                <td>Mejora tecnológica en agricultura</td>
+              </tr>
+              <tr>
+                <td>Disminución oferta</td>
+                <td>Desplazamiento izquierda oferta</td>
+                <td>Aumenta</td>
+                <td>Disminuye</td>
+                <td>Mal tiempo afecta cosechas</td>
+              </tr>
+              <tr>
+                <td>Aumento ambas</td>
+                <td>Desplazamiento derecho oferta y demanda</td>
+                <td>Indeterminado</td>
+                <td>Aumenta</td>
+                <td>Mercado de energías renovables</td>
+              </tr>
+              <tr>
+                <td>Disminución ambas</td>
+                <td>Desplazamiento izquierda oferta y demanda</td>
+                <td>Indeterminado</td>
+                <td>Disminuye</td>
+                <td>Mercado de faxes</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cuando ambas curvas se desplazan, el efecto en el precio es indeterminado y depende de la magnitud relativa de los desplazamientos. Sin embargo, el efecto en la cantidad es predecible cuando ambas curvas se mueven en la misma dirección.</p>
+        </div>
+        
+        <!-- Aplicaciones reales -->
+        <div class='content-section' style='margin-bottom:20px;'>
+          <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+          <ul style='padding-left:18px;line-height:1.6;'>
+            <li><strong>Política de precios máximos:</strong> Análisis de controles de precios en alimentos y medicamentos, que crean escasez cuando se fijan por debajo del equilibrio.</li>
+            <li><strong>Política de precios mínimos:</strong> Estudio de salarios mínimos y precios de sustentación agrícolas, que crean excedentes cuando se fijan por encima del equilibrio.</li>
+            <li><strong>Mercado de valores:</strong> Análisis de cómo la oferta y demanda determinan los precios de las acciones y generan volatilidad.</li>
+            <li><strong>Mercado inmobiliario:</strong> Estudio de ciclos de auge y caída en precios de vivienda basados en cambios en oferta y demanda.</li>
+            <li><strong>Mercado laboral:</td>
+                <td>Análisis de desempleo como resultado de salarios por encima del equilibrio.</li>
+            <li><strong>Comercio internacional:</strong> Estudio de cómo los aranceles y cuotas afectan los precios y cantidades de equilibrio.</li>
+            <li><strong>Economía de la salud:</strong> Análisis de mercados de órganos y sangre, donde las restricciones éticas afectan el equilibrio.</li>
+            <li><strong>Economía ambiental:</strong> Estudio de mercados de permisos de contaminación y su eficiencia para alcanzar objetivos ambientales.</li>
+          </ul>
+        </div>
+        
+        <!-- Bibliografía -->
+        <div class='bibliography-section' style='margin-top:20px;'>
+          <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+          <ul style='padding-left:18px;line-height:1.5;'>
+            <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
+            <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
+            <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
+            <li>Samuelson, P. A., & Nordhaus, W. D. (2009). Economics. McGraw-Hill.</li>
+            <li>Frank, R. H., & Cartwright, E. (2020). Microeconomics and Behavior. McGraw-Hill.</li>
+            <li>Krugman, P., & Wells, R. (2021). Economics. Worth Publishers.</li>
+            <li>Khan Academy: Market equilibrium and changes in equilibrium. www.khanacademy.org</li>
+          </ul>
+        </div>
+      </div>
+      `);"><b>3.3.7. Punto de Equilibrio de Mercado</b> <span class='emoji-small'>✅</span>
+    </li>
   </ul><br>
-  </div>  
+</div>  
       
       <div class="tema-card">
         <div class="tema-num">TEMA 4</div>
