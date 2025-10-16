@@ -3445,99 +3445,344 @@
         `)">2.1.1. Solución de ecuaciones con una incógnita de primer grado <span class="emoji-small">✅</span>
         </li>
           
-            <li onclick="abrirModal('2.2. Ecuaciones con dos incógnitas de primer grado', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender y aplicar los métodos para resolver sistemas de ecuaciones lineales con dos incógnitas.</p>
+        <li onclick="abrirModal('2.2. Ecuaciones con Dos Incógnitas de Primer Grado', `
+          <hr><br>
+          <div class='math-module'>
             
-              <h4>Definición</h4>
-              <ul>
-                <li>Un sistema de ecuaciones con dos incógnitas consiste en dos ecuaciones lineales que deben satisfacerse simultáneamente.</li>
-                <li>Tiene la forma general: 
-                  <ul>
-                    <li>a₁x + b₁y = c₁</li>
-                    <li>a₂x + b₂y = c₂</li>
-                  </ul>
-                  donde a₁, b₁, c₁, a₂, b₂, c₂ son números reales.
-                </li>
-                <li>La solución es el par ordenado (x, y) que satisface ambas ecuaciones al mismo tiempo.</li>
+            <!-- Tiempo estimado -->
+            <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+              <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 18 minutos'>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='11.3097' transform='rotate(-90 10 10)'></circle>
+              <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>18 min</text>
+              </svg>
+              <span style='font-weight:bold;'>Tiempo estimado: 18 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+              <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+              <span><strong>Objetivo:</strong> Comprender y resolver sistemas de ecuaciones lineales con dos incógnitas, representar gráficamente rectas en el plano cartesiano, identificar los diferentes tipos de sistemas (compatible determinado, incompatible, compatible indeterminado) y aplicar métodos algebraicos y gráficos para encontrar soluciones en contextos matemáticos y aplicados.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+              <p>Un sistema de ecuaciones lineales con dos incógnitas consiste en dos ecuaciones de primer grado que deben satisfacerse simultáneamente. Geométricamente, cada ecuación representa una recta en el plano cartesiano, y la solución del sistema corresponde al punto de intersección de ambas rectas. Dependiendo de la relación entre las rectas, el sistema puede tener una solución única (rectas que se cortan), infinitas soluciones (rectas coincidentes) o ninguna solución (rectas paralelas).</p>
+            </div>
+            
+            <!-- Ejercicio 1: Tipos de sistemas -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Clasificación de sistemas lineales</h4>
+              <p>Análisis de diferentes sistemas según sus coeficientes y soluciones:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Sistema</th>
+                    <th>Ecuaciones</th>
+                    <th>Relación entre coeficientes</th>
+                    <th>Tipo de Sistema</th>
+                    <th>Solución</th>
+                    <th>Interpretación geométrica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sistema 1</td>
+                    <td>2x + y = 5<br>x - y = 1</td>
+                    <td>a₁/a₂ ≠ b₁/b₂</td>
+                    <td>Compatible determinado</td>
+                    <td>x=2, y=1</td>
+                    <td>Rectas que se cortan</td>
+                  </tr>
+                  <tr>
+                    <td>Sistema 2</td>
+                    <td>3x + 2y = 6<br>6x + 4y = 12</td>
+                    <td>a₁/a₂ = b₁/b₂ = c₁/c₂</td>
+                    <td>Compatible indeterminado</td>
+                    <td>Infinitas soluciones</td>
+                    <td>Rectas coincidentes</td>
+                  </tr>
+                  <tr>
+                    <td>Sistema 3</td>
+                    <td>x + 2y = 4<br>2x + 4y = 10</td>
+                    <td>a₁/a₂ = b₁/b₂ ≠ c₁/c₂</td>
+                    <td>Incompatible</td>
+                    <td>Sin solución</td>
+                    <td>Rectas paralelas</td>
+                  </tr>
+                  <tr>
+                    <td>Sistema 4</td>
+                    <td>y = 2x + 1<br>y = -x + 4</td>
+                    <td>Pendientes diferentes</td>
+                    <td>Compatible determinado</td>
+                    <td>x=1, y=3</td>
+                    <td>Rectas secantes</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La relación entre los coeficientes determina el tipo de sistema. Cuando las pendientes son diferentes, hay solución única; cuando son iguales pero las ordenadas al origen diferentes, no hay solución; cuando todo coincide, hay infinitas soluciones.</p>
+            </div>
+            
+            <!-- Gráfica 1: Tipos de sistemas -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Representación geométrica de los tres tipos de sistemas</h4>
+              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Sistema de coordenadas para los tres casos -->
+                
+                <!-- Caso 1: Compatible determinado -->
+                <g transform='translate(0,0)'>
+                  <line x1='50' y1='100' x2='130' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                  <line x1='90' y1='60' x2='90' y2='140' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                  
+                  <!-- Recta 1: 2x + y = 5 → y = -2x + 5 -->
+                  <line x1='60' y1='130' x2='120' y2='70' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
+                  
+                  <!-- Recta 2: x - y = 1 → y = x - 1 -->
+                  <line x1='70' y1='60' x2='120' y2='110' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+                  
+                  <!-- Punto de intersección -->
+                  <circle cx='100' cy='90' r='3' fill='var(--apple-vibrant-red)'></circle>
+                  
+                  <text x='90' y='150' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Compatible determinado</text>
+                  <text x='90' y='160' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Solución única</text>
+                </g>
+                
+                <!-- Caso 2: Compatible indeterminado -->
+                <g transform='translate(140,0)'>
+                  <line x1='50' y1='100' x2='130' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                  <line x1='90' y1='60' x2='90' y2='140' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                  
+                  <!-- Rectas coincidentes: 3x + 2y = 6 -->
+                  <line x1='60' y1='120' x2='120' y2='60' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
+                  <line x1='60' y1='120' x2='120' y2='60' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='3,3'></line>
+                  
+                  <text x='90' y='150' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Compatible indeterminado</text>
+                  <text x='90' y='160' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Infinitas soluciones</text>
+                </g>
+                
+                <!-- Caso 3: Incompatible -->
+                <g transform='translate(280,0)'>
+                  <line x1='50' y1='100' x2='130' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                  <line x1='90' y1='60' x2='90' y2='140' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                  
+                  <!-- Rectas paralelas: x + 2y = 4 y x + 2y = 5 -->
+                  <line x1='60' y1='110' x2='120' y2='80' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+                  <line x1='60' y1='100' x2='120' y2='70' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+                  
+                  <text x='90' y='150' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Incompatible</text>
+                  <text x='90' y='160' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Sin solución</text>
+                </g>
+                
+                <!-- Título general -->
+                <text x='200' y='180' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Tipos de Sistemas de Ecuaciones Lineales</text>
+                
+                <!-- Leyenda inferior -->
+                <rect x='120' y='200' width='160' height='60' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+                <line x1='130' y1='215' x2='150' y2='215' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
+                <text x='160' y='220' font-size='10' fill='var(--apple-dark-gray)'>Ecuación 1</text>
+                
+                <line x1='130' y1='230' x2='150' y2='230' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+                <text x='160' y='235' font-size='10' fill='var(--apple-dark-gray)'>Ecuación 2</text>
+                
+                <circle cx='140' cy='245' r='3' fill='var(--apple-vibrant-red)'></circle>
+                <text x='160' y='250' font-size='10' fill='var(--apple-dark-gray)'>Solución única</text>
+                
+                <line x1='230' y1='215' x2='250' y2='215' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='3,3'></line>
+                <text x='260' y='220' font-size='10' fill='var(--apple-dark-gray)'>Rectas coincidentes</text>
+                
+                <line x1='230' y1='230' x2='250' y2='230' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
+                <text x='260' y='235' font-size='10' fill='var(--apple-dark-gray)'>Rectas paralelas</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La posición relativa de las rectas determina completamente el tipo de solución del sistema. Rectas que se cortan tienen solución única, rectas coincidentes tienen infinitas soluciones, y rectas paralelas no tienen solución.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Métodos de solución -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Resolución del sistema 3x + 2y = 12 y 2x - y = 1</h4>
+              <p>Aplicación de diferentes métodos algebraicos para resolver el mismo sistema:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Método</th>
+                    <th>Procedimiento</th>
+                    <th>Pasos detallados</th>
+                    <th>Solución</th>
+                    <th>Ventajas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sustitución</td>
+                    <td>Despejar y sustituir</td>
+                    <td>De 2x - y = 1 → y = 2x - 1<br>Sustituir en 3x + 2(2x - 1) = 12<br>3x + 4x - 2 = 12 → 7x = 14 → x = 2<br>y = 2(2) - 1 = 3</td>
+                    <td>x=2, y=3</td>
+                    <td>Intuitivo para sistemas simples</td>
+                  </tr>
+                  <tr>
+                    <td>Igualación</td>
+                    <td>Despejar misma variable</td>
+                    <td>De 3x + 2y = 12 → y = (12 - 3x)/2<br>De 2x - y = 1 → y = 2x - 1<br>Igualar: (12 - 3x)/2 = 2x - 1<br>12 - 3x = 4x - 2 → 14 = 7x → x=2<br>y = 2(2) - 1 = 3</td>
+                    <td>x=2, y=3</td>
+                    <td>Útil cuando es fácil despejar</td>
+                  </tr>
+                  <tr>
+                    <td>Reducción/Eliminación</td>
+                    <td>Eliminar variable</td>
+                    <td>3x + 2y = 12 (E1)<br>2x - y = 1 (E2)<br>Multiplicar E2 por 2: 4x - 2y = 2<br>Sumar con E1: 7x = 14 → x=2<br>Sustituir: 3(2) + 2y = 12 → y=3</td>
+                    <td>x=2, y=3</td>
+                    <td>Eficiente para sistemas complejos</td>
+                  </tr>
+                  <tr>
+                    <td>Gráfico</td>
+                    <td>Intersección de rectas</td>
+                    <td>Graficar y = (12 - 3x)/2<br>Graficar y = 2x - 1<br>Encontrar punto de intersección</td>
+                    <td>x=2, y=3</td>
+                    <td>Visual, buena verificación</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Todos los métodos conducen a la misma solución. La elección del método depende de la complejidad del sistema y de las preferencias personales. El método gráfico es excelente para verificar soluciones.</p>
+            </div>
+            
+            <!-- Gráfica 2: Solución gráfica detallada -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Solución gráfica del sistema 3x + 2y = 12 y 2x - y = 1</h4>
+              <svg viewBox='0 0 400 320' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados principales -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Escalas en eje X -->
+                <line x1='150' y1='245' x2='150' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='150' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                <line x1='250' y1='245' x2='250' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='250' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                <line x1='100' y1='245' x2='100' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='100' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>-1</text>
+                <line x1='300' y1='245' x2='300' y2='255' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='300' y='270' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>5</text>
+                
+                <!-- Escalas en eje Y -->
+                <line x1='195' y1='200' x2='205' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='185' y='203' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+                <line x1='195' y1='150' x2='205' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='185' y='153' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>4</text>
+                <line x1='195' y1='100' x2='205' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='185' y='103' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>6</text>
+                
+                <!-- Recta 1: 3x + 2y = 12 → y = (12 - 3x)/2 -->
+                <line x1='50' y1='175' x2='350' y2='25' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Recta 2: 2x - y = 1 → y = 2x - 1 -->
+                <line x1='75' y1='50' x2='325' y2='250' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
+                
+                <!-- Punto de intersección -->
+                <circle cx='200' cy='150' r='5' fill='var(--apple-vibrant-red)'></circle>
+                
+                <!-- Líneas de referencia al punto de intersección -->
+                <line x1='200' y1='150' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <line x1='50' y1='150' x2='200' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+                
+                <!-- Etiquetas de las rectas -->
+                <text x='300' y='80' font-size='12' fill='var(--apple-vibrant-blue)'>3x + 2y = 12</text>
+                <text x='120' y='80' font-size='12' fill='var(--apple-vibrant-orange)'>2x - y = 1</text>
+                
+                <!-- Etiqueta del punto solución -->
+                <text x='220' y='140' font-size='12' fill='var(--apple-vibrant-red)'>Solución: (2,3)</text>
+                
+                <!-- Puntos de referencia en las rectas -->
+                <circle cx='100' cy='200' r='2' fill='var(--apple-vibrant-blue)'></circle>
+                <circle cx='300' cy='100' r='2' fill='var(--apple-vibrant-blue)'></circle>
+                <circle cx='150' cy='200' r='2' fill='var(--apple-vibrant-orange)'></circle>
+                <circle cx='250' cy='100' r='2' fill='var(--apple-vibrant-orange)'></circle>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='290' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las dos rectas se intersectan exactamente en el punto (2,3), que es la solución del sistema. Este punto satisface ambas ecuaciones simultáneamente. La precisión del método gráfico depende de la escala y calidad del dibujo.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Aplicación práctica -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-shopping-cart' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Problema de aplicación - Compra de frutas</h4>
+              <p>Juan compra 3 manzanas y 2 naranjas por $12. María compra 2 manzanas y 1 naranja por $7. ¿Cuál es el precio de cada fruta?</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Paso</th>
+                    <th>Procedimiento</th>
+                    <th>Explicación</th>
+                    <th>Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1. Definir variables</td>
+                    <td>x = precio manzana<br>y = precio naranja</td>
+                    <td>Asignar variables a las incógnitas</td>
+                    <td>Sistema por resolver</td>
+                  </tr>
+                  <tr>
+                    <td>2. Plantear ecuaciones</td>
+                    <td>3x + 2y = 12<br>2x + y = 7</td>
+                    <td>Traducir el problema a ecuaciones</td>
+                    <td>Sistema lineal</td>
+                  </tr>
+                  <tr>
+                    <td>3. Resolver por sustitución</td>
+                    <td>De 2x + y = 7 → y = 7 - 2x<br>Sustituir: 3x + 2(7 - 2x) = 12<br>3x + 14 - 4x = 12<br>-x = -2 → x = 2<br>y = 7 - 2(2) = 3</td>
+                    <td>Aplicar método algebraico</td>
+                    <td>x=2, y=3</td>
+                  </tr>
+                  <tr>
+                    <td>4. Verificar solución</td>
+                    <td>Juan: 3(2) + 2(3) = 6 + 6 = 12 ✅<br>María: 2(2) + 3 = 4 + 3 = 7 ✅</td>
+                    <td>Comprobar en ecuaciones originales</td>
+                    <td>Solución correcta</td>
+                  </tr>
+                  <tr>
+                    <td>5. Interpretar</td>
+                    <td>Manzana: $2 c/u<br>Naranja: $3 c/u</td>
+                    <td>Traducir a respuesta del problema</td>
+                    <td>Solución contextualizada</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Los sistemas de ecuaciones permiten modelar situaciones reales donde hay múltiples condiciones que deben cumplirse simultáneamente. La verificación es crucial para asegurar que la solución satisface el problema original.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+              <ul style='padding-left:18px;line-height:1.6;'>
+                <li><strong>Economía y negocios:</strong> Análisis de punto de equilibrio, determinación de precios en mercados competitivos, optimización de mezclas de productos.</li>
+                <li><strong>Ingeniería:</strong> Balance de materiales en procesos químicos, análisis de circuitos eléctricos, cálculo de fuerzas en estructuras.</li>
+                <li><strong>Física:</strong> Resolución de problemas de cinemática con múltiples condiciones, equilibrio de fuerzas, leyes de conservación.</li>
+                <li><strong>Programación lineal:</strong> Fundamentos para optimización con restricciones lineales en investigación operativa.</li>
+                <li><strong>Estadística:</strong> Cálculo de rectas de regresión por mínimos cuadrados.</li>
+                <li><strong>Finanzas personales:</strong> Planificación de presupuestos con múltiples categorías de gastos.</li>
+                <li><strong>Logística:</strong> Optimización de rutas y asignación de recursos con múltiples restricciones.</li>
+                <li><strong>Química:</strong> Balanceo de ecuaciones químicas complejas.</li>
               </ul>
+            </div>
             
-              <h4>Métodos de Solución</h4>
-                <div class='tema-card'>
-                  <ul>
-                    <li><strong>Método de sustitución:</strong> Despejar una variable en una ecuación y sustituirla en la otra.</li>
-                    <li><strong>Método de igualación:</strong> Despejar la misma variable en ambas ecuaciones e igualar las expresiones.</li>
-                    <li><strong>Método de reducción (eliminación):</strong> Sumar o restar las ecuaciones para eliminar una variable.</li>
-                    <li><strong>Método gráfico:</strong> Representar ambas ecuaciones en el plano cartesiano y encontrar el punto de intersección.</li>
-                    <li><strong>Método de determinantes (Regla de Cramer):</strong> Usar determinantes para encontrar la solución.</li>
-                  </ul>
-                </div>
-              <h4>Tipos de Sistemas</h4>
-              <ul>
-                <li><strong>Sistema compatible determinado:</strong> Tiene una única solución (las rectas se cortan en un punto).</li>
-                <li><strong>Sistema compatible indeterminado:</strong> Tiene infinitas soluciones (las rectas son coincidentes).</li>
-                <li><strong>Sistema incompatible:</strong> No tiene solución (las rectas son paralelas).</li>
+            <!-- Bibliografía -->
+            <div class='bibliography-section' style='margin-top:20px;'>
+              <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+              <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Larson, R., & Hostetler, R. P. (2018). Álgebra y Trigonometría. McGraw-Hill.</li>
+                <li>Stewart, J., Redlin, L., & Watson, S. (2015). Precálculo: Matemáticas para el Cálculo. Cengage Learning.</li>
+                <li>Swokowski, E. W., & Cole, J. A. (2011). Álgebra y Trigonometría con Geometría Analítica. Cengage Learning.</li>
+                <li>Zill, D. G., & Dewar, J. M. (2012). Álgebra y Trigonometría. McGraw-Hill.</li>
+                <li>Baldor, A. (2019). Álgebra. Patria.</li>
+                <li>Khan Academy: Sistemas de ecuaciones lineales. www.khanacademy.org</li>
               </ul>
-            
-              <h4>Pasos para Resolver por Sustitución</h4>
-              <ol>
-                <li>Despejar una variable en una de las ecuaciones.</li>
-                <li>Sustituir la expresión obtenida en la otra ecuación.</li>
-                <li>Resolver la ecuación resultante con una incógnita.</li>
-                <li>Sustituir el valor encontrado en la expresión despejada para hallar la otra variable.</li>
-                <li>Verificar la solución en ambas ecuaciones originales.</li>
-              </ol>
-            
-              <h4>Ejemplos</h4>
-              <ul>
-                <li><strong>Ejemplo 1:</strong>
-                  <ul>
-                    <li>2x + y = 7</li>
-                    <li>x - y = -1</li>
-                    <li>Solución: x = 2, y = 3</li>
-                  </ul>
-                </li>
-                <li><strong>Ejemplo 2:</strong>
-                  <ul>
-                    <li>3x + 2y = 12</li>
-                    <li>2x + 3y = 13</li>
-                    <li>Solución: x = 2, y = 3</li>
-                  </ul>
-                </li>
-                <li><strong>Ejemplo 3 (Sistema incompatible):</strong>
-                  <ul>
-                    <li>x + y = 5</li>
-                    <li>2x + 2y = 8</li>
-                    <li>No tiene solución</li>
-                  </ul>
-                </li>
-                <li><strong>Ejemplo 4 (Sistema indeterminado):</strong>
-                  <ul>
-                    <li>2x + 4y = 8</li>
-                    <li>x + 2y = 4</li>
-                    <li>Infinitas soluciones</li>
-                  </ul>
-                </li>
-              </ul>
-            
-              <h4>Aplicaciones</h4>
-              <ul>
-                <li>Problemas de mezclas y concentraciones.</li>
-                <li>Problemas de edades.</li>
-                <li>Problemas de distancia, velocidad y tiempo.</li>
-                <li>Análisis de puntos de equilibrio en economía.</li>
-                <li>Distribución de recursos y optimización.</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
-                <li>Baldor, A. (2017). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-                <li>Grossman, S. I. (2012). <em>Álgebra lineal</em>. McGraw-Hill.</li>
-                <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
-              </ul>
-            `)"><b>2.2. Ecuaciones con dos incógnitas de primer grado</b> <span class="emoji-small">✅</span>
-            </li>
+            </div>
+          </div>
+          `);"><b>2.2. Ecuaciones con Dos Incógnitas de Primer Grado</b> <span class='emoji-small'>✅</span>
+        </li>
 
             <li onclick="abrirModal('2.2.1. Gráfica de Ecuaciones con Dos Incógnitas de Segundo Grado', `
               <hr><br>
