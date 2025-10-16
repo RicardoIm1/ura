@@ -5690,7 +5690,358 @@
           `);">3.2.1. Forma Común <span class='emoji-small'>✅</span>
         </li>
 
-        <li>3.2.2. Forma punto-pendiente</li>
+        <li onclick="abrirModal('3.2.2. Forma Punto-Pendiente', `
+          <hr><br>
+          <div class='math-module'>
+            
+            <!-- Tiempo estimado -->
+            <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+              <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 18 minutos'>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='11.3097' transform='rotate(-90 10 10)'></circle>
+              <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>18 min</text>
+              </svg>
+              <span style='font-weight:bold;'>Tiempo estimado: 18 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+              <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+              <span><strong>Objetivo:</strong> Dominar la forma punto-pendiente de la ecuación de la recta (y - y₁ = m(x - x₁)), comprender su fundamento geométrico, aplicar esta forma para construir ecuaciones cuando se conoce un punto y la pendiente, y convertir eficientemente entre la forma punto-pendiente y otras representaciones de ecuaciones lineales.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+              <p>La forma punto-pendiente y - y₁ = m(x - x₁) expresa la ecuación de una recta utilizando un punto conocido (x₁, y₁) por el que pasa la recta y su pendiente m. Esta forma es particularmente útil porque captura directamente la relación fundamental de la recta: la diferencia en las coordenadas y entre cualquier punto (x, y) y el punto conocido es proporcional a la diferencia en las coordenadas x, siendo la pendiente m la constante de proporcionalidad. Geométricamente, representa que la razón entre el cambio vertical y el cambio horizontal es constante para todos los puntos de la recta.</p>
+            </div>
+            
+            <!-- Ejercicio 1: Construcción de ecuaciones -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Construcción de ecuaciones punto-pendiente</h4>
+              <p>Formulación de ecuaciones usando la forma punto-pendiente con diferentes puntos y pendientes:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Punto (x₁, y₁)</th>
+                    <th>Pendiente (m)</th>
+                    <th>Ecuación Punto-Pendiente</th>
+                    <th>Desarrollo</th>
+                    <th>Forma Simplificada</th>
+                    <th>Interpretación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>(2, 3)</td>
+                    <td>4</td>
+                    <td>y - 3 = 4(x - 2)</td>
+                    <td>y - 3 = 4x - 8</td>
+                    <td>y = 4x - 5</td>
+                    <td>Recta muy inclinada que pasa por (2,3)</td>
+                  </tr>
+                  <tr>
+                    <td>(-1, 5)</td>
+                    <td>-2</td>
+                    <td>y - 5 = -2(x - (-1))</td>
+                    <td>y - 5 = -2(x + 1)</td>
+                    <td>y = -2x + 3</td>
+                    <td>Recta decreciente por (-1,5)</td>
+                  </tr>
+                  <tr>
+                    <td>(0, -3)</td>
+                    <td>½</td>
+                    <td>y - (-3) = ½(x - 0)</td>
+                    <td>y + 3 = ½x</td>
+                    <td>y = ½x - 3</td>
+                    <td>Recta con intercepto Y en -3</td>
+                  </tr>
+                  <tr>
+                    <td>(4, 0)</td>
+                    <td>-¾</td>
+                    <td>y - 0 = -¾(x - 4)</td>
+                    <td>y = -¾(x - 4)</td>
+                    <td>y = -¾x + 3</td>
+                    <td>Recta que corta eje X en (4,0)</td>
+                  </tr>
+                  <tr>
+                    <td>(-2, -4)</td>
+                    <td>0</td>
+                    <td>y - (-4) = 0(x - (-2))</td>
+                    <td>y + 4 = 0</td>
+                    <td>y = -4</td>
+                    <td>Recta horizontal</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La forma punto-pendiente se escribe directamente sustituyendo las coordenadas del punto y el valor de la pendiente. Es crucial mantener los signos correctos, especialmente cuando el punto tiene coordenadas negativas.</p>
+            </div>
+            
+            <!-- Gráfica 1: Fundamentos geométricos -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Fundamentos geométricos de la forma punto-pendiente</h4>
+              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Escalas del eje X -->
+                <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='100' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='150' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+                <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='200' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='250' y='320' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>4</text>
+                
+                <!-- Escalas del eje Y -->
+                <line x1='45' y1='250' x2='55' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='255' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+                <line x1='45' y1='200' x2='55' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='205' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+                <line x1='45' y1='150' x2='55' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='155' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+                <line x1='45' y1='100' x2='55' y2='100' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+                <text x='30' y='105' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>4</text>
+                
+                <!-- Recta: y - 2 = 1.5(x - 1) -->
+                <line x1='50' y1='225' x2='350' y2='75' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Punto conocido (x₁, y₁) = (1, 2) -->
+                <circle cx='100' cy='250' r='5' fill='var(--apple-vibrant-red)'></circle>
+                <text x='110' y='245' font-size='12' fill='var(--apple-vibrant-red)'>P(1,2)</text>
+                
+                <!-- Punto genérico (x, y) -->
+                <circle cx='200' cy='175' r='4' fill='var(--apple-vibrant-green)'></circle>
+                <text x='210' y='170' font-size='12' fill='var(--apple-vibrant-green)'>Q(x,y)</text>
+                
+                <!-- Triángulo de diferencias -->
+                <line x1='100' y1='250' x2='200' y2='250' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,3'></line>
+                <line x1='200' y1='250' x2='200' y2='175' stroke='var(--apple-vibrant-purple)' stroke-width='2' stroke-dasharray='5,3'></line>
+                
+                <!-- Etiquetas de diferencias -->
+                <text x='150' y='265' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x - x₁ = x - 1</text>
+                <text x='220' y='212' text-anchor='start' font-size='10' fill='var(--apple-vibrant-purple)'>y - y₁ = y - 2</text>
+                
+                <!-- Relación de pendiente -->
+                <text x='150' y='230' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>m = (y - 2)/(x - 1)</text>
+                <text x='150' y='245' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>y - 2 = 1.5(x - 1)</text>
+                
+                <!-- Puntos adicionales que verifican la ecuación -->
+                <circle cx='133' cy='233' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='167' cy='208' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='233' cy='158' r='2' fill='var(--apple-dark-gray)'></circle>
+                
+                <!-- Ecuación -->
+                <text x='300' y='100' font-size='14' fill='var(--apple-dark-gray)'>y - 2 = 1.5(x - 1)</text>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='15' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,175)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La forma punto-pendiente expresa que para cualquier punto Q(x,y) en la recta, la razón (y - y₁)/(x - x₁) es igual a la pendiente m. El punto P(x₁,y₁) sirve como referencia, y las diferencias (x - x₁) y (y - y₁) representan los desplazamientos horizontal y vertical desde este punto.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Conversión desde otras formas -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-exchange-alt' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Conversión a forma punto-pendiente</h4>
+              <p>Transformación de diferentes representaciones a la forma punto-pendiente:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Forma Original</th>
+                    <th>Ecuación</th>
+                    <th>Punto Identificado</th>
+                    <th>Pendiente</th>
+                    <th>Forma Punto-Pendiente</th>
+                    <th>Procedimiento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pendiente-Ordenada</td>
+                    <td>y = 3x - 2</td>
+                    <td>(0, -2)</td>
+                    <td>m = 3</td>
+                    <td>y - (-2) = 3(x - 0)</td>
+                    <td>Usar intercepto Y como punto</td>
+                  </tr>
+                  <tr>
+                    <td>Forma Común</td>
+                    <td>2x - y + 1 = 0</td>
+                    <td>(0, 1)</td>
+                    <td>m = 2</td>
+                    <td>y - 1 = 2(x - 0)</td>
+                    <td>Despejar y para encontrar m y punto</td>
+                  </tr>
+                  <tr>
+                    <td>Dos Puntos</td>
+                    <td>P(1,2), Q(3,8)</td>
+                    <td>(1, 2)</td>
+                    <td>m = 3</td>
+                    <td>y - 2 = 3(x - 1)</td>
+                    <td>Calcular m = (8-2)/(3-1) = 3</td>
+                  </tr>
+                  <tr>
+                    <td>Simétrica</td>
+                    <td>x/4 + y/2 = 1</td>
+                    <td>(4, 0)</td>
+                    <td>m = -½</td>
+                    <td>y - 0 = -½(x - 4)</td>
+                    <td>Interceptos dan puntos, pendiente = -b/a</td>
+                  </tr>
+                  <tr>
+                    <td>Gráfica</td>
+                    <td>Recta por (2,1) con m=-2</td>
+                    <td>(2, 1)</td>
+                    <td>m = -2</td>
+                    <td>y - 1 = -2(x - 2)</td>
+                    <td>Datos directamente de la gráfica</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Para convertir a forma punto-pendiente, necesitamos identificar un punto por el que pasa la recta y determinar la pendiente. Cualquier punto de la recta puede usarse, pero puntos con coordenadas enteras simplifican los cálculos.</p>
+            </div>
+            
+            <!-- Gráfica 2: Múltiples puntos válidos -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Múltiples representaciones punto-pendiente para la misma recta</h4>
+              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Recta: y = 2x - 1 -->
+                <line x1='75' y1='125' x2='325' y2='225' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Diferentes puntos de referencia -->
+                <circle cx='125' cy='150' r='4' fill='var(--apple-vibrant-red)'></circle>
+                <text x='135' y='145' font-size='10' fill='var(--apple-vibrant-red)'>P₁(1,1)</text>
+                
+                <circle cx='175' cy='175' r='4' fill='var(--apple-vibrant-green)'></circle>
+                <text x='185' y='170' font-size='10' fill='var(--apple-vibrant-green)'>P₂(2,3)</text>
+                
+                <circle cx='225' cy='200' r='4' fill='var(--apple-vibrant-orange)'></circle>
+                <text x='235' y='195' font-size='10' fill='var(--apple-vibrant-orange)'>P₃(3,5)</text>
+                
+                <circle cx='100' cy='125' r='4' fill='var(--apple-vibrant-purple)'></circle>
+                <text x='110' y='120' font-size='10' fill='var(--apple-vibrant-purple)'>P₄(0,-1)</text>
+                
+                <!-- Triángulos de pendiente desde cada punto -->
+                <line x1='125' y1='150' x2='175' y2='150' stroke='var(--apple-vibrant-red)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <line x1='175' y1='150' x2='175' y2='175' stroke='var(--apple-vibrant-red)' stroke-width='1' stroke-dasharray='3,3'></line>
+                
+                <line x1='175' y1='175' x2='225' y2='175' stroke='var(--apple-vibrant-green)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <line x1='225' y1='175' x2='225' y2='200' stroke='var(--apple-vibrant-green)' stroke-width='1' stroke-dasharray='3,3'></line>
+                
+                <!-- Leyenda de ecuaciones -->
+                <rect x='250' y='30' width='140' height='120' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+                <text x='255' y='45' font-size='10' fill='var(--apple-dark-gray)'><strong>Misma recta, diferentes formas:</strong></text>
+                <text x='255' y='60' font-size='9' fill='var(--apple-vibrant-red)'>• y - 1 = 2(x - 1)</text>
+                <text x='255' y='70' font-size='9' fill='var(--apple-vibrant-green)'>• y - 3 = 2(x - 2)</text>
+                <text x='255' y='80' font-size='9' fill='var(--apple-vibrant-orange)'>• y - 5 = 2(x - 3)</text>
+                <text x='255' y='90' font-size='9' fill='var(--apple-vibrant-purple)'>• y + 1 = 2(x - 0)</text>
+                <text x='255' y='100' font-size='9' fill='var(--apple-dark-gray)'>• y = 2x - 1 (Simplificada)</text>
+                <text x='255' y='110' font-size='9' fill='var(--apple-dark-gray)'>• 2x - y - 1 = 0 (General)</text>
+                <text x='255' y='125' font-size='8' fill='var(--apple-dark-gray)'>Todas representan: y = 2x - 1</text>
+                
+                <!-- Pendiente constante -->
+                <text x='150' y='140' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m = 2</text>
+                <text x='200' y='165' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m = 2</text>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Una misma recta puede expresarse de múltiples formas punto-pendiente, dependiendo del punto de referencia elegido. Sin embargo, todas estas formas son equivalentes y se simplifican a la misma ecuación y = 2x - 1. La pendiente m = 2 es constante para todos los puntos.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Aplicaciones y casos especiales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-cogs' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Aplicaciones y casos especiales</h4>
+              <p>Uso de la forma punto-pendiente en problemas prácticos y análisis de casos límite:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Caso/Aplicación</th>
+                    <th>Datos</th>
+                    <th>Ecuación Punto-Pendiente</th>
+                    <th>Solución/Interpretación</th>
+                    <th>Importancia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Recta tangente</td>
+                    <td>P(2,4) en y=x², m=4</td>
+                    <td>y - 4 = 4(x - 2)</td>
+                    <td>y = 4x - 4</td>
+                    <td>Cálculo diferencial</td>
+                  </tr>
+                  <tr>
+                    <td>Movimiento uniforme</td>
+                    <td>En t=2s, posición=10m, velocidad=3m/s</td>
+                    <td>s - 10 = 3(t - 2)</td>
+                    <td>s = 3t + 4</td>
+                    <td>Modelado físico</td>
+                  </tr>
+                  <tr>
+                    <td>Recta horizontal</td>
+                    <td>P(3,5), m=0</td>
+                    <td>y - 5 = 0(x - 3)</td>
+                    <td>y = 5</td>
+                    <td>Caso especial m=0</td>
+                  </tr>
+                  <tr>
+                    <td>Recta vertical</td>
+                    <td>P(4,2), m=∞</td>
+                    <td>No aplicable</td>
+                    <td>x = 4</td>
+                    <td>Límite de la forma</td>
+                  </tr>
+                  <tr>
+                    <td>Recta por el origen</td>
+                    <td>P(0,0), m=¾</td>
+                    <td>y - 0 = ¾(x - 0)</td>
+                    <td>y = ¾x</td>
+                    <td>Simplificación natural</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La forma punto-pendiente es ideal para problemas donde se conoce un punto específico y la tasa de cambio. Sin embargo, no puede representar rectas verticales, ya que su pendiente es indefinida.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+              <ul style='padding-left:18px;line-height:1.6;'>
+                <li><strong>Ingeniería civil:</strong> Cálculo de pendientes en carreteras y diseño de rampas con puntos de referencia específicos.</li>
+                <li><strong>Economía:</strong> Modelado de tasas de crecimiento a partir de datos puntuales conocidos.</li>
+                <li><strong>Física:</strong> Determinación de ecuaciones de movimiento cuando se conoce posición y velocidad en un instante.</li>
+                <li><strong>Programación:</strong> Algoritmos para interpolación lineal entre puntos conocidos.</li>
+                <li><strong>Robótica:</strong> Planificación de trayectorias con puntos de paso obligatorio y pendientes controladas.</li>
+                <li><strong>Cartografía:</strong> Cálculo de elevaciones entre puntos topográficos conocidos.</li>
+                <li><strong>Medicina:</strong> Modelado de tasas de administración de medicamentos con dosis inicial conocida.</li>
+                <li><strong>Meteorología:</strong> Predicción de cambios de temperatura usando datos puntuales y tasas de cambio.</li>
+              </ul>
+            </div>
+            
+            <!-- Bibliografía -->
+            <div class='bibliography-section' style='margin-top:20px;'>
+              <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+              <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+                <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+                <li>Lehmann, C. H. (2019). Geometría Analítica. Limusa.</li>
+                <li>Anton, H., Bivens, I., & Davis, S. (2020). Cálculo: Trascendentes Tempranas. Limusa.</li>
+                <li>Khan Academy: Point-slope form. www.khanacademy.org</li>
+              </ul>
+            </div>
+          </div>
+          `);"><b>3.2.2. Forma Punto-Pendiente</b> <span class='emoji-small'>✅</span>
+        </li>
         
           <li onclick="abrirModal('3.3. Funciones lineales', `
             <hr><br>
