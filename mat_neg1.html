@@ -8323,49 +8323,51 @@
     <!-- Gráfica 1: Comportamiento según el discriminante -->
     <div class='graph-container' style='margin-bottom:20px;'>
       <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Comportamiento de parábolas según el discriminante</h4>
-      <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-        <!-- Ejes coordenados -->
-        <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-        
-        <!-- Caso 1: Δ > 0 (Dos raíces reales) -->
-        <g transform='translate(0,0)'>
-          <!-- Parábola y = x² - 3x + 2 (raíces en x=1 y x=2) -->
-          <path d='M 60,250 Q 125,50 190,250' stroke='var(--apple-vibrant-blue)' stroke-width='2' fill='none'></path>
-          <circle cx='100' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
-          <circle cx='150' cy='175' r='3' fill='var(--apple-vibrant-red)'></circle>
-          <text x='100' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=1</text>
-          <text x='150' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-red)'>x=2</text>
-          <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Δ > 0</text>
-          <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>2 raíces reales</text>
-        </g>
-        
-        <!-- Caso 2: Δ = 0 (Una raíz real doble) -->
-        <g transform='translate(200,0)'>
-          <!-- Parábola y = x² - 2x + 1 (raíz doble en x=1) -->
-          <path d='M 60,250 Q 125,175 190,250' stroke='var(--apple-vibrant-green)' stroke-width='2' fill='none'></path>
-          <circle cx='125' cy='175' r='3' fill='var(--apple-vibrant-orange)'></circle>
-          <text x='125' y='190' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>x=1</text>
-          <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>Δ = 0</text>
-          <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>1 raíz real doble</text>
-        </g>
-        
-        <!-- Caso 3: Δ < 0 (Raíces complejas) -->
-        <g transform='translate(100,175)'>
-          <!-- Parábola y = x² + 1 (sin raíces reales) -->
-          <path d='M 60,250 Q 125,150 190,250' stroke='var(--apple-vibrant-purple)' stroke-width='2' fill='none'></path>
-          <text x='125' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)'>Δ < 0</text>
-          <text x='125' y='115' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>0 raíces reales</text>
-          <text x='125' y='130' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>2 raíces complejas</text>
-        </g>
-        
-        <!-- Líneas divisorias -->
-        <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
-        <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
-        
-        <!-- Título general -->
-        <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Relación entre el Discriminante y las Raíces de Ecuaciones Cuadráticas</text>
-      </svg>
+      <svg viewBox="0 0 600 300" class="math-graph" style="width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;">
+  <!-- Título -->
+  <text x="300" y="25" text-anchor="middle" font-size="14" fill="var(--apple-dark-gray)">
+    Relación entre el Discriminante y las Raíces de Ecuaciones Cuadráticas
+  </text>
+  
+  <!-- Paneles delimitadores -->
+  <line x1="200" y1="40" x2="200" y2="270" stroke="var(--apple-light-gray)" stroke-width="0.5"></line>
+  <line x1="400" y1="40" x2="400" y2="270" stroke="var(--apple-light-gray)" stroke-width="0.5"></line>
+  
+  <!-- Caso 1: Δ > 0 -->
+  <g transform="translate(0,50)">
+    <line x1="50" y1="100" x2="150" y2="100" stroke="var(--apple-dark-gray)" stroke-width="1"></line>
+    <line x1="100" y1="30" x2="100" y2="160" stroke="var(--apple-dark-gray)" stroke-width="1"></line>
+    <path d="M 50,140 Q 100,20 150,140" stroke="var(--apple-vibrant-blue)" stroke-width="2" fill="none"></path>
+    <circle cx="65" cy="100" r="3" fill="var(--apple-vibrant-red)"></circle>
+    <circle cx="135" cy="100" r="3" fill="var(--apple-vibrant-red)"></circle>
+    <text x="65" y="115" font-size="10" fill="var(--apple-vibrant-red)" text-anchor="middle">x₁</text>
+    <text x="135" y="115" font-size="10" fill="var(--apple-vibrant-red)" text-anchor="middle">x₂</text>
+    <text x="100" y="15" text-anchor="middle" font-size="12" fill="var(--apple-vibrant-blue)">Δ > 0</text>
+    <text x="100" y="30" text-anchor="middle" font-size="10" fill="var(--apple-dark-gray)">2 raíces reales</text>
+  </g>
+
+  <!-- Caso 2: Δ = 0 -->
+  <g transform="translate(200,50)">
+    <line x1="50" y1="100" x2="150" y2="100" stroke="var(--apple-dark-gray)" stroke-width="1"></line>
+    <line x1="100" y1="30" x2="100" y2="160" stroke="var(--apple-dark-gray)" stroke-width="1"></line>
+    <path d="M 50,140 Q 100,100 150,140" stroke="var(--apple-vibrant-green)" stroke-width="2" fill="none"></path>
+    <circle cx="100" cy="100" r="3" fill="var(--apple-vibrant-orange)"></circle>
+    <text x="100" y="115" font-size="10" fill="var(--apple-vibrant-orange)" text-anchor="middle">x₁=x₂</text>
+    <text x="100" y="15" text-anchor="middle" font-size="12" fill="var(--apple-vibrant-green)">Δ = 0</text>
+    <text x="100" y="30" text-anchor="middle" font-size="10" fill="var(--apple-dark-gray)">1 raíz doble</text>
+  </g>
+
+  <!-- Caso 3: Δ < 0 -->
+  <g transform="translate(400,50)">
+    <line x1="50" y1="100" x2="150" y2="100" stroke="var(--apple-dark-gray)" stroke-width="1"></line>
+    <line x1="100" y1="30" x2="100" y2="160" stroke="var(--apple-dark-gray)" stroke-width="1"></line>
+    <path d="M 50,140 Q 100,60 150,140" stroke="var(--apple-vibrant-purple)" stroke-width="2" fill="none"></path>
+    <text x="100" y="15" text-anchor="middle" font-size="12" fill="var(--apple-vibrant-purple)">Δ < 0</text>
+    <text x="100" y="30" text-anchor="middle" font-size="10" fill="var(--apple-dark-gray)">0 raíces reales</text>
+    <text x="100" y="45" text-anchor="middle" font-size="10" fill="var(--apple-dark-gray)">2 raíces complejas</text>
+  </g>
+</svg>
+
       <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cuando Δ > 0, la parábola corta el eje X en dos puntos (raíces reales distintas). Cuando Δ = 0, la parábola es tangente al eje X (raíz doble). Cuando Δ < 0, la parábola no corta el eje X (raíces complejas).</p>
     </div>
     
