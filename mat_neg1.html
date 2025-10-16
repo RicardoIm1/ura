@@ -4357,51 +4357,83 @@
             <!-- Gráfica 1: Tipos fundamentales de pendientes -->
             <div class='graph-container' style='margin-bottom:20px;'>
               <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Los cuatro tipos fundamentales de pendientes</h4>
-              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-                <!-- Sistema de coordenadas principal -->
-                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-                
+              <svg viewBox='0 0 400 350' class='math-graph' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.15);'>
+                <defs>
+                  <!-- Gradientes para las líneas -->
+                  <linearGradient id='grad-blue' x1='0%' y1='0%' x2='100%' y2='100%'>
+                    <stop offset='0%' stop-color='var(--apple-vibrant-blue)' stop-opacity='0.9'/>
+                    <stop offset='100%' stop-color='var(--apple-sky-blue)' stop-opacity='0.6'/>
+                  </linearGradient>
+              
+                  <linearGradient id='grad-red' x1='0%' y1='0%' x2='100%' y2='100%'>
+                    <stop offset='0%' stop-color='var(--apple-vibrant-red)' stop-opacity='0.9'/>
+                    <stop offset='100%' stop-color='var(--apple-light-red)' stop-opacity='0.6'/>
+                  </linearGradient>
+              
+                  <linearGradient id='grad-purple' x1='0%' y1='0%' x2='100%' y2='0%'>
+                    <stop offset='0%' stop-color='var(--apple-vibrant-purple)' stop-opacity='0.9'/>
+                    <stop offset='100%' stop-color='var(--apple-light-purple)' stop-opacity='0.6'/>
+                  </linearGradient>
+              
+                  <linearGradient id='grad-orange' x1='0%' y1='0%' x2='0%' y2='100%'>
+                    <stop offset='0%' stop-color='var(--apple-vibrant-orange)' stop-opacity='0.9'/>
+                    <stop offset='100%' stop-color='var(--apple-light-orange)' stop-opacity='0.6'/>
+                  </linearGradient>
+              
+                  <!-- Sombra de texto -->
+                  <filter id='soft-shadow' x='-10%' y='-10%' width='120%' height='120%'>
+                    <feDropShadow dx='0.5' dy='0.5' stdDeviation='1' flood-color='rgba(0,0,0,0.25)'/>
+                  </filter>
+                </defs>
+              
+                <!-- Ejes -->
+                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'/>
+                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'/>
+              
                 <!-- Cuadrante 1: Pendiente positiva (m > 0) -->
                 <g transform='translate(0,0)'>
-                  <line x1='50' y1='100' x2='150' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
-                  <text x='100' y='120' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>m > 0</text>
-                  <text x='100' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Creciente</text>
-                  <!-- Triángulo de pendiente -->
-                  <polygon points='80,80 80,70 90,70' fill='var(--apple-vibrant-green)' opacity='0.7'></polygon>
+                  <line x1='50' y1='100' x2='150' y2='50' stroke='url(#grad-blue)' stroke-width='3'/>
+                  <text x='100' y='120' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)' filter='url(#soft-shadow)'>m &gt; 0</text>
+                  <text x='100' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)' filter='url(#soft-shadow)'>Creciente</text>
+              
+                  <polygon points='80,80 80,70 90,70' fill='var(--apple-vibrant-green)' opacity='0.7'/>
                   <text x='85' y='65' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Δy</text>
-                  <polygon points='80,80 90,80 90,70' fill='var(--apple-vibrant-orange)' opacity='0.7'></polygon>
+                  <polygon points='80,80 90,80 90,70' fill='var(--apple-vibrant-orange)' opacity='0.7'/>
                   <text x='95' y='85' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>Δx</text>
                 </g>
-                
+              
                 <!-- Cuadrante 2: Pendiente negativa (m < 0) -->
                 <g transform='translate(200,0)'>
-                  <line x1='50' y1='50' x2='150' y2='100' stroke='var(--apple-vibrant-red)' stroke-width='3'></line>
-                  <text x='100' y='120' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-red)'>m < 0</text>
-                  <text x='100' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Decreciente</text>
+                  <line x1='50' y1='50' x2='150' y2='100' stroke='url(#grad-red)' stroke-width='3'/>
+                  <text x='100' y='120' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-red)' filter='url(#soft-shadow)'>m &lt; 0</text>
+                  <text x='100' y='135' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)' filter='url(#soft-shadow)'>Decreciente</text>
                 </g>
-                
+              
                 <!-- Cuadrante 3: Pendiente cero (m = 0) -->
                 <g transform='translate(0,175)'>
-                  <line x1='50' y1='50' x2='150' y2='50' stroke='var(--apple-vibrant-purple)' stroke-width='3'></line>
-                  <text x='100' y='70' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)'>m = 0</text>
-                  <text x='100' y='85' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Horizontal</text>
+                  <line x1='50' y1='50' x2='150' y2='50' stroke='url(#grad-purple)' stroke-width='3'/>
+                  <text x='100' y='70' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-purple)' filter='url(#soft-shadow)'>m = 0</text>
+                  <text x='100' y='85' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)' filter='url(#soft-shadow)'>Horizontal</text>
                 </g>
-                
+              
                 <!-- Cuadrante 4: Pendiente indefinida (m = ∞) -->
                 <g transform='translate(200,175)'>
-                  <line x1='100' y1='50' x2='100' y2='150' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
-                  <text x='100' y='170' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)'>m = ∞</text>
-                  <text x='100' y='185' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Vertical</text>
+                  <line x1='100' y1='50' x2='100' y2='150' stroke='url(#grad-orange)' stroke-width='3'/>
+                  <text x='100' y='170' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)' filter='url(#soft-shadow)'>m = ∞</text>
+                  <text x='100' y='185' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)' filter='url(#soft-shadow)'>Vertical</text>
                 </g>
-                
-                <!-- Líneas divisorias del sistema -->
-                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
-                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
-                
-                <!-- Título general -->
-                <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Clasificación de Pendientes según su Comportamiento</text>
+              
+                <!-- Líneas divisorias -->
+                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'/>
+                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'/>
+              
+                <!-- Título -->
+                <text x='200' y='330' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' font-weight='500' filter='url(#soft-shadow)'>
+                  Clasificación de Pendientes según su Comportamiento
+                </text>
+              
               </svg>
+
               <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La pendiente positiva indica que y aumenta cuando x aumenta, la negativa que y disminuye cuando x aumenta, cero significa y constante, e indefinida significa x constante. El triángulo muestra la relación fundamental m = Δy/Δx que define la pendiente.</p>
             </div>
             
@@ -4470,54 +4502,55 @@
             <!-- Gráfica 2: Comparación de diferentes valores de pendiente -->
             <div class='graph-container' style='margin-bottom:20px;'>
               <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Comparación de diferentes valores de pendiente</h4>
-              <svg viewBox=0 0 400 300 width=400 height=300>
-  <!-- Fondo con esquinas redondeadas -->
-  <rect x=0 y=0 width=400 height=300 rx=8 ry=8 fill=#f5f5f7/>
+              <svg viewBox='0 0 400 300' width='400' height='300' xmlns='http://www.w3.org/2000/svg'>
+                <!-- Fondo con esquinas redondeadas -->
+                <rect x='0' y='0' width='400' height='300' rx='8' ry='8' fill='#f5f5f7'/>
+              
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='#555' stroke-width='2'/>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='#555' stroke-width='2'/>
+              
+                <!-- Rectas con distintas pendientes -->
+                <line x1='50' y1='200' x2='350' y2='100' stroke='#007AFF' stroke-width='2'/>
+                <text x='300' y='120' font-size='12' fill='#007AFF'>m = 1/2 = 0.5</text>
+              
+                <line x1='50' y1='225' x2='350' y2='75' stroke='#34C759' stroke-width='2'/>
+                <text x='300' y='95' font-size='12' fill='#34C759'>m = 1</text>
+              
+                <line x1='50' y1='240' x2='350' y2='60' stroke='#FF9500' stroke-width='2'/>
+                <text x='300' y='80' font-size='12' fill='#FF9500'>m = 2</text>
+              
+                <line x1='50' y1='100' x2='350' y2='200' stroke='#FF3B30' stroke-width='2'/>
+                <text x='300' y='180' font-size='12' fill='#FF3B30'>m = -1/2 = -0.5</text>
+              
+                <line x1='50' y1='75' x2='350' y2='225' stroke='#AF52DE' stroke-width='2'/>
+                <text x='300' y='205' font-size='12' fill='#AF52DE'>m = -1</text>
+              
+                <line x1='50' y1='60' x2='350' y2='240' stroke='#A2845E' stroke-width='2'/>
+                <text x='300' y='220' font-size='12' fill='#A2845E'>m = -2</text>
+              
+                <!-- Punto de referencia -->
+                <circle cx='200' cy='150' r='3' fill='#555'/>
+              
+                <!-- Triángulos de pendiente -->
+                <line x1='200' y1='150' x2='250' y2='150' stroke='#999' stroke-width='1' stroke-dasharray='3,3'/>
+                <line x1='250' y1='150' x2='250' y2='100' stroke='#999' stroke-width='1' stroke-dasharray='3,3'/>
+                <line x1='250' y1='150' x2='250' y2='200' stroke='#999' stroke-width='1' stroke-dasharray='3,3'/>
+              
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='270' text-anchor='middle' font-size='14' fill='#333'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='#333' transform='rotate(-90 30,150)'>Eje Y</text>
+              
+                <!-- Leyenda explicativa -->
+                <rect x='250' y='30' width='140' height='90' fill='white' stroke='#999' stroke-width='1' rx='5'/>
+                <text x='260' y='45' font-size='10' fill='#333'>Valor absoluto de m:</text>
+                <text x='260' y='60' font-size='9' fill='#666'>• |m| pequeño → recta más plana</text>
+                <text x='260' y='70' font-size='9' fill='#666'>• |m| grande → recta más inclinada</text>
+                <text x='260' y='80' font-size='9' fill='#666'>• |m| = 1 → ángulo de 45°</text>
+                <text x='260' y='90' font-size='9' fill='#666'>• m &gt; 0 → función creciente</text>
+                <text x='260' y='100' font-size='9' fill='#666'>• m &lt; 0 → función decreciente</text>
+              </svg>
 
-  <!-- Ejes coordenados -->
-  <line x1=50 y1=250 x2=350 y2=250 stroke=#555 stroke-width=2/>
-  <line x1=200 y1=50 x2=200 y2=250 stroke=#555 stroke-width=2/>
-
-  <!-- Rectas con distintas pendientes -->
-  <line x1=50 y1=200 x2=350 y2=100 stroke=#007AFF stroke-width=2/>
-  <text x=300 y=120 font-size=12 fill=#007AFF>m = 1/2 = 0.5</text>
-
-  <line x1=50 y1=225 x2=350 y2=75 stroke=#34C759 stroke-width=2/>
-  <text x=300 y=95 font-size=12 fill=#34C759>m = 1</text>
-
-  <line x1=50 y1=240 x2=350 y2=60 stroke=#FF9500 stroke-width=2/>
-  <text x=300 y=80 font-size=12 fill=#FF9500>m = 2</text>
-
-  <line x1=50 y1=100 x2=350 y2=200 stroke=#FF3B30 stroke-width=2/>
-  <text x=300 y=180 font-size=12 fill=#FF3B30>m = -1/2 = -0.5</text>
-
-  <line x1=50 y1=75 x2=350 y2=225 stroke=#AF52DE stroke-width=2/>
-  <text x=300 y=205 font-size=12 fill=#AF52DE>m = -1</text>
-
-  <line x1=50 y1=60 x2=350 y2=240 stroke=#A2845E stroke-width=2/>
-  <text x=300 y=220 font-size=12 fill=#A2845E>m = -2</text>
-
-  <!-- Punto de referencia -->
-  <circle cx=200 cy=150 r=3 fill=#555/>
-
-  <!-- Triángulos de pendiente -->
-  <line x1=200 y1=150 x2=250 y2=150 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
-  <line x1=250 y1=150 x2=250 y2=100 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
-  <line x1=250 y1=150 x2=250 y2=200 stroke=#999 stroke-width=1 stroke-dasharray=3,3/>
-
-  <!-- Etiquetas de ejes -->
-  <text x=200 y=270 text-anchor=middle font-size=14 fill=#333>Eje X</text>
-  <text x=30 y=150 text-anchor=middle font-size=14 fill=#333 transform=rotate(-90 30,150)>Eje Y</text>
-
-  <!-- Leyenda explicativa -->
-  <rect x=250 y=30 width=140 height=90 fill=white stroke=#999 stroke-width=1 rx=5/>
-  <text x=260 y=45 font-size=10 fill=#333>Valor absoluto de m:</text>
-  <text x=260 y=60 font-size=9 fill=#666>• |m| pequeño → recta más plana</text>
-  <text x=260 y=70 font-size=9 fill=#666>• |m| grande → recta más inclinada</text>
-  <text x=260 y=80 font-size=9 fill=#666>• |m| = 1 → ángulo de 45°</text>
-  <text x=260 y=90 font-size=9 fill=#666>• m > 0 → función creciente</text>
-  <text x=260 y=100 font-size=9 fill=#666>• m < 0 → función decreciente</text>
-</svg>
 
               <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El valor absoluto de la pendiente determina la inclinación: mayor |m| significa mayor inclinación. Las pendientes positivas (arriba) son crecientes, las negativas (abajo) son decrecientes. Todas pasan por el mismo punto de referencia, demostrando que diferentes pendientes generan diferentes comportamientos desde un mismo punto.</p>
             </div>
