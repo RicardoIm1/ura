@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es">x
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -4281,11 +4281,261 @@
       </ul>
     </div>
   </div>
-  `);"><b>3.3.2. Costo</b> <span class='emoji-small'>📊</span>
+  `);"><b>3.3.2. Costo</b> <span class=emoji-small>✅</span>
 </li>
     
-    <li>3.3.3. Utilidad</li>
-              <li>3.3.4. Punto de equilibrio de una empresa</li>
+<li onclick="abrirModal('3.3.3. Utilidad', `
+  <hr><br>
+  <div class='math-module'>
+    
+    <!-- Tiempo estimado -->
+    <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+      <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 18 minutos'>
+      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+      <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='11.3097' transform='rotate(-90 10 10)'></circle>
+      <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>18 min</text>
+      </svg>
+      <span style='font-weight:bold;'>Tiempo estimado: 18 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+      <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de utilidad en microeconomía, modelar funciones de utilidad total y marginal, analizar la ley de utilidad marginal decreciente, y aplicar el principio de maximización de utilidad en decisiones de consumo bajo restricción presupuestaria.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+      <p>La utilidad representa la satisfacción o beneficio que un consumidor obtiene al consumir bienes y servicios. Se modela mediante funciones que capturan cómo la utilidad total aumenta con el consumo, mientras que la utilidad marginal (beneficio adicional por consumir una unidad más) generalmente disminuye debido a la ley de utilidad marginal decreciente. Los consumidores racionales buscan maximizar su utilidad sujetos a su restricción presupuestaria.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Tabla de utilidad total y marginal -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-table' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Utilidad del consumo de pizza - Ley de utilidad marginal decreciente</h4>
+      <p>Un consumidor obtiene utilidad al comer rebanadas de pizza. La utilidad total aumenta pero la utilidad marginal disminuye con cada rebanada adicional.</p>
+      <table class='math-table'>
+        <thead>
+          <tr>
+            <th>Rebanadas (x)</th>
+            <th>Utilidad Total U(x)</th>
+            <th>Utilidad Marginal UM(x)</th>
+            <th>Comportamiento del consumidor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>0</td><td>-</td><td>Sin consumo, sin utilidad</td></tr>
+          <tr><td>1</td><td>20</td><td>20</td><td>Alta satisfacción inicial</td></tr>
+          <tr><td>2</td><td>35</td><td>15</td><td>Satisfacción adicional menor</td></tr>
+          <tr><td>3</td><td>45</td><td>10</td><td>Utilidad marginal decreciente</td></tr>
+          <tr><td>4</td><td>50</td><td>5</td><td>Saciedad comenzando</td></tr>
+          <tr><td>5</td><td>52</td><td>2</td><td>Muy poca utilidad adicional</td></tr>
+          <tr><td>6</td><td>51</td><td>-1</td><td>Utilidad marginal negativa</td></tr>
+        </tbody>
+      </table>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La utilidad total alcanza un máximo (en la 5ta rebanada) y luego disminuye. La utilidad marginal es siempre decreciente y se vuelve negativa, ilustrando la ley de utilidad marginal decreciente.</p>
+    </div>
+    
+    <!-- Gráfica 1: Utilidad total y marginal -->
+    <div class='graph-container' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Utilidad total y marginal del consumo de pizza</h4>
+      <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+        <!-- Ejes coordenados - Gráfica superior (Utilidad Total) -->
+        <line x1='50' y1='150' x2='350' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='50' y1='150' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        
+        <!-- Ejes coordenados - Gráfica inferior (Utilidad Marginal) -->
+        <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='50' y1='300' x2='50' y2='200' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        
+        <!-- Marcas del eje X para ambas gráficas -->
+        <line x1='100' y1='145' x2='100' y2='155' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='100' y1='295' x2='100' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='100' y='325' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>1</text>
+        
+        <line x1='150' y1='145' x2='150' y2='155' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='150' y1='295' x2='150' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='150' y='325' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+        
+        <line x1='200' y1='145' x2='200' y2='155' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='200' y1='295' x2='200' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='200' y='325' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>3</text>
+        
+        <line x1='250' y1='145' x2='250' y2='155' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='250' y1='295' x2='250' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='250' y='325' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>4</text>
+        
+        <line x1='300' y1='145' x2='300' y2='155' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <line x1='300' y1='295' x2='300' y2='305' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='300' y='325' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>5</text>
+        
+        <!-- Curva de Utilidad Total -->
+        <path d='M 50,150 
+                 C 80,140 100,130 120,120
+                 C 150,110 180,100 200,95
+                 C 230,90 260,88 280,88
+                 C 310,88 330,92 350,95' 
+              stroke='var(--apple-vibrant-blue)' 
+              stroke-width='3' 
+              fill='none' />
+        
+        <!-- Curva de Utilidad Marginal -->
+        <path d='M 50,280 
+                 C 80,275 100,260 120,250
+                 C 150,235 180,220 200,210
+                 C 230,195 260,185 280,180
+                 C 310,170 330,165 350,160' 
+              stroke='var(--apple-vibrant-orange)' 
+              stroke-width='3' 
+              fill='none' />
+        
+        <!-- Línea de utilidad marginal cero -->
+        <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-vibrant-red)' stroke-width='1' stroke-dasharray='3,3'></line>
+        
+        <!-- Puntos importantes -->
+        <circle cx='280' cy='88' r='4' fill='var(--apple-vibrant-blue)'></circle>
+        <text x='300' cy='80' font-size='12' fill='var(--apple-vibrant-blue)'>Máximo U(x)</text>
+        
+        <!-- Etiquetas -->
+        <text x='200' y='40' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Utilidad Total U(x)</text>
+        <text x='200' y='190' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Utilidad Marginal UM(x)</text>
+        <text x='200' y='340' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Cantidad Consumida (x)</text>
+        
+        <!-- Leyenda -->
+        <rect x='250' y='60' width='140' height='40' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+        <line x1='260' y1='75' x2='280' y2='75' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+        <text x='290' y='80' font-size='12' fill='var(--apple-dark-gray)'>Utilidad Total</text>
+        <line x1='260' y1='90' x2='280' y2='90' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
+        <text x='290' y='95' font-size='12' fill='var(--apple-dark-gray)'>Utilidad Marginal</text>
+      </svg>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La utilidad total tiene forma de S invertida, mientras la utilidad marginal es siempre decreciente. Cuando la utilidad marginal cruza el eje horizontal (se vuelve cero), la utilidad total alcanza su máximo.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Maximización de utilidad con restricción presupuestaria -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Elección óptima entre pizzas y refrescos</h4>
+      <p>Un consumidor tiene $60. Pizzas cuestan $10 c/u, refrescos $2 c/u. Función de utilidad: U(P,R) = P⁰·⁵ × R⁰·⁵ (Cobb-Douglas)</p>
+      <table class='math-table'>
+        <thead>
+          <tr>
+            <th>Combinación</th>
+            <th>Pizzas (P)</th>
+            <th>Refrescos (R)</th>
+            <th>Costo Total</th>
+            <th>Utilidad U(P,R)</th>
+            <th>Utilidad Marginal por $</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>6</td><td>0</td><td>$60</td><td>0</td><td>-</td></tr>
+          <tr><td>B</td><td>5</td><td>5</td><td>$60</td><td>5.0</td><td>Balanceado</td></tr>
+          <tr><td>C</td><td>4</td><td>10</td><td>$60</td><td>6.3</td><td>Mejor equilibrio</td></tr>
+          <tr><td>D</td><td>3</td><td>15</td><td>$60</td><td>6.7</td><td>Óptimo</td></tr>
+          <tr><td>E</td><td>2</td><td>20</td><td>$60</td><td>6.3</td><td>Desequilibrio</td></tr>
+          <tr><td>F</td><td>0</td><td>30</td><td>$60</td><td>0</td><td>-</td></tr>
+        </tbody>
+      </table>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El óptimo ocurre cuando la utilidad marginal por dólar gastado es igual para ambos bienes (3 pizzas y 15 refrescos), maximizando la utilidad dentro del presupuesto.</p>
+    </div>
+    
+    <!-- Gráfica 2: Curvas de indiferencia y restricción presupuestaria -->
+    <div class='graph-container' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Curvas de indiferencia y maximización de utilidad</h4>
+      <svg viewBox='0 0 400 320' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+        <!-- Ejes coordenados -->
+        <line x1='50' y1='270' x2='350' y2='270' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        <line x1='50' y1='270' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+        
+        <!-- Marcas del eje X (Pizzas) -->
+        <line x1='100' y1='265' x2='100' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='100' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>2</text>
+        <line x1='150' y1='265' x2='150' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='150' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>4</text>
+        <line x1='200' y1='265' x2='200' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='200' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>6</text>
+        <line x1='250' y1='265' x2='250' y2='275' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='250' y='290' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>8</text>
+        
+        <!-- Marcas del eje Y (Refrescos) -->
+        <line x1='45' y1='220' x2='55' y2='220' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='225' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>10</text>
+        <line x1='45' y1='170' x2='55' y2='170' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='175' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>20</text>
+        <line x1='45' y1='120' x2='55' y2='120' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='125' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>30</text>
+        <line x1='45' y1='70' x2='55' y2='70' stroke='var(--apple-dark-gray)' stroke-width='1'></line>
+        <text x='30' y='75' text-anchor='middle' font-size='12' fill='var(--apple-dark-gray)'>40</text>
+        
+        <!-- Restricción presupuestaria -->
+        <line x1='50' y1='70' x2='350' y2='270' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+        
+        <!-- Curvas de indiferencia -->
+        <path d='M 100,250 C 150,200 200,170 250,150 C 300,140 330,135 350,135' 
+              stroke='var(--apple-vibrant-blue)' 
+              stroke-width='2' 
+              fill='none' 
+              stroke-dasharray='5,3' />
+        
+        <path d='M 80,220 C 150,150 200,120 250,100 C 300,90 330,85 350,85' 
+              stroke='var(--apple-vibrant-blue)' 
+              stroke-width='2' 
+              fill='none' 
+              stroke-dasharray='5,3' />
+        
+        <path d='M 60,190 C 150,100 200,70 250,50 C 300,40 330,35 350,35' 
+              stroke='var(--apple-vibrant-blue)' 
+              stroke-width='2' 
+              fill='none' 
+              stroke-dasharray='5,3' />
+        
+        <!-- Punto óptimo -->
+        <circle cx='200' cy='170' r='6' fill='var(--apple-vibrant-green)'></circle>
+        <text x='220' y='165' font-size='12' fill='var(--apple-vibrant-green)'>Óptimo: (3,15)</text>
+        
+        <!-- Etiquetas de ejes -->
+        <text x='200' y='310' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Pizzas (P)</text>
+        <text x='15' y='160' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 15,160)'>Refrescos (R)</text>
+        
+        <!-- Leyenda -->
+        <rect x='250' y='40' width='140' height='50' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+        <line x1='260' y1='55' x2='280' y2='55' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
+        <text x='290' y='60' font-size='12' fill='var(--apple-dark-gray)'>Restricción Presupuestaria</text>
+        <line x1='260' y1='70' x2='280' y2='70' stroke='var(--apple-vibrant-blue)' stroke-width='2' stroke-dasharray='5,3'></line>
+        <text x='290' y='75' font-size='12' fill='var(--apple-dark-gray)'>Curvas de Indiferencia</text>
+      </svg>
+      <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El consumidor alcanza la curva de indiferencia más alta posible en el punto donde ésta es tangente a la restricción presupuestaria, maximizando su utilidad dado su presupuesto.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class='content-section' style='margin-bottom:20px;'>
+      <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+      <ul style='padding-left:18px;line-height:1.6;'>
+        <li><strong>Decisiones de consumo:</strong> Los consumidores aplican inconscientemente principios de utilidad marginal al decidir cómo distribuir su presupuesto entre diferentes bienes.</li>
+        <li><strong>Políticas de precios:</strong> Las empresas utilizan conceptos de utilidad para diseñar estrategias de precios que maximicen el excedente del consumidor capturado.</li>
+        <li><strong>Economía del bienestar:</strong> Análisis de cómo diferentes políticas afectan la utilidad y bienestar de los consumidores.</li>
+        <li><strong>Marketing y segmentación:</strong> Diseño de productos y servicios que maximicen la utilidad percibida por diferentes segmentos de consumidores.</li>
+        <li><strong>Teoría del consumidor:</strong> Base para entender la demanda de mercado como agregación de decisiones individuales de maximización de utilidad.</li>
+        <li><strong>Análisis de preferencias reveladas:</strong> Inferir las preferencias de los consumidores observando sus elecciones reales en el mercado.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class='bibliography-section' style='margin-top:20px;'>
+      <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+      <ul style='padding-left:18px;line-height:1.5;'>
+        <li>Varian, H. R. (2014). Intermediate Microeconomics: A Modern Approach. Norton.</li>
+        <li>Pindyck, R. S., & Rubinfeld, D. L. (2017). Microeconomics. Pearson.</li>
+        <li>Mankiw, N. G. (2020). Principles of Economics. Cengage Learning.</li>
+        <li>Nicholson, W., & Snyder, C. (2012). Microeconomic Theory: Basic Principles and Extensions. Cengage Learning.</li>
+        <li>Kreps, D. M. (1990). A Course in Microeconomic Theory. Princeton University Press.</li>
+        <li>Khan Academy: Microeconomics - Consumer Theory. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>3.3.3. Utilidad</b> <span class='emoji-small'>✅</span>
+</li>
+    
+    <li>3.3.4. Punto de equilibrio de una empresa</li>
               <li>3.3.5. Ley de la oferta</li>
               <li>3.3.6. Ley de la demanda</li>
               <li>3.3.7. Punto de equilibrio de mercado</li>
