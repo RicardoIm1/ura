@@ -4597,9 +4597,369 @@
           </div>
           `);"><b>3.1. Pendiente de una Recta</b> <span class='emoji-small'>✅</span>
         </li>
-        
-          <li>3.1.1. Rectas paralelas y perpendiculares</li>
-          <li><b>3.2. Ecuaciones de la recta</b></li>
+                
+        <li onclick="abrirModal('3.1.1. Rectas Paralelas y Perpendiculares', `
+          <hr><br>
+          <div class='math-module'>
+            
+            <!-- Tiempo estimado -->
+            <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+              <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 18 minutos'>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='11.3097' transform='rotate(-90 10 10)'></circle>
+              <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>18 min</text>
+              </svg>
+              <span style='font-weight:bold;'>Tiempo estimado: 18 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+              <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+              <span><strong>Objetivo:</strong> Comprender las relaciones geométricas entre rectas paralelas y perpendiculares, determinar cuándo dos rectas son paralelas o perpendiculares usando sus pendientes, encontrar ecuaciones de rectas paralelas o perpendiculares a una recta dada, y aplicar estos conceptos en problemas de geometría analítica y situaciones del mundo real.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+              <p>Dos rectas son paralelas cuando tienen exactamente la misma pendiente pero diferentes intersecciones con los ejes, lo que significa que nunca se intersectan y mantienen una distancia constante entre sí. Dos rectas son perpendiculares cuando sus pendientes son recíprocos negativos (m₁ × m₂ = -1), formando ángulos de 90° al intersectarse. Estas relaciones permiten determinar si rectas son paralelas o perpendiculares simplemente comparando sus pendientes, y facilitan la construcción de nuevas rectas con relaciones específicas respecto a rectas existentes.</p>
+            </div>
+            
+            <!-- Ejercicio 1: Identificación de relaciones -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Identificación de rectas paralelas y perpendiculares</h4>
+              <p>Determinación de relaciones entre rectas comparando sus pendientes:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Recta 1</th>
+                    <th>Recta 2</th>
+                    <th>Pendiente 1 (m₁)</th>
+                    <th>Pendiente 2 (m₂)</th>
+                    <th>Relación</th>
+                    <th>Comprobación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>y = 2x + 3</td>
+                    <td>y = 2x - 1</td>
+                    <td>m₁ = 2</td>
+                    <td>m₂ = 2</td>
+                    <td>Paralelas</td>
+                    <td>m₁ = m₂ = 2</td>
+                  </tr>
+                  <tr>
+                    <td>y = -3x + 4</td>
+                    <td>y = ⅓x - 2</td>
+                    <td>m₁ = -3</td>
+                    <td>m₂ = ⅓</td>
+                    <td>Perpendiculares</td>
+                    <td>m₁ × m₂ = -3 × ⅓ = -1</td>
+                  </tr>
+                  <tr>
+                    <td>y = ½x + 5</td>
+                    <td>y = -2x + 1</td>
+                    <td>m₁ = ½</td>
+                    <td>m₂ = -2</td>
+                    <td>Perpendiculares</td>
+                    <td>m₁ × m₂ = ½ × (-2) = -1</td>
+                  </tr>
+                  <tr>
+                    <td>y = 4x - 3</td>
+                    <td>y = 4x + 7</td>
+                    <td>m₁ = 4</td>
+                    <td>m₂ = 4</td>
+                    <td>Paralelas</td>
+                    <td>m₁ = m₂ = 4</td>
+                  </tr>
+                  <tr>
+                    <td>y = -⅖x + 2</td>
+                    <td>y = ⅖x - 4</td>
+                    <td>m₁ = -⅖</td>
+                    <td>m₂ = ⅖</td>
+                    <td>Ni paralelas ni perpendiculares</td>
+                    <td>m₁ ≠ m₂ y m₁ × m₂ ≠ -1</td>
+                  </tr>
+                  <tr>
+                    <td>y = ¾x + 1</td>
+                    <td>y = -⁴⁄₃x - 2</td>
+                    <td>m₁ = ¾</td>
+                    <td>m₂ = -⁴⁄₃</td>
+                    <td>Perpendiculares</td>
+                    <td>m₁ × m₂ = ¾ × (-⁴⁄₃) = -1</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Para rectas paralelas, las pendientes son idénticas. Para rectas perpendiculares, las pendientes son recíprocos negativos (su producto es -1). Si ninguna de estas condiciones se cumple, las rectas se intersectan pero no son perpendiculares.</p>
+            </div>
+            
+            <!-- Gráfica 1: Rectas paralelas y perpendiculares -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Rectas paralelas y perpendiculares</h4>
+              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Grupo de rectas paralelas -->
+                <g transform='translate(0,0)'>
+                  <line x1='50' y1='100' x2='150' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                  <line x1='50' y1='130' x2='150' y2='80' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                  <line x1='50' y1='160' x2='150' y2='110' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                  <text x='100' y='180' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Rectas Paralelas</text>
+                  <text x='100' y='195' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m₁ = m₂ = m₃</text>
+                  
+                  <!-- Indicador de distancia constante -->
+                  <line x1='120' y1='65' x2='120' y2='95' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+                  <text x='130' y='80' text-anchor='start' font-size='8' fill='var(--apple-dark-gray)'>d</text>
+                </g>
+                
+                <!-- Grupo de rectas perpendiculares -->
+                <g transform='translate(200,0)'>
+                  <!-- Recta con pendiente positiva -->
+                  <line x1='50' y1='150' x2='150' y2='50' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
+                  
+                  <!-- Recta con pendiente negativa recíproca -->
+                  <line x1='50' y1='50' x2='150' y2='150' stroke='var(--apple-vibrant-red)' stroke-width='3'></line>
+                  
+                  <text x='100' y='180' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)'>Rectas Perpendiculares</text>
+                  <text x='100' y='195' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m₁ × m₂ = -1</text>
+                  
+                  <!-- Ángulo recto -->
+                  <path d='M 95,95 L 100,95 L 100,100' stroke='var(--apple-vibrant-green)' stroke-width='2' fill='none'></path>
+                  <text x='105' y='100' text-anchor='start' font-size='8' fill='var(--apple-vibrant-green)'>90°</text>
+                </g>
+                
+                <!-- Línea divisoria -->
+                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+                
+                <!-- Ejemplos numéricos -->
+                <g transform='translate(0,220)'>
+                  <text x='100' y='0' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Ej: y = 2x + 1, y = 2x - 3</text>
+                  <text x='100' y='15' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m = 2 (paralelas)</text>
+                </g>
+                
+                <g transform='translate(200,220)'>
+                  <text x='100' y='0' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Ej: y = ½x + 2, y = -2x + 1</text>
+                  <text x='100' y='15' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>½ × (-2) = -1 (perpendiculares)</text>
+                </g>
+                
+                <!-- Título general -->
+                <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Relaciones entre Rectas: Paralelismo y Perpendicularidad</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las rectas paralelas mantienen distancia constante (d) y nunca se intersectan. Las rectas perpendiculares forman ángulos de 90° al intersectarse. Ambas relaciones pueden determinarse exclusivamente mediante las pendientes.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Construcción de rectas paralelas y perpendiculares -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-drafting-compass' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Encontrar ecuaciones de rectas paralelas y perpendiculares</h4>
+              <p>Construcción de rectas paralelas y perpendiculares a una recta dada que pasen por un punto específico:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Recta Original</th>
+                    <th>Punto Dado</th>
+                    <th>Tipo de Recta</th>
+                    <th>Pendiente Nueva</th>
+                    <th>Ecuación Resultante</th>
+                    <th>Procedimiento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>y = 3x + 2</td>
+                    <td>(1, 4)</td>
+                    <td>Paralela</td>
+                    <td>m = 3</td>
+                    <td>y - 4 = 3(x - 1)<br>y = 3x + 1</td>
+                    <td>Misma pendiente, usar forma punto-pendiente</td>
+                  </tr>
+                  <tr>
+                    <td>y = -2x + 5</td>
+                    <td>(2, -1)</td>
+                    <td>Perpendicular</td>
+                    <td>m = ½</td>
+                    <td>y - (-1) = ½(x - 2)<br>y = ½x - 2</td>
+                    <td>Pendiente recíproca negativa: -2 → ½</td>
+                  </tr>
+                  <tr>
+                    <td>y = ¼x - 3</td>
+                    <td>(-2, 3)</td>
+                    <td>Paralela</td>
+                    <td>m = ¼</td>
+                    <td>y - 3 = ¼(x - (-2))<br>y = ¼x + 3.5</td>
+                    <td>Misma pendiente, punto diferente</td>
+                  </tr>
+                  <tr>
+                    <td>y = -⅗x + 2</td>
+                    <td>(0, 4)</td>
+                    <td>Perpendicular</td>
+                    <td>m = ⁵⁄₃</td>
+                    <td>y - 4 = ⁵⁄₃(x - 0)<br>y = ⁵⁄₃x + 4</td>
+                    <td>Recíproco negativo: -⅗ → ⁵⁄₃</td>
+                  </tr>
+                  <tr>
+                    <td>4x + 2y = 8</td>
+                    <td>(3, 1)</td>
+                    <td>Paralela</td>
+                    <td>m = -2</td>
+                    <td>Primero: y = -2x + 4<br>Luego: y - 1 = -2(x - 3)<br>y = -2x + 7</td>
+                    <td>Convertir a y=mx+b para encontrar pendiente</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Para encontrar una recta paralela, usar la misma pendiente. Para una perpendicular, usar el recíproco negativo de la pendiente. En ambos casos, usar la forma punto-pendiente con el punto dado para encontrar la ecuación específica.</p>
+            </div>
+            
+            <!-- Gráfica 2: Construcción geométrica -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Construcción de rectas paralelas y perpendiculares</h4>
+              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Recta original: y = 2x + 1 -->
+                <line x1='50' y1='150' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                <text x='300' y='70' font-size='12' fill='var(--apple-vibrant-blue)'>Original: y = 2x + 1</text>
+                
+                <!-- Punto dado: (2, 5) -->
+                <circle cx='150' cy='150' r='4' fill='var(--apple-vibrant-red)'></circle>
+                <text x='160' y='145' font-size='12' fill='var(--apple-vibrant-red)'>P(2,5)</text>
+                
+                <!-- Recta paralela por P: y = 2x + 1 -->
+                <line x1='50' y1='190' x2='350' y2='90' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='5,3'></line>
+                <text x='300' y='110' font-size='12' fill='var(--apple-vibrant-green)'>Paralela: y = 2x + 1</text>
+                
+                <!-- Recta perpendicular por P: y = -½x + 6 -->
+                <line x1='50' y1='275' x2='350' y2='125' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,3'></line>
+                <text x='300' y='145' font-size='12' fill='var(--apple-vibrant-orange)'>Perpendicular: y = -½x + 6</text>
+                
+                <!-- Ángulo recto en la intersección -->
+                <path d='M 145,155 L 150,155 L 150,160' stroke='var(--apple-vibrant-purple)' stroke-width='2' fill='none'></path>
+                <text x='155' y='160' font-size='10' fill='var(--apple-vibrant-purple)'>90°</text>
+                
+                <!-- Indicadores de pendiente -->
+                <g transform='translate(100,100)'>
+                  <!-- Pendiente original -->
+                  <polygon points='0,0 0,-10 10,-10' fill='var(--apple-vibrant-blue)' opacity='0.5'></polygon>
+                  <text x='5' y='-15' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>m=2</text>
+                </g>
+                
+                <g transform='translate(250,180)'>
+                  <!-- Pendiente perpendicular -->
+                  <polygon points='0,0 -10,0 -10,5' fill='var(--apple-vibrant-orange)' opacity='0.5'></polygon>
+                  <text x='-15' y='10' text-anchor='middle' font-size='8' fill='var(--apple-dark-gray)'>m=-½</text>
+                </g>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+                
+                <!-- Leyenda -->
+                <rect x='250' y='30' width='140' height='60' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
+                <line x1='260' y1='45' x2='270' y2='45' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                <text x='280' y='50' font-size='10' fill='var(--apple-dark-gray)'>Recta original</text>
+                <line x1='260' y1='55' x2='270' y2='55' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='5,3'></line>
+                <text x='280' y='60' font-size='10' fill='var(--apple-dark-gray)'>Recta paralela</text>
+                <line x1='260' y1='65' x2='270' y2='65' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='5,3'></line>
+                <text x='280' y='70' font-size='10' fill='var(--apple-dark-gray)'>Recta perpendicular</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La recta paralela (verde) tiene la misma pendiente que la original (azul) pero pasa por el punto P. La recta perpendicular (naranja) tiene pendiente recíproca negativa y forma 90° con la original. El punto P pertenece a ambas nuevas rectas.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Casos especiales y aplicaciones -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-shapes' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Casos especiales y aplicaciones prácticas</h4>
+              <p>Análisis de casos especiales y aplicaciones en contextos reales:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Caso Especial</th>
+                    <th>Recta 1</th>
+                    <th>Recta 2</th>
+                    <th>Relación</th>
+                    <th>Explicación</th>
+                    <th>Aplicación Práctica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Rectas horizontales</td>
+                    <td>y = 3</td>
+                    <td>y = -2</td>
+                    <td>Paralelas</td>
+                    <td>Ambas tienen m = 0</td>
+                    <td>Pisos de edificio, estantes</td>
+                  </tr>
+                  <tr>
+                    <td>Rectas verticales</td>
+                    <td>x = 4</td>
+                    <td>x = -1</td>
+                    <td>Paralelas</td>
+                    <td>Ambas tienen m indefinida</td>
+                    <td>Columnas arquitectónicas</td>
+                  </tr>
+                  <tr>
+                    <td>Horizontal y Vertical</td>
+                    <td>y = 5</td>
+                    <td>x = 2</td>
+                    <td>Perpendiculares</td>
+                    <td>m₁ = 0, m₂ indefinida</td>
+                    <td>Esquinas de edificios</td>
+                  </tr>
+                  <tr>
+                    <td>Ejes coordenados</td>
+                    <td>Eje X: y = 0</td>
+                    <td>Eje Y: x = 0</td>
+                    <td>Perpendiculares</td>
+                    <td>Forman ángulo de 90°</td>
+                    <td>Sistema de coordenadas</td>
+                  </tr>
+                  <tr>
+                    <td>Rectas coincidentes</td>
+                    <td>y = 2x + 1</td>
+                    <td>2y = 4x + 2</td>
+                    <td>Paralelas (coincidentes)</td>
+                    <td>Misma pendiente y punto</td>
+                    <td>Representan misma relación</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las rectas horizontales son siempre paralelas entre sí, al igual que las verticales. Una horizontal y una vertical son siempre perpendiculares. Los ejes coordenados son el ejemplo fundamental de perpendicularidad.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+              <ul style='padding-left:18px;line-height:1.6;'>
+                <li><strong>Arquitectura y construcción:</strong> Diseño de paredes paralelas y esquinas perpendiculares en edificios.</li>
+                <li><strong>Ingeniería civil:</strong> Planificación de calles paralelas y perpendiculares en urbanismo.</li>
+                <li><strong>Diseño gráfico:</strong> Creación de layouts con elementos paralelos y perpendiculares para estética visual.</li>
+                <li><strong>Topografía:</strong> Trazado de líneas perpendiculares para medición de terrenos y linderos.</li>
+                <li><strong>Programación:</strong> Algoritmos para detectar paralelismo y perpendicularidad en gráficos computarizados.</li>
+                <li><strong>Física:</strong> Análisis de fuerzas perpendiculares en descomposición vectorial.</li>
+                <li><strong>Robótica:</strong> Navegación de robots siguiendo trayectorias paralelas y perpendiculares.</li>
+                <li><strong>Diseño de circuitos:</strong> Distribución de componentes en patrones paralelos y perpendiculares.</li>
+              </ul>
+            </div>
+            
+            <!-- Bibliografía -->
+            <div class='bibliography-section' style='margin-top:20px;'>
+              <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+              <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+                <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+                <li>Lehmann, C. H. (2019). Geometría Analítica. Limusa.</li>
+                <li>Anton, H., Bivens, I., & Davis, S. (2020). Cálculo: Trascendentes Tempranas. Limusa.</li>
+                <li>Khan Academy: Parallel and perpendicular lines. www.khanacademy.org</li>
+              </ul>
+            </div>
+          </div>
+          `);"><b>3.1.1. Rectas Paralelas y Perpendiculares</b> <span class='emoji-small'>✅</span>
+        </li>
+        <li><b>3.2. Ecuaciones de la recta</b></li>
           <li>3.2.1. Forma común</li>
           <li>3.2.2. Forma punto-pendiente</li>
         
