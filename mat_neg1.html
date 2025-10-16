@@ -4696,56 +4696,65 @@
             <!-- Gráfica 1: Rectas paralelas y perpendiculares -->
             <div class='graph-container' style='margin-bottom:20px;'>
               <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Rectas paralelas y perpendiculares</h4>
-              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-                <!-- Ejes coordenados -->
-                <line x1='50' y1='175' x2='350' y2='175' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              <svg viewBox=0 0 400 350 style=width:100%;height:auto;background:#f5f5f7;border-radius:8px;>
+                <defs>
+                  <marker id=arrowhead markerWidth=5 markerHeight=4 refX=4 refY=2 orient=auto>
+                    <polygon points='0 0,5 2,0 4' fill=#666/>
+                  </marker>
+                </defs>
+                
+                <!-- Ejes coordenados con flechas -->
+                <line x1=50 y1=175 x2=350 y2=175 stroke=#666 stroke-width=2 marker-end=url(#arrowhead)/>
+                <line x1=200 y1=50 x2=200 y2=300 stroke=#666 stroke-width=2 marker-end=url(#arrowhead)/>
                 
                 <!-- Grupo de rectas paralelas -->
-                <g transform='translate(0,0)'>
-                  <line x1='50' y1='100' x2='150' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
-                  <line x1='50' y1='130' x2='150' y2='80' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
-                  <line x1='50' y1='160' x2='150' y2='110' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
-                  <text x='100' y='180' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>Rectas Paralelas</text>
-                  <text x='100' y='195' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m₁ = m₂ = m₃</text>
+                <g transform=translate(0,0)>
+                  <line x1=50 y1=100 x2=150 y2=50 stroke=#007AFF stroke-width=3 stroke-linecap=round/>
+                  <line x1=50 y1=130 x2=150 y2=80 stroke=#007AFF stroke-width=3 stroke-linecap=round/>
+                  <line x1=50 y1=160 x2=150 y2=110 stroke=#007AFF stroke-width=3 stroke-linecap=round/>
+                  <text x=100 y=180 text-anchor=middle font-size=12 font-weight=600 fill=#007AFF>Rectas Paralelas</text>
+                  <text x=100 y=195 text-anchor=middle font-size=11 fill=#666>m₁ = m₂ = m₃</text>
                   
                   <!-- Indicador de distancia constante -->
-                  <line x1='120' y1='65' x2='120' y2='95' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
-                  <text x='130' y='80' text-anchor='start' font-size='8' fill='var(--apple-dark-gray)'>d</text>
+                  <line x1=120 y1=65 x2=120 y2=95 stroke=#666 stroke-width=1.5 stroke-dasharray=4,2/>
+                  <text x=130 y=80 text-anchor=start font-size=10 font-weight=500 fill=#666>d</text>
                 </g>
                 
                 <!-- Grupo de rectas perpendiculares -->
-                <g transform='translate(200,0)'>
+                <g transform=translate(200,0)>
                   <!-- Recta con pendiente positiva -->
-                  <line x1='50' y1='150' x2='150' y2='50' stroke='var(--apple-vibrant-orange)' stroke-width='3'></line>
+                  <line x1=50 y1=150 x2=150 y2=50 stroke=#FF9500 stroke-width=3 stroke-linecap=round/>
                   
                   <!-- Recta con pendiente negativa recíproca -->
-                  <line x1='50' y1='50' x2='150' y2='150' stroke='var(--apple-vibrant-red)' stroke-width='3'></line>
+                  <line x1=50 y1=50 x2=150 y2=150 stroke=#FF3B30 stroke-width=3 stroke-linecap=round/>
                   
-                  <text x='100' y='180' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-orange)'>Rectas Perpendiculares</text>
-                  <text x='100' y='195' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m₁ × m₂ = -1</text>
+                  <text x=100 y=180 text-anchor=middle font-size=12 font-weight=600 fill=#FF9500>Rectas Perpendiculares</text>
+                  <text x=100 y=195 text-anchor=middle font-size=11 fill=#666>m₁ × m₂ = -1</text>
                   
-                  <!-- Ángulo recto -->
-                  <path d='M 95,95 L 100,95 L 100,100' stroke='var(--apple-vibrant-green)' stroke-width='2' fill='none'></path>
-                  <text x='105' y='100' text-anchor='start' font-size='8' fill='var(--apple-vibrant-green)'>90°</text>
+                  <!-- Ángulo recto mejorado -->
+                  <rect x=95 y=95 width=5 height=5 fill=none stroke=#34C759 stroke-width=2/>
+                  <text x=105 y=100 text-anchor=start font-size=10 font-weight=500 fill=#34C759>90°</text>
                 </g>
                 
                 <!-- Línea divisoria -->
-                <line x1='200' y1='50' x2='200' y2='300' stroke='var(--apple-dark-gray)' stroke-width='0.5' stroke-dasharray='3,3'></line>
+                <line x1=200 y1=50 x2=200 y2=300 stroke=#999 stroke-width=1 stroke-dasharray=4,2/>
                 
-                <!-- Ejemplos numéricos -->
-                <g transform='translate(0,220)'>
-                  <text x='100' y='0' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Ej: y = 2x + 1, y = 2x - 3</text>
-                  <text x='100' y='15' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>m = 2 (paralelas)</text>
+                <!-- Ejemplos numéricos mejorados -->
+                <g transform=translate(0,220)>
+                  <text x=100 y=0 text-anchor=middle font-size=11 font-weight=500 fill=#333>Ej: y = 2x + 1, y = 2x - 3</text>
+                  <text x=100 y=15 text-anchor=middle font-size=11 fill=#666>m = 2 (paralelas)</text>
                 </g>
                 
-                <g transform='translate(200,220)'>
-                  <text x='100' y='0' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Ej: y = ½x + 2, y = -2x + 1</text>
-                  <text x='100' y='15' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>½ × (-2) = -1 (perpendiculares)</text>
+                <g transform=translate(200,220)>
+                  <text x=100 y=0 text-anchor=middle font-size=11 font-weight=500 fill=#333>Ej: y = ½x + 2, y = -2x + 1</text>
+                  <text x=100 y=15 text-anchor=middle font-size=11 fill=#666>½ × (-2) = -1 (perpendiculares)</text>
                 </g>
                 
-                <!-- Título general -->
-                <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Relaciones entre Rectas: Paralelismo y Perpendicularidad</text>
+                <!-- Título general mejorado -->
+                <text x=200 y=320 text-anchor=middle font-size=15 font-weight=600 fill=#1D1D1F>Relaciones entre Rectas: Paralelismo y Perpendicularidad</text>
+                
+                <!-- Punto de origen -->
+                <circle cx=200 cy=175 r=3 fill=#666/>
               </svg>
               <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las rectas paralelas mantienen distancia constante (d) y nunca se intersectan. Las rectas perpendiculares forman ángulos de 90° al intersectarse. Ambas relaciones pueden determinarse exclusivamente mediante las pendientes.</p>
             </div>
