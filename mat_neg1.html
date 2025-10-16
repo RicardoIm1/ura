@@ -4473,50 +4473,70 @@
             <!-- Gráfica 2: Comparación de pendientes -->
             <div class='graph-container' style='margin-bottom:20px;'>
               <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Comparación de diferentes valores de pendiente</h4>
-              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-                <!-- Ejes coordenados -->
-                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
-                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+              <svg viewBox=0 0 400 300 style=width:100%;height:auto;background:#f5f5f7;border-radius:8px;>
+                <defs>
+                  <marker id=arrowhead markerWidth=5 markerHeight=4 refX=4 refY=2 orient=auto>
+                    <polygon points='0 0,5 2,0 4' fill=#666/>
+                  </marker>
+                </defs>
+                
+                <!-- Ejes coordenados con flechas y escala -->
+                <line x1=50 y1=150 x2=350 y2=150 stroke=#666 stroke-width=2 marker-end=url(#arrowhead)/>
+                <line x1=200 y1=50 x2=200 y2=250 stroke=#666 stroke-width=2 marker-end=url(#arrowhead)/>
+                
+                <!-- Marcas en los ejes -->
+                <g stroke=#666 stroke-width=1>
+                  <line x1=100 y1=145 x2=100 y2=155/>
+                  <line x1=150 y1=145 x2=150 y2=155/>
+                  <line x1=250 y1=145 x2=250 y2=155/>
+                  <line x1=300 y1=145 x2=300 y2=155/>
+                  <line x1=195 y1=100 x2=205 y2=100/>
+                  <line x1=195 y1=200 x2=205 y2=200/>
+                </g>
+                
+                <!-- Rectas con diferentes pendientes que pasan por el origen (200,150) -->
                 
                 <!-- Recta con m = 1/2 -->
-                <line x1='50' y1='200' x2='350' y2='100' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
-                <text x='300' y='120' font-size='12' fill='var(--apple-vibrant-blue)'>m = 1/2</text>
+                <line x1=100 y1=175 x2=300 y2=125 stroke=#007AFF stroke-width=2.5 stroke-linecap=round/>
+                <text x=310 y=125 font-size=11 font-weight=600 fill=#007AFF>m = 1/2</text>
                 
                 <!-- Recta con m = 1 -->
-                <line x1='50' y1='225' x2='350' y2='75' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
-                <text x='300' y='95' font-size='12' fill='var(--apple-vibrant-green)'>m = 1</text>
+                <line x1=100 y1=200 x2=300 y2=100 stroke=#34C759 stroke-width=2.5 stroke-linecap=round/>
+                <text x=310 y=100 font-size=11 font-weight=600 fill=#34C759>m = 1</text>
                 
                 <!-- Recta con m = 2 -->
-                <line x1='50' y1='240' x2='350' y2='60' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
-                <text x='300' y='80' font-size='12' fill='var(--apple-vibrant-orange)'>m = 2</text>
+                <line x1=150 y1=250 x2=300 y2=50 stroke=#FF9500 stroke-width=2.5 stroke-linecap=round/>
+                <text x=310 y=50 font-size=11 font-weight=600 fill=#FF9500>m = 2</text>
                 
                 <!-- Recta con m = -1/2 -->
-                <line x1='50' y1='100' x2='350' y2='200' stroke='var(--apple-vibrant-red)' stroke-width='2'></line>
-                <text x='300' y='180' font-size='12' fill='var(--apple-vibrant-red)'>m = -1/2</text>
+                <line x1=100 y1=125 x2=300 y2=175 stroke=#FF3B30 stroke-width=2.5 stroke-linecap=round/>
+                <text x=310 y=175 font-size=11 font-weight=600 fill=#FF3B30>m = -1/2</text>
                 
                 <!-- Recta con m = -1 -->
-                <line x1='50' y1='75' x2='350' y2='225' stroke='var(--apple-vibrant-purple)' stroke-width='2'></line>
-                <text x='300' y='205' font-size='12' fill='var(--apple-vibrant-purple)'>m = -1</text>
+                <line x1=100 y1=100 x2=300 y2=200 stroke=#AF52DE stroke-width=2.5 stroke-linecap=round/>
+                <text x=310 y=200 font-size=11 font-weight=600 fill=#AF52DE>m = -1</text>
                 
                 <!-- Recta con m = -2 -->
-                <line x1='50' y1='60' x2='350' y2='240' stroke='var(--apple-vibrant-brown)' stroke-width='2'></line>
-                <text x='300' y='220' font-size='12' fill='var(--apple-vibrant-brown)'>m = -2</text>
+                <line x1=150 y1=50 x2=300 y2=250 stroke=#A2845E stroke-width=2.5 stroke-linecap=round/>
+                <text x=310 y=250 font-size=11 font-weight=600 fill=#A2845E>m = -2</text>
                 
-                <!-- Punto de referencia -->
-                <circle cx='200' cy='150' r='3' fill='var(--apple-dark-gray)'></circle>
+                <!-- Punto de referencia central -->
+                <circle cx=200 cy=150 r=4 fill=#1D1D1F stroke=white stroke-width=1.5/>
                 
-                <!-- Etiquetas de ejes -->
-                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
-                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+                <!-- Etiquetas de ejes mejoradas -->
+                <text x=200 y=270 text-anchor=middle font-size=13 font-weight=600 fill=#333>Eje X</text>
+                <text x=35 y=150 text-anchor=middle font-size=13 font-weight=600 fill=#333 transform=rotate(-90 35,150)>Eje Y</text>
                 
-                <!-- Leyenda -->
-                <rect x='250' y='30' width='140' height='80' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
-                <text x='260' y='45' font-size='10' fill='var(--apple-dark-gray)'><strong>Valor absoluto de m:</strong></text>
-                <text x='260' y='60' font-size='9' fill='var(--apple-dark-gray)'>• |m| pequeño → recta más plana</text>
-                <text x='260' y='70' font-size='9' fill='var(--apple-dark-gray)'>• |m| grande → recta más inclinada</text>
-                <text x='260' y='80' font-size='9' fill='var(--apple-dark-gray)'>• |m| = 1 → ángulo de 45°</text>
-                <text x='260' y='90' font-size='9' fill='var(--apple-dark-gray)'>• m > 0 → creciente</text>
-                <text x='260' y='100' font-size='9' fill='var(--apple-dark-gray)'>• m < 0 → decreciente</text>
+                <!-- Leyenda mejorada -->
+                <rect x=240 y=25 width=145 height=90 fill=white stroke=#DDD stroke-width=1.5 rx=6/>
+                <text x=245 y=40 font-size=12 font-weight=600 fill=#1D1D1F>Interpretación de Pendientes:</text>
+                <g font-size=10 fill=#444>
+                  <text x=245 y=55>• |m| pequeño → recta más plana</text>
+                  <text x=245 y=68>• |m| grande → recta más inclinada</text>
+                  <text x=245 y=81>• |m| = 1 → ángulo de 45°</text>
+                  <text x=245 y=94>• m > 0 → función creciente</text>
+                  <text x=245 y=107>• m < 0 → función decreciente</text>
+                </g>
               </svg>
               <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El valor absoluto de la pendiente determina la inclinación: mayor |m| significa mayor inclinación. Las pendientes positivas (arriba) son crecientes, las negativas (abajo) son decrecientes. Todas pasan por el mismo punto de referencia.</p>
             </div>
