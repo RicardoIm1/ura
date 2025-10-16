@@ -4959,8 +4959,396 @@
           </div>
           `);">3.1.1. Rectas Paralelas y Perpendiculares <span class='emoji-small'>✅</span>
         </li>
-        <li><b>3.2. Ecuaciones de la recta</b></li>
-          <li>3.2.1. Forma común</li>
+        
+        <li onclick="abrirModal('3.2. Ecuaciones de la Recta', `
+          <hr><br>
+          <div class='math-module'>
+            
+            <!-- Tiempo estimado -->
+            <div class='reading-time' style='display:flex;align-items:center;margin-bottom:15px;'>
+              <svg width='24' height='24' viewBox='0 0 20 20' style='margin-right:10px;' aria-label='Tiempo estimado de lectura: 25 minutos'>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-blue)' stroke-width='2'></circle>
+              <circle cx='10' cy='10' r='9' fill='none' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='56.5487' stroke-dashoffset='14.1372' transform='rotate(-90 10 10)'></circle>
+              <text x='10' y='13' text-anchor='middle' font-size='8' fill='var(--apple-black)'>25 min</text>
+              </svg>
+              <span style='font-weight:bold;'>Tiempo estimado: 25 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class='learning-objective' style='background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);'>
+              <i class='fas fa-bullseye' style='color:var(--apple-vibrant-blue);margin-right:8px;'></i>
+              <span><strong>Objetivo:</strong> Dominar las diferentes formas de representar ecuaciones lineales, convertir entre formas pendiente-ordenada, punto-pendiente, general y simétrica, identificar los elementos característicos de cada forma, y aplicar estas ecuaciones para modelar relaciones lineales en contextos matemáticos y del mundo real.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-lightbulb' style='color:var(--apple-vibrant-orange);margin-right:6px;'></i>Idea principal</h4>
+              <p>Una recta en el plano cartesiano puede representarse mediante diferentes formas de ecuaciones, cada una con ventajas específicas según el contexto. La forma pendiente-ordenada (y = mx + b) muestra directamente la pendiente y la intersección con el eje Y. La forma punto-pendiente (y - y₁ = m(x - x₁)) es útil cuando se conoce un punto y la pendiente. La forma general (Ax + By + C = 0) es conveniente para análisis algebraicos, y la forma simétrica (x/a + y/b = 1) muestra claramente las intersecciones con los ejes. La capacidad de convertir entre estas formas permite elegir la representación más adecuada para cada problema.</p>
+            </div>
+            
+            <!-- Ejercicio 1: Forma Pendiente-Ordenada -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-calculator' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 1: Forma Pendiente-Ordenada y = mx + b</h4>
+              <p>Análisis y construcción de ecuaciones en forma pendiente-ordenada:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Ecuación</th>
+                    <th>Pendiente (m)</th>
+                    <th>Ordenada al Origen (b)</th>
+                    <th>Intersección con Y</th>
+                    <th>Comportamiento</th>
+                    <th>Ejemplo Gráfico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>y = 2x + 3</td>
+                    <td>m = 2</td>
+                    <td>b = 3</td>
+                    <td>(0, 3)</td>
+                    <td>Creciente, inclinación moderada</td>
+                    <td>Recta que pasa por (0,3) con pendiente 2</td>
+                  </tr>
+                  <tr>
+                    <td>y = -½x + 1</td>
+                    <td>m = -½</td>
+                    <td>b = 1</td>
+                    <td>(0, 1)</td>
+                    <td>Decreciente, inclinación suave</td>
+                    <td>Recta que pasa por (0,1) con pendiente -½</td>
+                  </tr>
+                  <tr>
+                    <td>y = 4x</td>
+                    <td>m = 4</td>
+                    <td>b = 0</td>
+                    <td>(0, 0)</td>
+                    <td>Creciente pronunciada, pasa por origen</td>
+                    <td>Recta por origen con pendiente 4</td>
+                  </tr>
+                  <tr>
+                    <td>y = -3</td>
+                    <td>m = 0</td>
+                    <td>b = -3</td>
+                    <td>(0, -3)</td>
+                    <td>Horizontal, constante</td>
+                    <td>Recta horizontal en y = -3</td>
+                  </tr>
+                  <tr>
+                    <td>y = 0.8x - 2</td>
+                    <td>m = 0.8</td>
+                    <td>b = -2</td>
+                    <td>(0, -2)</td>
+                    <td>Creciente suave</td>
+                    <td>Recta por (0,-2) con pendiente 0.8</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> En la forma y = mx + b, la pendiente m determina la inclinación y dirección, mientras b indica dónde la recta cruza el eje Y. Esta forma es ideal para graficar rápidamente y entender el comportamiento de la recta.</p>
+            </div>
+            
+            <!-- Gráfica 1: Forma Pendiente-Ordenada -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Elementos de la forma y = mx + b</h4>
+              <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='300' x2='350' y2='300' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='50' y1='300' x2='50' y2='50' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Recta: y = 2x + 3 -->
+                <line x1='50' y1='250' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Intersección con Y (b=3) -->
+                <circle cx='50' cy='250' r='4' fill='var(--apple-vibrant-red)'></circle>
+                <text x='70' y='245' font-size='12' fill='var(--apple-vibrant-red)'>b = 3 → (0,3)</text>
+                
+                <!-- Triángulo de pendiente -->
+                <line x1='150' y1='200' x2='150' y2='150' stroke='var(--apple-vibrant-green)' stroke-width='2' stroke-dasharray='3,3'></line>
+                <line x1='150' y1='150' x2='200' y2='150' stroke='var(--apple-vibrant-orange)' stroke-width='2' stroke-dasharray='3,3'></line>
+                <polygon points='145,200 145,195 150,200' fill='var(--apple-vibrant-green)'></polygon>
+                <polygon points='200,145 195,145 200,150' fill='var(--apple-vibrant-orange)'></polygon>
+                <text x='140' y='175' text-anchor='end' font-size='10' fill='var(--apple-vibrant-green)'>Δy = 2</text>
+                <text x='175' y='140' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>Δx = 1</text>
+                <text x='170' y='190' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>m = Δy/Δx = 2/1 = 2</text>
+                
+                <!-- Puntos adicionales para mostrar pendiente -->
+                <circle cx='100' cy='225' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='150' cy='200' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='200' cy='175' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='250' cy='150' r='2' fill='var(--apple-dark-gray)'></circle>
+                <circle cx='300' cy='125' r='2' fill='var(--apple-dark-gray)'></circle>
+                
+                <!-- Ecuación -->
+                <text x='300' y='80' font-size='14' fill='var(--apple-dark-gray)'>y = 2x + 3</text>
+                <text x='300' y='100' font-size='12' fill='var(--apple-vibrant-blue)'>m = 2, b = 3</text>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='320' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='175' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,175)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La ordenada al origen b = 3 indica que la recta cruza el eje Y en (0,3). La pendiente m = 2 significa que por cada unidad que avanza en X, la recta sube 2 unidades en Y. El triángulo verde/naranja visualiza esta relación Δy/Δx.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Forma Punto-Pendiente -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-map-marker-alt' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 2: Forma Punto-Pendiente y - y₁ = m(x - x₁)</h4>
+              <p>Construcción de ecuaciones usando la forma punto-pendiente:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Punto Dado (x₁,y₁)</th>
+                    <th>Pendiente (m)</th>
+                    <th>Ecuación Punto-Pendiente</th>
+                    <th>Ecuación Simplificada</th>
+                    <th>Procedimiento</th>
+                    <th>Aplicación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>(2, 5)</td>
+                    <td>m = 3</td>
+                    <td>y - 5 = 3(x - 2)</td>
+                    <td>y = 3x - 1</td>
+                    <td>Sustituir punto y pendiente en la fórmula</td>
+                    <td>Recta con pendiente 3 que pasa por (2,5)</td>
+                  </tr>
+                  <tr>
+                    <td>(-1, 4)</td>
+                    <td>m = -2</td>
+                    <td>y - 4 = -2(x - (-1))</td>
+                    <td>y = -2x + 2</td>
+                    <td>Cuidado con signos negativos en x₁</td>
+                    <td>Recta decreciente por (-1,4)</td>
+                  </tr>
+                  <tr>
+                    <td>(0, -3)</td>
+                    <td>m = ½</td>
+                    <td>y - (-3) = ½(x - 0)</td>
+                    <td>y = ½x - 3</td>
+                    <td>Punto en eje Y directamente da ordenada</td>
+                    <td>Recta con intercepto Y conocido</td>
+                  </tr>
+                  <tr>
+                    <td>(3, 0)</td>
+                    <td>m = -1</td>
+                    <td>y - 0 = -1(x - 3)</td>
+                    <td>y = -x + 3</td>
+                    <td>Punto en eje X da raíz de la ecuación</td>
+                    <td>Recta con intercepto X conocido</td>
+                  </tr>
+                  <tr>
+                    <td>(-2, -1)</td>
+                    <td>m = ⁴⁄₃</td>
+                    <td>y - (-1) = ⁴⁄₃(x - (-2))</td>
+                    <td>y = ⁴⁄₃x + ⁵⁄₃</td>
+                    <td>Operaciones con fracciones</td>
+                    <td>Recta con pendiente fraccionaria</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La forma punto-pendiente es especialmente útil cuando se conoce un punto específico por donde pasa la recta y su pendiente. Permite escribir la ecuación directamente sin cálculos adicionales.</p>
+            </div>
+            
+            <!-- Gráfica 2: Forma Punto-Pendiente -->
+            <div class='graph-container' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Visualización de la forma punto-pendiente</h4>
+              <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Ejes coordenados -->
+                <line x1='50' y1='250' x2='350' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                <line x1='200' y1='50' x2='200' y2='250' stroke='var(--apple-dark-gray)' stroke-width='2'></line>
+                
+                <!-- Punto dado: (2, 5) -->
+                <circle cx='150' cy='150' r='5' fill='var(--apple-vibrant-red)'></circle>
+                <text x='160' y='145' font-size='12' fill='var(--apple-vibrant-red)'>P(2,5)</text>
+                
+                <!-- Recta: y - 5 = 3(x - 2) → y = 3x - 1 -->
+                <line x1='50' y1='125' x2='350' y2='50' stroke='var(--apple-vibrant-blue)' stroke-width='3'></line>
+                
+                <!-- Líneas de referencia desde el punto -->
+                <line x1='150' y1='150' x2='150' y2='250' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+                <line x1='50' y1='150' x2='150' y2='150' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></line>
+                
+                <!-- Triángulo de pendiente desde el punto P -->
+                <line x1='150' y1='150' x2='200' y2='150' stroke='var(--apple-vibrant-orange)' stroke-width='2'></line>
+                <line x1='200' y1='150' x2='200' y2='75' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
+                <polygon points='145,150 150,145 150,155' fill='var(--apple-vibrant-orange)'></polygon>
+                <polygon points='200,145 195,150 205,150' fill='var(--apple-vibrant-green)'></polygon>
+                <text x='175' y='165' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-orange)'>Δx = 1</text>
+                <text x='215' y='112' text-anchor='middle' font-size='10' fill='var(--apple-vibrant-green)'>Δy = 3</text>
+                
+                <!-- Puntos adicionales usando la pendiente -->
+                <circle cx='133' cy='159' r='2' fill='var(--apple-dark-gray)'></circle>
+                <text x='125' y='155' text-anchor='end' font-size='8' fill='var(--apple-dark-gray)'>(1,2)</text>
+                <circle cx='167' cy='141' r='2' fill='var(--apple-dark-gray)'></circle>
+                <text x='175' y='137' text-anchor='start' font-size='8' fill='var(--apple-dark-gray)'>(3,8)</text>
+                
+                <!-- Ecuación -->
+                <text x='300' y='100' font-size='14' fill='var(--apple-dark-gray)'>y - 5 = 3(x - 2)</text>
+                <text x='300' y='120' font-size='12' fill='var(--apple-vibrant-blue)'>Forma punto-pendiente</text>
+                
+                <!-- Etiquetas de ejes -->
+                <text x='200' y='270' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Eje X</text>
+                <text x='30' y='150' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)' transform='rotate(-90 30,150)'>Eje Y</text>
+              </svg>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> El punto P(2,5) es el punto de referencia. La pendiente m=3 significa que desde P, por cada unidad hacia la derecha (Δx=1), la recta sube 3 unidades (Δy=3). Esta relación se mantiene constante para cualquier punto de la recta.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Conversión entre formas -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-exchange-alt' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 3: Conversión entre diferentes formas de ecuaciones</h4>
+              <p>Transformación de ecuaciones entre formas pendiente-ordenada, general y simétrica:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Forma Original</th>
+                    <th>Forma Destino</th>
+                    <th>Procedimiento de Conversión</th>
+                    <th>Ecuación Resultante</th>
+                    <th>Elementos Identificados</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>y = 2x - 4<br>(Pendiente-Ordenada)</td>
+                    <td>General</td>
+                    <td>Pasar todo al lado izquierdo:<br>y - 2x + 4 = 0<br>-2x + y + 4 = 0</td>
+                    <td>2x - y - 4 = 0</td>
+                    <td>A=2, B=-1, C=-4</td>
+                  </tr>
+                  <tr>
+                    <td>3x + 2y - 6 = 0<br>(General)</td>
+                    <td>Pendiente-Ordenada</td>
+                    <td>Despejar y:<br>2y = -3x + 6<br>y = -³⁄₂x + 3</td>
+                    <td>y = -1.5x + 3</td>
+                    <td>m=-1.5, b=3</td>
+                  </tr>
+                  <tr>
+                    <td>y = -½x + 2<br>(Pendiente-Ordenada)</td>
+                    <td>Simétrica</td>
+                    <td>Encontrar interceptos:<br>X: y=0 → 0=-½x+2 → x=4<br>Y: x=0 → y=2<br>x/4 + y/2 = 1</td>
+                    <td>x/4 + y/2 = 1</td>
+                    <td>a=4, b=2</td>
+                  </tr>
+                  <tr>
+                    <td>x/3 + y/6 = 1<br>(Simétrica)</td>
+                    <td>Pendiente-Ordenada</td>
+                    <td>Multiplicar por 6:<br>2x + y = 6<br>y = -2x + 6</td>
+                    <td>y = -2x + 6</td>
+                    <td>m=-2, b=6</td>
+                  </tr>
+                  <tr>
+                    <td>y - 3 = 2(x + 1)<br>(Punto-Pendiente)</td>
+                    <td>General</td>
+                    <td>Desarrollar y simplificar:<br>y - 3 = 2x + 2<br>y = 2x + 5<br>-2x + y - 5 = 0</td>
+                    <td>2x - y + 5 = 0</td>
+                    <td>A=2, B=-1, C=5</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Cada forma revela información diferente sobre la recta. La conversión entre formas permite extraer la información necesaria según el problema. La forma general suele escribirse con A ≥ 0 y sin fracciones.</p>
+            </div>
+            
+            <!-- Ejercicio 4: Formas especiales y casos límite -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-shapes' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Ejercicio 4: Formas especiales y casos límite</h4>
+              <p>Análisis de ecuaciones para rectas horizontales, verticales y que pasan por el origen:</p>
+              <table class='math-table'>
+                <thead>
+                  <tr>
+                    <th>Tipo de Recta</th>
+                    <th>Ecuación</th>
+                    <th>Forma Utilizada</th>
+                    <th>Pendiente (m)</th>
+                    <th>Características</th>
+                    <th>Ejemplo Gráfico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Horizontal</td>
+                    <td>y = 4</td>
+                    <td>Pendiente-Ordenada</td>
+                    <td>m = 0</td>
+                    <td>Paralela al eje X, b=4</td>
+                    <td>Línea recta en y=4</td>
+                  </tr>
+                  <tr>
+                    <td>Vertical</td>
+                    <td>x = -3</td>
+                    <td>No tiene forma y=mx+b</td>
+                    <td>Indefinida</td>
+                    <td>Paralela al eje Y</td>
+                    <td>Línea vertical en x=-3</td>
+                  </tr>
+                  <tr>
+                    <td>Por el origen</td>
+                    <td>y = 2x</td>
+                    <td>Pendiente-Ordenada</td>
+                    <td>m = 2</td>
+                    <td>Pasa por (0,0), b=0</td>
+                    <td>Recta por origen pendiente 2</td>
+                  </tr>
+                  <tr>
+                    <td>Bisectriz</td>
+                    <td>y = x</td>
+                    <td>Pendiente-Ordenada</td>
+                    <td>m = 1</td>
+                    <td>Forma 45°, divide cuadrantes I y III</td>
+                    <td>Recta y=x</td>
+                  </tr>
+                  <tr>
+                    <td>Eje X</td>
+                    <td>y = 0</td>
+                    <td>Pendiente-Ordenada</td>
+                    <td>m = 0</td>
+                    <td>Eje horizontal</td>
+                    <td>Eje X del plano</td>
+                  </tr>
+                  <tr>
+                    <td>Eje Y</td>
+                    <td>x = 0</td>
+                    <td>No tiene forma y=mx+b</td>
+                    <td>Indefinida</td>
+                    <td>Eje vertical</td>
+                    <td>Eje Y del plano</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Las rectas verticales no pueden expresarse en forma y=mx+b porque su pendiente es indefinida. Las rectas horizontales tienen pendiente cero. Las que pasan por el origen tienen b=0 en la forma pendiente-ordenada.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class='content-section' style='margin-bottom:20px;'>
+              <h4><i class='fas fa-industry' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Aplicaciones reales</h4>
+              <ul style='padding-left:18px;line-height:1.6;'>
+                <li><strong>Economía:</strong> Modelado de funciones de costo, ingreso y demanda usando formas lineales.</li>
+                <li><strong>Física:</strong> Representación de movimiento uniforme con ecuaciones posición-tiempo.</li>
+                <li><strong>Ingeniería:</strong> Diseño de estructuras con elementos rectilíneos y cálculo de pendientes.</li>
+                <li><strong>Programación:</strong> Algoritmos para gráficos computarizados y detección de colisiones.</li>
+                <li><strong>Estadística:</strong> Ajuste de líneas de tendencia en análisis de regresión lineal.</li>
+                <li><strong>Arquitectura:</strong> Planos con elementos lineales y cálculo de inclinaciones.</li>
+                <li><strong>Navegación:</strong> Trayectorias rectilíneas y cálculo de rutas óptimas.</li>
+                <li><strong>Robótica:</strong> Planificación de movimientos en línea recta entre puntos.</li>
+              </ul>
+            </div>
+            
+            <!-- Bibliografía -->
+            <div class='bibliography-section' style='margin-top:20px;'>
+              <h4><i class='fas fa-book' style='color:var(--apple-vibrant-blue);margin-right:6px;'></i>Bibliografía recomendada</h4>
+              <ul style='padding-left:18px;line-height:1.5;'>
+                <li>Stewart, J. (2015). Cálculo: Trascendentes Tempranas. Cengage Learning.</li>
+                <li>Larson, R., & Hostetler, R. P. (2018). Cálculo y Geometría Analítica. McGraw-Hill.</li>
+                <li>Swokowski, E. W. (2011). Cálculo con Geometría Analítica. Grupo Editorial Iberoamérica.</li>
+                <li>Lehmann, C. H. (2019). Geometría Analítica. Limusa.</li>
+                <li>Anton, H., Bivens, I., & Davis, S. (2020). Cálculo: Trascendentes Tempranas. Limusa.</li>
+                <li>Khan Academy: Forms of linear equations. www.khanacademy.org</li>
+              </ul>
+            </div>
+          </div>
+          `);"><b>3.2. Ecuaciones de la Recta</b> <span class='emoji-small'>✅</span>
+        </li>
+        <li>3.2.1. Forma común</li>
           <li>3.2.2. Forma punto-pendiente</li>
         
           <li onclick="abrirModal('3.3. Funciones lineales', `
