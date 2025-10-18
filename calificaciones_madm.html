@@ -152,33 +152,58 @@
     © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
   </footer>
 
-  <script>
-    function calcularTotalesYPromedios() {
-      const filas = document.querySelectorAll("#tablaCalificaciones tbody tr");
+<script>
+function calcularTotalesYPromedios() {
+  const filas = document.querySelectorAll("#tablaCalificaciones tbody tr");
 
-      filas.forEach(fila => {
-        const celdas = fila.querySelectorAll("td[contenteditable='true']");
-        let suma = 0;
-        let conteo = 0;
+  filas.forEach(fila => {
+    const celdas = fila.querySelectorAll("td[contenteditable='true']");
+    let suma = 0;
+    let conteo = 0;
 
-        celdas.forEach(celda => {
-          const valor = parseFloat(celda.textContent.trim());
-          if (!isNaN(valor)) {
-            suma += valor;
-            conteo++;
-          }
-        });
+    celdas.forEach(celda => {
+      const texto = celda.textContent || '';
+      // 🔧 Limpieza robusta: elimina todo menos números, punto o signo
+      const valor = parseFloat(texto.replace(/[^\d.-]/g, ''));
 
-        const totalCelda = fila.querySelector(".total");
-        const promedioCelda = fila.querySelector(".promedio");
+      if (!isNaN(valor)) {
+        suma += valor;
+        conteo++;
+      }
+    });
 
-        totalCelda.textContent = conteo > 0 ? suma : "";
-        promedioCelda.textContent = conteo > 0 ? Math.ceil(suma / conteo) : "";
-      });
+    const totalCelda = fila.querySelector(".total");
+
+    if (conteo > 0) {
+      const total = suma.toFixed(1);
+      totalCelda.textContent = total + "%";
+
+      // 🎨 Color dinámico tipo semáforo
+      let color;
+      if (suma >= 100) color = "var(--apple-vibrant-green)";
+      else if (suma >= 80) color = "orange";
+      else color = "crimson";
+
+      fila.style.transition = "background-color 0.6s ease";
+      fila.style.backgroundColor = color + "20"; // fondo semitransparente
+
+      // ✨ Efecto de rebote sutil en la celda de total
+      totalCelda.style.transition = "transform 0.3s ease";
+      totalCelda.style.transform = "scale(1.2)";
+      setTimeout(() => totalCelda.style.transform = "scale(1)", 300);
+    } else {
+      totalCelda.textContent = "";
+      fila.style.backgroundColor = "";
     }
+  });
+}
 
-    document.querySelector("#tablaCalificaciones").addEventListener("input", calcularTotalesYPromedios);
-    window.addEventListener("DOMContentLoaded", calcularTotalesYPromedios);
-  </script>
+// 🧠 Escucha cambios en la tabla
+document.querySelector("#tablaCalificaciones").addEventListener("input", calcularTotalesYPromedios);
+
+// 🚀 Calcula automáticamente al cargar la página
+window.addEventListener("DOMContentLoaded", calcularTotalesYPromedios);
+</script>
+
 </body>
 </html>
