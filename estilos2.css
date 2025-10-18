@@ -65,7 +65,9 @@
             font-weight: 500;
             color: var(--apple-black);
         }
-        
+        h6{
+                color:var(--apple-vibrant-orange);
+        }
         /* Hero section */
         .hero {
             background: var(--apple-gradient);
