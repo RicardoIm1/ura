@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Segundo Parcial - Matemáticas para la Administración</title>
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="estilos2.css">
+
+  <!-- MathJax para renderizar notación matemática elegante -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,252,1) 100%);
+      padding-bottom: 40px;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    .exam-sheet {
+      max-width: 820px;
+      margin: 36px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(10,20,40,0.06);
+      padding: 28px 34px;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .exam-header {
+      margin-bottom: 20px;
+    }
+
+    .exam-title h1 {
+      font-size: 20px;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .line-input {
+      display: block;
+      width: 100%;
+      height: 30px;
+      border-bottom: 2px solid rgba(0,0,0,0.12);
+      margin-top: 6px;
+      background-color:gray;
+      border-radius:5px;
+    }
+
+    .question {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(249,250,252,1), rgba(255,255,255,1));
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    }
+
+    .question h3 {
+      font-size: 16px;
+      margin: 0 0 12px 0;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-left: 4px;
+    }
+
+    .option-label {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: var(--apple-transition);
+      border: 1px solid rgba(0,0,0,0.04);
+      background: white;
+    }
+
+    .option-label:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    }
+
+    .option-input {
+      transform: translateY(2px);
+      width: 18px;
+      height: 18px;
+    }
+
+    .question-footer {
+      margin-top: 10px;
+      color: var(--apple-dark-gray);
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .controls {
+      display:flex;
+      gap:12px;
+      margin-top: 20px;
+      justify-content: flex-end;
+    }
+
+    @page {
+      size: letter portrait;
+      margin: 18mm 16mm;
+    }
+
+    @media print {
+      body { background: white; }
+      .exam-sheet { box-shadow: none; border: none; border-radius: 0; margin: 0; padding: 6mm; }
+      header, .controls { display: none; }
+      .question { background: transparent; box-shadow: none; border: none; padding: 8px 0; }
+      .option-label { border: none; padding: 6px 0; }
+      .line-input { height: 16px; border-bottom: 1px solid rgba(0,0,0,0.18); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">Primer Parcial Matemáticas para la Administración</div>
+    </div>
+  </header>
+
+  <main class="exam-sheet">
+    <div class="exam-header">
+      <div class="exam-title">
+        <h1>PRIMER EXAMEN PARCIAL DE MATEMÁTICAS PARA LA ADMINISTRACIÓN — LAET105</h1>
+      </div>
+
+      <div><strong>Nombre:</strong></div>
+      <div><span class="line-input" contenteditable="true" aria-label="Nombre del estudiante"></span></div>
+
+      <div style="height:10px"></div>
+
+      <div><strong>Fecha:</strong></div>
+      <div><span class="line-input" contenteditable="true" aria-label="Fecha"></span></div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid rgba(0,0,0,0.06);margin:18px 0">
+
+    <p style="font-size:15px;color:var(--apple-dark-gray)">SELECCIONA LA RESPUESTA CORRECTA:</p>
+
+    <!-- Pregunta 1 -->
+    <section class="question">
+      <h3>1 / 8 ¿Cuál propiedad de los números reales se ilustra en la ecuación \(3(x+5)=3x+15\)?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 1. Propiedad Conmutativa</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 2. Propiedad Asociativa</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 3. Propiedad Distributiva</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q1"> 4. Propiedad de Identidad Aditiva</label>
+      </div>
+      <div class="question-footer">Pista: Esta propiedad explica cómo una operación, como la multiplicación, interactúa con otra, como la suma.</div>
+    </section>
+
+    <!-- Pregunta 2 -->
+    <section class="question">
+      <h3>2 / 8 ¿Cuál es el resultado de simplificar la expresión usando las leyes de los exponentes?</h3>
+      <p style="margin:8px 0; font-size:15px;">Ejemplo: \((x^3)^4\)</p>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 1. \(a^{8}b^{12}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 2. \(a^{6}b^{7}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 3. \(x^{12}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q2"> 4. \(a^{4}b^{6}\)</label>
+      </div>
+      <div class="question-footer">Pista: Cuando una potencia se eleva a otra potencia, los exponentes se multiplican.</div>
+    </section>
+
+    <!-- Pregunta 3 -->
+    <section class="question">
+      <h3>3 / 8 ¿Cuál es la factorización correcta de la expresión \(x^2 - 16\)?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 1. \((x-8)^2\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 2. \((x+8)^2\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 3. \((x-4)(x+4)\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q3"> 4. \(x(x-16)\)</label>
+      </div>
+      <div class="question-footer">Pista: Esta expresión es una diferencia de cuadrados perfectos.</div>
+    </section>
+
+    <!-- Pregunta 4 -->
+    <section class="question">
+      <h3>4 / 8 ¿Cuál de las siguientes expresiones es equivalente a \(7x^{-3}\)?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 1. \(x^3\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 2. \(\dfrac{7}{x^3}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 3. \(-x^3\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q4"> 4. \(3x^{-1}\)</label>
+      </div>
+      <div class="question-footer">Pista: Un exponente negativo indica una operación de recíproco.</div>
+    </section>
+
+    <!-- Pregunta 5 -->
+    <section class="question">
+      <h3>5 / 8 ¿Cómo se expresa \(x^{\frac{3}{2}}\) en forma de radical?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 1. \(\sqrt{x^3}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 2. \((\sqrt{x})^3\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 3. \(\sqrt[3]{x^2}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q5"> 4. \(\dfrac{1}{\sqrt{x^3}}\)</label>
+      </div>
+      <div class="question-footer">Pista: El denominador del exponente fraccionario se convierte en el índice de la raíz.</div>
+    </section>
+
+    <!-- Pregunta 6 -->
+    <section class="question">
+      <h3>6 / 8 Simplifica la expresión con radicales \(\sqrt{50} + \sqrt{8}\)</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 1. \(5\sqrt{2} + 2\sqrt{2} = 7\sqrt{2}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 2. \(\sqrt{58}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 3. \(10\sqrt{2}\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q6"> 4. \(3\sqrt{10}\)</label>
+      </div>
+      <div class="question-footer">Pista: Simplifica cada radical extrayendo factores cuadrados perfectos antes de sumar.</div>
+    </section>
+
+    <!-- Pregunta 7 -->
+    <section class="question">
+      <h3>7 / 8 ¿Cuál es el resultado de expandir el producto de binomios \((3x - 2)(x + 5)\)?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 1. \(3x^2 + 13x - 10\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 2. \(3x^2 - 13x - 10\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 3. \(3x^2 + 15x - 2x -10\)</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q7"> 4. \(3x^2 + 17x + 10\)</label>
+      </div>
+      <div class="question-footer">Pista: Usa el método distributivo (FOIL) y combina términos semejantes.</div>
+    </section>
+
+    <!-- Pregunta 8 -->
+    <section class="question">
+      <h3>8 / 8 El número \(4\) es un entero y un número racional. Por otro lado, un número como \(\sqrt{2}\) que no puede ser expresado como una fracción de dos enteros, ¿a qué conjunto pertenece?</h3>
+      <div class="options">
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 1. Números Enteros</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 2. Números Racionales</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 3. Números Naturales</label>
+        <label class="option-label"><input class="option-input" type="radio" name="q8"> 4. Números Irracionales</label>
+      </div>
+      <div class="question-footer">Pista: Las raíces de números no cuadrados perfectos tienen expansión decimal infinita no periódica.</div>
+    </section>
+
+    <div class="controls">
+      <button class="apple-button" onclick="window.print()">🖨 Imprimir</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Universidad URA – Asignatura Matemáticas Para la Administración.
+  </footer>
+
+  <script>
+    document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
+      el.addEventListener('keydown', e=>{
+        if(e.key === 'Enter') e.preventDefault();
+      });
+    });
+  </script>
+</body>
+</html>
