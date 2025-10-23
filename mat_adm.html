@@ -1859,60 +1859,90 @@
                   <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La diferencia crucial entre ∈ (pertenencia de elemento) y ⊆ (inclusión de conjunto). Un elemento es un objeto individual, mientras que un conjunto es una colección. El conjunto vacío es subconjunto de todo conjunto, pero no pertenece a todos los conjuntos.</p>
                 </div>
                 
-                <!-- Gráfica 1: Relaciones básicas entre conjuntos -->
-                <div class='graph-container' style='margin-bottom:20px;'>
-                  <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 1: Relaciones fundamentales entre conjuntos</h4>
-                  <svg viewBox='0 0 400 300' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
-                    <!-- Conjunto A -->
-                    <circle cx='150' cy='150' r='60' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='var(--apple-vibrant-blue)' stroke-width='2'></circle>
-                    <text x='150' y='150' text-anchor='middle' font-size='14' fill='var(--apple-vibrant-blue)'>A</text>
-                    
-                    <!-- Elementos de A -->
-                    <circle cx='120' cy='130' r='3' fill='var(--apple-vibrant-red)'></circle>
-                    <text x='125' y='125' text-anchor='start' font-size='10' fill='var(--apple-vibrant-red)'>x ∈ A</text>
-                    
-                    <circle cx='180' cy='170' r='3' fill='var(--apple-vibrant-red)'></circle>
-                    <text x='185' y='175' text-anchor='start' font-size='10' fill='var(--apple-vibrant-red)'>y ∈ A</text>
-                    
-                    <!-- Conjunto B (subconjunto de A) -->
-                    <circle cx='130' cy='150' r='30' fill='var(--apple-light-green)' fill-opacity='0.4' stroke='var(--apple-vibrant-green)' stroke-width='2'></circle>
-                    <text x='130' y='150' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>B ⊂ A</text>
-                    
-                    <!-- Elemento en B -->
-                    <circle cx='130' cy='140' r='3' fill='var(--apple-vibrant-purple)'></circle>
-                    <text x='135' y='135' text-anchor='start' font-size='10' fill='var(--apple-vibrant-purple)'>z ∈ B</text>
-                    
-                    <!-- Conjunto C (disjunto) -->
-                    <circle cx='280' cy='150' r='50' fill='var(--apple-light-orange)' fill-opacity='0.3' stroke='var(--apple-vibrant-orange)' stroke-width='2'></circle>
-                    <text x='280' cy='150' text-anchor='middle' font-size='14' fill='var(--apple-vibrant-orange)'>C</text>
-                    
-                    <!-- Elemento fuera de todos -->
-                    <circle cx='350' cy='100' r='3' fill='var(--apple-dark-gray)'></circle>
-                    <text x='355' cy='95' text-anchor='start' font-size='10' fill='var(--apple-dark-gray)'>w ∉ A, B, C</text>
+                <!-- Gráfica 1 MEJORADA: Diagrama de 3 conjuntos con proporciones exactas -->
+                <div class=graph-container style=margin-bottom:20px;>
+                  <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Diagrama de Venn de 3 Conjuntos - Estructura Perfecta</h4>
+                  <svg viewBox='0 0 400 300' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
                     
                     <!-- Conjunto Universal -->
-                    <rect x='50' y='50' width='300' height='200' fill='none' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='5,3'></rect>
-                    <text x='360' y='40' text-anchor='end' font-size='12' fill='var(--apple-dark-gray)'>U</text>
+                    <rect x=50 y=50 width=300 height=200 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=4,2></rect>
+                    <text x=350 y=45 text-anchor=end font-size=11 fill=var(--apple-dark-gray)>Conjunto Universal U</text>
                     
-                    <!-- Leyenda -->
-                    <rect x='50' y='220' width='300' height='70' fill='white' stroke='var(--apple-dark-gray)' stroke-width='1' rx='5'></rect>
-                    <circle cx='60' cy='235' r='3' fill='var(--apple-vibrant-red)'></circle>
-                    <text x='70' y='240' font-size='10' fill='var(--apple-dark-gray)'>Elemento en conjunto</text>
-                    <circle cx='60' cy='250' r='3' fill='var(--apple-vibrant-purple)'></circle>
-                    <text x='70' y='255' font-size='10' fill='var(--apple-dark-gray)'>Elemento en subconjunto</text>
-                    <circle cx='60' cy='265' r='3' fill='var(--apple-dark-gray)'></circle>
-                    <text x='70' y='270' font-size='10' fill='var(--apple-dark-gray)'>Elemento fuera</text>
-                    <line x1='180' y1='235' x2='190' y2='235' stroke='var(--apple-vibrant-blue)' stroke-width='2'></line>
-                    <text x='200' y='240' font-size='10' fill='var(--apple-dark-gray)'>Conjunto principal</text>
-                    <line x1='180' y1='250' x2='190' y2='250' stroke='var(--apple-vibrant-green)' stroke-width='2'></line>
-                    <text x='200' y='255' font-size='10' fill='var(--apple-dark-gray)'>Subconjunto</text>
-                    <line x1='180' y1='265' x2='190' y2='265' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='5,3'></line>
-                    <text x='200' y='270' font-size='10' fill='var(--apple-dark-gray)'>Conjunto universal</text>
+                    <!-- Círculo A (Izquierda) -->
+                    <circle cx=150 cy=150 r=60 fill=var(--apple-light-blue) fill-opacity=0.2 stroke=var(--apple-vibrant-blue) stroke-width=2.5></circle>
+                    <text x=100 y=150 text-anchor=middle font-size=13 fill=var(--apple-vibrant-blue)>Conjunto A</text>
                     
-                    <!-- Título -->
-                    <text x='200' y='30' text-anchor='middle' font-size='16' fill='var(--apple-dark-gray)'>Relaciones Fundamentales: Pertenencia e Inclusión</text>
+                    <!-- Círculo B (Derecha) -->
+                    <circle cx=250 cy=150 r=60 fill=var(--apple-light-green) fill-opacity=0.2 stroke=var(--apple-vibrant-green) stroke-width=2.5></circle>
+                    <text x=300 y=150 text-anchor=middle font-size=13 fill=var(--apple-vibrant-green)>Conjunto B</text>
+                    
+                    <!-- Círculo C (Centro-Inferior) -->
+                    <circle cx=200 cy=190 r=60 fill=var(--apple-light-orange) fill-opacity=0.2 stroke=var(--apple-vibrant-orange) stroke-width=2.5></circle>
+                    <text x=200 y=270 text-anchor=middle font-size=13 fill=var(--apple-vibrant-orange)>Conjunto C</text>
+                    
+                    <!-- REGIONES NUMERADAS CON PRECISIÓN -->
+                    
+                    <!-- Región 1: Solo A (A - B - C) -->
+                    <circle cx=120 cy=140 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=120 y=130 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>1</text>
+                    <text x=120 y=120 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A-B-C</text>
+                    
+                    <!-- Región 2: A ∩ B - C -->
+                    <circle cx=200 cy=140 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=200 y=130 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>2</text>
+                    <text x=200 y=120 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A∩B-C</text>
+                    
+                    <!-- Región 3: Solo B (B - A - C) -->
+                    <circle cx=280 cy=140 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=280 y=130 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>3</text>
+                    <text x=280 y=120 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>B-A-C</text>
+                    
+                    <!-- Región 4: A ∩ C - B -->
+                    <circle cx=160 cy=180 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=160 y=170 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>4</text>
+                    <text x=160 y=160 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A∩C-B</text>
+                    
+                    <!-- Región 5: A ∩ B ∩ C (CENTRO) -->
+                    <circle cx=200 cy=160 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=200 y=150 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>5</text>
+                    <text x=200 y=140 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A∩B∩C</text>
+                    
+                    <!-- Región 6: B ∩ C - A -->
+                    <circle cx=240 cy=180 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=240 y=170 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>6</text>
+                    <text x=240 y=160 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>B∩C-A</text>
+                    
+                    <!-- Región 7: Solo C (C - A - B) -->
+                    <circle cx=200 cy=220 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=200 y=210 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>7</text>
+                    <text x=200 y=200 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>C-A-B</text>
+                    
+                    <!-- Región 8: Fuera de todos (Complemento) -->
+                    <circle cx=350 cy=80 r=4 fill=var(--apple-vibrant-red)></circle>
+                    <text x=350 y=70 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>8</text>
+                    <text x=350 y=60 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>(A∪B∪C)ᶜ</text>
+                    
+                    <!-- LEYENDA MEJORADA -->
+                    <rect x=50 y=230 width=300 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+                    <text x=200 y=245 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Leyenda de Regiones</strong></text>
+                    
+                    <circle cx=70 cy=255 r=3 fill=var(--apple-vibrant-blue)></circle>
+                    <text x=80 y=260 font-size=9 fill=var(--apple-dark-gray)>Conjunto A</text>
+                    
+                    <circle cx=150 cy=255 r=3 fill=var(--apple-vibrant-green)></circle>
+                    <text x=160 y=260 font-size=9 fill=var(--apple-dark-gray)>Conjunto B</text>
+                    
+                    <circle cx=230 cy=255 r=3 fill=var(--apple-vibrant-orange)></circle>
+                    <text x=240 y=260 font-size=9 fill=var(--apple-dark-gray)>Conjunto C</text>
+                    
+                    <circle cx=310 cy=255 r=3 fill=var(--apple-vibrant-red)></circle>
+                    <text x=320 y=260 font-size=9 fill=var(--apple-dark-gray)>Puntos de referencia</text>
+                    
+                    <!-- Título principal -->
+                    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Diagrama de Venn - 3 Conjuntos</strong></text>
+                    <text x=200 y=50 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>8 Regiones Distintas: 2³ = 8</text>
                   </svg>
-                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La relación de pertenencia (∈) conecta elementos con conjuntos, mientras que la relación de inclusión (⊆) conecta conjuntos con conjuntos. Un subconjunto está completamente contenido dentro de su conjunto contenedor. Los conjuntos disjuntos no comparten elementos.</p>
+                  <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Este diagrama muestra las 8 regiones posibles con 3 conjuntos. Cada región representa una combinación única de pertenencia: elementos que están en algunos conjuntos pero no en otros. La región central (5) contiene elementos que pertenecen a los tres conjuntos simultáneamente.</p>
                 </div>
                 
                 <!-- Ejercicio 2: Operaciones entre conjuntos -->
@@ -1970,58 +2000,104 @@
                   <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> La unión incluye todos los elementos de ambos conjuntos, la intersección solo los comunes. La diferencia es asimétrica: A-B ≠ B-A. El complemento siempre depende del conjunto universal definido.</p>
                 </div>
                 
-                <!-- Gráfica 2: Operaciones visuales con diagramas de Venn -->
-                <div class='graph-container' style='margin-bottom:20px;'>
-                  <h4><i class='fas fa-chart-line' style='color:var(--apple-vibrant-green);margin-right:6px;'></i>Gráfica 2: Operaciones entre conjuntos mediante diagramas de Venn</h4>
-                  <svg viewBox='0 0 400 350' class='math-graph' style='width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;'>
+                <!-- Gráfica 2 MEJORADA: Operaciones con sombreado preciso -->
+                <div class=graph-container style=margin-bottom:20px;>
+                  <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Operaciones entre Conjuntos - Sombreado Exacto</h4>
+                  <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
                     
-                    <!-- Operación 1: Unión -->
-                    <g transform='translate(0,0)'>
-                      <circle cx='100' cy='100' r='40' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='var(--apple-vibrant-blue)' stroke-width='2'></circle>
-                      <circle cx='140' cy='100' r='40' fill='var(--apple-light-green)' fill-opacity='0.3' stroke='var(--apple-vibrant-green)' stroke-width='2'></circle>
-                      <text x='70' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>A</text>
-                      <text x='170' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>B</text>
-                      <text x='120' y='50' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>A ∪ B</text>
-                      <text x='120' y='160' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Unión: A o B</text>
+                    <!-- OPERACIÓN 1: A ∪ B (Unión) -->
+                    <g transform=translate(70,80)>
+                      <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                      
+                      <!-- Círculos superpuestos -->
+                      <circle cx=35 cy=50 r=30 fill=var(--apple-vibrant-blue) fill-opacity=0.4 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                      <circle cx=65 cy=50 r=30 fill=var(--apple-vibrant-green) fill-opacity=0.4 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                      
+                      <text x=25 y=50 text-anchor=middle font-size=10 fill=white><strong>A</strong></text>
+                      <text x=75 y=50 text-anchor=middle font-size=10 fill=white><strong>B</strong></text>
+                      <text x=50 y=95 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>A ∪ B</strong></text>
+                      <text x=50 y=110 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Unión: A o B</text>
                     </g>
                     
-                    <!-- Operación 2: Intersección -->
-                    <g transform='translate(200,0)'>
-                      <circle cx='100' cy='100' r='40' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='var(--apple-vibrant-blue)' stroke-width='2'></circle>
-                      <circle cx='140' cy='100' r='40' fill='var(--apple-light-green)' fill-opacity='0.3' stroke='var(--apple-vibrant-green)' stroke-width='2'></circle>
-                      <path d='M 120,60 Q 140,100 120,140 Q 100,100 120,60' fill='var(--apple-vibrant-purple)' fill-opacity='0.5' stroke='var(--apple-vibrant-purple)' stroke-width='1'></path>
-                      <text x='70' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>A</text>
-                      <text x='170' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>B</text>
-                      <text x='120' y='50' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>A ∩ B</text>
-                      <text x='120' y='160' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Intersección: A y B</text>
+                    <!-- OPERACIÓN 2: A ∩ B (Intersección) -->
+                    <g transform=translate(230,80)>
+                      <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                      
+                      <!-- Círculos base -->
+                      <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.2 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                      <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.2 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                      
+                      <!-- Sombreado de intersección -->
+                      <path d='M 50,20 Q 65,50 50,80 Q 35,50 50,20' 
+                            fill=var(--apple-vibrant-purple) fill-opacity=0.7 
+                            stroke=var(--apple-vibrant-purple) stroke-width=1></path>
+                      
+                      <text x=25 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>A</text>
+                      <text x=75 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>B</text>
+                      <text x=50 y=95 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>A ∩ B</strong></text>
+                      <text x=50 y=110 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Intersección: A y B</text>
                     </g>
                     
-                    <!-- Operación 3: Diferencia -->
-                    <g transform='translate(0,175)'>
-                      <circle cx='100' cy='100' r='40' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='var(--apple-vibrant-blue)' stroke-width='2'></circle>
-                      <circle cx='140' cy='100' r='40' fill='var(--apple-light-green)' fill-opacity='0.2' stroke='var(--apple-vibrant-green)' stroke-width='2'></circle>
-                      <path d='M 80,60 Q 100,100 80,140 Q 60,100 80,60' fill='var(--apple-vibrant-blue)' fill-opacity='0.5' stroke='var(--apple-vibrant-blue)' stroke-width='1'></path>
-                      <text x='70' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>A</text>
-                      <text x='170' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-green)'>B</text>
-                      <text x='120' y='50' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>A - B</text>
-                      <text x='120' y='160' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Diferencia: A pero no B</text>
+                    <!-- OPERACIÓN 3: A - B (Diferencia) -->
+                    <g transform=translate(70,220)>
+                      <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                      
+                      <!-- Círculo A completo -->
+                      <circle cx=35 cy=50 r=30 fill=var(--apple-vibrant-blue) fill-opacity=0.6 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                      
+                      <!-- Círculo B (sin relleno) -->
+                      <circle cx=65 cy=50 r=30 fill=var(--apple-very-light-gray) stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                      
+                      <!-- Área excluida (B ∩ A) -->
+                      <path d='M 50,20 Q 65,50 50,80 Q 35,50 50,20' 
+                            fill=var(--apple-very-light-gray) 
+                            stroke=var(--apple-very-light-gray) stroke-width=1></path>
+                      
+                      <text x=25 y=50 text-anchor=middle font-size=10 fill=white><strong>A</strong></text>
+                      <text x=75 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>B</text>
+                      <text x=50 y=95 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>A - B</strong></text>
+                      <text x=50 y=110 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Diferencia: A no B</text>
                     </g>
                     
-                    <!-- Operación 4: Complemento -->
-                    <g transform='translate(200,175)'>
-                      <rect x='60' y='60' width='80' height='80' fill='var(--apple-very-light-gray)' stroke='var(--apple-dark-gray)' stroke-width='1' stroke-dasharray='3,3'></rect>
-                      <circle cx='100' cy='100' r='40' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='var(--apple-vibrant-blue)' stroke-width='2'></circle>
-                      <path d='M 60,60 L 140,60 L 140,140 L 60,140 Z' fill='var(--apple-light-orange)' fill-opacity='0.4' stroke='var(--apple-vibrant-orange)' stroke-width='1'></path>
-                      <path d='M 80,60 Q 100,100 80,140 Q 60,100 80,60' fill='var(--apple-light-blue)' fill-opacity='0.3' stroke='var(--apple-vibrant-blue)' stroke-width='1'></path>
-                      <text x='100' y='100' text-anchor='middle' font-size='12' fill='var(--apple-vibrant-blue)'>A</text>
-                      <text x='120' y='50' text-anchor='middle' font-size='14' fill='var(--apple-dark-gray)'>Aᶜ</text>
-                      <text x='120' y='160' text-anchor='middle' font-size='10' fill='var(--apple-dark-gray)'>Complemento: no A</text>
+                    <!-- OPERACIÓN 4: A Δ B (Diferencia Simétrica) -->
+                    <g transform=translate(230,220)>
+                      <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                      
+                      <!-- Parte izquierda (A - B) -->
+                      <path d='M 5,20 Q 35,50 5,80 Q 20,50 5,20' 
+                            fill=var(--apple-vibrant-blue) fill-opacity=0.6 
+                            stroke=var(--apple-vibrant-blue) stroke-width=1></path>
+                      
+                      <!-- Parte derecha (B - A) -->
+                      <path d='M 95,20 Q 65,50 95,80 Q 80,50 95,20' 
+                            fill=var(--apple-vibrant-green) fill-opacity=0.6 
+                            stroke=var(--apple-vibrant-green) stroke-width=1></path>
+                      
+                      <!-- Contornos de círculos -->
+                      <circle cx=35 cy=50 r=30 fill=none stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                      <circle cx=65 cy=50 r=30 fill=none stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                      
+                      <text x=25 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>A</text>
+                      <text x=75 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>B</text>
+                      <text x=50 y=95 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>A Δ B</strong></text>
+                      <text x=50 y=110 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Diferencia simétrica</text>
                     </g>
                     
-                    <!-- Título general -->
-                    <text x='200' y='340' text-anchor='middle' font-size='16' fill='var(--apple-dark-gray)'>Operaciones Fundamentales entre Conjuntos</text>
+                    <!-- TÍTULO Y LEYENDA MEJORADOS -->
+                    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Operaciones Fundamentales entre Conjuntos</strong></text>
+                    
+                    <!-- Leyenda profesional -->
+                    <rect x=100 y=310 width=200 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+                    <rect x=110 y=317 width=12 height=12 fill=var(--apple-vibrant-blue) fill-opacity=0.6></rect>
+                    <text x=125 y=327 font-size=9 fill=var(--apple-dark-gray)>Conjunto A</text>
+                    
+                    <rect x=170 y=317 width=12 height=12 fill=var(--apple-vibrant-green) fill-opacity=0.6></rect>
+                    <text x=185 y=327 font-size=9 fill=var(--apple-dark-gray)>Conjunto B</text>
+                    
+                    <rect x=230 y=317 width=12 height=12 fill=var(--apple-vibrant-purple) fill-opacity=0.7></rect>
+                    <text x=245 y=327 font-size=9 fill=var(--apple-dark-gray)>Intersección</text>
                   </svg>
-                  <p style='margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);'><strong>¿Qué notar?</strong> Los diagramas de Venn proporcionan una representación visual intuitiva de las operaciones entre conjuntos. La unión abarca ambas áreas, la intersección es la zona común, la diferencia excluye una parte, y el complemento es todo lo exterior al conjunto respecto al universal.</p>
+                  <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Cada operación tiene un patrón de sombreado único y consistente. La unión cubre ambos conjuntos, la intersección solo el área común, la diferencia muestra exclusividad, y la diferencia simétrica combina las áreas exclusivas de ambos conjuntos.</p>
                 </div>
                 
                 <!-- Ejercicio 3: Propiedades y leyes de conjuntos -->
