@@ -2022,66 +2022,63 @@
                     
                     <!-- OPERACIÓN 2: A ∩ B (Intersección) -->
                     <g transform=translate(230,60)>
-                      <rect x=0 y=0 width=100 height=100 fill=none stroke=#bdc3c7 stroke-width=1 stroke-dasharray=3,3></rect>
-                      
+                      <rect x=0 y=0 width=120 height=120 fill=none stroke=#bdc3c7 stroke-width=1 stroke-dasharray=4,3></rect>
+                    
                       <!-- Círculos base -->
-                      <circle cx=35 cy=50 r=25 fill=#3498db fill-opacity=0.2 stroke=#2980b9 stroke-width=1.5></circle>
-                      <circle cx=65 cy=50 r=25 fill=#2ecc71 fill-opacity=0.2 stroke=#27ae60 stroke-width=1.5></circle>
-                      
-                      <!-- Sombreado de intersección -->
-                      <path d='M 45,25 Q 65,50 45,75 Q 25,50 45,25' 
-                            fill=#9b59b6 fill-opacity=0.6 
+                      <circle cx=45 cy=60 r=30 fill=#3498db fill-opacity=0.2 stroke=#2980b9 stroke-width=1.5></circle>
+                      <circle cx=75 cy=60 r=30 fill=#2ecc71 fill-opacity=0.2 stroke=#27ae60 stroke-width=1.5></circle>
+                    
+                      <!-- Intersección -->
+                      <path d='M 52,30 Q 75,60 52,90 Q 30,60 52,30' 
+                            fill=#9b59b6 fill-opacity=0.5 
                             stroke=#8e44ad stroke-width=1></path>
-                      
-                      <text x=25 y=50 text-anchor=middle font-size=9 fill=#2980b9>A</text>
-                      <text x=75 y=50 text-anchor=middle font-size=9 fill=#27ae60>B</text>
-                      <text x=50 y=95 text-anchor=middle font-size=10 fill=#2c3e50 font-weight=bold>A ∩ B</text>
-                      <text x=50 y=105 text-anchor=middle font-size=8 fill=#7f8c8d>Intersección: A y B</text>
+                    
+                      <text x=45 y=60 text-anchor=middle font-size=10 fill=#2980b9 font-weight=bold>A</text>
+                      <text x=75 y=60 text-anchor=middle font-size=10 fill=#27ae60 font-weight=bold>B</text>
+                      <text x=60 y=105 text-anchor=middle font-size=11 fill=#2c3e50 font-weight=bold>A ∩ B</text>
+                      <text x=60 y=115 text-anchor=middle font-size=8 fill=#7f8c8d>Intersección: A y B</text>
                     </g>
                     
                     <!-- OPERACIÓN 3: A - B (Diferencia) -->
                     <g transform=translate(70,190)>
-                      <rect x=0 y=0 width=100 height=100 fill=none stroke=#bdc3c7 stroke-width=1 stroke-dasharray=3,3></rect>
-                      
-                      <!-- Círculo A completo -->
-                      <circle cx=35 cy=50 r=25 fill=#3498db fill-opacity=0.6 stroke=#2980b9 stroke-width=1.5></circle>
-                      
-                      <!-- Círculo B (sin relleno) -->
-                      <circle cx=65 cy=50 r=25 fill=#f8f9fa stroke=#27ae60 stroke-width=1.5></circle>
-                      
-                      <!-- Área excluida (B ∩ A) -->
-                      <path d='M 45,25 Q 65,50 45,75 Q 25,50 45,25' 
-                            fill=#f8f9fa 
-                            stroke=#f8f9fa stroke-width=1></path>
-                      
-                      <text x=25 y=50 text-anchor=middle font-size=9 fill=white font-weight=bold>A</text>
-                      <text x=75 y=50 text-anchor=middle font-size=9 fill=#27ae60>B</text>
-                      <text x=50 y=95 text-anchor=middle font-size=10 fill=#2c3e50 font-weight=bold>A - B</text>
-                      <text x=50 y=105 text-anchor=middle font-size=8 fill=#7f8c8d>Diferencia: A no B</text>
+                      <rect x=0 y=0 width=120 height=120 fill=none stroke=#bdc3c7 stroke-width=1 stroke-dasharray=4,3></rect>
+                    
+                      <!-- Círculo A -->
+                      <circle cx=45 cy=60 r=30 fill=#3498db fill-opacity=0.6 stroke=#2980b9 stroke-width=1.5></circle>
+                    
+                      <!-- Círculo B (solo contorno) -->
+                      <circle cx=75 cy=60 r=30 fill=none stroke=#27ae60 stroke-width=1.5></circle>
+                    
+                      <!-- Área excluida -->
+                      <path d='M 52,30 Q 75,60 52,90 Q 30,60 52,30' 
+                            fill=#f8f9fa stroke=#f8f9fa stroke-width=1></path>
+                    
+                      <text x=45 y=60 text-anchor=middle font-size=10 fill=white font-weight=bold>A</text>
+                      <text x=75 y=60 text-anchor=middle font-size=10 fill=#27ae60 font-weight=bold>B</text>
+                      <text x=60 y=105 text-anchor=middle font-size=11 fill=#2c3e50 font-weight=bold>A − B</text>
+                      <text x=60 y=115 text-anchor=middle font-size=8 fill=#7f8c8d>Diferencia: A sin B</text>
                     </g>
                     
                     <!-- OPERACIÓN 4: A Δ B (Diferencia Simétrica) -->
                     <g transform=translate(230,190)>
-                      <rect x=0 y=0 width=100 height=100 fill=none stroke=#bdc3c7 stroke-width=1 stroke-dasharray=3,3></rect>
-                      
-                      <!-- Parte izquierda (A - B) -->
-                      <path d='M 10,25 Q 35,50 10,75 Q 25,50 10,25' 
-                            fill=#3498db fill-opacity=0.6 
-                            stroke=#2980b9 stroke-width=1></path>
-                      
-                      <!-- Parte derecha (B - A) -->
-                      <path d='M 90,25 Q 65,50 90,75 Q 75,50 90,25' 
-                            fill=#2ecc71 fill-opacity=0.6 
-                            stroke=#27ae60 stroke-width=1></path>
-                      
-                      <!-- Contornos de círculos -->
-                      <circle cx=35 cy=50 r=25 fill=none stroke=#2980b9 stroke-width=1.5></circle>
-                      <circle cx=65 cy=50 r=25 fill=none stroke=#27ae60 stroke-width=1.5></circle>
-                      
-                      <text x=25 y=50 text-anchor=middle font-size=9 fill=#2980b9>A</text>
-                      <text x=75 y=50 text-anchor=middle font-size=9 fill=#27ae60>B</text>
-                      <text x=50 y=95 text-anchor=middle font-size=10 fill=#2c3e50 font-weight=bold>A Δ B</text>
-                      <text x=50 y=105 text-anchor=middle font-size=8 fill=#7f8c8d>Diferencia simétrica</text>
+                      <rect x=0 y=0 width=120 height=120 fill=none stroke=#bdc3c7 stroke-width=1 stroke-dasharray=4,3></rect>
+                    
+                      <!-- A - B -->
+                      <path d='M 15,30 Q 45,60 15,90 Q 30,60 15,30' 
+                            fill=#3498db fill-opacity=0.6 stroke=#2980b9 stroke-width=1></path>
+                    
+                      <!-- B - A -->
+                      <path d='M 105,30 Q 75,60 105,90 Q 90,60 105,30' 
+                            fill=#2ecc71 fill-opacity=0.6 stroke=#27ae60 stroke-width=1></path>
+                    
+                      <!-- Contornos -->
+                      <circle cx=45 cy=60 r=30 fill=none stroke=#2980b9 stroke-width=1.5></circle>
+                      <circle cx=75 cy=60 r=30 fill=none stroke=#27ae60 stroke-width=1.5></circle>
+                    
+                      <text x=45 y=60 text-anchor=middle font-size=10 fill=#2980b9 font-weight=bold>A</text>
+                      <text x=75 y=60 text-anchor=middle font-size=10 fill=#27ae60 font-weight=bold>B</text>
+                      <text x=60 y=105 text-anchor=middle font-size=11 fill=#2c3e50 font-weight=bold>A Δ B</text>
+                      <text x=60 y=115 text-anchor=middle font-size=8 fill=#7f8c8d>Diferencia simétrica</text>
                     </g>
                     
                     <!-- LEYENDA MEJORADA -->
