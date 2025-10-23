@@ -2462,81 +2462,190 @@
               <!-- Gráfica 2: Demostración visual de propiedades -->
               <div class=graph-container style=margin-bottom:20px;>
                 <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Demostración visual de propiedades algebraicas</h4>
-                <svg viewBox='0 0 400 400' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+                <svg viewBox='0 0 400 400' class=math-graph style=width:100%;height:auto;background:#f8f9fa;border-radius:8px;>
+  
+                <!-- DEFINICIONES DE MÁSCARAS Y CLIPPATH -->
+                <defs>
+                  <!-- Marcador para flechas -->
+                  <marker id=arrowhead markerWidth=10 markerHeight=7 refX=9 refY=3.5 orient=auto>
+                    <polygon points='0 0, 10 3.5, 0 7' fill=#2c3e50></polygon>
+                  </marker>
                   
-                  <!-- Propiedad 1: Conmutativa -->
-                  <g transform=translate(0,0)>
-                    <circle cx=80 cy=80 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                    <circle cx=120 cy=80 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                    <text x=60 cy=80 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>A</text>
-                    <text x=140 cy=80 text-anchor=middle font-size=12 fill=var(--apple-vibrant-green)>B</text>
-                    <text x=100 cy=40 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>A ∪ B</text>
-                    <path d='M 50,20 L 50,10 L 150,10 L 150,20' stroke=var(--apple-dark-gray) stroke-width=1 marker-end=url(#arrowhead)></path>
+                  <!-- ClipPath para intersecciones -->
+                  <clipPath id=clipA>
+                    <circle cx=80 cy=80 r=30></circle>
+                  </clipPath>
+                  
+                  <clipPath id=clipB>
+                    <circle cx=120 cy=80 r=30></circle>
+                  </clipPath>
+                  
+                  <clipPath id=clipC>
+                    <circle cx=80 cy=110 r=25></circle>
+                  </clipPath>
+                  
+                  <!-- Máscaras para complementos -->
+                  <mask id=maskUnion>
+                    <rect width=400 height=400 fill=white></rect>
+                    <circle cx=70 cy=80 r=25 fill=black></circle>
+                    <circle cx=110 cy=80 r=25 fill=black></circle>
+                  </mask>
+                  
+                  <mask id=maskIntersection>
+                    <rect width=400 height=400 fill=black></rect>
+                    <circle cx=70 cy=80 r=25 fill=white></circle>
+                    <circle cx=110 cy=80 r=25 fill=white></circle>
+                  </mask>
+                </defs>
+                
+                <!-- TÍTULO GENERAL MEJORADO -->
+                <text x=200 y=25 text-anchor=middle font-size=14 fill=#2c3e50 font-weight=700>Propiedades Algebraicas de Conjuntos</text>
+                
+                <!-- PROPIEDAD 1: CONMUTATIVA MEJORADA -->
+                <g transform=translate(0,40)>
+                  <text x=100 y=20 text-anchor=middle font-size=12 fill=#3498db font-weight=600>Conmutativa: A ∪ B = B ∪ A</text>
+                  
+                  <!-- Grupo izquierdo: A ∪ B -->
+                  <g transform=translate(20,40)>
+                    <rect x=0 y=0 width=120 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                    
+                    <circle cx=40 cy=50 r=28 fill=#3498db fill-opacity=0.2 stroke=#2980b9 stroke-width=2></circle>
+                    <circle cx=80 cy=50 r=28 fill=#2ecc71 fill-opacity=0.2 stroke=#27ae60 stroke-width=2></circle>
+                    
+                    <!-- Área de unión usando clipPath -->
+                    <g clip-path=url(#clipA)>
+                      <circle cx=80 cy=50 r=28 fill=#2ecc71 fill-opacity=0.4></circle>
+                    </g>
+                    <g clip-path=url(#clipB)>
+                      <circle cx=40 cy=50 r=28 fill=#3498db fill-opacity=0.4></circle>
+                    </g>
+                    
+                    <text x=30 y=50 text-anchor=middle font-size=10 fill=#2980b9 font-weight=600>A</text>
+                    <text x=90 y=50 text-anchor=middle font-size=10 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=95 text-anchor=middle font-size=10 fill=#2c3e50>A ∪ B</text>
                   </g>
                   
-                  <g transform=translate(200,0)>
-                    <circle cx=80 cy=80 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                    <circle cx=120 cy=80 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                    <text x=60 cy=80 text-anchor=middle font-size=12 fill=var(--apple-vibrant-green)>B</text>
-                    <text x=140 cy=80 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>A</text>
-                    <text x=100 cy=40 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>B ∪ A</text>
+                  <!-- Flecha de igualdad -->
+                  <path d='M 150,90 L 180,90' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
+                  
+                  <!-- Grupo derecho: B ∪ A -->
+                  <g transform=translate(200,40)>
+                    <rect x=0 y=0 width=120 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                    
+                    <circle cx=40 cy=50 r=28 fill=#2ecc71 fill-opacity=0.2 stroke=#27ae60 stroke-width=2></circle>
+                    <circle cx=80 cy=50 r=28 fill=#3498db fill-opacity=0.2 stroke=#2980b9 stroke-width=2></circle>
+                    
+                    <!-- Área de unión usando clipPath -->
+                    <g clip-path=url(#clipA)>
+                      <circle cx=80 cy=50 r=28 fill=#3498db fill-opacity=0.4></circle>
+                    </g>
+                    <g clip-path=url(#clipB)>
+                      <circle cx=40 cy=50 r=28 fill=#2ecc71 fill-opacity=0.4></circle>
+                    </g>
+                    
+                    <text x=30 y=50 text-anchor=middle font-size=10 fill=#27ae60 font-weight=600>B</text>
+                    <text x=90 y=50 text-anchor=middle font-size=10 fill=#2980b9 font-weight=600>A</text>
+                    <text x=60 y=95 text-anchor=middle font-size=10 fill=#2c3e50>B ∪ A</text>
+                  </g>
+                </g>
+                
+                <!-- PROPIEDAD 2: DISTRIBUTIVA MEJORADA -->
+                <g transform=translate(0,170)>
+                  <text x=100 y=20 text-anchor=middle font-size=12 fill=#9b59b6 font-weight=600>Distributiva: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</text>
+                  
+                  <!-- Grupo izquierdo: A ∪ (B ∩ C) -->
+                  <g transform=translate(20,40)>
+                    <rect x=0 y=0 width=120 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                    
+                    <circle cx=40 cy=50 r=25 fill=#3498db fill-opacity=0.2 stroke=#2980b9 stroke-width=1.5></circle>
+                    <circle cx=80 cy=50 r=25 fill=#2ecc71 fill-opacity=0.2 stroke=#27ae60 stroke-width=1.5></circle>
+                    <circle cx=60 cy=80 r=25 fill=#e67e22 fill-opacity=0.2 stroke=#d35400 stroke-width=1.5></circle>
+                    
+                    <!-- B ∩ C usando clipPath -->
+                    <g clip-path=url(#clipB)>
+                      <circle cx=60 cy=80 r=25 fill=#e67e22 fill-opacity=0.6></circle>
+                    </g>
+                    
+                    <!-- A ∪ (B ∩ C) -->
+                    <circle cx=40 cy=50 r=25 fill=#3498db fill-opacity=0.4></circle>
+                    <g clip-path=url(#clipA)>
+                      <g clip-path=url(#clipB)>
+                        <circle cx=60 cy=80 r=25 fill=#e67e22 fill-opacity=0.8></circle>
+                      </g>
+                    </g>
+                    
+                    <text x=25 y=50 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                    <text x=95 y=50 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=105 text-anchor=middle font-size=9 fill=#d35400 font-weight=600>C</text>
+                    <text x=60 y=35 text-anchor=middle font-size=8 fill=#2c3e50>A ∪ (B ∩ C)</text>
                   </g>
                   
-                  <text x=100 cy=20 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Conmutativa: A ∪ B = B ∪ A</text>
+                  <!-- Flecha de igualdad -->
+                  <path d='M 150,90 L 180,90' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
                   
-                  <!-- Propiedad 2: Distributiva -->
-                  <g transform=translate(0,150)>
-                    <circle cx=60 cy=80 r=25 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                    <circle cx=100 cy=80 r=25 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                    <circle cx=80 cy=110 r=25 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                    <text x=40 cy=80 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>A</text>
-                    <text x=120 cy=80 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>B</text>
-                    <text x=80 cy=140 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>C</text>
-                    <text x=80 cy=50 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A ∪ (B ∩ C)</text>
+                  <!-- Grupo derecho: (A ∪ B) ∩ (A ∪ C) -->
+                  <g transform=translate(200,40)>
+                    <rect x=0 y=0 width=120 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                    
+                    <circle cx=40 cy=50 r=25 fill=#3498db fill-opacity=0.2 stroke=#2980b9 stroke-width=1.5></circle>
+                    <circle cx=80 cy=50 r=25 fill=#2ecc71 fill-opacity=0.2 stroke=#27ae60 stroke-width=1.5></circle>
+                    <circle cx=60 cy=80 r=25 fill=#e67e22 fill-opacity=0.2 stroke=#d35400 stroke-width=1.5></circle>
+                    
+                    <!-- (A ∪ B) ∩ (A ∪ C) usando múltiples clipPath -->
+                    <g clip-path=url(#clipA)>
+                      <circle cx=80 cy=50 r=25 fill=#2ecc71 fill-opacity=0.4></circle>
+                      <circle cx=60 cy=80 r=25 fill=#e67e22 fill-opacity=0.4></circle>
+                    </g>
+                    <g clip-path=url(#clipC)>
+                      <circle cx=40 cy=50 r=25 fill=#3498db fill-opacity=0.4></circle>
+                      <circle cx=80 cy=50 r=25 fill=#2ecc71 fill-opacity=0.4></circle>
+                    </g>
+                    
+                    <text x=25 y=50 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                    <text x=95 y=50 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=105 text-anchor=middle font-size=9 fill=#d35400 font-weight=600>C</text>
+                    <text x=60 y=35 text-anchor=middle font-size=8 fill=#2c3e50>(A ∪ B) ∩ (A ∪ C)</text>
+                  </g>
+                </g>
+                
+                <!-- PROPIEDAD 3: LEYES DE DE MORGAN MEJORADAS -->
+                <g transform=translate(0,300)>
+                  <text x=100 y=20 text-anchor=middle font-size=12 fill=#e74c3c font-weight=600>De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ</text>
+                  
+                  <!-- Grupo izquierdo: (A ∪ B)ᶜ -->
+                  <g transform=translate(20,40)>
+                    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
+                    
+                    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
+                    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
+                    
+                    <!-- Complemento usando máscara -->
+                    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskUnion)></rect>
+                    
+                    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>(A ∪ B)ᶜ</text>
                   </g>
                   
-                  <g transform=translate(150,150)>
-                    <circle cx=60 cy=80 r=25 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                    <circle cx=100 cy=80 r=25 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                    <circle cx=140 cy=80 r=25 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                    <text x=40 cy=80 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>A</text>
-                    <text x=100 cy=80 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>B</text>
-                    <text x=160 cy=80 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>C</text>
-                    <text x=100 cy=50 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>(A ∪ B) ∩ (A ∪ C)</text>
+                  <!-- Flecha de igualdad -->
+                  <path d='M 150,80 L 180,80' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
+                  
+                  <!-- Grupo derecho: Aᶜ ∩ Bᶜ -->
+                  <g transform=translate(200,40)>
+                    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
+                    
+                    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
+                    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
+                    
+                    <!-- Intersección de complementos usando máscara -->
+                    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskIntersection)></rect>
+                    
+                    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>Aᶜ ∩ Bᶜ</text>
                   </g>
-                  
-                  <text x=100 cy=130 text-anchor=middle font-size=12 fill=var(--apple-vibrant-purple)>Distributiva: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</text>
-                  
-                  <!-- Propiedad 3: Leyes de De Morgan -->
-                  <g transform=translate(0,280)>
-                    <rect x=30 y=50 width=120 height=80 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
-                    <circle cx=70 cy=80 r=25 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                    <circle cx=110 cy=80 r=25 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                    <path d='M 30,50 L 150,50 L 150,130 L 30,130 Z' fill=var(--apple-light-red) fill-opacity=0.2 stroke=var(--apple-vibrant-red) stroke-width=1></path>
-                    <text x=90 cy=40 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>(A ∪ B)ᶜ</text>
-                  </g>
-                  
-                  <g transform=translate(200,280)>
-                    <rect x=30 y=50 width=120 height=80 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
-                    <circle cx=70 cy=80 r=25 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                    <circle cx=110 cy=80 r=25 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                    <path d='M 45,65 L 45,95 L 75,95 L 75,65 Z' fill=var(--apple-light-red) fill-opacity=0.2 stroke=var(--apple-vibrant-red) stroke-width=1></path>
-                    <path d='M 105,65 L 105,95 L 135,95 L 135,65 Z' fill=var(--apple-light-red) fill-opacity=0.2 stroke=var(--apple-vibrant-red) stroke-width=1></path>
-                    <text x=90 cy=40 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>Aᶜ ∩ Bᶜ</text>
-                  </g>
-                  
-                  <text x=100 cy=260 text-anchor=middle font-size=12 fill=var(--apple-vibrant-red)>De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ</text>
-                  
-                  <!-- Definición de marcador para flechas -->
-                  <defs>
-                    <marker id=arrowhead markerWidth=10 markerHeight=7 refX=9 refY=3.5 orient=auto>
-                      <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
-                    </marker>
-                  </defs>
-                  
-                  <!-- Título general -->
-                  <text x=200 cy=380 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)>Propiedades Algebraicas de las Operaciones de Conjunto</text>
-                </svg>
+                </g>
+              </svg>
                 <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las propiedades conmutativa y distributiva mantienen áreas equivalentes al reorganizar las operaciones. Las leyes de De Morgan muestran que el complemento de una unión equivale a la intersección de los complementos, visualmente representado como el área exterior convirtiéndose en intersección de áreas exteriores.</p>
               </div>
               
