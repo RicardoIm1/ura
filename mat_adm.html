@@ -2462,7 +2462,7 @@
               <!-- Gráfica 2: Demostración visual de propiedades -->
               <div class=graph-container style=margin-bottom:20px;>
                 <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Demostración visual de propiedades algebraicas</h4>
-                <svg viewBox='0 0 400 900' class=math-graph style=width:100%;height:auto;background:#f8f9fa;border-radius:8px;>
+                <svg viewBox='0 0 400 750' class=math-graph style=width:100%;height:auto;background:#f8f9fa;border-radius:8px;>
   
                 <!-- DEFINICIONES DE MÁSCARAS Y CLIPPATH -->
                 <defs>
@@ -2609,42 +2609,53 @@
                 </g>
                 
                 <!-- PROPIEDAD 3: LEYES DE DE MORGAN MEJORADAS -->
-                <g transform=translate(0,300)>
-                  <text x=100 y=20 text-anchor=middle font-size=12 fill=#e74c3c font-weight=600>De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ</text>
-                  
-                  <!-- Grupo izquierdo: (A ∪ B)ᶜ -->
-                  <g transform=translate(20,40)>
-                    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
-                    
-                    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
-                    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
-                    
-                    <!-- Complemento usando máscara -->
-                    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskUnion)></rect>
-                    
-                    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
-                    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
-                    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>(A ∪ B)ᶜ</text>
-                  </g>
-                  
-                  <!-- Flecha de igualdad -->
-                  <path d='M 150,80 L 180,80' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
-                  
-                  <!-- Grupo derecho: Aᶜ ∩ Bᶜ -->
-                  <g transform=translate(200,40)>
-                    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
-                    
-                    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
-                    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
-                    
-                    <!-- Intersección de complementos usando máscara -->
-                    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskIntersection)></rect>
-                    
-                    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
-                    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
-                    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>Aᶜ ∩ Bᶜ</text>
-                  </g>
-                </g>
+                <defs>
+  <!-- Máscara para (A ∪ B)ᶜ -->
+  <mask id=maskUnion>
+    <rect x=0 y=0 width=120 height=80 fill=white></rect>
+    <circle cx=40 cy=40 r=25 fill=black></circle>
+    <circle cx=80 cy=40 r=25 fill=black></circle>
+  </mask>
+
+  <!-- Máscara para Aᶜ ∩ Bᶜ -->
+  <mask id=maskIntersection>
+    <rect x=0 y=0 width=120 height=80 fill=black></rect>
+    <circle cx=40 cy=40 r=25 fill=white></circle>
+    <circle cx=80 cy=40 r=25 fill=white></circle>
+  </mask>
+</defs>
+
+<g transform=translate(0,300)>
+  <text x=160 y=20 text-anchor=middle font-size=12 fill=#e74c3c font-weight=600>
+    De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ
+  </text>
+
+  <!-- Grupo izquierdo: (A ∪ B)ᶜ -->
+  <g transform=translate(20,40)>
+    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
+    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
+    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
+    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskUnion)></rect>
+    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>(A ∪ B)ᶜ</text>
+  </g>
+
+  <!-- Flecha de igualdad -->
+  <path d='M 150,80 L 180,80' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
+
+  <!-- Grupo derecho: Aᶜ ∩ Bᶜ -->
+  <g transform=translate(200,40)>
+    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
+    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
+    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
+    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskIntersection)></rect>
+    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>Aᶜ ∩ Bᶜ</text>
+  </g>
+</g>
+
               </svg>
                 <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las propiedades conmutativa y distributiva mantienen áreas equivalentes al reorganizar las operaciones. Las leyes de De Morgan muestran que el complemento de una unión equivale a la intersección de los complementos, visualmente representado como el área exterior convirtiéndose en intersección de áreas exteriores.</p>
               </div>
