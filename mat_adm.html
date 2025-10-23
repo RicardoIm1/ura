@@ -2469,7 +2469,403 @@
             </div>
             `);"><b>4.2. Operaciones de conjunto</b> <span class=emoji-small>✅</span>
           </li>
+          
+          <li onclick="abrirModal('4.3 Diagramas de Venn', `
+          <hr><br>
+          <div class=math-module>
             
+            <!-- Tiempo estimado -->
+            <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+              <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 20 minutos'>
+              <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+              <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
+              <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>20 min</text>
+              </svg>
+              <span style=font-weight:bold;>Tiempo estimado: 20 minutos</span>
+            </div>
+            
+            <!-- Objetivo -->
+            <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+              <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+              <span><strong>Objetivo:</strong> Dominar la construcción e interpretación de diagramas de Venn para representar relaciones entre conjuntos, comprender su estructura geométrica y lógica, aplicar técnicas de sombreado para visualizar operaciones complejas, y utilizar estos diagramas como herramienta para resolver problemas de lógica, probabilidad y teoría de conjuntos de manera intuitiva y rigurosa.</span>
+            </div>
+            
+            <!-- Idea principal -->
+            <div class=content-section style=margin-bottom:20px;>
+              <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+              <p>Los diagramas de Venn son representaciones gráficas que utilizan figuras geométricas (generalmente círculos o elipses) para visualizar relaciones lógicas entre conjuntos finitos. Desarrollados por John Venn en 1880, estos diagramas permiten representar operaciones como unión, intersección, diferencia y complemento de manera intuitiva. Cada región del diagrama corresponde a una combinación específica de pertenencia a los conjuntos, proporcionando una herramienta poderosa para el análisis de problemas en lógica, probabilidad, estadística y ciencias de la computación. La disposición geométrica de las figuras refleja las relaciones de inclusión y exclusión entre los conjuntos representados.</p>
+            </div>
+            
+            <!-- Ejercicio 1: Fundamentos de construcción de diagramas -->
+            <div class=content-section style=margin-bottom:20px;>
+              <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Fundamentos de construcción de diagramas de Venn</h4>
+              <p>Análisis de la estructura básica y regiones fundamentales en diagramas de Venn:</p>
+              <table class=math-table>
+                <thead>
+                  <tr>
+                    <th>Número de Conjuntos</th>
+                    <th>Regiones Máximas</th>
+                    <th>Fórmula</th>
+                    <th>Configuración Geométrica</th>
+                    <th>Ejemplo Visual</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1 conjunto</td>
+                    <td>2 regiones</td>
+                    <td>2¹ = 2</td>
+                    <td>Un círculo dentro del universo</td>
+                    <td>A y Aᶜ</td>
+                  </tr>
+                  <tr>
+                    <td>2 conjuntos</td>
+                    <td>4 regiones</td>
+                    <td>2² = 4</td>
+                    <td>Dos círculos que se intersectan</td>
+                    <td>A-B, A∩B, B-A, (A∪B)ᶜ</td>
+                  </tr>
+                  <tr>
+                    <td>3 conjuntos</td>
+                    <td>8 regiones</td>
+                    <td>2³ = 8</td>
+                    <td>Tres círculos mutuamente intersectados</td>
+                    <td>7 regiones internas + universo</td>
+                  </tr>
+                  <tr>
+                    <td>4 conjuntos</td>
+                    <td>16 regiones</td>
+                    <td>2⁴ = 16</td>
+                    <td>Elipses organizadas simétricamente</td>
+                    <td>Configuración compleja con 15 regiones internas</td>
+                  </tr>
+                  <tr>
+                    <td>n conjuntos</td>
+                    <td>2ⁿ regiones</td>
+                    <td>2ⁿ</td>
+                    <td>Patrón geométrico específico</td>
+                    <td>Crece exponencialmente con n</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> El número de regiones crece exponencialmente con el número de conjuntos. Cada conjunto adicional duplica el número de regiones posibles. Para más de 3 conjuntos, los círculos se vuelven insuficientes y se requieren elipses u otras formas para representar todas las intersecciones posibles.</p>
+            </div>
+            
+            <!-- Gráfica 1: Evolución de diagramas de 1 a 3 conjuntos -->
+            <div class=graph-container style=margin-bottom:20px;>
+              <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Evolución estructural de diagramas de Venn</h4>
+              <svg viewBox='0 0 400 300' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+                
+                <!-- 1 Conjunto -->
+                <g transform=translate(70,80)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=50 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <text x=50 y=50 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=25 y=25 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Aᶜ</text>
+                  <text x=50 y=90 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1 Conjunto: 2 regiones</text>
+                </g>
+                
+                <!-- 2 Conjuntos -->
+                <g transform=translate(200,80)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  <text x=25 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=75 y=50 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>B</text>
+                  <text x=50 y=30 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A-B</text>
+                  <text x=50 y=50 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>A∩B</text>
+                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-dark-gray)>B-A</text>
+                  <text x=50 y=90 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2 Conjuntos: 4 regiones</text>
+                </g>
+                
+                <!-- 3 Conjuntos -->
+                <g transform=translate(330,80)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=35 cy=40 r=25 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=40 r=25 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  <circle cx=50 cy=65 r=25 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
+                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
+                  <text x=50 y=90 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3 Conjuntos: 8 regiones</text>
+                  
+                  <!-- Numerar algunas regiones clave -->
+                  <text x=50 y=50 text-anchor=middle font-size=6 fill=var(--apple-dark-gray)>A∩B∩C</text>
+                  <text x=25 y=30 text-anchor=middle font-size=6 fill=var(--apple-dark-gray)>A-B-C</text>
+                  <text x=75 y=30 text-anchor=middle font-size=6 fill=var(--apple-dark-gray)>B-A-C</text>
+                  <text x=50 y=80 text-anchor=middle font-size=6 fill=var(--apple-dark-gray)>C-A-B</text>
+                </g>
+                
+                <!-- Flechas de evolución -->
+                <path d='M 170,50 L 190,50' stroke=var(--apple-dark-gray) stroke-width=2 marker-end=url(#arrow)></path>
+                <path d='M 300,50 L 320,50' stroke=var(--apple-dark-gray) stroke-width=2 marker-end=url(#arrow)></path>
+                
+                <!-- Definición de flecha -->
+                <defs>
+                  <marker id=arrow markerWidth=10 markerHeight=7 refX=9 refY=3.5 orient=auto>
+                    <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+                  </marker>
+                </defs>
+                
+                <!-- Título y fórmula general -->
+                <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)>Evolución Estructural de Diagramas de Venn</text>
+                <text x=200 y=200 text-anchor=middle font-size=14 fill=var(--apple-vibrant-blue)>Fórmula General: Número de Regiones = 2ⁿ</text>
+                <text x=200 y=220 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>donde n = número de conjuntos</text>
+                
+                <!-- Ejemplos de crecimiento -->
+                <g transform=translate(100,240)>
+                  <text x=0 y=0 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>n=1 → 2 regiones</text>
+                  <text x=0 y=15 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>n=2 → 4 regiones</text>
+                  <text x=0 y=30 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>n=3 → 8 regiones</text>
+                  <text x=0 y=45 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>n=4 → 16 regiones</text>
+                  <text x=0 y=60 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>n=5 → 32 regiones</text>
+                </g>
+                
+                <g transform=translate(250,240)>
+                  <text x=0 y=0 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Crecimiento exponencial</text>
+                  <text x=0 y=15 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Cada conjunto duplica regiones</text>
+                  <text x=0 y=30 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Máximo práctico: n=5</text>
+                  <text x=0 y=45 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Para n>3 usar elipses</text>
+                </g>
+              </svg>
+              <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> La estructura de los diagramas se vuelve significativamente más compleja con cada conjunto adicional. Para 3 conjuntos, la disposición triangular es óptima. Para más conjuntos, se requieren configuraciones especiales con elipses que garantizen que todas las intersecciones posibles sean representables.</p>
+            </div>
+            
+            <!-- Ejercicio 2: Técnicas de sombreado para operaciones -->
+            <div class=content-section style=margin-bottom:20px;>
+              <h4><i class='fas fa-cogs' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Técnicas de sombreado para operaciones entre conjuntos</h4>
+              <p>Aplicación sistemática de sombreado para representar operaciones lógicas:</p>
+              <table class=math-table>
+                <thead>
+                  <tr>
+                    <th>Operación</th>
+                    <th>Notación</th>
+                    <th>Reglas de Sombreado</th>
+                    <th>Procedimiento Paso a Paso</th>
+                    <th>Interpretación Visual</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Unión</td>
+                    <td>A ∪ B</td>
+                    <td>Sombra A y B completamente</td>
+                    <td>1. Identificar conjunto A<br>2. Identificar conjunto B<br>3. Sombrear ambas áreas</td>
+                    <td>Área cubierta por A o B</td>
+                  </tr>
+                  <tr>
+                    <td>Intersección</td>
+                    <td>A ∩ B</td>
+                    <td>Solo área de superposición</td>
+                    <td>1. Localizar región común<br>2. Sombrear solo intersección</td>
+                    <td>Área compartida por A y B</td>
+                  </tr>
+                  <tr>
+                    <td>Diferencia</td>
+                    <td>A - B</td>
+                    <td>A completo menos intersección</td>
+                    <td>1. Sombrear A completamente<br>2. Quitar sombra de A∩B</td>
+                    <td>Parte de A que no está en B</td>
+                  </tr>
+                  <tr>
+                    <td>Complemento</td>
+                    <td>Aᶜ</td>
+                    <td>Todo excepto A</td>
+                    <td>1. Sombrear universo completo<br>2. Quitar sombra de A</td>
+                    <td>Área exterior a A</td>
+                  </tr>
+                  <tr>
+                    <td>Diferencia Simétrica</td>
+                    <td>A Δ B</td>
+                    <td>Unión menos intersección</td>
+                    <td>1. Sombrear A∪B<br>2. Quitar sombra de A∩B</td>
+                    <td>Áreas exclusivas de A y B</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> El sombreado sigue una lógica sistemática: para operaciones simples se sombrea directamente, para operaciones compuestas se construye por etapas. La diferencia requiere atención al orden (A-B ≠ B-A). La diferencia simétrica puede visualizarse como la unión de las dos diferencias.</p>
+            </div>
+            
+            <!-- Gráfica 2: Sombreado de operaciones complejas -->
+            <div class=graph-container style=margin-bottom:20px;>
+              <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Sombreado de operaciones lógicas complejas</h4>
+              <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+                
+                <!-- Operación 1: (A ∩ B) ∪ C -->
+                <g transform=translate(70,70)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  
+                  <!-- Sombreado de A∩B -->
+                  <path d='M 50,20 Q 65,50 50,80 Q 35,50 50,20' fill=var(--apple-vibrant-purple) fill-opacity=0.5 stroke=var(--apple-vibrant-purple) stroke-width=1></path>
+                  
+                  <!-- Sombreado de C completo -->
+                  <circle cx=50 cy=65 r=30 fill=var(--apple-vibrant-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  
+                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
+                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
+                  <text x=50 y=95 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(A ∩ B) ∪ C</text>
+                </g>
+                
+                <!-- Operación 2: (A ∪ B) - C -->
+                <g transform=translate(230,70)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  
+                  <!-- Sombreado de A∪B -->
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-vibrant-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=50 r=30 fill=var(--apple-vibrant-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  
+                  <!-- Quitar C (área blanca dentro de C) -->
+                  <circle cx=50 cy=65 r=30 fill=var(--apple-very-light-gray) fill-opacity=1.0 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  
+                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
+                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
+                  <text x=50 y=95 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(A ∪ B) - C</text>
+                </g>
+                
+                <!-- Operación 3: A Δ (B ∩ C) -->
+                <g transform=translate(70,200)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  
+                  <!-- Sombreado de A completo -->
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-vibrant-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  
+                  <!-- Sombreado de B∩C -->
+                  <path d='M 50,40 Q 65,65 50,90 Q 35,65 50,40' fill=var(--apple-vibrant-purple) fill-opacity=0.5 stroke=var(--apple-vibrant-purple) stroke-width=1></path>
+                  
+                  <!-- Quitar intersección de A con (B∩C) -->
+                  <path d='M 45,45 Q 50,50 45,55 Q 40,50 45,45' fill=var(--apple-very-light-gray) fill-opacity=1.0 stroke=var(--apple-very-light-gray) stroke-width=1></path>
+                  
+                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
+                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
+                  <text x=50 y=95 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>A Δ (B ∩ C)</text>
+                </g>
+                
+                <!-- Operación 4: (Aᶜ ∩ B) ∪ (A ∩ C) -->
+                <g transform=translate(230,200)>
+                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
+                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
+                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+                  
+                  <!-- Sombreado de Aᶜ ∩ B (B menos A) -->
+                  <path d='M 65,20 Q 80,50 65,80 Q 50,50 65,20' fill=var(--apple-vibrant-green) fill-opacity=0.5 stroke=var(--apple-vibrant-green) stroke-width=1></path>
+                  
+                  <!-- Sombreado de A ∩ C -->
+                  <path d='M 35,35 Q 50,65 35,95 Q 20,65 35,35' fill=var(--apple-vibrant-orange) fill-opacity=0.5 stroke=var(--apple-vibrant-orange) stroke-width=1></path>
+                  
+                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
+                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
+                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
+                  <text x=50 y=95 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Aᶜ ∩ B) ∪ (A ∩ C)</text>
+                </g>
+                
+                <!-- Título general -->
+                <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)>Sombreado de Operaciones Lógicas Complejas</text>
+                
+                <!-- Leyenda de colores -->
+                <rect x=50 y=310 width=300 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+                <rect x=60 y=317 width=15 height=15 fill=var(--apple-vibrant-purple) fill-opacity=0.5></rect>
+                <text x=80 y=330 font-size=10 fill=var(--apple-dark-gray)>Intersección múltiple</text>
+                <rect x=150 y=317 width=15 height=15 fill=var(--apple-vibrant-blue) fill-opacity=0.3></rect>
+                <text x=170 y=330 font-size=10 fill=var(--apple-dark-gray)>Conjunto individual</text>
+                <rect x=240 y=317 width=15 height=15 fill=var(--apple-very-light-gray)></rect>
+                <text x=260 y=330 font-size=10 fill=var(--apple-dark-gray)>Área excluida</text>
+              </svg>
+              <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las operaciones complejas requieren descomposición en pasos secuenciales. El sombreado por capas permite visualizar operaciones anidadas. Las áreas excluidas se representan con ausencia de sombreado. La superposición de colores indica intersecciones múltiples.</p>
+            </div>
+            
+            <!-- Ejercicio 3: Resolución de problemas con diagramas -->
+            <div class=content-section style=margin-bottom:20px;>
+              <h4><i class='fas fa-rocket' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Resolución sistemática de problemas con diagramas</h4>
+              <p>Aplicación de diagramas de Venn para resolver problemas de conteo y lógica:</p>
+              <table class=math-table>
+                <thead>
+                  <tr>
+                    <th>Tipo de Problema</th>
+                    <th>Enunciado Ejemplo</th>
+                    <th>Procedimiento con Diagrama</th>
+                    <th>Asignación de Variables</th>
+                    <th>Solución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Problema de conteo</td>
+                    <td>En un grupo de 100 estudiantes: 60 matemáticas, 50 física, 40 química, 20 matemáticas y física, 15 física y química, 10 matemáticas y química, 5 las tres</td>
+                    <td>1. Dibujar 3 círculos<br>2. Asignar desde intersección central<br>3. Calcular regiones exteriores<br>4. Sumar y verificar</td>
+                    <td>a=5, b=15, c=10, d=20, e=15, f=10, g=30</td>
+                    <td>30 no cursan ninguna</td>
+                  </tr>
+                  <tr>
+                    <td>Problema lógico</td>
+                    <td>Determinar cuántos elementos están en exactamente dos conjuntos</td>
+                    <td>1. Identificar intersecciones dobles<br>2. Restar intersección triple<br>3. Sumar regiones relevantes</td>
+                    <td>(A∩B) + (A∩C) + (B∩C) - 3(A∩B∩C)</td>
+                    <td>20+15+10-15=30</td>
+                  </tr>
+                  <tr>
+                    <td>Problema de complemento</td>
+                    <td>Encontrar elementos que no pertenecen a ningún conjunto</td>
+                    <td>1. Calcular unión total<br>2. Restar del universal<br>3. Verificar regiones externas</td>
+                    <td>U - (A∪B∪C)</td>
+                    <td>100 - 70 = 30</td>
+                  </tr>
+                  <tr>
+                    <td>Problema de exclusividad</td>
+                    <td>Elementos en exactamente un conjunto</td>
+                    <td>1. Calcular cada conjunto individual<br>2. Restar intersecciones<br>3. Sumar resultados</td>
+                    <td>(A-B-C)+(B-A-C)+(C-A-B)</td>
+                    <td>30+15+10=55</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los problemas de conteo se resuelven sistemáticamente comenzando por la intersección triple y avanzando hacia las regiones externas. La verificación final mediante suma de todas las regiones debe igualar el total del universo. Los problemas lógicos requieren traducción precisa de enunciados verbales a operaciones de conjunto.</p>
+            </div>
+            
+            <!-- Aplicaciones reales -->
+            <div class=content-section style=margin-bottom:20px;>
+              <h4><i class='fas fa-industry' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+              <ul style=padding-left:18px;line-height:1.6;>
+                <li><strong>Estadística y probabilidad:</strong> Visualización de espacios muestrales y cálculo de probabilidades de eventos compuestos.</li>
+                <li><strong>Investigación de mercados:</strong> Análisis de superposición entre segmentos de consumidores y productos.</li>
+                <li><strong>Bioinformática:</strong> Representación de conjuntos de genes y sus intersecciones en diferentes condiciones.</li>
+                <li><strong>Bases de datos:</strong> Diseño de consultas complejas y optimización de operaciones entre tablas.</li>
+                <li><strong>Lógica digital:</strong> Diseño y simplificación de circuitos lógicos usando diagramas equivalentes.</li>
+                <li><strong>Educación:</strong> Herramienta pedagógica para enseñanza de lógica y teoría de conjuntos.</li>
+                <li><strong>Medicina:</strong> Análisis de síntomas que se superponen entre diferentes enfermedades.</li>
+                <li><strong>Ecología:</strong> Estudio de distribución de especies y superposición de hábitats.</li>
+              </ul>
+            </div>
+            
+            <!-- Bibliografía -->
+            <div class=bibliography-section style=margin-top:20px;>
+              <h4><i class='fas fa-book' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+              <ul style=padding-left:18px;line-height:1.5;>
+                <li>Venn, J. (1880). On the Diagrammatic and Mechanical Representation of Propositions and Reasonings. Philosophical Magazine.</li>
+                <li>Baron, M. E. (2019). A Note on the Historical Development of Logic Diagrams: Leibniz, Euler and Venn. Mathematical Gazette.</li>
+                <li>Lipschutz, S. (2020). Teoría de conjuntos y temas afines. McGraw-Hill.</li>
+                <li>Halmos, P. R. (2017). Teoría intuitiva de conjuntos. Editorial Trillas.</li>
+                <li>Grünbaum, B. (2018). Venn Diagrams and Independent Families of Sets. Mathematics Magazine.</li>
+                <li>Khan Academy: Venn diagrams and set operations. www.khanacademy.org</li>
+              </ul>
+            </div>
+          </div>
+          `);"><b>4.3 Diagramas de Venn</b> <span class=emoji-small>✅</span>
+        </li>
+
+          
           
         </ul>
       </div>
