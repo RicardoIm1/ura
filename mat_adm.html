@@ -4382,482 +4382,482 @@
           `)"><b>6.2. Tasa de interés nominal</b> <span class="emoji-small">✅</span>
           </li>
         
-            <li onclick="abrirModal('6.3. Valor Presente', `
-                <hr><br>
-                <p><strong>Objetivo:</strong> Comprender el concepto, cálculo y aplicaciones del valor presente en las finanzas, incluyendo su relación con el valor futuro y su uso en la evaluación de inversiones y flujos de efectivo.</p>
-              
-                <h4>Definición y conceptos básicos</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente (VP):</span> Valor actual de una cantidad futura de dinero o flujo de caja, descontado a una tasa de interés específica.</li>
-                  <li><span style='color: red; font-weight: bold;'>Principio fundamental:</span> Un dólar hoy vale más que un dólar mañana debido a la capacidad de generar intereses.</li>
-                  <li><span style='color: red; font-weight: bold;'>Descuento:</span> Proceso de calcular el valor presente de cantidades futuras.</li>
-                  <li><span style='color: red; font-weight: bold;'>Tasa de descuento (i):</span> Tasa de interés utilizada para calcular el valor presente.</li>
-                  <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> Coeficiente por el que se multiplica un valor futuro para obtener su valor presente: 1/(1+i)ⁿ</li>
-                  <li><span style='color: red; font-weight: bold;'>Relación con Valor Futuro:</span> VP = VF / (1 + i)ⁿ</li>
-                </ul>
-              
-                <h4>Fórmulas fundamentales</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente simple:</span> VP = VF / (1 + i × n)</li>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente compuesto:</span> VP = VF / (1 + i)ⁿ</li>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa nominal:</span> VP = VF / (1 + j/m)ᵐˣⁿ</li>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente de una anualidad:</span> VP = A × [(1 - (1 + i)⁻ⁿ) / i]</li>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente de perpetuidad:</span> VP = A / i</li>
-                  <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + i)ⁿ</li>
-                </ul>
-              
-                <h4>Interpretación del valor presente</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Decisión de inversión:</span> Si VP ≥ 0, la inversión es viable</li>
-                  <li><span style='color: red; font-weight: bold;'>Comparación de alternativas:</span> Mayor VP indica mejor opción</li>
-                  <li><span style='color: red; font-weight: bold;'>Valoración de activos:</span> El VP representa el precio teórico justo</li>
-                  <li><span style='color: red; font-weight: bold;'>Análisis de préstamos:</span> El VP es el capital inicial del préstamo</li>
-                  <li><span style='color: red; font-weight: bold;'>Punto de equilibrio:</span> Donde VP de ingresos = VP de egresos</li>
-                </ul>
-              
-                <h4>Ejemplos detallados de aplicación</h4>
-                
-                <p><strong>Ejemplo 1: Valor Presente de un monto único</strong></p>
-                <p>¿Cuánto debo invertir hoy al 8% anual para tener $15,000 en 5 años?</p>
-                <ol>
-                  <li>Datos: <span style='color: red; font-weight: bold;'>VF = $15,000, i = 8% = 0.08, n = 5 años</span></li>
-                  <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = VF / (1 + i)ⁿ</span></li>
-                  <li>Cálculo: VP = 15000 / (1.08)⁵</li>
-                  <li>Paso 1: (1.08)⁵ = <span style='color: red; font-weight: bold;'>1.469328</span></li>
-                  <li>Paso 2: VP = 15000 / 1.469328 = <span style='color: red; font-weight: bold;'>$10,208.75</span></li>
-                  <li>Verificación: 10208.75 × (1.08)⁵ = 10208.75 × 1.469328 = <span style='color: red; font-weight: bold;'>$15,000</span></li>
-                  <li><span style='color: red; font-weight: bold;'>Interpretación:</span> $10,208.75 hoy equivalen a $15,000 dentro de 5 años al 8% anual.</li>
-                </ol>
-                
-                <p><strong>Ejemplo 2: Valor Presente con capitalización trimestral</strong></p>
-                <p>Calcular el valor presente de $20,000 a recibir en 3 años, descontados al 12% anual capitalizable trimestralmente.</p>
-                <ol>
-                  <li>Datos: <span style='color: red; font-weight: bold;'>VF = $20,000, j = 12% = 0.12, m = 4, n = 3 años</span></li>
-                  <li>Tasa periódica: <span style='color: red; font-weight: bold;'>i = j/m = 0.12/4 = 0.03 trimestral</span></li>
-                  <li>Número de períodos: <span style='color: red; font-weight: bold;'>n = m × t = 4 × 3 = 12 trimestres</span></li>
-                  <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = VF / (1 + i)ⁿ</span></li>
-                  <li>Cálculo: VP = 20000 / (1.03)¹²</li>
-                  <li>Paso 1: (1.03)¹² = <span style='color: red; font-weight: bold;'>1.425761</span></li>
-                  <li>Paso 2: VP = 20000 / 1.425761 = <span style='color: red; font-weight: bold;'>$14,027.60</span></li>
-                  <li>Tasa efectiva anual: iₑ = (1.03)⁴ - 1 = 1.125509 - 1 = <span style='color: red; font-weight: bold;'>12.55%</span></li>
-                  <li>Verificación con tasa efectiva: VP = 20000 / (1.1255)³ = 20000 / 1.4258 = <span style='color: red; font-weight: bold;'>$14,027.20</span></li>
-                </ol>
-                
-                <p><strong>Ejemplo 3: Valor Presente de una anualidad</strong></p>
-                <p>Calcular el valor presente de 5 pagos anuales de $2,000 cada uno, con una tasa de descuento del 7% anual.</p>
-                <ol>
-                  <li>Datos: <span style='color: red; font-weight: bold;'>A = $2,000, i = 7% = 0.07, n = 5 años</span></li>
-                  <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = A × [(1 - (1 + i)⁻ⁿ) / i]</span></li>
-                  <li>Cálculo: VP = 2000 × [(1 - (1.07)⁻⁵) / 0.07]</li>
-                  <li>Paso 1: (1.07)⁻⁵ = 1 / (1.07)⁵ = 1 / 1.402552 = <span style='color: red; font-weight: bold;'>0.712986</span></li>
-                  <li>Paso 2: 1 - 0.712986 = <span style='color: red; font-weight: bold;'>0.287014</span></li>
-                  <li>Paso 3: 0.287014 / 0.07 = <span style='color: red; font-weight: bold;'>4.1002</span></li>
-                  <li>Paso 4: VP = 2000 × 4.1002 = <span style='color: red; font-weight: bold;'>$8,200.40</span></li>
-                  <li><span style='color: red; font-weight: bold;'>Interpretación:</span> $8,200.40 hoy equivalen a 5 pagos anuales de $2,000 al 7% anual.</li>
-                </ol>
-              
-                <h4>Aplicaciones del valor presente</h4>
-                <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                  <tr style='background-color: #f2f2f2;'>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula clave</th>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Inversiones</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de proyectos (VAN)</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>VAN = ∑(Fⱼ/(1+i)ʲ) - Inversión Inicial</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Préstamos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de cuotas y saldos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Bonos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Precio teórico de bonos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>P = ∑(Cupón/(1+i)ʲ) + Valor Nominal/(1+i)ⁿ</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Pensiones</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas actuariales</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Arrendamiento</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Valor presente de pagos por lease</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>VP = ∑(Pagoⱼ/(1+i)ʲ)</td>
-                  </tr>
-                </table>
-              
-                <h4>Factores que afectan el valor presente</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Tasa de descuento:</span> A mayor tasa, menor valor presente</li>
-                  <li><span style='color: red; font-weight: bold;'>Tiempo:</span> A mayor plazo, menor valor presente</li>
-                  <li><span style='color: red; font-weight: bold;'>Frecuencia de capitalización:</span> A mayor frecuencia, menor valor presente</li>
-                  <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Mayores riesgos requieren mayores tasas de descuento</li>
-                  <li><span style='color: red; font-weight: bold;'>Inflación:</span> Reduce el valor presente de flujos nominales</li>
-                </ul>
-              
-                <h4>Ejercicio de aplicación integral</h4>
-                <p>Una empresa evalúa un proyecto que requiere una inversión inicial de $50,000 y generará los siguientes flujos de caja anuales:</p>
-                <ul>
-                  <li>Año 1: $15,000</li>
-                  <li>Año 2: $18,000</li>
-                  <li>Año 3: $22,000</li>
-                  <li>Año 4: $25,000</li>
-                  <li>Año 5: $30,000</li>
-                </ul>
-                <p>Si la tasa de descuento apropiada es del 10% anual, determinar:</p>
-                <ol>
-                  <li>El valor presente de cada flujo</li>
-                  <li>El valor presente total de los flujos</li>
-                  <li>El valor actual neto (VAN) del proyecto</li>
-                  <li>¿Debe aceptarse el proyecto?</li>
-                </ol>
-                
-                <p><strong>Solución:</strong></p>
-                <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                  <tr style='background-color: #f2f2f2;'>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Factor de descuento</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Valor Presente</th>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000.00</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$15,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.9091</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$13,636.50</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$18,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8264</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$14,875.20</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$22,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.7513</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$16,528.60</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$25,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.6830</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$17,075.00</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$30,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.6209</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>$18,627.00</td>
-                  </tr>
-                  <tr style='background-color: #e6f7ff;'>
-                    <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total</strong></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'><strong>$80,742.30</strong></td>
-                  </tr>
-                </table>
-                <ol>
-                  <li><span style='color: red; font-weight: bold;'>Valor presente total de flujos:</span> $80,742.30</li>
-                  <li><span style='color: red; font-weight: bold;'>Valor actual neto (VAN):</span> VP Flujos - Inversión = 80742.30 - 50000 = <span style='color: red; font-weight: bold;'>$30,742.30</span></li>
-                  <li><span style='color: red; font-weight: bold;'>Decisión:</span> Como VAN > 0, <span style='color: red; font-weight: bold;'>el proyecto debe aceptarse</span></li>
-                </ol>
-              
-                <h4>Consideraciones importantes</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es crítica</span> y debe reflejar el riesgo de los flujos</li>
-                  <li>El valor presente <span style='color: red; font-weight: bold;'>no considera la inflación</span> a menos que se usen flujos reales y tasa real</li>
-                  <li>En proyectos de largo plazo, <span style='color: red; font-weight: bold;'>pequeños cambios en la tasa afectan significativamente el VP</span></li>
-                  <li>El análisis de valor presente <span style='color: red; font-weight: bold;'>debe complementarse con otros indicadores</span> (TIR, período de recuperación)</li>
-                  <li>En contextos inflacionarios, es preferible usar <span style='color: red; font-weight: bold;'>flujos reales y tasa real</span></li>
-                </ul>
-              
-                <h4>Fuentes Bibliográficas</h4>
-                <ul>
-                  <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
-                  <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. (2019). <em>Corporate Finance</em>. McGraw-Hill.</li>
-                  <li>Van Horne, J. C., & Wachowicz, J. M. (2008). <em>Fundamentals of Financial Management</em>. Pearson Education.</li>
-                  <li>Gitman, L. J., & Zutter, C. J. (2015). <em>Principles of Managerial Finance</em>. Pearson Education.</li>
-                </ul>
-              `)"><b>6.3. Valor Presente</b> <span class="emoji-small">✅</span>
-            </li>
+          <li onclick="abrirModal('6.3. Valor Presente', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, cálculo y aplicaciones del valor presente en las finanzas, incluyendo su relación con el valor futuro y su uso en la evaluación de inversiones y flujos de efectivo.</p>
             
-            <li onclick="abrirModal('6.4. Tasa de descuento', `
-                <hr><br>
-                <p><strong>Objetivo:</strong> Comprender el concepto, tipos, cálculo y aplicaciones de la tasa de descuento en el análisis financiero, así como su importancia en la evaluación de inversiones y la valoración de activos.</p>
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente (VP):</span> Valor actual de una cantidad futura de dinero o flujo de caja, descontado a una tasa de interés específica.</li>
+                <li><span style='color: red; font-weight: bold;'>Principio fundamental:</span> Un dólar hoy vale más que un dólar mañana debido a la capacidad de generar intereses.</li>
+                <li><span style='color: red; font-weight: bold;'>Descuento:</span> Proceso de calcular el valor presente de cantidades futuras.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento (i):</span> Tasa de interés utilizada para calcular el valor presente.</li>
+                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> Coeficiente por el que se multiplica un valor futuro para obtener su valor presente: 1/(1+i)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Relación con Valor Futuro:</span> VP = VF / (1 + i)ⁿ</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente simple:</span> VP = VF / (1 + i × n)</li>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente compuesto:</span> VP = VF / (1 + i)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa nominal:</span> VP = VF / (1 + j/m)ᵐˣⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente de una anualidad:</span> VP = A × [(1 - (1 + i)⁻ⁿ) / i]</li>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente de perpetuidad:</span> VP = A / i</li>
+                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + i)ⁿ</li>
+              </ul>
+            
+              <h4>Interpretación del valor presente</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Decisión de inversión:</span> Si VP ≥ 0, la inversión es viable</li>
+                <li><span style='color: red; font-weight: bold;'>Comparación de alternativas:</span> Mayor VP indica mejor opción</li>
+                <li><span style='color: red; font-weight: bold;'>Valoración de activos:</span> El VP representa el precio teórico justo</li>
+                <li><span style='color: red; font-weight: bold;'>Análisis de préstamos:</span> El VP es el capital inicial del préstamo</li>
+                <li><span style='color: red; font-weight: bold;'>Punto de equilibrio:</span> Donde VP de ingresos = VP de egresos</li>
+              </ul>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
               
-                <h4>Definición y conceptos básicos</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Tasa de descuento (d):</span> Tasa de interés utilizada para calcular el valor presente de flujos de efectivo futuros.</li>
-                  <li><span style='color: red; font-weight: bold;'>Costo de oportunidad:</span> Representa el rendimiento que se deja de percibir al elegir una inversión sobre otras alternativas disponibles.</li>
-                  <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Refleja la incertidumbre asociada con los flujos de efectivo futuros.</li>
-                  <li><span style='color: red; font-weight: bold;'>Inflación:</span> Considera la pérdida de poder adquisitivo del dinero a través del tiempo.</li>
-                  <li><span style='color: red; font-weight: bold;'>Preferencia temporal:</span> Indica la preferencia por el consumo presente sobre el consumo futuro.</li>
-                </ul>
+              <p><strong>Ejemplo 1: Valor Presente de un monto único</strong></p>
+              <p>¿Cuánto debo invertir hoy al 8% anual para tener $15,000 en 5 años?</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>VF = $15,000, i = 8% = 0.08, n = 5 años</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = VF / (1 + i)ⁿ</span></li>
+                <li>Cálculo: VP = 15000 / (1.08)⁵</li>
+                <li>Paso 1: (1.08)⁵ = <span style='color: red; font-weight: bold;'>1.469328</span></li>
+                <li>Paso 2: VP = 15000 / 1.469328 = <span style='color: red; font-weight: bold;'>$10,208.75</span></li>
+                <li>Verificación: 10208.75 × (1.08)⁵ = 10208.75 × 1.469328 = <span style='color: red; font-weight: bold;'>$15,000</span></li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> $10,208.75 hoy equivalen a $15,000 dentro de 5 años al 8% anual.</li>
+              </ol>
               
-                <h4>Tipos de tasas de descuento</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> Tasa que representa el costo promedio de todas las fuentes de financiamiento de una empresa.</li>
-                  <li><span style='color: red; font-weight: bold;'>Costo de capital propio (CAPM):</span> Tasa requerida por los accionistas calculada mediante el modelo de valoración de activos de capital.</li>
-                  <li><span style='color: red; font-weight: bold;'>Costo de la deuda:</span> Tasa de interés que paga la empresa por sus fondos prestados.</li>
-                  <li><span style='color: red; font-weight: bold;'>Tasa libre de riesgo:</span> Rendimiento de inversiones sin riesgo de incumplimiento (ej. bonos gubernamentales).</li>
-                  <li><span style='color: red; font-weight: bold;'>Tasa de descuento ajustada al riesgo:</span> Tasa que incorpora una prima por el riesgo específico del proyecto o inversión.</li>
-                </ul>
+              <p><strong>Ejemplo 2: Valor Presente con capitalización trimestral</strong></p>
+              <p>Calcular el valor presente de $20,000 a recibir en 3 años, descontados al 12% anual capitalizable trimestralmente.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>VF = $20,000, j = 12% = 0.12, m = 4, n = 3 años</span></li>
+                <li>Tasa periódica: <span style='color: red; font-weight: bold;'>i = j/m = 0.12/4 = 0.03 trimestral</span></li>
+                <li>Número de períodos: <span style='color: red; font-weight: bold;'>n = m × t = 4 × 3 = 12 trimestres</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = VF / (1 + i)ⁿ</span></li>
+                <li>Cálculo: VP = 20000 / (1.03)¹²</li>
+                <li>Paso 1: (1.03)¹² = <span style='color: red; font-weight: bold;'>1.425761</span></li>
+                <li>Paso 2: VP = 20000 / 1.425761 = <span style='color: red; font-weight: bold;'>$14,027.60</span></li>
+                <li>Tasa efectiva anual: iₑ = (1.03)⁴ - 1 = 1.125509 - 1 = <span style='color: red; font-weight: bold;'>12.55%</span></li>
+                <li>Verificación con tasa efectiva: VP = 20000 / (1.1255)³ = 20000 / 1.4258 = <span style='color: red; font-weight: bold;'>$14,027.20</span></li>
+              </ol>
               
-                <h4>Fórmulas fundamentales</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa de descuento:</span> VP = VF / (1 + d)ⁿ</li>
-                  <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</li>
-                  <li><span style='color: red; font-weight: bold;'>Modelo CAPM:</span> Re = Rf + β × (Rm - Rf)</li>
-                  <li><span style='color: red; font-weight: bold;'>Tasa de descuento real:</span> d_real = (1 + d_nominal) / (1 + π) - 1</li>
-                  <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + d)ⁿ</li>
-                </ul>
+              <p><strong>Ejemplo 3: Valor Presente de una anualidad</strong></p>
+              <p>Calcular el valor presente de 5 pagos anuales de $2,000 cada uno, con una tasa de descuento del 7% anual.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>A = $2,000, i = 7% = 0.07, n = 5 años</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = A × [(1 - (1 + i)⁻ⁿ) / i]</span></li>
+                <li>Cálculo: VP = 2000 × [(1 - (1.07)⁻⁵) / 0.07]</li>
+                <li>Paso 1: (1.07)⁻⁵ = 1 / (1.07)⁵ = 1 / 1.402552 = <span style='color: red; font-weight: bold;'>0.712986</span></li>
+                <li>Paso 2: 1 - 0.712986 = <span style='color: red; font-weight: bold;'>0.287014</span></li>
+                <li>Paso 3: 0.287014 / 0.07 = <span style='color: red; font-weight: bold;'>4.1002</span></li>
+                <li>Paso 4: VP = 2000 × 4.1002 = <span style='color: red; font-weight: bold;'>$8,200.40</span></li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> $8,200.40 hoy equivalen a 5 pagos anuales de $2,000 al 7% anual.</li>
+              </ol>
+            
+              <h4>Aplicaciones del valor presente</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula clave</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Inversiones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de proyectos (VAN)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>VAN = ∑(Fⱼ/(1+i)ʲ) - Inversión Inicial</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Préstamos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de cuotas y saldos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Bonos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Precio teórico de bonos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>P = ∑(Cupón/(1+i)ʲ) + Valor Nominal/(1+i)ⁿ</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Pensiones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas actuariales</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Arrendamiento</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Valor presente de pagos por lease</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>VP = ∑(Pagoⱼ/(1+i)ʲ)</td>
+                </tr>
+              </table>
+            
+              <h4>Factores que afectan el valor presente</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento:</span> A mayor tasa, menor valor presente</li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo:</span> A mayor plazo, menor valor presente</li>
+                <li><span style='color: red; font-weight: bold;'>Frecuencia de capitalización:</span> A mayor frecuencia, menor valor presente</li>
+                <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Mayores riesgos requieren mayores tasas de descuento</li>
+                <li><span style='color: red; font-weight: bold;'>Inflación:</span> Reduce el valor presente de flujos nominales</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Una empresa evalúa un proyecto que requiere una inversión inicial de $50,000 y generará los siguientes flujos de caja anuales:</p>
+              <ul>
+                <li>Año 1: $15,000</li>
+                <li>Año 2: $18,000</li>
+                <li>Año 3: $22,000</li>
+                <li>Año 4: $25,000</li>
+                <li>Año 5: $30,000</li>
+              </ul>
+              <p>Si la tasa de descuento apropiada es del 10% anual, determinar:</p>
+              <ol>
+                <li>El valor presente de cada flujo</li>
+                <li>El valor presente total de los flujos</li>
+                <li>El valor actual neto (VAN) del proyecto</li>
+                <li>¿Debe aceptarse el proyecto?</li>
+              </ol>
               
-                <h4>Componentes de la tasa de descuento</h4>
-                <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                  <tr style='background-color: #f2f2f2;'>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Componente</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Descripción</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula</th>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Tasa libre de riesgo (Rf)</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento de inversiones sin riesgo</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Prima de riesgo de mercado (Rm - Rf)</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento adicional por invertir en acciones vs. bonos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>6-8% históricamente</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Beta (β)</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Medida de volatilidad sistemática</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Cov(Ri, Rm) / Var(Rm)</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Prima por riesgo específico</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Riesgo particular del proyecto o empresa</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el caso</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Prima por liquidez</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Compensación por falta de liquidez</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el activo</td>
-                  </tr>
-                </table>
+              <p><strong>Solución:</strong></p>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor de descuento</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Valor Presente</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000.00</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$15,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9091</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$13,636.50</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8264</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$14,875.20</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$22,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7513</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$16,528.60</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$25,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6830</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$17,075.00</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6209</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,627.00</td>
+                </tr>
+                <tr style='background-color: #e6f7ff;'>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>$80,742.30</strong></td>
+                </tr>
+              </table>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Valor presente total de flujos:</span> $80,742.30</li>
+                <li><span style='color: red; font-weight: bold;'>Valor actual neto (VAN):</span> VP Flujos - Inversión = 80742.30 - 50000 = <span style='color: red; font-weight: bold;'>$30,742.30</span></li>
+                <li><span style='color: red; font-weight: bold;'>Decisión:</span> Como VAN > 0, <span style='color: red; font-weight: bold;'>el proyecto debe aceptarse</span></li>
+              </ol>
+            
+              <h4>Consideraciones importantes</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es crítica</span> y debe reflejar el riesgo de los flujos</li>
+                <li>El valor presente <span style='color: red; font-weight: bold;'>no considera la inflación</span> a menos que se usen flujos reales y tasa real</li>
+                <li>En proyectos de largo plazo, <span style='color: red; font-weight: bold;'>pequeños cambios en la tasa afectan significativamente el VP</span></li>
+                <li>El análisis de valor presente <span style='color: red; font-weight: bold;'>debe complementarse con otros indicadores</span> (TIR, período de recuperación)</li>
+                <li>En contextos inflacionarios, es preferible usar <span style='color: red; font-weight: bold;'>flujos reales y tasa real</span></li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
+                <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. (2019). <em>Corporate Finance</em>. McGraw-Hill.</li>
+                <li>Van Horne, J. C., & Wachowicz, J. M. (2008). <em>Fundamentals of Financial Management</em>. Pearson Education.</li>
+                <li>Gitman, L. J., & Zutter, C. J. (2015). <em>Principles of Managerial Finance</em>. Pearson Education.</li>
+              </ul>
+            `)"><b>6.3. Valor Presente</b> <span class="emoji-small">✅</span>
+          </li>
+          
+          <li onclick="abrirModal('6.4. Tasa de descuento', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, tipos, cálculo y aplicaciones de la tasa de descuento en el análisis financiero, así como su importancia en la evaluación de inversiones y la valoración de activos.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento (d):</span> Tasa de interés utilizada para calcular el valor presente de flujos de efectivo futuros.</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de oportunidad:</span> Representa el rendimiento que se deja de percibir al elegir una inversión sobre otras alternativas disponibles.</li>
+                <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Refleja la incertidumbre asociada con los flujos de efectivo futuros.</li>
+                <li><span style='color: red; font-weight: bold;'>Inflación:</span> Considera la pérdida de poder adquisitivo del dinero a través del tiempo.</li>
+                <li><span style='color: red; font-weight: bold;'>Preferencia temporal:</span> Indica la preferencia por el consumo presente sobre el consumo futuro.</li>
+              </ul>
+            
+              <h4>Tipos de tasas de descuento</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> Tasa que representa el costo promedio de todas las fuentes de financiamiento de una empresa.</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de capital propio (CAPM):</span> Tasa requerida por los accionistas calculada mediante el modelo de valoración de activos de capital.</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de la deuda:</span> Tasa de interés que paga la empresa por sus fondos prestados.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa libre de riesgo:</span> Rendimiento de inversiones sin riesgo de incumplimiento (ej. bonos gubernamentales).</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento ajustada al riesgo:</span> Tasa que incorpora una prima por el riesgo específico del proyecto o inversión.</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa de descuento:</span> VP = VF / (1 + d)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</li>
+                <li><span style='color: red; font-weight: bold;'>Modelo CAPM:</span> Re = Rf + β × (Rm - Rf)</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de descuento real:</span> d_real = (1 + d_nominal) / (1 + π) - 1</li>
+                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + d)ⁿ</li>
+              </ul>
+            
+              <h4>Componentes de la tasa de descuento</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Componente</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Descripción</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa libre de riesgo (Rf)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento de inversiones sin riesgo</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima de riesgo de mercado (Rm - Rf)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento adicional por invertir en acciones vs. bonos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6-8% históricamente</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Beta (β)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Medida de volatilidad sistemática</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cov(Ri, Rm) / Var(Rm)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima por riesgo específico</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Riesgo particular del proyecto o empresa</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el caso</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima por liquidez</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Compensación por falta de liquidez</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el activo</td>
+                </tr>
+              </table>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
               
-                <h4>Ejemplos detallados de aplicación</h4>
-                
-                <p><strong>Ejemplo 1: Cálculo de WACC</strong></p>
-                <p>Una empresa tiene una estructura de capital compuesta por 60% capital propio y 40% deuda. El costo de capital propio es 12%, el costo de la deuda es 8% y la tasa impositiva es 30%. Calcular el WACC.</p>
-                <ol>
-                  <li>Datos: <span style='color: red; font-weight: bold;'>E/V = 0.60, D/V = 0.40, Re = 12%, Rd = 8%, Tc = 30%</span></li>
-                  <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</span></li>
-                  <li>Cálculo: WACC = (0.60 × 0.12) + (0.40 × 0.08 × (1 - 0.30))</li>
-                  <li>Paso 1: 0.60 × 0.12 = <span style='color: red; font-weight: bold;'>0.072</span></li>
-                  <li>Paso 2: 0.40 × 0.08 = 0.032</li>
-                  <li>Paso 3: 1 - 0.30 = 0.70</li>
-                  <li>Paso 4: 0.032 × 0.70 = <span style='color: red; font-weight: bold;'>0.0224</span></li>
-                  <li>Paso 5: WACC = 0.072 + 0.0224 = <span style='color: red; font-weight: bold;'>0.0944 (9.44%)</span></li>
-                  <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La empresa debe usar 9.44% como tasa de descuento para proyectos con riesgo similar.</li>
-                </ol>
-                
-                <p><strong>Ejemplo 2: Cálculo de tasa con CAPM</strong></p>
-                <p>Calcular la tasa de descuento para una acción usando el modelo CAPM. La tasa libre de riesgo es 4%, la prima de mercado es 6% y la beta de la acción es 1.2.</p>
-                <ol>
-                  <li>Datos: <span style='color: red; font-weight: bold;'>Rf = 4%, Rm - Rf = 6%, β = 1.2</span></li>
-                  <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>Re = Rf + β × (Rm - Rf)</span></li>
-                  <li>Cálculo: Re = 0.04 + 1.2 × 0.06</li>
-                  <li>Paso 1: 1.2 × 0.06 = <span style='color: red; font-weight: bold;'>0.072</span></li>
-                  <li>Paso 2: Re = 0.04 + 0.072 = <span style='color: red; font-weight: bold;'>0.112 (11.2%)</span></li>
-                  <li><span style='color: red; font-weight: bold;'>Interpretación:</span> Los inversionistas requieren un 11.2% de rendimiento por invertir en esta acción.</li>
-                </ol>
-                
-                <p><strong>Ejemplo 3: Ajuste por inflación</strong></p>
-                <p>Si la tasa de descuento nominal es 15% y la inflación esperada es 5%, calcular la tasa de descuento real.</p>
-                <ol>
-                  <li>Datos: <span style='color: red; font-weight: bold;'>d_nominal = 15% = 0.15, π = 5% = 0.05</span></li>
-                  <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>d_real = (1 + d_nominal) / (1 + π) - 1</span></li>
-                  <li>Cálculo: d_real = (1.15 / 1.05) - 1</li>
-                  <li>Paso 1: 1.15 / 1.05 = <span style='color: red; font-weight: bold;'>1.095238</span></li>
-                  <li>Paso 2: d_real = 1.095238 - 1 = <span style='color: red; font-weight: bold;'>0.095238 (9.52%)</span></li>
-                  <li>Aproximación: d_nominal - π = 15% - 5% = 10% (sobrestima la tasa real)</li>
-                  <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La tasa real de descuento es 9.52%, considerando la pérdida de poder adquisitivo.</li>
-                </ol>
+              <p><strong>Ejemplo 1: Cálculo de WACC</strong></p>
+              <p>Una empresa tiene una estructura de capital compuesta por 60% capital propio y 40% deuda. El costo de capital propio es 12%, el costo de la deuda es 8% y la tasa impositiva es 30%. Calcular el WACC.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>E/V = 0.60, D/V = 0.40, Re = 12%, Rd = 8%, Tc = 30%</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</span></li>
+                <li>Cálculo: WACC = (0.60 × 0.12) + (0.40 × 0.08 × (1 - 0.30))</li>
+                <li>Paso 1: 0.60 × 0.12 = <span style='color: red; font-weight: bold;'>0.072</span></li>
+                <li>Paso 2: 0.40 × 0.08 = 0.032</li>
+                <li>Paso 3: 1 - 0.30 = 0.70</li>
+                <li>Paso 4: 0.032 × 0.70 = <span style='color: red; font-weight: bold;'>0.0224</span></li>
+                <li>Paso 5: WACC = 0.072 + 0.0224 = <span style='color: red; font-weight: bold;'>0.0944 (9.44%)</span></li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La empresa debe usar 9.44% como tasa de descuento para proyectos con riesgo similar.</li>
+              </ol>
               
-                <h4>Aplicaciones de la tasa de descuento</h4>
-                <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                  <tr style='background-color: #f2f2f2;'>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Tasa utilizada</th>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Evaluación de proyectos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo del Valor Actual Neto (VAN)</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>WACC o tasa ajustada al riesgo</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de empresas</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Descuento de flujos de caja libre</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>WACC</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Análisis de bonos</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Precio como valor presente de cupones</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Tasa de rendimiento requerida</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Decisiones de inversión</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Comparación de alternativas</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Costo de oportunidad</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Planificación financiera</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas y provisiones</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>Tasa técnica o actuarial</td>
-                  </tr>
-                </table>
+              <p><strong>Ejemplo 2: Cálculo de tasa con CAPM</strong></p>
+              <p>Calcular la tasa de descuento para una acción usando el modelo CAPM. La tasa libre de riesgo es 4%, la prima de mercado es 6% y la beta de la acción es 1.2.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>Rf = 4%, Rm - Rf = 6%, β = 1.2</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>Re = Rf + β × (Rm - Rf)</span></li>
+                <li>Cálculo: Re = 0.04 + 1.2 × 0.06</li>
+                <li>Paso 1: 1.2 × 0.06 = <span style='color: red; font-weight: bold;'>0.072</span></li>
+                <li>Paso 2: Re = 0.04 + 0.072 = <span style='color: red; font-weight: bold;'>0.112 (11.2%)</span></li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> Los inversionistas requieren un 11.2% de rendimiento por invertir en esta acción.</li>
+              </ol>
               
-                <h4>Factores que influyen en la determinación de la tasa de descuento</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>Condiciones macroeconómicas:</span> Tasas de interés, inflación, crecimiento económico</li>
-                  <li><span style='color: red; font-weight: bold;'>Riesgo del proyecto:</span> Volatilidad de flujos, incertidumbre del negocio</li>
-                  <li><span style='color: red; font-weight: bold;'>Estructura de capital:</span> Proporción de deuda vs. capital propio</li>
-                  <li><span style='color: red; font-weight: bold;'>Horizonte temporal:</span> Plazo de la inversión o proyecto</li>
-                  <li><span style='color: red; font-weight: bold;'>Liquidez:</span> Facilidad para convertir el activo en efectivo</li>
-                  <li><span style='color: red; font-weight: bold;'>Consideraciones fiscales:</span> Tratamiento tributario de los flujos</li>
-                </ul>
+              <p><strong>Ejemplo 3: Ajuste por inflación</strong></p>
+              <p>Si la tasa de descuento nominal es 15% y la inflación esperada es 5%, calcular la tasa de descuento real.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>d_nominal = 15% = 0.15, π = 5% = 0.05</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>d_real = (1 + d_nominal) / (1 + π) - 1</span></li>
+                <li>Cálculo: d_real = (1.15 / 1.05) - 1</li>
+                <li>Paso 1: 1.15 / 1.05 = <span style='color: red; font-weight: bold;'>1.095238</span></li>
+                <li>Paso 2: d_real = 1.095238 - 1 = <span style='color: red; font-weight: bold;'>0.095238 (9.52%)</span></li>
+                <li>Aproximación: d_nominal - π = 15% - 5% = 10% (sobrestima la tasa real)</li>
+                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La tasa real de descuento es 9.52%, considerando la pérdida de poder adquisitivo.</li>
+              </ol>
+            
+              <h4>Aplicaciones de la tasa de descuento</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa utilizada</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Evaluación de proyectos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo del Valor Actual Neto (VAN)</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>WACC o tasa ajustada al riesgo</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de empresas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Descuento de flujos de caja libre</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>WACC</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Análisis de bonos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Precio como valor presente de cupones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa de rendimiento requerida</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Decisiones de inversión</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Comparación de alternativas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Costo de oportunidad</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Planificación financiera</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas y provisiones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa técnica o actuarial</td>
+                </tr>
+              </table>
+            
+              <h4>Factores que influyen en la determinación de la tasa de descuento</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Condiciones macroeconómicas:</span> Tasas de interés, inflación, crecimiento económico</li>
+                <li><span style='color: red; font-weight: bold;'>Riesgo del proyecto:</span> Volatilidad de flujos, incertidumbre del negocio</li>
+                <li><span style='color: red; font-weight: bold;'>Estructura de capital:</span> Proporción de deuda vs. capital propio</li>
+                <li><span style='color: red; font-weight: bold;'>Horizonte temporal:</span> Plazo de la inversión o proyecto</li>
+                <li><span style='color: red; font-weight: bold;'>Liquidez:</span> Facilidad para convertir el activo en efectivo</li>
+                <li><span style='color: red; font-weight: bold;'>Consideraciones fiscales:</span> Tratamiento tributario de los flujos</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Una empresa evalúa un proyecto con una inversión inicial de $100,000 que generará flujos de $30,000 anuales durante 5 años. Calcular el VAN usando diferentes tasas de descuento:</p>
+              <ol>
+                <li>WACC calculado en 9.44%</li>
+                <li>Tasa con prima de riesgo adicional de 2%</li>
+                <li>Tasa libre de riesgo del 4% (asumiendo proyecto sin riesgo)</li>
+              </ol>
               
-                <h4>Ejercicio de aplicación integral</h4>
-                <p>Una empresa evalúa un proyecto con una inversión inicial de $100,000 que generará flujos de $30,000 anuales durante 5 años. Calcular el VAN usando diferentes tasas de descuento:</p>
-                <ol>
-                  <li>WACC calculado en 9.44%</li>
-                  <li>Tasa con prima de riesgo adicional de 2%</li>
-                  <li>Tasa libre de riesgo del 4% (asumiendo proyecto sin riesgo)</li>
-                </ol>
-                
-                <p><strong>Solución:</strong></p>
-                <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                  <tr style='background-color: #f2f2f2;'>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Factor 9.44%</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>VP 9.44%</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Factor 11.44%</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>VP 11.44%</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>Factor 4%</th>
-                    <th style='border: 1px solid #ddd; padding: 8px;'>VP 4%</th>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.9138</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>27,414</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8974</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>26,922</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.9615</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>28,845</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8350</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>25,050</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8054</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>24,162</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.9246</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>27,738</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.7630</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>22,890</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.7228</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>21,684</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8890</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>26,670</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.6972</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>20,916</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.6486</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>19,458</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8548</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>25,644</td>
-                  </tr>
-                  <tr>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.6371</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>19,113</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.5820</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>17,460</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>0.8219</td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'>24,657</td>
-                  </tr>
-                  <tr style='background-color: #e6f7ff;'>
-                    <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total VP</strong></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'><strong>15,383</strong></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'><strong>9,686</strong></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                    <td style='border: 1px solid #ddd; padding: 8px;'><strong>33,554</strong></td>
-                  </tr>
-                </table>
-                <ol>
-                  <li><span style='color: red; font-weight: bold;'>VAN al 9.44%:</span> $15,383 → <span style='color: red; font-weight: bold;'>Proyecto viable</span></li>
-                  <li><span style='color: red; font-weight: bold;'>VAN al 11.44%:</span> $9,686 → <span style='color: red; font-weight: bold;'>Proyecto viable pero menos atractivo</span></li>
-                  <li><span style='color: red; font-weight: bold;'>VAN al 4%:</span> $33,554 → <span style='color: red; font-weight: bold;'>Sobrestimación si el proyecto tiene riesgo</span></li>
-                </ol>
-              
-                <h4>Consideraciones importantes</h4>
-                <ul>
-                  <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es el factor más crítico</span> en la evaluación de inversiones</li>
-                  <li>Una tasa demasiado alta <span style='color: red; font-weight: bold;'>puede rechazar proyectos rentables</span></li>
-                  <li>Una tasa demasiado baja <span style='color: red; font-weight: bold;'>puede aceptar proyectos no rentables</span></li>
-                  <li>La tasa debe <span style='color: red; font-weight: bold;'>reflejar el riesgo específico</span> del proyecto o inversión</li>
-                  <li>En contextos inflacionarios, es crucial <span style='color: red; font-weight: bold;'>usar tasas consistentes</span> con los flujos (reales o nominales)</li>
-                  <li>La tasa de descuento debe <span style='color: red; font-weight: bold;'>actualizarse periódicamente</span> según cambien las condiciones del mercado</li>
-                </ul>
-              
-                <h4>Fuentes Bibliográficas</h4>
-                <ul>
-                  <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
-                  <li>Damodaran, A. (2012). <em>Investment Valuation: Tools and Techniques for Determining the Value of Any Asset</em>. Wiley.</li>
-                  <li>Copeland, T. E., Weston, J. F., & Shastri, K. (2005). <em>Financial Theory and Corporate Policy</em>. Pearson Education.</li>
-                  <li>Pinto, J. E., Henry, E., Robinson, T. R., & Stowe, J. D. (2015). <em>Equity Asset Valuation</em>. Wiley.</li>
-                </ul>
-              `)"><b>6.4. Tasa de descuento</b> <span class="emoji-small">✅</span>
-            </li>
+              <p><strong>Solución:</strong></p>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 9.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 9.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 11.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 11.44%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 4%</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 4%</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9138</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>27,414</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8974</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>26,922</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9615</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>28,845</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8350</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>25,050</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8054</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>24,162</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9246</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>27,738</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7630</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>22,890</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7228</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>21,684</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8890</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>26,670</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6972</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>20,916</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6486</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>19,458</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8548</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>25,644</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6371</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>19,113</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.5820</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>17,460</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8219</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>24,657</td>
+                </tr>
+                <tr style='background-color: #e6f7ff;'>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total VP</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>15,383</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>9,686</strong></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>33,554</strong></td>
+                </tr>
+              </table>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>VAN al 9.44%:</span> $15,383 → <span style='color: red; font-weight: bold;'>Proyecto viable</span></li>
+                <li><span style='color: red; font-weight: bold;'>VAN al 11.44%:</span> $9,686 → <span style='color: red; font-weight: bold;'>Proyecto viable pero menos atractivo</span></li>
+                <li><span style='color: red; font-weight: bold;'>VAN al 4%:</span> $33,554 → <span style='color: red; font-weight: bold;'>Sobrestimación si el proyecto tiene riesgo</span></li>
+              </ol>
+            
+              <h4>Consideraciones importantes</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es el factor más crítico</span> en la evaluación de inversiones</li>
+                <li>Una tasa demasiado alta <span style='color: red; font-weight: bold;'>puede rechazar proyectos rentables</span></li>
+                <li>Una tasa demasiado baja <span style='color: red; font-weight: bold;'>puede aceptar proyectos no rentables</span></li>
+                <li>La tasa debe <span style='color: red; font-weight: bold;'>reflejar el riesgo específico</span> del proyecto o inversión</li>
+                <li>En contextos inflacionarios, es crucial <span style='color: red; font-weight: bold;'>usar tasas consistentes</span> con los flujos (reales o nominales)</li>
+                <li>La tasa de descuento debe <span style='color: red; font-weight: bold;'>actualizarse periódicamente</span> según cambien las condiciones del mercado</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
+                <li>Damodaran, A. (2012). <em>Investment Valuation: Tools and Techniques for Determining the Value of Any Asset</em>. Wiley.</li>
+                <li>Copeland, T. E., Weston, J. F., & Shastri, K. (2005). <em>Financial Theory and Corporate Policy</em>. Pearson Education.</li>
+                <li>Pinto, J. E., Henry, E., Robinson, T. R., & Stowe, J. D. (2015). <em>Equity Asset Valuation</em>. Wiley.</li>
+              </ul>
+            `)"><b>6.4. Tasa de descuento</b> <span class="emoji-small">✅</span>
+          </li>
 
-            <li onclick="abrirModal('6.5. Fuerza de interés', `
+          <li onclick="abrirModal('6.5. Fuerza de interés', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el concepto, propiedades, cálculo y aplicaciones de la fuerza de interés en el contexto de la capitalización continua y su relación con las tasas nominales y efectivas.</p>
             
@@ -5347,55 +5347,56 @@
               <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
             </ul>
           `)"><b>6.6. Relación entre tasas de interés y de descuento</b> <span class="emoji-small">✅</span>
-        </li>
+          </li>
         
-        <li>6.7. Tasas variables de interés</li>
-        <li>6.8. Tasa real de interés</li>
-        <li>6.9. Ecuaciones de valor</li>
-        <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
-      </ul><br>
-      
-      <ul class="tema-list">
-        <li>6.11. Anualidades</li>
-        <ul>
-          <li>6.11.1. Definición y tipos de anualidades</li>
-          <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
-          <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
-          <li>6.11.4. Perpetuidades</li>
-          <li>6.11.5. Determinación de las variables de una anualidad</li>
-          <li>6.11.6. Anualidades con tasas variables</li>
-          <li>6.11.7. Anualidades anticipadas y diferidas</li>
-          <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente frecuencia)</li>
-          <li>6.11.9. Anualidades continuas</li>
-          <li>6.11.10. Anualidades crecientes y decrecientes</li>
-        </ul>
-      </ul><br>
-      <ul class="tema-list">
-        <li>6.12. Amortización</li>
-        <ul>
-          <li>6.12.1 Diferentes esquemas de amortización</li>
+          <li>6.7. Tasas variables de interés</li>
+          <li>6.8. Tasa real de interés</li>
+          <li>6.9. Ecuaciones de valor</li>
+          <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
+        </ul><br>
+        
+        <ul class="tema-list">
+          <li>6.11. Anualidades</li>
           <ul>
-            <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
-            <li>6.12.1.2. Amortización de una anualidad con n pagos iguales y uno desigual</li>
-            <li>6.12.1.3. Amortización con pagos iguales de capital</li>
-            <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
+            <li>6.11.1. Definición y tipos de anualidades</li>
+            <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
+            <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
+            <li>6.11.4. Perpetuidades</li>
+            <li>6.11.5. Determinación de las variables de una anualidad</li>
+            <li>6.11.6. Anualidades con tasas variables</li>
+            <li>6.11.7. Anualidades anticipadas y diferidas</li>
+            <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente frecuencia)</li>
+            <li>6.11.9. Anualidades continuas</li>
+            <li>6.11.10. Anualidades crecientes y decrecientes</li>
           </ul>
-          <li>6.12.2 Construcción de tablas de amortización</li>
-          <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
-        </ul>
-        <li>6.13. Depreciación</li>
-        <ul>
-          <li>6.13.1 Definición</li>
-          <li>6.13.2. Métodos de Depreciación</li>
+        </ul><br>
+        <ul class="tema-list">
+          <li>6.12. Amortización</li>
           <ul>
-            <li>6.13.2.1. Línea recta</li>
-            <li>6.13.2.2. Porcentaje constante</li>
-            <li>6.13.2.3. Suma de dígitos</li>
-            <li>6.13.2.4. Interés sobre la inversión</li>
-            <li>6.13.2.5. Interés sobre la inversión acelerada</li>
+            <li>6.12.1 Diferentes esquemas de amortización</li>
+            <ul>
+              <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
+              <li>6.12.1.2. Amortización de una anualidad con n pagos iguales y uno desigual</li>
+              <li>6.12.1.3. Amortización con pagos iguales de capital</li>
+              <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
+            </ul>
+            <li>6.12.2 Construcción de tablas de amortización</li>
+            <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
           </ul>
-        </ul>
-      </ul><br>
+          <li>6.13. Depreciación</li>
+          <ul>
+            <li>6.13.1 Definición</li>
+            <li>6.13.2. Métodos de Depreciación</li>
+            <ul>
+              <li>6.13.2.1. Línea recta</li>
+              <li>6.13.2.2. Porcentaje constante</li>
+              <li>6.13.2.3. Suma de dígitos</li>
+              <li>6.13.2.4. Interés sobre la inversión</li>
+              <li>6.13.2.5. Interés sobre la inversión acelerada</li>
+            </ul>
+          </ul>
+        </ul><br>
+      </div>
     </div>
   </section>
   <!-- ACTIVIDADES -->
