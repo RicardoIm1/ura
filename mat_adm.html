@@ -2197,7 +2197,7 @@
                   </ul>
                 </div>
               </div>
-              `);"><b>4.1. Teoría y conjuntos: Definiciones fundamentales</b> <span class='emoji-small'>✅</span>
+              `);">4.1. Teoría y conjuntos: Definiciones fundamentales <span class='emoji-small'>✅</span>
             </li>
           
             <li onclick="abrirModal('4.2. Operaciones de conjunto', `
@@ -2730,7 +2730,7 @@
                 </ul>
               </div>
             </div>
-            `);"><b>4.2. Operaciones de conjunto</b> <span class=emoji-small>✅</span>
+            `);">4.2. Operaciones de conjunto <span class=emoji-small>✅</span>
             </li>
           
             <li onclick="abrirModal('4.3 Diagramas de Venn', `
@@ -3194,7 +3194,7 @@
                   </ul>
                 </div>
               </div>
-              `);"><b>4.3 Diagramas de Venn</b> <span class=emoji-small>✅</span>
+              `);">4.3 Diagramas de Venn <span class=emoji-small>✅</span>
             </li>
           </ul>
       </div>
@@ -5539,173 +5539,173 @@
   </script>
 
   <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Configuración de la gráfica
-            const ctx = document.getElementById('quadraticChart').getContext('2d');
-            
-            // Puntos clave de la función
-            const keyPoints = [
-                { x: 0, y: 3, label: '(0, 3)', color: '#f1c40f' },
-                { x: 1, y: 0, label: '(1, 0)', color: '#e74c3c' },
-                { x: 2, y: -1, label: '(2, -1)', color: '#2ecc71' },
-                { x: 3, y: 0, label: '(3, 0)', color: '#e74c3c' },
-                { x: 4, y: 3, label: '(4, 3)', color: '#9b59b6' }
-            ];
-            
-            // Generar datos para la curva
-            const data = [];
-            for (let x = -1; x <= 5; x += 0.1) {
-                const y = x*x - 4*x + 3;
-                data.push({ x, y });
-            }
-            
-            // Crear la gráfica
-            const chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    datasets: [
-                        {
-                            label: 'f(x) = x² - 4x + 3',
-                            data: data,
-                            borderColor: '#3498db',
-                            backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                            borderWidth: 3,
-                            pointRadius: 0,
-                            fill: true,
-                            tension: 0.4
-                        },
-                        {
-                            label: 'Puntos clave',
-                            data: keyPoints,
-                            backgroundColor: keyPoints.map(point => point.color),
-                            borderColor: keyPoints.map(point => point.color),
-                            pointRadius: 6,
-                            pointHoverRadius: 8,
-                            showLine: false
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            type: 'linear',
-                            position: 'bottom',
-                            title: {
-                                display: true,
-                                text: 'x',
-                                font: {
-                                    size: 14,
-                                    weight: 'bold'
-                                }
-                            },
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.1)'
-                            },
-                            min: -1,
-                            max: 5
-                        },
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'f(x)',
-                                font: {
-                                    size: 14,
-                                    weight: 'bold'
-                                }
-                            },
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.1)'
-                            },
-                            min: -2,
-                            max: 5
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top',
-                            labels: {
-                                usePointStyle: true,
-                                padding: 20
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    if (context.datasetIndex === 1) {
-                                        const point = keyPoints[context.dataIndex];
-                                        return `${point.label}: f(${point.x}) = ${point.y}`;
-                                    }
-                                    const x = context.parsed.x;
-                                    const y = context.parsed.y;
-                                    return `f(${x.toFixed(1)}) = ${y.toFixed(2)}`;
-                                }
-                            }
-                        }
-                    },
-                    animation: {
-                        duration: 2000,
-                        easing: 'easeOutQuart'
-                    }
-                }
-            });
-            
-            // Funcionalidad de los botones
-            const animateBtn = document.getElementById('animateBtn');
-            const resetBtn = document.getElementById('resetBtn');
-            
-            animateBtn.addEventListener('click', function() {
-                // Reiniciar la animación
-                chart.data.datasets[0].data = [];
-                chart.update();
-                
-                // Animar la gráfica punto por punto
-                setTimeout(() => {
-                    chart.data.datasets[0].data = data;
-                    chart.update();
-                }, 500);
-            });
-            
-            resetBtn.addEventListener('click', function() {
-                // Reiniciar la gráfica
-                chart.data.datasets[0].data = data;
-                chart.update();
-            });
-            
-            // Añadir etiquetas a los puntos clave
-            Chart.register({
-                id: 'keyPointLabels',
-                afterDraw: function(chart) {
-                    const ctx = chart.ctx;
-                    ctx.save();
-                    ctx.font = 'bold 12px Arial';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'bottom';
-                    
-                    keyPoints.forEach(point => {
-                        const meta = chart.getDatasetMeta(1);
-                        const pointElement = meta.data[keyPoints.indexOf(point)];
-                        
-                        if (pointElement) {
-                            const x = pointElement.x;
-                            const y = pointElement.y;
-                            
-                            // Dibujar etiqueta
-                            ctx.fillStyle = point.color;
-                            ctx.fillText(point.label, x, y - 10);
-                        }
-                    });
-                    
-                    ctx.restore();
-                }
-            });
-            
-            // Actualizar el gráfico para mostrar las etiquetas
-            chart.update();
-        });
-    </script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Configuración de la gráfica
+          const ctx = document.getElementById('quadraticChart').getContext('2d');
+          
+          // Puntos clave de la función
+          const keyPoints = [
+              { x: 0, y: 3, label: '(0, 3)', color: '#f1c40f' },
+              { x: 1, y: 0, label: '(1, 0)', color: '#e74c3c' },
+              { x: 2, y: -1, label: '(2, -1)', color: '#2ecc71' },
+              { x: 3, y: 0, label: '(3, 0)', color: '#e74c3c' },
+              { x: 4, y: 3, label: '(4, 3)', color: '#9b59b6' }
+          ];
+          
+          // Generar datos para la curva
+          const data = [];
+          for (let x = -1; x <= 5; x += 0.1) {
+              const y = x*x - 4*x + 3;
+              data.push({ x, y });
+          }
+          
+          // Crear la gráfica
+          const chart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  datasets: [
+                      {
+                          label: 'f(x) = x² - 4x + 3',
+                          data: data,
+                          borderColor: '#3498db',
+                          backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                          borderWidth: 3,
+                          pointRadius: 0,
+                          fill: true,
+                          tension: 0.4
+                      },
+                      {
+                          label: 'Puntos clave',
+                          data: keyPoints,
+                          backgroundColor: keyPoints.map(point => point.color),
+                          borderColor: keyPoints.map(point => point.color),
+                          pointRadius: 6,
+                          pointHoverRadius: 8,
+                          showLine: false
+                      }
+                  ]
+              },
+              options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  scales: {
+                      x: {
+                          type: 'linear',
+                          position: 'bottom',
+                          title: {
+                              display: true,
+                              text: 'x',
+                              font: {
+                                  size: 14,
+                                  weight: 'bold'
+                              }
+                          },
+                          grid: {
+                              color: 'rgba(0, 0, 0, 0.1)'
+                          },
+                          min: -1,
+                          max: 5
+                      },
+                      y: {
+                          title: {
+                              display: true,
+                              text: 'f(x)',
+                              font: {
+                                  size: 14,
+                                  weight: 'bold'
+                              }
+                          },
+                          grid: {
+                              color: 'rgba(0, 0, 0, 0.1)'
+                          },
+                          min: -2,
+                          max: 5
+                      }
+                  },
+                  plugins: {
+                      legend: {
+                          display: true,
+                          position: 'top',
+                          labels: {
+                              usePointStyle: true,
+                              padding: 20
+                          }
+                      },
+                      tooltip: {
+                          callbacks: {
+                              label: function(context) {
+                                  if (context.datasetIndex === 1) {
+                                      const point = keyPoints[context.dataIndex];
+                                      return `${point.label}: f(${point.x}) = ${point.y}`;
+                                  }
+                                  const x = context.parsed.x;
+                                  const y = context.parsed.y;
+                                  return `f(${x.toFixed(1)}) = ${y.toFixed(2)}`;
+                              }
+                          }
+                      }
+                  },
+                  animation: {
+                      duration: 2000,
+                      easing: 'easeOutQuart'
+                  }
+              }
+          });
+          
+          // Funcionalidad de los botones
+          const animateBtn = document.getElementById('animateBtn');
+          const resetBtn = document.getElementById('resetBtn');
+          
+          animateBtn.addEventListener('click', function() {
+              // Reiniciar la animación
+              chart.data.datasets[0].data = [];
+              chart.update();
+              
+              // Animar la gráfica punto por punto
+              setTimeout(() => {
+                  chart.data.datasets[0].data = data;
+                  chart.update();
+              }, 500);
+          });
+          
+          resetBtn.addEventListener('click', function() {
+              // Reiniciar la gráfica
+              chart.data.datasets[0].data = data;
+              chart.update();
+          });
+          
+          // Añadir etiquetas a los puntos clave
+          Chart.register({
+              id: 'keyPointLabels',
+              afterDraw: function(chart) {
+                  const ctx = chart.ctx;
+                  ctx.save();
+                  ctx.font = 'bold 12px Arial';
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+                  
+                  keyPoints.forEach(point => {
+                      const meta = chart.getDatasetMeta(1);
+                      const pointElement = meta.data[keyPoints.indexOf(point)];
+                      
+                      if (pointElement) {
+                          const x = pointElement.x;
+                          const y = pointElement.y;
+                          
+                          // Dibujar etiqueta
+                          ctx.fillStyle = point.color;
+                          ctx.fillText(point.label, x, y - 10);
+                      }
+                  });
+                  
+                  ctx.restore();
+              }
+          });
+          
+          // Actualizar el gráfico para mostrar las etiquetas
+          chart.update();
+      });
+  </script>
 
   <footer>
     © 2025 Universidad URA – Asignatura Matemáticas Para la Administración.
