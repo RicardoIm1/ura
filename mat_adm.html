@@ -1119,390 +1119,393 @@
               </ul>
             `)">2.5. Operaciones con radicales <span class="emoji-small">✅</span>
             </li>
-        </ul>
+          </ul>
+        </div>
       </div>
       
       <div class="tema-card">
         <div class="tema-num">TEMA 3</div>
         <h3 class="tema-title">Relaciones y números</h3>
+          <ul class="tema-list">
+            <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
+                <hr><br>
+                <p><strong>Objetivo:</strong> Comprender el sistema de coordenadas rectangulares y su uso para representar puntos en el plano.</p>
+              
+                <h4>Definición del Sistema de Coordenadas Rectangulares</h4>
+                <ul>
+                  <li>También conocido como sistema cartesiano, desarrollado por René Descartes.</li>
+                  <li>Formado por dos rectas perpendiculares: eje X (horizontal) y eje Y (vertical).</li>
+                  <li>El punto de intersección (0,0) se llama origen.</li>
+                  <li>Divide el plano en cuatro cuadrantes numerados en sentido antihorario.</li>
+                </ul>
+              
+                <h4>Componentes de un Punto</h4>
+                <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                  <tr style='background-color: #f2f2f2;'>
+                    <th style='padding: 8px; text-align: left;'>Coordenada</th>
+                    <th style='padding: 8px; text-align: left;'>Significado</th>
+                    <th style='padding: 8px; text-align: left;'>Ejemplo en P(3,4)</th>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Abscisa (coordenada x)</td>
+                    <td style='padding: 8px;'>Distancia horizontal desde el origen</td>
+                    <td style='padding: 8px;'>3 unidades a la derecha</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Ordenada (coordenada y)</td>
+                    <td style='padding: 8px;'>Distancia vertical desde el origen</td>
+                    <td style='padding: 8px;'>4 unidades hacia arriba</td>
+                  </tr>
+                </table>
+              
+                <h4>Cuadrantes del Plano Cartesiano</h4>
+                <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                  <tr style='background-color: #f2f2f2;'>
+                    <th style='padding: 8px; text-align: left;'>Cuadrante</th>
+                    <th style='padding: 8px; text-align: left;'>Signo de (x,y)</th>
+                    <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>I</td>
+                    <td style='padding: 8px;'>(+, +)</td>
+                    <td style='padding: 8px;'>(3, 4)</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>II</td>
+                    <td style='padding: 8px;'>(-, +)</td>
+                    <td style='padding: 8px;'>(-2, 5)</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>III</td>
+                    <td style='padding: 8px;'>(-, -)</td>
+                    <td style='padding: 8px;'>(-3, -1)</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>IV</td>
+                    <td style='padding: 8px;'>(+, -)</td>
+                    <td style='padding: 8px;'>(4, -2)</td>
+                  </tr>
+                </table>
+              
+                <h4>Fórmula de Distancia entre Dos Puntos</h4>
+                <ul>
+                  <li>Dados los puntos P(x₁,y₁) y Q(x₂,y₂):</li>
+                  <li>d = √[(x₂-x₁)² + (y₂-y₁)²]</li>
+                  <li>Ejemplo: Distancia entre (1,2) y (4,6):
+                    <br>d = √[(4-1)² + (6-2)²] = √[3² + 4²] = √[9+16] = √25 = 5</li>
+                </ul>
+              
+                <h4>Fórmula del Punto Medio</h4>
+                <ul>
+                  <li>Punto medio entre P(x₁,y₁) y Q(x₂,y₂):</li>
+                  <li>M = [(x₁+x₂)/2, (y₁+y₂)/2]</li>
+                  <li>Ejemplo: Punto medio entre (2,3) y (6,9):
+                    <br>M = [(2+6)/2, (3+9)/2] = [8/2, 12/2] = (4,6)</li>
+                </ul>
+              
+                <h4>Pasos para Graficar Puntos</h4>
+                <ol>
+                  <li>Identificar las coordenadas (x,y) del punto.</li>
+                  <li>Ubicar el valor x en el eje horizontal.</li>
+                  <li>Ubicar el valor y en el eje vertical.</li>
+                  <li>Trazar líneas perpendiculares desde ambos ejes.</li>
+                  <li>Marcar el punto de intersección de las líneas.</li>
+                </ol>
+              
+                <h4>Aplicaciones del Sistema de Coordenadas</h4>
+                <ul>
+                  <li>Representación gráfica de funciones y ecuaciones.</li>
+                  <li>Geolocalización y sistemas de navegación (GPS).</li>
+                  <li>Gráficos por computadora y diseño asistido por computadora (CAD).</li>
+                  <li>Análisis de datos y representación de información estadística.</li>
+                  <li>Resolución de problemas de geometría analítica.</li>
+                </ul>
+              
+                <h4>Ejercicios Prácticos</h4>
+                <ol>
+                  <li>Graficar los puntos: A(2,3), B(-1,4), C(0,-2), D(-3,-5)</li>
+                  <li>Calcular la distancia entre (-2,1) y (3,5)</li>
+                  <li>Encontrar el punto medio entre (4,-1) y (-2,3)</li>
+                  <li>Determinar el cuadrante de los puntos: (2,-7), (-3,-4), (-5,2)</li>
+                </ol>
+              
+                <h4>Fuentes Bibliográficas</h4>
+                <ul>
+                  <li>Stewart, J. (2012). <em>Calculus: Early Transcendentals</em>. Cengage Learning.</li>
+                  <li>Larson, R. (2018). <em>Calculus</em>. Cengage Learning.</li>
+                  <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
+                </ul>
+              `)">3.1. Coordenadas rectangulares <span class="emoji-small">✅</span>
+            </li>
+          </ul>
           
           <ul class="tema-list">
-          <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el sistema de coordenadas rectangulares y su uso para representar puntos en el plano.</p>
-            
-              <h4>Definición del Sistema de Coordenadas Rectangulares</h4>
-              <ul>
-                <li>También conocido como sistema cartesiano, desarrollado por René Descartes.</li>
-                <li>Formado por dos rectas perpendiculares: eje X (horizontal) y eje Y (vertical).</li>
-                <li>El punto de intersección (0,0) se llama origen.</li>
-                <li>Divide el plano en cuatro cuadrantes numerados en sentido antihorario.</li>
-              </ul>
-            
-              <h4>Componentes de un Punto</h4>
-              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='padding: 8px; text-align: left;'>Coordenada</th>
-                  <th style='padding: 8px; text-align: left;'>Significado</th>
-                  <th style='padding: 8px; text-align: left;'>Ejemplo en P(3,4)</th>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Abscisa (coordenada x)</td>
-                  <td style='padding: 8px;'>Distancia horizontal desde el origen</td>
-                  <td style='padding: 8px;'>3 unidades a la derecha</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Ordenada (coordenada y)</td>
-                  <td style='padding: 8px;'>Distancia vertical desde el origen</td>
-                  <td style='padding: 8px;'>4 unidades hacia arriba</td>
-                </tr>
-              </table>
-            
-              <h4>Cuadrantes del Plano Cartesiano</h4>
-              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='padding: 8px; text-align: left;'>Cuadrante</th>
-                  <th style='padding: 8px; text-align: left;'>Signo de (x,y)</th>
-                  <th style='padding: 8px; text-align: left;'>Ejemplo</th>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>I</td>
-                  <td style='padding: 8px;'>(+, +)</td>
-                  <td style='padding: 8px;'>(3, 4)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>II</td>
-                  <td style='padding: 8px;'>(-, +)</td>
-                  <td style='padding: 8px;'>(-2, 5)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>III</td>
-                  <td style='padding: 8px;'>(-, -)</td>
-                  <td style='padding: 8px;'>(-3, -1)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>IV</td>
-                  <td style='padding: 8px;'>(+, -)</td>
-                  <td style='padding: 8px;'>(4, -2)</td>
-                </tr>
-              </table>
-            
-              <h4>Fórmula de Distancia entre Dos Puntos</h4>
-              <ul>
-                <li>Dados los puntos P(x₁,y₁) y Q(x₂,y₂):</li>
-                <li>d = √[(x₂-x₁)² + (y₂-y₁)²]</li>
-                <li>Ejemplo: Distancia entre (1,2) y (4,6):
-                  <br>d = √[(4-1)² + (6-2)²] = √[3² + 4²] = √[9+16] = √25 = 5</li>
-              </ul>
-            
-              <h4>Fórmula del Punto Medio</h4>
-              <ul>
-                <li>Punto medio entre P(x₁,y₁) y Q(x₂,y₂):</li>
-                <li>M = [(x₁+x₂)/2, (y₁+y₂)/2]</li>
-                <li>Ejemplo: Punto medio entre (2,3) y (6,9):
-                  <br>M = [(2+6)/2, (3+9)/2] = [8/2, 12/2] = (4,6)</li>
-              </ul>
-            
-              <h4>Pasos para Graficar Puntos</h4>
-              <ol>
-                <li>Identificar las coordenadas (x,y) del punto.</li>
-                <li>Ubicar el valor x en el eje horizontal.</li>
-                <li>Ubicar el valor y en el eje vertical.</li>
-                <li>Trazar líneas perpendiculares desde ambos ejes.</li>
-                <li>Marcar el punto de intersección de las líneas.</li>
-              </ol>
-            
-              <h4>Aplicaciones del Sistema de Coordenadas</h4>
-              <ul>
-                <li>Representación gráfica de funciones y ecuaciones.</li>
-                <li>Geolocalización y sistemas de navegación (GPS).</li>
-                <li>Gráficos por computadora y diseño asistido por computadora (CAD).</li>
-                <li>Análisis de datos y representación de información estadística.</li>
-                <li>Resolución de problemas de geometría analítica.</li>
-              </ul>
-            
-              <h4>Ejercicios Prácticos</h4>
-              <ol>
-                <li>Graficar los puntos: A(2,3), B(-1,4), C(0,-2), D(-3,-5)</li>
-                <li>Calcular la distancia entre (-2,1) y (3,5)</li>
-                <li>Encontrar el punto medio entre (4,-1) y (-2,3)</li>
-                <li>Determinar el cuadrante de los puntos: (2,-7), (-3,-4), (-5,2)</li>
-              </ol>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Stewart, J. (2012). <em>Calculus: Early Transcendentals</em>. Cengage Learning.</li>
-                <li>Larson, R. (2018). <em>Calculus</em>. Cengage Learning.</li>
-                <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
-              </ul>
-            `)">3.1. Coordenadas rectangulares <span class="emoji-small">✅</span>
-          </li>
+            <li onclick="abrirModal('3.2 Relaciones', `
+                <hr><br>
+                <p><strong>Objetivo:</strong> Comprender el concepto de relación matemática y sus diferentes representaciones.</p>
+              
+                <h4>Definición de Relación</h4>
+                <ul>
+                  <li>Una relación es un conjunto de pares ordenados (x,y).</li>
+                  <li>Formalmente: R ⊆ A × B, donde A y B son conjuntos.</li>
+                  <li>El dominio es el conjunto de todas las primeras componentes (x).</li>
+                  <li>El rango es el conjunto de todas las segundas componentes (y).</li>
+                </ul>
+              
+                <h4>Representaciones de una Relación</h4>
+                <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                  <tr style='background-color: #f2f2f2;'>
+                    <th style='padding: 8px; text-align: left;'>Forma</th>
+                    <th style='padding: 8px; text-align: left;'>Descripción</th>
+                    <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Conjunto de pares</td>
+                    <td style='padding: 8px;'>Lista explícita de pares ordenados</td>
+                    <td style='padding: 8px;'>{(1,2), (2,4), (3,6), (4,8)}</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Diagrama de flechas</td>
+                    <td style='padding: 8px;'>Representación gráfica con flechas</td>
+                    <td style='padding: 8px;'>A → B, donde A={1,2,3}, B={2,4,6}</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Tabla de valores</td>
+                    <td style='padding: 8px;'>Organización en filas y columnas</td>
+                    <td style='padding: 8px;'>
+                      <table border='1'>
+                        <tr><th>x</th><th>y</th></tr>
+                        <tr><td>1</td><td>2</td></tr>
+                        <tr><td>2</td><td>4</td></tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Gráfica cartesiana</td>
+                    <td style='padding: 8px;'>Puntos en el plano coordenado</td>
+                    <td style='padding: 8px;'>Puntos (1,2), (2,4), (3,6) graficados</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Ecuación</td>
+                    <td style='padding: 8px;'>Regla que relaciona x e y</td>
+                    <td style='padding: 8px;'>y = 2x</td>
+                  </tr>
+                </table>
+              
+                <h4>Tipos de Relaciones</h4>
+                <ul>
+                  <li><strong>Reflexiva:</strong> ∀a∈A, (a,a)∈R</li>
+                  <li><strong>Simétrica:</strong> Si (a,b)∈R entonces (b,a)∈R</li>
+                  <li><strong>Transitiva:</strong> Si (a,b)∈R y (b,c)∈R entonces (a,c)∈R</li>
+                  <li><strong>Antisimétrica:</strong> Si (a,b)∈R y (b,a)∈R entonces a=b</li>
+                  <li><strong>De equivalencia:</strong> Reflexiva, simétrica y transitiva</li>
+                </ul>
+              
+                <h4>Dominio y Rango de una Relación</h4>
+                <p>Para la relación R = {(1,4), (2,5), (3,6), (1,7)}:</p>
+                <ul>
+                  <li><strong>Dominio:</strong> {1, 2, 3} (valores de x)</li>
+                  <li><strong>Rango:</strong> {4, 5, 6, 7} (valores de y)</li>
+                </ul>
+              
+                <h4>Relación Inversa</h4>
+                <ul>
+                  <li>Dada una relación R = {(a,b)}, su inversa es R⁻¹ = {(b,a)}</li>
+                  <li>Ejemplo: Si R = {(1,2), (3,4)}, entonces R⁻¹ = {(2,1), (4,3)}</li>
+                  <li>El dominio de R se convierte en el rango de R⁻¹ y viceversa.</li>
+                </ul>
+              
+                <h4>Composición de Relaciones</h4>
+                <ul>
+                  <li>Dadas R: A→B y S: B→C, la composición S∘R: A→C se define como:</li>
+                  <li>S∘R = {(a,c) | ∃b∈B tal que (a,b)∈R y (b,c)∈S}</li>
+                  <li>Ejemplo: R={(1,2)}, S={(2,3)}, entonces S∘R={(1,3)}</li>
+                </ul>
+              
+                <h4>Pasos para Determinar el Dominio y Rango</h4>
+                <ol>
+                  <li>Identificar todos los valores de x (primeras componentes).</li>
+                  <li>El conjunto de estos valores es el dominio.</li>
+                  <li>Identificar todos los valores de y (segundas componentes).</li>
+                  <li>El conjunto de estos valores es el rango.</li>
+                  <li>Si la relación está dada por una ecuación, despejar y en términos de x.</li>
+                </ol>
+              
+                <h4>Ejemplo: Encontrar Dominio y Rango de y = √(x-2)</h4>
+                <ol>
+                  <li>La expresión dentro de la raíz debe ser ≥ 0: x-2 ≥ 0</li>
+                  <li>Resolver: x ≥ 2</li>
+                  <li>Dominio: [2, ∞)</li>
+                  <li>Como √(x-2) ≥ 0, el rango es [0, ∞)</li>
+                </ol>
+              
+                <h4>Relaciones Importantes en Matemáticas</h4>
+                <ul>
+                  <li>Relaciones de orden (≤, ≥, <, >)</li>
+                  <li>Relaciones de equivalencia (=, ≡)</li>
+                  <li>Relaciones de divisibilidad</li>
+                  <li>Relaciones de congruencia en geometría</li>
+                  <li>Relaciones de proporcionalidad</li>
+                </ul>
+              
+                <h4>Fuentes Bibliográficas</h4>
+                <ul>
+                  <li>Devlin, K. (2003). <em>Sets, Functions, and Logic</em>. Chapman and Hall/CRC.</li>
+                  <li>Halmos, P. R. (2017). <em>Naive Set Theory</em>. Dover Publications.</li>
+                  <li>Suppes, P. (1972). <em>Axiomatic Set Theory</em>. Dover Publications.</li>
+                </ul>
+              `)">3.2. Relaciones <span class="emoji-small">✅</span>
+            </li>
+          </ul>
           
           <ul class="tema-list">
-          <li onclick="abrirModal('3.2 Relaciones', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el concepto de relación matemática y sus diferentes representaciones.</p>
-            
-              <h4>Definición de Relación</h4>
-              <ul>
-                <li>Una relación es un conjunto de pares ordenados (x,y).</li>
-                <li>Formalmente: R ⊆ A × B, donde A y B son conjuntos.</li>
-                <li>El dominio es el conjunto de todas las primeras componentes (x).</li>
-                <li>El rango es el conjunto de todas las segundas componentes (y).</li>
-              </ul>
-            
-              <h4>Representaciones de una Relación</h4>
-              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='padding: 8px; text-align: left;'>Forma</th>
-                  <th style='padding: 8px; text-align: left;'>Descripción</th>
-                  <th style='padding: 8px; text-align: left;'>Ejemplo</th>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Conjunto de pares</td>
-                  <td style='padding: 8px;'>Lista explícita de pares ordenados</td>
-                  <td style='padding: 8px;'>{(1,2), (2,4), (3,6), (4,8)}</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Diagrama de flechas</td>
-                  <td style='padding: 8px;'>Representación gráfica con flechas</td>
-                  <td style='padding: 8px;'>A → B, donde A={1,2,3}, B={2,4,6}</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Tabla de valores</td>
-                  <td style='padding: 8px;'>Organización en filas y columnas</td>
-                  <td style='padding: 8px;'>
-                    <table border='1'>
-                      <tr><th>x</th><th>y</th></tr>
-                      <tr><td>1</td><td>2</td></tr>
-                      <tr><td>2</td><td>4</td></tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Gráfica cartesiana</td>
-                  <td style='padding: 8px;'>Puntos en el plano coordenado</td>
-                  <td style='padding: 8px;'>Puntos (1,2), (2,4), (3,6) graficados</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Ecuación</td>
-                  <td style='padding: 8px;'>Regla que relaciona x e y</td>
-                  <td style='padding: 8px;'>y = 2x</td>
-                </tr>
-              </table>
-            
-              <h4>Tipos de Relaciones</h4>
-              <ul>
-                <li><strong>Reflexiva:</strong> ∀a∈A, (a,a)∈R</li>
-                <li><strong>Simétrica:</strong> Si (a,b)∈R entonces (b,a)∈R</li>
-                <li><strong>Transitiva:</strong> Si (a,b)∈R y (b,c)∈R entonces (a,c)∈R</li>
-                <li><strong>Antisimétrica:</strong> Si (a,b)∈R y (b,a)∈R entonces a=b</li>
-                <li><strong>De equivalencia:</strong> Reflexiva, simétrica y transitiva</li>
-              </ul>
-            
-              <h4>Dominio y Rango de una Relación</h4>
-              <p>Para la relación R = {(1,4), (2,5), (3,6), (1,7)}:</p>
-              <ul>
-                <li><strong>Dominio:</strong> {1, 2, 3} (valores de x)</li>
-                <li><strong>Rango:</strong> {4, 5, 6, 7} (valores de y)</li>
-              </ul>
-            
-              <h4>Relación Inversa</h4>
-              <ul>
-                <li>Dada una relación R = {(a,b)}, su inversa es R⁻¹ = {(b,a)}</li>
-                <li>Ejemplo: Si R = {(1,2), (3,4)}, entonces R⁻¹ = {(2,1), (4,3)}</li>
-                <li>El dominio de R se convierte en el rango de R⁻¹ y viceversa.</li>
-              </ul>
-            
-              <h4>Composición de Relaciones</h4>
-              <ul>
-                <li>Dadas R: A→B y S: B→C, la composición S∘R: A→C se define como:</li>
-                <li>S∘R = {(a,c) | ∃b∈B tal que (a,b)∈R y (b,c)∈S}</li>
-                <li>Ejemplo: R={(1,2)}, S={(2,3)}, entonces S∘R={(1,3)}</li>
-              </ul>
-            
-              <h4>Pasos para Determinar el Dominio y Rango</h4>
-              <ol>
-                <li>Identificar todos los valores de x (primeras componentes).</li>
-                <li>El conjunto de estos valores es el dominio.</li>
-                <li>Identificar todos los valores de y (segundas componentes).</li>
-                <li>El conjunto de estos valores es el rango.</li>
-                <li>Si la relación está dada por una ecuación, despejar y en términos de x.</li>
-              </ol>
-            
-              <h4>Ejemplo: Encontrar Dominio y Rango de y = √(x-2)</h4>
-              <ol>
-                <li>La expresión dentro de la raíz debe ser ≥ 0: x-2 ≥ 0</li>
-                <li>Resolver: x ≥ 2</li>
-                <li>Dominio: [2, ∞)</li>
-                <li>Como √(x-2) ≥ 0, el rango es [0, ∞)</li>
-              </ol>
-            
-              <h4>Relaciones Importantes en Matemáticas</h4>
-              <ul>
-                <li>Relaciones de orden (≤, ≥, <, >)</li>
-                <li>Relaciones de equivalencia (=, ≡)</li>
-                <li>Relaciones de divisibilidad</li>
-                <li>Relaciones de congruencia en geometría</li>
-                <li>Relaciones de proporcionalidad</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Devlin, K. (2003). <em>Sets, Functions, and Logic</em>. Chapman and Hall/CRC.</li>
-                <li>Halmos, P. R. (2017). <em>Naive Set Theory</em>. Dover Publications.</li>
-                <li>Suppes, P. (1972). <em>Axiomatic Set Theory</em>. Dover Publications.</li>
-              </ul>
-            `)">3.2. Relaciones <span class="emoji-small">✅</span>
-          </li>
+            <li onclick="abrirModal('3.3 Funciones', `
+                <hr><br>
+                <p><strong>Objetivo:</strong> Comprender el concepto de función como caso especial de relación y sus propiedades fundamentales.</p>
+              
+                <h4>Definición de Función</h4>
+                <ul>
+                  <li>Una función f: A→B es una relación donde cada elemento de A se relaciona con exactamente un elemento de B.</li>
+                  <li>Para todo x ∈ A, existe un único y ∈ B tal que (x,y) ∈ f.</li>
+                  <li>Notación: y = f(x), donde x es variable independiente, y es variable dependiente.</li>
+                </ul>
+              
+                <h4>Prueba de la Recta Vertical</h4>
+                <ul>
+                  <li>Una gráfica representa una función si y solo si toda recta vertical corta a la gráfica en a lo más un punto.</li>
+                  <li>Si una recta vertical corta en más de un punto, no es función.</li>
+                </ul>
+              
+                <h4>Notación y Terminología de Funciones</h4>
+                <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                  <tr style='background-color: #f2f2f2;'>
+                    <th style='padding: 8px; text-align: left;'>Término</th>
+                    <th style='padding: 8px; text-align: left;'>Definición</th>
+                    <th style='padding: 8px; text-align: left;'>Ejemplo f(x)=x²</th>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Dominio</td>
+                    <td style='padding: 8px;'>Conjunto de valores de entrada (x)</td>
+                    <td style='padding: 8px;'>Todos los reales (-∞, ∞)</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Rango</td>
+                    <td style='padding: 8px;'>Conjunto de valores de salida (y)</td>
+                    <td style='padding: 8px;'>[0, ∞)</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Imagen</td>
+                    <td style='padding: 8px;'>Valor específico f(a)</td>
+                    <td style='padding: 8px;'>f(2)=4</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Variable independiente</td>
+                    <td style='padding: 8px;'>x (valor de entrada)</td>
+                    <td style='padding: 8px;'>x</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Variable dependiente</td>
+                    <td style='padding: 8px;'>y (valor de salida)</td>
+                    <td style='padding: 8px;'>y=x²</td>
+                  </tr>
+                </table>
+              
+                <h4>Tipos de Funciones</h4>
+                <ul>
+                  <li><strong>Función inyectiva (uno a uno):</strong> Si f(a)=f(b) entonces a=b</li>
+                  <li><strong>Función sobreyectiva (sobre):</strong> Rango = Codominio</li>
+                  <li><strong>Función biyectiva:</strong> Inyectiva y sobreyectiva</li>
+                  <li><strong>Función creciente:</strong> Si a<b entonces f(a)<f(b)</li>
+                  <li><strong>Función decreciente:</strong> Si a<b entonces f(a)>f(b)</li>
+                </ul>
+              
+                <h4>Álgebra de Funciones</h4>
+                <p>Dadas f y g funciones con dominios Df y Dg:</p>
+                <ul>
+                  <li><strong>Suma:</strong> (f+g)(x) = f(x) + g(x), dominio: Df ∩ Dg</li>
+                  <li><strong>Resta:</strong> (f-g)(x) = f(x) - g(x), dominio: Df ∩ Dg</li>
+                  <li><strong>Producto:</strong> (f·g)(x) = f(x) · g(x), dominio: Df ∩ Dg</li>
+                  <li><strong>Cociente:</strong> (f/g)(x) = f(x)/g(x), dominio: Df ∩ Dg ∩ {x | g(x)≠0}</li>
+                  <li><strong>Composición:</strong> (f∘g)(x) = f(g(x)), dominio: {x∈Dg | g(x)∈Df}</li>
+                </ul>
+              
+                <h4>Función Inversa</h4>
+                <ul>
+                  <li>Si f es biyectiva, existe f⁻¹ tal que f⁻¹(f(x)) = x y f(f⁻¹(y)) = y</li>
+                  <li>Para encontrar la inversa:
+                    <ol>
+                      <li>Escribir y = f(x)</li>
+                      <li>Intercambiar x e y</li>
+                      <li>Despejar y</li>
+                      <li>La expresión resultante es f⁻¹(x)</li>
+                    </ol>
+                  </li>
+                  <li>Ejemplo: f(x)=2x+3 → y=2x+3 → x=2y+3 → y=(x-3)/2 → f⁻¹(x)=(x-3)/2</li>
+                </ul>
+              
+                <h4>Funciones Especiales</h4>
+                <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+                  <tr style='background-color: #f2f2f2;'>
+                    <th style='padding: 8px; text-align: left;'>Función</th>
+                    <th style='padding: 8px; text-align: left;'>Fórmula</th>
+                    <th style='padding: 8px; text-align: left;'>Gráfica</th>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Lineal</td>
+                    <td style='padding: 8px;'>f(x)=mx+b</td>
+                    <td style='padding: 8px;'>Línea recta</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Cuadrática</td>
+                    <td style='padding: 8px;'>f(x)=ax²+bx+c</td>
+                    <td style='padding: 8px;'>Parábola</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Exponencial</td>
+                    <td style='padding: 8px;'>f(x)=aˣ</td>
+                    <td style='padding: 8px;'>Curva creciente/decreciente</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Logarítmica</td>
+                    <td style='padding: 8px;'>f(x)=logₐx</td>
+                    <td style='padding: 8px;'>Curva que cruza (1,0)</td>
+                  </tr>
+                  <tr>
+                    <td style='padding: 8px;'>Valor absoluto</td>
+                    <td style='padding: 8px;'>f(x)=|x|</td>
+                    <td style='padding: 8px;'>V con vértice en (0,0)</td>
+                  </tr>
+                </table>
+              
+                <h4>Pasos para Evaluar Funciones</h4>
+                <p>Evaluar f(x)=x²+3x-2 para x=2, x=a+1, x=-3</p>
+                <ol>
+                  <li>f(2)=2²+3(2)-2=4+6-2=8</li>
+                  <li>f(a+1)=(a+1)²+3(a+1)-2=a²+2a+1+3a+3-2=a²+5a+2</li>
+                  <li>f(-3)=(-3)²+3(-3)-2=9-9-2=-2</li>
+                </ol>
+              
+                <h4>Dominio de Funciones Comunes</h4>
+                <ul>
+                  <li><strong>Polinómicas:</strong> Todos los reales (-∞, ∞)</li>
+                  <li><strong>Racionales:</strong> Todos los reales excepto donde denominador=0</li>
+                  <li><strong>Raíz par:</strong> Radicando ≥ 0</li>
+                  <li><strong>Logarítmicas:</strong> Argumento > 0</li>
+                  <li><strong>Exponenciales:</strong> Todos los reales</li>
+                </ul>
+              
+                <h4>Fuentes Bibliográficas</h4>
+                <ul>
+                  <li>Spivak, M. (2008). <em>Calculus</em>. Publish or Perish.</li>
+                  <li>Apostol, T. M. (2013). <em>Calculus, Vol. 1</em>. Reverté.</li>
+                  <li>Stewart, J. (2012). <em>Calculus: Early Transcendentals</em>. Cengage Learning.</li>
+                </ul>
+              `)">3.3. Funciones <span class="emoji-small">✅</span>
+            </li>
+          </ul>
           
           <ul class="tema-list">
-          <li onclick="abrirModal('3.3 Funciones', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el concepto de función como caso especial de relación y sus propiedades fundamentales.</p>
-            
-              <h4>Definición de Función</h4>
-              <ul>
-                <li>Una función f: A→B es una relación donde cada elemento de A se relaciona con exactamente un elemento de B.</li>
-                <li>Para todo x ∈ A, existe un único y ∈ B tal que (x,y) ∈ f.</li>
-                <li>Notación: y = f(x), donde x es variable independiente, y es variable dependiente.</li>
-              </ul>
-            
-              <h4>Prueba de la Recta Vertical</h4>
-              <ul>
-                <li>Una gráfica representa una función si y solo si toda recta vertical corta a la gráfica en a lo más un punto.</li>
-                <li>Si una recta vertical corta en más de un punto, no es función.</li>
-              </ul>
-            
-              <h4>Notación y Terminología de Funciones</h4>
-              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='padding: 8px; text-align: left;'>Término</th>
-                  <th style='padding: 8px; text-align: left;'>Definición</th>
-                  <th style='padding: 8px; text-align: left;'>Ejemplo f(x)=x²</th>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Dominio</td>
-                  <td style='padding: 8px;'>Conjunto de valores de entrada (x)</td>
-                  <td style='padding: 8px;'>Todos los reales (-∞, ∞)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Rango</td>
-                  <td style='padding: 8px;'>Conjunto de valores de salida (y)</td>
-                  <td style='padding: 8px;'>[0, ∞)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Imagen</td>
-                  <td style='padding: 8px;'>Valor específico f(a)</td>
-                  <td style='padding: 8px;'>f(2)=4</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Variable independiente</td>
-                  <td style='padding: 8px;'>x (valor de entrada)</td>
-                  <td style='padding: 8px;'>x</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Variable dependiente</td>
-                  <td style='padding: 8px;'>y (valor de salida)</td>
-                  <td style='padding: 8px;'>y=x²</td>
-                </tr>
-              </table>
-            
-              <h4>Tipos de Funciones</h4>
-              <ul>
-                <li><strong>Función inyectiva (uno a uno):</strong> Si f(a)=f(b) entonces a=b</li>
-                <li><strong>Función sobreyectiva (sobre):</strong> Rango = Codominio</li>
-                <li><strong>Función biyectiva:</strong> Inyectiva y sobreyectiva</li>
-                <li><strong>Función creciente:</strong> Si a<b entonces f(a)<f(b)</li>
-                <li><strong>Función decreciente:</strong> Si a<b entonces f(a)>f(b)</li>
-              </ul>
-            
-              <h4>Álgebra de Funciones</h4>
-              <p>Dadas f y g funciones con dominios Df y Dg:</p>
-              <ul>
-                <li><strong>Suma:</strong> (f+g)(x) = f(x) + g(x), dominio: Df ∩ Dg</li>
-                <li><strong>Resta:</strong> (f-g)(x) = f(x) - g(x), dominio: Df ∩ Dg</li>
-                <li><strong>Producto:</strong> (f·g)(x) = f(x) · g(x), dominio: Df ∩ Dg</li>
-                <li><strong>Cociente:</strong> (f/g)(x) = f(x)/g(x), dominio: Df ∩ Dg ∩ {x | g(x)≠0}</li>
-                <li><strong>Composición:</strong> (f∘g)(x) = f(g(x)), dominio: {x∈Dg | g(x)∈Df}</li>
-              </ul>
-            
-              <h4>Función Inversa</h4>
-              <ul>
-                <li>Si f es biyectiva, existe f⁻¹ tal que f⁻¹(f(x)) = x y f(f⁻¹(y)) = y</li>
-                <li>Para encontrar la inversa:
-                  <ol>
-                    <li>Escribir y = f(x)</li>
-                    <li>Intercambiar x e y</li>
-                    <li>Despejar y</li>
-                    <li>La expresión resultante es f⁻¹(x)</li>
-                  </ol>
-                </li>
-                <li>Ejemplo: f(x)=2x+3 → y=2x+3 → x=2y+3 → y=(x-3)/2 → f⁻¹(x)=(x-3)/2</li>
-              </ul>
-            
-              <h4>Funciones Especiales</h4>
-              <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='padding: 8px; text-align: left;'>Función</th>
-                  <th style='padding: 8px; text-align: left;'>Fórmula</th>
-                  <th style='padding: 8px; text-align: left;'>Gráfica</th>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Lineal</td>
-                  <td style='padding: 8px;'>f(x)=mx+b</td>
-                  <td style='padding: 8px;'>Línea recta</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Cuadrática</td>
-                  <td style='padding: 8px;'>f(x)=ax²+bx+c</td>
-                  <td style='padding: 8px;'>Parábola</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Exponencial</td>
-                  <td style='padding: 8px;'>f(x)=aˣ</td>
-                  <td style='padding: 8px;'>Curva creciente/decreciente</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Logarítmica</td>
-                  <td style='padding: 8px;'>f(x)=logₐx</td>
-                  <td style='padding: 8px;'>Curva que cruza (1,0)</td>
-                </tr>
-                <tr>
-                  <td style='padding: 8px;'>Valor absoluto</td>
-                  <td style='padding: 8px;'>f(x)=|x|</td>
-                  <td style='padding: 8px;'>V con vértice en (0,0)</td>
-                </tr>
-              </table>
-            
-              <h4>Pasos para Evaluar Funciones</h4>
-              <p>Evaluar f(x)=x²+3x-2 para x=2, x=a+1, x=-3</p>
-              <ol>
-                <li>f(2)=2²+3(2)-2=4+6-2=8</li>
-                <li>f(a+1)=(a+1)²+3(a+1)-2=a²+2a+1+3a+3-2=a²+5a+2</li>
-                <li>f(-3)=(-3)²+3(-3)-2=9-9-2=-2</li>
-              </ol>
-            
-              <h4>Dominio de Funciones Comunes</h4>
-              <ul>
-                <li><strong>Polinómicas:</strong> Todos los reales (-∞, ∞)</li>
-                <li><strong>Racionales:</strong> Todos los reales excepto donde denominador=0</li>
-                <li><strong>Raíz par:</strong> Radicando ≥ 0</li>
-                <li><strong>Logarítmicas:</strong> Argumento > 0</li>
-                <li><strong>Exponenciales:</strong> Todos los reales</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Spivak, M. (2008). <em>Calculus</em>. Publish or Perish.</li>
-                <li>Apostol, T. M. (2013). <em>Calculus, Vol. 1</em>. Reverté.</li>
-                <li>Stewart, J. (2012). <em>Calculus: Early Transcendentals</em>. Cengage Learning.</li>
-              </ul>
-            `)">3.3. Funciones <span class="emoji-small">✅</span>
-          </li>
-          
-          <ul class="tema-list">
-          <li onclick="abrirModal('3.4 Gráfica de una función', `
+            <li onclick="abrirModal('3.4 Gráfica de una función', `
               <hr><br>
               <p><strong>Objetivo:</strong> Aprender a graficar funciones y analizar sus características a partir de su representación visual.</p>
             
@@ -1757,7 +1760,8 @@
               </ul>
             `)">3.4. Gráfica de una función <span class="emoji-small">✅</span>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
       
       <div class="tema-card">
@@ -2212,7 +2216,9 @@
               </div>
               `);"><b>4.1. Teoría y conjuntos: Definiciones fundamentales</b> <span class='emoji-small'>✅</span>
             </li>
-            
+          </ul>
+          
+          <ul class="tema-list">
             <li onclick="abrirModal('4.2. Operaciones de conjunto', `
             <hr><br>
             <div class=math-module>
@@ -2610,51 +2616,51 @@
                 
                 <!-- PROPIEDAD 3: LEYES DE DE MORGAN MEJORADAS -->
                 <defs>
-  <!-- Máscara para (A ∪ B)ᶜ -->
-  <mask id=maskUnion>
-    <rect x=0 y=0 width=120 height=80 fill=white></rect>
-    <circle cx=40 cy=40 r=25 fill=black></circle>
-    <circle cx=80 cy=40 r=25 fill=black></circle>
-  </mask>
-
-  <!-- Máscara para Aᶜ ∩ Bᶜ -->
-  <mask id=maskIntersection>
-    <rect x=0 y=0 width=120 height=80 fill=black></rect>
-    <circle cx=40 cy=40 r=25 fill=white></circle>
-    <circle cx=80 cy=40 r=25 fill=white></circle>
-  </mask>
-</defs>
-
-<g transform=translate(0,300)>
-  <text x=160 y=20 text-anchor=middle font-size=12 fill=#e74c3c font-weight=600>
-    De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ
-  </text>
-
-  <!-- Grupo izquierdo: (A ∪ B)ᶜ -->
-  <g transform=translate(20,40)>
-    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
-    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
-    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
-    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskUnion)></rect>
-    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
-    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
-    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>(A ∪ B)ᶜ</text>
-  </g>
-
-  <!-- Flecha de igualdad -->
-  <path d='M 150,80 L 180,80' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
-
-  <!-- Grupo derecho: Aᶜ ∩ Bᶜ -->
-  <g transform=translate(200,40)>
-    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
-    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
-    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
-    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskIntersection)></rect>
-    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
-    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
-    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>Aᶜ ∩ Bᶜ</text>
-  </g>
-</g>
+                  <!-- Máscara para (A ∪ B)ᶜ -->
+                  <mask id=maskUnion>
+                    <rect x=0 y=0 width=120 height=80 fill=white></rect>
+                    <circle cx=40 cy=40 r=25 fill=black></circle>
+                    <circle cx=80 cy=40 r=25 fill=black></circle>
+                  </mask>
+                
+                  <!-- Máscara para Aᶜ ∩ Bᶜ -->
+                  <mask id=maskIntersection>
+                    <rect x=0 y=0 width=120 height=80 fill=black></rect>
+                    <circle cx=40 cy=40 r=25 fill=white></circle>
+                    <circle cx=80 cy=40 r=25 fill=white></circle>
+                  </mask>
+                </defs>
+                
+                <g transform=translate(0,300)>
+                  <text x=160 y=20 text-anchor=middle font-size=12 fill=#e74c3c font-weight=600>
+                    De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ
+                  </text>
+                
+                  <!-- Grupo izquierdo: (A ∪ B)ᶜ -->
+                  <g transform=translate(20,40)>
+                    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
+                    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
+                    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
+                    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskUnion)></rect>
+                    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>(A ∪ B)ᶜ</text>
+                  </g>
+                
+                  <!-- Flecha de igualdad -->
+                  <path d='M 150,80 L 180,80' stroke=#2c3e50 stroke-width=2 marker-end=url(#arrowhead)></path>
+                
+                  <!-- Grupo derecho: Aᶜ ∩ Bᶜ -->
+                  <g transform=translate(200,40)>
+                    <rect x=0 y=0 width=120 height=80 fill=#ecf0f1 stroke=#bdc3c7 stroke-width=1 rx=3></rect>
+                    <circle cx=40 cy=40 r=25 fill=#3498db fill-opacity=0.3 stroke=#2980b9 stroke-width=1.5></circle>
+                    <circle cx=80 cy=40 r=25 fill=#2ecc71 fill-opacity=0.3 stroke=#27ae60 stroke-width=1.5></circle>
+                    <rect x=0 y=0 width=120 height=80 fill=#e74c3c fill-opacity=0.3 mask=url(#maskIntersection)></rect>
+                    <text x=30 y=40 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                    <text x=90 y=40 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                    <text x=60 y=70 text-anchor=middle font-size=9 fill=#2c3e50>Aᶜ ∩ Bᶜ</text>
+                  </g>
+                </g>
 
               </svg>
                 <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las propiedades conmutativa y distributiva mantienen áreas equivalentes al reorganizar las operaciones. Las leyes de De Morgan muestran que el complemento de una unión equivale a la intersección de los complementos, visualmente representado como el área exterior convirtiéndose en intersección de áreas exteriores.</p>
@@ -2745,7 +2751,9 @@
             </div>
             `);"><b>4.2. Operaciones de conjunto</b> <span class=emoji-small>✅</span>
           </li>
-          
+        </ul>
+
+        <ul class="tema-list">
           <li onclick="abrirModal('4.3 Diagramas de Venn', `
           <hr><br>
           <div class=math-module>
@@ -3209,9 +3217,6 @@
           </div>
           `);"><b>4.3 Diagramas de Venn</b> <span class=emoji-small>✅</span>
         </li>
-
-          
-          
         </ul>
       </div>
       
