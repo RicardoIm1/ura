@@ -2965,100 +2965,169 @@
             <!-- Gráfica 2: Sombreado de operaciones complejas -->
             <div class=graph-container style=margin-bottom:20px;>
               <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Sombreado de operaciones lógicas complejas</h4>
-              <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+              <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:#f8f9fa;border-radius:8px;>
+              <!-- DEFINICIONES DE MÁSCARAS Y CLIPPATH -->
+              <defs>
+                <!-- ClipPaths para los círculos básicos -->
+                <clipPath id=clipCircleA>
+                  <circle cx=35 cy=50 r=30></circle>
+                </clipPath>
                 
-                <!-- Operación 1: (A ∩ B) ∪ C -->
-                <g transform=translate(70,70)>
-                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
-                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                  
-                  <!-- Sombreado de A∩B -->
-                  <path d='M 50,20 Q 65,50 50,80 Q 35,50 50,20' fill=var(--apple-vibrant-purple) fill-opacity=0.5 stroke=var(--apple-vibrant-purple) stroke-width=1></path>
-                  
-                  <!-- Sombreado de C completo -->
-                  <circle cx=50 cy=65 r=30 fill=var(--apple-vibrant-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                  
-                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
-                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
-                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
-                  <text x=50 y=95 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(A ∩ B) ∪ C</text>
+                <clipPath id=clipCircleB>
+                  <circle cx=65 cy=50 r=30></circle>
+                </clipPath>
+                
+                <clipPath id=clipCircleC>
+                  <circle cx=50 cy=65 r=30></circle>
+                </clipPath>
+                
+                <!-- Máscaras para operaciones complejas -->
+                <mask id=maskAIntersectionB>
+                  <rect width=100 height=100 fill=white></rect>
+                  <circle cx=35 cy=50 r=30 fill=black></circle>
+                  <circle cx=65 cy=50 r=30 fill=black></circle>
+                </mask>
+                
+                <mask id=maskAUnionB>
+                  <rect width=100 height=100 fill=black></rect>
+                  <circle cx=35 cy=50 r=30 fill=white></circle>
+                  <circle cx=65 cy=50 r=30 fill=white></circle>
+                </mask>
+                
+                <mask id=maskBIntersectionC>
+                  <rect width=100 height=100 fill=white></rect>
+                  <circle cx=65 cy=50 r=30 fill=black></circle>
+                  <circle cx=50 cy=65 r=30 fill=black></circle>
+                </mask>
+                
+                <mask id=maskAComplement>
+                  <rect width=100 height=100 fill=white></rect>
+                  <circle cx=35 cy=50 r=30 fill=black></circle>
+                </mask>
+                
+                <mask id=maskAIntersectionC>
+                  <rect width=100 height=100 fill=white></rect>
+                  <circle cx=35 cy=50 r=30 fill=black></circle>
+                  <circle cx=50 cy=65 r=30 fill=black></circle>
+                </mask>
+              </defs>
+              
+              <!-- TÍTULO GENERAL MEJORADO -->
+              <text x=200 y=25 text-anchor=middle font-size=14 fill=#2c3e50 font-weight=700>Operaciones Lógicas Complejas con Conjuntos</text>
+              
+              <!-- OPERACIÓN 1: (A ∩ B) ∪ C -->
+              <g transform=translate(70,50)>
+                <rect x=0 y=0 width=100 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                
+                <!-- Círculos base -->
+                <circle cx=35 cy=50 r=30 fill=#3498db fill-opacity=0.15 stroke=#2980b9 stroke-width=2></circle>
+                <circle cx=65 cy=50 r=30 fill=#2ecc71 fill-opacity=0.15 stroke=#27ae60 stroke-width=2></circle>
+                <circle cx=50 cy=65 r=30 fill=#e67e22 fill-opacity=0.15 stroke=#d35400 stroke-width=2></circle>
+                
+                <!-- (A ∩ B) ∪ C usando clipPath -->
+                <g clip-path=url(#clipCircleA)>
+                  <circle cx=65 cy=50 r=30 fill=#9b59b6 fill-opacity=0.6></circle>
+                </g>
+                <circle cx=50 cy=65 r=30 fill=#e67e22 fill-opacity=0.4></circle>
+                
+                <text x=25 y=35 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                <text x=75 y=35 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                <text x=50 y=85 text-anchor=middle font-size=9 fill=#d35400 font-weight=600>C</text>
+                <text x=50 y=95 text-anchor=middle font-size=10 fill=#2c3e50 font-weight=600>(A ∩ B) ∪ C</text>
+              </g>
+              
+              <!-- OPERACIÓN 2: (A ∪ B) - C -->
+              <g transform=translate(230,50)>
+                <rect x=0 y=0 width=100 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                
+                <!-- Círculos base -->
+                <circle cx=35 cy=50 r=30 fill=#3498db fill-opacity=0.15 stroke=#2980b9 stroke-width=2></circle>
+                <circle cx=65 cy=50 r=30 fill=#2ecc71 fill-opacity=0.15 stroke=#27ae60 stroke-width=2></circle>
+                <circle cx=50 cy=65 r=30 fill=#e67e22 fill-opacity=0.15 stroke=#d35400 stroke-width=2 stroke-dasharray=3,2></circle>
+                
+                <!-- (A ∪ B) - C usando máscara -->
+                <g mask=url(#maskAUnionB)>
+                  <rect x=0 y=0 width=100 height=100 fill=#3498db fill-opacity=0.4></rect>
+                  <rect x=0 y=0 width=100 height=100 fill=#2ecc71 fill-opacity=0.4></rect>
+                  <rect x=0 y=0 width=100 height=100 fill=#f8f9fa mask=url(#maskAIntersectionC)></rect>
                 </g>
                 
-                <!-- Operación 2: (A ∪ B) - C -->
-                <g transform=translate(230,70)>
-                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
-                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                  
-                  <!-- Sombreado de A∪B -->
-                  <circle cx=35 cy=50 r=30 fill=var(--apple-vibrant-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                  <circle cx=65 cy=50 r=30 fill=var(--apple-vibrant-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                  
-                  <!-- Quitar C (área blanca dentro de C) -->
-                  <circle cx=50 cy=65 r=30 fill=var(--apple-very-light-gray) fill-opacity=1.0 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                  
-                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
-                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
-                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
-                  <text x=50 y=95 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(A ∪ B) - C</text>
+                <text x=25 y=35 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                <text x=75 y=35 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                <text x=50 y=85 text-anchor=middle font-size=9 fill=#d35400 font-weight=600>C</text>
+                <text x=50 y=95 text-anchor=middle font-size=10 fill=#2c3e50 font-weight=600>(A ∪ B) - C</text>
+              </g>
+              
+              <!-- OPERACIÓN 3: A Δ (B ∩ C) -->
+              <g transform=translate(70,180)>
+                <rect x=0 y=0 width=100 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                
+                <!-- Círculos base -->
+                <circle cx=35 cy=50 r=30 fill=#3498db fill-opacity=0.15 stroke=#2980b9 stroke-width=2></circle>
+                <circle cx=65 cy=50 r=30 fill=#2ecc71 fill-opacity=0.15 stroke=#27ae60 stroke-width=2></circle>
+                <circle cx=50 cy=65 r=30 fill=#e67e22 fill-opacity=0.15 stroke=#d35400 stroke-width=2></circle>
+                
+                <!-- A Δ (B ∩ C) usando clipPath y máscaras -->
+                <!-- Primero: A - (B ∩ C) -->
+                <circle cx=35 cy=50 r=30 fill=#3498db fill-opacity=0.6></circle>
+                <g clip-path=url(#clipCircleA)>
+                  <g mask=url(#maskBIntersectionC)>
+                    <rect x=0 y=0 width=100 height=100 fill=#f8f9fa></rect>
+                  </g>
                 </g>
                 
-                <!-- Operación 3: A Δ (B ∩ C) -->
-                <g transform=translate(70,200)>
-                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
-                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                  
-                  <!-- Sombreado de A completo -->
-                  <circle cx=35 cy=50 r=30 fill=var(--apple-vibrant-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                  
-                  <!-- Sombreado de B∩C -->
-                  <path d='M 50,40 Q 65,65 50,90 Q 35,65 50,40' fill=var(--apple-vibrant-purple) fill-opacity=0.5 stroke=var(--apple-vibrant-purple) stroke-width=1></path>
-                  
-                  <!-- Quitar intersección de A con (B∩C) -->
-                  <path d='M 45,45 Q 50,50 45,55 Q 40,50 45,45' fill=var(--apple-very-light-gray) fill-opacity=1.0 stroke=var(--apple-very-light-gray) stroke-width=1></path>
-                  
-                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
-                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
-                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
-                  <text x=50 y=95 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>A Δ (B ∩ C)</text>
+                <!-- Segundo: (B ∩ C) - A -->
+                <g mask=url(#maskBIntersectionC)>
+                  <rect x=0 y=0 width=100 height=100 fill=#9b59b6 fill-opacity=0.6 mask=url(#maskAComplement)></rect>
                 </g>
                 
-                <!-- Operación 4: (Aᶜ ∩ B) ∪ (A ∩ C) -->
-                <g transform=translate(230,200)>
-                  <rect x=0 y=0 width=100 height=100 fill=none stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=3,3></rect>
-                  <circle cx=35 cy=50 r=30 fill=var(--apple-light-blue) fill-opacity=0.3 stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-                  <circle cx=65 cy=50 r=30 fill=var(--apple-light-green) fill-opacity=0.3 stroke=var(--apple-vibrant-green) stroke-width=2></circle>
-                  <circle cx=50 cy=65 r=30 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-                  
-                  <!-- Sombreado de Aᶜ ∩ B (B menos A) -->
-                  <path d='M 65,20 Q 80,50 65,80 Q 50,50 65,20' fill=var(--apple-vibrant-green) fill-opacity=0.5 stroke=var(--apple-vibrant-green) stroke-width=1></path>
-                  
-                  <!-- Sombreado de A ∩ C -->
-                  <path d='M 35,35 Q 50,65 35,95 Q 20,65 35,35' fill=var(--apple-vibrant-orange) fill-opacity=0.5 stroke=var(--apple-vibrant-orange) stroke-width=1></path>
-                  
-                  <text x=30 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>A</text>
-                  <text x=70 y=35 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>B</text>
-                  <text x=50 y=70 text-anchor=middle font-size=8 fill=var(--apple-vibrant-orange)>C</text>
-                  <text x=50 y=95 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Aᶜ ∩ B) ∪ (A ∩ C)</text>
+                <text x=25 y=35 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                <text x=75 y=35 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                <text x=50 y=85 text-anchor=middle font-size=9 fill=#d35400 font-weight=600>C</text>
+                <text x=50 y=95 text-anchor=middle font-size=10 fill=#2c3e50 font-weight=600>A Δ (B ∩ C)</text>
+              </g>
+              
+              <!-- OPERACIÓN 4: (Aᶜ ∩ B) ∪ (A ∩ C) -->
+              <g transform=translate(230,180)>
+                <rect x=0 y=0 width=100 height=100 fill=none stroke=#e1e8ed stroke-width=1 stroke-dasharray=4,2></rect>
+                
+                <!-- Círculos base -->
+                <circle cx=35 cy=50 r=30 fill=#3498db fill-opacity=0.15 stroke=#2980b9 stroke-width=2></circle>
+                <circle cx=65 cy=50 r=30 fill=#2ecc71 fill-opacity=0.15 stroke=#27ae60 stroke-width=2></circle>
+                <circle cx=50 cy=65 r=30 fill=#e67e22 fill-opacity=0.15 stroke=#d35400 stroke-width=2></circle>
+                
+                <!-- (Aᶜ ∩ B) ∪ (A ∩ C) usando máscaras -->
+                <!-- Aᶜ ∩ B -->
+                <g mask=url(#maskAComplement)>
+                  <circle cx=65 cy=50 r=30 fill=#2ecc71 fill-opacity=0.6></circle>
                 </g>
                 
-                <!-- Título general -->
-                <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)>Sombreado de Operaciones Lógicas Complejas</text>
+                <!-- A ∩ C -->
+                <g mask=url(#maskAIntersectionC)>
+                  <rect x=0 y=0 width=100 height=100 fill=#e67e22 fill-opacity=0.6></rect>
+                </g>
                 
-                <!-- Leyenda de colores -->
-                <rect x=50 y=310 width=300 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-                <rect x=60 y=317 width=15 height=15 fill=var(--apple-vibrant-purple) fill-opacity=0.5></rect>
-                <text x=80 y=330 font-size=10 fill=var(--apple-dark-gray)>Intersección múltiple</text>
-                <rect x=150 y=317 width=15 height=15 fill=var(--apple-vibrant-blue) fill-opacity=0.3></rect>
-                <text x=170 y=330 font-size=10 fill=var(--apple-dark-gray)>Conjunto individual</text>
-                <rect x=240 y=317 width=15 height=15 fill=var(--apple-very-light-gray)></rect>
-                <text x=260 y=330 font-size=10 fill=var(--apple-dark-gray)>Área excluida</text>
-              </svg>
+                <text x=25 y=35 text-anchor=middle font-size=9 fill=#2980b9 font-weight=600>A</text>
+                <text x=75 y=35 text-anchor=middle font-size=9 fill=#27ae60 font-weight=600>B</text>
+                <text x=50 y=85 text-anchor=middle font-size=9 fill=#d35400 font-weight=600>C</text>
+                <text x=50 y=95 text-anchor=middle font-size=9 fill=#2c3e50 font-weight=600>(Aᶜ ∩ B) ∪ (A ∩ C)</text>
+              </g>
+              
+              <!-- LEYENDA MEJORADA -->
+              <rect x=50 y=300 width=300 height=40 fill=white stroke=#bdc3c7 stroke-width=1 rx=5></rect>
+              
+              <rect x=65 y=310 width=12 height=12 fill=#9b59b6 fill-opacity=0.6></rect>
+              <text x=82 y=320 font-size=9 fill=#2c3e50>Intersecciones</text>
+              
+              <rect x=145 y=310 width=12 height=12 fill=#3498db fill-opacity=0.4></rect>
+              <text x=162 y=320 font-size=9 fill=#2c3e50>Conjunto A</text>
+              
+              <rect x=220 y=310 width=12 height=12 fill=#2ecc71 fill-opacity=0.4></rect>
+              <text x=237 y=320 font-size=9 fill=#2c3e50>Conjunto B</text>
+              
+              <rect x=295 y=310 width=12 height=12 fill=#e67e22 fill-opacity=0.4></rect>
+              <text x=312 y=320 font-size=9 fill=#2c3e50>Conjunto C</text>
+            </svg>
               <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las operaciones complejas requieren descomposición en pasos secuenciales. El sombreado por capas permite visualizar operaciones anidadas. Las áreas excluidas se representan con ausencia de sombreado. La superposición de colores indica intersecciones múltiples.</p>
             </div>
             
