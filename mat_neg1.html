@@ -1,131 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matemáticas Aplicadas a los Negocios I - Universidad URA</title>
   <link rel="stylesheet" href="estilos2.css">
-    <!-- MathJax para renderizar notación matemática elegante -->
+  <!-- MathJax para renderizar notación matemática elegante -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
-      .loguito {
-        display: inline-block;
-        margin: 10px 15px 10px 0;
-        transition: all 0.3s ease;
+    .loguito {
+      display: inline-block;
+      margin: 10px 15px 10px 0;
+      transition: all 0.3s ease;
     }
-    
+
     .loguito a {
-        display: block;
-        text-decoration: none;
-        border-radius: 12px;
-        padding: 8px;
-        background-color: #f8f9fa;
-        border: 1px solid #e9ecef;
-        transition: all 0.3s ease;
+      display: block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
     }
-    
+
     .loguito:hover a {
-        background-color: #ffffff;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-        transform: translateY(-3px);
-        border-color: #007bff;
+      background-color: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+      border-color: #007bff;
     }
-    
+
     .loguito img {
-        width: 120px;
-        height: 60px;
-        object-fit: cover;
-        border-radius: 8px;
-        display: block;
-        filter: grayscale(30%);
-        transition: filter 0.3s ease;
+      width: 120px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      filter: grayscale(30%);
+      transition: filter 0.3s ease;
     }
-    
+
     .loguito:hover img {
-        filter: grayscale(0%);
+      filter: grayscale(0%);
     }
 
     .librito img {
       height: 200px;
       width: 150px;
     }
-  
+
     /* Modal */
-  #modal-info {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    z-index: 1000;
-  }
-  
-  .modal-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px); /* Efecto de difuminado */
-    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    background: rgba(245, 245, 245, 0.95); /* Fondo semitransparente */
-    backdrop-filter: blur(20px); /* Difuminado adicional para el contenido */
-    -webkit-backdrop-filter: blur(20px);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 600px;
-    width: 90%;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    overflow-y: auto;
-    max-height: 80%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    font-size: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil para efecto de cristal */
-  }
-  
-  .modal.show .modal-overlay {
-    opacity: 1;
-  }
-  
-  .modal.show .modal-content {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 1001; /* Asegura que esté por encima del contenido */
-  }
-  
-  /* Ajuste de listas dentro del modal */
-  #modal-text ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-  }
-  
-  #modal-text h4 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-</style>
+    #modal-info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 1000;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      /* Efecto de difuminado */
+      -webkit-backdrop-filter: blur(10px);
+      /* Compatibilidad con Safari */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      background: rgba(245, 245, 245, 0.95);
+      /* Fondo semitransparente */
+      backdrop-filter: blur(20px);
+      /* Difuminado adicional para el contenido */
+      -webkit-backdrop-filter: blur(20px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      overflow-y: auto;
+      max-height: 80%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Borde sutil para efecto de cristal */
+    }
+
+    .modal.show .modal-overlay {
+      opacity: 1;
+    }
+
+    .modal.show .modal-content {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      /* Asegura que esté por encima del contenido */
+    }
+
+    /* Ajuste de listas dentro del modal */
+    #modal-text ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    #modal-text h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
-<body>  
+
+<body>
   <header>
     <div class="header-content">
       <a href="index.html">
@@ -144,14 +151,16 @@
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno aplicará modelos matemáticos, algebraicos, geométricos, analíticos y de la estadística descriptiva, a la interpretación de fenómenos económico empresariales para un mejor conocimiento y análisis en futuros cursos.
+      Al finalizar el curso el alumno aplicará modelos matemáticos, algebraicos, geométricos, analíticos y de la
+      estadística descriptiva, a la interpretación de fenómenos económico empresariales para un mejor conocimiento y
+      análisis en futuros cursos.
     </p>
   </section>
 
   <section class="container">
     <h2 class="section-title">Temario</h2>
     <div class="temas-grid">
-            
+
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
         <h3 class="tema-title">Revisión de Conceptos</h3>
@@ -415,9 +424,9 @@
               </ul>
             `)"><b>1.1. Lenguaje Algebraico</b> <span class="emoji-small">✅</span>
           </li>
-          
-        <ul class="tema-list">
-          <li  onclick="abrirModal('1.1.1. El término algebraico y sus partes', `
+
+          <ul class="tema-list">
+            <li onclick="abrirModal('1.1.1. El término algebraico y sus partes', `
             <hr><br>
             <p><strong>Objetivo:</strong> Identificar y comprender los elementos que componen un término algebraico, incluyendo signo, coeficiente, variable y exponente, así como su clasificación y propiedades.</p>
           
@@ -710,10 +719,10 @@
               <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
             </ul>
           `)">1.1.1. El término algebraico y sus partes <span class="emoji-small">✅</span>
-          </li>
-          
-                  <ul class="tema-list"> 
-          <li onclick="abrirModal('1.1.2. Términos semejantes', `
+            </li>
+
+            <ul class="tema-list">
+              <li onclick="abrirModal('1.1.2. Términos semejantes', `
               <hr><br>
               <p><strong>Objetivo:</strong> Identificar, comprender y operar con términos semejantes en expresiones algebraicas, aplicando correctamente la reducción y simplificación.</p>
             
@@ -915,10 +924,10 @@
                 <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
               </ul>
             `)">1.1.2. Términos semejantes <span class="emoji-small">✅</span>
-          </li>
+              </li>
 
-            <ul class="tema-list">
-            <li onclick="abrirModal('1.1.3. Reducción de términos semejantes', `
+              <ul class="tema-list">
+                <li onclick="abrirModal('1.1.3. Reducción de términos semejantes', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el proceso de reducción de términos semejantes mediante la identificación, agrupación y simplificación de expresiones algebraicas.</p>
             
@@ -1155,12 +1164,12 @@
                 <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
               </ul>
             `)">1.1.3. Reducción de términos semejantes <span class="emoji-small">✅</span>
-          </li>
-        </ul><br>
-          
-          
-        <ul class="tema-list">
-          <li onclick="abrirModal('1.2. Operaciones Algebraicas', `
+                </li>
+              </ul><br>
+
+
+              <ul class="tema-list">
+                <li onclick="abrirModal('1.2. Operaciones Algebraicas', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar las operaciones fundamentales del álgebra: suma, resta, multiplicación, división y potenciación de expresiones algebraicas, aplicando correctamente las reglas y propiedades.</p>
             
@@ -1431,11 +1440,11 @@
                 <li>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em>. Cengage Learning.</li>
                 <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
               </ul>
-            `)""><b>1.2. Operaciones Algebraicas</b> <span class="emoji-small">✅</span>
-          </li>
-          
-        <ul class="tema-list">
-          <li onclick="abrirModal('1.2.1. Suma y sus leyes', `
+            `)""><b>1.2. Operaciones Algebraicas</b> <span class=" emoji-small">✅</span>
+                </li>
+
+                <ul class="tema-list">
+                  <li onclick="abrirModal('1.2.1. Suma y sus leyes', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades de la suma algebraica, así como dominar las técnicas para sumar expresiones algebraicas de diferente complejidad.</p>
           
@@ -1696,10 +1705,10 @@
               <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
             </ul>
           `)">1.2.1. Suma y sus leyes <span class="emoji-small">✅</span>
-          </li>
-  
-        <ul class="tema-list">
-          <li onclick="abrirModal('1.2.2. Multiplicación de términos algebraicos', `
+                  </li>
+
+                  <ul class="tema-list">
+                    <li onclick="abrirModal('1.2.2. Multiplicación de términos algebraicos', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las reglas, propiedades y procedimientos para multiplicar términos algebraicos, incluyendo monomios, polinomios y expresiones con diferentes variables.</p>
             
@@ -2020,10 +2029,10 @@
                 <li>Gustafson, R. D., & Frisk, P. D. (2006). <em>Álgebra intermedia</em>. Thomson Learning.</li>
               </ul>
             `)">1.2.2. Multiplicación de términos algebraicos <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <ul class="tema-list">
-            <li onclick="abrirModal('1.2.3. Multiplicación y sus leyes', `
+                    <ul class="tema-list">
+                      <li onclick="abrirModal('1.2.3. Multiplicación y sus leyes', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la multiplicación algebraica, incluyendo las leyes de signos, exponentes y las propiedades estructurales de esta operación.</p>
             
@@ -2350,9 +2359,9 @@
                 <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
               </ul>
             `)">1.2.3. Multiplicación y sus leyes<span class="emoji-small">✅</span>
-            </li>
+                      </li>
 
-            <li onclick="abrirModal('1.2.4. División y sus leyes', `
+                      <li onclick="abrirModal('1.2.4. División y sus leyes', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la división algebraica, incluyendo las leyes de signos, exponentes y las propiedades estructurales de esta operación.</p>
             
@@ -2714,9 +2723,9 @@
                 <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
               </ul>
             `)">1.2.4. División y sus leyes <span class="emoji-small">✅</span>
-            </li>
+                      </li>
 
-            <li onclick="abrirModal('1.2.5. Potenciación y sus leyes', `
+                      <li onclick="abrirModal('1.2.5. Potenciación y sus leyes', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender y aplicar las leyes y propiedades fundamentales de la potenciación algebraica, incluyendo las reglas de exponentes enteros, fraccionarios y las propiedades de las operaciones con potencias.</p>
             <h4>Definición y concepto fundamental</h4>
@@ -3047,15 +3056,15 @@
                   <li>Larson, R., & Hostetler, R. P. (2009). <em>Álgebra intermedia</em>. McGraw-Hill.</li>
               </ul>
           `)">1.2.5. Potenciación y sus leyes <span class="emoji-small">✅</span>
-          </li>
-        </ul>
+                      </li>
+                    </ul>
       </div>
 
-    <div class="tema-card">
+      <div class="tema-card">
         <div class="tema-num">TEMA 2</div>
-          <h3 class="tema-title">Ecuaciones lineales</h3>
-          <ul class="tema-list">
-            <li onclick='abrirModal("2.1. Ecuaciones con una incógnita de primer grado", `
+        <h3 class="tema-title">Ecuaciones lineales</h3>
+        <ul class="tema-list">
+          <li onclick='abrirModal("2.1. Ecuaciones con una incógnita de primer grado", `
             <hr><br>
             <div class="math-module">
               <div class="math-header">
@@ -3379,11 +3388,11 @@
           </ul>
         </div>
         `)'>
-          <b>2.1. Ecuaciones con una incógnita de primer grado</b> 
-          <span class="emoji-small">✅</span>
-        </li>
-        
-        <li onclick="abrirModal('2.1.1. Solución de ecuaciones con una incógnita de primer grado', `
+            <b>2.1. Ecuaciones con una incógnita de primer grado</b>
+            <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('2.1.1. Solución de ecuaciones con una incógnita de primer grado', `
         <hr><br>
         <p><strong>Objetivo:</strong> Comprender y aplicar los métodos para resolver ecuaciones algebraicas de primer grado con una incógnita.</p>
         
@@ -3443,9 +3452,9 @@
           <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
         </ul>
         `)">2.1.1. Solución de ecuaciones con una incógnita de primer grado <span class="emoji-small">✅</span>
-        </li>
-          
-        <li onclick="abrirModal('2.2. Ecuaciones con Dos Incógnitas de Primer Grado', `
+          </li>
+
+          <li onclick="abrirModal('2.2. Ecuaciones con Dos Incógnitas de Primer Grado', `
           <hr><br>
           <div class='math-module'>
             
@@ -3782,9 +3791,9 @@
             </div>
           </div>
           `);"><b>2.2. Ecuaciones con Dos Incógnitas de Primer Grado</b> <span class='emoji-small'>✅</span>
-        </li>
+          </li>
 
-            <li onclick="abrirModal('2.2.1. Gráfica de Ecuaciones con Dos Incógnitas de Segundo Grado', `
+          <li onclick="abrirModal('2.2.1. Gráfica de Ecuaciones con Dos Incógnitas de Segundo Grado', `
               <hr><br>
               <div class='math-module'>
                 
@@ -4107,9 +4116,9 @@
                 </div>
               </div>
               `);">2.2.1. Gráfica de Ecuaciones con Dos Incógnitas de Segundo Grado <span class='emoji-small'>✅</span>
-            </li>
-              
-            <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
+          </li>
+
+          <li onclick="abrirModal('2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado', `
               <hr><br>
               <p><strong>Objetivo:</strong> Resolver sistemas de ecuaciones lineales usando métodos sencillos con ejemplos prácticos, gráficas y tablas.</p>
 
@@ -4257,17 +4266,18 @@
                 <li>Swokowski, E. W. <i>Álgebra y trigonometría</i></li>
                 <li>Stewart, J. <i>Precálculo</i></li>
               </ul>
-              `)">2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado  <span class="emoji-small">✅</span>
-              </li>
-            </ul>
-          </ul>
-    </div>
-    
-    <div class="tema-card">
-      <div class="tema-num">TEMA 3</div>
-      <h3 class="tema-title">Linea Recta</h3>
-      <ul class="tema-list">
-        <li onclick="abrirModal('3.1. Pendiente de una Recta', `
+              `)">2.2.2. Solución de sistemas de dos ecuaciones con dos incógnitas de primer grado <span
+              class="emoji-small">✅</span>
+          </li>
+        </ul>
+        </ul>
+      </div>
+
+      <div class="tema-card">
+        <div class="tema-num">TEMA 3</div>
+        <h3 class="tema-title">Linea Recta</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('3.1. Pendiente de una Recta', `
           <hr><br>
           <div class='math-module'>
             
@@ -4639,9 +4649,9 @@
             </div>
           </div>
           `);"><b>3.1. Pendiente de una Recta</b> <span class='emoji-small'>✅</span>
-        </li>
-                
-        <li onclick="abrirModal('3.1.1. Rectas Paralelas y Perpendiculares', `
+          </li>
+
+          <li onclick="abrirModal('3.1.1. Rectas Paralelas y Perpendiculares', `
           <hr><br>
           <div class='math-module'>
             
@@ -5010,9 +5020,9 @@
             </div>
           </div>
           `);">3.1.1. Rectas Paralelas y Perpendiculares <span class='emoji-small'>✅</span>
-        </li>
-        
-        <li onclick="abrirModal('3.2. Ecuaciones de la Recta', `
+          </li>
+
+          <li onclick="abrirModal('3.2. Ecuaciones de la Recta', `
           <hr><br>
           <div class='math-module'>
             
@@ -5399,9 +5409,9 @@
             </div>
           </div>
           `);"><b>3.2. Ecuaciones de la Recta</b> <span class='emoji-small'>✅</span>
-        </li>
-        
-        <li onclick="abrirModal('3.2.1. Forma Común', `
+          </li>
+
+          <li onclick="abrirModal('3.2.1. Forma Común', `
           <hr><br>
           <div class='math-module'>
             
@@ -5753,9 +5763,9 @@
             </div>
           </div>
           `);">3.2.1. Forma Común <span class='emoji-small'>✅</span>
-        </li>
+          </li>
 
-        <li onclick="abrirModal('3.2.2. Forma Punto-Pendiente', `
+          <li onclick="abrirModal('3.2.2. Forma Punto-Pendiente', `
           <hr><br>
           <div class='math-module'>
             
@@ -6102,8 +6112,8 @@
             </div>
           </div>
           `);">3.2.2. Forma Punto-Pendiente <span class='emoji-small'>✅</span>
-        </li>
-        
+          </li>
+
           <li onclick="abrirModal('3.3. Funciones lineales', `
             <hr><br>
             <div class='math-module'>
@@ -6185,10 +6195,10 @@
             </div>
           </div>
           `);">
-          <b>3.3. Funciones lineales</b> <span class=emoji-small>✅</span>
-        </li>
+            <b>3.3. Funciones lineales</b> <span class=emoji-small>✅</span>
+          </li>
 
-        <li onclick="abrirModal('3.3.1. Ingreso', `
+          <li onclick="abrirModal('3.3.1. Ingreso', `
         <hr><br>
           <div class='math-module'>
   
@@ -6377,11 +6387,11 @@
         </div>
       </div>
       `);">3.3.1. Ingreso <span class=emoji-small>✅</span>
-    </li>
-        
-        <!-- Tema 3.3.2 Costo --> 
-  
-    <li onclick="abrirModal('3.3.2. Costo', `
+          </li>
+
+          <!-- Tema 3.3.2 Costo -->
+
+          <li onclick="abrirModal('3.3.2. Costo', `
       <hr><br>
       <div class='math-module'>
         
@@ -6608,9 +6618,9 @@
         </div>
       </div>
       `);">3.3.2. Costo <span class=emoji-small>✅</span>
-    </li>
-        
-    <li onclick="abrirModal('3.3.3. Utilidad', `
+          </li>
+
+          <li onclick="abrirModal('3.3.3. Utilidad', `
       <hr><br>
       <div class='math-module'>
         
@@ -6859,9 +6869,9 @@
         </div>
       </div>
       `);">3.3.3. Utilidad <span class='emoji-small'>✅</span>
-    </li>
-        
-    <li onclick="abrirModal('3.3.4. Punto de Equilibrio de una Empresa', `
+          </li>
+
+          <li onclick="abrirModal('3.3.4. Punto de Equilibrio de una Empresa', `
       <hr><br>
       <div class='math-module'>
         
@@ -7136,9 +7146,9 @@
         </div>
       </div>
       `);">3.3.4. Punto de Equilibrio de una Empresa <span class='emoji-small'>✅</span>
-    </li>
+          </li>
 
-    <li onclick="abrirModal('3.3.5. Ley de la Oferta', `
+          <li onclick="abrirModal('3.3.5. Ley de la Oferta', `
       <hr><br>
       <div class='math-module'>
         
@@ -7494,9 +7504,9 @@
         </div>
       </div>
       `);">3.3.5. Ley de la Oferta <span class='emoji-small'>✅</span>
-    </li>
-        
-    <li onclick="abrirModal('3.3.6. Ley de la Demanda', `
+          </li>
+
+          <li onclick="abrirModal('3.3.6. Ley de la Demanda', `
       <hr><br>
       <div class='math-module'>
         
@@ -7857,9 +7867,9 @@
         </div>
       </div>
       `);">3.3.6. Ley de la Demanda <span class='emoji-small'>✅</span>
-    </li>
-        
-    <li onclick="abrirModal('3.3.7. Punto de Equilibrio de Mercado', `
+          </li>
+
+          <li onclick="abrirModal('3.3.7. Punto de Equilibrio de Mercado', `
       <hr><br>
       <div class='math-module'>
         
@@ -8225,15 +8235,15 @@
         </div>
       </div>
       `);">3.3.7. Punto de Equilibrio de Mercado <span class='emoji-small'>✅</span>
-    </li>
-  </ul><br>
-</div>  
-      
-<div class="tema-card">
-  <div class="tema-num">TEMA 4</div>
-  <h3 class="tema-title">Ecuaciones de segundo grado con una incógnita</h3>
-  <ul class="tema-list">
-    <li onclick="abrirModal('4.1. Ecuaciones de Segundo Grado', `
+          </li>
+        </ul><br>
+      </div>
+
+      <div class="tema-card">
+        <div class="tema-num">TEMA 4</div>
+        <h3 class="tema-title">Ecuaciones de segundo grado con una incógnita</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('4.1. Ecuaciones de Segundo Grado', `
       <hr><br>
       <div class='math-module'>
         
@@ -8546,9 +8556,9 @@
         </div>
       </div>
       `);"><b>4.1. Ecuaciones de Segundo Grado</b> <span class='emoji-small'>✅</span>
-    </li>
-              
-    <li onclick="abrirModal('4.1.1. Ecuaciones Completas', `
+          </li>
+
+          <li onclick="abrirModal('4.1.1. Ecuaciones Completas', `
       <hr><br>
       <div class='math-module'>
         
@@ -8884,8 +8894,8 @@
         </div>
       </div>
       `);">4.1.1. Ecuaciones Completas <span class='emoji-small'>✅</span>
-    </li>
-          
+          </li>
+
           <li>4.1.2. Ecuaciones incompletas</li>
           <br>
           <li><b>4.2. Solución de ecuaciones de segundo grado</b></li>
@@ -8893,9 +8903,9 @@
           <br>
           <li><b>4.3. Interpretación gráfica de la solución de ecuaciones de segundo grado</b></li>
           <li><b>4.4. Ecuaciones de segundo grado con dos incógnitas</b></li>
-          <li><b>4.5. Gráfica de una ecuación de segundo grado con dos incógnitas</b></li>   
+          <li><b>4.5. Gráfica de una ecuación de segundo grado con dos incógnitas</b></li>
       </div>
-      
+
       <div class="tema-card">
         <div class="tema-num">TEMA 5</div>
         <h3 class="tema-title">Parábola</h3>
@@ -8903,26 +8913,26 @@
           <li><b>5.1. Definición del lugar geométrico</b></li>
           <li><b>5.2. Elementos gráficos de una parábola</b></li>
           <li><b>5.3. Parábola con vértice en el origen de coordenadas</b></li>
-            <ul>
-              <li>5.3.1. Ecuación de la parábola con vértice en el origen de coordenadas</li>
-              <li>5.3.2. Gráfica de la parábola con vértice en el origen de coordenadas</li>
-            </ul><br>
+          <ul>
+            <li>5.3.1. Ecuación de la parábola con vértice en el origen de coordenadas</li>
+            <li>5.3.2. Gráfica de la parábola con vértice en el origen de coordenadas</li>
+          </ul><br>
           <li><b>5.4. Ecuación de la parábola con vértice fuera del origen de coordenadas</b></li>
-            <ul>
-              <li>5.4.1. Gráfica de la parábola con vértice fuera del origen de coordenadas</li>
-            </ul><br>
-            <li><b>5.5. Intersección de dos parábolas</b></li>
-            <li><b>5.6. Interseccón de una parábola con una recta</b></li>
-            <li><b>5.7. Funciones cuadráticas</b></li>   
-            <ul>
-              <li>5.7.1. Ingreso</li>
-              <li>5.7.2. Costo</li>
-              <li>5.7.3. Utilidad</li>
-              <li>5.7.4. Punto de equilibrio de una empresa</li>
-              <li>5.7.5. Ley de la oferta</li>
-              <li>5.7.6. Ley de la demanda</li>
-              <li>5.7.7. Punto de equilibrio de mercado</li>
-            </ul><br>
+          <ul>
+            <li>5.4.1. Gráfica de la parábola con vértice fuera del origen de coordenadas</li>
+          </ul><br>
+          <li><b>5.5. Intersección de dos parábolas</b></li>
+          <li><b>5.6. Interseccón de una parábola con una recta</b></li>
+          <li><b>5.7. Funciones cuadráticas</b></li>
+          <ul>
+            <li>5.7.1. Ingreso</li>
+            <li>5.7.2. Costo</li>
+            <li>5.7.3. Utilidad</li>
+            <li>5.7.4. Punto de equilibrio de una empresa</li>
+            <li>5.7.5. Ley de la oferta</li>
+            <li>5.7.6. Ley de la demanda</li>
+            <li>5.7.7. Punto de equilibrio de mercado</li>
+          </ul><br>
         </ul>
       </div>
 
@@ -8935,45 +8945,45 @@
             <li>6.1.1. Concepto de estadística</li>
             <li>6.1.2. Objeto de estudio</li>
             <li>6.1.3. Tipos de estadística</li>
-              <ul>
-                <li>6.1.3.1. Estadística descriptiva</li>
-                <li>6.1.3.2. Objeto de estudio</li>
-                <li>6.1.3.3. Aplicaciones</li>
-              </ul>
-            </ul><br>
-            <li><b>6.2. Medidas de localización o de tendencia central</b></li>
             <ul>
-              <li>6.2.1. Media</li>
-              <li>6.2.2. Mediana</li>
-              <li>6.2.3. Moda</li>
-              <li>6.2.4 Percentiles</li>
-              <li>6.2.5 Cuartiles</li>
-            </ul><br>
-            <li><b>6.3. Medidas de variabilidad</b></li>
-            <ul>
-              <li>6.3.1. Rango</li>
-              <li>6.3.2. Rango intercuartílico</li>
-              <li>6.3.3. Varianza</li>
-              <li>6.3.4 Desviación estandar</li>
-              <li>6.3.5 Coeficiente de variación</li>
-            </ul><br>
-            <li><b>6.4. Medidas de localización relativa y valores atípicos</b></li>
-            <ul>
-              <li>6.4.1. Valores</li>
-              <li>6.4.2. Regla empírica</li>
-              <li>6.4.3. Detección de valores atípicos</li>
-            </ul><br>
-            <li><b>6.5. Análisis exploratorio de datos</b></li>
-            <ul>
-              <li>6.5.1. Diagrama de caja</li>
-            </ul><br>
-            <li><b>6.6. Medidas de asociación entre variables</b></li>
-            <ul>
-              <li>6.6.1. Covarianza</li>
-              <li>6.6.2. Interpretación de la Covarianza</li>
-              <li>6.6.3. Coeficiente de correlación</li>
-              <li>6.6.4. Interpretación del coeficiente de correlación</li>
-            </ul><br>
+              <li>6.1.3.1. Estadística descriptiva</li>
+              <li>6.1.3.2. Objeto de estudio</li>
+              <li>6.1.3.3. Aplicaciones</li>
+            </ul>
+          </ul><br>
+          <li><b>6.2. Medidas de localización o de tendencia central</b></li>
+          <ul>
+            <li>6.2.1. Media</li>
+            <li>6.2.2. Mediana</li>
+            <li>6.2.3. Moda</li>
+            <li>6.2.4 Percentiles</li>
+            <li>6.2.5 Cuartiles</li>
+          </ul><br>
+          <li><b>6.3. Medidas de variabilidad</b></li>
+          <ul>
+            <li>6.3.1. Rango</li>
+            <li>6.3.2. Rango intercuartílico</li>
+            <li>6.3.3. Varianza</li>
+            <li>6.3.4 Desviación estandar</li>
+            <li>6.3.5 Coeficiente de variación</li>
+          </ul><br>
+          <li><b>6.4. Medidas de localización relativa y valores atípicos</b></li>
+          <ul>
+            <li>6.4.1. Valores</li>
+            <li>6.4.2. Regla empírica</li>
+            <li>6.4.3. Detección de valores atípicos</li>
+          </ul><br>
+          <li><b>6.5. Análisis exploratorio de datos</b></li>
+          <ul>
+            <li>6.5.1. Diagrama de caja</li>
+          </ul><br>
+          <li><b>6.6. Medidas de asociación entre variables</b></li>
+          <ul>
+            <li>6.6.1. Covarianza</li>
+            <li>6.6.2. Interpretación de la Covarianza</li>
+            <li>6.6.3. Coeficiente de correlación</li>
+            <li>6.6.4. Interpretación del coeficiente de correlación</li>
+          </ul><br>
         </ul>
       </div>
 
@@ -8982,74 +8992,90 @@
 
   <section class="actividades">
     <h2 class="section-title">Actividades de Aprendizaje</h2>
-    
+
     <div>
       <h3 class="actividades-subtitle">Bajo la conducción del docente</h3>
       <div class="cards-grid">
-       
+
         <a href="ejercicios2.html" target="_blank" rel="noopener noreferrer" class="card-link">
           <div class="card">
             <h3><span class="emoji-small">✅</span> Resolver ejercicios</h3>
             <p>Resolución de 50 ejercicios de aplicación de las matemáticas en los negocios</p>
-              <div class="numerote">50 ejercicios</div>
+            <div class="numerote">50 ejercicios</div>
           </div>
         </a>
-        
+
         <div class="card">
           <h3><span class="emoji-small">✅</span> Uso de software</h3>
           <p>Uso de software de aplicación matemática en dispositivos móviles para negocios.</p>
-          
-           <div class="loguito">
-              <a href="https://www.geogebra.org/classic?lang=es" target="_blank" rel="noopener noreferrer">
-                  <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" alt="GeoGebra">
-              </a>
-          </div>
-          
+
           <div class="loguito">
-              <a href="https://www.desmos.com/calculator?lang=es" target="_blank" rel="noopener noreferrer">
-                  <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png" alt="Desmos">
-              </a>
+            <a href="https://www.geogebra.org/classic?lang=es" target="_blank" rel="noopener noreferrer">
+              <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" alt="GeoGebra">
+            </a>
+          </div>
+
+          <div class="loguito">
+            <a href="https://www.desmos.com/calculator?lang=es" target="_blank" rel="noopener noreferrer">
+              <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png" alt="Desmos">
+            </a>
           </div>
         </div>
-        
+
         <div class="card">
           <h3>Leer</h3>
           <p>Lecturas comentadas sobre las matemáticas y su aplicación en los negocios.</p>
-           <div class="loguito librito">
-              <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                  <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg" alt="storytelling">
-              </a>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">
+              <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg"
+                alt="storytelling">
+            </a>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div style="margin-top: 70px;">
       <h3 class="actividades-subtitle">De manera independiente</h3>
       <div class="cards-grid">
         <div class="card">
           <h3>Investigar</h3>
-          <p>Investigaciones bibliográficas, hemerográficas y digitales sobre la asignatura de matemáticas en los negocios</p>
+          <p>Investigaciones bibliográficas, hemerográficas y digitales sobre la asignatura de matemáticas en los
+            negocios</p>
         </div>
         <div class="card">
           <h3>Informes</h3>
           <p>Elaboración de informes sobre lecturas recomendadas sobre matemáticas</p>
         </div>
-        <div class="card">
-          <h3>Practicar</h3>
-          <p>Elaboración de series de problemas matemáticos aplicadas en los negocios</p>
-        </div>
-        
-        <a href="trabajo_final.html" target="_blank" rel="noopener noreferrer" class="card-link">
+
+
+        <a href="formulas.html" target="_self" rel="noopener noreferrer" class="card-link">
           <div class="card">
-            <h3><span class="emoji-small">✅</span> Trabajo final</h3>
-            <p>Elaboración de trabajo final sobre la relación que tienen las matemáticas y los negocios además de su importancia en los tiempos actuales</p>
+            <h3><span class="emoji-small">✅</span> Fórmulas</h3>
+            <p>Resuelve cualquier cantidad de series de problemas matemáticos con ayuda de estas fórmulas aplicadas en
+              los negocios</p>
             <div class="loguito librito">
-                  <img src="https://isic.es/wp-content/uploads/2021/01/disfrutar-el-trabajo-1024x414.jpg" alt="trabajo_final">
+
+              <img
+                src="https://profuturo.education/wp-content/uploads/2022/03/Captura-de-pantalla-2022-03-11-a-las-10.51.35.png"
+                alt="formulas">
             </div>
           </div>
         </a>
-        
+
+        <a href="trabajo_final.html" target="_blank" rel="noopener noreferrer" class="card-link">
+          <div class="card">
+            <h3><span class="emoji-small">✅</span> Trabajo final</h3>
+            <p>Elaboración de trabajo final sobre la relación que tienen las matemáticas y los negocios además de su
+              importancia en los tiempos actuales</p>
+            <div class="loguito librito">
+              <img src="https://isic.es/wp-content/uploads/2021/01/disfrutar-el-trabajo-1024x414.jpg"
+                alt="trabajo_final">
+            </div>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -9060,15 +9086,16 @@
 
       <div class="evaluacion-item tema-card">
         <div class="evaluacion-porcentaje">40%</div>
-          <p class="evaluacion-desc">Dos exámenes parciales</p>  
+        <p class="evaluacion-desc">Dos exámenes parciales</p>
         <div class="tema-list">
-        <!--  <div class="btn">-->
+          <!--  <div class="btn">-->
           <a href="" target="">🔒Primer Parcial</a>
           <!-- <a href="1er_parcial_mat_neg1.pdf" target="_blank">🔓Primer Parcial</a> -->
-<!--           <a href="#" target="_blank">🔒Segundo Parcial</a>
- -->        </div>
+          <!--           <a href="#" target="_blank">🔒Segundo Parcial</a>
+ -->
+        </div>
       </div>
-     
+
       <div class="evaluacion-item tema-card">
         <div class="evaluacion-porcentaje">20%</div>
         <p class="evaluacion-desc">Actividades bajo conducción de un académico</p>
@@ -9123,4 +9150,5 @@
     © 2025 Universidad URA – Asignatura Matemáticas Aplicadas a los Negocios I
   </footer>
 </body>
+
 </html>
