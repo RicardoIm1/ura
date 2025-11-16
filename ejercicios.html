@@ -1,102 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>50 Ejercicios Interactivos con Autoevaluación + Gamificación</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>50 Ejercicios Interactivos con Autoevaluación + Gamificación</title>
 
-<!-- Tipografía -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Configuración MathJax (necesaria antes del script principal) -->
-<script>
-  window.MathJax = {
-    tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
-    svg: { fontCache: 'global' }
-  };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <!-- Configuración MathJax (necesaria antes del script principal) -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<!-- Confetti -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<style>
-  body { font-family: 'Inter', sans-serif; background: #f2f4f7; margin: 0; }
-  header { background:#1a237e; color:#fff; text-align:center; padding:1.5rem; font-size:1.8rem; font-weight:700; }
-  .container { width:95%; max-width:900px; margin:2rem auto; }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f2f4f7;
+            margin: 0;
+        }
 
-  .accordion { background:#fff; margin-bottom:1rem; border-radius:.6rem; box-shadow:0 4px 10px rgba(0,0,0,.08); }
-  .accordion-header { padding:1rem; background:#283593; color:#fff; cursor:pointer; font-size:1.1rem; font-weight:600; user-select:none; }
-  .accordion-content { display:none; padding:1rem; }
+        header {
+            background: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
 
-  .math-equation { background:#eceff1; padding:.8rem; border-radius:.5rem; margin-bottom:1rem;
-                   font-family:'Courier New'; font-size:1.1rem; }
+        .container {
+            width: 95%;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
 
-  .quiz-box { background:#f5f9ff; border-left:4px solid #1a73e8; padding:1rem; border-radius:.5rem; margin-top:1rem; }
+        .accordion {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: .6rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+        }
 
-  .quiz-box input {
-    padding:.5rem; border:1px solid #90caf9; border-radius:.3rem; width:60%;
-    margin-right:.5rem; font-size:1rem;
-  }
+        .accordion-header {
+            padding: 1rem;
+            background: #283593;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            user-select: none;
+        }
 
-  .quiz-box button {
-    padding:.5rem .8rem; background:#1a73e8; color:#fff; border:none;
-    border-radius:.3rem; cursor:pointer; font-size:1rem; font-weight:600;
-  }
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+        }
 
-  .quiz-box button:hover { background:#0d47a1; }
+        .math-equation {
+            background: #eceff1;
+            padding: .8rem;
+            border-radius: .5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New';
+            font-size: 1.1rem;
+        }
 
-  .progress { margin:1rem 0; height:22px; background:#c5cae9; border-radius:10px; overflow:hidden; }
-  .progress-inner { height:100%; width:0%; background:#1a73e8; transition:.4s; }
-</style>
+        .quiz-box {
+            background: #f5f9ff;
+            border-left: 4px solid #1a73e8;
+            padding: 1rem;
+            border-radius: .5rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-box input {
+            padding: .5rem;
+            border: 1px solid #90caf9;
+            border-radius: .3rem;
+            width: 60%;
+            margin-right: .5rem;
+            font-size: 1rem;
+        }
+
+        .quiz-box button {
+            padding: .5rem .8rem;
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: .3rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .quiz-box button:hover {
+            background: #0d47a1;
+        }
+
+        .progress {
+            margin: 1rem 0;
+            height: 22px;
+            background: #c5cae9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-inner {
+            height: 100%;
+            width: 0%;
+            background: #1a73e8;
+            transition: .4s;
+        }
+    </style>
 
 </head>
+
 <body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
+            </a>
+            <div class="header-title">50 Ejercicios Interactivos + Autoevaluación</div>
+        </div>
+    </header>
 
-<header>50 Ejercicios Interactivos + Autoevaluación</header>
+    <div class="container">
+        <div class="progress">
+            <div id="prog" class="progress-inner"></div>
+        </div>
+        <div id="contenedor-ejercicios"></div>
+    </div>
 
-<div class="container">
-  <div class="progress"><div id="prog" class="progress-inner"></div></div>
-  <div id="contenedor-ejercicios"></div>
-</div>
+    <script>
+        /* ================================
+           LISTA DE EJERCICIOS (10 reales + 40 generados)
+        ================================= */
+        const ejercicios = [
+            { titulo: "Ecuación lineal 1", eq: "3x + 7 = 16", sol: "3" },
+            { titulo: "Ecuación lineal 2", eq: "5x - 9 = 11", sol: "4" },
+            { titulo: "Ecuación cuadrática 1", eq: "x^2 - 5x + 6 = 0", sol: "2,3" },
+            { titulo: "Ecuación cuadrática 2", eq: "x^2 + x - 12 = 0", sol: "3,-4" },
+            { titulo: "Vértice de parábola", eq: "y = x^2 - 4x + 1", sol: "2,-3" },
+            { titulo: "Suma de ángulos seno", eq: "\\sin(30°+45°)", sol: "0.9659" },
+            { titulo: "Suma de ángulos coseno", eq: "\\cos(30°+60°)", sol: "0.5" },
+            { titulo: "Tangente identidad", eq: "\\tan(45°)", sol: "1" },
+            { titulo: "Seno inverso", eq: "\\arcsin(1/2)", sol: "30°" },
+            { titulo: "Coseno inverso", eq: "\\arccos(1/2)", sol: "60°" },
+        ];
 
-<script>
-/* ================================
-   LISTA DE EJERCICIOS (10 reales + 40 generados)
-================================= */
-const ejercicios = [
-  { titulo:"Ecuación lineal 1", eq:"3x + 7 = 16", sol:"3" },
-  { titulo:"Ecuación lineal 2", eq:"5x - 9 = 11", sol:"4" },
-  { titulo:"Ecuación cuadrática 1", eq:"x^2 - 5x + 6 = 0", sol:"2,3" },
-  { titulo:"Ecuación cuadrática 2", eq:"x^2 + x - 12 = 0", sol:"3,-4" },
-  { titulo:"Vértice de parábola", eq:"y = x^2 - 4x + 1", sol:"2,-3" },
-  { titulo:"Suma de ángulos seno", eq:"\\sin(30°+45°)", sol:"0.9659" },
-  { titulo:"Suma de ángulos coseno", eq:"\\cos(30°+60°)", sol:"0.5" },
-  { titulo:"Tangente identidad", eq:"\\tan(45°)", sol:"1" },
-  { titulo:"Seno inverso", eq:"\\arcsin(1/2)", sol:"30°" },
-  { titulo:"Coseno inverso", eq:"\\arccos(1/2)", sol:"60°" },
-];
+        // Rellena hasta llegar a 50
+        while (ejercicios.length < 50) {
+            const n = ejercicios.length + 1;
+            ejercicios.push({ titulo: `Ejercicio ${n}`, eq: `x + ${n} = ${n * 2}`, sol: `${n}` });
+        }
 
-// Rellena hasta llegar a 50
-while (ejercicios.length < 50) {
-  const n = ejercicios.length + 1;
-  ejercicios.push({ titulo:`Ejercicio ${n}`, eq:`x + ${n} = ${n*2}`, sol:`${n}` });
-}
+        let correctos = 0;
 
-let correctos = 0;
+        /* ================================
+           RENDER DINÁMICO
+        ================================= */
+        function render() {
+            const cont = document.getElementById("contenedor-ejercicios");
 
-/* ================================
-   RENDER DINÁMICO
-================================= */
-function render() {
-  const cont = document.getElementById("contenedor-ejercicios");
+            ejercicios.forEach((e, i) => {
+                const card = document.createElement("div");
+                card.className = "accordion";
 
-  ejercicios.forEach((e, i) => {
-    const card = document.createElement("div");
-    card.className = "accordion";
-
-    card.innerHTML = `
-      <div class="accordion-header">${i+1}. ${e.titulo}</div>
+                card.innerHTML = `
+      <div class="accordion-header">${i + 1}. ${e.titulo}</div>
       <div class="accordion-content">
         <p class="math-equation">\\(${e.eq}\\)</p>
         <div class="quiz-box">
@@ -107,64 +188,65 @@ function render() {
       </div>
     `;
 
-    cont.appendChild(card);
-  });
+                cont.appendChild(card);
+            });
 
-  // Eventos de acordeón
-  document.querySelectorAll(".accordion-header").forEach(h => {
-    h.onclick = () => {
-      const c = h.nextElementSibling;
-      c.style.display = c.style.display === "block" ? "none" : "block";
-    };
-  });
+            // Eventos de acordeón
+            document.querySelectorAll(".accordion-header").forEach(h => {
+                h.onclick = () => {
+                    const c = h.nextElementSibling;
+                    c.style.display = c.style.display === "block" ? "none" : "block";
+                };
+            });
 
-  // Renderiza todas las ecuaciones nuevas
-  MathJax.typesetPromise();
-}
+            // Renderiza todas las ecuaciones nuevas
+            MathJax.typesetPromise();
+        }
 
-render();
+        render();
 
-/* ================================
-   LÓGICA DE AUTOEVALUACIÓN
-================================= */
-function check(i, sol) {
-  const user = document.getElementById("r" + i).value.trim();
-  const msg = document.getElementById("m" + i);
+        /* ================================
+           LÓGICA DE AUTOEVALUACIÓN
+        ================================= */
+        function check(i, sol) {
+            const user = document.getElementById("r" + i).value.trim();
+            const msg = document.getElementById("m" + i);
 
-  if (user === sol) {
-    msg.style.color = "green";
-    msg.textContent = "✔ Correcto";
-    correctos++;
-  } else {
-    msg.style.color = "red";
-    msg.textContent = `✘ Incorrecto (Solución: ${sol})`;
-  }
+            if (user === sol) {
+                msg.style.color = "green";
+                msg.textContent = "✔ Correcto";
+                correctos++;
+            } else {
+                msg.style.color = "red";
+                msg.textContent = `✘ Incorrecto (Solución: ${sol})`;
+            }
 
-  updateProgress();
-}
+            updateProgress();
+        }
 
-/* ================================
-   BARRA DE PROGRESO + CONFETI
-================================= */
-function updateProgress() {
-  const pct = (correctos / ejercicios.length) * 100;
-  document.getElementById("prog").style.width = pct + "%";
+        /* ================================
+           BARRA DE PROGRESO + CONFETI
+        ================================= */
+        function updateProgress() {
+            const pct = (correctos / ejercicios.length) * 100;
+            document.getElementById("prog").style.width = pct + "%";
 
-  if (correctos === ejercicios.length) {
-    lanzarConfeti();
-  }
-}
+            if (correctos === ejercicios.length) {
+                lanzarConfeti();
+            }
+        }
 
-function lanzarConfeti() {
-  const duration = 1200;
-  const end = Date.now() + duration;
+        function lanzarConfeti() {
+            const duration = 1200;
+            const end = Date.now() + duration;
 
-  (function frame() {
-    confetti({ particleCount: 6, startVelocity: 26, spread: 45 });
-    if (Date.now() < end) requestAnimationFrame(frame);
-  })();
-}
-</script>
+            (function frame() {
+                confetti({ particleCount: 6, startVelocity: 26, spread: 45 });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            })();
+        }
+    </script>
 
 </body>
+
 </html>
