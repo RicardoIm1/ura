@@ -4,122 +4,167 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>50 Ejercicios Interactivos con Autoevaluación + Gamificación</title>
+
+<!-- Tipografía -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Configuración MathJax (necesaria antes del script principal) -->
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 <style>
- body { font-family: 'Inter', sans-serif; background: #f2f4f7; margin: 0; }
- header { background:#1a237e; color:#fff; text-align:center; padding:1.5rem; font-size:1.8rem; font-weight:700; }
- .container { width:95%; max-width:900px; margin:2rem auto; }
- .accordion { background:#fff; margin-bottom:1rem; border-radius:.6rem; box-shadow:0 4px 10px rgba(0,0,0,.08); }
- .accordion-header { padding:1rem; background:#283593; color:#fff; cursor:pointer; font-size:1.1rem; font-weight:600; }
- .accordion-content { display:none; padding:1rem; }
- .math-equation { background:#eceff1; padding:.8rem; border-radius:.5rem; margin-bottom:1rem; font-family:'Courier New'; }
- .quiz-box { background:#f5f9ff; border-left:4px solid #1a73e8; padding:1rem; border-radius:.5rem; margin-top:1rem; }
- .progress { margin:1rem 0; height:20px; background:#c5cae9; border-radius:10px; overflow:hidden; }
- .progress-inner { height:100%; width:0%; background:#1a73e8; transition:.4s; }
+  body { font-family: 'Inter', sans-serif; background: #f2f4f7; margin: 0; }
+  header { background:#1a237e; color:#fff; text-align:center; padding:1.5rem; font-size:1.8rem; font-weight:700; }
+  .container { width:95%; max-width:900px; margin:2rem auto; }
+
+  .accordion { background:#fff; margin-bottom:1rem; border-radius:.6rem; box-shadow:0 4px 10px rgba(0,0,0,.08); }
+  .accordion-header { padding:1rem; background:#283593; color:#fff; cursor:pointer; font-size:1.1rem; font-weight:600; user-select:none; }
+  .accordion-content { display:none; padding:1rem; }
+
+  .math-equation { background:#eceff1; padding:.8rem; border-radius:.5rem; margin-bottom:1rem;
+                   font-family:'Courier New'; font-size:1.1rem; }
+
+  .quiz-box { background:#f5f9ff; border-left:4px solid #1a73e8; padding:1rem; border-radius:.5rem; margin-top:1rem; }
+
+  .quiz-box input {
+    padding:.5rem; border:1px solid #90caf9; border-radius:.3rem; width:60%;
+    margin-right:.5rem; font-size:1rem;
+  }
+
+  .quiz-box button {
+    padding:.5rem .8rem; background:#1a73e8; color:#fff; border:none;
+    border-radius:.3rem; cursor:pointer; font-size:1rem; font-weight:600;
+  }
+
+  .quiz-box button:hover { background:#0d47a1; }
+
+  .progress { margin:1rem 0; height:22px; background:#c5cae9; border-radius:10px; overflow:hidden; }
+  .progress-inner { height:100%; width:0%; background:#1a73e8; transition:.4s; }
 </style>
+
 </head>
 <body>
-<header>50 Ejercicios Interactivos + Gamificación</header>
+
+<header>50 Ejercicios Interactivos + Autoevaluación</header>
+
 <div class="container">
- <div class="progress"><div id="prog" class="progress-inner"></div></div>
- <div id="contenedor-ejercicios"></div>
+  <div class="progress"><div id="prog" class="progress-inner"></div></div>
+  <div id="contenedor-ejercicios"></div>
 </div>
+
 <script>
+/* ================================
+   LISTA DE EJERCICIOS (10 reales + 40 generados)
+================================= */
 const ejercicios = [
- { titulo:"Ecuación lineal 1", eq:"3x + 7 = 16", sol: "3" },
- { titulo:"Ecuación lineal 2", eq:"5x - 9 = 11", sol:"4" },
- { titulo:"Ecuación cuadrática 1", eq:"x^2 - 5x + 6 = 0", sol:"2,3" },
- { titulo:"Ecuación cuadrática 2", eq:"x^2 + x - 12 = 0", sol:"3,-4" },
- { titulo:"Vértice de parábola", eq:"y = x^2 - 4x + 1", sol:"2,-3" },
- { titulo:"Suma de ángulos seno", eq:"\sin(30°+45°)", sol:"0.9659" },
- { titulo:"Suma de ángulos coseno", eq:"\cos(30°+60°)", sol:"0.5" },
- { titulo:"Tangente identidad", eq:"\tan(45°)", sol:"1" },
- { titulo:"Seno inverso", eq:"\arcsin(1/2)", sol:"30°" },
- { titulo:"Coseno inverso", eq:"\arccos(1/2)", sol:"60°" },
+  { titulo:"Ecuación lineal 1", eq:"3x + 7 = 16", sol:"3" },
+  { titulo:"Ecuación lineal 2", eq:"5x - 9 = 11", sol:"4" },
+  { titulo:"Ecuación cuadrática 1", eq:"x^2 - 5x + 6 = 0", sol:"2,3" },
+  { titulo:"Ecuación cuadrática 2", eq:"x^2 + x - 12 = 0", sol:"3,-4" },
+  { titulo:"Vértice de parábola", eq:"y = x^2 - 4x + 1", sol:"2,-3" },
+  { titulo:"Suma de ángulos seno", eq:"\\sin(30°+45°)", sol:"0.9659" },
+  { titulo:"Suma de ángulos coseno", eq:"\\cos(30°+60°)", sol:"0.5" },
+  { titulo:"Tangente identidad", eq:"\\tan(45°)", sol:"1" },
+  { titulo:"Seno inverso", eq:"\\arcsin(1/2)", sol:"30°" },
+  { titulo:"Coseno inverso", eq:"\\arccos(1/2)", sol:"60°" },
 ];
+
+// Rellena hasta llegar a 50
 while (ejercicios.length < 50) {
- const n = ejercicios.length+1;
- ejercicios.push({ titulo:`Ejercicio ${n}`, eq:`x + ${n} = ${n*2}`, sol:`${n}`});
+  const n = ejercicios.length + 1;
+  ejercicios.push({ titulo:`Ejercicio ${n}`, eq:`x + ${n} = ${n*2}`, sol:`${n}` });
 }
+
 let correctos = 0;
+
+/* ================================
+   RENDER DINÁMICO
+================================= */
 function render() {
- const cont = document.getElementById('contenedor-ejercicios');
- ejercicios.forEach((e, i) => {
-   const card = document.createElement('div');
-   card.className='accordion';
-   card.innerHTML = `
-     <div class="accordion-header">${i+1}. ${e.titulo}</div>
-     <div class="accordion-content">
-       <p class="math-equation">\(${e.eq}\)</p>
-       <div class="quiz-box">
-         <input id="r${i}" placeholder="Tu respuesta" />
-         <button onclick="check(${i}, '${e.sol}')">Comprobar</button>
-         <div id="m${i}"></div>
-       </div>
-     </div>`;
-   cont.appendChild(card);
- });
- document.querySelectorAll('.accordion-header').forEach(h=>{
-   h.onclick=()=>{
-     const c=h.nextElementSibling; c.style.display=c.style.display==='block'?'none':'block';
-   }
- });
+  const cont = document.getElementById("contenedor-ejercicios");
+
+  ejercicios.forEach((e, i) => {
+    const card = document.createElement("div");
+    card.className = "accordion";
+
+    card.innerHTML = `
+      <div class="accordion-header">${i+1}. ${e.titulo}</div>
+      <div class="accordion-content">
+        <p class="math-equation">\\(${e.eq}\\)</p>
+        <div class="quiz-box">
+          <input id="r${i}" placeholder="Tu respuesta" />
+          <button onclick="check(${i}, '${e.sol}')">Comprobar</button>
+          <div id="m${i}" style="margin-top:.5rem;font-weight:600;"></div>
+        </div>
+      </div>
+    `;
+
+    cont.appendChild(card);
+  });
+
+  // Eventos de acordeón
+  document.querySelectorAll(".accordion-header").forEach(h => {
+    h.onclick = () => {
+      const c = h.nextElementSibling;
+      c.style.display = c.style.display === "block" ? "none" : "block";
+    };
+  });
+
+  // Renderiza todas las ecuaciones nuevas
+  MathJax.typesetPromise();
 }
+
 render();
+
+/* ================================
+   LÓGICA DE AUTOEVALUACIÓN
+================================= */
 function check(i, sol) {
- const user=document.getElementById('r'+i).value.trim();
- const msg=document.getElementById('m'+i);
- if(user===sol){ msg.style.color='green'; msg.textContent='✔ Correcto'; correctos++; }
- else{ msg.style.color='red'; msg.textContent='✘ Incorrecto (Solución: '+sol+')'; }
- updateProgress();
+  const user = document.getElementById("r" + i).value.trim();
+  const msg = document.getElementById("m" + i);
+
+  if (user === sol) {
+    msg.style.color = "green";
+    msg.textContent = "✔ Correcto";
+    correctos++;
+  } else {
+    msg.style.color = "red";
+    msg.textContent = `✘ Incorrecto (Solución: ${sol})`;
+  }
+
+  updateProgress();
 }
+
+/* ================================
+   BARRA DE PROGRESO + CONFETI
+================================= */
 function updateProgress() {
- const pct = (correctos / ejercicios.length)*100;
- document.getElementById('prog').style.width = pct + '%';
+  const pct = (correctos / ejercicios.length) * 100;
+  document.getElementById("prog").style.width = pct + "%";
+
+  if (correctos === ejercicios.length) {
+    lanzarConfeti();
+  }
+}
+
+function lanzarConfeti() {
+  const duration = 1200;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({ particleCount: 6, startVelocity: 26, spread: 45 });
+    if (Date.now() < end) requestAnimationFrame(frame);
+  })();
 }
 </script>
-  <script>
-    // 🔥 Mejoras de UX y gamificación suave
-    // Animación de confeti al acertar todo
-    function lanzarConfeti() {
-      const duration = 1200;
-      const end = Date.now() + duration;
-      (function frame() {
-        confetti({ particleCount: 4, startVelocity: 25, spread: 40 });
-        if (Date.now() < end) requestAnimationFrame(frame);
-      })();
-    }
 
-    // Hacer que cada acordeón pulse suavemente al abrir
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("details").forEach(det => {
-        det.addEventListener("toggle", () => {
-          if (det.open) {
-            det.classList.add("pulse");
-            setTimeout(()=> det.classList.remove("pulse"), 300);
-          }
-        });
-      });
-    });
-
-    // Mejor feedback visual: colores más vivos
-    function marcarResultado(id, correcto) {
-      const cont = document.getElementById(id);
-      if (!cont) return;
-      cont.style.opacity = "1";
-      cont.style.background = correcto ? "#0f8e2b20" : "#b5121220";
-      cont.style.border = correcto ? "2px solid #0f8e2b" : "2px solid #b51212";
-      cont.style.transition = "all .3s ease";
-    }
-
-    // Cuando el usuario acierta un ejercicio, avanzar progreso
-    function reportarAcierto() {
-      progreso++; puntaje++;
-      actualizarBarra();
-      if (progreso === totalEjercicios) lanzarConfeti();
-    }
-  </script>
 </body>
 </html>
