@@ -80,5 +80,46 @@ function updateProgress() {
  document.getElementById('prog').style.width = pct + '%';
 }
 </script>
+  <script>
+    // 🔥 Mejoras de UX y gamificación suave
+    // Animación de confeti al acertar todo
+    function lanzarConfeti() {
+      const duration = 1200;
+      const end = Date.now() + duration;
+      (function frame() {
+        confetti({ particleCount: 4, startVelocity: 25, spread: 40 });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+
+    // Hacer que cada acordeón pulse suavemente al abrir
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("details").forEach(det => {
+        det.addEventListener("toggle", () => {
+          if (det.open) {
+            det.classList.add("pulse");
+            setTimeout(()=> det.classList.remove("pulse"), 300);
+          }
+        });
+      });
+    });
+
+    // Mejor feedback visual: colores más vivos
+    function marcarResultado(id, correcto) {
+      const cont = document.getElementById(id);
+      if (!cont) return;
+      cont.style.opacity = "1";
+      cont.style.background = correcto ? "#0f8e2b20" : "#b5121220";
+      cont.style.border = correcto ? "2px solid #0f8e2b" : "2px solid #b51212";
+      cont.style.transition = "all .3s ease";
+    }
+
+    // Cuando el usuario acierta un ejercicio, avanzar progreso
+    function reportarAcierto() {
+      progreso++; puntaje++;
+      actualizarBarra();
+      if (progreso === totalEjercicios) lanzarConfeti();
+    }
+  </script>
 </body>
 </html>
