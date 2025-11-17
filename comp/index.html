@@ -4,132 +4,141 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Computación I - Universidad URA</title>
-  <link rel="stylesheet" href="/ura/css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css">
+  <!-- MathJax para renderizar notación matemática elegante -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
+    .loguito {
+      display: inline-block;
+      margin: 10px 15px 10px 0;
+      transition: all 0.3s ease;
+    }
 
-.loguito {
-    display: inline-block;
-    margin: 10px 15px 10px 0;
-    transition: all 0.3s ease;
-}
+    .loguito a {
+      display: block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
+    }
 
-.loguito a {
-    display: block;
-    text-decoration: none;
-    border-radius: 12px;
-    padding: 8px;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    transition: all 0.3s ease;
-}
+    .loguito:hover a {
+      background-color: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+      border-color: #007bff;
+    }
 
-.loguito:hover a {
-    background-color: #ffffff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transform: translateY(-3px);
-    border-color: #007bff;
-}
-
-.loguito img {
-    width: 120px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    filter: grayscale(30%);
-    transition: filter 0.3s ease;
-}
+    .loguito img {
+      width: 120px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      filter: grayscale(30%);
+      transition: filter 0.3s ease;
+    }
 
 
-.loguito:hover img {
-    filter: grayscale(0%);
-}
-.librito img {
-  height: 200px;
-  width: 150px;
-}
+    .loguito:hover img {
+      filter: grayscale(0%);
+    }
+
+    .librito img {
+      height: 200px;
+      width: 150px;
+    }
+
     /* Modal */
-#modal-info {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 1000;
-}
+    #modal-info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 1000;
+    }
 
-.modal-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px); /* Efecto de difuminado */
-  -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+    .modal-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      /* Efecto de difuminado */
+      -webkit-backdrop-filter: blur(10px);
+      /* Compatibilidad con Safari */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  background: rgba(245, 245, 245, 0.95); /* Fondo semitransparente */
-  backdrop-filter: blur(20px); /* Difuminado adicional para el contenido */
-  -webkit-backdrop-filter: blur(20px);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 600px;
-  width: 90%;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  overflow-y: auto;
-  max-height: 80%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  font-size: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil para efecto de cristal */
-}
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      background: rgba(245, 245, 245, 0.95);
+      /* Fondo semitransparente */
+      backdrop-filter: blur(20px);
+      /* Difuminado adicional para el contenido */
+      -webkit-backdrop-filter: blur(20px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      overflow-y: auto;
+      max-height: 80%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Borde sutil para efecto de cristal */
+    }
 
-.modal.show .modal-overlay {
-  opacity: 1;
-}
+    .modal.show .modal-overlay {
+      opacity: 1;
+    }
 
-.modal.show .modal-content {
-  transform: translate(-50%, -50%);
-  opacity: 1;
-}
+    .modal.show .modal-content {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
 
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 28px;
-  cursor: pointer;
-  z-index: 1001; /* Asegura que esté por encima del contenido */
-}
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      /* Asegura que esté por encima del contenido */
+    }
 
-/* Ajuste de listas dentro del modal */
-#modal-text ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
+    /* Ajuste de listas dentro del modal */
+    #modal-text ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
 
-#modal-text h4 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
+    #modal-text h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
-  
+
 <body>
-  
   <header>
     <div class="header-content">
       <a href="/ura/">
         <img src="/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
       </a>
-      <div class="header-title">Computación I</div>
+      <div class="header-title">Matemáticas Para la Administración</div>
     </div>
   </header>
 
