@@ -8,7 +8,7 @@
             --apple-gradient: linear-gradient(135deg, var(--apple-vibrant-blue), #8A2BE2);
             --apple-border-radius: 12px;
             --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        /* Colores alegres pero dentro de la paleta Apple */
+            /* Colores alegres pero dentro de la paleta Apple */
             --apple-vibrant-blue: #0077CC;
             --apple-vibrant-orange: #FF9500;
             --apple-vibrant-green: #34C759;
@@ -20,7 +20,7 @@
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         }
-        
+
         body {
             background: #ffffff;
             color: var(--apple-black);
@@ -28,7 +28,7 @@
             font-weight: 400;
             letter-spacing: -0.022em;
         }
-        
+
         /* Header estilo Apple */
         header {
             background: rgba(255, 255, 255, 0.8);
@@ -44,7 +44,7 @@
             justify-content: space-between;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
-        
+
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -53,21 +53,23 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .header-logo {
             height: 40px;
             width: auto;
-                margin-top:5px;
+            margin-top: 5px;
         }
-        
+
         .header-title {
             font-size: 18px;
             font-weight: 500;
             color: var(--apple-black);
         }
-        h6{
-                color:var(--apple-vibrant-orange);
+
+        h6 {
+            color: var(--apple-vibrant-orange);
         }
+
         /* Hero section */
         .hero {
             background: var(--apple-gradient);
@@ -77,7 +79,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::after {
             content: '';
             position: absolute;
@@ -87,7 +89,7 @@
             bottom: 0;
             background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
         }
-        
+
         .hero h1 {
             font-size: 56px;
             font-weight: 700;
@@ -96,7 +98,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .hero p {
             font-size: 28px;
             font-weight: 400;
@@ -105,7 +107,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .no-style-link {
             color: inherit;
             text-decoration: none;
@@ -120,13 +122,13 @@
 
         .nombre-ricardo:hover {
             /* color: rgba(255, 255, 255, 0.8); */
-                color:var(--apple-vibrant-green);
+            color: var(--apple-vibrant-green);
         }
 
         .nombre-ricardo:active {
             color: rgba(255, 255, 255, 0.9);
-        } 
-        
+        }
+
         /* Botón estilo Apple */
         .apple-button {
             display: inline-block;
@@ -145,25 +147,25 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .apple-button:hover {
             background-color: var(--apple-vibrant-green);
             transform: scale(1.05);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
         }
-        
+
         .apple-button:active {
             transform: scale(0.98);
             background-color: rgba(255, 255, 255, 0.95);
         }
-        
+
         /* Container general */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px 22px;
         }
-        
+
         .section-title {
             font-size: 40px;
             font-weight: 700;
@@ -171,7 +173,7 @@
             margin-bottom: 60px;
             letter-spacing: -0.003em;
         }
-        
+
         /* Objetivo section */
         .objetivo {
             font-size: 24px;
@@ -185,7 +187,7 @@
             background: var(--apple-light-gray);
             position: relative;
         }
-        
+
         .objetivo::before {
             content: '';
             position: absolute;
@@ -196,7 +198,7 @@
             background: var(--apple-gradient);
             border-radius: 6px 0 0 6px;
         }
-        
+
         /* Temario section */
         .temas-grid {
             display: grid;
@@ -204,69 +206,74 @@
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .tema-card {
             background: var(--apple-light-gray);
             border-radius: 18px;
             padding: 30px;
             transition: var(--apple-transition);
         }
-        
+
         .tema-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 119, 204, 0.15);
         }
-        
+
         .tema-num {
             font-size: 16px;
             color: var(--apple-vibrant-blue);
             font-weight: 600;
             margin-bottom: 12px;
         }
-        
+
         .tema-title {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -0.003em;
         }
-        
+
         .tema-list {
             list-style: none;
         }
-        
+
         .tema-list li {
             font-size: 17px;
             color: var(--apple-dark-gray);
             padding: 8px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
             cursor: pointer;
-            transition: all 0.3s ease; /* Transición suave */
+            transition: all 0.3s ease;
+            /* Transición suave */
         }
-        
+
         .tema-list li:hover {
-            background-color: rgba(0, 0, 0, 0.03); /* Fondo al pasar el mouse */
-            padding-left: 10px; /* Desplazamiento a la derecha */
-            color: #000; /* Color de texto más oscuro */
-            border-bottom-color: rgba(0, 0, 0, 0.2); /* Borde más visible */
+            background-color: rgba(0, 0, 0, 0.03);
+            /* Fondo al pasar el mouse */
+            padding-left: 10px;
+            /* Desplazamiento a la derecha */
+            color: #000;
+            /* Color de texto más oscuro */
+            border-bottom-color: rgba(0, 0, 0, 0.2);
+            /* Borde más visible */
         }
-        
+
         .emoji-small {
             font-size: 0.5em;
             display: inline-block;
             vertical-align: middle;
         }
-  
+
         .tema-list li:last-child {
             border-bottom: none;
         }
-        
+
         .tema-card-link {
             text-decoration: none;
             color: inherit;
             display: block;
         }
-        
+
         /* Actividades section */
         .actividades {
             background: var(--apple-gradient);
@@ -275,24 +282,24 @@
             border-radius: 30px;
             margin: 80px 22px;
         }
-        
+
         .actividades .section-title {
             color: white;
         }
-        
+
         .actividades-subtitle {
             font-size: 24px;
             text-align: center;
             margin-bottom: 50px;
             font-weight: 500;
         }
-        
+
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
@@ -300,20 +307,20 @@
             border-radius: 18px;
             padding: 30px;
             transition: var(--apple-transition);
-                cursor:pointer;
+            cursor: pointer;
         }
-        
+
         .card:hover {
             transform: scale(1.03);
             background: rgba(255, 255, 255, 0.15);
         }
-        
+
         .card h3 {
             font-size: 21px;
             font-weight: 600;
             margin-bottom: 15px;
         }
-        
+
         .card p {
             font-size: 17px;
             line-height: 1.5;
@@ -321,21 +328,23 @@
         }
 
         .card-link {
-          text-decoration: none;
-          color: inherit; /* Mantiene colores originales */
-          display: block; /* Hace que ocupe toda el área de la card */
+            text-decoration: none;
+            color: inherit;
+            /* Mantiene colores originales */
+            display: block;
+            /* Hace que ocupe toda el área de la card */
         }
-        
+
         .card-link .card {
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        
+
         .card-link .card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
         }
-        
+
         /* Evaluación section */
         .evaluacion-grid {
             display: grid;
@@ -343,34 +352,34 @@
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .evaluacion-item {
             text-align: center;
             padding: 30px;
             background: var(--apple-light-gray);
             border-radius: 18px;
         }
-        
+
         .evaluacion-porcentaje {
             font-size: 48px;
             font-weight: 700;
             color: var(--apple-blue);
             margin-bottom: 15px;
         }
-        
+
         .evaluacion-desc {
             font-size: 17px;
             color: var(--apple-dark-gray);
         }
 
-        .numerote{
+        .numerote {
             font-size: 48px;
             font-weight: 700;
             color: var(--apple-vibrant-green);
             margin-bottom: 15px;
-                
+
         }
-        
+
         /* Formulario estilo Apple */
         .ticket-card {
             background: var(--apple-light-gray);
@@ -381,11 +390,11 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: var(--apple-transition);
         }
-        
+
         .ticket-card:hover {
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
-        
+
         .ticket-card h2 {
             font-size: 22px;
             font-weight: 700;
@@ -394,12 +403,12 @@
             color: var(--apple-black);
             letter-spacing: -0.003em;
         }
-        
+
         /* Grupos de formulario */
         .form-group {
             margin-bottom: 14px;
         }
-        
+
         .form-group label {
             display: block;
             font-size: 15px;
@@ -407,7 +416,7 @@
             margin-bottom: 8px;
             color: var(--apple-dark-gray);
         }
-        
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -422,19 +431,19 @@
             -webkit-appearance: none;
             appearance: none;
         }
-        
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             border-color: var(--apple-blue);
             box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
         }
-        
+
         /* Select personalizado */
         .select-wrapper {
             position: relative;
         }
-        
+
         .select-wrapper::after {
             content: "▼";
             font-size: 10px;
@@ -445,11 +454,11 @@
             transform: translateY(-50%);
             pointer-events: none;
         }
-        
+
         .form-group select {
             padding-right: 35px;
         }
-        
+
         /* Subida de archivos */
         .archivo-personalizado {
             display: flex;
@@ -457,7 +466,7 @@
             gap: 12px;
             margin-top: 8px;
         }
-        
+
         .btn-subida {
             background: var(--apple-vibrant-green);
             color: white;
@@ -470,17 +479,17 @@
             border: none;
             white-space: nowrap;
         }
-        
+
         .btn-subida:hover {
             background: var(--apple-blue-hover);
             transform: scale(1.03);
-                color: white;
+            color: white;
         }
-        
+
         #screenshot {
             display: none;
         }
-        
+
         .nombre-archivo {
             font-size: 14px;
             color: var(--apple-dark-gray);
@@ -488,7 +497,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        
+
         /* Botón de enviar */
         .btn-enviar {
             width: 100%;
@@ -503,16 +512,16 @@
             transition: var(--apple-transition);
             margin-top: 10px;
         }
-        
+
         .btn-enviar:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 119, 204, 0.2);
         }
-        
+
         .btn-enviar:active {
             transform: translateY(0);
         }
-        
+
         /* Mensaje de estado */
         .estado-formulario {
             text-align: center;
@@ -523,21 +532,21 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .estado-formulario.mostrar {
             opacity: 1;
         }
-        
+
         .estado-formulario.exito {
             color: #34c759;
             background-color: rgba(52, 199, 89, 0.1);
         }
-        
+
         .estado-formulario.error {
             color: #ff3b30;
             background-color: rgba(255, 59, 48, 0.1);
         }
-        
+
         /* Footer */
         footer {
             text-align: center;
@@ -549,159 +558,193 @@
             border-top: 1px solid rgba(0, 0, 0, 0.08);
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 40px;
             }
-            
+
             .hero p {
                 font-size: 21px;
             }
-            
+
             .section-title {
                 font-size: 32px;
             }
-            
+
             .objetivo {
                 font-size: 19px;
                 padding: 30px 20px 30px 30px;
             }
-            
+
             .temas-grid,
             .cards-grid,
             .evaluacion-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .actividades {
                 margin: 60px 15px;
                 padding: 60px 20px;
             }
-            
+
             .apple-button {
                 padding: 12px 25px;
                 font-size: 1.1rem;
             }
-            
+
             .ticket-card {
                 padding: 30px 20px;
             }
-            
+
             .ticket-card h2 {
                 font-size: 24px;
             }
-            
+
             .archivo-personalizado {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 8px;
             }
-            
+
             .btn-subida {
                 width: 100%;
                 text-align: center;
             }
         }
-        
+
         /* Animación de carga */
         @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
-        
+
         .cargando {
             animation: pulse 1.5s infinite;
         }
 
-        .keyword { color: red; font-weight: bold; }
-        .result { color: red; font-weight: bold; }
-        .step { color: red; font-weight: bold; }
-        .exponent-table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 15px 0; 
+        .keyword {
+            color: red;
+            font-weight: bold;
         }
-        .exponent-table th, 
-        .exponent-table td { 
-            border: 1px solid #ddd; 
-            padding: 8px; 
+
+        .result {
+            color: red;
+            font-weight: bold;
         }
-        .exponent-table tr:nth-child(odd) { 
-            background-color: #f2f2f2; 
+
+        .step {
+            color: red;
+            font-weight: bold;
         }
-        
+
+        .exponent-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .exponent-table th,
+        .exponent-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .exponent-table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
         .math-module {
-        font-family: "Segoe UI", "Cambria Math", sans-serif;
-        line-height: 1.6;
-        color: #2c3e50;
+            font-family: "Segoe UI", "Cambria Math", sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
         }
+
         .math-module h4 {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 8px;
-        margin-top: 25px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 25px;
         }
+
         .math-term {
-        color: #e74c3c;
-        font-weight: 600;
-        font-style: italic;
+            color: #e74c3c;
+            font-weight: 600;
+            font-style: italic;
         }
+
         .math-example {
-        background: #f8f9fa;
-        /* border-left: 4px solid #3498db; */
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 0 4px 4px 0;
+            background: #f8f9fa;
+            /* border-left: 4px solid #3498db; */
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
         }
+
         .math-equation {
-        color: #2c3e50;
-        font-family: "Cambria Math", serif;
-        font-size: 1.1em;
-        margin: 8px 0;
+            color: #2c3e50;
+            font-family: "Cambria Math", serif;
+            font-size: 1.1em;
+            margin: 8px 0;
         }
+
         .math-step {
-        background: #ecf0f1;
-        padding: 8px 12px;
-        margin: 5px 0;
-        border-radius: 4px;
-        border-left: 3px solid #3498db;
+            background: #ecf0f1;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
         }
+
         .math-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .math-table th {
-        background: #3498db;
-        color: white;
-        padding: 12px;
-        text-align: left;
-        font-weight: 600;
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
         }
+
         .math-table td {
-        padding: 10px 12px;
-        border-bottom: 1px solid #ecf0f1;
+            padding: 10px 12px;
+            border-bottom: 1px solid #ecf0f1;
         }
+
         .math-table tr:nth-child(even) {
-        background: #f8f9fa;
+            background: #f8f9fa;
         }
+
         .math-highlight {
-        color: #e74c3c;
-        font-weight: 600;
+            color: #e74c3c;
+            font-weight: 600;
         }
+
         .math-verification {
-        background: #d5f4e6;
-        padding: 10px;
-        border-radius: 4px;
-        margin: 8px 0;
-        border-left: 4px solid #27ae60;
+            background: #d5f4e6;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 8px 0;
+            border-left: 4px solid #27ae60;
         }
+
         .math-solution {
-        color: #27ae60;
-        font-weight: 700;
-        font-size: 1.1em;
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.1em;
         }
