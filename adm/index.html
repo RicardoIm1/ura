@@ -4998,242 +4998,413 @@
           </li>
 
           <li onclick="abrirModal('6.6. Relación entre tasas de interés y de descuento', `
-            <hr><br>
-            <p><strong>Objetivo:</strong> Comprender las relaciones matemáticas entre las tasas de interés y descuento, sus equivalencias, aplicaciones y diferencias conceptuales en el ámbito financiero.</p>
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender la diferencia fundamental entre tasas de interés y tasas de descuento, dominar las fórmulas de conversión entre ambas, analizar sus aplicaciones en diferentes contextos financieros, y aplicar estos conocimientos en la evaluación de instrumentos como pagarés, letras de cambio y operaciones de descuento bancario.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>Las tasas de interés y descuento representan dos perspectivas diferentes del valor del dinero en el tiempo. Mientras la tasa de interés se aplica sobre el capital inicial para calcular el monto futuro (capitalización), la tasa de descuento se aplica sobre el valor futuro para determinar el valor presente (actualización). La relación fundamental establece que para un mismo periodo, la tasa de descuento equivalente es siempre menor que la tasa de interés, ya que el descuento se calcula sobre un monto mayor. Esta distinción es crucial en operaciones financieras como el descuento de documentos, factoring y evaluación de flujos de efectivo.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Conceptos fundamentales y fórmulas de conversión -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre tasas de interés y descuento</h4>
+      <p>Análisis de las características y fórmulas de conversión entre ambos tipos de tasas:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Tasa de Interés (i)</th>
+            <th>Tasa de Descuento (d)</th>
+            <th>Fórmula de Conversión</th>
+            <th>Ejemplo Numérico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Definición</td>
+            <td>Rendimiento sobre capital inicial</td>
+            <td>Descuento sobre valor futuro</td>
+            <td>i = d / (1 - d)</td>
+            <td>d=20% → i=25%</td>
+          </tr>
+          <tr>
+            <td>Cálculo de Valor Futuro</td>
+            <td>VF = VP × (1 + i)</td>
+            <td>No aplica directamente</td>
+            <td>d = i / (1 + i)</td>
+            <td>i=25% → d=20%</td>
+          </tr>
+          <tr>
+            <td>Cálculo de Valor Presente</td>
+            <td>VP = VF / (1 + i)</td>
+            <td>VP = VF × (1 - d)</td>
+            <td>Equivalencia: 1/(1+i) = (1-d)</td>
+            <td>i=25%, d=20%</td>
+          </tr>
+          <tr>
+            <td>Relación Fundamental</td>
+            <td>Crecimiento del capital</td>
+            <td>Reducción del valor futuro</td>
+            <td>i > d para mismos parámetros</td>
+            <td>Siempre se cumple</td>
+          </tr>
+          <tr>
+            <td>Aplicación Práctica</td>
+            <td>Préstamos, inversiones</td>
+            <td>Descuento de documentos</td>
+            <td>d = 1 - 1/(1+i)</td>
+            <td>Comercialización rápida</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Para una misma operación, la tasa de descuento siempre es menor que la tasa de interés equivalente porque se aplica sobre un monto mayor (valor futuro vs valor presente). La diferencia se amplía conforme aumentan las tasas.</p>
+    </div>
+    
+    <!-- Gráfica 1: Comparación visual entre interés y descuento -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Proceso de Capitalización vs Descuento</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Capitalización vs Descuento - $1,000 a 1 año</strong></text>
+        
+        <!-- Proceso de capitalización (Interés) -->
+        <g transform=translate(100,60)>
+          <text x=0 y=0 text-anchor=middle font-size=14 fill=var(--apple-vibrant-blue)><strong>CAPITALIZACIÓN (Interés)</strong></text>
+          <text x=0 y=15 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>Tasa de interés: 25% anual</text>
           
-            <h4>Definición y conceptos básicos</h4>
-            <ul>
-              <li><span style='color: red; font-weight: bold;'>Tasa de interés (i):</span> Porcentaje que se aplica al capital inicial para calcular los intereses generados.</li>
-              <li><span style='color: red; font-weight: bold;'>Tasa de descuento (d):</span> Porcentaje que se aplica al valor futuro para calcular el valor presente.</li>
-              <li><span style='color: red; font-weight: bold;'>Relación fundamental:</span> Ambas tasas son formas diferentes de expresar el mismo fenómeno financiero: el valor tiempo del dinero.</li>
-              <li><span style='color: red; font-weight: bold;'>Diferencia conceptual:</span> El interés se calcula sobre el capital inicial, mientras que el descuento se aplica sobre el monto futuro.</li>
-              <li><span style='color: red; font-weight: bold;'>Equivalencia:</span> Para un mismo período, existe una tasa de descuento d equivalente a una tasa de interés i y viceversa.</li>
-            </ul>
+          <!-- Valor Presente -->
+          <rect x=-40 y=30 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=50 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $1,000</strong></text>
+          <text x=0 y=60 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Capital Inicial)</text>
           
-            <h4>Fórmulas fundamentales de relación</h4>
-            <ul>
-              <li><span style='color: red; font-weight: bold;'>De interés a descuento:</span> d = i / (1 + i)</li>
-              <li><span style='color: red; font-weight: bold;'>De descuento a interés:</span> i = d / (1 - d)</li>
-              <li><span style='color: red; font-weight: bold;'>Relación inversa:</span> 1/d - 1/i = 1</li>
-              <li><span style='color: red; font-weight: bold;'>Factor de equivalencia:</span> (1 + i) × (1 - d) = 1</li>
-              <li><span style='color: red; font-weight: bold;'>Desigualdad fundamental:</span> d < i para i > 0</li>
-              <li><span style='color: red; font-weight: bold;'>Relación con fuerza de interés:</span> d = 1 - e^(-δ) e i = e^δ - 1</li>
-            </ul>
+          <!-- Flecha de capitalización -->
+          <path d='M 0,70 L 0,100' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=20 y=85 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>× (1 + 0.25)</text>
           
-            <h4>Comparación conceptual entre interés y descuento</h4>
-            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Aspecto</th>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Tasa de Interés (i)</th>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Tasa de Descuento (d)</th>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Base de cálculo</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Capital inicial (C)</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Valor futuro (M)</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Fórmula básica</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>I = C × i × t</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>D = M × d × t</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Valor presente</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>C = M / (1 + i)</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>C = M × (1 - d)</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Valor futuro</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>M = C × (1 + i)</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>M = C / (1 - d)</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Aplicación típica</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Inversiones, ahorros</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Descuento de documentos</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>Relación matemática</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>i = d / (1 - d)</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>d = i / (1 + i)</td>
-              </tr>
-            </table>
+          <!-- Valor Futuro -->
+          <rect x=-40 y=110 width=80 height=40 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+          <text x=0 y=130 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VF: $1,250</strong></text>
+          <text x=0 y=140 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Monto Final)</text>
           
-            <h4>Ejemplos detallados de aplicación</h4>
-            
-            <p><strong>Ejemplo 1: Conversión de tasa de interés a tasa de descuento</strong></p>
-            <p>Si la tasa de interés es del 12% anual, calcular la tasa de descuento equivalente para el mismo período.</p>
-            <ol>
-              <li>Datos: <span style='color: red; font-weight: bold;'>i = 12% = 0.12</span></li>
-              <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>d = i / (1 + i)</span></li>
-              <li>Cálculo: d = 0.12 / (1 + 0.12)</li>
-              <li>Paso 1: 1 + 0.12 = <span style='color: red; font-weight: bold;'>1.12</span></li>
-              <li>Paso 2: d = 0.12 / 1.12 = <span style='color: red; font-weight: bold;'>0.107143</span></li>
-              <li>Resultado: <span style='color: red; font-weight: bold;'>10.71%</span> anual</li>
-              <li>Verificación: i = d / (1 - d) = 0.107143 / (1 - 0.107143) = 0.107143 / 0.892857 = <span style='color: red; font-weight: bold;'>0.12 (12%)</span></li>
-              <li><span style='color: red; font-weight: bold;'>Conclusión:</span> 12% de interés equivale a 10.71% de descuento.</li>
-            </ol>
-            
-            <p><strong>Ejemplo 2: Conversión de tasa de descuento a tasa de interés</strong></p>
-            <p>Si la tasa de descuento es del 8% trimestral, calcular la tasa de interés trimestral equivalente.</p>
-            <ol>
-              <li>Datos: <span style='color: red; font-weight: bold;'>d = 8% = 0.08</span></li>
-              <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>i = d / (1 - d)</span></li>
-              <li>Cálculo: i = 0.08 / (1 - 0.08)</li>
-              <li>Paso 1: 1 - 0.08 = <span style='color: red; font-weight: bold;'>0.92</span></li>
-              <li>Paso 2: i = 0.08 / 0.92 = <span style='color: red; font-weight: bold;'>0.086957</span></li>
-              <li>Resultado: <span style='color: red; font-weight: bold;'>8.70%</span> trimestral</li>
-              <li>Verificación: d = i / (1 + i) = 0.086957 / (1 + 0.086957) = 0.086957 / 1.086957 = <span style='color: red; font-weight: bold;'>0.08 (8%)</span></li>
-              <li><span style='color: red; font-weight: bold;'>Conclusión:</span> 8% de descuento equivale a 8.70% de interés.</li>
-            </ol>
-            
-            <p><strong>Ejemplo 3: Comparación de operaciones equivalentes</strong></p>
-            <p>Calcular el valor presente de $10,000 a 90 días usando:</p>
-            <ol>
-              <li>Tasa de interés del 18% anual</li>
-              <li>Tasa de descuento equivalente</li>
-            </ol>
-            <p><strong>Solución con interés:</strong></p>
-            <ol>
-              <li>Datos: <span style='color: red; font-weight: bold;'>M = $10,000, i = 18% anual, t = 90/360 = 0.25 años</span></li>
-              <li>VP = M / (1 + i × t) = 10000 / (1 + 0.18 × 0.25)</li>
-              <li>VP = 10000 / (1 + 0.045) = 10000 / 1.045 = <span style='color: red; font-weight: bold;'>$9,569.38</span></li>
-            </ol>
-            <p><strong>Solución con descuento equivalente:</strong></p>
-            <ol>
-              <li>Primero convertir i a d: d = i / (1 + i) = 0.18 / 1.18 = <span style='color: red; font-weight: bold;'>0.152542</span> anual</li>
-              <li>VP = M × (1 - d × t) = 10000 × (1 - 0.152542 × 0.25)</li>
-              <li>VP = 10000 × (1 - 0.038135) = 10000 × 0.961865 = <span style='color: red; font-weight: bold;'>$9,618.65</span></li>
-              <li><span style='color: red; font-weight: bold;'>Nota:</span> La diferencia se debe a que las fórmulas son diferentes (descuento comercial vs. racional)</li>
-            </ol>
+          <!-- Interés ganado -->
+          <rect x=50 y=85 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=90 y=95 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Interés: $250</text>
+        </g>
+        
+        <!-- Proceso de descuento -->
+        <g transform=translate(300,60)>
+          <text x=0 y=0 text-anchor=middle font-size=14 fill=var(--apple-vibrant-red)><strong>DESCUENTO</strong></text>
+          <text x=0 y=15 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>Tasa de descuento: 20% anual</text>
           
-            <h4>Equivalencias entre tasas de interés y descuento</h4>
-            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Tasa de Interés (i)</th>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Tasa de Descuento (d)</th>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Diferencia (i - d)</th>
-                <th style='border: 1px solid #ddd; padding: 8px;'>Relación (d/i)</th>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>5%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>4.76%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.24%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.9524</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>10%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>9.09%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.91%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.9091</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>15%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>13.04%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>1.96%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.8696</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>20%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>16.67%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>3.33%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.8333</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>25%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>20.00%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>5.00%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.8000</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>30%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>23.08%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>6.92%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.7692</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>50%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>33.33%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>16.67%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.6667</td>
-              </tr>
-              <tr>
-                <td style='border: 1px solid #ddd; padding: 8px;'>100%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>50.00%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>50.00%</td>
-                <td style='border: 1px solid #ddd; padding: 8px;'>0.5000</td>
-              </tr>
-            </table>
-            <p><span style='color: red; font-weight: bold;'>Observación:</span> A medida que aumenta la tasa de interés, la diferencia entre i y d se amplía y la relación d/i disminuye.</p>
+          <!-- Valor Futuro -->
+          <rect x=-40 y=30 width=80 height=40 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+          <text x=0 y=50 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VF: $1,250</strong></text>
+          <text x=0 y=60 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Valor Nominal)</text>
           
-            <h4>Aplicaciones prácticas de la relación</h4>
-            <ul>
-              <li><span style='color: red; font-weight: bold;'>Descuento de documentos:</span> Conversión entre tasas de interés y descuento en operaciones comerciales</li>
-              <li><span style='color: red; font-weight: bold;'>Evaluación de inversiones:</span> Análisis de flujos usando either tasa según convenga</li>
-              <li><span style='color: red; font-weight: bold;'>Decisiones de financiamiento:</span> Comparación de costos expresados en diferentes bases</li>
-              <li><span style='color: red; font-weight: bold;'>Arbitraje:</span> Identificación de oportunidades entre mercados que usan diferentes convenciones</li>
-              <li><span style='color: red; font-weight: bold;'>Modelos financieros:</span> Conversión entre diferentes formas de expresar el costo de capital</li>
-            </ul>
+          <!-- Flecha de descuento -->
+          <path d='M 0,70 L 0,100' stroke=var(--apple-vibrant-red) stroke-width=3 marker-end=url(#arrowUp)></path>
+          <text x=20 y=85 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>× (1 - 0.20)</text>
           
-            <h4>Ejercicio de aplicación integral</h4>
-            <p>Un banco ofrece las siguientes alternativas para descontar un pagaré de $50,000 con vencimiento en 120 días:</p>
-            <ol>
-              <li>Tasa de descuento del 15% anual</li>
-              <li>Tasa de interés del 16% anual</li>
-            </ol>
-            <p>Determinar:</p>
-            <ol>
-              <li>El valor presente en cada alternativa</li>
-              <li>La tasa de descuento equivalente a la tasa de interés del 16%</li>
-              <li>La tasa de interés equivalente a la tasa de descuento del 15%</li>
-              <li>¿Qué alternativa es más favorable para el cliente?</li>
-            </ol>
-            
-            <p><strong>Solución:</strong></p>
-            <ol>
-              <li><span style='color: red; font-weight: bold;'>Alternativa 1 (d = 15% anual):</span>
-                <ul>
-                  <li>VP = M × (1 - d × t) = 50000 × (1 - 0.15 × 120/360)</li>
-                  <li>VP = 50000 × (1 - 0.05) = 50000 × 0.95 = <span style='color: red; font-weight: bold;'>$47,500</span></li>
-                </ul>
-              </li>
-              <li><span style='color: red; font-weight: bold;'>Alternativa 2 (i = 16% anual):</span>
-                <ul>
-                  <li>VP = M / (1 + i × t) = 50000 / (1 + 0.16 × 120/360)</li>
-                  <li>VP = 50000 / (1 + 0.053333) = 50000 / 1.053333 = <span style='color: red; font-weight: bold;'>$47,468.35</span></li>
-                </ul>
-              </li>
-              <li><span style='color: red; font-weight: bold;'>Tasa de descuento equivalente al 16% de interés:</span>
-                <ul>
-                  <li>d = i / (1 + i) = 0.16 / 1.16 = <span style='color: red; font-weight: bold;'>13.79%</span> anual</li>
-                </ul>
-              </li>
-              <li><span style='color: red; font-weight: bold;'>Tasa de interés equivalente al 15% de descuento:</span>
-                <ul>
-                  <li>i = d / (1 - d) = 0.15 / 0.85 = <span style='color: red; font-weight: bold;'>17.65%</span> anual</li>
-                </ul>
-              </li>
-              <li><span style='color: red; font-weight: bold;'>Decisión:</span> La alternativa 1 es más favorable para el cliente porque ofrece mayor valor presente ($47,500 vs. $47,468.35)</li>
-            </ol>
+          <!-- Valor Presente -->
+          <rect x=-40 y=110 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=130 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $1,000</strong></text>
+          <text x=0 y=140 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Valor Descontado)</text>
           
-            <h4>Consideraciones importantes</h4>
-            <ul>
-              <li><span style='color: red; font-weight: bold;'>Las fórmulas de equivalencia asumen el mismo período de capitalización</span> para ambas tasas</li>
-              <li>En la práctica, <span style='color: red; font-weight: bold;'>el descuento comercial y el racional producen resultados diferentes</span> debido a bases de cálculo distintas</li>
-              <li>Para <span style='color: red; font-weight: bold;'>períodos largos</span>, la diferencia entre i y d se hace más significativa</li>
-              <li>Es crucial <span style='color: red; font-weight: bold;'>especificar siempre el tipo de tasa</span> (interés o descuento) en los contratos financieros</li>
-              <li>La <span style='color: red; font-weight: bold;'>tasa de descuento siempre es menor</span> que la tasa de interés equivalente para i > 0</li>
-              <li>En contextos inflacionarios, <span style='color: red; font-weight: bold;'>la relación se mantiene para tasas reales</span> si se usa consistentemente</li>
-            </ul>
+          <!-- Descuento aplicado -->
+          <rect x=50 y=85 width=80 height=20 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=90 y=95 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $250</text>
+        </g>
+        
+        <!-- Línea de conexión y equivalencia -->
+        <path d='M 180,150 L 220,150' stroke=var(--apple-dark-gray) stroke-width=2 stroke-dasharray=5,3></path>
+        <text x=200 y=145 text-anchor=middle font-size=11 fill=var(--apple-vibrant-purple)><strong>EQUIVALENCIA</strong></text>
+        
+        <!-- Fórmulas de conversión -->
+        <rect x=50 y=180 width=300 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=195 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Fórmulas de Conversión</strong></text>
+        <text x=200 y=210 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>d = i / (1 + i)</text>
+        <text x=200 y=225 text-anchor=middle font-size=11 fill=var(--apple-vibrant-red)>i = d / (1 - d)</text>
+        <text x=200 y=240 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Para i=25% → d=20% | Para d=20% → i=25%</text>
+        
+        <!-- Comparación numérica -->
+        <rect x=50 y=270 width=300 height=60 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+        <text x=200 y=285 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡Mismo resultado económico!</strong></text>
+        <text x=200 y=300 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Ambos métodos llegan a VP=$1,000 partiendo de VF=$1,250</text>
+        <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Diferencia: perspectiva de cálculo (crecimiento vs reducción)</text>
+        
+        <!-- Definición de flechas -->
+        <defs>
+          <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+          <marker id=arrowUp markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+            <polygon points='0 7, 10 3.5, 0 0' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Aunque los procesos son inversos, ambos llegan al mismo resultado económico. La capitalización parte del valor presente y añade interés para llegar al valor futuro, mientras el descuento parte del valor futuro y resta el descuento para llegar al valor presente. Las tasas son diferentes pero equivalentes.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Cálculos prácticos y conversiones -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Conversiones y aplicaciones prácticas</h4>
+      <p>Resolución de problemas de conversión entre tasas y aplicaciones en operaciones reales:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Operación Financiera</th>
+            <th>Datos del Problema</th>
+            <th>Procedimiento de Cálculo</th>
+            <th>Fórmula Aplicada</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Conversión Interés a Descuento</td>
+            <td>Tasa interés: 30% anual</td>
+            <td>1. d = i / (1 + i)<br>2. d = 0.30 / 1.30</td>
+            <td>d = i / (1 + i)</td>
+            <td>d = 23.08% anual</td>
+          </tr>
+          <tr>
+            <td>Conversión Descuento a Interés</td>
+            <td>Tasa descuento: 15% trimestral</td>
+            <td>1. i = d / (1 - d)<br>2. i = 0.15 / 0.85</td>
+            <td>i = d / (1 - d)</td>
+            <td>i = 17.65% trimestral</td>
+          </tr>
+          <tr>
+            <td>Descuento de Pagaré</td>
+            <td>Valor nominal: $50,000<br>Plazo: 90 días<br>d = 18% anual</td>
+            <td>1. d diario = 0.18/360 = 0.0005<br>2. VP = 50000 × (1 - 0.0005×90)</td>
+            <td>VP = VF × (1 - d×n)</td>
+            <td>VP = $47,750</td>
+          </tr>
+          <tr>
+            <td>Equivalencia en Inversión</td>
+            <td>Inversión: $100,000<br>i = 12% anual vs d = ?</td>
+            <td>1. Calcular d equivalente<br>2. d = 0.12 / 1.12</td>
+            <td>d = i / (1 + i)</td>
+            <td>d = 10.71% anual</td>
+          </tr>
+          <tr>
+            <td>Análisis de Costo Real</td>
+            <td>Préstamo: $80,000<br>d = 20% a 6 meses</td>
+            <td>1. Calcular i equivalente<br>2. i = 0.20 / 0.80<br>3. Convertir a anual</td>
+            <td>i = d / (1 - d)</td>
+            <td>i = 25% (6 meses)<br>50% anual</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Al convertir de descuento a interés, la tasa resultante siempre es mayor. Esto explica por qué operaciones con tasas de descuento aparentemente bajas pueden tener costos reales significativamente mayores cuando se expresan como tasas de interés.</p>
+    </div>
+    
+    <!-- Gráfica 2: Relación matemática entre tasas de interés y descuento -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Relación Matemática i vs d</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=250 x2=50 y2=50 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tasa de Interés (i)</text>
+        <text x=20 y=150 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,150)'>Tasa de Descuento (d)</text>
+        
+        <!-- Marcas del eje X (tasa de interés) -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20%</text>
           
-            <h4>Fuentes Bibliográficas</h4>
-            <ul>
-              <li>Kellison, S. G. (2009). <em>The Theory of Interest</em>. McGraw-Hill.</li>
-              <li>Broverman, S. A. (2010). <em>Mathematics of Investment and Credit</em>. ACTEX Publications.</li>
-              <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
-              <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
-            </ul>
-          `)"><b>6.6. Relación entre tasas de interés y de descuento</b> <span class="emoji-small">✅</span>
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>40%</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>60%</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>80%</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>100%</text>
+        </g>
+        
+        <!-- Marcas del eje Y (tasa de descuento) -->
+        <g transform=translate(0,0)>
+          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20%</text>
+          
+          <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>40%</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>60%</text>
+          
+          <line x1=45 y1=50 x2=55 y2=50 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=53 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>80%</text>
+        </g>
+        
+        <!-- Curva de relación d = i/(1+i) -->
+        <path d='M 50,250 
+                 L 100,200 
+                 L 150,150 
+                 L 200,125 
+                 L 250,100 
+                 L 300,75 
+                 L 350,50' 
+              stroke=var(--apple-vibrant-blue) stroke-width=3 fill=none></path>
+        
+        <!-- Línea de 45° (equivalencia perfecta) -->
+        <path d='M 50,250 L 350,50' stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=5,3></path>
+        <text x=300 y=100 text-anchor=middle font-size=10 fill=var(--apple-dark-gray) transform='rotate(-45 300,100)'>Línea de equivalencia</text>
+        
+        <!-- Puntos de referencia -->
+        <circle cx=100 cy=200 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=110 y=195 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>i=20% → d=16.67%</text>
+        
+        <circle cx=150 cy=150 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=160 y=145 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>i=40% → d=28.57%</text>
+        
+        <circle cx=200 cy=125 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=210 y=120 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>i=60% → d=37.50%</text>
+        
+        <circle cx=250 cy=100 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=260 y=95 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>i=80% → d=44.44%</text>
+        
+        <circle cx=300 cy=75 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=310 y=70 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>i=100% → d=50.00%</text>
+        
+        <!-- Zona de diferencia -->
+        <path d='M 100,200 L 100,160 L 150,160 L 150,120 L 200,120 L 200,100 L 250,100 L 250,85 L 300,85 L 300,75 L 350,75 L 350,50 L 50,250 Z' 
+              fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
+        <text x=200 y=200 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Diferencia i - d</text>
+        
+        <!-- Leyenda -->
+        <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Relación i vs d</strong></text>
+        
+        <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=3></line>
+        <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>d = i / (1 + i)</text>
+        
+        <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-dark-gray) stroke-width=1 stroke-dasharray=5,3></line>
+        <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Equivalencia perfecta</text>
+        
+        <rect x=210 y=115 width=20 height=10 fill=var(--apple-light-orange) fill-opacity=0.3></rect>
+        <text x=240 y=120 font-size=10 fill=var(--apple-dark-gray)>Diferencia i - d</text>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Relación entre Tasas de Interés y Descuento</strong></text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La relación entre i y d es no lineal y asintótica. Cuando la tasa de interés tiende a infinito, la tasa de descuento equivalente tiende a 100%. La diferencia entre ambas tasas se amplía conforme aumenta la tasa de interés, lo que explica por qué operaciones con altas tasas de descuento pueden ser extremadamente costosas.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones en instrumentos financieros -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Aplicaciones en instrumentos financieros reales</h4>
+      <p>Análisis de cómo se utilizan las tasas de interés y descuento en diferentes productos financieros:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Instrumento Financiero</th>
+            <th>Tipo de Tasa Usada</th>
+            <th>Mecanismo de Aplicación</th>
+            <th>Ventajas</th>
+            <th>Consideraciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pagarés Bancarios</td>
+            <td>Tasa de descuento</td>
+            <td>Se descuenta el valor nominal al momento del préstamo</td>
+            <td>Liquidez inmediata para el titular</td>
+            <td>Costo real mayor al aparente</td>
+          </tr>
+          <tr>
+            <td>Factoring</td>
+            <td>Tasa de descuento</td>
+            <td>Descuento de cuentas por cobrar</td>
+            <td>Acceso rápido a capital de trabajo</td>
+            <td>Pérdida de valor de las facturas</td>
+          </tr>
+          <tr>
+            <td>Letras de Cambio</td>
+            <td>Tasa de descuento</td>
+            <td>Endoso con descuento antes del vencimiento</td>
+            <td>Flexibilidad en el corto plazo</td>
+            <td>Riesgo de impago transferido</td>
+          </tr>
+          <tr>
+            <td>Préstamos Personales</td>
+            <td>Tasa de interés</td>
+            <td>Interés sobre saldo insoluto</td>
+            <td>Costo transparente y conocido</td>
+            <td>Pagos periódicos obligatorios</td>
+          </tr>
+          <tr>
+            <td>Certificados de Depósito</td>
+            <td>Tasa de interés</td>
+            <td>Rendimiento sobre capital inicial</td>
+            <td>Crecimiento predecible</td>
+            <td>Falta de liquidez inmediata</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los instrumentos de descuento son típicamente de corto plazo y buscan liquidez inmediata, mientras los de interés son más comunes en operaciones de mediano y largo plazo. Es crucial convertir tasas de descuento a interés para comparar costos reales entre diferentes productos.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Descuento de documentos comerciales:</strong> Empresas que descuentan pagarés y letras de cambio para obtener liquidez inmediata.</li>
+        <li><strong>Factoring financiero:</strong> Cesión de cuentas por cobrar a empresas especializadas con descuento.</li>
+        <li><strong>Evaluación de costos de financiamiento:</strong> Conversión de tasas de descuento a interés para comparar opciones de crédito.</li>
+        <li><strong>Análisis de rendimientos de inversión:</strong> Cálculo de tasas equivalentes entre diferentes instrumentos.</li>
+        <li><strong>Negociación de condiciones crediticias:</strong> Comprensión del costo real al negociar plazos y tasas.</li>
+        <li><strong>Gestión de tesorería empresarial:</strong> Decisión entre descontar documentos o mantenerlos hasta vencimiento.</li>
+        <li><strong>Planificación financiera:</strong> Cálculo preciso de flujos de efectivo considerando la perspectiva adecuada.</li>
+        <li><strong>Regulación financiera:</strong> Las autoridades exigen conversión a tasas de interés para transparencia.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+        <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+        <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+        <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+        <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+        <li>Khan Academy: Interest and debt. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>6.6. Relación entre tasas de interés y de descuento</b> <span class=emoji-small>✅</span>
           </li>
 
           <li onclick="abrirModal('6.7. Tasas variables de interés', `
