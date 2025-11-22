@@ -5983,7 +5983,378 @@
         </ul><br>
 
         <ul class="tema-list">
-          <li>6.11. Anualidades</li>
+          <li onclick="abrirModal('6.11. Anualidades', `
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de anualidades como sucesiones de pagos periódicos, dominar las fórmulas para calcular valor presente y futuro, diferenciar entre anualidades vencidas y anticipadas, y aplicar estos conocimientos en la resolución de problemas financieros reales como préstamos, inversiones y planes de ahorro.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>Una anualidad es una sucesión de pagos iguales realizados a intervalos regulares de tiempo. Estos flujos de efectivo pueden representar tanto ingresos como egresos y son fundamentales en matemáticas financieras para modelar préstamos, inversiones, pensiones y seguros. Las anualidades se clasifican principalmente en vencidas (pagos al final de cada periodo) y anticipadas (pagos al inicio de cada periodo). El valor de una anualidad depende de la tasa de interés, el número de periodos, el monto de cada pago y el momento de realización de los pagos, permitiendo calcular tanto el valor acumulado futuro como el valor presente de todos los pagos.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Clasificación y características de anualidades -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Clasificación y características de anualidades</h4>
+      <p>Análisis comparativo de los diferentes tipos de anualidades:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Tipo de Anualidad</th>
+            <th>Momento del Pago</th>
+            <th>Fórmula Valor Futuro</th>
+            <th>Fórmula Valor Presente</th>
+            <th>Ejemplo Práctico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vencida (Ordinaria)</td>
+            <td>Final del periodo</td>
+            <td>VF = A × [(1+i)ⁿ - 1]/i</td>
+            <td>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
+            <td>Pagos de hipoteca</td>
+          </tr>
+          <tr>
+            <td>Anticipada</td>
+            <td>Inicio del periodo</td>
+            <td>VF = A × [(1+i)ⁿ - 1]/i × (1+i)</td>
+            <td>VP = A × [1 - (1+i)⁻ⁿ]/i × (1+i)</td>
+            <td>Rentas de arrendamiento</td>
+          </tr>
+          <tr>
+            <td>Diferida</td>
+            <td>Periodo de gracia</td>
+            <td>VF = Vencida</td>
+            <td>VP = VP<sub>vencida</sub> × (1+i)⁻ᵏ</td>
+            <td>Préstamos estudiantiles</td>
+          </tr>
+          <tr>
+            <td>Perpetua</td>
+            <td>Indefinida</td>
+            <td>No aplica</td>
+            <td>VP = A/i</td>
+            <td>Fondos de becas</td>
+          </tr>
+          <tr>
+            <td>Creciente</td>
+            <td>Pagos aumentan</td>
+            <td>VF = A × [(1+i)ⁿ - (1+g)ⁿ]/(i-g)</td>
+            <td>VP = A × [1 - ((1+g)/(1+i))ⁿ]/(i-g)</td>
+            <td>Pensiones indexadas</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las anualidades anticipadas tienen mayor valor presente y futuro que las vencidas porque los pagos se invierten antes. Las perpetuas solo tienen valor presente y son comunes en fondos que deben mantenerse indefinidamente. Las anualidades crecientes modelan inflación o crecimiento.</p>
+    </div>
+    
+    <!-- Gráfica 1: Comparación de flujos de anualidades vencidas vs anticipadas -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Flujos de Efectivo - Anualidades Vencidas vs Anticipadas</h4>
+      <svg viewBox='0 0 400 300' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Línea de tiempo -->
+        <line x1=50 y1=150 x2=350 y2=150 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- ANUALIDAD VENCIDA -->
+        <text x=200 y=50 text-anchor=middle font-size=14 fill=var(--apple-vibrant-blue)><strong>Anualidad Vencida</strong></text>
+        
+        <!-- Periodos anualidad vencida -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=140 x2=100 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>0</text>
+          
+          <line x1=150 y1=140 x2=150 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
+          
+          <line x1=200 y1=140 x2=200 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
+          
+          <line x1=250 y1=140 x2=250 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
+          
+          <line x1=300 y1=140 x2=300 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
+        </g>
+        
+        <!-- Flechas de pagos vencidos -->
+        <g transform=translate(0,0)>
+          <path d='M 150,120 L 150,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=150 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>A</text>
+          
+          <path d='M 200,120 L 200,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=200 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>A</text>
+          
+          <path d='M 250,120 L 250,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=250 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>A</text>
+          
+          <path d='M 300,120 L 300,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=300 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>A</text>
+        </g>
+        
+        <!-- ANUALIDAD ANTICIPADA -->
+        <text x=200 y=220 text-anchor=middle font-size=14 fill=var(--apple-vibrant-green)><strong>Anualidad Anticipada</strong></text>
+        
+        <!-- Flechas de pagos anticipados -->
+        <g transform=translate(0,100)>
+          <path d='M 100,120 L 100,100' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=100 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>A</text>
+          
+          <path d='M 150,120 L 150,100' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=150 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>A</text>
+          
+          <path d='M 200,120 L 200,100' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=200 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>A</text>
+          
+          <path d='M 250,120 L 250,100' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <text x=250 y=90 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>A</text>
+        </g>
+        
+        <!-- Leyenda y fórmulas -->
+        <rect x=50 y=240 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=255 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Comparación de Fórmulas</strong></text>
+        <text x=100 y=270 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Vencida: VP = A × [1 - (1+i)⁻ⁿ]/i</text>
+        <text x=300 y=270 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>Anticipada: VP = A × [1 - (1+i)⁻ⁿ]/i × (1+i)</text>
+        
+        <!-- Definición de flechas -->
+        <defs>
+          <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> En las anualidades vencidas, el primer pago ocurre al final del primer periodo, mientras que en las anticipadas ocurre inmediatamente (periodo 0). Esta diferencia temporal hace que las anticipadas tengan mayor valor presente porque los pagos se reciben antes.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Cálculo de valor presente y futuro -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Cálculo de valor presente y futuro de anualidades</h4>
+      <p>Resolución paso a paso de problemas típicos de anualidades:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Problema</th>
+            <th>Datos</th>
+            <th>Procedimiento Paso a Paso</th>
+            <th>Fórmula Aplicada</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Valor Futuro Anualidad Vencida</td>
+            <td>A = $1,000, i = 5% anual, n = 10 años</td>
+            <td>1. Identificar: A=1000, i=0.05, n=10<br>2. Aplicar: VF = 1000 × [(1.05)¹⁰ - 1]/0.05<br>3. Calcular: (1.05)¹⁰ = 1.62889<br>4. VF = 1000 × [0.62889]/0.05</td>
+            <td>VF = A × [(1+i)ⁿ - 1]/i</td>
+            <td>$12,577.89</td>
+          </tr>
+          <tr>
+            <td>Valor Presente Anualidad Vencida</td>
+            <td>A = $500, i = 8% anual, n = 5 años</td>
+            <td>1. Identificar: A=500, i=0.08, n=5<br>2. Aplicar: VP = 500 × [1 - (1.08)⁻⁵]/0.08<br>3. Calcular: (1.08)⁻⁵ = 0.68058<br>4. VP = 500 × [0.31942]/0.08</td>
+            <td>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
+            <td>$1,996.36</td>
+          </tr>
+          <tr>
+            <td>Pago de Anualidad Anticipada</td>
+            <td>VP = $10,000, i = 6% anual, n = 4 años</td>
+            <td>1. Calcular factor: [1 - (1.06)⁻⁴]/0.06 = 3.46511<br>2. Ajustar anticipada: 3.46511 × 1.06 = 3.67302<br>3. Calcular A: 10000/3.67302</td>
+            <td>A = VP / {[1 - (1+i)⁻ⁿ]/i × (1+i)}</td>
+            <td>$2,722.36</td>
+          </tr>
+          <tr>
+            <td>Anualidad Perpetua</td>
+            <td>VP = $50,000, i = 7% anual</td>
+            <td>1. Aplicar fórmula perpetua: A = VP × i<br>2. Calcular: 50000 × 0.07</td>
+            <td>A = VP × i</td>
+            <td>$3,500 anuales</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor futuro siempre es mayor que la simple suma de pagos debido al interés compuesto. El valor presente es menor que la suma de pagos porque descuenta el valor del dinero en el tiempo. Las anualidades anticipadas requieren pagos menores para el mismo valor presente.</p>
+    </div>
+    
+    <!-- Gráfica 2: Crecimiento de una anualidad a través del tiempo -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Crecimiento del Valor Futuro de una Anualidad</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=250 x2=50 y2=50 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+        <text x=20 y=150 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,150)'>Valor Futuro ($)</text>
+        
+        <!-- Marcas del eje X -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
+          
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
+        </g>
+        
+        <!-- Marcas del eje Y -->
+        <g transform=translate(0,0)>
+          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y1=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,000</text>
+          
+          <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y1=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4,000</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y1=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6,000</text>
+          
+          <line x1=45 y1=50 x2=55 y2=50 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y1=53 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8,000</text>
+        </g>
+        
+        <!-- Curva de crecimiento - Anualidad Vencida 5% -->
+        <path d='M 50,250 
+                 L 100,230 
+                 L 150,210 
+                 L 200,185 
+                 L 250,155 
+                 L 300,120' 
+              stroke=var(--apple-vibrant-blue) stroke-width=3 fill=none></path>
+        
+        <!-- Curva de crecimiento - Anualidad Vencida 8% -->
+        <path d='M 50,250 
+                 L 100,225 
+                 L 150,195 
+                 L 200,160 
+                 L 250,120 
+                 L 300,75' 
+              stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
+        
+        <!-- Curva de crecimiento - Anualidad Anticipada 5% -->
+        <path d='M 50,250 
+                 L 100,228 
+                 L 150,205 
+                 L 200,177 
+                 L 250,145 
+                 L 300,108' 
+              stroke=var(--apple-vibrant-orange) stroke-width=3 fill=none stroke-dasharray=5,2></path>
+        
+        <!-- Puntos de datos -->
+        <circle cx=100 cy=230 r=3 fill=var(--apple-vibrant-blue)></circle>
+        <circle cx=150 cy=210 r=3 fill=var(--apple-vibrant-blue)></circle>
+        <circle cx=200 cy=185 r=3 fill=var(--apple-vibrant-blue)></circle>
+        <circle cx=250 cy=155 r=3 fill=var(--apple-vibrant-blue)></circle>
+        <circle cx=300 cy=120 r=3 fill=var(--apple-vibrant-blue)></circle>
+        
+        <circle cx=100 cy=225 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=150 cy=195 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=250 cy=120 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=300 cy=75 r=3 fill=var(--apple-vibrant-green)></circle>
+        
+        <!-- Leyenda -->
+        <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Leyenda</strong></text>
+        
+        <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=3></line>
+        <text x=240 y1=90 font-size=10 fill=var(--apple-dark-gray)>Vencida 5% (VF=$5,525)</text>
+        
+        <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
+        <text x=240 y1=105 font-size=10 fill=var(--apple-dark-gray)>Vencida 8% (VF=$5,866)</text>
+        
+        <line x1=210 y1=115 x2=230 y2=115 stroke=var(--apple-vibrant-orange) stroke-width=3 stroke-dasharray=5,2></line>
+        <text x=240 y1=120 font-size=10 fill=var(--apple-dark-gray)>Anticipada 5% (VF=$5,801)</text>
+        
+        <text x=290 y=135 font-size=9 fill=var(--apple-dark-gray)>A = $1,000 anual · n = 5 años</text>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Crecimiento del Valor Futuro</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Anualidad de $1,000 anuales durante 5 años</text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> El crecimiento es exponencial debido al interés compuesto. Tasas de interés más altas generan mayor valor futuro. Las anualidades anticipadas crecen más rápido porque cada pago tiene un periodo adicional de capitalización. La diferencia se hace más significativa con el tiempo.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones prácticas y casos especiales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Aplicaciones prácticas y casos especiales</h4>
+      <p>Resolución de problemas del mundo real usando anualidades:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Aplicación</th>
+            <th>Escenario</th>
+            <th>Datos</th>
+            <th>Procedimiento de Cálculo</th>
+            <th>Solución</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Préstamo Hipotecario</td>
+            <td>Calcular pago mensual</td>
+            <td>VP=$200,000, i=4% anual, n=30 años</td>
+            <td>1. Convertir a mensual: i=0.04/12=0.003333, n=360<br>2. VP = A × [1 - (1.003333)⁻³⁶⁰]/0.003333<br>3. Calcular A = 200000/207.361</td>
+            <td>$954.83 mensual</td>
+          </tr>
+          <tr>
+            <td>Plan de Jubilación</td>
+            <td>Ahorro para retiro</td>
+            <td>A=$500/mes, i=7% anual, n=35 años</td>
+            <td>1. i=0.07/12=0.005833, n=420<br>2. VF = 500 × [(1.005833)⁴²⁰ - 1]/0.005833<br>3. VF = 500 × 1435.036</td>
+            <td>$717,518 al jubilar</td>
+          </tr>
+          <tr>
+            <td>Fondo de Educación</td>
+            <td>Ahorro para universidad</td>
+            <td>Necesita $50,000 en 18 años, i=6% anual</td>
+            <td>1. VF = A × [(1.06)¹⁸ - 1]/0.06 = 50000<br>2. [(1.06)¹⁸ - 1]/0.06 = 30.90565<br>3. A = 50000/30.90565</td>
+            <td>$1,617.78 anuales</td>
+          </tr>
+          <tr>
+            <td>Anualidad Diferida</td>
+            <td>Pensión con periodo de gracia</td>
+            <td>VP=$100,000, i=5%, n=20 pagos, k=5 años gracia</td>
+            <td>1. VP<sub>vencida</sub> = A × [1 - (1.05)⁻²⁰]/0.05<br>2. VP = VP<sub>vencida</sub> × (1.05)⁻⁵<br>3. 100000 = A × 12.46221 × 0.78353</td>
+            <td>A = $10,234.56 anual</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> En aplicaciones reales es crucial convertir tasas anuales a periodos de pago. Los préstamos usan valor presente, mientras los ahorros usan valor futuro. Las anualidades diferidas son comunes en pensiones donde hay un periodo entre el pago único y el inicio de los retiros.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Préstamos hipotecarios:</strong> Cálculo de pagos mensuales constantes durante la vida del préstamo.</li>
+        <li>6.11. Anualidades <span class=" emoji-small">✅</span></li>
+
           <ul>
             <li>6.11.1. Definición y tipos de anualidades</li>
             <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
