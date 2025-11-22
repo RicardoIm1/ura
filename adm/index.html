@@ -3799,1372 +3799,477 @@
             `)">6.1.1.1. Modelo de interés simple <span class="emoji-small">✅</span>
           </li>
 
-          <li
-            onclick="abrirModal('6.1.1.2. Modelo de interés compuesto', `
-  <hr><br>
-  <div class=math-module>
-    
-    <!-- Tiempo estimado -->
-    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
-      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 30 minutos'>
-      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
-      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=0 transform='rotate(-90 10 10)'></circle>
-      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
-      </svg>
-      <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
-    </div>
-    
-    <!-- Objetivo -->
-    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-      <span><strong>Objetivo:</strong> Comprender el modelo de interés compuesto como el proceso donde los intereses generados se reinvierten para producir nuevos intereses, dominar la fórmula fundamental VF = VP(1 + i)ⁿ, analizar el efecto del tiempo y la tasa en el crecimiento exponencial, y aplicar estos conceptos en la evaluación de inversiones, ahorros y préstamos a largo plazo.</span>
-    </div>
-    
-    <!-- Idea principal -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
-      <p>El interés compuesto es el fenómeno financiero donde los intereses generados en cada periodo se añaden al capital inicial para calcular los intereses del periodo siguiente, creando un efecto de crecimiento exponencial. A diferencia del interés simple que solo genera intereses sobre el capital original, el compuesto genera "
-            intereses sobre intereses", lo que resulta en una acumulación mucho más acelerada del patrimonio. Este
-            concepto, descrito por Albert Einstein como "la fuerza más poderosa del universo" , es fundamental para
-            entender el crecimiento de inversiones a largo plazo, el costo real de los préstamos y el poder del ahorro
-            sistemático.</p>
-      </div>
-
-      <!-- Ejercicio 1: Comparación interés simple vs compuesto -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1:
-          Comparación interés simple vs compuesto</h4>
-        <p>Análisis de las diferencias fundamentales entre ambos modelos de interés:</p>
-        <table class=math-table>
-          <thead>
-            <tr>
-              <th>Característica</th>
-              <th>Interés Simple</th>
-              <th>Interés Compuesto</th>
-              <th>Fórmula Principal</th>
-              <th>Ejemplo: $1,000 al 10% por 3 años</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Base de Cálculo</td>
-              <td>Solo capital inicial</td>
-              <td>Capital + intereses acumulados</td>
-              <td>Simple: VF = VP(1 + i×n)</td>
-              <td>VF = $1,300</td>
-            </tr>
-            <tr>
-              <td>Crecimiento</td>
-              <td>Lineal</td>
-              <td>Exponencial</td>
-              <td>Compuesto: VF = VP(1 + i)ⁿ</td>
-              <td>VF = $1,331</td>
-            </tr>
-            <tr>
-              <td>Intereses por Periodo</td>
-              <td>Constantes</td>
-              <td>Crecientes</td>
-              <td>Simple: I = VP × i × n</td>
-              <td>I = $100 cada año</td>
-            </tr>
-            <tr>
-              <td>Reinversión</td>
-              <td>No hay reinversión</td>
-              <td>Reinversión automática</td>
-              <td>Compuesto: I = VP[(1+i)ⁿ - 1]</td>
-              <td>I crece cada año</td>
-            </tr>
-            <tr>
-              <td>Aplicación Típica</td>
-              <td>Préstamos corto plazo</td>
-              <td>Inversiones largo plazo</td>
-              <td>Diferencia: VF<sub>comp</sub> - VF<sub>simp</sub></td>
-              <td>Diferencia: $31</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La
-          diferencia entre interés simple y compuesto aumenta exponencialmente con el tiempo. En plazos cortos la
-          diferencia es pequeña, pero en horizontes largos el interés compuesto genera acumulaciones significativamente
-          mayores debido al efecto de los "intereses sobre intereses".</p>
-      </div>
-
-      <!-- Gráfica 1: Comparación crecimiento simple vs compuesto -->
-      <div class=graph-container style=margin-bottom:20px;>
-        <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1:
-          Crecimiento Simple vs Compuesto</h4>
-        <svg viewBox='0 0 400 350' class=math-graph
-          style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-
-          <!-- Título -->
-          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Comparación: $1,000 al
-              10% anual por 10 años</strong></text>
-
-          <!-- Ejes coordenados -->
-          <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-          <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-
-          <!-- Etiquetas de ejes -->
-          <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
-          <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)
-            transform='rotate(-90 20,175)'>Valor Futuro ($)</text>
-
-          <!-- Marcas del eje X -->
-          <g transform=translate(0,0)>
-            <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
-
-            <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
-
-            <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6</text>
-
-            <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8</text>
-
-            <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
-          </g>
-
-          <!-- Marcas del eje Y -->
-          <g transform=translate(0,0)>
-            <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1,500</text>
-
-            <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,000</text>
-
-            <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,500</text>
-
-            <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3,000</text>
-          </g>
-
-          <!-- Línea de interés simple -->
-          <path d='M 50,250 
-                 L 100,240 
-                 L 150,230 
-                 L 200,220 
-                 L 250,210 
-                 L 300,200' stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-
-          <!-- Curva de interés compuesto -->
-          <path d='M 50,250 
-                 L 100,235 
-                 L 150,220 
-                 L 200,205 
-                 L 250,190 
-                 L 300,175' stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
-
-          <!-- Puntos de datos compuesto -->
-          <circle cx=100 cy=235 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=150 cy=220 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=200 cy=205 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=250 cy=190 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=300 cy=175 r=3 fill=var(--apple-vibrant-green)></circle>
-
-          <!-- Área de diferencia -->
-          <path
-            d='M 50,250 L 100,240 L 150,230 L 200,220 L 250,210 L 300,200 L 300,175 L 250,190 L 200,205 L 150,220 L 100,235 L 50,250 Z'
-            fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
-          <text x=200 y=210 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Ventaja del
-            compuesto</text>
-
-          <!-- Leyenda -->
-          <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-          <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Resultados a 10
-              años</strong></text>
-
-          <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
-          <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>Simple: $2,000</text>
-
-          <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
-          <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Compuesto: $2,594</text>
-
-          <text x=290 y=120 font-size=9 fill=var(--apple-vibrant-red)>Diferencia: $594 (29.7%)</text>
-          <text x=290 y=130 font-size=9 fill=var(--apple-dark-gray)>¡Intereses sobre intereses!</text>
-
-          <!-- Fórmulas -->
-          <rect x=50 y=290 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-          <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmulas
-              Fundamentales</strong></text>
-          <text x=120 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Simple: VF = 1000(1 +
-            0.10×10)</text>
-          <text x=280 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Compuesto: VF =
-            1000(1.10)¹⁰</text>
-
-        </svg>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
-          simple crece linealmente (línea recta), mientras el compuesto crece exponencialmente (curva ascendente). La
-          diferencia se hace más evidente con el tiempo: a 10 años, el compuesto genera 29.7% más que el simple. Esta
-          brecha continúa ampliándose indefinidamente.</p>
-      </div>
-
-      <!-- Ejercicio 2: Cálculos de interés compuesto -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones
-          del interés compuesto</h4>
-        <p>Resolución de problemas prácticos usando la fórmula de interés compuesto:</p>
-        <table class=math-table>
-          <thead>
-            <tr>
-              <th>Escenario</th>
-              <th>Datos del Problema</th>
-              <th>Procedimiento de Cálculo</th>
-              <th>Fórmula Aplicada</th>
-              <th>Resultado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Inversión Básica</td>
-              <td>VP=$5,000, i=8%, n=7 años</td>
-              <td>1. VF = 5000 × (1.08)⁷<br>2. (1.08)⁷ = 1.7138<br>3. VF = 5000 × 1.7138</td>
-              <td>VF = VP(1 + i)ⁿ</td>
-              <td>VF = $8,569</td>
-            </tr>
-            <tr>
-              <td>Doblado de Capital</td>
-              <td>¿En cuánto tiempo se duplica al 12%?</td>
-              <td>1. 2 = (1.12)ⁿ<br>2. ln(2) = n × ln(1.12)<br>3. n = 0.6931/0.1133</td>
-              <td>Regla del 72: 72/12</td>
-              <td>n = 6.12 años</td>
-            </tr>
-            <tr>
-              <td>Ahorro para Jubilación</td>
-              <td>$200/mes por 35 años al 7%</td>
-              <td>1. VF = 200 × [(1.00583)⁴²⁰ - 1]/0.00583<br>2. Usar fórmula anualidad vencida</td>
-              <td>VF = A[(1+i)ⁿ - 1]/i</td>
-              <td>VF = $283,215</td>
-            </tr>
-            <tr>
-              <td>Préstamo Hipotecario</td>
-              <td>$150,000 a 30 años al 6%</td>
-              <td>1. Pago = 150000 × [0.005(1.005)³⁶⁰]/[(1.005)³⁶⁰ - 1]<br>2. Calcular factor</td>
-              <td>A = VP[i(1+i)ⁿ]/[(1+i)ⁿ - 1]</td>
-              <td>Pago = $899.33/mes</td>
-            </tr>
-            <tr>
-              <td>Crecimiento Empresarial</td>
-              <td>Ventas $1M, crecimiento 15% anual</td>
-              <td>1. VF = 1000000 × (1.15)⁵<br>2. (1.15)⁵ = 2.0114<br>3. VF = 1000000 × 2.0114</td>
-              <td>VF = VP(1 + i)ⁿ</td>
-              <td>VF = $2,011,357</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
-          compuesto permite calcular no solo inversiones simples, sino también anualidades (series de pagos) y
-          préstamos. La regla del 72 (72/tasa) proporciona una aproximación rápida para calcular el tiempo de
-          duplicación.</p>
-      </div>
-
-      <!-- Gráfica 2: Efecto del tiempo en el interés compuesto -->
-      <div class=graph-container style=margin-bottom:20px;>
-        <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Poder
-          del Tiempo en el Interés Compuesto</h4>
-        <svg viewBox='0 0 400 400' class=math-graph
-          style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-
-          <!-- Título -->
-          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>El Poder del Tiempo:
-              $10,000 al 8% anual</strong></text>
-
-          <!-- Ejes coordenados -->
-          <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
-          <line x1=50 y1=300 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-
-          <!-- Etiquetas de ejes -->
-          <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
-          <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)
-            transform='rotate(-90 20,200)'>Valor Futuro ($)</text>
-
-          <!-- Marcas del eje X -->
-          <g transform=translate(0,0)>
-            <line x1=100 y1=295 x2=100 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=100 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
-
-            <line x1=150 y1=295 x2=150 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=150 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20</text>
-
-            <line x1=200 y1=295 x2=200 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>30</text>
-
-            <line x1=250 y1=295 x2=250 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=250 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>40</text>
-
-            <line x1=300 y1=295 x2=300 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=300 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>50</text>
-          </g>
-
-          <!-- Marcas del eje Y -->
-          <g transform=translate(0,0)>
-            <line x1=45 y1=250 x2=55 y2=250 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=253 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>50,000</text>
-
-            <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>100,000</text>
-
-            <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>150,000</text>
-
-            <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200,000</text>
-          </g>
-
-          <!-- Curva de crecimiento exponencial -->
-          <path d='M 50,300 
-                 L 100,280 
-                 L 150,240 
-                 L 200,180 
-                 L 250,120 
-                 L 300,80' stroke=var(--apple-vibrant-blue) stroke-width=3 fill=none></path>
-
-          <!-- Puntos de referencia -->
-          <circle cx=100 cy=280 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=100 y=270 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>10 años: $21,589</text>
-
-          <circle cx=150 cy=240 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=150 y=230 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>20 años: $46,610</text>
-
-          <circle cx=200 cy=180 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=200 y=170 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>30 años: $100,627</text>
-
-          <circle cx=250 cy=120 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=250 y=110 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>40 años: $217,245</text>
-
-          <circle cx=300 cy=80 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=300 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>50 años: $469,016</text>
-
-          <!-- Zonas de crecimiento -->
-          <rect x=50 y=300 width=100 height=50 fill=var(--apple-light-green) fill-opacity=0.3 stroke=none></rect>
-          <text x=100 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Crecimiento moderado</text>
-
-          <rect x=150 y=300 width=100 height=100 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></rect>
-          <text x=200 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Aceleración</text>
-
-          <rect x=250 y=300 width=100 height=180 fill=var(--apple-light-red) fill-opacity=0.3 stroke=none></rect>
-          <text x=300 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Explosión exponencial</text>
-
-          <!-- Leyenda y análisis -->
-          <rect x=200 y=60 width=180 height=100 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-          <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Análisis del
-              Crecimiento</strong></text>
-
-          <text x=290 y=90 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Primeros 10 años: +$11,589</text>
-          <text x=290 y=100 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Últimos 10 años: +$251,771</text>
-          <text x=290 y=110 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>¡11.7 veces más!</text>
-
-          <text x=290 y=125 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Tiempo de duplicación:</text>
-          <text x=290 y=135 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>9 años (Regla del 72:
-            72/8)</text>
-
-          <!-- Conclusión importante -->
-          <rect x=50 y=350 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange)
-            stroke-width=1 rx=5></rect>
-          <text x=200 y=365 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El tiempo es tu mejor
-              aliado!</strong></text>
-          <text x=200 y=380 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Los mayores rendimientos vienen
-            en los últimos años</text>
-
-        </svg>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El
-          crecimiento compuesto es lento al principio pero se acelera dramáticamente con el tiempo. En este ejemplo, los
-          últimos 10 años generan 11.7 veces más ganancia que los primeros 10 años. Esto demuestra por qué empezar
-          temprano es crucial para aprovechar el poder del interés compuesto.</p>
-      </div>
-
-      <!-- Ejercicio 3: Aplicaciones en planificación financiera -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3:
-          Estrategias con interés compuesto</h4>
-        <p>Aplicación del interés compuesto en diferentes contextos de planificación financiera:</p>
-        <table class=math-table>
-          <thead>
-            <tr>
-              <th>Estrategia</th>
-              <th>Contexto</th>
-              <th>Aplicación del Interés Compuesto</th>
-              <th>Beneficio Principal</th>
-              <th>Ejemplo Práctico</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Inicio Temprano</td>
-              <td>Ahorro para jubilación</td>
-              <td>Más tiempo para que crezcan los intereses</td>
-              <td>Menor esfuerzo para misma meta</td>
-              <td>Empezar a 25 vs 35 años</td>
-            </tr>
-            <tr>
-              <td>Reinversión</td>
-              <td>Dividendos y ganancias</td>
-              <td>Reinvertir en lugar de gastar</td>
-              <td>Aceleración del crecimiento</td>
-              <td>Reinvertir dividendos de acciones</td>
-            </tr>
-            <tr>
-              <td>Aportes Constantes</td>
-              <td>Ahorro sistemático</td>
-              <td>Interés sobre aportes acumulados</td>
-              <td>Acumulación exponencial</td>
-              <td>$500/mes por 30 años al 8%</td>
-            </tr>
-            <tr>
-              <td>Reinversión de Intereses</td>
-              <td>Certificados de depósito</td>
-              <td>Capitalizar intereses periódicos</td>
-              <td>Mayor rendimiento efectivo</td>
-              <td>CD con capitalización mensual</td>
-            </tr>
-            <tr>
-              <td>Evitar Interés Compuesto Negativo</td>
-              <td>Deudas de tarjetas</td>
-              <td>Interés sobre saldo + intereses</td>
-              <td>Evitar espiral de deuda</td>
-              <td>Pagar tarjetas completamente</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
-          compuesto funciona tanto a favor (inversiones) como en contra (deudas). Comenzar temprano, ser constante y
-          reinvertir las ganancias son las claves para maximizar sus beneficios. En deudas, pagar más que el mínimo
-          evita el efecto negativo del interés compuesto.</p>
-      </div>
-
-      <!-- Aplicaciones reales -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales
-        </h4>
-        <ul style=padding-left:18px;line-height:1.6;>
-          <li><strong>Planificación de jubilación:</strong> Cálculo del ahorro necesario considerando el crecimiento
-            compuesto durante décadas.</li>
-          <li><strong>Fondos de inversión:</strong> Reinversión automática de dividendos y ganancias de capital para
-            aprovechar el interés compuesto.</li>
-          <li><strong>Hipotecas inversas:</strong> Cálculo de pagos considerando la capitalización del saldo del
-            préstamo.</li>
-          <li><strong>Seguros de vida con valor en efectivo:</strong> Crecimiento de la reserva técnica mediante interés
-            compuesto.</li>
-          <li><strong>Bonos cupón cero:</strong> Valuación basada en el descuento compuesto hasta el vencimiento.</li>
-          <li><strong>Préstamos estudiantiles:</strong> Cálculo del costo total considerando la capitalización durante
-            el periodo de estudios.</li>
-          <li><strong>Fondos de educación:</strong> Planificación de ahorros para educación universitaria con horizonte
-            de 18+ años.</li>
-          <li><strong>Reinversión empresarial:</strong> Decisiones sobre reinvertir utilidades vs distribuir dividendos.
+          <li onclick="abrirModal('6.1.1.2. Modelo de interés compuesto', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, características, fórmulas y aplicaciones del modelo de interés compuesto, con especial énfasis en la capitalización y su efecto en el crecimiento del capital a lo largo del tiempo.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Interés compuesto:</span> Sistema de cálculo donde los intereses generados en cada período se acumulan al capital para generar nuevos intereses en períodos siguientes.</li>
+                <li><span style='color: red; font-weight: bold;'>Capitalización:</span> Proceso de agregar los intereses al capital al final de cada período.</li>
+                <li><span style='color: red; font-weight: bold;'>Característica fundamental:</span> Los intereses generan nuevos intereses (efecto 'bola de nieve').</li>
+                <li><span style='color: red; font-weight: bold;'>Período de capitalización:</span> Intervalo de tiempo al final del cual se calculan y agregan los intereses al capital.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa nominal (j):</span> Tasa de interés anual sin considerar la capitalización.</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa efectiva (i):</span> Tasa de interés anual considerando la capitalización en períodos menores.</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Monto compuesto:</span> M = C(1 + i)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Interés compuesto:</span> I = C[(1 + i)ⁿ - 1]</li>
+                <li><span style='color: red; font-weight: bold;'>Capital inicial:</span> C = M / (1 + i)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa de interés:</span> i = (M/C)¹/ⁿ - 1</li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo:</span> n = log(M/C) / log(1 + i)</li>
+                <li><span style='color: red; font-weight: bold;'>Tasa nominal a efectiva:</span> i = (1 + j/m)ᵐ - 1</li>
+                <li><span style='color: red; font-weight: bold;'>Función de acumulación:</span> a(t) = (1 + i)ᵗ</li>
+              </ul>
+            
+              <h4>Frecuencias de capitalización</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Frecuencia</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Períodos por año (m)</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa por período</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Anual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/1</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Semestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/2</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cuatrimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/3</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Trimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/4</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Bimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/6</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mensual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/12</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Quincenal</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>24</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/24</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Diaria</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>360</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>i = j/360</td>
+                </tr>
+              </table>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
+              
+              <p><strong>Ejemplo 1: Capitalización anual</strong></p>
+              <p>Calcular el monto compuesto de $15,000 invertidos al 8% anual capitalizable anualmente durante 5 años.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $15,000, i = 8% = 0.08, n = 5 años</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>M = C(1 + i)ⁿ</span></li>
+                <li>Cálculo: M = 15000 × (1.08)⁵</li>
+                <li>Paso 1: (1.08)⁵ = <span style='color: red; font-weight: bold;'>1.469328</span></li>
+                <li>Paso 2: 15000 × 1.469328 = <span style='color: red; font-weight: bold;'>$22,039.92</span></li>
+                <li>Interés generado: I = M - C = 22039.92 - 15000 = <span style='color: red; font-weight: bold;'>$7,039.92</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Capitalización trimestral</strong></p>
+              <p>Calcular el monto de $10,000 al 12% anual capitalizable trimestralmente durante 3 años.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $10,000, j = 12% anual, m = 4, t = 3 años</span></li>
+                <li>Tasa por período: <span style='color: red; font-weight: bold;'>i = j/m = 0.12/4 = 0.03 trimestral</span></li>
+                <li>Número de períodos: <span style='color: red; font-weight: bold;'>n = m × t = 4 × 3 = 12 trimestres</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>M = C(1 + i)ⁿ</span></li>
+                <li>Cálculo: M = 10000 × (1.03)¹²</li>
+                <li>Paso 1: (1.03)¹² = <span style='color: red; font-weight: bold;'>1.425761</span></li>
+                <li>Paso 2: 10000 × 1.425761 = <span style='color: red; font-weight: bold;'>$14,257.61</span></li>
+                <li>Tasa efectiva anual: i = (1 + 0.03)⁴ - 1 = 1.125509 - 1 = <span style='color: red; font-weight: bold;'>0.125509 (12.55%)</span></li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Determinación del tiempo necesario</strong></p>
+              <p>¿En cuánto tiempo un capital de $8,000 se convertirá en $15,000 al 9% anual capitalizable semestralmente?</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>C = $8,000, M = $15,000, j = 9% anual, m = 2</span></li>
+                <li>Tasa por período: <span style='color: red; font-weight: bold;'>i = 0.09/2 = 0.045 semestral</span></li>
+                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>n = log(M/C) / log(1 + i)</span></li>
+                <li>Cálculo: n = log(15000/8000) / log(1.045)</li>
+                <li>Paso 1: 15000/8000 = <span style='color: red; font-weight: bold;'>1.875</span></li>
+                <li>Paso 2: log(1.875) = <span style='color: red; font-weight: bold;'>0.273001</span></li>
+                <li>Paso 3: log(1.045) = <span style='color: red; font-weight: bold;'>0.019116</span></li>
+                <li>Paso 4: n = 0.273001 / 0.019116 = <span style='color: red; font-weight: bold;'>14.28 semestres</span></li>
+                <li>Conversión a años: t = 14.28 / 2 = <span style='color: red; font-weight: bold;'>7.14 años</span></li>
+                <li>Interpretación: <span style='color: red; font-weight: bold;'>7 años y aproximadamente 51 días</span> (0.14 × 365)</li>
+              </ol>
+            
+              <h4>El poder del interés compuesto: La regla del 72</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Regla del 72:</span> Aproximación para determinar cuánto tiempo tarda en duplicarse una inversión: t ≈ 72 / (i × 100)</li>
+                <li>Ejemplo: A una tasa del 8% anual, t ≈ 72 / 8 = <span style='color: red; font-weight: bold;'>9 años</span></li>
+                <li>Cálculo exacto: n = log(2) / log(1.08) = 0.30103 / 0.03342 = <span style='color: red; font-weight: bold;'>9.006 años</span></li>
+                <li>La regla del 72 es una aproximación útil para mental cálculo</li>
+              </ul>
+            
+              <h4>Comparación entre diferentes frecuencias de capitalización</h4>
+              <p>Capital inicial: $10,000 a 5 años con tasa nominal del 12% anual:</p>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Frecuencia</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Períodos (n)</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa por período</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Monto final</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa efectiva anual</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Anual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$17,623.42</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.00%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Semestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>10</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$17,908.48</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.36%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Trimestral</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>20</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,061.11</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.55%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Mensual</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>60</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1.00%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,166.97</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.68%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Diaria</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1825</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>0.0329%</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,193.97</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.75%</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Continua</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>∞</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,221.19</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>12.75%</td>
+                </tr>
+              </table>
+              <p><span style='color: red; font-weight: bold;'>Conclusión:</span> A mayor frecuencia de capitalización, mayor es el monto final y la tasa efectiva anual.</p>
+            
+              <h4>Aplicaciones prácticas del interés compuesto</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Inversiones a largo plazo:</span> Fondos de退休, planes de pensiones, afores</li>
+                <li><span style='color: red; font-weight: bold;'>Créditos hipotecarios:</span> Cálculo de montos futuros y saldos insolutos</li>
+                <li><span style='color: red; font-weight: bold;'>Fondos de inversión:</span> Crecimiento de carteras diversificadas</li>
+                <li><span style='color: red; font-weight: bold;'>Planificación financiera:</span> Objetivos de ahorro para educación, vivienda</li>
+                <li><span style='color: red; font-weight: bold;'>Análisis de proyectos:</span> Evaluación de inversiones mediante VAN y TIR</li>
+                <li><span style='color: red; font-weight: bold;'>Seguros y pensiones:</span> Cálculo de primas y reservas actuariales</li>
+              </ul>
+            
+              <h4>Consideraciones importantes</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>El interés compuesto es la base de las matemáticas financieras modernas</span></li>
+                <li>Es fundamental <span style='color: red; font-weight: bold;'>diferenciar entre tasa nominal y tasa efectiva</span></li>
+                <li>La <span style='color: red; font-weight: bold;'>frecuencia de capitalización afecta significativamente</span> el resultado final</li>
+                <li>El interés compuesto <span style='color: red; font-weight: bold;'>beneficia al inversionista</span> pero <span style='color: red; font-weight: bold;'>perjudica al deudor</span> en el largo plazo</li>
+                <li>Es importante considerar el <span style='color: red; font-weight: bold;'>efecto de la inflación</span> sobre el rendimiento real</li>
+                <li>Las <span style='color: red; font-weight: bold;'>calculadoras financieras y hojas de cálculo</span> son herramientas esenciales para estos cálculos</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Una persona deposita $5,000 en una cuenta que ofrece el 7.5% anual capitalizable mensualmente. Calcular:</p>
+              <ol>
+                <li>El monto después de 4 años</li>
+                <li>El interés compuesto generado</li>
+                <li>La tasa efectiva anual</li>
+                <li>¿Cuánto tiempo tardará en duplicarse la inversión?</li>
+              </ol>
+              
+              <p><strong>Solución:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Monto después de 4 años:</span>
+                  <ul>
+                    <li>i = 0.075/12 = 0.00625 mensual</li>
+                    <li>n = 4 × 12 = 48 meses</li>
+                    <li>M = 5000 × (1.00625)⁴⁸</li>
+                    <li>M = 5000 × 1.349559 = <span style='color: red; font-weight: bold;'>$6,747.80</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Interés generado:</span>
+                  <ul>
+                    <li>I = M - C = 6747.80 - 5000 = <span style='color: red; font-weight: bold;'>$1,747.80</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Tasa efectiva anual:</span>
+                  <ul>
+                    <li>i = (1 + 0.075/12)¹² - 1</li>
+                    <li>i = (1.00625)¹² - 1 = 1.077632 - 1 = <span style='color: red; font-weight: bold;'>0.077632 (7.76%)</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Tiempo para duplicar:</span>
+                  <ul>
+                    <li>n = log(2) / log(1.00625)</li>
+                    <li>n = 0.30103 / 0.002705 = <span style='color: red; font-weight: bold;'>111.27 meses</span></li>
+                    <li>t = 111.27 / 12 = <span style='color: red; font-weight: bold;'>9.27 años</span></li>
+                  </ul>
+                </li>
+              </ol>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kellison, S. G. (2009). <em>The Theory of Interest</em>. McGraw-Hill.</li>
+                <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
+                <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
+                <li>Broverman, S. A. (2010). <em>Mathematics of Investment and Credit</em>. ACTEX Publications.</li>
+              </ul>
+            `)">6.1.1.2. Modelo de interés compuesto <span class="emoji-small">✅</span>
           </li>
         </ul>
-      </div>
+        <br>
 
-      <!-- Bibliografía -->
-      <div class=bibliography-section style=margin-top:20px;>
-        <h4><i class='fas fa-book' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada
-        </h4>
-        <ul style=padding-left:18px;line-height:1.5;>
-          <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-          <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
-          <li>Richards, D. (2018). The Power of Compound Interest. Financial Planning Journal.</li>
-          <li>Malkiel, B. G. (2019). A Random Walk Down Wall Street. Norton & Company.</li>
-          <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
-          <li>Khan Academy: Compound interest. www.khanacademy.org</li>
-        </ul>
-      </div>
-    </div>
-    `);"><b>6.1.1.2. Modelo de interés compuesto</b> <span class=emoji-small>✅</span>
-    </li>
-    <hr><br>
-    <div class=math-module>
-
-      <!-- Tiempo estimado -->
-      <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
-        <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px;
-          aria-label='Tiempo estimado de lectura: 30 minutos'>
-          <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
-          <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487
-            stroke-dashoffset=0 transform='rotate(-90 10 10)'></circle>
-          <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
-        </svg>
-        <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
-      </div>
-
-      <!-- Objetivo -->
-      <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid
-        var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-        <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-        <span><strong>Objetivo:</strong> Comprender el modelo de interés compuesto como el proceso donde los intereses
-          generados se reinvierten para producir nuevos intereses, dominar la fórmula fundamental VF = VP(1 + i)ⁿ,
-          analizar el efecto del tiempo y la tasa en el crecimiento exponencial, y aplicar estos conceptos en la
-          evaluación de inversiones, ahorros y préstamos a largo plazo.</span>
-      </div>
-
-      <!-- Idea principal -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal
-        </h4>
-        <p>El interés compuesto es el fenómeno financiero donde los intereses generados en cada periodo se añaden al
-          capital inicial para calcular los intereses del periodo siguiente, creando un efecto de crecimiento
-          exponencial. A diferencia del interés simple que solo genera intereses sobre el capital original, el compuesto
-          genera "intereses sobre intereses", lo que resulta en una acumulación mucho más acelerada del patrimonio. Este
-          concepto, descrito por Albert Einstein como "la fuerza más poderosa del universo", es fundamental para
-          entender el crecimiento de inversiones a largo plazo, el costo real de los préstamos y el poder del ahorro
-          sistemático.</p>
-      </div>
-
-      <!-- Ejercicio 1: Comparación interés simple vs compuesto -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1:
-          Comparación interés simple vs compuesto</h4>
-        <p>Análisis de las diferencias fundamentales entre ambos modelos de interés:</p>
-        <table class=math-table>
-          <thead>
-            <tr>
-              <th>Característica</th>
-              <th>Interés Simple</th>
-              <th>Interés Compuesto</th>
-              <th>Fórmula Principal</th>
-              <th>Ejemplo: $1,000 al 10% por 3 años</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Base de Cálculo</td>
-              <td>Solo capital inicial</td>
-              <td>Capital + intereses acumulados</td>
-              <td>Simple: VF = VP(1 + i×n)</td>
-              <td>VF = $1,300</td>
-            </tr>
-            <tr>
-              <td>Crecimiento</td>
-              <td>Lineal</td>
-              <td>Exponencial</td>
-              <td>Compuesto: VF = VP(1 + i)ⁿ</td>
-              <td>VF = $1,331</td>
-            </tr>
-            <tr>
-              <td>Intereses por Periodo</td>
-              <td>Constantes</td>
-              <td>Crecientes</td>
-              <td>Simple: I = VP × i × n</td>
-              <td>I = $100 cada año</td>
-            </tr>
-            <tr>
-              <td>Reinversión</td>
-              <td>No hay reinversión</td>
-              <td>Reinversión automática</td>
-              <td>Compuesto: I = VP[(1+i)ⁿ - 1]</td>
-              <td>I crece cada año</td>
-            </tr>
-            <tr>
-              <td>Aplicación Típica</td>
-              <td>Préstamos corto plazo</td>
-              <td>Inversiones largo plazo</td>
-              <td>Diferencia: VF<sub>comp</sub> - VF<sub>simp</sub></td>
-              <td>Diferencia: $31</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La
-          diferencia entre interés simple y compuesto aumenta exponencialmente con el tiempo. En plazos cortos la
-          diferencia es pequeña, pero en horizontes largos el interés compuesto genera acumulaciones significativamente
-          mayores debido al efecto de los "intereses sobre intereses".</p>
-      </div>
-
-      <!-- Gráfica 1: Comparación crecimiento simple vs compuesto -->
-      <div class=graph-container style=margin-bottom:20px;>
-        <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1:
-          Crecimiento Simple vs Compuesto</h4>
-        <svg viewBox='0 0 400 350' class=math-graph
-          style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-
-          <!-- Título -->
-          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Comparación: $1,000 al
-              10% anual por 10 años</strong></text>
-
-          <!-- Ejes coordenados -->
-          <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-          <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-
-          <!-- Etiquetas de ejes -->
-          <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
-          <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)
-            transform='rotate(-90 20,175)'>Valor Futuro ($)</text>
-
-          <!-- Marcas del eje X -->
-          <g transform=translate(0,0)>
-            <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
-
-            <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
-
-            <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6</text>
-
-            <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8</text>
-
-            <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
-          </g>
-
-          <!-- Marcas del eje Y -->
-          <g transform=translate(0,0)>
-            <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1,500</text>
-
-            <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,000</text>
-
-            <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,500</text>
-
-            <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3,000</text>
-          </g>
-
-          <!-- Línea de interés simple -->
-          <path d='M 50,250 
-                 L 100,240 
-                 L 150,230 
-                 L 200,220 
-                 L 250,210 
-                 L 300,200' stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-
-          <!-- Curva de interés compuesto -->
-          <path d='M 50,250 
-                 L 100,235 
-                 L 150,220 
-                 L 200,205 
-                 L 250,190 
-                 L 300,175' stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
-
-          <!-- Puntos de datos compuesto -->
-          <circle cx=100 cy=235 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=150 cy=220 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=200 cy=205 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=250 cy=190 r=3 fill=var(--apple-vibrant-green)></circle>
-          <circle cx=300 cy=175 r=3 fill=var(--apple-vibrant-green)></circle>
-
-          <!-- Área de diferencia -->
-          <path
-            d='M 50,250 L 100,240 L 150,230 L 200,220 L 250,210 L 300,200 L 300,175 L 250,190 L 200,205 L 150,220 L 100,235 L 50,250 Z'
-            fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
-          <text x=200 y=210 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Ventaja del
-            compuesto</text>
-
-          <!-- Leyenda -->
-          <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-          <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Resultados a 10
-              años</strong></text>
-
-          <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
-          <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>Simple: $2,000</text>
-
-          <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
-          <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Compuesto: $2,594</text>
-
-          <text x=290 y=120 font-size=9 fill=var(--apple-vibrant-red)>Diferencia: $594 (29.7%)</text>
-          <text x=290 y=130 font-size=9 fill=var(--apple-dark-gray)>¡Intereses sobre intereses!</text>
-
-          <!-- Fórmulas -->
-          <rect x=50 y=290 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-          <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmulas
-              Fundamentales</strong></text>
-          <text x=120 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Simple: VF = 1000(1 +
-            0.10×10)</text>
-          <text x=280 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Compuesto: VF =
-            1000(1.10)¹⁰</text>
-
-        </svg>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
-          simple crece linealmente (línea recta), mientras el compuesto crece exponencialmente (curva ascendente). La
-          diferencia se hace más evidente con el tiempo: a 10 años, el compuesto genera 29.7% más que el simple. Esta
-          brecha continúa ampliándose indefinidamente.</p>
-      </div>
-
-      <!-- Ejercicio 2: Cálculos de interés compuesto -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones
-          del interés compuesto</h4>
-        <p>Resolución de problemas prácticos usando la fórmula de interés compuesto:</p>
-        <table class=math-table>
-          <thead>
-            <tr>
-              <th>Escenario</th>
-              <th>Datos del Problema</th>
-              <th>Procedimiento de Cálculo</th>
-              <th>Fórmula Aplicada</th>
-              <th>Resultado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Inversión Básica</td>
-              <td>VP=$5,000, i=8%, n=7 años</td>
-              <td>1. VF = 5000 × (1.08)⁷<br>2. (1.08)⁷ = 1.7138<br>3. VF = 5000 × 1.7138</td>
-              <td>VF = VP(1 + i)ⁿ</td>
-              <td>VF = $8,569</td>
-            </tr>
-            <tr>
-              <td>Doblado de Capital</td>
-              <td>¿En cuánto tiempo se duplica al 12%?</td>
-              <td>1. 2 = (1.12)ⁿ<br>2. ln(2) = n × ln(1.12)<br>3. n = 0.6931/0.1133</td>
-              <td>Regla del 72: 72/12</td>
-              <td>n = 6.12 años</td>
-            </tr>
-            <tr>
-              <td>Ahorro para Jubilación</td>
-              <td>$200/mes por 35 años al 7%</td>
-              <td>1. VF = 200 × [(1.00583)⁴²⁰ - 1]/0.00583<br>2. Usar fórmula anualidad vencida</td>
-              <td>VF = A[(1+i)ⁿ - 1]/i</td>
-              <td>VF = $283,215</td>
-            </tr>
-            <tr>
-              <td>Préstamo Hipotecario</td>
-              <td>$150,000 a 30 años al 6%</td>
-              <td>1. Pago = 150000 × [0.005(1.005)³⁶⁰]/[(1.005)³⁶⁰ - 1]<br>2. Calcular factor</td>
-              <td>A = VP[i(1+i)ⁿ]/[(1+i)ⁿ - 1]</td>
-              <td>Pago = $899.33/mes</td>
-            </tr>
-            <tr>
-              <td>Crecimiento Empresarial</td>
-              <td>Ventas $1M, crecimiento 15% anual</td>
-              <td>1. VF = 1000000 × (1.15)⁵<br>2. (1.15)⁵ = 2.0114<br>3. VF = 1000000 × 2.0114</td>
-              <td>VF = VP(1 + i)ⁿ</td>
-              <td>VF = $2,011,357</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
-          compuesto permite calcular no solo inversiones simples, sino también anualidades (series de pagos) y
-          préstamos. La regla del 72 (72/tasa) proporciona una aproximación rápida para calcular el tiempo de
-          duplicación.</p>
-      </div>
-
-      <!-- Gráfica 2: Efecto del tiempo en el interés compuesto -->
-      <div class=graph-container style=margin-bottom:20px;>
-        <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Poder
-          del Tiempo en el Interés Compuesto</h4>
-        <svg viewBox='0 0 400 400' class=math-graph
-          style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-
-          <!-- Título -->
-          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>El Poder del Tiempo:
-              $10,000 al 8% anual</strong></text>
-
-          <!-- Ejes coordenados -->
-          <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
-          <line x1=50 y1=300 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-
-          <!-- Etiquetas de ejes -->
-          <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
-          <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)
-            transform='rotate(-90 20,200)'>Valor Futuro ($)</text>
-
-          <!-- Marcas del eje X -->
-          <g transform=translate(0,0)>
-            <line x1=100 y1=295 x2=100 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=100 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
-
-            <line x1=150 y1=295 x2=150 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=150 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20</text>
-
-            <line x1=200 y1=295 x2=200 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>30</text>
-
-            <line x1=250 y1=295 x2=250 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=250 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>40</text>
-
-            <line x1=300 y1=295 x2=300 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=300 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>50</text>
-          </g>
-
-          <!-- Marcas del eje Y -->
-          <g transform=translate(0,0)>
-            <line x1=45 y1=250 x2=55 y2=250 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=253 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>50,000</text>
-
-            <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>100,000</text>
-
-            <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>150,000</text>
-
-            <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
-            <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200,000</text>
-          </g>
-
-          <!-- Curva de crecimiento exponencial -->
-          <path d='M 50,300 
-                 L 100,280 
-                 L 150,240 
-                 L 200,180 
-                 L 250,120 
-                 L 300,80' stroke=var(--apple-vibrant-blue) stroke-width=3 fill=none></path>
-
-          <!-- Puntos de referencia -->
-          <circle cx=100 cy=280 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=100 y=270 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>10 años: $21,589</text>
-
-          <circle cx=150 cy=240 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=150 y=230 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>20 años: $46,610</text>
-
-          <circle cx=200 cy=180 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=200 y=170 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>30 años: $100,627</text>
-
-          <circle cx=250 cy=120 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=250 y=110 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>40 años: $217,245</text>
-
-          <circle cx=300 cy=80 r=3 fill=var(--apple-vibrant-blue)></circle>
-          <text x=300 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>50 años: $469,016</text>
-
-          <!-- Zonas de crecimiento -->
-          <rect x=50 y=300 width=100 height=50 fill=var(--apple-light-green) fill-opacity=0.3 stroke=none></rect>
-          <text x=100 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Crecimiento moderado</text>
-
-          <rect x=150 y=300 width=100 height=100 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></rect>
-          <text x=200 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Aceleración</text>
-
-          <rect x=250 y=300 width=100 height=180 fill=var(--apple-light-red) fill-opacity=0.3 stroke=none></rect>
-          <text x=300 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Explosión exponencial</text>
-
-          <!-- Leyenda y análisis -->
-          <rect x=200 y=60 width=180 height=100 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-          <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Análisis del
-              Crecimiento</strong></text>
-
-          <text x=290 y=90 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Primeros 10 años: +$11,589</text>
-          <text x=290 y=100 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Últimos 10 años: +$251,771</text>
-          <text x=290 y=110 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>¡11.7 veces más!</text>
-
-          <text x=290 y=125 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Tiempo de duplicación:</text>
-          <text x=290 y=135 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>9 años (Regla del 72:
-            72/8)</text>
-
-          <!-- Conclusión importante -->
-          <rect x=50 y=350 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange)
-            stroke-width=1 rx=5></rect>
-          <text x=200 y=365 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El tiempo es tu mejor
-              aliado!</strong></text>
-          <text x=200 y=380 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Los mayores rendimientos vienen
-            en los últimos años</text>
-
-        </svg>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El
-          crecimiento compuesto es lento al principio pero se acelera dramáticamente con el tiempo. En este ejemplo, los
-          últimos 10 años generan 11.7 veces más ganancia que los primeros 10 años. Esto demuestra por qué empezar
-          temprano es crucial para aprovechar el poder del interés compuesto.</p>
-      </div>
-
-      <!-- Ejercicio 3: Aplicaciones en planificación financiera -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3:
-          Estrategias con interés compuesto</h4>
-        <p>Aplicación del interés compuesto en diferentes contextos de planificación financiera:</p>
-        <table class=math-table>
-          <thead>
-            <tr>
-              <th>Estrategia</th>
-              <th>Contexto</th>
-              <th>Aplicación del Interés Compuesto</th>
-              <th>Beneficio Principal</th>
-              <th>Ejemplo Práctico</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Inicio Temprano</td>
-              <td>Ahorro para jubilación</td>
-              <td>Más tiempo para que crezcan los intereses</td>
-              <td>Menor esfuerzo para misma meta</td>
-              <td>Empezar a 25 vs 35 años</td>
-            </tr>
-            <tr>
-              <td>Reinversión</td>
-              <td>Dividendos y ganancias</td>
-              <td>Reinvertir en lugar de gastar</td>
-              <td>Aceleración del crecimiento</td>
-              <td>Reinvertir dividendos de acciones</td>
-            </tr>
-            <tr>
-              <td>Aportes Constantes</td>
-              <td>Ahorro sistemático</td>
-              <td>Interés sobre aportes acumulados</td>
-              <td>Acumulación exponencial</td>
-              <td>$500/mes por 30 años al 8%</td>
-            </tr>
-            <tr>
-              <td>Reinversión de Intereses</td>
-              <td>Certificados de depósito</td>
-              <td>Capitalizar intereses periódicos</td>
-              <td>Mayor rendimiento efectivo</td>
-              <td>CD con capitalización mensual</td>
-            </tr>
-            <tr>
-              <td>Evitar Interés Compuesto Negativo</td>
-              <td>Deudas de tarjetas</td>
-              <td>Interés sobre saldo + intereses</td>
-              <td>Evitar espiral de deuda</td>
-              <td>Pagar tarjetas completamente</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
-          compuesto funciona tanto a favor (inversiones) como en contra (deudas). Comenzar temprano, ser constante y
-          reinvertir las ganancias son las claves para maximizar sus beneficios. En deudas, pagar más que el mínimo
-          evita el efecto negativo del interés compuesto.</p>
-      </div>
-
-      <!-- Aplicaciones reales -->
-      <div class=content-section style=margin-bottom:20px;>
-        <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales
-        </h4>
-        <ul style=padding-left:18px;line-height:1.6;>
-          <li><strong>Planificación de jubilación:</strong> Cálculo del ahorro necesario considerando el crecimiento
-            compuesto durante décadas.</li>
-          <li><strong>Fondos de inversión:</strong> Reinversión automática de dividendos y ganancias de capital para
-            aprovechar el interés compuesto.</li>
-          <li><strong>Hipotecas inversas:</strong> Cálculo de pagos considerando la capitalización del saldo del
-            préstamo.</li>
-          <li><strong>Seguros de vida con valor en efectivo:</strong> Crecimiento de la reserva técnica mediante interés
-            compuesto.</li>
-          <li><strong>Bonos cupón cero:</strong> Valuación basada en el descuento compuesto hasta el vencimiento.</li>
-          <li><strong>Préstamos estudiantiles:</strong> Cálculo del costo total considerando la capitalización durante
-            el periodo de estudios.</li>
-          <li><strong>Fondos de educación:</strong> Planificación de ahorros para educación universitaria con horizonte
-            de 18+ años.</li>
-          <li><strong>Reinversión empresarial:</strong> Decisiones sobre reinvertir utilidades vs distribuir dividendos.
+        <ul class="tema-list">
+          <li onclick="abrirModal('6.2. Tasa de interés nominal', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender el concepto, características, cálculo y aplicaciones de la tasa de interés nominal, así como su relación con la tasa efectiva y su importancia en el sistema financiero.</p>
+          
+            <h4>Definición y conceptos básicos</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>Tasa de interés nominal (j):</span> Tasa de interés que se expresa anualmente pero se capitaliza en períodos menores sin considerar el efecto de la capitalización.</li>
+              <li><span style='color: red; font-weight: bold;'>Característica principal:</span> Es una tasa <span style='color: red; font-weight: bold;'>referencial o declarada</span> que no refleja el verdadero costo o rendimiento financiero.</li>
+              <li><span style='color: red; font-weight: bold;'>Frecuencia de capitalización (m):</span> Número de veces que los intereses se capitalizan en un año.</li>
+              <li><span style='color: red; font-weight: bold;'>Tasa periódica (i):</span> Tasa que se aplica en cada período de capitalización: i = j/m</li>
+              <li><span style='color: red; font-weight: bold;'>Importante:</span> La tasa nominal <span style='color: red; font-weight: bold;'>no puede utilizarse directamente</span> en las fórmulas de interés compuesto.</li>
+            </ul>
+          
+            <h4>Fórmulas fundamentales</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>Tasa periódica:</span> i = j/m</li>
+              <li><span style='color: red; font-weight: bold;'>Relación nominal-efectiva:</span> j = m × [(1 + i) - 1]</li>
+              <li><span style='color: red; font-weight: bold;'>Tasa efectiva a partir de nominal:</span> iₑ = (1 + j/m)ᵐ - 1</li>
+              <li><span style='color: red; font-weight: bold;'>Tasa nominal a partir de efectiva:</span> j = m × [(1 + iₑ)¹/ᵐ - 1]</li>
+              <li><span style='color: red; font-weight: bold;'>Monto con tasa nominal:</span> M = C(1 + j/m)ᵐˣⁿ</li>
+            </ul>
+          
+            <h4>Frecuencias de capitalización comunes</h4>
+            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+              <tr style='background-color: #f2f2f2;'>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Frecuencia</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Períodos por año (m)</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Símbolo convencional</th>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Anual</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₁</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Semestral</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₂</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Cuatrimestral</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₃</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Trimestral</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₄</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Bimestral</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>6</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₆</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Mensual</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₁₂</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Quincenal</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>24</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₂₄</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Diaria</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>360</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>j₃₆₀</td>
+              </tr>
+            </table>
+          
+            <h4>Ejemplos detallados de aplicación</h4>
+            
+            <p><strong>Ejemplo 1: Conversión de tasa nominal a efectiva</strong></p>
+            <p>Calcular la tasa efectiva anual equivalente a una tasa nominal del 18% capitalizable mensualmente.</p>
+            <ol>
+              <li>Datos: <span style='color: red; font-weight: bold;'>j = 18% = 0.18, m = 12</span></li>
+              <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>iₑ = (1 + j/m)ᵐ - 1</span></li>
+              <li>Cálculo: iₑ = (1 + 0.18/12)¹² - 1</li>
+              <li>Paso 1: 0.18/12 = <span style='color: red; font-weight: bold;'>0.015</span> (tasa mensual)</li>
+              <li>Paso 2: 1 + 0.015 = <span style='color: red; font-weight: bold;'>1.015</span></li>
+              <li>Paso 3: (1.015)¹² = <span style='color: red; font-weight: bold;'>1.195618</span></li>
+              <li>Paso 4: iₑ = 1.195618 - 1 = <span style='color: red; font-weight: bold;'>0.195618</span></li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>19.56%</span> efectivo anual</li>
+              <li><span style='color: red; font-weight: bold;'>Conclusión:</span> La tasa efectiva (19.56%) es mayor que la nominal (18%) debido a la capitalización mensual.</li>
+            </ol>
+            
+            <p><strong>Ejemplo 2: Cálculo de monto con tasa nominal</strong></p>
+            <p>Calcular el monto de $5,000 invertidos a 2 años con una tasa nominal del 12% capitalizable trimestralmente.</p>
+            <ol>
+              <li>Datos: <span style='color: red; font-weight: bold;'>C = $5,000, j = 12% = 0.12, m = 4, t = 2 años</span></li>
+              <li>Tasa periódica: <span style='color: red; font-weight: bold;'>i = j/m = 0.12/4 = 0.03 trimestral</span></li>
+              <li>Número de períodos: <span style='color: red; font-weight: bold;'>n = m × t = 4 × 2 = 8 trimestres</span></li>
+              <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>M = C(1 + i)ⁿ</span></li>
+              <li>Cálculo: M = 5000 × (1.03)⁸</li>
+              <li>Paso 1: (1.03)⁸ = <span style='color: red; font-weight: bold;'>1.266770</span></li>
+              <li>Paso 2: 5000 × 1.266770 = <span style='color: red; font-weight: bold;'>$6,333.85</span></li>
+              <li>Forma directa: M = 5000 × (1 + 0.12/4)⁴ˣ² = 5000 × (1.03)⁸ = <span style='color: red; font-weight: bold;'>$6,333.85</span></li>
+            </ol>
+            
+            <p><strong>Ejemplo 3: Determinación de tasa nominal a partir de efectiva</strong></p>
+            <p>¿Qué tasa nominal capitalizable mensualmente es equivalente a una tasa efectiva anual del 15%?</p>
+            <ol>
+              <li>Datos: <span style='color: red; font-weight: bold;'>iₑ = 15% = 0.15, m = 12</span></li>
+              <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>j = m × [(1 + iₑ)¹/ᵐ - 1]</span></li>
+              <li>Cálculo: j = 12 × [(1.15)¹/¹² - 1]</li>
+              <li>Paso 1: 1.15¹/¹² = 1.15^(0.083333) = <span style='color: red; font-weight: bold;'>1.011715</span></li>
+              <li>Paso 2: 1.011715 - 1 = <span style='color: red; font-weight: bold;'>0.011715</span></li>
+              <li>Paso 3: j = 12 × 0.011715 = <span style='color: red; font-weight: bold;'>0.14058</span></li>
+              <li>Resultado: <span style='color: red; font-weight: bold;'>14.06%</span> nominal capitalizable mensualmente</li>
+              <li>Verificación: iₑ = (1 + 0.14058/12)¹² - 1 = (1.011715)¹² - 1 = 1.15 - 1 = <span style='color: red; font-weight: bold;'>0.15 (15%)</span></li>
+            </ol>
+          
+            <h4>Comparación entre tasas nominales con diferentes frecuencias</h4>
+            <p>Conversión a tasa efectiva anual para diferentes frecuencias (j = 12% nominal anual):</p>
+            <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+              <tr style='background-color: #f2f2f2;'>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Frecuencia</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Períodos (m)</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Tasa periódica</th>
+                <th style='border: 1px solid #ddd; padding: 8px;'>Tasa efectiva anual</th>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Anual</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12.00%</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12.00%</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Semestral</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>6.00%</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12.36%</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Trimestral</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>3.00%</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12.55%</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Mensual</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>1.00%</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12.68%</td>
+              </tr>
+              <tr>
+                <td style='border: 1px solid #ddd; padding: 8px;'>Diaria</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>360</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>0.0333%</td>
+                <td style='border: 1px solid #ddd; padding: 8px;'>12.75%</td>
+              </tr>
+            </table>
+            <p><span style='color: red; font-weight: bold;'>Conclusión:</span> A mayor frecuencia de capitalización, mayor es la tasa efectiva resultante para una misma tasa nominal.</p>
+          
+            <h4>Importancia y aplicaciones prácticas</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>Instrumentos financieros:</span> La tasa nominal es comúnmente utilizada en publicidad de productos financieros</li>
+              <li><span style='color: red; font-weight: bold;'>Comparación de opciones:</span> Permite comparar diferentes alternativas de inversión o financiamiento</li>
+              <li><span style='color: red; font-weight: bold;'>Regulación financiera:</span> Muchas instituciones financieras están obligadas a declarar tasas nominales</li>
+              <li><span style='color: red; font-weight: bold;'>Contratos:</span> Es la tasa que normalmente se estipula en los contratos de préstamos e inversiones</li>
+              <li><span style='color: red; font-weight: bold;'>Análisis financiero:</span> Sirve como punto de partida para calcular la tasa efectiva real</li>
+            </ul>
+          
+            <h4>Consideraciones importantes y limitaciones</h4>
+            <ul>
+              <li><span style='color: red; font-weight: bold;'>La tasa nominal por sí sola no representa el verdadero costo o rendimiento</span> de una operación financiera</li>
+              <li>Es <span style='color: red; font-weight: bold;'>imprescindible conocer la frecuencia de capitalización</span> para realizar cálculos correctos</li>
+              <li>Las tasas nominales <span style='color: red; font-weight: bold;'>solo son comparables cuando tienen la misma frecuencia</span> de capitalización</li>
+              <li>En muchos países, las instituciones financieras están obligadas a <span style='color: red; font-weight: bold;'>informar tanto la tasa nominal como la efectiva</span></li>
+              <li>El <span style='color: red; font-weight: bold;'>análisis de decisiones financieras</span> siempre debe basarse en la <span style='color: red; font-weight: bold;'>tasa efectiva</span></li>
+            </ul>
+          
+            <h4>Ejercicio de aplicación integral</h4>
+            <p>Un banco ofrece tres opciones de inversión:</p>
+            <ol>
+              <li>13.5% nominal capitalizable mensualmente</li>
+              <li>13.8% nominal capitalizable trimestralmente</li>
+              <li>14.0% nominal capitalizable semestralmente</li>
+            </ol>
+            <p>Para una inversión de $10,000 a 3 años, determinar:</p>
+            <ol>
+              <li>La tasa efectiva anual de cada opción</li>
+              <li>El monto final de cada inversión</li>
+              <li>¿Qué opción es la más conveniente?</li>
+            </ol>
+            
+            <p><strong>Solución:</strong></p>
+            <ol>
+              <li><span style='color: red; font-weight: bold;'>Opción 1 (13.5% mensual):</span>
+                <ul>
+                  <li>iₑ = (1 + 0.135/12)¹² - 1 = (1.01125)¹² - 1 = 1.14396 - 1 = <span style='color: red; font-weight: bold;'>14.40%</span></li>
+                  <li>M = 10000 × (1 + 0.135/12)³⁶ = 10000 × (1.01125)³⁶ = 10000 × 1.5189 = <span style='color: red; font-weight: bold;'>$15,189</span></li>
+                </ul>
+              </li>
+              <li><span style='color: red; font-weight: bold;'>Opción 2 (13.8% trimestral):</span>
+                <ul>
+                  <li>iₑ = (1 + 0.138/4)⁴ - 1 = (1.0345)⁴ - 1 = 1.1456 - 1 = <span style='color: red; font-weight: bold;'>14.56%</span></li>
+                  <li>M = 10000 × (1 + 0.138/4)¹² = 10000 × (1.0345)¹² = 10000 × 1.5018 = <span style='color: red; font-weight: bold;'>$15,018</span></li>
+                </ul>
+              </li>
+              <li><span style='color: red; font-weight: bold;'>Opción 3 (14.0% semestral):</span>
+                <ul>
+                  <li>iₑ = (1 + 0.14/2)² - 1 = (1.07)² - 1 = 1.1449 - 1 = <span style='color: red; font-weight: bold;'>14.49%</span></li>
+                  <li>M = 10000 × (1 + 0.14/2)⁶ = 10000 × (1.07)⁶ = 10000 × 1.5007 = <span style='color: red; font-weight: bold;'>$15,007</span></li>
+                </ul>
+              </li>
+              <li><span style='color: red; font-weight: bold;'>Conclusión:</span> La opción 2 es la más conveniente con una tasa efectiva del 14.56% y un monto de $15,018</li>
+            </ol>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
+              <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
+              <li>Portus, L. (2019). <em>Matemáticas financieras</em>. Editorial Limusa.</li>
+              <li>Kellison, S. G. (2009). <em>The Theory of Interest</em>. McGraw-Hill.</li>
+            </ul>
+          `)"><b>6.2. Tasa de interés nominal</b> <span class="emoji-small">✅</span>
           </li>
-        </ul>
-      </div>
 
-      <!-- Bibliografía -->
-      <div class=bibliography-section style=margin-top:20px;>
-        <h4><i class='fas fa-book' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada
-        </h4>
-        <ul style=padding-left:18px;line-height:1.5;>
-          <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-          <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
-          <li>Richards, D. (2018). The Power of Compound Interest. Financial Planning Journal.</li>
-          <li>Malkiel, B. G. (2019). A Random Walk Down Wall Street. Norton & Company.</li>
-          <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
-          <li>Khan Academy: Compound interest. www.khanacademy.org</li>
-        </ul>
-      </div>
-    </div>
-    `);"><b>6.1.1.2. Modelo de interés compuesto</b> <span class=emoji-small>✅</span>
-    </li>
-    </ul>
-    <br>
-
-    <ul class="tema-list">
-      <li onclick="abrirModal('6.2. Tasa de interés nominal', `
-  <hr><br>
-  <div class=math-module>
-    
-    <!-- Tiempo estimado -->
-    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
-      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
-      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
-      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
-      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
-      </svg>
-      <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
-    </div>
-    
-    <!-- Objetivo -->
-    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-      <span><strong>Objetivo:</strong> Comprender el concepto de tasa de interés nominal como la tasa declarada sin considerar la frecuencia de capitalización, dominar la conversión entre tasas nominales y efectivas, aprender a calcular tasas equivalentes para diferentes periodos de capitalización, y aplicar estos conocimientos en la evaluación de productos financieros como préstamos, inversiones y instrumentos de ahorro.</span>
-    </div>
-    
-    <!-- Idea principal -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
-      <p>La tasa de interés nominal es la tasa de interés que se declara en los contratos financieros sin considerar el efecto de la capitalización dentro del periodo. Representa la tasa base sobre la cual se calculan los intereses, pero no refleja el rendimiento real debido a que no incorpora la frecuencia con la que se capitalizan los intereses. La relación fundamental entre la tasa nominal (j) y la tasa efectiva (i) está dada por la fórmula i = (1 + j/m)^m - 1, donde m es el número de periodos de capitalización por año. Comprender esta distinción es crucial para comparar adecuadamente diferentes opciones de inversión o financiamiento.</p>
-    </div>
-    
-    <!-- Ejercicio 1: Conceptos fundamentales y tipos de tasas -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre tasas nominales y efectivas</h4>
-      <p>Análisis de las características y diferencias entre los diferentes tipos de tasas:</p>
-      <table class=math-table>
-        <thead>
-          <tr>
-            <th>Tipo de Tasa</th>
-            <th>Definición</th>
-            <th>Notación</th>
-            <th>Fórmula de Conversión</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tasa Nominal</td>
-            <td>Tasa declarada sin considerar capitalización</td>
-            <td>j</td>
-            <td>Base para cálculo de intereses</td>
-            <td>12% anual capitalizable mensualmente</td>
-          </tr>
-          <tr>
-            <td>Tasa Periódica</td>
-            <td>Tasa por periodo de capitalización</td>
-            <td>j/m</td>
-            <td>Tasa nominal ÷ frecuencia</td>
-            <td>12%/12 = 1% mensual</td>
-          </tr>
-          <tr>
-            <td>Tasa Efectiva</td>
-            <td>Tasa real considerando capitalización</td>
-            <td>i</td>
-            <td>i = (1 + j/m)^m - 1</td>
-            <td>(1.01)^12 - 1 = 12.68%</td>
-          </tr>
-          <tr>
-            <td>Tasa Equivalente</td>
-            <td>Tasas con diferente frecuencia pero mismo efecto</td>
-            <td>i₁, i₂</td>
-            <td>(1 + i₁) = (1 + i₂)^(n₂/n₁)</td>
-            <td>12% anual = 0.9489% mensual</td>
-          </tr>
-          <tr>
-            <td>Proporcional</td>
-            <td>División simple de la tasa nominal</td>
-            <td>j/m</td>
-            <td>Sin capitalización</td>
-            <td>12% anual = 1% mensual proporcional</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa nominal siempre es menor o igual que la tasa efectiva equivalente. La diferencia aumenta con la frecuencia de capitalización y con el nivel de la tasa. Las tasas proporcionales solo son válidas para interés simple, no para compuesto.</p>
-    </div>
-    
-    <!-- Gráfica 1: Proceso de conversión de tasa nominal a efectiva -->
-    <div class=graph-container style=margin-bottom:20px;>
-      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Conversión de Tasa Nominal a Efectiva</h4>
-      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-        
-        <!-- Título -->
-        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Proceso de Conversión: Nominal → Efectiva</strong></text>
-        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal: 12% anual capitalizable mensualmente</text>
-        
-        <!-- Tasa Nominal -->
-        <g transform=translate(100,80)>
-          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
-          <text x=0 y=20 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Nominal</strong></text>
-          <text x=0 y=35 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>j = 12% anual</text>
-          <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Capitalizable mensualmente</text>
-        </g>
-        
-        <!-- Flecha de conversión 1 -->
-        <path d='M 200,110 L 200,140' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
-        <text x=220 y=125 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Paso 1: Dividir entre frecuencia</text>
-        
-        <!-- Tasa Periódica -->
-        <g transform=translate(100,150)>
-          <rect x=-50 y=0 width=100 height=50 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
-          <text x=0 y=15 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Tasa Periódica</strong></text>
-          <text x=0 y=30 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>j/m = 12% ÷ 12</text>
-          <text x=0 y=42 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>= 1% mensual</text>
-        </g>
-        
-        <!-- Flecha de conversión 2 -->
-        <path d='M 200,200 L 200,230' stroke=var(--apple-vibrant-green) stroke-width=3 marker-end=url(#arrowDown)></path>
-        <text x=220 y=215 text-anchor=middle font-size=11 fill=var(--apple-vibrant-green)>Paso 2: Aplicar capitalización</text>
-        
-        <!-- Tasa Efectiva -->
-        <g transform=translate(100,240)>
-          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2 rx=5></rect>
-          <text x=0 y=20 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Efectiva</strong></text>
-          <text x=0 y=35 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>i = (1.01)^12 - 1</text>
-          <text x=0 y=50 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>= 12.68% anual</text>
-        </g>
-        
-        <!-- Fórmula completa -->
-        <rect x=50 y=310 width=300 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-        <text x=200 y=325 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Fórmula General: i = (1 + j/m)<sup>m</sup> - 1</text>
-        
-        <!-- Comparación visual -->
-        <g transform=translate(250,100)>
-          <rect x=0 y=0 width=120 height=180 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-          <text x=60 y=20 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Comparación</strong></text>
-          
-          <circle cx=30 y=50 r=10 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-          <text x=30 y=52 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>12%</text>
-          <text x=70 y=55 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Nominal</text>
-          
-          <circle cx=30 y=90 r=12 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-          <text x=30 y=92 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>12.68%</text>
-          <text x=70 y=95 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Efectiva</text>
-          
-          <text x=60 y=120 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>Diferencia: 0.68%</text>
-          <text x=60 y=135 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Por capitalización</text>
-          <text x=60 y=145 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>mensual)</text>
-          
-          <rect x=10 y=155 width=100 height=15 fill=var(--apple-light-green) rx=3></rect>
-          <text x=60 y=165 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>¡Mayor rendimiento!</text>
-        </g>
-        
-        <!-- Definición de flechas -->
-        <defs>
-          <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
-            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
-          </marker>
-        </defs>
-        
-      </svg>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La conversión de tasa nominal a efectiva sigue un proceso de dos pasos: primero se obtiene la tasa periódica dividiendo entre la frecuencia, luego se aplica la capitalización compuesta. La tasa efectiva siempre es mayor que la nominal debido al efecto de los intereses sobre intereses.</p>
-    </div>
-    
-    <!-- Ejercicio 2: Cálculos de conversión y equivalencias -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Conversiones entre tasas nominales</h4>
-      <p>Resolución de problemas de conversión entre diferentes frecuencias de capitalización:</p>
-      <table class=math-table>
-        <thead>
-          <tr>
-            <th>Escenario</th>
-            <th>Tasa Nominal Dada</th>
-            <th>Conversión Solicitada</th>
-            <th>Procedimiento de Cálculo</th>
-            <th>Resultado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Mensual a Anual</td>
-            <td>12% anual capitalizable mensualmente</td>
-            <td>Tasa efectiva anual</td>
-            <td>1. i = (1 + 0.12/12)^12 - 1<br>2. i = (1.01)^12 - 1</td>
-            <td>12.6825% anual</td>
-          </tr>
-          <tr>
-            <td>Trimestral a Anual</td>
-            <td>8% anual capitalizable trimestralmente</td>
-            <td>Tasa efectiva anual</td>
-            <td>1. i = (1 + 0.08/4)^4 - 1<br>2. i = (1.02)^4 - 1</td>
-            <td>8.2432% anual</td>
-          </tr>
-          <tr>
-            <td>Semestral a Mensual</td>
-            <td>18% anual capitalizable semestralmente</td>
-            <td>Tasa efectiva mensual</td>
-            <td>1. i<sub>sem</sub> = 18%/2 = 9%<br>2. i<sub>mens</sub> = (1.09)^(1/6) - 1</td>
-            <td>1.4481% mensual</td>
-          </tr>
-          <tr>
-            <td>Diaria a Anual</td>
-            <td>6% anual capitalizable diariamente</td>
-            <td>Tasa efectiva anual</td>
-            <td>1. i = (1 + 0.06/365)^365 - 1<br>2. i ≈ (1.000164)^365 - 1</td>
-            <td>6.1831% anual</td>
-          </tr>
-          <tr>
-            <td>Comparación múltiple</td>
-            <td>10% anual con diferentes capitalizaciones</td>
-            <td>Ranking por rendimiento</td>
-            <td>Anual: 10.0000%<br>Semestral: 10.2500%<br>Trimestral: 10.3813%<br>Mensual: 10.4713%</td>
-            <td>Mensual > Trimestral > Semestral > Anual</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A mayor frecuencia de capitalización, mayor será la tasa efectiva para una misma tasa nominal. Las diferencias son más significativas con tasas nominales más altas. La capitalización continua representa el límite máximo posible.</p>
-    </div>
-    
-    <!-- Gráfica 2: Efecto de la frecuencia de capitalización -->
-    <div class=graph-container style=margin-bottom:20px;>
-      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Tasa Efectiva vs Frecuencia de Capitalización</h4>
-      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-        
-        <!-- Título -->
-        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Efecto de la Frecuencia de Capitalización</strong></text>
-        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal del 12% anual con diferentes frecuencias</text>
-        
-        <!-- Ejes coordenados -->
-        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-        <line x1=50 y1=250 x2=50 y2=150 stroke=var(--apple-dark-gray) stroke-width=2></line>
-        
-        <!-- Etiquetas de ejes -->
-        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Frecuencia de Capitalización</text>
-        <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,200)'>Tasa Efectiva Anual (%)</text>
-        
-        <!-- Marcas del eje X (frecuencia) -->
-        <g transform=translate(0,0)>
-          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Anual</text>
-          
-          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Semestral</text>
-          
-          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Trimestral</text>
-          
-          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mensual</text>
-          
-          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Diaria</text>
-        </g>
-        
-        <!-- Marcas del eje Y (tasa efectiva) -->
-        <g transform=translate(0,0)>
-          <line x1=45 y1=240 x2=55 y2=240 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=243 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.0%</text>
-          
-          <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.2%</text>
-          
-          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.4%</text>
-          
-          <line x1=45 y1=180 x2=55 y2=180 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=183 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.6%</text>
-          
-          <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.8%</text>
-        </g>
-        
-        <!-- Puntos de datos -->
-        <circle cx=100 cy=240 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=100 y=235 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.000%</text>
-        
-        <circle cx=150 cy=230 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.360%</text>
-        
-        <circle cx=200 cy=220 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=200 y=215 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.551%</text>
-        
-        <circle cx=250 cy=210 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=250 y=205 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.683%</text>
-        
-        <circle cx=300 cy=205 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=300 y=200 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.747%</text>
-        
-        <!-- Línea de conexión -->
-        <path d='M 100,240 
-                 L 150,230 
-                 L 200,220 
-                 L 250,210 
-                 L 300,205' 
-              stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-        
-        <!-- Límite de capitalización continua -->
-        <line x1=50 y1=200 x2=350 y2=200 stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></line>
-        <text x=360 y=200 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Continua: 12.750%</text>
-        
-        <!-- Área de mejora -->
-        <path d='M 100,240 L 150,230 L 200,220 L 250,210 L 300,205 L 300,200 L 250,200 L 200,200 L 150,200 L 100,200 Z' 
-              fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
-        <text x=200 y=190 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Beneficio por mayor frecuencia</text>
-        
-        <!-- Leyenda y fórmulas -->
-        <rect x=200 y=100 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-        <text x=290 y=115 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmula General</strong></text>
-        
-        <text x=290 y=130 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>i = (1 + j/m)<sup>m</sup> - 1</text>
-        <text x=290 y=145 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>j = 12% nominal anual</text>
-        <text x=290 y=155 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>m = frecuencia anual</text>
-        <text x=290 y=165 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>i = tasa efectiva anual</text>
-        
-        <!-- Ejemplo numérico -->
-        <rect x=50 y=290 width=300 height=50 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-        <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡La frecuencia importa!</strong></text>
-        <text x=200 y=320 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>De anual a mensual: +0.683% de rendimiento</text>
-        <text x=200 y=335 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>En $10,000: $68.30 adicionales por año</text>
-        
-      </svg>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa efectiva aumenta con la frecuencia de capitalización, pero los incrementos son cada vez menores (rendimientos decrecientes). El mayor salto ocurre al pasar de capitalización anual a semestral, mientras que pasar de mensual a diaria produce mejoras marginales. El límite teórico es la capitalización continua.</p>
-    </div>
-    
-    <!-- Ejercicio 3: Aplicaciones en productos financieros -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Tasas nominales en instrumentos financieros</h4>
-      <p>Análisis de cómo se utilizan las tasas nominales en diferentes productos financieros:</p>
-      <table class=math-table>
-        <thead>
-          <tr>
-            <th>Producto Financiero</th>
-            <th>Tasa Nominal Típica</th>
-            <th>Frecuencia de Capitalización</th>
-            <th>Tasa Efectiva Real</th>
-            <th>Consideraciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tarjetas de Crédito</td>
-            <td>30-50% anual</td>
-            <td>Mensual</td>
-            <td>34.5-61.0% anual</td>
-            <td>Altísimo costo real del crédito</td>
-          </tr>
-          <tr>
-            <td>Hipotecas</td>
-            <td>4-8% anual</td>
-            <td>Mensual</td>
-            <td>4.07-8.30% anual</td>
-            <td>Diferencia pequeña pero significativa</td>
-          </tr>
-          <tr>
-            <td>Certificados de Depósito</td>
-            <td>2-5% anual</td>
-            <td>Trimestral o mensual</td>
-            <td>2.02-5.12% anual</td>
-            <td>Buscar mayor frecuencia para mejor rendimiento</td>
-          </tr>
-          <tr>
-            <td>Préstamos Personales</td>
-            <td>15-25% anual</td>
-            <td>Mensual</td>
-            <td>16.08-28.24% anual</td>
-            <td>Costo real significativamente mayor</td>
-          </tr>
-          <tr>
-            <td>Cuentas de Ahorro</td>
-            <td>0.5-2% anual</td>
-            <td>Diaria o mensual</td>
-            <td>0.50-2.02% anual</td>
-            <td>Poca diferencia por tasas bajas</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los productos de crédito (tarjetas, préstamos) suelen usar capitalización mensual, lo que incrementa significativamente el costo real. Para inversiones, conviene buscar mayor frecuencia de capitalización. Siempre es esencial calcular la tasa efectiva para comparar productos.</p>
-    </div>
-    
-    <!-- Aplicaciones reales -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
-      <ul style=padding-left:18px;line-height:1.6;>
-        <li><strong>Comparación de productos de crédito:</strong> Conversión de tasas nominales a efectivas para evaluar el costo real de tarjetas de crédito y préstamos.</li>
-        <li><strong>Selección de inversiones:</strong> Análisis de certificados de depósito y cuentas de ahorro con diferentes frecuencias de capitalización.</li>
-        <strong>Evaluación de hipotecas:</strong> Cálculo de la tasa efectiva real de préstamos hipotecarios para comparar ofertas.</li>
-        <li><strong>Planificación financiera:</strong> Cálculo preciso de rendimientos esperados considerando la frecuencia de capitalización.</li>
-        <li><strong>Regulación financiera:</strong> Las autoridades exigen divulgar tasas efectivas para transparencia con los consumidores.</li>
-        <li><strong>Negociación de condiciones:</strong> Uso de tasas equivalentes para negociar mejores condiciones en productos financieros.</li>
-        <li><strong>Análisis de bonos:</strong> Cálculo de rendimiento al vencimiento considerando la frecuencia de pago de cupones.</li>
-        <li><strong>Gestión de deuda:</strong> Evaluación de estrategias de pago considerando el costo real del financiamiento.</li>
-      </ul>
-    </div>
-    
-    <!-- Bibliografía -->
-    <div class=bibliography-section style=margin-top:20px;>
-      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
-      <ul style=padding-left:18px;line-height:1.5;>
-        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
-        <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
-        <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
-        <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-        <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
-        <li>Khan Academy: Compound interest. www.khanacademy.org</li>
-      </ul>
-    </div>
-  </div>
-  `);"><b>6.2. Tasa de interés nominal</b> <span class=emoji-small>✅</span>
-      </li>
-
-      <li onclick="abrirModal('6.3. Valor Presente', `
+          <li onclick="abrirModal('6.3. Valor Presente', `
   <hr><br>
   <div class=math-module>
     
@@ -5598,9 +4703,9 @@
     </div>
   </div>
   `);"><b>6.3. Valor Presente</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li onclick="abrirModal('6.4. Tasa de descuento', `
+          <li onclick="abrirModal('6.4. Tasa de descuento', `
   <hr><br>
   <div class=math-module>
     
@@ -6005,9 +5110,9 @@
     </div>
   </div>
   `);"><b>6.4. Tasa de descuento</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li onclick="abrirModal('6.5. Fuerza de interés', `
+          <li onclick="abrirModal('6.5. Fuerza de interés', `
   <hr><br>
   <div class=math-module>
     
@@ -6427,9 +5532,9 @@
     </div>
   </div>
   `);"><b>6.5. Fuerza de interés</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li onclick="abrirModal('6.6. Relación entre tasas de interés y de descuento', `
+          <li onclick="abrirModal('6.6. Relación entre tasas de interés y de descuento', `
   <hr><br>
   <div class=math-module>
     
@@ -6837,9 +5942,9 @@
     </div>
   </div>
   `);"><b>6.6. Relación entre tasas de interés y de descuento</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li onclick="abrirModal('6.7. Tasas variables de interés', `
+          <li onclick="abrirModal('6.7. Tasas variables de interés', `
   <hr><br>
   <div class=math-module>
     
@@ -7259,9 +6364,9 @@
     </div>
   </div>
   `);"><b>6.7. Tasas variables de interés</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li onclick="abrirModal('6.8. Tasa real de interés', `
+          <li onclick="abrirModal('6.8. Tasa real de interés', `
   <hr><br>
   <div class=math-module>
     
@@ -7645,9 +6750,9 @@
     </div>
   </div>
   `);"><b>6.8. Tasa real de interés</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li onclick="abrirModal('6.9. Ecuaciones de valor', `
+          <li onclick="abrirModal('6.9. Ecuaciones de valor', `
   <hr><br>
   <div class=math-module>
     
@@ -8030,13 +7135,13 @@
     </div>
   </div>
   `);"><b>6.9. Ecuaciones de valor</b> <span class=emoji-small>✅</span>
-      </li>
+          </li>
 
-      <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
-    </ul><br>
+          <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
+        </ul><br>
 
-    <ul class="tema-list">
-      <li onclick="abrirModal('6.11. Anualidades', `
+        <ul class="tema-list">
+          <li onclick="abrirModal('6.11. Anualidades', `
   <hr><br>
   <div class=math-module>
     
@@ -8430,48 +7535,48 @@
     </div>
   </div>
   `);"><b>6.11. Anualidades</b> <span class=emoji-small>✅</span>
-      </li>
-      <ul>
-        <li>6.11.1. Definición y tipos de anualidades</li>
-        <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
-        <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
-        <li>6.11.4. Perpetuidades</li>
-        <li>6.11.5. Determinación de las variables de una anualidad</li>
-        <li>6.11.6. Anualidades con tasas variables</li>
-        <li>6.11.7. Anualidades anticipadas y diferidas</li>
-        <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente
-          frecuencia)</li>
-        <li>6.11.9. Anualidades continuas</li>
-        <li>6.11.10. Anualidades crecientes y decrecientes</li>
-      </ul>
-    </ul><br>
-    <ul class="tema-list">
-      <li>6.12. Amortización</li>
-      <ul>
-        <li>6.12.1 Diferentes esquemas de amortización</li>
-        <ul>
-          <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
-          <li>6.12.1.2. Amortización de una anualidad con n pagos iguales y uno desigual</li>
-          <li>6.12.1.3. Amortización con pagos iguales de capital</li>
-          <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
-        </ul>
-        <li>6.12.2 Construcción de tablas de amortización</li>
-        <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
-      </ul>
-      <li>6.13. Depreciación</li>
-      <ul>
-        <li>6.13.1 Definición</li>
-        <li>6.13.2. Métodos de Depreciación</li>
-        <ul>
-          <li>6.13.2.1. Línea recta</li>
-          <li>6.13.2.2. Porcentaje constante</li>
-          <li>6.13.2.3. Suma de dígitos</li>
-          <li>6.13.2.4. Interés sobre la inversión</li>
-          <li>6.13.2.5. Interés sobre la inversión acelerada</li>
-        </ul>
-      </ul>
-    </ul><br>
-    </div>
+          </li>
+          <ul>
+            <li>6.11.1. Definición y tipos de anualidades</li>
+            <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
+            <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
+            <li>6.11.4. Perpetuidades</li>
+            <li>6.11.5. Determinación de las variables de una anualidad</li>
+            <li>6.11.6. Anualidades con tasas variables</li>
+            <li>6.11.7. Anualidades anticipadas y diferidas</li>
+            <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente
+              frecuencia)</li>
+            <li>6.11.9. Anualidades continuas</li>
+            <li>6.11.10. Anualidades crecientes y decrecientes</li>
+          </ul>
+        </ul><br>
+        <ul class="tema-list">
+          <li>6.12. Amortización</li>
+          <ul>
+            <li>6.12.1 Diferentes esquemas de amortización</li>
+            <ul>
+              <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
+              <li>6.12.1.2. Amortización de una anualidad con n pagos iguales y uno desigual</li>
+              <li>6.12.1.3. Amortización con pagos iguales de capital</li>
+              <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
+            </ul>
+            <li>6.12.2 Construcción de tablas de amortización</li>
+            <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
+          </ul>
+          <li>6.13. Depreciación</li>
+          <ul>
+            <li>6.13.1 Definición</li>
+            <li>6.13.2. Métodos de Depreciación</li>
+            <ul>
+              <li>6.13.2.1. Línea recta</li>
+              <li>6.13.2.2. Porcentaje constante</li>
+              <li>6.13.2.3. Suma de dígitos</li>
+              <li>6.13.2.4. Interés sobre la inversión</li>
+              <li>6.13.2.5. Interés sobre la inversión acelerada</li>
+            </ul>
+          </ul>
+        </ul><br>
+      </div>
     </div>
   </section>
   <!-- ACTIVIDADES -->
