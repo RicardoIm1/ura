@@ -4274,6 +4274,488 @@
     </div>
     `);"><b>6.1.1.2. Modelo de interés compuesto</b> <span class=emoji-small>✅</span>
     </li>
+    <hr><br>
+    <div class=math-module>
+
+      <!-- Tiempo estimado -->
+      <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+        <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px;
+          aria-label='Tiempo estimado de lectura: 30 minutos'>
+          <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+          <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487
+            stroke-dashoffset=0 transform='rotate(-90 10 10)'></circle>
+          <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
+        </svg>
+        <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
+      </div>
+
+      <!-- Objetivo -->
+      <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid
+        var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+        <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+        <span><strong>Objetivo:</strong> Comprender el modelo de interés compuesto como el proceso donde los intereses
+          generados se reinvierten para producir nuevos intereses, dominar la fórmula fundamental VF = VP(1 + i)ⁿ,
+          analizar el efecto del tiempo y la tasa en el crecimiento exponencial, y aplicar estos conceptos en la
+          evaluación de inversiones, ahorros y préstamos a largo plazo.</span>
+      </div>
+
+      <!-- Idea principal -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal
+        </h4>
+        <p>El interés compuesto es el fenómeno financiero donde los intereses generados en cada periodo se añaden al
+          capital inicial para calcular los intereses del periodo siguiente, creando un efecto de crecimiento
+          exponencial. A diferencia del interés simple que solo genera intereses sobre el capital original, el compuesto
+          genera "intereses sobre intereses", lo que resulta en una acumulación mucho más acelerada del patrimonio. Este
+          concepto, descrito por Albert Einstein como "la fuerza más poderosa del universo", es fundamental para
+          entender el crecimiento de inversiones a largo plazo, el costo real de los préstamos y el poder del ahorro
+          sistemático.</p>
+      </div>
+
+      <!-- Ejercicio 1: Comparación interés simple vs compuesto -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1:
+          Comparación interés simple vs compuesto</h4>
+        <p>Análisis de las diferencias fundamentales entre ambos modelos de interés:</p>
+        <table class=math-table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Interés Simple</th>
+              <th>Interés Compuesto</th>
+              <th>Fórmula Principal</th>
+              <th>Ejemplo: $1,000 al 10% por 3 años</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Base de Cálculo</td>
+              <td>Solo capital inicial</td>
+              <td>Capital + intereses acumulados</td>
+              <td>Simple: VF = VP(1 + i×n)</td>
+              <td>VF = $1,300</td>
+            </tr>
+            <tr>
+              <td>Crecimiento</td>
+              <td>Lineal</td>
+              <td>Exponencial</td>
+              <td>Compuesto: VF = VP(1 + i)ⁿ</td>
+              <td>VF = $1,331</td>
+            </tr>
+            <tr>
+              <td>Intereses por Periodo</td>
+              <td>Constantes</td>
+              <td>Crecientes</td>
+              <td>Simple: I = VP × i × n</td>
+              <td>I = $100 cada año</td>
+            </tr>
+            <tr>
+              <td>Reinversión</td>
+              <td>No hay reinversión</td>
+              <td>Reinversión automática</td>
+              <td>Compuesto: I = VP[(1+i)ⁿ - 1]</td>
+              <td>I crece cada año</td>
+            </tr>
+            <tr>
+              <td>Aplicación Típica</td>
+              <td>Préstamos corto plazo</td>
+              <td>Inversiones largo plazo</td>
+              <td>Diferencia: VF<sub>comp</sub> - VF<sub>simp</sub></td>
+              <td>Diferencia: $31</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La
+          diferencia entre interés simple y compuesto aumenta exponencialmente con el tiempo. En plazos cortos la
+          diferencia es pequeña, pero en horizontes largos el interés compuesto genera acumulaciones significativamente
+          mayores debido al efecto de los "intereses sobre intereses".</p>
+      </div>
+
+      <!-- Gráfica 1: Comparación crecimiento simple vs compuesto -->
+      <div class=graph-container style=margin-bottom:20px;>
+        <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1:
+          Crecimiento Simple vs Compuesto</h4>
+        <svg viewBox='0 0 400 350' class=math-graph
+          style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+
+          <!-- Título -->
+          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Comparación: $1,000 al
+              10% anual por 10 años</strong></text>
+
+          <!-- Ejes coordenados -->
+          <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+          <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+
+          <!-- Etiquetas de ejes -->
+          <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+          <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)
+            transform='rotate(-90 20,175)'>Valor Futuro ($)</text>
+
+          <!-- Marcas del eje X -->
+          <g transform=translate(0,0)>
+            <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
+
+            <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
+
+            <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6</text>
+
+            <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8</text>
+
+            <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
+          </g>
+
+          <!-- Marcas del eje Y -->
+          <g transform=translate(0,0)>
+            <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1,500</text>
+
+            <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,000</text>
+
+            <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2,500</text>
+
+            <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3,000</text>
+          </g>
+
+          <!-- Línea de interés simple -->
+          <path d='M 50,250 
+                 L 100,240 
+                 L 150,230 
+                 L 200,220 
+                 L 250,210 
+                 L 300,200' stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+
+          <!-- Curva de interés compuesto -->
+          <path d='M 50,250 
+                 L 100,235 
+                 L 150,220 
+                 L 200,205 
+                 L 250,190 
+                 L 300,175' stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
+
+          <!-- Puntos de datos compuesto -->
+          <circle cx=100 cy=235 r=3 fill=var(--apple-vibrant-green)></circle>
+          <circle cx=150 cy=220 r=3 fill=var(--apple-vibrant-green)></circle>
+          <circle cx=200 cy=205 r=3 fill=var(--apple-vibrant-green)></circle>
+          <circle cx=250 cy=190 r=3 fill=var(--apple-vibrant-green)></circle>
+          <circle cx=300 cy=175 r=3 fill=var(--apple-vibrant-green)></circle>
+
+          <!-- Área de diferencia -->
+          <path
+            d='M 50,250 L 100,240 L 150,230 L 200,220 L 250,210 L 300,200 L 300,175 L 250,190 L 200,205 L 150,220 L 100,235 L 50,250 Z'
+            fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
+          <text x=200 y=210 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Ventaja del
+            compuesto</text>
+
+          <!-- Leyenda -->
+          <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+          <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Resultados a 10
+              años</strong></text>
+
+          <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+          <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>Simple: $2,000</text>
+
+          <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
+          <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Compuesto: $2,594</text>
+
+          <text x=290 y=120 font-size=9 fill=var(--apple-vibrant-red)>Diferencia: $594 (29.7%)</text>
+          <text x=290 y=130 font-size=9 fill=var(--apple-dark-gray)>¡Intereses sobre intereses!</text>
+
+          <!-- Fórmulas -->
+          <rect x=50 y=290 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+          <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmulas
+              Fundamentales</strong></text>
+          <text x=120 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Simple: VF = 1000(1 +
+            0.10×10)</text>
+          <text x=280 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Compuesto: VF =
+            1000(1.10)¹⁰</text>
+
+        </svg>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
+          simple crece linealmente (línea recta), mientras el compuesto crece exponencialmente (curva ascendente). La
+          diferencia se hace más evidente con el tiempo: a 10 años, el compuesto genera 29.7% más que el simple. Esta
+          brecha continúa ampliándose indefinidamente.</p>
+      </div>
+
+      <!-- Ejercicio 2: Cálculos de interés compuesto -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones
+          del interés compuesto</h4>
+        <p>Resolución de problemas prácticos usando la fórmula de interés compuesto:</p>
+        <table class=math-table>
+          <thead>
+            <tr>
+              <th>Escenario</th>
+              <th>Datos del Problema</th>
+              <th>Procedimiento de Cálculo</th>
+              <th>Fórmula Aplicada</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Inversión Básica</td>
+              <td>VP=$5,000, i=8%, n=7 años</td>
+              <td>1. VF = 5000 × (1.08)⁷<br>2. (1.08)⁷ = 1.7138<br>3. VF = 5000 × 1.7138</td>
+              <td>VF = VP(1 + i)ⁿ</td>
+              <td>VF = $8,569</td>
+            </tr>
+            <tr>
+              <td>Doblado de Capital</td>
+              <td>¿En cuánto tiempo se duplica al 12%?</td>
+              <td>1. 2 = (1.12)ⁿ<br>2. ln(2) = n × ln(1.12)<br>3. n = 0.6931/0.1133</td>
+              <td>Regla del 72: 72/12</td>
+              <td>n = 6.12 años</td>
+            </tr>
+            <tr>
+              <td>Ahorro para Jubilación</td>
+              <td>$200/mes por 35 años al 7%</td>
+              <td>1. VF = 200 × [(1.00583)⁴²⁰ - 1]/0.00583<br>2. Usar fórmula anualidad vencida</td>
+              <td>VF = A[(1+i)ⁿ - 1]/i</td>
+              <td>VF = $283,215</td>
+            </tr>
+            <tr>
+              <td>Préstamo Hipotecario</td>
+              <td>$150,000 a 30 años al 6%</td>
+              <td>1. Pago = 150000 × [0.005(1.005)³⁶⁰]/[(1.005)³⁶⁰ - 1]<br>2. Calcular factor</td>
+              <td>A = VP[i(1+i)ⁿ]/[(1+i)ⁿ - 1]</td>
+              <td>Pago = $899.33/mes</td>
+            </tr>
+            <tr>
+              <td>Crecimiento Empresarial</td>
+              <td>Ventas $1M, crecimiento 15% anual</td>
+              <td>1. VF = 1000000 × (1.15)⁵<br>2. (1.15)⁵ = 2.0114<br>3. VF = 1000000 × 2.0114</td>
+              <td>VF = VP(1 + i)ⁿ</td>
+              <td>VF = $2,011,357</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
+          compuesto permite calcular no solo inversiones simples, sino también anualidades (series de pagos) y
+          préstamos. La regla del 72 (72/tasa) proporciona una aproximación rápida para calcular el tiempo de
+          duplicación.</p>
+      </div>
+
+      <!-- Gráfica 2: Efecto del tiempo en el interés compuesto -->
+      <div class=graph-container style=margin-bottom:20px;>
+        <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Poder
+          del Tiempo en el Interés Compuesto</h4>
+        <svg viewBox='0 0 400 400' class=math-graph
+          style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+
+          <!-- Título -->
+          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>El Poder del Tiempo:
+              $10,000 al 8% anual</strong></text>
+
+          <!-- Ejes coordenados -->
+          <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
+          <line x1=50 y1=300 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+
+          <!-- Etiquetas de ejes -->
+          <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+          <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)
+            transform='rotate(-90 20,200)'>Valor Futuro ($)</text>
+
+          <!-- Marcas del eje X -->
+          <g transform=translate(0,0)>
+            <line x1=100 y1=295 x2=100 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=100 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
+
+            <line x1=150 y1=295 x2=150 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=150 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20</text>
+
+            <line x1=200 y1=295 x2=200 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>30</text>
+
+            <line x1=250 y1=295 x2=250 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=250 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>40</text>
+
+            <line x1=300 y1=295 x2=300 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=300 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>50</text>
+          </g>
+
+          <!-- Marcas del eje Y -->
+          <g transform=translate(0,0)>
+            <line x1=45 y1=250 x2=55 y2=250 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=253 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>50,000</text>
+
+            <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>100,000</text>
+
+            <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>150,000</text>
+
+            <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200,000</text>
+          </g>
+
+          <!-- Curva de crecimiento exponencial -->
+          <path d='M 50,300 
+                 L 100,280 
+                 L 150,240 
+                 L 200,180 
+                 L 250,120 
+                 L 300,80' stroke=var(--apple-vibrant-blue) stroke-width=3 fill=none></path>
+
+          <!-- Puntos de referencia -->
+          <circle cx=100 cy=280 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=100 y=270 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>10 años: $21,589</text>
+
+          <circle cx=150 cy=240 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=150 y=230 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>20 años: $46,610</text>
+
+          <circle cx=200 cy=180 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=200 y=170 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>30 años: $100,627</text>
+
+          <circle cx=250 cy=120 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=250 y=110 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>40 años: $217,245</text>
+
+          <circle cx=300 cy=80 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=300 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>50 años: $469,016</text>
+
+          <!-- Zonas de crecimiento -->
+          <rect x=50 y=300 width=100 height=50 fill=var(--apple-light-green) fill-opacity=0.3 stroke=none></rect>
+          <text x=100 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Crecimiento moderado</text>
+
+          <rect x=150 y=300 width=100 height=100 fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></rect>
+          <text x=200 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Aceleración</text>
+
+          <rect x=250 y=300 width=100 height=180 fill=var(--apple-light-red) fill-opacity=0.3 stroke=none></rect>
+          <text x=300 y=325 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Explosión exponencial</text>
+
+          <!-- Leyenda y análisis -->
+          <rect x=200 y=60 width=180 height=100 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+          <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Análisis del
+              Crecimiento</strong></text>
+
+          <text x=290 y=90 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Primeros 10 años: +$11,589</text>
+          <text x=290 y=100 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Últimos 10 años: +$251,771</text>
+          <text x=290 y=110 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>¡11.7 veces más!</text>
+
+          <text x=290 y=125 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Tiempo de duplicación:</text>
+          <text x=290 y=135 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>9 años (Regla del 72:
+            72/8)</text>
+
+          <!-- Conclusión importante -->
+          <rect x=50 y=350 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange)
+            stroke-width=1 rx=5></rect>
+          <text x=200 y=365 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El tiempo es tu mejor
+              aliado!</strong></text>
+          <text x=200 y=380 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Los mayores rendimientos vienen
+            en los últimos años</text>
+
+        </svg>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El
+          crecimiento compuesto es lento al principio pero se acelera dramáticamente con el tiempo. En este ejemplo, los
+          últimos 10 años generan 11.7 veces más ganancia que los primeros 10 años. Esto demuestra por qué empezar
+          temprano es crucial para aprovechar el poder del interés compuesto.</p>
+      </div>
+
+      <!-- Ejercicio 3: Aplicaciones en planificación financiera -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3:
+          Estrategias con interés compuesto</h4>
+        <p>Aplicación del interés compuesto en diferentes contextos de planificación financiera:</p>
+        <table class=math-table>
+          <thead>
+            <tr>
+              <th>Estrategia</th>
+              <th>Contexto</th>
+              <th>Aplicación del Interés Compuesto</th>
+              <th>Beneficio Principal</th>
+              <th>Ejemplo Práctico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Inicio Temprano</td>
+              <td>Ahorro para jubilación</td>
+              <td>Más tiempo para que crezcan los intereses</td>
+              <td>Menor esfuerzo para misma meta</td>
+              <td>Empezar a 25 vs 35 años</td>
+            </tr>
+            <tr>
+              <td>Reinversión</td>
+              <td>Dividendos y ganancias</td>
+              <td>Reinvertir en lugar de gastar</td>
+              <td>Aceleración del crecimiento</td>
+              <td>Reinvertir dividendos de acciones</td>
+            </tr>
+            <tr>
+              <td>Aportes Constantes</td>
+              <td>Ahorro sistemático</td>
+              <td>Interés sobre aportes acumulados</td>
+              <td>Acumulación exponencial</td>
+              <td>$500/mes por 30 años al 8%</td>
+            </tr>
+            <tr>
+              <td>Reinversión de Intereses</td>
+              <td>Certificados de depósito</td>
+              <td>Capitalizar intereses periódicos</td>
+              <td>Mayor rendimiento efectivo</td>
+              <td>CD con capitalización mensual</td>
+            </tr>
+            <tr>
+              <td>Evitar Interés Compuesto Negativo</td>
+              <td>Deudas de tarjetas</td>
+              <td>Interés sobre saldo + intereses</td>
+              <td>Evitar espiral de deuda</td>
+              <td>Pagar tarjetas completamente</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El interés
+          compuesto funciona tanto a favor (inversiones) como en contra (deudas). Comenzar temprano, ser constante y
+          reinvertir las ganancias son las claves para maximizar sus beneficios. En deudas, pagar más que el mínimo
+          evita el efecto negativo del interés compuesto.</p>
+      </div>
+
+      <!-- Aplicaciones reales -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales
+        </h4>
+        <ul style=padding-left:18px;line-height:1.6;>
+          <li><strong>Planificación de jubilación:</strong> Cálculo del ahorro necesario considerando el crecimiento
+            compuesto durante décadas.</li>
+          <li><strong>Fondos de inversión:</strong> Reinversión automática de dividendos y ganancias de capital para
+            aprovechar el interés compuesto.</li>
+          <li><strong>Hipotecas inversas:</strong> Cálculo de pagos considerando la capitalización del saldo del
+            préstamo.</li>
+          <li><strong>Seguros de vida con valor en efectivo:</strong> Crecimiento de la reserva técnica mediante interés
+            compuesto.</li>
+          <li><strong>Bonos cupón cero:</strong> Valuación basada en el descuento compuesto hasta el vencimiento.</li>
+          <li><strong>Préstamos estudiantiles:</strong> Cálculo del costo total considerando la capitalización durante
+            el periodo de estudios.</li>
+          <li><strong>Fondos de educación:</strong> Planificación de ahorros para educación universitaria con horizonte
+            de 18+ años.</li>
+          <li><strong>Reinversión empresarial:</strong> Decisiones sobre reinvertir utilidades vs distribuir dividendos.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bibliografía -->
+      <div class=bibliography-section style=margin-top:20px;>
+        <h4><i class='fas fa-book' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada
+        </h4>
+        <ul style=padding-left:18px;line-height:1.5;>
+          <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+          <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+          <li>Richards, D. (2018). The Power of Compound Interest. Financial Planning Journal.</li>
+          <li>Malkiel, B. G. (2019). A Random Walk Down Wall Street. Norton & Company.</li>
+          <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+          <li>Khan Academy: Compound interest. www.khanacademy.org</li>
+        </ul>
+      </div>
+    </div>
+    `);"><b>6.1.1.2. Modelo de interés compuesto</b> <span class=emoji-small>✅</span>
+    </li>
     </ul>
     <br>
 
