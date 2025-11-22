@@ -5728,7 +5728,257 @@
             `)">6.8. Tasa real de interés <span class="emoji-small">✅</span>
           </li>
 
-          <li>6.9. Ecuaciones de valor</li>
+          <li onclick="abrirModal('6.9. Ecuaciones de valor', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el concepto, metodología y aplicaciones de las ecuaciones de valor en matemáticas financieras, permitiendo comparar y renegociar obligaciones en diferentes tiempos mediante la equivalencia financiera.</p>
+            
+              <h4>Definición y conceptos básicos</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Ecuación de valor:</span> Igualdad que establece la equivalencia financiera entre dos conjuntos de obligaciones en una fecha focal determinada.</li>
+                <li><span style='color: red; font-weight: bold;'>Fecha focal:</span> Punto en el tiempo donde se comparan los valores de las obligaciones, sirviendo como referencia para la equivalencia.</li>
+                <li><span style='color: red; font-weight: bold;'>Equivalencia financiera:</span> Situación donde dos o más conjuntos de pagos tienen el mismo valor económico en una fecha determinada.</li>
+                <li><span style='color: red; font-weight: bold;'>Obligaciones originales:</span> Conjunto de deudas o pagos iniciales que se desean renegociar.</li>
+                <li><span style='color: red; font-weight: bold;'>Obligaciones propuestas:</span> Nuevo conjunto de pagos que reemplazan a las obligaciones originales.</li>
+                <li><span style='color: red; font-weight: bold;'>Principio fundamental:</span> El valor total de las obligaciones originales debe igualar al valor total de las obligaciones propuestas en la fecha focal.</li>
+              </ul>
+            
+              <h4>Fórmulas fundamentales</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Ecuación general:</span> Σ[Valores originales] = Σ[Valores propuestos] (en fecha focal)</li>
+                <li><span style='color: red; font-weight: bold;'>Valor futuro:</span> VF = VP × (1 + i)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Valor presente:</span> VP = VF / (1 + i)ⁿ</li>
+                <li><span style='color: red; font-weight: bold;'>Para deudas vencidas:</span> Se capitalizan hasta la fecha focal</li>
+                <li><span style='color: red; font-weight: bold;'>Para deudas por vencer:</span> Se descuentan hasta la fecha focal</li>
+                <li><span style='color: red; font-weight: bold;'>Cálculo de pagos únicos:</span> X = [Σ(deudas capitalizadas) - Σ(pagos capitalizados)] / factor</li>
+                <li><span style='color: red; font-weight: bold;'>Para series de pagos:</span> Se establece ecuación con cada pago valorado en fecha focal</li>
+              </ul>
+            
+              <h4>Procedimiento general para resolver ecuaciones de valor</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Paso</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Descripción</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Identificar todas las obligaciones originales</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Deudas: $5,000 a 3 meses, $8,000 a 6 meses</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Definir las nuevas obligaciones propuestas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3 pagos iguales a 2, 4 y 7 meses</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Establecer la fecha focal</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Fecha focal en mes 6</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Llevar todas las obligaciones a la fecha focal</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Capitalizar deudas anteriores, descontar deudas posteriores</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Plantear la ecuación de valor</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Σ(valores originales) = Σ(valores propuestos)</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>6</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Resolver la ecuación</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Encontrar el valor de los pagos desconocidos</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>7</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Verificar la solución</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Comprobar que se cumple la equivalencia</td>
+                </tr>
+              </table>
+            
+              <h4>Ejemplos detallados de aplicación</h4>
+              
+              <p><strong>Ejemplo 1: Reemplazo de deudas por un pago único</strong></p>
+              <p>Una persona debe $10,000 con vencimiento en 4 meses y $15,000 con vencimiento en 8 meses. Desea reemplazarlas por un solo pago en 6 meses. Tasa: 2% mensual.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>D₁ = $10,000 (mes 4), D₂ = $15,000 (mes 8), i = 2% mensual, Fecha focal: mes 6</span></li>
+                <li>Llevar D₁ a fecha focal (2 meses después): VF = 10000 × (1.02)² = 10000 × 1.0404 = <span style='color: red; font-weight: bold;'>$10,404</span></li>
+                <li>Llevar D₂ a fecha focal (2 meses antes): VP = 15000 / (1.02)² = 15000 / 1.0404 = <span style='color: red; font-weight: bold;'>$14,417.53</span></li>
+                <li>Plantear ecuación: <span style='color: red; font-weight: bold;'>Pago único = D₁(FF) + D₂(FF)</span></li>
+                <li>Cálculo: P = 10404 + 14417.53 = <span style='color: red; font-weight: bold;'>$24,821.53</span></li>
+                <li>Verificación: Valor total original en FF = Valor del pago único</li>
+              </ol>
+              
+              <p><strong>Ejemplo 2: Reestructuración con múltiples pagos</strong></p>
+              <p>Se deben $20,000 a 3 meses, $30,000 a 6 meses y $25,000 a 9 meses. Se reemplazan por 3 pagos iguales a 4, 7 y 10 meses. Tasa: 18% anual capitalizable mensualmente.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>D₁ = $20,000 (mes 3), D₂ = $30,000 (mes 6), D₃ = $25,000 (mes 9), i = 18%/12 = 1.5% mensual</span></li>
+                <li>Fecha focal: mes 7 (punto intermedio)</li>
+                <li>Llevar obligaciones originales a FF:
+                  <ul>
+                    <li>D₁: 4 meses después: 20000 × (1.015)⁴ = 20000 × 1.061364 = <span style='color: red; font-weight: bold;'>$21,227.28</span></li>
+                    <li>D₂: 1 mes después: 30000 × (1.015)¹ = 30000 × 1.015 = <span style='color: red; font-weight: bold;'>$30,450</span></li>
+                    <li>D₃: 2 meses antes: 25000 / (1.015)² = 25000 / 1.030225 = <span style='color: red; font-weight: bold;'>$24,266.28</span></li>
+                    <li>Total original en FF: 21227.28 + 30450 + 24266.28 = <span style='color: red; font-weight: bold;'>$75,943.56</span></li>
+                  </ul>
+                </li>
+                <li>Llevar pagos propuestos a FF (cada pago = X):
+                  <ul>
+                    <li>P₁: 3 meses antes: X / (1.015)³ = X / 1.045678</li>
+                    <li>P₂: en fecha focal: X</li>
+                    <li>P₃: 3 meses después: X × (1.015)³ = X × 1.045678</li>
+                  </ul>
+                </li>
+                <li>Plantear ecuación: <span style='color: red; font-weight: bold;'>X/1.045678 + X + X×1.045678 = 75,943.56</span></li>
+                <li>Simplificar: X(0.956317 + 1 + 1.045678) = X × 3.001995 = 75,943.56</li>
+                <li>Resolver: X = 75943.56 / 3.001995 = <span style='color: red; font-weight: bold;'>$25,297.72</span></li>
+                <li>Los tres pagos serán de <span style='color: red; font-weight: bold;'>$25,297.72</span> cada uno</li>
+              </ol>
+              
+              <p><strong>Ejemplo 3: Inclusión de pago inicial</strong></p>
+              <p>Una deuda de $50,000 a 5 meses se renegocia con un pago inicial de $15,000 y el saldo en 2 pagos iguales a 3 y 6 meses. Tasa: 24% anual capitalizable mensualmente.</p>
+              <ol>
+                <li>Datos: <span style='color: red; font-weight: bold;'>Deuda = $50,000 (mes 5), Pago inicial = $15,000 (hoy), i = 24%/12 = 2% mensual</span></li>
+                <li>Fecha focal: mes 5 (vencimiento original)</li>
+                <li>Valor de la deuda en FF: <span style='color: red; font-weight: bold;'>$50,000</span> (ya está en FF)</li>
+                <li>Valor del pago inicial en FF (5 meses después): 15000 × (1.02)⁵ = 15000 × 1.104081 = <span style='color: red; font-weight: bold;'>$16,561.22</span></li>
+                <li>Valor de los pagos X en FF:
+                  <ul>
+                    <li>Primer pago X (mes 3): 2 meses después: X × (1.02)² = X × 1.0404</li>
+                    <li>Segundo pago X (mes 6): 1 mes antes: X / (1.02)¹ = X / 1.02</li>
+                  </ul>
+                </li>
+                <li>Plantear ecuación: <span style='color: red; font-weight: bold;'>50000 = 16561.22 + 1.0404X + X/1.02</span></li>
+                <li>Simplificar: 50000 - 16561.22 = 1.0404X + 0.980392X</li>
+                <li>33438.78 = 2.020792X</li>
+                <li>X = 33438.78 / 2.020792 = <span style='color: red; font-weight: bold;'>$16,545.15</span></li>
+                <li>Cada pago será de <span style='color: red; font-weight: bold;'>$16,545.15</span></li>
+              </ol>
+            
+              <h4>Selección de la fecha focal y su impacto</h4>
+              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
+                <tr style='background-color: #f2f2f2;'>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Fecha Focal</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Ventajas</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Desventajas</th>
+                  <th style='border: 1px solid #ddd; padding: 8px;'>Recomendación</th>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Al inicio</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Solo descuentos, cálculos más simples</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Puede generar números grandes</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Para plazos cortos</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Al final</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Solo capitalizaciones</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Valores muy grandes con tasas altas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Para análisis de proyectos</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Intermedia</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Balance entre capitalización y descuento</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculos más complejos</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Caso general recomendado</td>
+                </tr>
+                <tr>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>En pago desconocido</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Elimina factores para ese pago</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Poco práctica con múltiples incógnitas</td>
+                  <td style='border: 1px solid #ddd; padding: 8px;'>Para pagos únicos</td>
+                </tr>
+              </table>
+              <p><span style='color: red; font-weight: bold;'>Principio de invariancia:</span> La fecha focal puede ser cualquiera, el resultado debe ser el mismo si los cálculos son correctos.</p>
+            
+              <h4>Aplicaciones prácticas de ecuaciones de valor</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Refinanciamiento de deudas:</span> Consolidar múltiples deudas en pagos más manejables</li>
+                <li><span style='color: red; font-weight: bold;'>Renegociación de créditos:</span> Modificar plazos y montos de pagos existentes</li>
+                <li><span style='color: red; font-weight: bold;'>Decisiones de inversión:</span> Comparar alternativas con diferentes flujos en el tiempo</li>
+                <li><span style='color: red; font-weight: bold;'>Cálculo de saldos insolutos:</span> Determinar el monto pendiente después de varios pagos</li>
+                <li><span style='color: red; font-weight: bold;'>Análisis de leasing:</span> Evaluar diferentes estructuras de pago en arrendamientos</li>
+                <li><span style='color: red; font-weight: bold;'>Planificación de pagos:</span> Diseñar calendarios de pagos que se ajusten a flujos de efectivo</li>
+              </ul>
+            
+              <h4>Casos especiales y consideraciones</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Tasas variables:</span> Requieren especificar la tasa aplicable en cada período</li>
+                <li><span style='color: red; font-weight: bold;'>Diferentes tasas de interés:</span> Cuando inversionista y deudor usan tasas diferentes</li>
+                <li><span style='color: red; font-weight: bold;'>Obligaciones en moneda extranjera:</span> Considerar tipo de cambio y tasas en ambas monedas</li>
+                <li><span style='color: red; font-weight: bold;'>Comisiones y gastos:</span> Incluir costos adicionales en la ecuación</li>
+                <li><span style='color: red; font-weight: bold;'>Pagos anticipados vs vencidos:</span> Ajustar factores de capitalización/descuento</li>
+                <li><span style='color: red; font-weight: bold;'>Efectos fiscales:</span> Considerar tratamiento tributario de intereses y ganancias</li>
+              </ul>
+            
+              <h4>Ejercicio de aplicación integral</h4>
+              <p>Una empresa tiene las siguientes deudas: $40,000 a 2 meses, $60,000 a 5 meses, $80,000 a 8 meses. Desea reemplazarlas por:
+              <br>- Pago inicial de $30,000
+              <br>- 2 pagos iguales a 4 y 7 meses
+              <br>Tasa: 1.8% mensual. Calcular el valor de los pagos iguales.</p>
+              
+              <p><strong>Solución:</strong></p>
+              <ol>
+                <li><span style='color: red; font-weight: bold;'>Datos y fecha focal:</span>
+                  <ul>
+                    <li>Deudas: D₁ = $40,000 (mes 2), D₂ = $60,000 (mes 5), D₃ = $80,000 (mes 8)</li>
+                    <li>Pagos: P₀ = $30,000 (hoy), P₁ = X (mes 4), P₂ = X (mes 7)</li>
+                    <li>i = 1.8% mensual, Fecha focal: mes 5</li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Llevar deudas a fecha focal:</span>
+                  <ul>
+                    <li>D₁: 3 meses después: 40000 × (1.018)³ = 40000 × 1.0550 = <span style='color: red; font-weight: bold;'>$42,200.16</span></li>
+                    <li>D₂: en fecha focal: <span style='color: red; font-weight: bold;'>$60,000</span></li>
+                    <li>D₃: 3 meses antes: 80000 / (1.018)³ = 80000 / 1.0550 = <span style='color: red; font-weight: bold;'>$75,829.38</span></li>
+                    <li>Total deudas en FF: 42200.16 + 60000 + 75829.38 = <span style='color: red; font-weight: bold;'>$178,029.54</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Llevar pagos a fecha focal:</span>
+                  <ul>
+                    <li>P₀: 5 meses después: 30000 × (1.018)⁵ = 30000 × 1.0933 = <span style='color: red; font-weight: bold;'>$32,798.93</span></li>
+                    <li>P₁: 1 mes después: X × (1.018)¹ = <span style='color: red; font-weight: bold;'>1.018X</span></li>
+                    <li>P₂: 2 meses antes: X / (1.018)² = X / 1.036324 = <span style='color: red; font-weight: bold;'>0.9649X</span></li>
+                    <li>Total pagos en FF: 32798.93 + 1.018X + 0.9649X = 32798.93 + <span style='color: red; font-weight: bold;'>1.9829X</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Plantear y resolver ecuación:</span>
+                  <ul>
+                    <li>178029.54 = 32798.93 + 1.9829X</li>
+                    <li>1.9829X = 178029.54 - 32798.93 = 145230.61</li>
+                    <li>X = 145230.61 / 1.9829 = <span style='color: red; font-weight: bold;'>$73,240.68</span></li>
+                  </ul>
+                </li>
+                <li><span style='color: red; font-weight: bold;'>Verificación:</span>
+                  <ul>
+                    <li>Cada pago será de <span style='color: red; font-weight: bold;'>$73,240.68</span></li>
+                    <li>Total pagos valorados en FF: 32798.93 + 1.018(73240.68) + 0.9649(73240.68) = $178,029.54 ✓</li>
+                  </ul>
+                </li>
+              </ol>
+            
+              <h4>Errores comunes y recomendaciones</h4>
+              <ul>
+                <li><span style='color: red; font-weight: bold;'>Error:</span> No especificar claramente la fecha focal</li>
+                <li><span style='color: red; font-weight: bold;'>Solución:</span> Siempre indicar explícitamente la fecha focal elegida</li>
+                <li><span style='color: red; font-weight: bold;'>Error:</span> Confundir capitalización con descuento</li>
+                <li><span style='color: red; font-weight: bold;'>Solución:</span> Para fechas anteriores a FF: capitalizar, para posteriores: descontar</li>
+                <li><span style='color: red; font-weight: bold;'>Error:</span> No verificar la solución</li>
+                <li><span style='color: red; font-weight: bold;'>Solución:</span> Siempre comprobar que se cumple la equivalencia financiera</li>
+                <li><span style='color: red; font-weight: bold;'>Error:</span> Usar tasas incorrectas o inconsistentes</li>
+                <li><span style='color: red; font-weight: bold;'>Solución:</span> Verificar periodicidad y convertir tasas si es necesario</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación. (Capítulo 4: Interés compuesto y ecuaciones de valor)</li>
+                <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill. (Capítulo 5: Ecuaciones de valor y reestructuración de deudas)</li>
+                <li>Portus, L. (2019). <em>Matemáticas Financieras</em>. Limusa. (Capítulo 6: Equivalencia financiera y fecha focal)</li>
+                <li>Díaz, A. (2020). <em>Problemas resueltos de matemáticas financieras</em>. ECASA. (Sección 3: Ecuaciones de valor)</li>
+                <li>Aliaga, C. (2016). <em>Matemáticas Financieras: Un enfoque práctico</em>. Prentice Hall. (Capítulo 4: Renegociación de deudas)</li>
+              </ul>
+            `)">6.9. Ecuaciones de valor <span class="emoji-small">✅</span>
+          </li>
           <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
         </ul><br>
 
