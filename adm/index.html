@@ -5236,257 +5236,426 @@
           `)"><b>6.6. Relación entre tasas de interés y de descuento</b> <span class="emoji-small">✅</span>
           </li>
 
-          <li>
-          <li <li onclick="abrirModal('6.7. Tasas variables de interés', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el concepto, características, fórmulas y aplicaciones de las tasas variables de interés, con especial énfasis en su cálculo, comportamiento en diferentes escenarios económicos y análisis de riesgo asociado.</p>
-            
-              <h4>Definición y conceptos básicos</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Tasa variable de interés:</span> Porcentaje que fluctúa periódicamente según indicadores económicos específicos, a diferencia de las tasas fijas que permanecen constantes.</li>
-                <li><span style='color: red; font-weight: bold;'>Índice de referencia:</span> Indicador económico utilizado como base para ajustar la tasa variable (ej: TIIE, LIBOR, Prime Rate).</li>
-                <li><span style='color: red; font-weight: bold;'>Margen o spread:</span> Porcentaje fijo que se suma al índice de referencia para determinar la tasa total.</li>
-                <li><span style='color: red; font-weight: bold;'>Período de ajuste:</span> Intervalo de tiempo en el que se revisa y modifica la tasa variable.</li>
-                <li><span style='color: red; font-weight: bold;'>Tope máximo (cap):</span> Límite superior que no puede superar la tasa variable, protegiendo al deudor.</li>
-                <li><span style='color: red; font-weight: bold;'>Piso mínimo (floor):</span> Límite inferior que garantiza un rendimiento mínimo al acreedor.</li>
-              </ul>
-            
-              <h4>Fórmulas fundamentales</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Tasa variable total:</span> iₜ = iᵣ + m (donde iᵣ es tasa referencia, m es margen)</li>
-                <li><span style='color: red; font-weight: bold;'>Monto con tasa variable:</span> M = C × (1 + i₁) × (1 + i₂) × ... × (1 + iₙ)</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa equivalente promedio:</span> iₑ = [(1 + i₁)(1 + i₂)...(1 + iₙ)]¹/ⁿ - 1</li>
-                <li><span style='color: red; font-weight: bold;'>Valor presente con tasas variables:</span> C = M / [(1 + i₁)(1 + i₂)...(1 + iₙ)]</li>
-                <li><span style='color: red; font-weight: bold;'>Cálculo de pago periódico:</span> P = [C × i] / [1 - (1 + i)⁻ⁿ] (para cada período con su i)</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa efectiva anualizada:</span> iₐ = (1 + i₁)(1 + i₂)...(1 + iₘ) - 1 (m períodos en el año)</li>
-              </ul>
-            
-              <h4>Índices de referencia comunes</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Índice</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>País/Región</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación típica</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>TIIE</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa de Interés Interbancaria de Equilibrio</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>México</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Hipotecas, créditos empresariales</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>LIBOR</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>London Interbank Offered Rate</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Internacional</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Préstamos internacionales, derivados</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Prime Rate</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa preferencial de bancos comerciales</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Estados Unidos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tarjetas de crédito, préstamos personales</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>EURIBOR</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Euro Interbank Offered Rate</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Zona Euro</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Hipotecas en euros, bonos europeos</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>CETES</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Certificados de la Tesorería</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>México</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Udis, algunos créditos gubernamentales</td>
-                </tr>
-              </table>
-            
-              <h4>Ejemplos detallados de aplicación</h4>
-              
-              <p><strong>Ejemplo 1: Cálculo de monto con tasas variables anuales</strong></p>
-              <p>Calcular el monto de $20,000 invertidos por 3 años con tasas variables: Año 1: 6%, Año 2: 7%, Año 3: 5%.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>C = $20,000, i₁ = 6% = 0.06, i₂ = 7% = 0.07, i₃ = 5% = 0.05</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>M = C × (1 + i₁) × (1 + i₂) × (1 + i₃)</span></li>
-                <li>Cálculo: M = 20000 × (1.06) × (1.07) × (1.05)</li>
-                <li>Paso 1: 20000 × 1.06 = <span style='color: red; font-weight: bold;'>$21,200</span> (fin año 1)</li>
-                <li>Paso 2: 21200 × 1.07 = <span style='color: red; font-weight: bold;'>$22,684</span> (fin año 2)</li>
-                <li>Paso 3: 22684 × 1.05 = <span style='color: red; font-weight: bold;'>$23,818.20</span> (fin año 3)</li>
-                <li>Tasa promedio equivalente: iₑ = (1.06 × 1.07 × 1.05)¹/³ - 1 = 1.19091¹/³ - 1 = 1.05997 - 1 = <span style='color: red; font-weight: bold;'>0.05997 (6%)</span></li>
-              </ol>
-              
-              <p><strong>Ejemplo 2: Hipoteca con tasa variable indexada</strong></p>
-              <p>Calcular el pago mensual de una hipoteca de $500,000 a 20 años con tasa TIIE + 2.5%. TIIE actual: 4.5% anual.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>C = $500,000, n = 240 meses, iᵣ = 4.5%, m = 2.5%</span></li>
-                <li>Tasa total anual: <span style='color: red; font-weight: bold;'>iₜ = 4.5% + 2.5% = 7% anual</span></li>
-                <li>Tasa mensual: <span style='color: red; font-weight: bold;'>iₘ = (1.07)¹/¹² - 1 = 0.005654 (0.5654% mensual)</span></li>
-                <li>Aplicar fórmula de anualidad: <span style='color: red; font-weight: bold;'>P = [C × i] / [1 - (1 + i)⁻ⁿ]</span></li>
-                <li>Cálculo: P = [500000 × 0.005654] / [1 - (1.005654)⁻²⁴⁰]</li>
-                <li>Paso 1: 500000 × 0.005654 = <span style='color: red; font-weight: bold;'>$2,827</span></li>
-                <li>Paso 2: (1.005654)⁻²⁴⁰ = <span style='color: red; font-weight: bold;'>0.252572</span></li>
-                <li>Paso 3: 1 - 0.252572 = <span style='color: red; font-weight: bold;'>0.747428</span></li>
-                <li>Paso 4: P = 2827 / 0.747428 = <span style='color: red; font-weight: bold;'>$3,782.67 mensual</span></li>
-                <li>Nota: Este pago cambiará cuando se ajuste la TIIE</li>
-              </ol>
-              
-              <p><strong>Ejemplo 3: Análisis de escenario con tasas crecientes</strong></p>
-              <p>Comparar el costo total de un préstamo de $100,000 a 5 años con tasa fija 8% vs variable que inicia en 6% y aumenta 0.5% anual.</p>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Escenario tasa fija 8%:</span>
-                  <ul>
-                    <li>Monto total: M = 100000 × (1.08)⁵ = 100000 × 1.469328 = <span style='color: red; font-weight: bold;'>$146,932.80</span></li>
-                    <li>Intereses: $46,932.80</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Escenario tasa variable:</span>
-                  <ul>
-                    <li>Año 1: 6%, Año 2: 6.5%, Año 3: 7%, Año 4: 7.5%, Año 5: 8%</li>
-                    <li>M = 100000 × 1.06 × 1.065 × 1.07 × 1.075 × 1.08</li>
-                    <li>M = 100000 × 1.397044 = <span style='color: red; font-weight: bold;'>$139,704.40</span></li>
-                    <li>Intereses: $39,704.40</li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Conclusión:</span> En este escenario, la tasa variable resulta <span style='color: red; font-weight: bold;'>$7,228.40 más económica</span></li>
-              </ol>
-            
-              <h4>Ventajas y desventajas de las tasas variables</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Aspecto</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ventajas</th>
-                  <th style='color: red; font-weight: bold; border: 1px solid #ddd; padding: 8px;'>Desventajas</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Costo inicial</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Generalmente más bajas que las fijas al inicio</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Pueden aumentar significativamente con el tiempo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Flexibilidad</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Se benefician de bajadas en las tasas de interés</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Incertidumbre en la planificación financiera</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Entorno económico</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Ventajosas en períodos de tasas decrecientes</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Riesgosas en períodos de alta inflación</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Plazo</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Convenientes para plazos cortos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Peligrosas para compromisos a largo plazo</td>
-                </tr>
-              </table>
-            
-              <h4>Comparación entre tasas fijas y variables en diferentes escenarios</h4>
-              <p>Préstamo de $300,000 a 10 años:</p>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Escenario</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Fija 7%</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Variable (5%-9%)</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Diferencia</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Recomendación</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Estable</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$590,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$565,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-$25,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Creciente</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$590,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$620,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>+$30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Fija</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Decreciente</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$590,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$540,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Volátil</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$590,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$585,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-$5,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Depende del perfil de riesgo</td>
-                </tr>
-              </table>
-              <p><span style='color: red; font-weight: bold;'>Conclusión:</span> La elección entre tasa fija y variable depende del escenario económico esperado y la tolerancia al riesgo del usuario.</p>
-            
-              <h4>Aplicaciones prácticas de las tasas variables</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Hipotecas de tasa ajustable (ARM):</span> Préstamos inmobiliarios con tasa inicial fija que luego se convierte en variable</li>
-                <li><span style='color: red; font-weight: bold;'>Tarjetas de crédito:</span> Casi todas utilizan tasas variables indexadas a Prime Rate + margen</li>
-                <li><span style='color: red; font-weight: bold;'>Bonos de tasa flotante:</span> Instrumentos de deuda cuyos cupones se ajustan periódicamente</li>
-                <li><span style='color: red; font-weight: bold;'>Préstamos estudiantiles:</span> Algunos programas ofrecen opciones con tasas variables</li>
-                <li><span style='color: red; font-weight: bold;'>Líneas de crédito:</span> Home equity lines y créditos revolventes empresariales</li>
-                <li><span style='color: red; font-weight: bold;'>Fondos de inversión:</span> Fondos de deuda con portafolios de instrumentos a tasa variable</li>
-              </ul>
-            
-              <h4>Consideraciones importantes</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Las tasas variables introducen incertidumbre</span> en los flujos de efectivo futuros</li>
-                <li>Es fundamental <span style='color: red; font-weight: bold;'>analizar el índice de referencia</span> y su comportamiento histórico</li>
-                <li>El <span style='color: red; font-weight: bold;'>margen o spread</span> es componente fijo que afecta el costo total</li>
-                <li>Los <span style='color: red; font-weight: bold;'>límites (caps y floors)</span> protegen contra fluctuaciones extremas</li>
-                <li>El <span style='color: red; font-weight: bold;'>horizonte temporal</span> determina la exposición al riesgo de tasa</li>
-                <li>Es esencial <span style='color: red; font-weight: bold;'>evaluar la capacidad de pago</span> en escenarios adversos</li>
-              </ul>
-            
-              <h4>Ejercicio de aplicación integral</h4>
-              <p>Una empresa solicita un crédito de $1,000,000 a 4 años con tasa TIIE + 3%. La TIIE proyectada es: Año 1: 4%, Año 2: 5%, Año 3: 6%, Año 4: 5.5%. Calcular:</p>
-              <ol>
-                <li>El monto total a pagar al finalizar el crédito</li>
-                <li>Los intereses totales pagados</li>
-                <li>La tasa promedio anual equivalente</li>
-                <li>Comparar con una tasa fija del 8% anual</li>
-              </ol>
-              
-              <p><strong>Solución:</strong></p>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Monto total a pagar:</span>
-                  <ul>
-                    <li>Tasas anuales totales: Año 1: 7%, Año 2: 8%, Año 3: 9%, Año 4: 8.5%</li>
-                    <li>M = 1000000 × 1.07 × 1.08 × 1.09 × 1.085</li>
-                    <li>M = 1000000 × 1.366994 = <span style='color: red; font-weight: bold;'>$1,366,994</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Intereses totales:</span>
-                  <ul>
-                    <li>I = 1366994 - 1000000 = <span style='color: red; font-weight: bold;'>$366,994</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Tasa promedio anual:</span>
-                  <ul>
-                    <li>iₑ = (1.07 × 1.08 × 1.09 × 1.085)¹/⁴ - 1</li>
-                    <li>iₑ = 1.366994¹/⁴ - 1 = 1.0813 - 1 = <span style='color: red; font-weight: bold;'>0.0813 (8.13%)</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Comparación con tasa fija 8%:</span>
-                  <ul>
-                    <li>Monto fijo: 1000000 × (1.08)⁴ = 1000000 × 1.360489 = <span style='color: red; font-weight: bold;'>$1,360,489</span></li>
-                    <li>Diferencia: 1366994 - 1360489 = <span style='color: red; font-weight: bold;'>$6,505 más con tasa variable</span></li>
-                    <li>En este caso, <span style='color: red; font-weight: bold;'>la tasa fija habría sido más conveniente</span></li>
-                  </ul>
-                </li>
-              </ol>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). <em>Principles of Corporate Finance</em>. McGraw-Hill Education.</li>
-                <li>Fabozzi, F. J. (2016). <em>Bond Markets, Analysis, and Strategies</em>. Pearson Education.</li>
-                <li>Mishkin, F. S., & Eakins, S. G. (2018). <em>Financial Markets and Institutions</em>. Pearson.</li>
-                <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
-                <li>Banco de México. (2023). <em>Tasas de Interés Interbancarias</em>. Recuperado de: www.banxico.org.mx</li>
-              </ul>
-            `)">6.7. Tasas variables de interés <span class="emoji-small">✅</span>
+          <li onclick="abrirModal('6.7. Tasas variables de interés', `
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 35 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>35 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 35 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de tasas variables de interés, dominar las técnicas para calcular montos acumulados con tasas cambiantes, aprender a convertir entre diferentes tipos de tasas variables, y aplicar estos conocimientos en la evaluación de instrumentos financieros reales como créditos hipotecarios, bonos indexados y préstamos con tasas ajustables.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>Las tasas variables de interés son aquellas que cambian a lo largo del tiempo en función de indicadores económicos, condiciones de mercado o decisiones de política monetaria. A diferencia de las tasas fijas, las variables introducen incertidumbre pero pueden ofrecer mejores condiciones iniciales. El cálculo con tasas variables requiere aplicar sucesivamente diferentes tasas a sus respectivos periodos, utilizando el principio de capitalización compuesta. Estas tasas son comunes en hipotecas de tasa ajustable, préstamos indexados a indicadores como la TIIE o LIBOR, y en instrumentos financieros que buscan reflejar las condiciones cambiantes del mercado.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Tipos y características de tasas variables -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Clasificación de tasas variables</h4>
+      <p>Análisis comparativo de los diferentes tipos de tasas variables:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Tipo de Tasa Variable</th>
+            <th>Características</th>
+            <th>Indicador Base</th>
+            <th>Fórmula de Cálculo</th>
+            <th>Ejemplo Práctico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tasa Indexada</td>
+            <td>Sigue un índice económico oficial</td>
+            <td>TIIE, LIBOR, Tasa Prime</td>
+            <td>Tasa = Índice + Margen</td>
+            <td>Hipoteca TIIE + 4%</td>
+          </tr>
+          <tr>
+            <td>Tasa Ajustable Periódica</td>
+            <td>Se revisa en intervalos fijos</td>
+            <td>Plazos: 1, 3, 5 años</td>
+            <td>VF = VP × ∏(1 + iₖ)</td>
+            <td>Hipoteca 5/1 ARM</td>
+          </tr>
+          <tr>
+            <td>Tasa Flotante</td>
+            <td>Cambia continuamente</td>
+            <td>Condiciones de mercado</td>
+            <td>Tasa instantánea variable</td>
+            <td>Fondos de inversión</td>
+          </tr>
+          <tr>
+            <td>Tasa Cero Cupón Variable</td>
+            <td>Sin pagos intermedios</td>
+            <td>Rendimiento implícito</td>
+            <td>P = VN / ∏(1 + iₖ)</td>
+            <td>Bonos de tasa flotante</td>
+          </tr>
+          <tr>
+            <td>Tasa Híbrida</td>
+            <td>Combinación fija/variable</td>
+            <td>Periodos mixtos</td>
+            <td>Segmentos con tasas diferentes</td>
+            <td>Hipoteca 7/23</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Las tasas indexadas son predecibles porque siguen índices públicos. Las tasas ajustables tienen periodos fijos de revisión. Las tasas flotantes son las más volátiles. Las tasas híbridas ofrecen estabilidad inicial seguida de flexibilidad.</p>
+    </div>
+    
+    <!-- Gráfica 1: Comparación de tasas fijas vs variables -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Comportamiento de Tasas Fijas vs Variables</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=250 x2=50 y2=50 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+        <text x=20 y=150 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,150)'>Tasa de Interés (%)</text>
+        
+        <!-- Marcas del eje X -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
+          
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
+        </g>
+        
+        <!-- Marcas del eje Y -->
+        <g transform=translate(0,0)>
+          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5%</text>
+          
+          <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>7%</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>9%</text>
+          
+          <line x1=45 y1=50 x2=55 y2=50 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=53 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>11%</text>
+        </g>
+        
+        <!-- Tasa fija -->
+        <line x1=50 y1=150 x2=350 y2=150 stroke=var(--apple-vibrant-blue) stroke-width=3></line>
+        
+        <!-- Tasa variable (simulada) -->
+        <path d='M 50,180 
+                 L 100,170 
+                 L 150,190 
+                 L 200,160 
+                 L 250,200 
+                 L 300,175 
+                 L 350,195' 
+              stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
+        
+        <!-- Puntos de la tasa variable -->
+        <circle cx=100 cy=170 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=150 cy=190 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=250 cy=200 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=300 cy=175 r=3 fill=var(--apple-vibrant-green)></circle>
+        <circle cx=350 cy=195 r=3 fill=var(--apple-vibrant-green)></circle>
+        
+        <!-- Leyenda -->
+        <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Comparación de Tasas</strong></text>
+        
+        <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=3></line>
+        <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>Tasa Fija: 7% anual</text>
+        
+        <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
+        <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Tasa Variable: 6%-10%</text>
+        
+        <text x=290 y=120 font-size=9 fill=var(--apple-dark-gray)>Periodo: 5 años</text>
+        <text x=290 y=130 font-size=9 fill=var(--apple-dark-gray)>Inversión: $10,000</text>
+        
+        <!-- Resultados de acumulación -->
+        <rect x=50 y=290 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Valor Final Acumulado</strong></text>
+        <text x=120 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Tasa Fija: $14,025.52</text>
+        <text x=280 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Tasa Variable: $14,328.95</text>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Tasas Fijas vs Variables - 5 Años</strong></text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa fija mantiene estabilidad pero puede perder oportunidad en mercados alcistas. La tasa variable ofrece potencial de mayor rendimiento pero con riesgo de volatilidad. En este ejemplo, la tasa variable generó mayor rendimiento final debido a periodos con tasas altas.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Cálculo de montos con tasas variables -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Cálculo de valor futuro con tasas variables</h4>
+      <p>Procedimientos para calcular montos acumulados con tasas cambiantes:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Escenario</th>
+            <th>Tasas por Periodo</th>
+            <th>Capital Inicial</th>
+            <th>Procedimiento Paso a Paso</th>
+            <th>Valor Final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inversión Anual</td>
+            <td>Año 1: 5%<br>Año 2: 6%<br>Año 3: 4.5%<br>Año 4: 7%</td>
+            <td>$10,000</td>
+            <td>1. Año 1: 10000 × 1.05 = 10500<br>2. Año 2: 10500 × 1.06 = 11130<br>3. Año 3: 11130 × 1.045 = 11630.85<br>4. Año 4: 11630.85 × 1.07</td>
+            <td>$12,445.01</td>
+          </tr>
+          <tr>
+            <td>Préstamo Hipotecario</td>
+            <td>Meses 1-12: 4%<br>Meses 13-24: 5%<br>Meses 25-36: 6%</td>
+            <td>$200,000</td>
+            <td>1. Primer año: 200000 × (1.04)¹²<br>2. Segundo año: × (1.05)¹²<br>3. Tercer año: × (1.06)¹²<br>4. Calcular progresivamente</td>
+            <td>$285,432.67</td>
+          </tr>
+          <tr>
+            <td>Certificado de Depósito</td>
+            <td>Trim 1: 3%<br>Trim 2: 3.5%<br>Trim 3: 2.8%<br>Trim 4: 4.2%</td>
+            <td>$50,000</td>
+            <td>1. VF = 50000 × 1.03 × 1.035 × 1.028 × 1.042<br>2. Calcular producto de factores<br>3. VF = 50000 × 1.1415</td>
+            <td>$57,075.00</td>
+          </tr>
+          <tr>
+            <td>Bonos Indexados</td>
+            <td>TIIE + 2%<br>TIIE: 4.5%, 5%, 4.8%, 5.2%</td>
+            <td>$100,000</td>
+            <td>1. Tasas efectivas: 6.5%, 7%, 6.8%, 7.2%<br>2. VF = 100000 × 1.065 × 1.07 × 1.068 × 1.072</td>
+            <td>$130,458.33</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> El cálculo con tasas variables implica multiplicar sucesivamente por (1 + iₖ) para cada periodo. El orden de las tasas afecta el resultado final debido a la capitalización compuesta. Tasas altas tempranas tienen mayor impacto que tasas altas tardías.</p>
+    </div>
+    
+    <!-- Gráfica 2: Acumulación con tasas variables vs promedio -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Efecto de la Secuencia de Tasas Variables</h4>
+      <svg viewBox='0 0 400 400' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Secuencia de Tasas vs Tasa Promedio</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Misma tasa promedio (6%), diferentes secuencias</text>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=300 x2=50 y2=80 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Periodo</text>
+        <text x=20 y=190 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,190)'>Valor Acumulado ($)</text>
+        
+        <!-- Escenario 1: Tasas decrecientes -->
+        <g transform=translate(0,0)>
+          <text x=100 y=70 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)><strong>Secuencia A: Decreciente</strong></text>
+          <text x=100 y=82 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>8%, 7%, 6%, 5%, 4%</text>
+          
+          <!-- Puntos de acumulación -->
+          <circle cx=100 cy=120 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=100 y=115 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>$10,800</text>
+          
+          <circle cx=150 cy=140 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=150 y=135 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>$11,556</text>
+          
+          <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=200 y=155 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>$12,249</text>
+          
+          <circle cx=250 cy=180 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=250 y=175 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>$12,861</text>
+          
+          <circle cx=300 cy=200 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <text x=300 y=195 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>$13,376</text>
+          
+          <!-- Línea de conexión -->
+          <path d='M 50,300 
+                   L 100,280 
+                   L 150,260 
+                   L 200,240 
+                   L 250,220 
+                   L 300,200' 
+                stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+        </g>
+        
+        <!-- Escenario 2: Tasas crecientes -->
+        <g transform=translate(0,0)>
+          <text x=300 y=70 text-anchor=middle font-size=11 fill=var(--apple-vibrant-green)><strong>Secuencia B: Creciente</strong></text>
+          <text x=300 y=82 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>4%, 5%, 6%, 7%, 8%</text>
+          
+          <!-- Puntos de acumulación -->
+          <circle cx=100 cy=200 r=3 fill=var(--apple-vibrant-green)></circle>
+          <text x=100 y=205 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>$10,400</text>
+          
+          <circle cx=150 cy=180 r=3 fill=var(--apple-vibrant-green)></circle>
+          <text x=150 y=185 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>$10,920</text>
+          
+          <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-green)></circle>
+          <text x=200 y=165 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>$11,575</text>
+          
+          <circle cx=250 cy=140 r=3 fill=var(--apple-vibrant-green)></circle>
+          <text x=250 y=145 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>$12,385</text>
+          
+          <circle cx=300 cy=120 r=3 fill=var(--apple-vibrant-green)></circle>
+          <text x=300 y=125 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>$13,376</text>
+          
+          <!-- Línea de conexión -->
+          <path d='M 50,300 
+                   L 100,200 
+                   L 150,180 
+                   L 200,160 
+                   L 250,140 
+                   L 300,120' 
+                stroke=var(--apple-vibrant-green) stroke-width=2 fill=none></path>
+        </g>
+        
+        <!-- Tasa promedio constante -->
+        <g transform=translate(0,0)>
+          <text x=200 y=250 text-anchor=middle font-size=11 fill=var(--apple-vibrant-red)><strong>Tasa Fija 6%</strong></text>
+          
+          <!-- Puntos de acumulación -->
+          <circle cx=100 cy=160 r=3 fill=var(--apple-vibrant-red)></circle>
+          <circle cx=150 cy=160 r=3 fill=var(--apple-vibrant-red)></circle>
+          <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-red)></circle>
+          <circle cx=250 cy=160 r=3 fill=var(--apple-vibrant-red)></circle>
+          <circle cx=300 cy=160 r=3 fill=var(--apple-vibrant-red)></circle>
+          
+          <!-- Línea de conexión -->
+          <path d='M 50,300 
+                   L 100,240 
+                   L 150,240 
+                   L 200,240 
+                   L 250,240 
+                   L 300,240' 
+                stroke=var(--apple-vibrant-red) stroke-width=2 stroke-dasharray=5,3 fill=none></path>
+        </g>
+        
+        <!-- Resultados finales -->
+        <rect x=100 y=340 width=200 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=355 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Resultado Final Idéntico</strong></text>
+        <text x=200 y=370 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Ambas secuencias: $13,376 (Capital: $10,000)</text>
+        
+        <!-- Conclusión importante -->
+        <rect x=50 y=380 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+        <text x=200 y=395 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)><strong>¡Mismo resultado final con tasas variables!</strong></text>
+        <text x=200 y=405 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>El producto de (1+iₖ) es el mismo para ambas secuencias</text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Aunque las trayectorias son diferentes, el resultado final es idéntico cuando el producto de los factores (1+iₖ) es el mismo. Esto demuestra que con tasas variables, el orden no afecta el resultado final, solo la trayectoria intermedia. Sin embargo, en la práctica, los flujos intermedios pueden tener diferente valor si hay retiros o aportes.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones en instrumentos financieros reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Instrumentos financieros con tasas variables</h4>
+      <p>Análisis de productos financieros que utilizan tasas variables:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Instrumento</th>
+            <th>Mecanismo de Tasa</th>
+            <th>Ventajas</th>
+            <th>Riesgos</th>
+            <th>Cálculo Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hipoteca ARM</td>
+            <td>Tasa fija inicial + variable después</td>
+            <td>Pagos iniciales más bajos</td>
+            <td>Incertidumbre en pagos futuros</td>
+            <td>5/1 ARM: 4% 5 años, luego TIIE+3%</td>
+          </tr>
+          <tr>
+            <td>Bonos Flotantes</td>
+            <td>Cupón = Índice + Spread</td>
+            <td>Protección contra alza de tasas</td>
+            <td>Rendimientos variables</td>
+            <td>Bono TIIE28 + 2.5% semestral</td>
+          </tr>
+          <tr>
+            <td>Fondos de Inversión</td>
+            <td>Rendimiento según mercado</td>
+            <td>Liquidez y diversificación</td>
+            <td>Volatilidad del mercado</td>
+            <td>Rendimientos diarios variables</td>
+          </tr>
+          <tr>
+            <td>Tarjetas de Crédito</td>
+            <td>Tasa Prime + Margen</td>
+            <td>Acceso inmediato a crédito</td>
+            <td>Altos costos por mora</td>
+            <td>CAT variable según historial</td>
+          </tr>
+          <tr>
+            <td>Certificados Bursátiles</td>
+            <td>Indexados a inflación</td>
+            <td>Protección inflacionaria</td>
+            <td>Rendimiento real puede ser bajo</td>
+            <td>UDIBONO: Tasa real + inflación</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los instrumentos con tasas variables ofrecen protección contra cambios en las condiciones de mercado pero introducen incertidumbre. La elección entre tasa fija y variable depende del perfil de riesgo, horizonte de inversión y expectativas sobre la evolución de las tasas.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Hipotecas de tasa ajustable (ARM):</strong> Préstamos inmobiliarios con tasa fija inicial seguida de periodos variables.</li>
+        <li><strong>Bonos de tasa flotante:</strong> Instrumentos de deuda cuyos cupones se ajustan periódicamente según índices de referencia.</li>
+        <strong>Créditos empresariales:</strong> Financiamiento corporativo indexado a tasas de mercado como LIBOR o TIIE.</li>
+        <li><strong>Fondos de inversión en deuda:</strong> Portafolios que invierten en instrumentos con rendimientos variables.</li>
+        <li><strong>Tarjetas de crédito:</strong> Plasticos cuyo costo financiero se ajusta según condiciones del mercado.</li>
+        <li><strong>Préstamos automotrices variables:</strong> Financiamiento vehicular con tasas que siguen indicadores económicos.</li>
+        <li><strong>Certificados de depósito ajustables:</strong> Inversiones a plazo con tasas que se revisan periódicamente.</li>
+        <li><strong>Leasing financiero variable:</strong> Arrendamientos con cuotas que se ajustan según evolución de tasas.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+        <li>Fabozzi, F. J. (2016). Fixed Income Mathematics: Analytical and Statistical Techniques. McGraw-Hill.</li>
+        <li>Tuckman, B., & Serrat, A. (2021). Fixed Income Securities: Tools for Today's Markets. Wiley.</li>
+        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+        <li>Hull, J. C. (2018). Options, Futures and Other Derivatives. Pearson.</li>
+        <li>Choudhry, M. (2018). An Introduction to Banking: Principles, Strategy and Risk Management. Wiley.</li>
+        <li>Khan Academy: Interest and debt. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>6.7. Tasas variables de interés</b> <span class=emoji-small>✅</span>
           </li>
 
           <li onclick="abrirModal('6.8. Tasa real de interés', `
