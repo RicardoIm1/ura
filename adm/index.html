@@ -5659,242 +5659,389 @@
           </li>
 
           <li onclick="abrirModal('6.8. Tasa real de interés', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el concepto, cálculo y aplicaciones de la tasa real de interés, diferenciándola de la tasa nominal y analizando su relación con la inflación para la toma de decisiones financieras acertadas.</p>
-            
-              <h4>Definición y conceptos básicos</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Tasa real de interés:</span> Rendimiento o costo de un capital después de descontar el efecto de la inflación, representando el poder adquisitivo real ganado o perdido.</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa nominal de interés:</span> Porcentaje de rendimiento o costo expresado en términos monetarios, sin considerar la inflación.</li>
-                <li><span style='color: red; font-weight: bold;'>Inflación:</span> Aumento generalizado y sostenido del nivel de precios en una economía durante un período determinado.</li>
-                <li><span style='color: red; font-weight: bold;'>Poder adquisitivo:</span> Cantidad de bienes y servicios que pueden ser adquiridos con una unidad monetaria.</li>
-                <li><span style='color: red; font-weight: bold;'>Efecto Fisher:</span> Relación teórica entre la tasa nominal, la tasa real y la inflación esperada.</li>
-                <li><span style='color: red; font-weight: bold;'>Deflación:</span> Disminución generalizada del nivel de precios, situación opuesta a la inflación.</li>
-              </ul>
-            
-              <h4>Fórmulas fundamentales</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Fórmula exacta de tasa real:</span> iʳ = (1 + iⁿ) / (1 + π) - 1</li>
-                <li><span style='color: red; font-weight: bold;'>Fórmula aproximada:</span> iʳ ≈ iⁿ - π</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa nominal a partir de real:</span> iⁿ = (1 + iʳ)(1 + π) - 1</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa aproximada nominal:</span> iⁿ ≈ iʳ + π</li>
-                <li><span style='color: red; font-weight: bold;'>Poder adquisitivo final:</span> PA = C × (1 + iʳ)ⁿ</li>
-                <li><span style='color: red; font-weight: bold;'>Rendimiento real de inversión:</span> Rʳ = (Monto Final / Índice Precios) - Capital Inicial</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa real ex-post:</span> Calculada con inflación histórica conocida</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa real ex-ante:</span> Calculada con inflación esperada futura</li>
-              </ul>
-            
-              <h4>Comparación entre fórmulas exacta y aproximada</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Nominal</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Inflación</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Real Exacta</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Real Aproximada</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Diferencia</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>8%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4.85%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5.00%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-0.15%</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>12%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>6.67%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>7.00%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-0.33%</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>15%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>10%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4.55%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5.00%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-0.45%</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>20%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>18%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.69%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2.00%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-0.31%</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>6%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.92%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2.00%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-0.08%</td>
-                </tr>
-              </table>
-              <p><span style='color: red; font-weight: bold;'>Conclusión:</span> La fórmula aproximada sobreestima la tasa real, siendo la diferencia más significativa cuando las tasas son altas.</p>
-            
-              <h4>Ejemplos detallados de aplicación</h4>
-              
-              <p><strong>Ejemplo 1: Cálculo básico de tasa real</strong></p>
-              <p>Un certificado de depósito paga 7% anual y la inflación esperada es 3.5%. Calcular la tasa real de interés.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>iⁿ = 7% = 0.07, π = 3.5% = 0.035</span></li>
-                <li>Aplicar fórmula exacta: <span style='color: red; font-weight: bold;'>iʳ = (1 + iⁿ) / (1 + π) - 1</span></li>
-                <li>Cálculo: iʳ = (1.07) / (1.035) - 1</li>
-                <li>Paso 1: 1.07 / 1.035 = <span style='color: red; font-weight: bold;'>1.033816</span></li>
-                <li>Paso 2: 1.033816 - 1 = <span style='color: red; font-weight: bold;'>0.033816 (3.38%)</span></li>
-                <li>Fórmula aproximada: iʳ ≈ 7% - 3.5% = <span style='color: red; font-weight: bold;'>3.5%</span></li>
-                <li>Diferencia: 3.5% - 3.38% = <span style='color: red; font-weight: bold;'>0.12% de sobreestimación</span></li>
-              </ol>
-              
-              <p><strong>Ejemplo 2: Evaluación de inversión con inflación</strong></p>
-              <p>Se invierten $50,000 al 9% anual por 3 años. La inflación anual fue: Año 1: 4%, Año 2: 5%, Año 3: 3.5%. Calcular el poder adquisitivo final.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>C = $50,000, iⁿ = 9%, π₁ = 4%, π₂ = 5%, π₃ = 3.5%</span></li>
-                <li>Monto nominal final: M = 50000 × (1.09)³ = 50000 × 1.295029 = <span style='color: red; font-weight: bold;'>$64,751.45</span></li>
-                <li>Inflación acumulada: πₐ = (1.04)(1.05)(1.035) - 1 = 1.12962 - 1 = <span style='color: red; font-weight: bold;'>0.12962 (12.96%)</span></li>
-                <li>Poder adquisitivo final: PA = 64751.45 / (1.12962) = <span style='color: red; font-weight: bold;'>$57,320.68</span></li>
-                <li>Tasa real efectiva: iʳ = (57320.68 / 50000)¹/³ - 1 = 1.14641¹/³ - 1 = 1.0465 - 1 = <span style='color: red; font-weight: bold;'>0.0465 (4.65%)</span></li>
-                <li>Interpretación: Aunque nominalmente ganó $14,751.45, en términos reales solo ganó <span style='color: red; font-weight: bold;'>$7,320.68</span> de poder adquisitivo</li>
-              </ol>
-              
-              <p><strong>Ejemplo 3: Tasa nominal necesaria para obtener rendimiento real</strong></p>
-              <p>¿Qué tasa nominal debe ofrecer un banco para que un inversionista obtenga 4% real si espera inflación del 6%?</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>iʳ = 4% = 0.04, π = 6% = 0.06</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>iⁿ = (1 + iʳ)(1 + π) - 1</span></li>
-                <li>Cálculo: iⁿ = (1.04)(1.06) - 1</li>
-                <li>Paso 1: 1.04 × 1.06 = <span style='color: red; font-weight: bold;'>1.1024</span></li>
-                <li>Paso 2: 1.1024 - 1 = <span style='color: red; font-weight: bold;'>0.1024 (10.24%)</span></li>
-                <li>Fórmula aproximada: iⁿ ≈ 4% + 6% = <span style='color: red; font-weight: bold;'>10%</span></li>
-                <li>Conclusión: El banco debe ofrecer al menos <span style='color: red; font-weight: bold;'>10.24% nominal</span> para garantizar 4% real</li>
-              </ol>
-            
-              <h4>Escenarios de tasa real en diferentes contextos económicos</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Escenario</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Nominal</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Inflación</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa Real</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Interpretación</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Estabilidad</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>6%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3.92%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento real positivo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Inflación moderada</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>8%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>6%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.89%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento real bajo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Alta inflación</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>15%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>18%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-2.54%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Pérdida de poder adquisitivo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Deflación</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-1%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3.03%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento real alto</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Estanflación</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>12%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>10%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.82%</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Crecimiento real mínimo</td>
-                </tr>
-              </table>
-            
-              <h4>Efecto Fisher y sus implicaciones</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Hipótesis de Fisher:</span> Las tasas de interés nominales se ajustan para reflejar la inflación esperada</li>
-                <li><span style='color: red; font-weight: bold;'>Ecuación de Fisher:</span> iⁿ = iʳ + πᵉ + (iʳ × πᵉ)</li>
-                <li><span style='color: red; font-weight: bold;'>Fisher internacional:</span> Las diferencias en tasas nominales reflejan diferencias en inflación esperada entre países</li>
-                <li><span style='color: red; font-weight: bold;'>Implicación práctica:</span> Los inversionistas exigen tasas nominales más altas en entornos inflacionarios</li>
-                <li><span style='color: red; font-weight: bold;'>Limitaciones:</span> Asume que la tasa real es constante en el tiempo</li>
-              </ul>
-            
-              <h4>Aplicaciones prácticas de la tasa real</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Evaluación de inversiones:</span> Comparar rendimientos de diferentes instrumentos en términos reales</li>
-                <li><span style='color: red; font-weight: bold;'>Planificación financiera:</span> Calcular metas de ahorro considerando pérdida de poder adquisitivo</li>
-                <li><span style='color: red; font-weight: bold;'>Análisis de créditos:</span> Determinar el costo real de un préstamo después de inflación</li>
-                <li><span style='color: red; font-weight: bold;'>Decisiones de política monetaria:</span> Los bancos centrales monitorean tasas reales para fijar políticas</li>
-                <li><span style='color: red; font-weight: bold;'>Contratación laboral:</span> Negociar aumentos salariales que superen la inflación</li>
-                <li><span style='color: red; font-weight: bold;'>Inversión en bienes raíces:</span> Evaluar rendimientos reales de propiedades considerando apreciación y rentas</li>
-              </ul>
-            
-              <h4>Consideraciones importantes</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>La tasa real puede ser negativa</span> cuando la inflación supera la tasa nominal</li>
-                <li>Es fundamental <span style='color: red; font-weight: bold;'>diferenciar entre inflación esperada y realizada</span> para cálculos ex-ante vs ex-post</li>
-                <li>El <span style='color: red; font-weight: bold;'>horizonte temporal</span> afecta significativamente el cálculo de tasas reales</li>
-                <li>Las <span style='color: red; font-weight: bold;'>expectativas de inflación</span> son subjetivas y difíciles de medir con precisión</li>
-                <li>Los <span style='color: red; font-weight: bold;'>impuestos</span> reducen aún más el rendimiento real de las inversiones</li>
-                <li>La <span style='color: red; font-weight: bold;'>tasa real ex-post</span> es la única medible con certeza histórica</li>
-              </ul>
-            
-              <h4>Ejercicio de aplicación integral</h4>
-              <p>Un inversionista coloca $100,000 en un fondo que promete 11% anual. La inflación esperada es 8% anual. Después de 4 años, la inflación real fue: Año 1: 7%, Año 2: 9%, Año 3: 8.5%, Año 4: 7.5%. Calcular:</p>
-              <ol>
-                <li>El monto nominal final de la inversión</li>
-                <li>El poder adquisitivo de ese monto</li>
-                <li>La tasa real ex-ante (esperada)</li>
-                <li>La tasa real ex-post (realizada)</li>
-                <li>La ganancia o pérdida real total</li>
-              </ol>
-              
-              <p><strong>Solución:</strong></p>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Monto nominal final:</span>
-                  <ul>
-                    <li>M = 100000 × (1.11)⁴ = 100000 × 1.518070 = <span style='color: red; font-weight: bold;'>$151,807</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Poder adquisitivo final:</span>
-                  <ul>
-                    <li>Inflación acumulada real: (1.07)(1.09)(1.085)(1.075) = 1.381215</li>
-                    <li>PA = 151807 / 1.381215 = <span style='color: red; font-weight: bold;'>$109,890</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Tasa real ex-ante:</span>
-                  <ul>
-                    <li>iʳ = (1.11)/(1.08) - 1 = 1.02778 - 1 = <span style='color: red; font-weight: bold;'>0.02778 (2.78%)</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Tasa real ex-post:</span>
-                  <ul>
-                    <li>iʳ = (109890/100000)¹/⁴ - 1 = 1.09890¹/⁴ - 1 = 1.02398 - 1 = <span style='color: red; font-weight: bold;'>0.02398 (2.40%)</span></li>
-                  </ul>
-                </li>
-                <li><span style='color: red; font-weight: bold;'>Ganancia real total:</span>
-                  <ul>
-                    <li>Ganancia nominal: $51,807</li>
-                    <li>Ganancia real: $9,890 (<span style='color: red; font-weight: bold;'>9.89% en 4 años</span>)</li>
-                    <li>Conclusión: Aunque nominalmente ganó 51.8%, en términos reales solo ganó <span style='color: red; font-weight: bold;'>9.89%</span></li>
-                  </ul>
-                </li>
-              </ol>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Fisher, I. (1930). <em>The Theory of Interest</em>. Macmillan Company.</li>
-                <li>Mishkin, F. S. (2018). <em>The Economics of Money, Banking and Financial Markets</em>. Pearson.</li>
-                <li>Villalobos, J. L. (2017). <em>Matemáticas Financieras</em>. Pearson Educación.</li>
-                <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
-                <li>Banco de México. (2023). <em>Indicadores de Inflación</em>. Recuperado de: www.banxico.org.mx</li>
-                <li>INEGI. (2023). <em>Índice Nacional de Precios al Consumidor</em>. Recuperado de: www.inegi.org.mx</li>
-              </ul>
-            `)">6.8. Tasa real de interés <span class="emoji-small">✅</span>
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 30 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de tasa real de interés como medida del rendimiento después de ajustar por inflación, dominar la fórmula de Fisher para calcular tasas reales, diferenciar entre tasas nominales y reales, y aplicar estos conocimientos en la evaluación de inversiones, planificación financiera y análisis de políticas económicas.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>La tasa real de interés representa el verdadero rendimiento de una inversión o el costo real de un préstamo después de eliminar el efecto de la inflación. Mientras la tasa nominal muestra el crecimiento del dinero en términos numéricos, la tasa real indica el crecimiento del poder adquisitivo. La relación fundamental entre tasa nominal, tasa real e inflación se describe mediante la ecuación de Fisher, que establece que (1 + nominal) = (1 + real) × (1 + inflación). Comprender esta distinción es crucial para tomar decisiones financieras informadas, ya que una tasa nominal alta puede convertirse en tasa real negativa en contextos de alta inflación.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Conceptos fundamentales y fórmulas -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Componentes de la tasa de interés real</h4>
+      <p>Análisis de los elementos que conforman las tasas de interés y su relación:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Definición</th>
+            <th>Fórmula</th>
+            <th>Interpretación</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tasa Nominal (i)</td>
+            <td>Tasa declarada sin ajuste inflacionario</td>
+            <td>i = (VF/VP - 1)</td>
+            <td>Crecimiento numérico del dinero</td>
+            <td>10% anual</td>
+          </tr>
+          <tr>
+            <td>Tasa de Inflación (π)</td>
+            <td>Incremento porcentual del nivel de precios</td>
+            <td>π = (IPC₂/IPC₁ - 1)</td>
+            <td>Pérdida de poder adquisitivo</td>
+            <td>6% anual</td>
+          </tr>
+          <tr>
+            <td>Tasa Real (r)</td>
+            <td>Tasa ajustada por inflación</td>
+            <td>r = (1+i)/(1+π) - 1</td>
+            <td>Crecimiento del poder adquisitivo</td>
+            <td>3.77% real</td>
+          </tr>
+          <tr>
+            <td>Ecuación de Fisher Exacta</td>
+            <td>Relación precisa entre variables</td>
+            <td>(1+i) = (1+r)(1+π)</td>
+            <td>Descomposición multiplicativa</td>
+            <td>1.10 = 1.0377 × 1.06</td>
+          </tr>
+          <tr>
+            <td>Aproximación de Fisher</td>
+            <td>Fórmula simplificada para bajas tasas</td>
+            <td>r ≈ i - π</td>
+            <td>Diferencia simple</td>
+            <td>10% - 6% = 4%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La fórmula exacta de Fisher es multiplicativa, mientras que la aproximación es aditiva. La diferencia entre ambas se hace significativa cuando las tasas son altas. Para tasas menores al 10%, la aproximación es razonablemente precisa.</p>
+    </div>
+    
+    <!-- Gráfica 1: Descomposición de la tasa nominal en real e inflación -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descomposición de la Tasa Nominal</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Anatomía de una Tasa de Interés del 10%</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Con inflación del 6% anual</text>
+        
+        <!-- Barras de descomposición -->
+        <g transform=translate(100,80)>
+          <!-- Barra nominal total -->
+          <rect x=0 y=0 width=200 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2></rect>
+          <text x=100 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Nominal: 10%</strong></text>
+          
+          <!-- Componente inflación -->
+          <rect x=0 y=50 width=120 height=40 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2></rect>
+          <text x=60 y=75 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Inflación: 6%</strong></text>
+          
+          <!-- Componente tasa real -->
+          <rect x=120 y=50 width=80 height=40 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2></rect>
+          <text x=160 y=75 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Real: 3.77%</strong></text>
+          
+          <!-- Flechas de descomposición -->
+          <path d='M 100,40 L 100,50' stroke=var(--apple-dark-gray) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <path d='M 60,90 L 60,120' stroke=var(--apple-vibrant-orange) stroke-width=2 marker-end=url(#arrowDown)></path>
+          <path d='M 160,90 L 160,120' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowDown)></path>
+        </g>
+        
+        <!-- Explicación matemática -->
+        <rect x=50 y=130 width=300 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=145 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Ecuación de Fisher Exacta</strong></text>
+        <text x=200 y=160 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>(1 + 0.10) = (1 + 0.0377) × (1 + 0.06)</text>
+        <text x=200 y=175 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>1.10 = 1.0377 × 1.06</text>
+        <text x=200 y=190 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Tasa Real = (1.10 / 1.06) - 1 = 3.77%</text>
+        
+        <!-- Comparación con aproximación -->
+        <rect x=50 y=220 width=300 height=60 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+        <text x=200 y=235 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Comparación con Aproximación</strong></text>
+        <text x=200 y=250 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Aproximación: 10% - 6% = 4% (sobrestima 0.23%)</text>
+        <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Exacta: 3.77% (valor preciso)</text>
+        
+        <!-- Escenarios de poder adquisitivo -->
+        <g transform=translate(50,290)>
+          <rect x=0 y=0 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+          <text x=150 y=15 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Evolución del Poder Adquisitivo de $1,000</strong></text>
+          <text x=80 y=30 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Valor Nominal: $1,100</text>
+          <text x=220 y=30 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Valor Real: $1,037.70</text>
+        </g>
+        
+        <!-- Definición de flechas -->
+        <defs>
+          <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Solo la porción verde (tasa real) representa crecimiento real del poder adquisitivo. La porción naranja (inflación) simplemente compensa la pérdida de valor del dinero. En este ejemplo, de los $100 ganados nominalmente, solo $37.70 representan ganancia real.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Cálculo de tasas reales en diferentes escenarios -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Cálculo de tasas reales en contextos diversos</h4>
+      <p>Aplicación de la fórmula de Fisher en diferentes situaciones económicas:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Escenario Económico</th>
+            <th>Tasa Nominal</th>
+            <th>Inflación</th>
+            <th>Procedimiento de Cálculo</th>
+            <th>Tasa Real</th>
+            <th>Interpretación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Estabilidad de precios</td>
+            <td>8%</td>
+            <td>2%</td>
+            <td>r = (1.08/1.02) - 1</td>
+            <td>5.88%</td>
+            <td>Rendimiento real positivo saludable</td>
+          </tr>
+          <tr>
+            <td>Inflación moderada</td>
+            <td>12%</td>
+            <td>8%</td>
+            <td>r = (1.12/1.08) - 1</td>
+            <td>3.70%</td>
+            <td>Rendimiento real positivo pero reducido</td>
+          </tr>
+          <tr>
+            <td>Alta inflación</td>
+            <td>25%</td>
+            <td>30%</td>
+            <td>r = (1.25/1.30) - 1</td>
+            <td>-3.85%</td>
+            <td>Tasa real negativa, pérdida de poder adquisitivo</td>
+          </tr>
+          <tr>
+            <td>Deflación</td>
+            <td>3%</td>
+            <td>-1%</td>
+            <td>r = (1.03/0.99) - 1</td>
+            <td>4.04%</td>
+            <td>Tasa real mayor que nominal por caída de precios</td>
+          </tr>
+          <tr>
+            <td>Hiperinflación</td>
+            <td>150%</td>
+            <td>200%</td>
+            <td>r = (2.50/3.00) - 1</td>
+            <td>-16.67%</td>
+            <td>Pérdida catastrófica del poder adquisitivo</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa real puede ser negativa incluso con tasas nominales positivas cuando la inflación supera la tasa nominal. En deflación, la tasa real excede la nominal porque el dinero gana poder adquisitivo adicional.</p>
+    </div>
+    
+    <!-- Gráfica 2: Tasa real vs inflación en diferentes escenarios -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Relación entre Tasa Nominal, Inflación y Tasa Real</h4>
+      <svg viewBox='0 0 400 400' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=300 x2=50 y2=80 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tasa de Inflación (%)</text>
+        <text x=20 y=190 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,190)'>Tasa Real (%)</text>
+        
+        <!-- Marcas del eje X (inflación) -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=295 x2=100 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2%</text>
+          
+          <line x1=150 y1=295 x2=150 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4%</text>
+          
+          <line x1=200 y1=295 x2=200 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6%</text>
+          
+          <line x1=250 y1=295 x2=250 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8%</text>
+          
+          <line x1=300 y1=295 x2=300 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10%</text>
+        </g>
+        
+        <!-- Marcas del eje Y (tasa real) -->
+        <g transform=translate(0,0)>
+          <line x1=45 y1=250 x2=55 y2=250 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=253 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4%</text>
+          
+          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2%</text>
+          
+          <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>0%</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>-2%</text>
+        </g>
+        
+        <!-- Líneas para diferentes tasas nominales -->
+        
+        <!-- Tasa nominal 6% -->
+        <path d='M 50,280 L 350,220' stroke=var(--apple-vibrant-blue) stroke-width=2 stroke-dasharray=5,3></path>
+        <text x=360 y=220 text-anchor=start font-size=10 fill=var(--apple-vibrant-blue)>i = 6%</text>
+        
+        <!-- Tasa nominal 8% -->
+        <path d='M 50,260 L 350,180' stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></path>
+        <text x=360 y=180 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>i = 8%</text>
+        
+        <!-- Tasa nominal 10% -->
+        <path d='M 50,240 L 350,140' stroke=var(--apple-vibrant-orange) stroke-width=2 stroke-dasharray=5,3></path>
+        <text x=360 y=140 text-anchor=start font-size=10 fill=var(--apple-vibrant-orange)>i = 10%</text>
+        
+        <!-- Tasa nominal 12% -->
+        <path d='M 50,220 L 350,100' stroke=var(--apple-vibrant-red) stroke-width=2 stroke-dasharray=5,3></path>
+        <text x=360 y=100 text-anchor=start font-size=10 fill=var(--apple-vibrant-red)>i = 12%</text>
+        
+        <!-- Puntos de ejemplo -->
+        <circle cx=200 cy=200 r=4 fill=var(--apple-vibrant-green)></circle>
+        <text x=210 y=195 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>A: 8% nominal, 6% inflación</text>
+        <text x=210 y=205 text-anchor=start font-size=8 fill=var(--apple-dark-gray)>Real: 1.89%</text>
+        
+        <circle cx=250 cy=150 r=4 fill=var(--apple-vibrant-orange)></circle>
+        <text x=260 y=145 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>B: 10% nominal, 8% inflación</text>
+        <text x=260 y=155 text-anchor=start font-size=8 fill=var(--apple-dark-gray)>Real: 1.85%</text>
+        
+        <circle cx=300 cy=100 r=4 fill=var(--apple-vibrant-red)></circle>
+        <text x=310 y=95 text-anchor=start font-size=9 fill=var(--apple-dark-gray)>C: 12% nominal, 10% inflación</text>
+        <text x=310 y=105 text-anchor=start font-size=8 fill=var(--apple-dark-gray)>Real: 1.82%</text>
+        
+        <!-- Zona de tasas reales positivas -->
+        <rect x=50 y=150 width=300 height=150 fill=var(--apple-light-green) fill-opacity=0.2 stroke=var(--apple-vibrant-green) stroke-width=1 stroke-dasharray=3,3></rect>
+        <text x=200 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Zona de Tasas Reales Positivas</text>
+        
+        <!-- Zona de tasas reales negativas -->
+        <rect x=50 y=300 width=300 height=50 fill=var(--apple-light-red) fill-opacity=0.2 stroke=var(--apple-vibrant-red) stroke-width=1 stroke-dasharray=3,3></rect>
+        <text x=200 y=325 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>Zona de Tasas Reales Negativas</text>
+        
+        <!-- Línea de tasa real cero -->
+        <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <text x=360 y=300 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>r = 0%</text>
+        
+        <!-- Título -->
+        <text x=200 y=50 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Relación Tasa Real vs Inflación</strong></text>
+        <text x=200 y=65 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Para diferentes tasas nominales constantes</text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Para una tasa nominal dada, la tasa real disminuye linealmente a medida que aumenta la inflación. Cuando la inflación iguala la tasa nominal, la tasa real es cero. Por encima de ese punto, la tasa real se vuelve negativa. Las líneas paralelas muestran que el margen entre nominal y real se mantiene constante.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones en decisiones financieras reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Aplicaciones prácticas de la tasa real</h4>
+      <p>Uso de la tasa real en diferentes contextos de toma de decisiones:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Ámbito de Aplicación</th>
+            <th>Decisión Involucrada</th>
+            <th>Variables Consideradas</th>
+            <th>Cálculo de Tasa Real</th>
+            <th>Implicación Práctica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inversión Personal</td>
+            <td>Elegir entre cuentas de ahorro</td>
+            <td>Tasa nominal 5%, inflación 3%</td>
+            <td>r = (1.05/1.03) - 1 = 1.94%</td>
+            <td>Rendimiento real modesto, considerar otras opciones</td>
+          </tr>
+          <tr>
+            <td>Préstamo Hipotecario</td>
+            <td>Evaluar costo real del crédito</td>
+            <td>Tasa 8%, inflación 4%</td>
+            <td>r = (1.08/1.04) - 1 = 3.85%</td>
+            <td>Costo real menor que aparente, puede ser favorable</td>
+          </tr>
+          <tr>
+            <td>Bonos Gubernamentales</td>
+            <td>Comparar rendimientos reales</td>
+            <td>Bono 7%, inflación 5%</td>
+            <td>r = (1.07/1.05) - 1 = 1.90%</td>
+            <td>Rendimiento real positivo pero bajo</td>
+          </tr>
+          <tr>
+            <td>Negociación Salarial</td>
+            <td>Determinar aumento real necesario</td>
+            <td>Aumento 6%, inflación 8%</td>
+            <td>r = (1.06/1.08) - 1 = -1.85%</td>
+            <td>Pérdida de poder adquisitivo, buscar mayor aumento</td>
+          </tr>
+          <tr>
+            <td>Planificación de Jubilación</td>
+            <td>Calcular ahorros necesarios</td>
+            <td>Rendimiento 9%, inflación 6%</td>
+            <td>r = (1.09/1.06) - 1 = 2.83%</td>
+            <td>Crecimiento real modesto, requiere mayor aportación</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa real es la métrica relevante para todas las decisiones económicas a largo plazo. Las tasas nominales pueden engañar sobre el verdadero rendimiento o costo. En contextos inflacionarios, incluso tasas nominales altas pueden generar rendimientos reales bajos o negativos.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Evaluación de inversiones:</strong> Comparación del rendimiento real de diferentes instrumentos financieros después de ajustar por inflación.</li>
+        <li><strong>Política monetaria:</strong> Los bancos centrales utilizan tasas reales para determinar la posición de la política monetaria.</li>
+        <li><strong>Finanzas corporativas:</strong> Cálculo del costo real del capital para evaluar proyectos de inversión.</li>
+        <li><strong>Planificación financiera personal:</strong> Determinación de metas de ahorro y retiro en términos de poder adquisitivo constante.</li>
+        <li><strong>Negociaciones laborales:</strong> Cálculo de aumentos salariales reales para mantener el poder adquisitivo.</li>
+        <li><strong>Análisis de bonos indexados:</strong> Evaluación de instrumentos como los Treasury Inflation-Protected Securities (TIPS).</li>
+        <li><strong>Decisiones de consumo y ahorro:</strong> Elección entre gastar ahora o ahorrar considerando el rendimiento real.</li>
+        <li><strong>Análisis histórico de rendimientos:</strong> Comparación de desempeño de activos en diferentes periodos inflacionarios.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+        <li>Fisher, I. (1930). The Theory of Interest. Macmillan.</li>
+        <li>Mishkin, F. S. (2018). The Economics of Money, Banking and Financial Markets. Pearson.</li>
+        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+        <li>Bodie, Z., Kane, A., & Marcus, A. J. (2021). Investments. McGraw-Hill.</li>
+        <li>Blanchard, O. (2021). Macroeconomics. Pearson.</li>
+        <li>Khan Academy: Inflation and the Fisher equation. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>6.8. Tasa real de interés</b> <span class=emoji-small>✅</span>
           </li>
 
           <li onclick="abrirModal('6.9. Ecuaciones de valor', `
