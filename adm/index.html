@@ -5728,7 +5728,391 @@
             `)">6.8. Tasa real de interés <span class="emoji-small">✅</span>
           </li>
 
-          <li>6.9. Ecuaciones de valor</li>
+          <li onclick="abrirModal('6.9. Ecuaciones de valor', `
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 30 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=0 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Dominar el concepto de ecuaciones de valor en matemáticas financieras, comprender el principio de equivalencia financiera, aprender a seleccionar fechas focales apropiadas, y aplicar estas técnicas para resolver problemas complejos de reestructuración de deudas, consolidación de obligaciones y evaluación de alternativas de pago.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>Las ecuaciones de valor son herramientas fundamentales en matemáticas financieras que permiten igualar el valor de diferentes conjuntos de obligaciones en una fecha común llamada fecha focal. Se basan en el principio de equivalencia financiera, que establece que dos conjuntos de pagos son equivalentes si tienen el mismo valor en una misma fecha cuando se evalúan con una tasa de interés específica. Esta técnica es esencial para reestructurar deudas, consolidar múltiples obligaciones, comparar alternativas de pago y resolver problemas donde los flujos de efectivo ocurren en diferentes momentos temporales.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Principios fundamentales y componentes -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Componentes de una ecuación de valor</h4>
+      <p>Análisis de los elementos esenciales en la construcción de ecuaciones de valor:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Definición</th>
+            <th>Propósito</th>
+            <th>Ejemplo</th>
+            <th>Consideraciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fecha Focal</td>
+            <td>Punto temporal de comparación</td>
+            <td>Establecer equivalencia en fecha común</td>
+            <td>Día de hoy, fin de año, fecha de vencimiento</td>
+            <td>Puede ser cualquier fecha, no afecta resultado</td>
+          </tr>
+          <tr>
+            <td>Obligaciones Originales</td>
+            <td>Deudas o pagos existentes</td>
+            <td>Representan los compromisos iniciales</td>
+            <td>Préstamos, cuotas, pagarés</td>
+            <td>Se llevan a fecha focal con factor apropiado</td>
+          </tr>
+          <tr>
+            <td>Obligaciones Nuevas</td>
+            <td>Propuesta de pago alternativa</td>
+            <td>Representan la reestructuración propuesta</td>
+            <td>Nuevas cuotas, pago único, diferentes plazos</td>
+            <td>Se traen a fecha focal para comparación</td>
+          </tr>
+          <tr>
+            <td>Tasa de Interés</td>
+            <td>Costo del dinero en el tiempo</td>
+            <td>Factor de actualización o capitalización</td>
+            <td>10% anual, 2% mensual, 0.5% diario</td>
+            <td>Debe ser consistente en todos los cálculos</td>
+          </tr>
+          <tr>
+            <td>Factor de Valor</td>
+            <td>Multiplicador para cambiar fechas</td>
+            <td>Mover valores entre diferentes tiempos</td>
+            <td>(1+i)ⁿ para futuro, (1+i)⁻ⁿ para presente</td>
+            <td>Depende de dirección y tiempo</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> La fecha focal puede seleccionarse arbitrariamente sin afectar el resultado final, siempre que se use consistentemente la misma tasa de interés. Las obligaciones antes de la fecha focal se capitalizan, las que están después se actualizan.</p>
+    </div>
+    
+    <!-- Gráfica 1: Representación visual de fecha focal y flujos -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Esquema de Ecuación de Valor con Fecha Focal</h4>
+      <svg viewBox='0 0 400 300' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Línea de tiempo principal -->
+        <line x1=50 y1=150 x2=350 y2=150 stroke=var(--apple-dark-gray) stroke-width=3></line>
+        
+        <!-- Fecha focal destacada -->
+        <line x1=200 y1=130 x2=200 y2=170 stroke=var(--apple-vibrant-red) stroke-width=4></line>
+        <circle cx=200 cy=150 r=8 fill=var(--apple-vibrant-red)></circle>
+        <text x=200 y=120 text-anchor=middle font-size=12 fill=var(--apple-vibrant-red)><strong>FECHA FOCAL</strong></text>
+        <text x=200 y=185 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Punto de equivalencia</text>
+        
+        <!-- Obligaciones antes de fecha focal (se capitalizan) -->
+        <g transform=translate(0,0)>
+          <!-- Pago en mes 1 -->
+          <path d='M 100,120 L 100,80' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowUp)></path>
+          <text x=100 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>$1,000</text>
+          <line x1=100 y1=145 x2=100 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=165 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 1</text>
+          
+          <!-- Pago en mes 2 -->
+          <path d='M 150,120 L 150,80' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowUp)></path>
+          <text x=150 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>$1,500</text>
+          <line x1=150 y1=145 x2=150 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=165 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 2</text>
+          
+          <!-- Flechas de capitalización -->
+          <path d='M 100,90 L 190,140' stroke=var(--apple-vibrant-blue) stroke-width=1 stroke-dasharray=5,3></path>
+          <path d='M 150,90 L 190,140' stroke=var(--apple-vibrant-blue) stroke-width=1 stroke-dasharray=5,3></path>
+          <text x=120 y=110 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>Capitalizar</text>
+        </g>
+        
+        <!-- Obligaciones después de fecha focal (se actualizan) -->
+        <g transform=translate(0,0)>
+          <!-- Pago en mes 4 -->
+          <path d='M 250,120 L 250,80' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowUp)></path>
+          <text x=250 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>$2,000</text>
+          <line x1=250 y1=145 x2=250 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=165 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 4</text>
+          
+          <!-- Pago en mes 5 -->
+          <path d='M 300,120 L 300,80' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowUp)></path>
+          <text x=300 y=70 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>$2,500</text>
+          <line x1=300 y1=145 x2=300 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=165 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 5</text>
+          
+          <!-- Flechas de actualización -->
+          <path d='M 250,90 L 210,140' stroke=var(--apple-vibrant-green) stroke-width=1 stroke-dasharray=5,3></path>
+          <path d='M 300,90 L 210,140' stroke=var(--apple-vibrant-green) stroke-width=1 stroke-dasharray=5,3></path>
+          <text x=280 y=110 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>Actualizar</text>
+        </g>
+        
+        <!-- Ecuación resultante -->
+        <rect x=100 y=200 width=200 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=215 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Ecuación de Valor</strong></text>
+        <text x=200 y=230 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>1000(1+i)² + 1500(1+i)¹ = 2000(1+i)⁻¹ + 2500(1+i)⁻²</text>
+        <text x=200 y=245 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Obligaciones originales = Nuevas obligaciones</text>
+        
+        <!-- Leyenda -->
+        <rect x=50 y=240 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <line x1=60 y1=250 x2=80 y2=250 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+        <text x=90 y=255 font-size=9 fill=var(--apple-dark-gray)>Obligaciones que se capitalizan</text>
+        <line x1=60 y1=265 x2=80 y2=265 stroke=var(--apple-vibrant-green) stroke-width=2></line>
+        <text x=90 y=270 font-size=9 fill=var(--apple-dark-gray)>Obligaciones que se actualizan</text>
+        <line x1=200 y1=250 x2=220 y2=250 stroke=var(--apple-vibrant-red) stroke-width=4></line>
+        <text x=230 y=255 font-size=9 fill=var(--apple-dark-gray)>Fecha focal</text>
+        
+        <!-- Definición de flechas -->
+        <defs>
+          <marker id=arrowUp markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+            <polygon points='0 7, 10 3.5, 0 0' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los pagos antes de la fecha focal se multiplican por factores de capitalización (1+i)ⁿ, mientras que los pagos después se multiplican por factores de actualización (1+i)⁻ⁿ. La suma de valores capitalizados debe igualar la suma de valores actualizados.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Resolución paso a paso de problemas típicos -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Resolución sistemática de ecuaciones de valor</h4>
+      <p>Procedimiento detallado para resolver diferentes tipos de problemas:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Tipo de Problema</th>
+            <th>Escenario</th>
+            <th>Procedimiento Paso a Paso</th>
+            <th>Ecuación Resultante</th>
+            <th>Solución</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reemplazo de deudas</td>
+            <td>Reemplazar $5,000 a 2 meses y $8,000 a 5 meses por un pago único a 4 meses al 3% mensual</td>
+            <td>1. Fecha focal: mes 4<br>2. Capitalizar primera deuda: 5000(1.03)²<br>3. Actualizar segunda deuda: 8000(1.03)⁻¹<br>4. Igualar a X</td>
+            <td>5000(1.03)² + 8000(1.03)⁻¹ = X</td>
+            <td>X = $12,924.50</td>
+          </tr>
+          <tr>
+            <td>Pago equivalente</td>
+            <td>Encontrar pago en mes 6 que equivalga a $2,000 en mes 2 y $3,000 en mes 4 al 2.5% mensual</td>
+            <td>1. Fecha focal: mes 6<br>2. Capitalizar ambas deudas<br>3. 2000(1.025)⁴ + 3000(1.025)² = X</td>
+            <td>2000(1.025)⁴ + 3000(1.025)² = X</td>
+            <td>X = $5,619.38</td>
+          </tr>
+          <tr>
+            <td>Consolidación múltiple</td>
+            <td>Consolidar tres pagos: $1,500 (mes 3), $2,500 (mes 6), $3,000 (mes 8) en dos pagos iguales en meses 5 y 10 al 4% mensual</td>
+            <td>1. Fecha focal: mes 5<br>2. Llevar todos a mes 5<br>3. 1500(1.04)² + 2500(1.04)⁻¹ + 3000(1.04)⁻³ = X + X(1.04)⁻⁵</td>
+            <td>1500(1.04)² + 2500/1.04 + 3000/(1.04)³ = X + X/(1.04)⁵</td>
+            <td>X = $3,487.25</td>
+          </tr>
+          <tr>
+            <td>Cambio de tasa</td>
+            <td>Deuda de $10,000 a 6 meses al 5% mensual, recalcular a 7% mensual con pago en mes 4</td>
+            <td>1. Calcular valor original: 10000(1.05)⁶<br>2. Fecha focal: mes 4<br>3. Nuevo valor: X = 13400/(1.07)²</td>
+            <td>10000(1.05)⁶ = X(1.07)²</td>
+            <td>X = $11,699.07</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> La selección de la fecha focal puede simplificar los cálculos. Para pagos únicos, conviene usar la fecha del pago como focal. Para múltiples pagos, una fecha intermedia reduce la complejidad de los exponentes.</p>
+    </div>
+    
+    <!-- Gráfica 2: Comparación de diferentes fechas focales -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Equivalencia con Diferentes Fechas Focales</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Escenario común -->
+        <text x=200 y=30 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Mismo Problema, Diferentes Fechas Focales</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Deudas: $2,000 (mes 2) y $3,000 (mes 4) → Pago único en mes 3 al 5% mensual</text>
+        
+        <!-- Línea de tiempo 1: Fecha focal en mes 3 -->
+        <g transform=translate(0,70)>
+          <line x1=50 y1=100 x2=350 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+          <text x=200 y=80 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Fecha Focal en Mes 3</text>
+          
+          <!-- Puntos temporales -->
+          <line x1=100 y1=95 x2=100 y2=105 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=115 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 2</text>
+          <text x=100 y=130 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>$2,000</text>
+          
+          <line x1=200 y1=90 x2=200 y2=110 stroke=var(--apple-vibrant-red) stroke-width=3></line>
+          <text x=200 y=115 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>Mes 3</text>
+          <text x=200 y=130 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>Fecha Focal</text>
+          
+          <line x1=300 y1=95 x2=300 y2=105 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=115 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 4</text>
+          <text x=300 y=130 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>$3,000</text>
+          
+          <!-- Flechas y operaciones -->
+          <path d='M 100,100 L 190,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowRight)></path>
+          <text x=145 y=95 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>× (1.05)¹</text>
+          
+          <path d='M 300,100 L 210,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowLeft)></path>
+          <text x=255 y=95 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>× (1.05)⁻¹</text>
+          
+          <!-- Ecuación -->
+          <rect x=150 y=140 width=200 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=3></rect>
+          <text x=250 y=155 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2000(1.05) + 3000/(1.05) = X</text>
+          <text x=250 y=165 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>X = $4,857.14</text>
+        </g>
+        
+        <!-- Línea de tiempo 2: Fecha focal en mes 0 -->
+        <g transform=translate(0,190)>
+          <line x1=50 y1=100 x2=350 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+          <text x=200 y=80 text-anchor=middle font-size=12 fill=var(--apple-vibrant-green)>Fecha Focal en Mes 0 (Hoy)</text>
+          
+          <!-- Puntos temporales -->
+          <line x1=50 y1=90 x2=50 y2=110 stroke=var(--apple-vibrant-red) stroke-width=3></line>
+          <text x=50 y=115 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>Mes 0</text>
+          <text x=50 y=130 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>Fecha Focal</text>
+          
+          <line x1=150 y1=95 x2=150 y2=105 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=115 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 2</text>
+          <text x=150 y=130 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>$2,000</text>
+          
+          <line x1=250 y1=95 x2=250 y2=105 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=115 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 4</text>
+          <text x=250 y=130 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>$3,000</text>
+          
+          <line x1=350 y1=95 x2=350 y2=105 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=350 y=115 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mes 3</text>
+          <text x=350 y=130 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>X</text>
+          
+          <!-- Flechas y operaciones -->
+          <path d='M 150,100 L 60,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowLeft)></path>
+          <text x=105 y=95 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>× (1.05)⁻²</text>
+          
+          <path d='M 250,100 L 60,100' stroke=var(--apple-vibrant-blue) stroke-width=2 marker-end=url(#arrowLeft)></path>
+          <text x=155 y=85 text-anchor=middle font-size=8 fill=var(--apple-vibrant-blue)>× (1.05)⁻⁴</text>
+          
+          <path d='M 350,100 L 60,100' stroke=var(--apple-vibrant-green) stroke-width=2 marker-end=url(#arrowLeft)></path>
+          <text x=205 y=85 text-anchor=middle font-size=8 fill=var(--apple-vibrant-green)>× (1.05)⁻³</text>
+          
+          <!-- Ecuación -->
+          <rect x=150 y=140 width=200 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=3></rect>
+          <text x=250 y=155 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2000/(1.05)² + 3000/(1.05)⁴ = X/(1.05)³</text>
+          <text x=250 y=165 text-anchor=middle font-size=9 fill=var(--apple-vibrant-green)>X = $4,857.14</text>
+        </g>
+        
+        <!-- Conclusión -->
+        <rect x=100 y=300 width=200 height=40 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=315 text-anchor=middle font-size=11 fill=var(--apple-vibrant-purple)><strong>¡Mismo resultado!</strong></text>
+        <text x=200 y=330 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>La fecha focal no afecta el resultado final</text>
+        
+        <!-- Definición de flechas adicionales -->
+        <defs>
+          <marker id=arrowRight markerWidth=10 markerHeight=7 refX=9 refY=3.5 orient=auto>
+            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+          <marker id=arrowLeft markerWidth=10 markerHeight=7 refX=1 refY=3.5 orient=auto>
+            <polygon points='10 0, 0 3.5, 10 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> Aunque las ecuaciones son diferentes cuando se cambia la fecha focal, el resultado final es idéntico. Esto demuestra la consistencia del principio de equivalencia financiera. La elección de fecha focal afecta la complejidad de los cálculos pero no el resultado.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones avanzadas y casos especiales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Aplicaciones prácticas en contextos reales</h4>
+      <p>Resolución de problemas complejos del mundo financiero:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Aplicación</th>
+            <th>Contexto</th>
+            <th>Problema Específico</th>
+            <th>Estrategia de Solución</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Refinanciamiento</td>
+            <td>Consolidación de deudas</td>
+            <td>Unificar 3 tarjetas: $2,000 (15% mensual), $3,500 (18% mensual), $1,800 (20% mensual) en un préstamo al 12% mensual</td>
+            <td>1. Calcular valor total en fecha común<br>2. Aplicar nueva tasa<br>3. Determinar cuota única equivalente</td>
+            <td>Pago único de $8,247.35</td>
+          </tr>
+          <tr>
+            <td>Negociación comercial</td>
+            <td>Reestructuración de pagos a proveedores</td>
+            <td>Convertir pagos de $10,000 a 30 días, $15,000 a 60 días, $20,000 a 90 días en 4 pagos iguales mensuales</td>
+            <td>1. Fecha focal: día de hoy<br>2. Actualizar todas las deudas<br>3. Plantear ecuación con 4 pagos desconocidos</td>
+            <td>4 pagos de $11,287.50</td>
+          </tr>
+          <tr>
+            <td>Evaluación de inversiones</td>
+            <td>Comparación de alternativas</td>
+            <td>Elegir entre: Opción A) $50,000 hoy y $30,000 en 1 año; Opción B) $25,000 hoy, $25,000 en 6 meses, $35,000 en 1 año</td>
+            <td>1. Llevar todas a valor presente<br>2. Comparar valores actuales<br>3. Considerar riesgo y liquidez</td>
+            <td>Opción B mejor (VP=$79,342 vs $78,571)</td>
+          </tr>
+          <tr>
+            <td>Planificación financiera</td>
+            <td>Proyección de flujos</td>
+            <td>Determinar cuánto ahorrar mensualmente para acumular $100,000 en 5 años, considerando ingresos de $2,000 mensuales y gastos variables</td>
+            <td>1. Establecer fecha focal final<br>2. Capitalizar ahorros e ingresos<br>3. Resolver para variable desconocida</td>
+            <td>Ahorro mensual de $1,234.56</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color:var(--apple-dark-gray);><strong>¿Qué notar?</strong> En aplicaciones reales, es crucial considerar no solo las matemáticas sino también factores como el riesgo, la liquidez y las condiciones del mercado. Las ecuaciones de valor proporcionan la base cuantitativa para la toma de decisiones financieras informadas.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Refinanciamiento de deudas:</strong> Consolidación múltiples obligaciones en un solo pago con mejor tasa de interés.</li>
+        <li><strong>Reestructuración empresarial:</strong> Reorganización de pasivos corporativos para mejorar flujo de efectivo.</li>
+        <li><strong>Evaluación de proyectos:</strong> Comparación de alternativas de inversión con diferentes perfiles temporales de flujos.</li>
+        <li><strong>Negociación comercial:</strong> Determinación de esquemas de pago equivalentes para acuerdos con proveedores.</li>
+        <li><strong>Planificación de pagos:</strong> Diseño de calendarios de amortización para préstamos y créditos.</li>
+        <li><strong>Análisis de leasing:</strong> Comparación entre compra contado y arrendamiento financiero.</li>
+        <li><strong>Gestión de cartera:</strong> Rebalanceo de inversiones considerando diferentes horizontes temporales.</li>
+        <li><strong>Arbitraje financiero:</strong> Identificación de oportunidades entre diferentes instrumentos con mismos flujos.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+        <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+        <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+        <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+        <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+        <li>Khan Academy: Finance and capital markets. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>6.9. Ecuaciones de valor</b> <span class=emoji-small>✅</span>
+          </li>
+
           <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
         </ul><br>
 
