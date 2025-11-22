@@ -4270,213 +4270,439 @@
           </li>
 
           <li onclick="abrirModal('6.3. Valor Presente', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el concepto, cálculo y aplicaciones del valor presente en las finanzas, incluyendo su relación con el valor futuro y su uso en la evaluación de inversiones y flujos de efectivo.</p>
-            
-              <h4>Definición y conceptos básicos</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente (VP):</span> Valor actual de una cantidad futura de dinero o flujo de caja, descontado a una tasa de interés específica.</li>
-                <li><span style='color: red; font-weight: bold;'>Principio fundamental:</span> Un dólar hoy vale más que un dólar mañana debido a la capacidad de generar intereses.</li>
-                <li><span style='color: red; font-weight: bold;'>Descuento:</span> Proceso de calcular el valor presente de cantidades futuras.</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa de descuento (i):</span> Tasa de interés utilizada para calcular el valor presente.</li>
-                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> Coeficiente por el que se multiplica un valor futuro para obtener su valor presente: 1/(1+i)ⁿ</li>
-                <li><span style='color: red; font-weight: bold;'>Relación con Valor Futuro:</span> VP = VF / (1 + i)ⁿ</li>
-              </ul>
-            
-              <h4>Fórmulas fundamentales</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente simple:</span> VP = VF / (1 + i × n)</li>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente compuesto:</span> VP = VF / (1 + i)ⁿ</li>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa nominal:</span> VP = VF / (1 + j/m)ᵐˣⁿ</li>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente de una anualidad:</span> VP = A × [(1 - (1 + i)⁻ⁿ) / i]</li>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente de perpetuidad:</span> VP = A / i</li>
-                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + i)ⁿ</li>
-              </ul>
-            
-              <h4>Interpretación del valor presente</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Decisión de inversión:</span> Si VP ≥ 0, la inversión es viable</li>
-                <li><span style='color: red; font-weight: bold;'>Comparación de alternativas:</span> Mayor VP indica mejor opción</li>
-                <li><span style='color: red; font-weight: bold;'>Valoración de activos:</span> El VP representa el precio teórico justo</li>
-                <li><span style='color: red; font-weight: bold;'>Análisis de préstamos:</span> El VP es el capital inicial del préstamo</li>
-                <li><span style='color: red; font-weight: bold;'>Punto de equilibrio:</span> Donde VP de ingresos = VP de egresos</li>
-              </ul>
-            
-              <h4>Ejemplos detallados de aplicación</h4>
-              
-              <p><strong>Ejemplo 1: Valor Presente de un monto único</strong></p>
-              <p>¿Cuánto debo invertir hoy al 8% anual para tener $15,000 en 5 años?</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>VF = $15,000, i = 8% = 0.08, n = 5 años</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = VF / (1 + i)ⁿ</span></li>
-                <li>Cálculo: VP = 15000 / (1.08)⁵</li>
-                <li>Paso 1: (1.08)⁵ = <span style='color: red; font-weight: bold;'>1.469328</span></li>
-                <li>Paso 2: VP = 15000 / 1.469328 = <span style='color: red; font-weight: bold;'>$10,208.75</span></li>
-                <li>Verificación: 10208.75 × (1.08)⁵ = 10208.75 × 1.469328 = <span style='color: red; font-weight: bold;'>$15,000</span></li>
-                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> $10,208.75 hoy equivalen a $15,000 dentro de 5 años al 8% anual.</li>
-              </ol>
-              
-              <p><strong>Ejemplo 2: Valor Presente con capitalización trimestral</strong></p>
-              <p>Calcular el valor presente de $20,000 a recibir en 3 años, descontados al 12% anual capitalizable trimestralmente.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>VF = $20,000, j = 12% = 0.12, m = 4, n = 3 años</span></li>
-                <li>Tasa periódica: <span style='color: red; font-weight: bold;'>i = j/m = 0.12/4 = 0.03 trimestral</span></li>
-                <li>Número de períodos: <span style='color: red; font-weight: bold;'>n = m × t = 4 × 3 = 12 trimestres</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = VF / (1 + i)ⁿ</span></li>
-                <li>Cálculo: VP = 20000 / (1.03)¹²</li>
-                <li>Paso 1: (1.03)¹² = <span style='color: red; font-weight: bold;'>1.425761</span></li>
-                <li>Paso 2: VP = 20000 / 1.425761 = <span style='color: red; font-weight: bold;'>$14,027.60</span></li>
-                <li>Tasa efectiva anual: iₑ = (1.03)⁴ - 1 = 1.125509 - 1 = <span style='color: red; font-weight: bold;'>12.55%</span></li>
-                <li>Verificación con tasa efectiva: VP = 20000 / (1.1255)³ = 20000 / 1.4258 = <span style='color: red; font-weight: bold;'>$14,027.20</span></li>
-              </ol>
-              
-              <p><strong>Ejemplo 3: Valor Presente de una anualidad</strong></p>
-              <p>Calcular el valor presente de 5 pagos anuales de $2,000 cada uno, con una tasa de descuento del 7% anual.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>A = $2,000, i = 7% = 0.07, n = 5 años</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>VP = A × [(1 - (1 + i)⁻ⁿ) / i]</span></li>
-                <li>Cálculo: VP = 2000 × [(1 - (1.07)⁻⁵) / 0.07]</li>
-                <li>Paso 1: (1.07)⁻⁵ = 1 / (1.07)⁵ = 1 / 1.402552 = <span style='color: red; font-weight: bold;'>0.712986</span></li>
-                <li>Paso 2: 1 - 0.712986 = <span style='color: red; font-weight: bold;'>0.287014</span></li>
-                <li>Paso 3: 0.287014 / 0.07 = <span style='color: red; font-weight: bold;'>4.1002</span></li>
-                <li>Paso 4: VP = 2000 × 4.1002 = <span style='color: red; font-weight: bold;'>$8,200.40</span></li>
-                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> $8,200.40 hoy equivalen a 5 pagos anuales de $2,000 al 7% anual.</li>
-              </ol>
-            
-              <h4>Aplicaciones del valor presente</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula clave</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Inversiones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de proyectos (VAN)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>VAN = ∑(Fⱼ/(1+i)ʲ) - Inversión Inicial</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Préstamos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de cuotas y saldos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Bonos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Precio teórico de bonos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>P = ∑(Cupón/(1+i)ʲ) + Valor Nominal/(1+i)ⁿ</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Pensiones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas actuariales</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>VP = A × [1 - (1+i)⁻ⁿ]/i</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Arrendamiento</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Valor presente de pagos por lease</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>VP = ∑(Pagoⱼ/(1+i)ʲ)</td>
-                </tr>
-              </table>
-            
-              <h4>Factores que afectan el valor presente</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Tasa de descuento:</span> A mayor tasa, menor valor presente</li>
-                <li><span style='color: red; font-weight: bold;'>Tiempo:</span> A mayor plazo, menor valor presente</li>
-                <li><span style='color: red; font-weight: bold;'>Frecuencia de capitalización:</span> A mayor frecuencia, menor valor presente</li>
-                <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Mayores riesgos requieren mayores tasas de descuento</li>
-                <li><span style='color: red; font-weight: bold;'>Inflación:</span> Reduce el valor presente de flujos nominales</li>
-              </ul>
-            
-              <h4>Ejercicio de aplicación integral</h4>
-              <p>Una empresa evalúa un proyecto que requiere una inversión inicial de $50,000 y generará los siguientes flujos de caja anuales:</p>
-              <ul>
-                <li>Año 1: $15,000</li>
-                <li>Año 2: $18,000</li>
-                <li>Año 3: $22,000</li>
-                <li>Año 4: $25,000</li>
-                <li>Año 5: $30,000</li>
-              </ul>
-              <p>Si la tasa de descuento apropiada es del 10% anual, determinar:</p>
-              <ol>
-                <li>El valor presente de cada flujo</li>
-                <li>El valor presente total de los flujos</li>
-                <li>El valor actual neto (VAN) del proyecto</li>
-                <li>¿Debe aceptarse el proyecto?</li>
-              </ol>
-              
-              <p><strong>Solución:</strong></p>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor de descuento</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Valor Presente</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-$50,000.00</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$15,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9091</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$13,636.50</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8264</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$14,875.20</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$22,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7513</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$16,528.60</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$25,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6830</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$17,075.00</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6209</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>$18,627.00</td>
-                </tr>
-                <tr style='background-color: #e6f7ff;'>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total</strong></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>$80,742.30</strong></td>
-                </tr>
-              </table>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Valor presente total de flujos:</span> $80,742.30</li>
-                <li><span style='color: red; font-weight: bold;'>Valor actual neto (VAN):</span> VP Flujos - Inversión = 80742.30 - 50000 = <span style='color: red; font-weight: bold;'>$30,742.30</span></li>
-                <li><span style='color: red; font-weight: bold;'>Decisión:</span> Como VAN > 0, <span style='color: red; font-weight: bold;'>el proyecto debe aceptarse</span></li>
-              </ol>
-            
-              <h4>Consideraciones importantes</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es crítica</span> y debe reflejar el riesgo de los flujos</li>
-                <li>El valor presente <span style='color: red; font-weight: bold;'>no considera la inflación</span> a menos que se usen flujos reales y tasa real</li>
-                <li>En proyectos de largo plazo, <span style='color: red; font-weight: bold;'>pequeños cambios en la tasa afectan significativamente el VP</span></li>
-                <li>El análisis de valor presente <span style='color: red; font-weight: bold;'>debe complementarse con otros indicadores</span> (TIR, período de recuperación)</li>
-                <li>En contextos inflacionarios, es preferible usar <span style='color: red; font-weight: bold;'>flujos reales y tasa real</span></li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
-                <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. (2019). <em>Corporate Finance</em>. McGraw-Hill.</li>
-                <li>Van Horne, J. C., & Wachowicz, J. M. (2008). <em>Fundamentals of Financial Management</em>. Pearson Education.</li>
-                <li>Gitman, L. J., & Zutter, C. J. (2015). <em>Principles of Managerial Finance</em>. Pearson Education.</li>
-              </ul>
-            `)"><b>6.3. Valor Presente</b> <span class="emoji-small">✅</span>
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 20 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>20 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 20 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de valor presente como el valor actual de flujos de efectivo futuros, dominar las técnicas de descuento para calcular valores presentes, aprender a aplicar factores de descuento en diferentes contextos, y utilizar estas herramientas en la evaluación de inversiones, préstamos y decisiones financieras.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>El valor presente (VP) es el valor actual de una cantidad de dinero que se recibirá o pagará en el futuro, descontado a una tasa de interés específica que refleja el costo de oportunidad del capital. Representa el principio fundamental de que el dinero disponible hoy vale más que la misma cantidad en el futuro debido a su capacidad potencial de generar ingresos. El cálculo del valor presente permite comparar flujos de efectivo en diferentes momentos temporales, facilitando la toma de decisiones financieras racionales sobre inversiones, préstamos y otros compromisos financieros.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Conceptos fundamentales y fórmulas -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Fundamentos del valor presente</h4>
+      <p>Análisis de los conceptos básicos y fórmulas fundamentales:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Definición</th>
+            <th>Fórmula</th>
+            <th>Variables</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Valor Presente Simple</td>
+            <td>Valor actual de un pago único futuro</td>
+            <td>VP = VF / (1 + i)ⁿ</td>
+            <td>VF=Valor futuro, i=tasa, n=periodos</td>
+            <td>VF=$1,210, i=10%, n=2 → VP=$1,000</td>
+          </tr>
+          <tr>
+            <td>Factor de Descuento</td>
+            <td>Multiplicador para calcular VP</td>
+            <td>FD = 1 / (1 + i)ⁿ</td>
+            <td>También llamado factor de actualización</td>
+            <td>i=10%, n=2 → FD=0.8264</td>
+          </tr>
+          <tr>
+            <td>Tasa de Descuento</td>
+            <td>Tasa usada para calcular VP</td>
+            <td>i en VP = VF/(1+i)ⁿ</td>
+            <td>Refleja costo de oportunidad</td>
+            <td>10%, 15%, 20% según riesgo</td>
+          </tr>
+          <tr>
+            <td>Valor Presente Neto</td>
+            <td>VP de flujos menos inversión inicial</td>
+            <td>VPN = ∑[FCₜ/(1+i)ᵗ] - I₀</td>
+            <td>FC=Flujo de caja, I=Inversión</td>
+            <td>Evaluación de proyectos</td>
+          </tr>
+          <tr>
+            <td>Perpetuidad</td>
+            <td>Serie infinita de pagos iguales</td>
+            <td>VP = A / i</td>
+            <td>A=Pago periódico constante</td>
+            <td>A=$100, i=10% → VP=$1,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente siempre es menor o igual al valor futuro debido al descuento. El factor de descuento disminuye exponencialmente con el tiempo y la tasa, reflejando que los flujos más lejanos valen menos en términos presentes.</p>
+    </div>
+    
+    <!-- Gráfica 1: Proceso de descuento de valor futuro a valor presente -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descuento de Valor Futuro a Valor Presente</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Proceso de Descuento: Valor Futuro → Valor Presente</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa de descuento: 10% anual</text>
+        
+        <!-- Línea de tiempo -->
+        <line x1=50 y1=150 x2=350 y2=150 stroke=var(--apple-dark-gray) stroke-width=3></line>
+        
+        <!-- Valor Futuro -->
+        <g transform=translate(300,80)>
+          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+          <text x=0 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Valor Futuro</strong></text>
+          <text x=0 y=40 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>VF = $1,331</text>
+          <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Dentro de 3 años)</text>
+        </g>
+        
+        <!-- Flecha de descuento -->
+        <path d='M 250,150 L 100,150' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowLeft)></path>
+        <text x=175 y=140 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)><strong>DESCUENTO</strong></text>
+        <text x=175 y=155 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>÷ (1 + 0.10)³</text>
+        
+        <!-- Valor Presente -->
+        <g transform=translate(50,80)>
+          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Valor Presente</strong></text>
+          <text x=0 y=40 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>VP = $1,000</text>
+          <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Hoy)</text>
+        </g>
+        
+        <!-- Marcas de tiempo -->
+        <g transform=translate(0,0)>
+          <line x1=50 y1=145 x2=50 y2=155 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+          <text x=50 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Año 0</text>
+          
+          <line x1=150 y1=145 x2=150 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Año 1</text>
+          
+          <line x1=250 y1=145 x2=250 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Año 2</text>
+          
+          <line x1=350 y1=145 x2=350 y2=155 stroke=var(--apple-vibrant-green) stroke-width=2></line>
+          <text x=350 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Año 3</text>
+        </g>
+        
+        <!-- Factores de descuento intermedios -->
+        <g transform=translate(150,200)>
+          <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 1: 0.9091</text>
+        </g>
+        
+        <g transform=translate(250,200)>
+          <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 2: 0.8264</text>
+        </g>
+        
+        <g transform=translate(350,200)>
+          <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 3: 0.7513</text>
+        </g>
+        
+        <!-- Fórmula completa -->
+        <rect x=50 y=230 width=300 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=245 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Fórmula de Valor Presente</strong></text>
+        <text x=200 y=260 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>VP = VF × [1 / (1 + i)ⁿ]</text>
+        <text x=200 y=275 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>$1,000 = $1,331 × [1 / (1.10)³]</text>
+        
+        <!-- Explicación conceptual -->
+        <rect x=50 y=300 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+        <text x=200 y=315 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El dinero hoy vale más que mañana!</strong></text>
+        <text x=200 y=330 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>$1,000 hoy equivalen a $1,331 dentro de 3 años al 10% anual</text>
+        
+        <!-- Definición de flechas -->
+        <defs>
+          <marker id=arrowLeft markerWidth=10 markerHeight=7 refX=1 refY=3.5 orient=auto>
+            <polygon points='10 0, 0 3.5, 10 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El proceso de descuento es inverso al de capitalización. Mientras la capitalización lleva valores presentes a futuros multiplicando por (1+i)ⁿ, el descuento trae valores futuros al presente dividiendo por (1+i)ⁿ o multiplicando por el factor de descuento 1/(1+i)ⁿ.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Cálculos prácticos de valor presente -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones del valor presente</h4>
+      <p>Resolución de problemas típicos usando valor presente:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Escenario</th>
+            <th>Datos del Problema</th>
+            <th>Procedimiento de Cálculo</th>
+            <th>Fórmula Aplicada</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inversión Única</td>
+            <td>VF=$5,000, i=8%, n=5 años</td>
+            <td>1. VP = 5000 / (1.08)⁵<br>2. (1.08)⁵ = 1.4693<br>3. VP = 5000 / 1.4693</td>
+            <td>VP = VF / (1+i)ⁿ</td>
+            <td>VP = $3,402.92</td>
+          </tr>
+          <tr>
+            <td>Comparación de Ofertas</td>
+            <td>Oferta A: $10,000 hoy<br>Oferta B: $12,000 en 2 años, i=7%</td>
+            <td>1. VP oferta B = 12000/(1.07)²<br>2. VP = 12000/1.1449</td>
+            <td>VP = VF / (1+i)ⁿ</td>
+            <td>VP = $10,481.66 → Mejor B</td>
+          </tr>
+          <tr>
+            <td>Préstamo</td>
+            <td>Pago $15,000 en 3 años, i=12%</td>
+            <td>1. VP = 15000 / (1.12)³<br>2. (1.12)³ = 1.4049<br>3. VP = 15000/1.4049</td>
+            <td>VP = VF / (1+i)ⁿ</td>
+            <td>VP = $10,677.88</td>
+          </tr>
+          <tr>
+            <td>Bonos Cupón Cero</td>
+            <td>Bono: $1,000 en 10 años, i=6%</td>
+            <td>1. VP = 1000 / (1.06)¹⁰<br>2. (1.06)¹⁰ = 1.7908<br>3. VP = 1000/1.7908</td>
+            <td>VP = VF / (1+i)ⁿ</td>
+            <td>VP = $558.39</td>
+          </tr>
+          <tr>
+            <td>Herencia Futura</td>
+            <td>Herencia $100,000 en 20 años, i=5%</td>
+            <td>1. VP = 100000 / (1.05)²⁰<br>2. (1.05)²⁰ = 2.6533<br>3. VP = 100000/2.6533</td>
+            <td>VP = VF / (1+i)ⁿ</td>
+            <td>VP = $37,688.95</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A medida que aumentan el plazo o la tasa de descuento, el valor presente disminuye significativamente. Esto explica por qué flujos muy lejanos tienen poco valor presente y por qué las tasas altas reducen drásticamente el valor actual de inversiones futuras.</p>
+    </div>
+    
+    <!-- Gráfica 2: Efecto del tiempo y la tasa en el valor presente -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Valor Presente vs Tiempo y Tasa</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Valor Presente de $1,000 Futuro</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Efecto del tiempo y la tasa de descuento</text>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+        <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Presente ($)</text>
+        
+        <!-- Marcas del eje X (tiempo) -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
+          
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>15</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>25</text>
+        </g>
+        
+        <!-- Marcas del eje Y (valor presente) -->
+        <g transform=translate(0,0)>
+          <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>800</text>
+          
+          <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>600</text>
+          
+          <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>400</text>
+          
+          <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>0</text>
+        </g>
+        
+        <!-- Curva para 5% -->
+        <path d='M 50,250 
+                 L 100,235 
+                 L 150,220 
+                 L 200,205 
+                 L 250,190 
+                 L 300,175' 
+              stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+        
+        <!-- Curva para 10% -->
+        <path d='M 50,250 
+                 L 100,220 
+                 L 150,190 
+                 L 200,160 
+                 L 250,135 
+                 L 300,115' 
+              stroke=var(--apple-vibrant-green) stroke-width=2 fill=none></path>
+        
+        <!-- Curva para 15% -->
+        <path d='M 50,250 
+                 L 100,205 
+                 L 150,165 
+                 L 200,130 
+                 L 250,100 
+                 L 300,75' 
+              stroke=var(--apple-vibrant-orange) stroke-width=2 fill=none></path>
+        
+        <!-- Curva para 20% -->
+        <path d='M 50,250 
+                 L 100,190 
+                 L 150,140 
+                 L 200,105 
+                 L 250,75 
+                 L 300,55' 
+              stroke=var(--apple-vibrant-red) stroke-width=2 fill=none></path>
+        
+        <!-- Puntos de referencia -->
+        <circle cx=200 cy=205 r=3 fill=var(--apple-vibrant-blue)></circle>
+        <text x=210 y=200 text-anchor=start font-size=9 fill=var(--apple-vibrant-blue)>5%: $614</text>
+        
+        <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-green)></circle>
+        <text x=210 y=155 text-anchor=start font-size=9 fill=var(--apple-vibrant-green)>10%: $386</text>
+        
+        <circle cx=200 cy=130 r=3 fill=var(--apple-vibrant-orange)></circle>
+        <text x=210 y=125 text-anchor=start font-size=9 fill=var(--apple-vibrant-orange)>15%: $247</text>
+        
+        <circle cx=200 cy=105 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=210 y=100 text-anchor=start font-size=9 fill=var(--apple-vibrant-red)>20%: $162</text>
+        
+        <!-- Leyenda -->
+        <rect x=200 y=60 width=180 height=100 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Tasas de Descuento</strong></text>
+        
+        <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+        <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>5% anual</text>
+        
+        <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=2></line>
+        <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>10% anual</text>
+        
+        <line x1=210 y1=115 x2=230 y2=115 stroke=var(--apple-vibrant-orange) stroke-width=2></line>
+        <text x=240 y=120 font-size=10 fill=var(--apple-dark-gray)>15% anual</text>
+        
+        <line x1=210 y1=130 x2=230 y2=130 stroke=var(--apple-vibrant-red) stroke-width=2></line>
+        <text x=240 y=135 font-size=10 fill=var(--apple-dark-gray)>20% anual</text>
+        
+        <!-- Anotación importante -->
+        <rect x=50 y=290 width=300 height=50 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+        <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El tiempo y la tasa son cruciales!</strong></text>
+        <text x=200 y=320 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>A 20 años con 20%, $1,000 futuro valen solo $26 hoy</text>
+        <text x=200 y=335 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>El descuento exponencial reduce drásticamente el valor presente</text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente disminuye exponencialmente con el tiempo y la tasa de descuento. Tasas más altas o plazos más largos reducen significativamente el valor presente. A 20 años con 20% de descuento, $1,000 futuros valen menos de $50 hoy, demostrando el poder del descuento compuesto.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones en decisiones financieras -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Valor presente en decisiones reales</h4>
+      <p>Uso del valor presente en diferentes contextos de toma de decisiones:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Decisión Financiera</th>
+            <th>Contexto</th>
+            <th>Aplicación del VP</th>
+            <th>Criterio de Decisión</th>
+            <th>Ejemplo Práctico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Evaluación de Inversiones</td>
+            <td>Selección entre proyectos</td>
+            <td>Cálculo del Valor Presente Neto (VPN)</td>
+            <td>VPN > 0 → Proyecto viable</td>
+            <td>Inversión en nueva maquinaria</td>
+          </tr>
+          <tr>
+            <td>Comparación de Ofertas</td>
+            <td>Elección entre alternativas de pago</td>
+            <td>VP de cada opción</td>
+            <td>Menor VP → Mejor opción</td>
+            <td>Compra al contado vs crédito</td>
+          </tr>
+          <tr>
+            <td>Valuación de Activos</td>
+            <td>Determinar precio justo</td>
+            <td>VP de flujos futuros esperados</td>
+            <td>VP ≈ Precio de mercado</td>
+            <td>Valuación de bonos o acciones</td>
+          </tr>
+          <tr>
+            <td>Análisis de Préstamos</td>
+            <td>Evaluar costo de financiamiento</td>
+            <td>VP de pagos futuros</td>
+            <td>Comparar con monto recibido</td>
+            <td>Préstamo personal o hipotecario</td>
+          </tr>
+          <tr>
+            <td>Planificación de Jubilación</td>
+            <td>Determinar ahorros necesarios</td>
+            <td>VP de gastos futuros</td>
+            <td>VP = Ahorro objetivo</td>
+            <td>Cálculo de fondo de pensiones</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente permite comparar alternativas en una base común (valor hoy), eliminando las distorsiones temporales. Es la herramienta fundamental para tomar decisiones financieras racionales que consideren el valor temporal del dinero.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Evaluación de proyectos de inversión:</strong> Cálculo del Valor Presente Neto (VPN) para determinar la viabilidad de proyectos empresariales.</li>
+        <li><strong>Valuación de bonos:</strong> Determinación del precio justo de bonos mediante el descuento de flujos de cupones y principal.</li>
+        <li><strong>Análisis de préstamos hipotecarios:</strong> Cálculo de pagos mensuales equivalentes mediante descuento de flujos futuros.</li>
+        <li><strong>Planificación de jubilación:</strong> Cálculo del ahorro necesario hoy para alcanzar un ingreso futuro deseado.</li>
+        <li><strong>Comparación de alternativas de pago:</strong> Elección entre pagar al contado o financiado considerando el valor presente.</li>
+        <li><strong>Valuación de empresas:</strong> Uso de flujos de caja descontados para determinar el valor de una compañía.</li>
+        <li><strong>Análisis de arrendamientos:</strong> Comparación entre comprar o arrendar activos usando valor presente.</li>
+        <li><strong>Decisiones de presupuesto de capital:</strong> Asignación de recursos entre diferentes proyectos de inversión.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+        <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+        <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+        <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+        <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+        <li>Khan Academy: Present value. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>6.3. Valor Presente</b> <span class=emoji-small>✅</span>
           </li>
 
           <li onclick="abrirModal('6.4. Tasa de descuento', `
