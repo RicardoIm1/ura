@@ -4480,268 +4480,410 @@
           </li>
 
           <li onclick="abrirModal('6.4. Tasa de descuento', `
-              <hr><br>
-              <p><strong>Objetivo:</strong> Comprender el concepto, tipos, cálculo y aplicaciones de la tasa de descuento en el análisis financiero, así como su importancia en la evaluación de inversiones y la valoración de activos.</p>
-            
-              <h4>Definición y conceptos básicos</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Tasa de descuento (d):</span> Tasa de interés utilizada para calcular el valor presente de flujos de efectivo futuros.</li>
-                <li><span style='color: red; font-weight: bold;'>Costo de oportunidad:</span> Representa el rendimiento que se deja de percibir al elegir una inversión sobre otras alternativas disponibles.</li>
-                <li><span style='color: red; font-weight: bold;'>Riesgo:</span> Refleja la incertidumbre asociada con los flujos de efectivo futuros.</li>
-                <li><span style='color: red; font-weight: bold;'>Inflación:</span> Considera la pérdida de poder adquisitivo del dinero a través del tiempo.</li>
-                <li><span style='color: red; font-weight: bold;'>Preferencia temporal:</span> Indica la preferencia por el consumo presente sobre el consumo futuro.</li>
-              </ul>
-            
-              <h4>Tipos de tasas de descuento</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> Tasa que representa el costo promedio de todas las fuentes de financiamiento de una empresa.</li>
-                <li><span style='color: red; font-weight: bold;'>Costo de capital propio (CAPM):</span> Tasa requerida por los accionistas calculada mediante el modelo de valoración de activos de capital.</li>
-                <li><span style='color: red; font-weight: bold;'>Costo de la deuda:</span> Tasa de interés que paga la empresa por sus fondos prestados.</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa libre de riesgo:</span> Rendimiento de inversiones sin riesgo de incumplimiento (ej. bonos gubernamentales).</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa de descuento ajustada al riesgo:</span> Tasa que incorpora una prima por el riesgo específico del proyecto o inversión.</li>
-              </ul>
-            
-              <h4>Fórmulas fundamentales</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Valor Presente con tasa de descuento:</span> VP = VF / (1 + d)ⁿ</li>
-                <li><span style='color: red; font-weight: bold;'>Costo de capital promedio ponderado (WACC):</span> WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</li>
-                <li><span style='color: red; font-weight: bold;'>Modelo CAPM:</span> Re = Rf + β × (Rm - Rf)</li>
-                <li><span style='color: red; font-weight: bold;'>Tasa de descuento real:</span> d_real = (1 + d_nominal) / (1 + π) - 1</li>
-                <li><span style='color: red; font-weight: bold;'>Factor de descuento:</span> FD = 1 / (1 + d)ⁿ</li>
-              </ul>
-            
-              <h4>Componentes de la tasa de descuento</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Componente</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Descripción</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Fórmula</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa libre de riesgo (Rf)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento de inversiones sin riesgo</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima de riesgo de mercado (Rm - Rf)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Rendimiento adicional por invertir en acciones vs. bonos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>6-8% históricamente</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Beta (β)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Medida de volatilidad sistemática</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cov(Ri, Rm) / Var(Rm)</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima por riesgo específico</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Riesgo particular del proyecto o empresa</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el caso</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Prima por liquidez</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Compensación por falta de liquidez</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Variable según el activo</td>
-                </tr>
-              </table>
-            
-              <h4>Ejemplos detallados de aplicación</h4>
-              
-              <p><strong>Ejemplo 1: Cálculo de WACC</strong></p>
-              <p>Una empresa tiene una estructura de capital compuesta por 60% capital propio y 40% deuda. El costo de capital propio es 12%, el costo de la deuda es 8% y la tasa impositiva es 30%. Calcular el WACC.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>E/V = 0.60, D/V = 0.40, Re = 12%, Rd = 8%, Tc = 30%</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>WACC = (E/V) × Re + (D/V) × Rd × (1 - Tc)</span></li>
-                <li>Cálculo: WACC = (0.60 × 0.12) + (0.40 × 0.08 × (1 - 0.30))</li>
-                <li>Paso 1: 0.60 × 0.12 = <span style='color: red; font-weight: bold;'>0.072</span></li>
-                <li>Paso 2: 0.40 × 0.08 = 0.032</li>
-                <li>Paso 3: 1 - 0.30 = 0.70</li>
-                <li>Paso 4: 0.032 × 0.70 = <span style='color: red; font-weight: bold;'>0.0224</span></li>
-                <li>Paso 5: WACC = 0.072 + 0.0224 = <span style='color: red; font-weight: bold;'>0.0944 (9.44%)</span></li>
-                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La empresa debe usar 9.44% como tasa de descuento para proyectos con riesgo similar.</li>
-              </ol>
-              
-              <p><strong>Ejemplo 2: Cálculo de tasa con CAPM</strong></p>
-              <p>Calcular la tasa de descuento para una acción usando el modelo CAPM. La tasa libre de riesgo es 4%, la prima de mercado es 6% y la beta de la acción es 1.2.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>Rf = 4%, Rm - Rf = 6%, β = 1.2</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>Re = Rf + β × (Rm - Rf)</span></li>
-                <li>Cálculo: Re = 0.04 + 1.2 × 0.06</li>
-                <li>Paso 1: 1.2 × 0.06 = <span style='color: red; font-weight: bold;'>0.072</span></li>
-                <li>Paso 2: Re = 0.04 + 0.072 = <span style='color: red; font-weight: bold;'>0.112 (11.2%)</span></li>
-                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> Los inversionistas requieren un 11.2% de rendimiento por invertir en esta acción.</li>
-              </ol>
-              
-              <p><strong>Ejemplo 3: Ajuste por inflación</strong></p>
-              <p>Si la tasa de descuento nominal es 15% y la inflación esperada es 5%, calcular la tasa de descuento real.</p>
-              <ol>
-                <li>Datos: <span style='color: red; font-weight: bold;'>d_nominal = 15% = 0.15, π = 5% = 0.05</span></li>
-                <li>Aplicar fórmula: <span style='color: red; font-weight: bold;'>d_real = (1 + d_nominal) / (1 + π) - 1</span></li>
-                <li>Cálculo: d_real = (1.15 / 1.05) - 1</li>
-                <li>Paso 1: 1.15 / 1.05 = <span style='color: red; font-weight: bold;'>1.095238</span></li>
-                <li>Paso 2: d_real = 1.095238 - 1 = <span style='color: red; font-weight: bold;'>0.095238 (9.52%)</span></li>
-                <li>Aproximación: d_nominal - π = 15% - 5% = 10% (sobrestima la tasa real)</li>
-                <li><span style='color: red; font-weight: bold;'>Interpretación:</span> La tasa real de descuento es 9.52%, considerando la pérdida de poder adquisitivo.</li>
-              </ol>
-            
-              <h4>Aplicaciones de la tasa de descuento</h4>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Área</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Aplicación</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tasa utilizada</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Evaluación de proyectos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo del Valor Actual Neto (VAN)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>WACC o tasa ajustada al riesgo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Valoración de empresas</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Descuento de flujos de caja libre</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>WACC</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Análisis de bonos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Precio como valor presente de cupones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa de rendimiento requerida</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Decisiones de inversión</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Comparación de alternativas</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Costo de oportunidad</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Planificación financiera</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cálculo de reservas y provisiones</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tasa técnica o actuarial</td>
-                </tr>
-              </table>
-            
-              <h4>Factores que influyen en la determinación de la tasa de descuento</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>Condiciones macroeconómicas:</span> Tasas de interés, inflación, crecimiento económico</li>
-                <li><span style='color: red; font-weight: bold;'>Riesgo del proyecto:</span> Volatilidad de flujos, incertidumbre del negocio</li>
-                <li><span style='color: red; font-weight: bold;'>Estructura de capital:</span> Proporción de deuda vs. capital propio</li>
-                <li><span style='color: red; font-weight: bold;'>Horizonte temporal:</span> Plazo de la inversión o proyecto</li>
-                <li><span style='color: red; font-weight: bold;'>Liquidez:</span> Facilidad para convertir el activo en efectivo</li>
-                <li><span style='color: red; font-weight: bold;'>Consideraciones fiscales:</span> Tratamiento tributario de los flujos</li>
-              </ul>
-            
-              <h4>Ejercicio de aplicación integral</h4>
-              <p>Una empresa evalúa un proyecto con una inversión inicial de $100,000 que generará flujos de $30,000 anuales durante 5 años. Calcular el VAN usando diferentes tasas de descuento:</p>
-              <ol>
-                <li>WACC calculado en 9.44%</li>
-                <li>Tasa con prima de riesgo adicional de 2%</li>
-                <li>Tasa libre de riesgo del 4% (asumiendo proyecto sin riesgo)</li>
-              </ol>
-              
-              <p><strong>Solución:</strong></p>
-              <table style='width: 100%; border-collapse: collapse; margin: 15px 0;'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Año</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Flujo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 9.44%</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 9.44%</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 11.44%</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 11.44%</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Factor 4%</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>VP 4%</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1.0000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-100,000</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>1</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9138</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>27,414</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8974</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>26,922</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9615</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>28,845</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8350</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>25,050</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8054</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>24,162</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.9246</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>27,738</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7630</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>22,890</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.7228</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>21,684</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8890</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>26,670</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6972</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>20,916</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6486</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>19,458</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8548</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>25,644</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>30,000</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.6371</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>19,113</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.5820</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>17,460</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>0.8219</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>24,657</td>
-                </tr>
-                <tr style='background-color: #e6f7ff;'>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>Total VP</strong></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>15,383</strong></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>9,686</strong></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'></td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'><strong>33,554</strong></td>
-                </tr>
-              </table>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>VAN al 9.44%:</span> $15,383 → <span style='color: red; font-weight: bold;'>Proyecto viable</span></li>
-                <li><span style='color: red; font-weight: bold;'>VAN al 11.44%:</span> $9,686 → <span style='color: red; font-weight: bold;'>Proyecto viable pero menos atractivo</span></li>
-                <li><span style='color: red; font-weight: bold;'>VAN al 4%:</span> $33,554 → <span style='color: red; font-weight: bold;'>Sobrestimación si el proyecto tiene riesgo</span></li>
-              </ol>
-            
-              <h4>Consideraciones importantes</h4>
-              <ul>
-                <li><span style='color: red; font-weight: bold;'>La selección de la tasa de descuento es el factor más crítico</span> en la evaluación de inversiones</li>
-                <li>Una tasa demasiado alta <span style='color: red; font-weight: bold;'>puede rechazar proyectos rentables</span></li>
-                <li>Una tasa demasiado baja <span style='color: red; font-weight: bold;'>puede aceptar proyectos no rentables</span></li>
-                <li>La tasa debe <span style='color: red; font-weight: bold;'>reflejar el riesgo específico</span> del proyecto o inversión</li>
-                <li>En contextos inflacionarios, es crucial <span style='color: red; font-weight: bold;'>usar tasas consistentes</span> con los flujos (reales o nominales)</li>
-                <li>La tasa de descuento debe <span style='color: red; font-weight: bold;'>actualizarse periódicamente</span> según cambien las condiciones del mercado</li>
-              </ul>
-            
-              <h4>Fuentes Bibliográficas</h4>
-              <ul>
-                <li>Brealey, R. A., Myers, S. C., & Allen, F. (2017). <em>Principles of Corporate Finance</em>. McGraw-Hill.</li>
-                <li>Damodaran, A. (2012). <em>Investment Valuation: Tools and Techniques for Determining the Value of Any Asset</em>. Wiley.</li>
-                <li>Copeland, T. E., Weston, J. F., & Shastri, K. (2005). <em>Financial Theory and Corporate Policy</em>. Pearson Education.</li>
-                <li>Pinto, J. E., Henry, E., Robinson, T. R., & Stowe, J. D. (2015). <em>Equity Asset Valuation</em>. Wiley.</li>
-              </ul>
-            `)"><b>6.4. Tasa de descuento</b> <span class="emoji-small">✅</span>
+  <hr><br>
+  <div class=math-module>
+    
+    <!-- Tiempo estimado -->
+    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
+    </div>
+    
+    <!-- Objetivo -->
+    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de tasa de descuento como medida de reducción del valor futuro para obtener el valor presente, dominar los diferentes tipos de descuento (racional y bancario), aprender a calcular valores presentes usando tasas de descuento, y aplicar estos conocimientos en operaciones financieras como descuento de documentos, factoring y evaluación de inversiones.</span>
+    </div>
+    
+    <!-- Idea principal -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>La tasa de descuento representa el porcentaje que se deduce de un valor futuro para calcular su valor presente, reflejando el costo de oportunidad del dinero en el tiempo. Existen dos tipos principales: el descuento racional (o matemático) que calcula el interés sobre el valor presente, y el descuento bancario (o comercial) que calcula el descuento sobre el valor futuro. Mientras la tasa de interés mide el crecimiento del capital, la tasa de descuento mide la reducción necesaria para traer valores futuros al presente. Esta distinción es fundamental en operaciones de corto plazo como el descuento de pagarés, letras de cambio y otros documentos negociables.</p>
+    </div>
+    
+    <!-- Ejercicio 1: Tipos de descuento y sus características -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre descuento racional y bancario</h4>
+      <p>Análisis de las diferencias fundamentales entre los dos tipos principales de descuento:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Descuento Racional (Matemático)</th>
+            <th>Descuento Bancario (Comercial)</th>
+            <th>Fórmula Principal</th>
+            <th>Ejemplo con VF=$1,000, d=20%, n=1 año</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base de Cálculo</td>
+            <td>Valor Presente (VP)</td>
+            <td>Valor Futuro (VF)</td>
+            <td>Racional: D = VP × i × n</td>
+            <td>VP = $833.33</td>
+          </tr>
+          <tr>
+            <td>Fórmula de VP</td>
+            <td>VP = VF / (1 + i×n)</td>
+            <td>VP = VF × (1 - d×n)</td>
+            <td>Bancario: D = VF × d × n</td>
+            <td>VP = $800.00</td>
+          </tr>
+          <tr>
+            <td>Relación con Tasa</td>
+            <td>Usa tasa de interés (i)</td>
+            <td>Usa tasa de descuento (d)</td>
+            <td>Equivalencia: i = d/(1-d×n)</td>
+            <td>i = 25% equivalente</td>
+          </tr>
+          <tr>
+            <td>Aplicación Práctica</td>
+            <td>Teórica, matemática</td>
+            <td>Operaciones bancarias reales</td>
+            <td>d = i/(1+i×n)</td>
+            <td>d = 20% declarada</td>
+          </tr>
+          <tr>
+            <td>Monto del Descuento</td>
+            <td>$166.67</td>
+            <td>$200.00</td>
+            <td>D racional < D bancario</td>
+            <td>Diferencia: $33.33</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El descuento bancario siempre produce un mayor monto de descuento que el racional para la misma tasa nominal, lo que lo hace más rentable para las instituciones financieras pero más costoso para los clientes. Por esto es crucial convertir tasas de descuento a tasas de interés equivalentes para comparar costos reales.</p>
+    </div>
+    
+    <!-- Gráfica 1: Comparación visual entre descuento racional y bancario -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descuento Racional vs Bancario</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Comparación: Descuento de $1,000 a 1 año con 20%</strong></text>
+        
+        <!-- Valor Futuro común -->
+        <rect x=150 y=50 width=100 height=40 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+        <text x=200 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Valor Futuro: $1,000</strong></text>
+        
+        <!-- Descuento Racional -->
+        <g transform=translate(80,120)>
+          <text x=0 y=0 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)><strong>Descuento Racional</strong></text>
+          
+          <!-- Flecha de descuento -->
+          <path d='M 0,10 L 0,40' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=20 y=25 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>÷ (1 + 0.25)</text>
+          
+          <!-- Valor Presente -->
+          <rect x=-40 y=50 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $833.33</strong></text>
+          <text x=0 y=80 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Base: VP)</text>
+          
+          <!-- Descuento aplicado -->
+          <rect x=50 y=30 width=70 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=85 y=40 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $166.67</text>
+        </g>
+        
+        <!-- Descuento Bancario -->
+        <g transform=translate(240,120)>
+          <text x=0 y=0 text-anchor=middle font-size=12 fill=var(--apple-vibrant-red)><strong>Descuento Bancario</strong></text>
+          
+          <!-- Flecha de descuento -->
+          <path d='M 0,10 L 0,40' stroke=var(--apple-vibrant-red) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=20 y=25 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>× (1 - 0.20)</text>
+          
+          <!-- Valor Presente -->
+          <rect x=-40 y=50 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $800.00</strong></text>
+          <text x=0 y=80 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Base: VF)</text>
+          
+          <!-- Descuento aplicado -->
+          <rect x=50 y=30 width=70 height=20 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=85 y=40 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $200.00</text>
+        </g>
+        
+        <!-- Diferencia entre ambos -->
+        <path d='M 160,100 L 120,150 L 280,150 L 240,100' stroke=var(--apple-vibrant-purple) stroke-width=2 fill=none stroke-dasharray=5,3></path>
+        <text x=200 y=140 text-anchor=middle font-size=11 fill=var(--apple-vibrant-purple)><strong>Diferencia: $33.33</strong></text>
+        
+        <!-- Explicación de tasas equivalentes -->
+        <rect x=50 y=180 width=300 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=200 y=195 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Equivalencia de Tasas</strong></text>
+        <text x=200 y=210 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Descuento racional con i=25% produce mismo VP que</text>
+        <text x=200 y=225 text-anchor=middle font-size=11 fill=var(--apple-vibrant-red)>Descuento bancario con d=20%</text>
+        <text x=200 y=240 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Fórmula de equivalencia: i = d / (1 - d×n)</text>
+        <text x=200 y=255 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>i = 0.20 / (1 - 0.20×1) = 0.25 = 25%</text>
+        
+        <!-- Aplicación práctica -->
+        <rect x=50 y=270 width=300 height=60 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+        <text x=200 y=285 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡Importante para comparar costos!</strong></text>
+        <text x=200 y=300 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Siempre convertir tasas de descuento a tasas de interés equivalentes</text>
+        <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>para evaluar el costo real del financiamiento</text>
+        
+        <!-- Definición de flechas -->
+        <defs>
+          <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+        </defs>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Aunque ambas operaciones usan una tasa del 20%, el descuento bancario produce un valor presente menor porque aplica la tasa sobre el valor futuro (mayor), mientras el descuento racional la aplica sobre el valor presente (menor). La tasa de interés equivalente revela el costo real: 25% en lugar del 20% aparente.</p>
+    </div>
+    
+    <!-- Ejercicio 2: Cálculos prácticos con tasas de descuento -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones de descuento en operaciones reales</h4>
+      <p>Resolución de problemas típicos de descuento de documentos y conversión de tasas:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Operación Financiera</th>
+            <th>Datos del Problema</th>
+            <th>Procedimiento de Cálculo</th>
+            <th>Fórmula Aplicada</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Descuento de Pagaré</td>
+            <td>VF=$20,000, n=90 días, d=18% anual</td>
+            <td>1. Calcular días: 90/360 = 0.25 años<br>2. VP = 20000 × (1 - 0.18×0.25)</td>
+            <td>VP = VF × (1 - d×n)</td>
+            <td>VP = $19,100</td>
+          </tr>
+          <tr>
+            <td>Conversión a Tasa Interés</td>
+            <td>d=15% a 180 días</td>
+            <td>1. n=180/360=0.5 años<br>2. i = 0.15/(1-0.15×0.5)</td>
+            <td>i = d/(1-d×n)</td>
+            <td>i = 16.216% (180 días)</td>
+          </tr>
+          <tr>
+            <td>Letra de Cambio</td>
+            <td>Valor nominal=$50,000, d=12% anual, n=60 días</td>
+            <td>1. n=60/360=0.1667 años<br>2. VP=50000×(1-0.12×0.1667)</td>
+            <td>VP = VF × (1 - d×n)</td>
+            <td>VP = $49,000</td>
+          </tr>
+          <tr>
+            <td>Descuento Comercial</td>
+            <td>Mercancía $8,000, descuento 25% por pago contado</td>
+            <td>1. VP = 8000 × (1 - 0.25)</td>
+            <td>VP = VF × (1 - d)</td>
+            <td>VP = $6,000</td>
+          </tr>
+          <tr>
+            <td>Análisis de Costo Efectivo</td>
+            <td>Préstamo: $75,000, descuentto $5,000</td>
+            <td>1. VP=70,000, VF=75,000<br>2. d = (75000-70000)/75000<br>3. Convertir a i</td>
+            <td>d = (VF-VP)/VF</td>
+            <td>d=6.67%, i=7.14%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> En operaciones de descuento, es crucial trabajar con la misma base temporal (generalmente año comercial de 360 días). La conversión a tasa de interés revela que el costo real siempre es mayor que la tasa de descuento declarada.</p>
+    </div>
+    
+    <!-- Gráfica 2: Relación entre plazo y valor presente con descuento -->
+    <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Efecto del Plazo en el Descuento Bancario</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+        
+        <!-- Título -->
+        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Valor Presente vs Plazo - Descuento del 20% anual</strong></text>
+        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Valor Futuro: $10,000</text>
+        
+        <!-- Ejes coordenados -->
+        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+        
+        <!-- Etiquetas de ejes -->
+        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Plazo (meses)</text>
+        <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Presente ($)</text>
+        
+        <!-- Marcas del eje X (meses) -->
+        <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
+          
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>9</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>15</text>
+        </g>
+        
+        <!-- Marcas del eje Y (valor presente) -->
+        <g transform=translate(0,0)>
+          <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8,000</text>
+          
+          <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>7,000</text>
+          
+          <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6,000</text>
+          
+          <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5,000</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4,000</text>
+        </g>
+        
+        <!-- Línea de descuento bancario -->
+        <path d='M 50,250 
+                 L 100,240 
+                 L 150,230 
+                 L 200,220 
+                 L 250,210 
+                 L 300,200' 
+              stroke=var(--apple-vibrant-red) stroke-width=3 fill=none></path>
+        
+        <!-- Puntos de datos -->
+        <circle cx=100 cy=240 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=100 y=235 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$9,500</text>
+        
+        <circle cx=150 cy=230 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$9,000</text>
+        
+        <circle cx=200 cy=220 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=200 y=215 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$8,500</text>
+        
+        <circle cx=250 cy=210 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=250 y=205 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$8,000</text>
+        
+        <circle cx=300 cy=200 r=3 fill=var(--apple-vibrant-red)></circle>
+        <text x=300 y=195 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$7,500</text>
+        
+        <!-- Línea de valor futuro constante -->
+        <line x1=50 y1=100 x2=350 y2=100 stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></line>
+        <text x=360 y=100 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Valor Futuro: $10,000</text>
+        
+        <!-- Área de descuento acumulado -->
+        <path d='M 50,250 L 100,240 L 150,230 L 200,220 L 250,210 L 300,200 L 300,100 L 250,100 L 200,100 L 150,100 L 100,100 L 50,100 Z' 
+              fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
+        <text x=200 y=150 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Descuento Acumulado</text>
+        
+        <!-- Leyenda y fórmulas -->
+        <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+        <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmula de Descuento</strong></text>
+        
+        <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-red) stroke-width=3></line>
+        <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>VP = VF × (1 - d×n)</text>
+        
+        <text x=290 y=105 font-size=9 fill=var(--apple-dark-gray)>d = 20% anual</text>
+        <text x=290 y=115 font-size=9 fill=var(--apple-dark-gray)>n en años (meses/12)</text>
+        <text x=290 y=125 font-size=9 fill=var(--apple-dark-gray)>Máximo descuento: $2,500</text>
+        
+        <!-- Punto crítico: cuando VP = 0 -->
+        <circle cx=350 cy=250 r=4 fill=var(--apple-vibrant-purple)></circle>
+        <text x=340 y=240 text-anchor=end font-size=9 fill=var(--apple-vibrant-purple)>VP = $0 a 5 años</text>
+        <text x=340 y=250 text-anchor=end font-size=8 fill=var(--apple-dark-gray)>(d×n = 1)</text>
+        
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente disminuye linealmente con el plazo cuando se usa descuento bancario. Cuando el producto d×n alcanza 1 (5 años en este caso), el valor presente se vuelve cero, lo que representa el límite máximo del descuento. En la práctica, los plazos son mucho más cortos para evitar este escenario extremo.</p>
+    </div>
+    
+    <!-- Ejercicio 3: Aplicaciones en instrumentos financieros -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Instrumentos que utilizan tasas de descuento</h4>
+      <p>Análisis de productos financieros donde se aplican tasas de descuento:</p>
+      <table class=math-table>
+        <thead>
+          <tr>
+            <th>Instrumento Financiero</th>
+            <th>Mecanismo de Descuento</th>
+            <th>Plazo Típico</th>
+            <th>Ventajas</th>
+            <th>Consideraciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pagarés Descontados</td>
+            <td>Descuento sobre valor nominal al endosar</td>
+            <td>30-180 días</td>
+            <td>Liquidez inmediata para el tenedor</td>
+            <td>Costo real mayor al aparente</td>
+          </tr>
+          <tr>
+            <td>Letras del Tesoro</td>
+            <td>Emitidas con descuento, redimen a valor nominal</td>
+            <td>3-12 meses</td>
+            <td>Bajo riesgo, alta liquidez</td>
+            <td>Rendimiento implícito</td>
+          </tr>
+          <tr>
+            <td>Factoring</td>
+            <td>Descuento de facturas por cobrar</td>
+            <td>30-90 días</td>
+            <td>Financiamiento rápido de capital de trabajo</td>
+            <td>Pérdida del valor de las facturas</td>
+          </tr>
+          <tr>
+            <td>Documentos por Cobrar</td>
+            <td>Endoso con descuento antes del vencimiento</td>
+            <td>60-120 días</td>
+            <td>Flexibilidad en gestión de cartera</td>
+            <td>Riesgo de impago transferido</td>
+          </tr>
+          <tr>
+            <td>Bonos Cupón Cero</td>
+            <td>Emitidos con descuento, sin pagos intermedios</td>
+            <td>1-30 años</td>
+            <td>Reinversión automática</td>
+            <td>Volatilidad de precio</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los instrumentos de descuento son predominantemente de corto plazo y buscan proporcionar liquidez inmediata. Es esencial calcular la tasa de interés equivalente para comprender el costo o rendimiento real de estas operaciones, ya que las tasas de descuento subestiman el costo para el prestatario y sobrestiman el rendimiento para el inversionista.</p>
+    </div>
+    
+    <!-- Aplicaciones reales -->
+    <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+        <li><strong>Descuento de pagarés empresariales:</strong> Las empresas descuentan sus pagarés con instituciones financieras para obtener liquidez antes del vencimiento.</li>
+        <li><strong>Financiamiento de capital de trabajo:</strong> Uso de factoring para convertir cuentas por cobrar en efectivo inmediato.</li>
+        <li><strong>Inversiones en letras del tesoro:</strong> Adquisición de instrumentos gubernamentales emitidos con descuento.</li>
+        <li><strong>Gestión de cartera comercial:</td>
+            <td>Endoso de documentos con descuento para optimizar flujo de efectivo.</li>
+        <li><strong>Financiamiento de inventarios:</strong> Descuento de documentos relacionados con compra de mercancías.</li>
+        <li><strong>Operaciones interbancarias:</strong> Transacciones entre bancos utilizando documentos descontados.</li>
+        <li><strong>Financiamiento de exportaciones:</strong> Descuento de documentos de comercio exterior.</li>
+        <li><strong>Gestión de tesorería:</strong> Decisiones sobre mantener documentos hasta vencimiento o descontarlos.</li>
+      </ul>
+    </div>
+    
+    <!-- Bibliografía -->
+    <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+        <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+        <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+        <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+        <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+        <li>Khan Academy: Discounted cash flow. www.khanacademy.org</li>
+      </ul>
+    </div>
+  </div>
+  `);"><b>6.4. Tasa de descuento</b> <span class=emoji-small>✅</span>
           </li>
 
           <li onclick="abrirModal('6.5. Fuerza de interés', `
