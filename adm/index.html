@@ -3800,418 +3800,196 @@
           </li>
 
           <li onclick="abrirModal('6.1.1.2. Modelo de interés compuesto', `
-  <hr><br>
-  <div style=\" max-width: 1200px; margin: 0 auto; padding: 20px; font-family: 'Segoe UI' , Arial, sans-serif;\">
+<hr><br>
 
-            <!-- ENCABEZADO MEJORADO -->
-            <div style=\"background: linear-gradient(135deg, #2c3e50, #4a6572); color: white; padding: 25px;
-              border-radius: 12px; margin-bottom: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.2);\">
-              <h2 style=\"margin: 0 0 10px 0; font-size: 28px; font-weight: 600;\">🏦 Modelo de Interés Compuesto</h2>
-              <p style=\"margin: 0; font-size: 16px; opacity: 0.9;\">El poder del crecimiento exponencial en las
-                finanzas</p>
-            </div>
+<!-- ============================
+      1. OBJETIVO
+=============================== -->
+<p><strong>Objetivo:</strong> Comprender a profundidad el mecanismo del interés compuesto, su fórmula general, sus variantes, su interpretación matemática y sus aplicaciones reales en inversiones, créditos, ahorro y crecimiento exponencial.</p>
 
-            <!-- OBJETIVO DE APRENDIZAJE MEJORADO -->
-            <div style=\"background: #e8f4f8; border-left: 6px solid #3498db; padding: 20px; border-radius: 8px;
-              margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);\">
-              <h3 style=\"color: #2c3e50; margin: 0 0 12px 0; font-size: 20px;\">🎯 Objetivo de Aprendizaje</h3>
-              <p style=\"margin: 0; color: #34495e; line-height: 1.6; font-size: 16px;\">
-                Dominar el concepto de interés compuesto como sistema de capitalización donde los intereses generados se
-                reinvierten para producir nuevos intereses, aplicando las fórmulas fundamentales en escenarios reales de
-                inversión y financiamiento.
-              </p>
-            </div>
+<!-- ============================
+      2. TÍTULO Y RELOJ SVG
+=============================== -->
+<h4>Tiempo estimado de comprensión</h4>
 
-            <!-- DEFINICIÓN Y CONCEPTOS BÁSICOS MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">📚 Definición y Conceptos Fundamentales</h3>
+<svg width='140' height='140' viewBox='0 0 100 100' style='display:block;margin:auto'>
+  <circle cx='50' cy='50' r='45' stroke='black' stroke-width='4' fill='none'></circle>
+  <line x1='50' y1='50' x2='50' y2='20' stroke='black' stroke-width='3'></line>
+  <line x1='50' y1='50' x2='75' y2='50' stroke='red' stroke-width='3'></line>
+  <text x='50' y='88' font-size='10' text-anchor='middle'>≈ 18 min</text>
+</svg>
 
-              <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px;\">
-                <div style=\"background: #fff5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;\">
-                  <strong style=\"color: #e74c3c; display: block; margin-bottom: 8px;\">💰 Interés Compuesto</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Sistema donde los intereses de cada período se acumulan
-                    al capital para generar nuevos intereses (efecto \"bola de nieve\").</span>
-                </div>
+<!-- ============================
+      3. IDEA PRINCIPAL
+=============================== -->
+<h4>Idea principal</h4>
+<p>
+El interés compuesto describe un sistema donde los intereses generados se reinvierten continuamente, permitiendo que el capital crezca de manera exponencial. Cada período, el capital se incrementa con los intereses acumulados previamente. Este mecanismo es uno de los fundamentos matemáticos más poderosos en finanzas, economía, demografía y ciencias computacionales.
+</p>
 
-                <div style=\"background: #fff5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;\">
-                  <strong style=\"color: #e74c3c; display: block; margin-bottom: 8px;\">⏰ Capitalización</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Proceso de agregar los intereses al capital al final de
-                    cada período de cálculo.</span>
-                </div>
+<!-- ============================
+      4. DEFINICIÓN Y CONCEPTOS BÁSICOS
+=============================== -->
+<h4>Definición y conceptos básicos</h4>
+<ul>
+  <li><span style='color:red;font-weight:bold;'>Interés compuesto:</span> Método donde los intereses se capitalizan en cada período, haciendo que los intereses generen intereses.</li>
+  <li><span style='color:red;font-weight:bold;'>Capital inicial (C):</span> Monto con el que inicia la operación financiera.</li>
+  <li><span style='color:red;font-weight:bold;'>Tasa de interés (r):</span> Porcentaje aplicado por período de capitalización.</li>
+  <li><span style='color:red;font-weight:bold;'>Número de períodos (n):</span> Total de intervalos donde se aplica la capitalización.</li>
+  <li><span style='color:red;font-weight:bold;'>Monto o valor futuro (M):</span> Capital acumulado después de n períodos.</li>
+</ul>
 
-                <div style=\"background: #fff5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;\">
-                  <strong style=\"color: #e74c3c; display: block; margin-bottom: 8px;\">📈 Período de
-                    Capitalización</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Intervalo de tiempo al final del cual se calculan y
-                    agregan los intereses al capital (mensual, trimestral, anual).</span>
-                </div>
+<!-- ============================
+      5. FÓRMULAS FUNDAMENTALES
+=============================== -->
+<h4>Fórmulas fundamentales</h4>
+<ul>
+  <li><span style='color:red;font-weight:bold;'>Monto futuro:</span>  
+    \( M = C(1 + r)^n \)
+  </li>
 
-                <div style=\"background: #fff5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;\">
-                  <strong style=\"color: #e74c3c; display: block; margin-bottom: 8px;\">🎫 Tasa Nominal (j)</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Tasa de interés anual declarada, sin considerar el
-                    efecto de la capitalización en períodos menores.</span>
-                </div>
+  <li><span style='color:red;font-weight:bold;'>Capital inicial:</span>  
+    \( C = \frac{M}{(1 + r)^n} \)
+  </li>
 
-                <div style=\"background: #fff5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;\">
-                  <strong style=\"color: #e74c3c; display: block; margin-bottom: 8px;\">💹 Tasa Efectiva (i)</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Tasa de interés anual real que considera la
-                    capitalización en períodos menores al año.</span>
-                </div>
+  <li><span style='color:red;font-weight:bold;'>Tasa de interés:</span>  
+    \( r = \left(\frac{M}{C}\right)^{1/n} - 1 \)
+  </li>
 
-                <div style=\"background: #fff5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;\">
-                  <strong style=\"color: #e74c3c; display: block; margin-bottom: 8px;\">⚡ Característica Clave</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Los intereses generan nuevos intereses, creciendo de
-                    forma exponencial con el tiempo.</span>
-                </div>
-              </div>
-            </div>
+  <li><span style='color:red;font-weight:bold;'>Número de períodos:</span>  
+    \( n = \frac{\ln(M/C)}{\ln(1+r)} \)
+  </li>
 
-            <!-- FÓRMULAS FUNDAMENTALES MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">🧮 Fórmulas Fundamentales</h3>
+  <li><span style='color:red;font-weight:bold;'>Función de acumulación:</span>  
+    \( a(n) = (1+r)^n \)
+  </li>
+</ul>
 
-              <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;\">
-                <div style=\"background: #f0f9f0; padding: 15px; border-radius: 8px; border: 1px solid #27ae60;\">
-                  <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Monto Compuesto</strong>
-                  <code style=\"background: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; display:
-                    block; font-size: 14px; font-weight: bold;\">M = C(1 + i)ⁿ</code>
-                  <small style=\"color: #666; display: block; margin-top: 5px;\">Donde: M = Monto final, C = Capital
-                    inicial, i = Tasa por período, n = Número de períodos</small>
-                </div>
+<!-- ============================
+      6. EJERCICIOS Y CANVAS
+=============================== -->
+<h4>Ejercicios visuales</h4>
 
-                <div style=\"background: #f0f9f0; padding: 15px; border-radius: 8px; border: 1px solid #27ae60;\">
-                  <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Interés Compuesto</strong>
-                  <code style=\"background: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; display:
-                    block; font-size: 14px; font-weight: bold;\">I = C[(1 + i)ⁿ - 1]</code>
-                  <small style=\"color: #666; display: block; margin-top: 5px;\">Interés total generado durante el
-                    período de inversión</small>
-                </div>
+<p><strong>Ejercicio 1: Crecimiento del capital año con año</strong></p>
+<p>Capital inicial: 10,000; Tasa anual: 8%; Período: 6 años.</p>
 
-                <div style=\"background: #f0f9f0; padding: 15px; border-radius: 8px; border: 1px solid #27ae60;\">
-                  <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Capital Inicial</strong>
-                  <code style=\"background: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; display:
-                    block; font-size: 14px; font-weight: bold;\">C = M / (1 + i)ⁿ</code>
-                  <small style=\"color: #666; display: block; margin-top: 5px;\">Valor presente necesario para alcanzar
-                    un monto futuro deseado</small>
-                </div>
+<table style='width:100%;border-collapse:collapse;margin:15px 0;'>
+  <tr style='background:#f2f2f2;'>
+    <th style='border:1px solid #ddd;padding:8px;'>Año</th>
+    <th style='border:1px solid #ddd;padding:8px;'>Monto</th>
+  </tr>
+  <tr><td style='border:1px solid #ddd;padding:8px;'>1</td><td style='border:1px solid #ddd;padding:8px;' id='m1'></td></tr>
+  <tr><td style='border:1px solid #ddd;padding:8px;'>2</td><td style='border:1px solid #ddd;padding:8px;' id='m2'></td></tr>
+  <tr><td style='border:1px solid #ddd;padding:8px;'>3</td><td style='border:1px solid #ddd;padding:8px;' id='m3'></td></tr>
+  <tr><td style='border:1px solid #ddd;padding:8px;'>4</td><td style='border:1px solid #ddd;padding:8px;' id='m4'></td></tr>
+  <tr><td style='border:1px solid #ddd;padding:8px;'>5</td><td style='border:1px solid #ddd;padding:8px;' id='m5'></td></tr>
+  <tr><td style='border:1px solid #ddd;padding:8px;'>6</td><td style='border:1px solid #ddd;padding:8px;' id='m6'></td></tr>
+</table>
 
-                <div style=\"background: #f0f9f0; padding: 15px; border-radius: 8px; border: 1px solid #27ae60;\">
-                  <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Tasa de Interés</strong>
-                  <code style=\"background: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; display:
-                    block; font-size: 14px; font-weight: bold;\">i = (M/C)^(1/ⁿ) - 1</code>
-                  <small style=\"color: #666; display: block; margin-top: 5px;\">Tasa requerida para alcanzar un
-                    objetivo de inversión</small>
-                </div>
+<canvas id='graficaInteresCompuesto' width='420' height='260' style='border:1px solid #ccc;border-radius:8px;margin-top:10px;'></canvas>
 
-                <div style=\"background: #f0f9f0; padding: 15px; border-radius: 8px; border: 1px solid #27ae60;\">
-                  <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Tiempo Requerido</strong>
-                  <code style=\"background: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; display:
-                    block; font-size: 14px; font-weight: bold;\">n = log(M/C) / log(1 + i)</code>
-                  <small style=\"color: #666; display: block; margin-top: 5px;\">Tiempo necesario para alcanzar un monto
-                    específico</small>
-                </div>
+<script>
+// Datos base
+const C = 10000;
+const r = 0.08;
+const n = 6;
 
-                <div style=\"background: #f0f9f0; padding: 15px; border-radius: 8px; border: 1px solid #27ae60;\">
-                  <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Conversión de Tasas</strong>
-                  <code style=\"background: #2c3e50; color: white; padding: 8px 12px; border-radius: 5px; display:
-                    block; font-size: 14px; font-weight: bold;\">i = (1 + j/m)ᵐ - 1</code>
-                  <small style=\"color: #666; display: block; margin-top: 5px;\">De tasa nominal (j) a efectiva (i) con
-                    m capitalizaciones</small>
-                </div>
-              </div>
-            </div>
+// Llenado de tabla
+for (let i = 1; i <= n; i++) {
+  const monto = C * Math.pow(1 + r, i);
+  document.getElementById('m' + i).innerText = monto.toFixed(2);
+}
 
-            <!-- FRECUENCIAS DE CAPITALIZACIÓN MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #f39c12; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">🔄 Frecuencias de Capitalización</h3>
+// Gráfica en canvas
+const canvas = document.getElementById('graficaInteresCompuesto');
+const ctx = canvas.getContext('2d');
 
-              <div style=\"overflow-x: auto;\">
-                <table style=\"width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow:
-                  0 2px 8px rgba(0,0,0,0.1);\">
-                  <thead>
-                    <tr style=\"background: linear-gradient(135deg, #f39c12, #e67e22); color: white;\">
-                      <th style=\"padding: 15px; text-align: left; border-bottom: 2px solid #d35400;\">Frecuencia</th>
-                      <th style=\"padding: 15px; text-align: center; border-bottom: 2px solid #d35400;\">Períodos/Año
-                        (m)</th>
-                      <th style=\"padding: 15px; text-align: center; border-bottom: 2px solid #d35400;\">Tasa por
-                        Período</th>
-                      <th style=\"padding: 15px; text-align: center; border-bottom: 2px solid #d35400;\">Ejemplo: 12%
-                        Anual</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style=\"background: #fef9e7;\">
-                      <td style=\"padding: 12px 15px; border-bottom: 1px solid #fdebd0;\"><strong>Anual</strong></td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">1</td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">i = j/1
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">12.00%
-                      </td>
-                    </tr>
-                    <tr style=\"background: #fef9e7;\">
-                      <td style=\"padding: 12px 15px; border-bottom: 1px solid #fdebd0;\"><strong>Semestral</strong>
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">2</td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">i = j/2
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">6.00%</td>
-                    </tr>
-                    <tr style=\"background: #fef9e7;\">
-                      <td style=\"padding: 12px 15px; border-bottom: 1px solid #fdebd0;\"><strong>Trimestral</strong>
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">4</td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">i = j/4
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">3.00%</td>
-                    </tr>
-                    <tr style=\"background: #fef9e7;\">
-                      <td style=\"padding: 12px 15px; border-bottom: 1px solid #fdebd0;\"><strong>Mensual</strong></td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">12</td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">i = j/12
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">1.00%</td>
-                    </tr>
-                    <tr style=\"background: #fef9e7;\">
-                      <td style=\"padding: 12px 15px; border-bottom: 1px solid #fdebd0;\"><strong>Diaria</strong></td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">360</td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">i = j/360
-                      </td>
-                      <td style=\"padding: 12px 15px; text-align: center; border-bottom: 1px solid #fdebd0;\">0.033%
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+// Fondo suave
+ctx.fillStyle = '#fafafa';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            <!-- EJEMPLOS DETALLADOS MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">💡 Ejemplos Prácticos Detallados</h3>
+// Ejes
+ctx.strokeStyle = '#000';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(40, 220);
+ctx.lineTo(400, 220); // eje x
+ctx.lineTo(400, 20);  // eje y
+ctx.stroke();
 
-              <!-- Ejemplo 1 -->
-              <div style=\"background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left:
-                5px solid #9b59b6;\">
-                <h4 style=\"color: #9b59b6; margin: 0 0 15px 0; font-size: 18px;\">📊 Ejemplo 1: Capitalización Anual
-                </h4>
-                <p style=\"color: #555; margin-bottom: 15px;\"><strong>Problema:</strong> Calcular el monto compuesto de
-                  $15,000 invertidos al 8% anual capitalizable anualmente durante 5 años.</p>
+// Etiquetas eje x
+ctx.font = '12px Arial';
+ctx.fillStyle = '#000';
+for (let i = 1; i <= n; i++) {
+  const x = 40 + i * 50;
+  ctx.fillText(i, x - 4, 235);
+}
 
-                <div style=\"background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;\">
-                  <strong style=\"color: #e74c3c;\">Datos:</strong>
-                  <ul style=\"color: #555; margin: 10px 0;\">
-                    <li>Capital inicial (C) = <strong>$15,000</strong></li>
-                    <li>Tasa anual (i) = <strong>8% = 0.08</strong></li>
-                    <li>Tiempo (n) = <strong>5 años</strong></li>
-                  </ul>
-                </div>
+// Puntos y líneas
+ctx.strokeStyle = 'red';
+ctx.lineWidth = 2;
+ctx.beginPath();
 
-                <div style=\"background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;\">
-                  <strong style=\"color: #27ae60;\">Procedimiento:</strong>
-                  <ol style=\"color: #555; margin: 10px 0; padding-left: 20px;\">
-                    <li>Aplicar fórmula: <code>M = C(1 + i)ⁿ</code></li>
-                    <li>Cálculo: <code>M = 15000 × (1.08)⁵</code></li>
-                    <li><code>(1.08)⁵ = 1.469328</code></li>
-                    <li><code>15000 × 1.469328 = $22,039.92</code></li>
-                  </ol>
-                </div>
+for (let i = 1; i <= n; i++) {
+  const monto = C * Math.pow(1 + r, i);
+  const x = 40 + i * 50;
+  const y = 220 - (monto - C) * 0.01; // escala visual simple
 
-                <div style=\"background: #e8f6f3; padding: 15px; border-radius: 8px; border: 2px solid #27ae60;\">
-                  <strong style=\"color: #27ae60;\">Resultado:</strong>
-                  <p style=\"margin: 10px 0 0 0; color: #2c3e50; font-size: 18px; font-weight: bold;\">
-                    Monto Final: $22,039.92 | Interés Generado: $7,039.92
-                  </p>
-                </div>
-              </div>
+  if (i === 1) ctx.moveTo(x, y);
+  else ctx.lineTo(x, y);
 
-              <!-- Ejemplo 2 -->
-              <div style=\"background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left:
-                5px solid #3498db;\">
-                <h4 style=\"color: #3498db; margin: 0 0 15px 0; font-size: 18px;\">📈 Ejemplo 2: Capitalización
-                  Trimestral</h4>
-                <p style=\"color: #555; margin-bottom: 15px;\"><strong>Problema:</strong> Calcular el monto de $10,000
-                  al 12% anual capitalizable trimestralmente durante 3 años.</p>
+  // punto
+  ctx.fillStyle = 'blue';
+  ctx.beginPath();
+  ctx.arc(x, y, 4, 0, Math.PI * 2);
+  ctx.fill();
+}
 
-                <div style=\"background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;\">
-                  <strong style=\"color: #e74c3c;\">Datos:</strong>
-                  <ul style=\"color: #555; margin: 10px 0;\">
-                    <li>Capital inicial (C) = <strong>$10,000</strong></li>
-                    <li>Tasa nominal (j) = <strong>12% anual</strong></li>
-                    <li>Frecuencia (m) = <strong>4 trimestres/año</strong></li>
-                    <li>Tiempo (t) = <strong>3 años</strong></li>
-                  </ul>
-                </div>
+ctx.stroke();
+</script>
 
-                <div style=\"background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;\">
-                  <strong style=\"color: #27ae60;\">Procedimiento:</strong>
-                  <ol style=\"color: #555; margin: 10px 0; padding-left: 20px;\">
-                    <li>Tasa trimestral: <code>i = 0.12/4 = 0.03</code></li>
-                    <li>Períodos totales: <code>n = 4 × 3 = 12 trimestres</code></li>
-                    <li><code>M = 10000 × (1.03)¹²</code></li>
-                    <li><code>(1.03)¹² = 1.425761</code></li>
-                    <li><code>10000 × 1.425761 = $14,257.61</code></li>
-                  </ol>
-                </div>
+<!-- ============================
+      7. EJEMPLOS APLICADOS
+=============================== -->
+<h4>Aplicaciones reales del interés compuesto</h4>
+<ul>
+  <li><span style='color:red;font-weight:bold;'>Inversiones bancarias:</span> Cuentas de ahorro, CETES, fondos de inversión.</li>
+  <li><span style='color:red;font-weight:bold;'>Créditos a largo plazo:</span> Hipotecas, financiamientos educativos.</li>
+  <li><span style='color:red;font-weight:bold;'>Crecimiento poblacional:</span> Modelos demográficos exponenciales.</li>
+  <li><span style='color:red;font-weight:bold;'>Algoritmos computacionales:</span> Modelos de complejidad que crecen de forma exponencial.</li>
+  <li><span style='color:red;font-weight:bold;'>Economía y mercados:</span> Crecimiento del PIB, inflación acumulada, bursatilización.</li>
+</ul>
 
-                <div style=\"background: #e8f6f3; padding: 15px; border-radius: 8px; border: 2px solid #27ae60;\">
-                  <strong style=\"color: #27ae60;\">Resultado:</strong>
-                  <p style=\"margin: 10px 0 0 0; color: #2c3e50; font-size: 18px; font-weight: bold;\">
-                    Monto Final: $14,257.61 | Tasa Efectiva Anual: 12.55%
-                  </p>
-                </div>
-              </div>
-            </div>
+<!-- ============================
+      8. EJEMPLO DETALLADO
+=============================== -->
+<h4>Ejemplo completo</h4>
+<p><strong>Problema:</strong> Un capital de 25,000 se invierte al 7% anual compuesto durante 8 años. Calcular el monto y la ganancia generada.</p>
 
-            <!-- REGLA DEL 72 MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #e67e22; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">🚀 El Poder del Interés Compuesto: Regla del 72</h3>
+<ol>
+  <li>Datos: <span style='color:red;font-weight:bold;'>C = 25000, r = 0.07, n = 8</span></li>
+  <li>Aplicar fórmula: \( M = C(1+r)^n \)</li>
+  <li>Cálculo: M = 25000(1.07)^8</li>
+  <li>Resultado: M = <span style='color:red;font-weight:bold;'>43073.04</span></li>
+  <li>Interés ganado: 43073.04 - 25000 = <span style='color:red;font-weight:bold;'>18073.04</span></li>
+</ol>
 
-              <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;\">
-                <div style=\"background: #fef9e7; padding: 20px; border-radius: 10px; border: 2px solid #f39c12;\">
-                  <h4 style=\"color: #e67e22; margin: 0 0 15px 0; text-align: center;\">🎯 Regla del 72</h4>
-                  <p style=\"text-align: center; margin: 0 0 15px 0; font-size: 16px; color: #555;\">
-                    Aproximación para determinar el tiempo de duplicación:
-                  </p>
-                  <div style=\"background: white; padding: 15px; border-radius: 8px; text-align: center; margin-bottom:
-                    15px;\">
-                    <code style=\"font-size: 24px; font-weight: bold; color: #e74c3c;\">t ≈ 72 / (i × 100)</code>
-                  </div>
-                  <p style=\"text-align: center; margin: 0; color: #666;\">
-                    Donde <strong>i</strong> es la tasa de interés anual
-                  </p>
-                </div>
+<!-- ============================
+      9. BIBLIOGRAFÍA
+=============================== -->
+<h4>Fuentes Bibliográficas</h4>
+<ul>
+  <li>Ayres, F. Matemáticas Financieras. McGraw-Hill.</li>
+  <li>Villalobos, J. L. Matemáticas Financieras. Pearson Educación.</li>
+  <li>Brealey, R. & Myers, S. Principles of Corporate Finance. McGraw-Hill.</li>
+  <li>Investopedia. Compound Interest.</li>
+</ul>
 
-                <div style=\"background: #e8f6f3; padding: 20px; border-radius: 10px; border: 2px solid #27ae60;\">
-                  <h4 style=\"color: #27ae60; margin: 0 0 15px 0; text-align: center;\">📐 Ejemplo Práctico</h4>
-                  <p style=\"text-align: center; margin: 0 0 15px 0; color: #555;\">
-                    <strong>Tasa:</strong> 8% anual
-                  </p>
-                  <div style=\"background: white; padding: 15px; border-radius: 8px; text-align: center; margin-bottom:
-                    15px;\">
-                    <p style=\"margin: 0 0 10px 0; color: #2c3e50;\"><strong>Regla del 72:</strong></p>
-                    <code style=\"font-size: 20px; font-weight: bold; color: #27ae60;\">t ≈ 72 / 8 = 9 años</code>
-                  </div>
-                  <div style=\"background: white; padding: 15px; border-radius: 8px; text-align: center;\">
-                    <p style=\"margin: 0 0 10px 0; color: #2c3e50;\"><strong>Cálculo Exacto:</strong></p>
-                    <code style=\"font-size: 16px; color: #666;\">n = log(2) / log(1.08) = 9.006 años</code>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- APLICACIONES PRÁCTICAS MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #2c3e50; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">💼 Aplicaciones Prácticas en el Mundo Real</h3>
-
-              <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;\">
-                <div style=\"background: #e8f4f8; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;\">
-                  <strong style=\"color: #2980b9; display: block; margin-bottom: 8px;\">🏠 Créditos
-                    Hipotecarios</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Cálculo de montos futuros, saldos insolutos y planes de
-                    amortización.</span>
-                </div>
-
-                <div style=\"background: #e8f4f8; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;\">
-                  <strong style=\"color: #2980b9; display: block; margin-bottom: 8px;\">📈 Fondos de Inversión</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Crecimiento de carteras diversificadas con reinversión
-                    de dividendos.</span>
-                </div>
-
-                <div style=\"background: #e8f4f8; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;\">
-                  <strong style=\"color: #2980b9; display: block; margin-bottom: 8px;\">🎓 Planificación
-                    Educativa</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Ahorro sistemático para educación universitaria con
-                    horizonte largo.</span>
-                </div>
-
-                <div style=\"background: #e8f4f8; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;\">
-                  <strong style=\"color: #2980b9; display: block; margin-bottom: 8px;\">👵 Fondos de Retiro</strong>
-                  <span style=\"color: #555; line-height: 1.5;\">Acumulación de capital para jubilación mediante
-                    aportaciones constantes.</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- EJERCICIO INTEGRAL MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px
-              12px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">🎯 Ejercicio de Aplicación Integral</h3>
-
-              <div style=\"background: #fff5f5; padding: 20px; border-radius: 10px; border-left: 5px solid #e74c3c;\">
-                <p style=\"color: #555; margin-bottom: 20px; font-size: 16px;\">
-                  <strong>Problema:</strong> Una persona deposita $5,000 en una cuenta que ofrece el 7.5% anual
-                  capitalizable mensualmente. Calcular:
-                </p>
-
-                <div style=\"background: white; padding: 20px; border-radius: 8px;\">
-                  <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;\">
-                    <div style=\"text-align: center;\">
-                      <div style=\"background: #e8f6f3; padding: 15px; border-radius: 8px; border: 2px solid #27ae60;\">
-                        <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Monto a 4 años</strong>
-                        <span style=\"color: #2c3e50; font-size: 18px; font-weight: bold;\">$6,747.80</span>
-                      </div>
-                    </div>
-
-                    <div style=\"text-align: center;\">
-                      <div style=\"background: #e8f6f3; padding: 15px; border-radius: 8px; border: 2px solid #27ae60;\">
-                        <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Interés Generado</strong>
-                        <span style=\"color: #2c3e50; font-size: 18px; font-weight: bold;\">$1,747.80</span>
-                      </div>
-                    </div>
-
-                    <div style=\"text-align: center;\">
-                      <div style=\"background: #e8f6f3; padding: 15px; border-radius: 8px; border: 2px solid #27ae60;\">
-                        <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Tasa Efectiva</strong>
-                        <span style=\"color: #2c3e50; font-size: 18px; font-weight: bold;\">7.76%</span>
-                      </div>
-                    </div>
-
-                    <div style=\"text-align: center;\">
-                      <div style=\"background: #e8f6f3; padding: 15px; border-radius: 8px; border: 2px solid #27ae60;\">
-                        <strong style=\"color: #27ae60; display: block; margin-bottom: 8px;\">Tiempo
-                          Duplicación</strong>
-                        <span style=\"color: #2c3e50; font-size: 18px; font-weight: bold;\">9.27 años</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- FUENTES BIBLIOGRÁFICAS MEJORADO -->
-            <div style=\"background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-              border: 1px solid #e1e8ed;\">
-              <h3 style=\"color: #2c3e50; border-bottom: 3px solid #7f8c8d; padding-bottom: 10px; margin-bottom: 20px;
-                font-size: 22px;\">📚 Fuentes Bibliográficas Recomendadas</h3>
-
-              <div style=\"background: #f8f9fa; padding: 20px; border-radius: 8px;\">
-                <ul style=\"color: #555; line-height: 1.8; margin: 0; padding-left: 20px;\">
-                  <li><strong>Kellison, S. G. (2009).</strong> <em>The Theory of Interest</em>. McGraw-Hill.</li>
-                  <li><strong>Villalobos, J. L. (2017).</strong> <em>Matemáticas Financieras</em>. Pearson Educación.
-                  </li>
-                  <li><strong>García, J. A. (2018).</strong> <em>Matemáticas financieras con aplicaciones</em>.
-                    McGraw-Hill.</li>
-                  <li><strong>Broverman, S. A. (2010).</strong> <em>Mathematics of Investment and Credit</em>. ACTEX
-                    Publications.</li>
-                </ul>
-              </div>
-            </div>
-
+`);">
+            Modelo de interés compuesto
+          6.1.1.2. Modelo de interés compuesto  <span class="emoji-small">✅</span>
+          </li>
       </div>
-      `)">6.1.1.2. Modelo de interés compuesto <span class="emoji-small">✅</span>
-      </li>
       </ul>
       <br>
 
@@ -7487,7 +7265,6 @@
   </div>
   `);"><b>6.9. Ecuaciones de valor</b> <span class=emoji-small>✅</span>
         </li>
-
         <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
       </ul><br>
 
