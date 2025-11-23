@@ -589,8 +589,7 @@
             `)">2.1. Ley de los exponentes <span class="emoji-small">✅</span>
           </li>
 
-          <ul class="tema-list">
-            <li onclick="abrirModal('2.2 Exponentes negativos', `
+          <li onclick="abrirModal('2.2 Exponentes negativos', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender y aplicar las propiedades de los exponentes negativos en la simplificación de expresiones algebraicas.</p>
           
@@ -679,326 +678,323 @@
               <li>Angel, A. R. (2018). <em>Intermediate Algebra for College Students</em>. Pearson.</li>
             </ul>
           `)">2.2. Exponentes negativos <span class="emoji-small">✅</span>
-            </li>
+          </li>
 
-            <ul class="tema-list">
-              <li onclick="abrirModal('2.3 Exponentes fraccionarios', `
-            <hr><br>
-            <p><strong>Objetivo:</strong> Comprender la relación entre exponentes fraccionarios y radicales, y aplicar las propiedades correspondientes.</p>
-          
-            <h4>Definición de Exponente Fraccionario</h4>
-            <ul>
-              <li>aᵐ/ⁿ = ⁿ√(aᵐ) = (ⁿ√a)ᵐ</li>
-              <li>El denominador del exponente indica el índice del radical.</li>
-              <li>El numerador indica la potencia a la que se eleva el radicando.</li>
-              <li>Ejemplo: 8²/³ = (³√8)² = 2² = 4</li>
-            </ul>
-          
-            <h4>Propiedades de Exponentes Fraccionarios</h4>
-            <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='padding: 8px; text-align: left;'>Propiedad</th>
-                <th style='padding: 8px; text-align: left;'>Expresión</th>
-                <th style='padding: 8px; text-align: left;'>Ejemplo</th>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Producto con misma base</td>
-                <td style='padding: 8px;'>aᵐ/ⁿ × aᵖ/ⁿ = a⁽ᵐ⁺ᵖ⁾/ⁿ</td>
-                <td style='padding: 8px;'>5²/³ × 5⁴/³ = 5⁶/³ = 5² = 25</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Cociente con misma base</td>
-                <td style='padding: 8px;'>aᵐ/ⁿ ÷ aᵖ/ⁿ = a⁽ᵐ⁻ᵖ⁾/ⁿ</td>
-                <td style='padding: 8px;'>8⁵/³ ÷ 8²/³ = 8³/³ = 8¹ = 8</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Potencia de potencia</td>
-                <td style='padding: 8px;'>(aᵐ/ⁿ)ᵖ = aᵐᵖ/ⁿ</td>
-                <td style='padding: 8px;'>(16³/⁴)² = 16⁶/⁴ = 16³/² = (√16)³ = 4³ = 64</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Exponente negativo fraccionario</td>
-                <td style='padding: 8px;'>a⁻ᵐ/ⁿ = 1/(aᵐ/ⁿ)</td>
-                <td style='padding: 8px;'>25⁻³/² = 1/(25³/²) = 1/(125) = 0.008</td>
-              </tr>
-            </table>
-          
-            <h4>Pasos para Simplificar Expresiones con Exponentes Fraccionarios</h4>
-            <ol>
-              <li>Convertir radicales a exponentes fraccionarios si es necesario.</li>
-              <li>Encontrar común denominador para los exponentes fraccionarios.</li>
-              <li>Aplicar las leyes de exponentes correspondientes.</li>
-              <li>Simplificar los exponentes resultantes.</li>
-              <li>Convertir de vuelta a notación radical si se requiere.</li>
-            </ol>
-          
-            <h4>Ejemplo Detallado</h4>
-            <p>Simplificar: (x¹/² × y²/³)⁶ ÷ (x² × y¹/²)</p>
-            <ol>
-              <li>Aplicar potencia de producto: (x³ × y⁴) ÷ (x² × y¹/²)</li>
-              <li>Dividir términos semejantes: x³⁻² × y⁴⁻¹/²</li>
-              <li>Simplificar exponentes: x¹ × y⁷/²</li>
-              <li>Resultado: x × y⁷/² o x√y⁷</li>
-            </ol>
-          
-            <h4>Conversión entre Radicales y Exponentes Fraccionarios</h4>
-            <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='padding: 8px; text-align: left;'>Forma Radical</th>
-                <th style='padding: 8px; text-align: left;'>Forma Exponencial</th>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>√a</td>
-                <td style='padding: 8px;'>a¹/²</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>³√a</td>
-                <td style='padding: 8px;'>a¹/³</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>ⁿ√a</td>
-                <td style='padding: 8px;'>a¹/ⁿ</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>ⁿ√(aᵐ)</td>
-                <td style='padding: 8px;'>aᵐ/ⁿ</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>√(a³)</td>
-                <td style='padding: 8px;'>a³/²</td>
-              </tr>
-            </table>
-          
-            <h4>Aplicaciones Prácticas</h4>
-            <ul>
-              <li>Cálculo de tasas de crecimiento proporcionales</li>
-              <li>Leyes de escala en física e ingeniería</li>
-              <li>Cálculo de probabilidades en estadística avanzada</li>
-              <li>Modelado de fenómenos de decaimiento con exponentes fraccionarios</li>
-            </ul>
-          
-            <h4>Fuentes Bibliográficas</h4>
-            <ul>
-              <li>Rudin, W. (1976). <em>Principles of Mathematical Analysis</em>. McGraw-Hill.</li>
-              <li>Apostol, T. M. (2013). <em>Calculus, Vol. 1</em>. Reverté.</li>
-              <li>Spivak, M. (2008). <em>Calculus</em>. Publish or Perish.</li>
-            </ul>
-          `)">2.3. Exponentes fraccionarios <span class="emoji-small">✅</span>
-              </li>
+          <li onclick="abrirModal('2.3 Exponentes fraccionarios', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender la relación entre exponentes fraccionarios y radicales, y aplicar las propiedades correspondientes.</p>
+        
+          <h4>Definición de Exponente Fraccionario</h4>
+          <ul>
+            <li>aᵐ/ⁿ = ⁿ√(aᵐ) = (ⁿ√a)ᵐ</li>
+            <li>El denominador del exponente indica el índice del radical.</li>
+            <li>El numerador indica la potencia a la que se eleva el radicando.</li>
+            <li>Ejemplo: 8²/³ = (³√8)² = 2² = 4</li>
+          </ul>
+        
+          <h4>Propiedades de Exponentes Fraccionarios</h4>
+          <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+            <tr style='background-color: #f2f2f2;'>
+              <th style='padding: 8px; text-align: left;'>Propiedad</th>
+              <th style='padding: 8px; text-align: left;'>Expresión</th>
+              <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>Producto con misma base</td>
+              <td style='padding: 8px;'>aᵐ/ⁿ × aᵖ/ⁿ = a⁽ᵐ⁺ᵖ⁾/ⁿ</td>
+              <td style='padding: 8px;'>5²/³ × 5⁴/³ = 5⁶/³ = 5² = 25</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>Cociente con misma base</td>
+              <td style='padding: 8px;'>aᵐ/ⁿ ÷ aᵖ/ⁿ = a⁽ᵐ⁻ᵖ⁾/ⁿ</td>
+              <td style='padding: 8px;'>8⁵/³ ÷ 8²/³ = 8³/³ = 8¹ = 8</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>Potencia de potencia</td>
+              <td style='padding: 8px;'>(aᵐ/ⁿ)ᵖ = aᵐᵖ/ⁿ</td>
+              <td style='padding: 8px;'>(16³/⁴)² = 16⁶/⁴ = 16³/² = (√16)³ = 4³ = 64</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>Exponente negativo fraccionario</td>
+              <td style='padding: 8px;'>a⁻ᵐ/ⁿ = 1/(aᵐ/ⁿ)</td>
+              <td style='padding: 8px;'>25⁻³/² = 1/(25³/²) = 1/(125) = 0.008</td>
+            </tr>
+          </table>
+        
+          <h4>Pasos para Simplificar Expresiones con Exponentes Fraccionarios</h4>
+          <ol>
+            <li>Convertir radicales a exponentes fraccionarios si es necesario.</li>
+            <li>Encontrar común denominador para los exponentes fraccionarios.</li>
+            <li>Aplicar las leyes de exponentes correspondientes.</li>
+            <li>Simplificar los exponentes resultantes.</li>
+            <li>Convertir de vuelta a notación radical si se requiere.</li>
+          </ol>
+        
+          <h4>Ejemplo Detallado</h4>
+          <p>Simplificar: (x¹/² × y²/³)⁶ ÷ (x² × y¹/²)</p>
+          <ol>
+            <li>Aplicar potencia de producto: (x³ × y⁴) ÷ (x² × y¹/²)</li>
+            <li>Dividir términos semejantes: x³⁻² × y⁴⁻¹/²</li>
+            <li>Simplificar exponentes: x¹ × y⁷/²</li>
+            <li>Resultado: x × y⁷/² o x√y⁷</li>
+          </ol>
+        
+          <h4>Conversión entre Radicales y Exponentes Fraccionarios</h4>
+          <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+            <tr style='background-color: #f2f2f2;'>
+              <th style='padding: 8px; text-align: left;'>Forma Radical</th>
+              <th style='padding: 8px; text-align: left;'>Forma Exponencial</th>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>√a</td>
+              <td style='padding: 8px;'>a¹/²</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>³√a</td>
+              <td style='padding: 8px;'>a¹/³</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>ⁿ√a</td>
+              <td style='padding: 8px;'>a¹/ⁿ</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>ⁿ√(aᵐ)</td>
+              <td style='padding: 8px;'>aᵐ/ⁿ</td>
+            </tr>
+            <tr>
+              <td style='padding: 8px;'>√(a³)</td>
+              <td style='padding: 8px;'>a³/²</td>
+            </tr>
+          </table>
+        
+          <h4>Aplicaciones Prácticas</h4>
+          <ul>
+            <li>Cálculo de tasas de crecimiento proporcionales</li>
+            <li>Leyes de escala en física e ingeniería</li>
+            <li>Cálculo de probabilidades en estadística avanzada</li>
+            <li>Modelado de fenómenos de decaimiento con exponentes fraccionarios</li>
+          </ul>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Rudin, W. (1976). <em>Principles of Mathematical Analysis</em>. McGraw-Hill.</li>
+            <li>Apostol, T. M. (2013). <em>Calculus, Vol. 1</em>. Reverté.</li>
+            <li>Spivak, M. (2008). <em>Calculus</em>. Publish or Perish.</li>
+          </ul>
+        `)">2.3. Exponentes fraccionarios <span class="emoji-small">✅</span>
+          </li>
 
-              <ul class="tema-list">
-                <li onclick="abrirModal('2.4 Ley de los radicales', `
-            <hr><br>
-            <p><strong>Objetivo:</strong> Dominar las propiedades de los radicales y su aplicación en la simplificación de expresiones algebraicas.</p>
-          
-            <h4>Definición de Radical</h4>
-            <ul>
-              <li>ⁿ√a = b significa que bⁿ = a</li>
-              <li>'n' es el índice, 'a' es el radicando, '√' es el símbolo radical</li>
-              <li>Cuando n=2 (raíz cuadrada), el índice no se escribe</li>
-              <li>Ejemplo: ³√8 = 2 porque 2³ = 8</li>
-            </ul>
-          
-            <h4>Propiedades Fundamentales de los Radicales</h4>
-            <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='padding: 8px; text-align: left;'>Propiedad</th>
-                <th style='padding: 8px; text-align: left;'>Expresión</th>
-                <th style='padding: 8px; text-align: left;'>Ejemplo</th>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Raíz de producto</td>
-                <td style='padding: 8px;'>ⁿ√(ab) = ⁿ√a × ⁿ√b</td>
-                <td style='padding: 8px;'>√(25×9) = √25 × √9 = 5×3 = 15</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Raíz de cociente</td>
-                <td style='padding: 8px;'>ⁿ√(a/b) = ⁿ√a / ⁿ√b (b≠0)</td>
-                <td style='padding: 8px;'>³√(64/8) = ³√64 / ³√8 = 4/2 = 2</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Raíz de raíz</td>
-                <td style='padding: 8px;'>ᵐ√(ⁿ√a) = ᵐⁿ√a</td>
-                <td style='padding: 8px;'>√(³√64) = ⁶√64 = 2</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Raíz de potencia</td>
-                <td style='padding: 8px;'>ⁿ√(aᵐ) = (ⁿ√a)ᵐ = aᵐ/ⁿ</td>
-                <td style='padding: 8px;'>³√(8²) = (³√8)² = 2² = 4</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Simplificación</td>
-                <td style='padding: 8px;'>ⁿ√(aᵐ) = aᵏ/ⁿ√(aʳ) donde m = k×n + r</td>
-                <td style='padding: 8px;'>√(x⁵) = x²√x</td>
-              </tr>
-            </table>
-          
-            <h4>Pasos para Simplificar Radicales</h4>
-            <ol>
-              <li>Factorizar el radicando en factores primos.</li>
-              <li>Expresar el radicando en términos de potencias.</li>
-              <li>Aplicar la propiedad ⁿ√(aᵐ) = aᵐ/ⁿ.</li>
-              <li>Separar las potencias que son múltiplos del índice.</li>
-              <li>Simplificar extrayendo fuera del radical los factores con exponente mayor o igual al índice.</li>
-            </ol>
-          
-            <h4>Ejemplo Detallado: Simplificar ³√(54x⁷y⁵)</h4>
-            <ol>
-              <li>Factorizar: ³√(2×3³×x⁷×y⁵)</li>
-              <li>Expresar como potencias: ³√(2×3³×x⁶×x×y³×y²)</li>
-              <li>Separar: ³√(3³) × ³√(x⁶) × ³√(y³) × ³√(2xy²)</li>
-              <li>Simplificar: 3 × x² × y × ³√(2xy²)</li>
-              <li>Resultado: 3x²y³√(2xy²)</li>
-            </ol>
-          
-            <h4>Racionalización de Denominadores</h4>
-            <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='padding: 8px; text-align: left;'>Caso</th>
-                <th style='padding: 8px; text-align: left;'>Procedimiento</th>
-                <th style='padding: 8px; text-align: left;'>Ejemplo</th>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Denominador monomio</td>
-                <td style='padding: 8px;'>Multiplicar numerador y denominador por el radical necesario para eliminar la raíz</td>
-                <td style='padding: 8px;'>1/√2 = (1×√2)/(√2×√2) = √2/2</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Denominador binomio</td>
-                <td style='padding: 8px;'>Multiplicar por el conjugado del denominador</td>
-                <td style='padding: 8px;'>1/(√3+1) = [1×(√3-1)]/[(√3+1)(√3-1)] = (√3-1)/2</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Raíz de índice mayor</td>
-                <td style='padding: 8px;'>Multiplicar por la raíz que complete la potencia</td>
-                <td style='padding: 8px;'>1/³√4 = (1×³√2)/(³√4×³√2) = ³√2/2</td>
-              </tr>
-            </table>
-          
-            <h4>Operaciones con Radicales de Diferente Índice</h4>
-            <ol>
-              <li>Encontrar el mínimo común múltiplo de los índices.</li>
-              <li>Convertir cada radical a exponente fraccionario.</li>
-              <li>Expresar todos los radicales con el mismo índice usando el mcm.</li>
-              <li>Realizar las operaciones correspondientes.</li>
-              <li>Simplificar el resultado.</li>
-            </ol>
-          
-            <h4>Fuentes Bibliográficas</h4>
-            <ul>
-              <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
-              <li>Lial, M. L. (2017). <em>Intermediate Algebra</em>. Pearson.</li>
-              <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-            </ul>
-          `)">2.4. Ley de los radicales <span class="emoji-small">✅</span>
-                </li>
+          <li onclick="abrirModal('2.4 Ley de los radicales', `
+        <hr><br>
+        <p><strong>Objetivo:</strong> Dominar las propiedades de los radicales y su aplicación en la simplificación de expresiones algebraicas.</p>
+      
+        <h4>Definición de Radical</h4>
+        <ul>
+          <li>ⁿ√a = b significa que bⁿ = a</li>
+          <li>'n' es el índice, 'a' es el radicando, '√' es el símbolo radical</li>
+          <li>Cuando n=2 (raíz cuadrada), el índice no se escribe</li>
+          <li>Ejemplo: ³√8 = 2 porque 2³ = 8</li>
+        </ul>
+      
+        <h4>Propiedades Fundamentales de los Radicales</h4>
+        <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+          <tr style='background-color: #f2f2f2;'>
+            <th style='padding: 8px; text-align: left;'>Propiedad</th>
+            <th style='padding: 8px; text-align: left;'>Expresión</th>
+            <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Raíz de producto</td>
+            <td style='padding: 8px;'>ⁿ√(ab) = ⁿ√a × ⁿ√b</td>
+            <td style='padding: 8px;'>√(25×9) = √25 × √9 = 5×3 = 15</td>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Raíz de cociente</td>
+            <td style='padding: 8px;'>ⁿ√(a/b) = ⁿ√a / ⁿ√b (b≠0)</td>
+            <td style='padding: 8px;'>³√(64/8) = ³√64 / ³√8 = 4/2 = 2</td>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Raíz de raíz</td>
+            <td style='padding: 8px;'>ᵐ√(ⁿ√a) = ᵐⁿ√a</td>
+            <td style='padding: 8px;'>√(³√64) = ⁶√64 = 2</td>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Raíz de potencia</td>
+            <td style='padding: 8px;'>ⁿ√(aᵐ) = (ⁿ√a)ᵐ = aᵐ/ⁿ</td>
+            <td style='padding: 8px;'>³√(8²) = (³√8)² = 2² = 4</td>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Simplificación</td>
+            <td style='padding: 8px;'>ⁿ√(aᵐ) = aᵏ/ⁿ√(aʳ) donde m = k×n + r</td>
+            <td style='padding: 8px;'>√(x⁵) = x²√x</td>
+          </tr>
+        </table>
+      
+        <h4>Pasos para Simplificar Radicales</h4>
+        <ol>
+          <li>Factorizar el radicando en factores primos.</li>
+          <li>Expresar el radicando en términos de potencias.</li>
+          <li>Aplicar la propiedad ⁿ√(aᵐ) = aᵐ/ⁿ.</li>
+          <li>Separar las potencias que son múltiplos del índice.</li>
+          <li>Simplificar extrayendo fuera del radical los factores con exponente mayor o igual al índice.</li>
+        </ol>
+      
+        <h4>Ejemplo Detallado: Simplificar ³√(54x⁷y⁵)</h4>
+        <ol>
+          <li>Factorizar: ³√(2×3³×x⁷×y⁵)</li>
+          <li>Expresar como potencias: ³√(2×3³×x⁶×x×y³×y²)</li>
+          <li>Separar: ³√(3³) × ³√(x⁶) × ³√(y³) × ³√(2xy²)</li>
+          <li>Simplificar: 3 × x² × y × ³√(2xy²)</li>
+          <li>Resultado: 3x²y³√(2xy²)</li>
+        </ol>
+      
+        <h4>Racionalización de Denominadores</h4>
+        <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+          <tr style='background-color: #f2f2f2;'>
+            <th style='padding: 8px; text-align: left;'>Caso</th>
+            <th style='padding: 8px; text-align: left;'>Procedimiento</th>
+            <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Denominador monomio</td>
+            <td style='padding: 8px;'>Multiplicar numerador y denominador por el radical necesario para eliminar la raíz</td>
+            <td style='padding: 8px;'>1/√2 = (1×√2)/(√2×√2) = √2/2</td>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Denominador binomio</td>
+            <td style='padding: 8px;'>Multiplicar por el conjugado del denominador</td>
+            <td style='padding: 8px;'>1/(√3+1) = [1×(√3-1)]/[(√3+1)(√3-1)] = (√3-1)/2</td>
+          </tr>
+          <tr>
+            <td style='padding: 8px;'>Raíz de índice mayor</td>
+            <td style='padding: 8px;'>Multiplicar por la raíz que complete la potencia</td>
+            <td style='padding: 8px;'>1/³√4 = (1×³√2)/(³√4×³√2) = ³√2/2</td>
+          </tr>
+        </table>
+      
+        <h4>Operaciones con Radicales de Diferente Índice</h4>
+        <ol>
+          <li>Encontrar el mínimo común múltiplo de los índices.</li>
+          <li>Convertir cada radical a exponente fraccionario.</li>
+          <li>Expresar todos los radicales con el mismo índice usando el mcm.</li>
+          <li>Realizar las operaciones correspondientes.</li>
+          <li>Simplificar el resultado.</li>
+        </ol>
+      
+        <h4>Fuentes Bibliográficas</h4>
+        <ul>
+          <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
+          <li>Lial, M. L. (2017). <em>Intermediate Algebra</em>. Pearson.</li>
+          <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
+        </ul>
+      `)">2.4. Ley de los radicales <span class="emoji-small">✅</span>
+          </li>
 
-                <ul class="tema-list">
-                  <li onclick="abrirModal('2.5 Operaciones con radicales', `
-            <hr><br>
-            <p><strong>Objetivo:</strong> Dominar las operaciones básicas con radicales: suma, resta, multiplicación y división.</p>
-          
-            <h4>Suma y Resta de Radicales</h4>
-            <ul>
-              <li>Solo se pueden sumar/restar radicales semejantes (mismo índice y mismo radicando).</li>
-              <li>Procedimiento: Simplificar los radicales → Identificar términos semejantes → Sumar/restar coeficientes.</li>
-              <li>Ejemplo: 2√3 + 5√3 - √3 = (2+5-1)√3 = 6√3</li>
-            </ul>
-          
-            <h4>Multiplicación de Radicales</h4>
-            <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
-              <tr style='background-color: #f2f2f2;'>
-                <th style='padding: 8px; text-align: left;'>Caso</th>
-                <th style='padding: 8px; text-align: left;'>Regla</th>
-                <th style='padding: 8px; text-align: left;'>Ejemplo</th>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Mismo índice</td>
-                <td style='padding: 8px;'>ⁿ√a × ⁿ√b = ⁿ√(ab)</td>
-                <td style='padding: 8px;'>√2 × √8 = √16 = 4</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Diferente índice</td>
-                <td style='padding: 8px;'>Convertir a exponentes fraccionarios y aplicar leyes de exponentes</td>
-                <td style='padding: 8px;'>√2 × ³√4 = 2¹/² × 4¹/³ = 2¹/² × 2²/³ = 2⁷/⁶ = ⁶√128</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Radical por número</td>
-                <td style='padding: 8px;'>k × ⁿ√a = kⁿ√a</td>
-                <td style='padding: 8px;'>3 × √5 = 3√5</td>
-              </tr>
-              <tr>
-                <td style='padding: 8px;'>Binomios con radicales</td>
-                <td style='padding: 8px;'>Aplicar propiedad distributiva (FOIL si es necesario)</td>
-                <td style='padding: 8px;'>(√3+2)(√3-1) = 3 - √3 + 2√3 - 2 = 1 + √3</td>
-              </tr>
-            </table>
-          
-            <h4>División de Radicales</h4>
-            <ul>
-              <li>ⁿ√a ÷ ⁿ√b = ⁿ√(a/b) (para b ≠ 0)</li>
-              <li>Procedimiento: Simplificar → Racionalizar si es necesario → Dividir</li>
-              <li>Ejemplo: √18 ÷ √2 = √(18/2) = √9 = 3</li>
-            </ul>
-          
-            <h4>Pasos para Sumar Radicales no Semejantes</h4>
-            <p>Simplificar: √50 + √18 - √8</p>
-            <ol>
-              <li>Factorizar cada radicando: √(25×2) + √(9×2) - √(4×2)</li>
-              <li>Simplificar: 5√2 + 3√2 - 2√2</li>
-              <li>Sumar coeficientes: (5+3-2)√2 = 6√2</li>
-            </ol>
-          
-            <h4>Pasos para Multiplicar Binomios con Radicales</h4>
-            <p>Multiplicar: (2√3 + √2)(√3 - 3√2)</p>
-            <ol>
-              <li>Aplicar propiedad distributiva: 
-                <br>2√3×√3 + 2√3×(-3√2) + √2×√3 + √2×(-3√2)</li>
-              <li>Multiplicar términos: 2×3 + (-6√6) + √6 + (-3×2)</li>
-              <li>Simplificar: 6 - 6√6 + √6 - 6</li>
-              <li>Combinar términos semejantes: (6-6) + (-6√6+√6) = -5√6</li>
-            </ol>
-          
-            <h4>Racionalización de Denominadores - Método Detallado</h4>
-            <p>Racionalizar: 3/(√5 - √2)</p>
-            <ol>
-              <li>Identificar el conjugado del denominador: (√5 + √2)</li>
-              <li>Multiplicar numerador y denominador por el conjugado:
-                <br>[3(√5+√2)]/[(√5-√2)(√5+√2)]</li>
-              <li>Multiplicar denominador: (5 - 2) = 3</li>
-              <li>Multiplicar numerador: 3√5 + 3√2</li>
-              <li>Resultado: (3√5 + 3√2)/3 = √5 + √2</li>
-            </ol>
-          
-            <h4>Operaciones con Radicales de Diferente Índice</h4>
-            <p>Simplificar: ⁴√2 × √8</p>
-            <ol>
-              <li>Convertir a exponentes fraccionarios: 2¹/⁴ × 8¹/²</li>
-              <li>Expresar con misma base: 2¹/⁴ × (2³)¹/² = 2¹/⁴ × 2³/²</li>
-              <li>Sumar exponentes: 2¹/⁴ ⁺ ⁶/⁴ = 2⁷/⁴</li>
-              <li>Convertir a radical: ⁴√(2⁷) = ⁴√128</li>
-              <li>Simplificar: ⁴√(16×8) = 2⁴√8</li>
-            </ol>
-          
-            <h4>Errores Comunes y Cómo Evitarlos</h4>
-            <ul>
-              <li><strong>Error:</strong> √(a+b) = √a + √b
-                <br><strong>Realidad:</strong> √(a+b) ≠ √a + √b (ej: √(9+16) = √25 = 5 ≠ 3+4 = 7)</li>
-              <li><strong>Error:</strong> ⁿ√a + ⁿ√b = ⁿ√(a+b)
-                <br><strong>Realidad:</strong> Solo se pueden sumar si son términos semejantes</li>
-              <li><strong>Error:</strong> Olvidar simplificar antes de operar
-                <br><strong>Solución:</strong> Siempre simplificar radicales antes de realizar operaciones</li>
-            </ul>
-          
-            <h4>Fuentes Bibliográficas</h4>
-            <ul>
-              <li>Kaufmann, J. E. (2014). <em>Algebra for College Students</em>. Cengage Learning.</li>
-              <li>Blitzer, R. (2017). <em>Algebra and Trigonometry</em>. Pearson.</li>
-              <li>Barnett, R. A. (2011). <em>College Algebra</em>. McGraw-Hill.</li>
-            </ul>
-          `)">2.5. Operaciones con radicales <span class="emoji-small">✅</span>
-                  </li>
-                </ul>
+          <li onclick="abrirModal('2.5 Operaciones con radicales', `
+      <hr><br>
+      <p><strong>Objetivo:</strong> Dominar las operaciones básicas con radicales: suma, resta, multiplicación y división.</p>
+    
+      <h4>Suma y Resta de Radicales</h4>
+      <ul>
+        <li>Solo se pueden sumar/restar radicales semejantes (mismo índice y mismo radicando).</li>
+        <li>Procedimiento: Simplificar los radicales → Identificar términos semejantes → Sumar/restar coeficientes.</li>
+        <li>Ejemplo: 2√3 + 5√3 - √3 = (2+5-1)√3 = 6√3</li>
+      </ul>
+    
+      <h4>Multiplicación de Radicales</h4>
+      <table border='1' style='width:100%; border-collapse: collapse; margin: 15px 0;'>
+        <tr style='background-color: #f2f2f2;'>
+          <th style='padding: 8px; text-align: left;'>Caso</th>
+          <th style='padding: 8px; text-align: left;'>Regla</th>
+          <th style='padding: 8px; text-align: left;'>Ejemplo</th>
+        </tr>
+        <tr>
+          <td style='padding: 8px;'>Mismo índice</td>
+          <td style='padding: 8px;'>ⁿ√a × ⁿ√b = ⁿ√(ab)</td>
+          <td style='padding: 8px;'>√2 × √8 = √16 = 4</td>
+        </tr>
+        <tr>
+          <td style='padding: 8px;'>Diferente índice</td>
+          <td style='padding: 8px;'>Convertir a exponentes fraccionarios y aplicar leyes de exponentes</td>
+          <td style='padding: 8px;'>√2 × ³√4 = 2¹/² × 4¹/³ = 2¹/² × 2²/³ = 2⁷/⁶ = ⁶√128</td>
+        </tr>
+        <tr>
+          <td style='padding: 8px;'>Radical por número</td>
+          <td style='padding: 8px;'>k × ⁿ√a = kⁿ√a</td>
+          <td style='padding: 8px;'>3 × √5 = 3√5</td>
+        </tr>
+        <tr>
+          <td style='padding: 8px;'>Binomios con radicales</td>
+          <td style='padding: 8px;'>Aplicar propiedad distributiva (FOIL si es necesario)</td>
+          <td style='padding: 8px;'>(√3+2)(√3-1) = 3 - √3 + 2√3 - 2 = 1 + √3</td>
+        </tr>
+      </table>
+    
+      <h4>División de Radicales</h4>
+      <ul>
+        <li>ⁿ√a ÷ ⁿ√b = ⁿ√(a/b) (para b ≠ 0)</li>
+        <li>Procedimiento: Simplificar → Racionalizar si es necesario → Dividir</li>
+        <li>Ejemplo: √18 ÷ √2 = √(18/2) = √9 = 3</li>
+      </ul>
+    
+      <h4>Pasos para Sumar Radicales no Semejantes</h4>
+      <p>Simplificar: √50 + √18 - √8</p>
+      <ol>
+        <li>Factorizar cada radicando: √(25×2) + √(9×2) - √(4×2)</li>
+        <li>Simplificar: 5√2 + 3√2 - 2√2</li>
+        <li>Sumar coeficientes: (5+3-2)√2 = 6√2</li>
+      </ol>
+    
+      <h4>Pasos para Multiplicar Binomios con Radicales</h4>
+      <p>Multiplicar: (2√3 + √2)(√3 - 3√2)</p>
+      <ol>
+        <li>Aplicar propiedad distributiva: 
+          <br>2√3×√3 + 2√3×(-3√2) + √2×√3 + √2×(-3√2)</li>
+        <li>Multiplicar términos: 2×3 + (-6√6) + √6 + (-3×2)</li>
+        <li>Simplificar: 6 - 6√6 + √6 - 6</li>
+        <li>Combinar términos semejantes: (6-6) + (-6√6+√6) = -5√6</li>
+      </ol>
+    
+      <h4>Racionalización de Denominadores - Método Detallado</h4>
+      <p>Racionalizar: 3/(√5 - √2)</p>
+      <ol>
+        <li>Identificar el conjugado del denominador: (√5 + √2)</li>
+        <li>Multiplicar numerador y denominador por el conjugado:
+          <br>[3(√5+√2)]/[(√5-√2)(√5+√2)]</li>
+        <li>Multiplicar denominador: (5 - 2) = 3</li>
+        <li>Multiplicar numerador: 3√5 + 3√2</li>
+        <li>Resultado: (3√5 + 3√2)/3 = √5 + √2</li>
+      </ol>
+    
+      <h4>Operaciones con Radicales de Diferente Índice</h4>
+      <p>Simplificar: ⁴√2 × √8</p>
+      <ol>
+        <li>Convertir a exponentes fraccionarios: 2¹/⁴ × 8¹/²</li>
+        <li>Expresar con misma base: 2¹/⁴ × (2³)¹/² = 2¹/⁴ × 2³/²</li>
+        <li>Sumar exponentes: 2¹/⁴ ⁺ ⁶/⁴ = 2⁷/⁴</li>
+        <li>Convertir a radical: ⁴√(2⁷) = ⁴√128</li>
+        <li>Simplificar: ⁴√(16×8) = 2⁴√8</li>
+      </ol>
+    
+      <h4>Errores Comunes y Cómo Evitarlos</h4>
+      <ul>
+        <li><strong>Error:</strong> √(a+b) = √a + √b
+          <br><strong>Realidad:</strong> √(a+b) ≠ √a + √b (ej: √(9+16) = √25 = 5 ≠ 3+4 = 7)</li>
+        <li><strong>Error:</strong> ⁿ√a + ⁿ√b = ⁿ√(a+b)
+          <br><strong>Realidad:</strong> Solo se pueden sumar si son términos semejantes</li>
+        <li><strong>Error:</strong> Olvidar simplificar antes de operar
+          <br><strong>Solución:</strong> Siempre simplificar radicales antes de realizar operaciones</li>
+      </ul>
+    
+      <h4>Fuentes Bibliográficas</h4>
+      <ul>
+        <li>Kaufmann, J. E. (2014). <em>Algebra for College Students</em>. Cengage Learning.</li>
+        <li>Blitzer, R. (2017). <em>Algebra and Trigonometry</em>. Pearson.</li>
+        <li>Barnett, R. A. (2011). <em>College Algebra</em>. McGraw-Hill.</li>
+      </ul>
+    `)">2.5. Operaciones con radicales <span class="emoji-small">✅</span>
+          </li>
+        </ul>
       </div>
       <!-- TEMA 3 Relaciones y números -->
       <div class="tema-card">
@@ -3989,10 +3985,8 @@ ctx.stroke();
             Modelo de interés compuesto
             6.1.1.2. Modelo de interés compuesto <span class="emoji-small">✅</span>
           </li>
-
         </ul>
         <br>
-
         <ul class="tema-list">
           <li onclick="abrirModal('6.2. Tasa de interés nominal', `
   <hr><br>
@@ -7267,7 +7261,6 @@ ctx.stroke();
           </li>
           <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
         </ul><br>
-
         <ul class="tema-list">
           <li onclick="abrirModal('6.11. Anualidades', `
   <hr><br>
@@ -7664,23 +7657,20 @@ ctx.stroke();
   </div>
   `);"><b>6.11. Anualidades</b> <span class=emoji-small>✅</span>
           </li>
-          <ul>
-            <li>6.11.1. Definición y tipos de anualidades</li>
-            <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
-            <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
-            <li>6.11.4. Perpetuidades</li>
-            <li>6.11.5. Determinación de las variables de una anualidad</li>
-            <li>6.11.6. Anualidades con tasas variables</li>
-            <li>6.11.7. Anualidades anticipadas y diferidas</li>
-            <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente
-              frecuencia)</li>
-            <li>6.11.9. Anualidades continuas</li>
-            <li>6.11.10. Anualidades crecientes y decrecientes</li>
-          </ul>
+          <li>6.11.1. Definición y tipos de anualidades</li>
+          <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
+          <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
+          <li>6.11.4. Perpetuidades</li>
+          <li>6.11.5. Determinación de las variables de una anualidad</li>
+          <li>6.11.6. Anualidades con tasas variables</li>
+          <li>6.11.7. Anualidades anticipadas y diferidas</li>
+          <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente
+            frecuencia)</li>
+          <li>6.11.9. Anualidades continuas</li>
+          <li>6.11.10. Anualidades crecientes y decrecientes</li>
         </ul><br>
         <ul class="tema-list">
           <li>6.12. Amortización</li>
-          <ul>
             <li>6.12.1 Diferentes esquemas de amortización</li>
             <ul>
               <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
@@ -7688,9 +7678,8 @@ ctx.stroke();
               <li>6.12.1.3. Amortización con pagos iguales de capital</li>
               <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
             </ul>
-            <li>6.12.2 Construcción de tablas de amortización</li>
-            <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
-          </ul>
+          <li>6.12.2 Construcción de tablas de amortización</li>
+          <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
           <li>6.13. Depreciación</li>
           <ul>
             <li>6.13.1 Definición</li>
