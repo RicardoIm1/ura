@@ -2,48 +2,49 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matemáticas Para la Administración - Universidad URA</title>
-  <link rel="stylesheet" href="/ura/css/estilo.css">
-  <link rel="stylesheet" href="estilo_adm.css">
-  <!-- MathJax para renderizar notación matemática elegante -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas Para la Administración - Universidad URA</title>
+    <link rel="stylesheet" href="/ura/css/estilo.css">
+    <link rel="stylesheet" href="estilo_adm.css">
+    <!-- MathJax para renderizar notación matemática elegante -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </head>
 
 <body>
-  <header>
-    <div class="header-content">
-      <a href="/ura/">
-        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo"> </a>
-      <div class="header-title">Matemáticas Para la Administración</div>
+    <header>
+        <div class="header-content">
+            <a href="/ura/">
+                <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo"> </a>
+            <div class="header-title">Matemáticas Para la Administración</div>
+        </div>
+    </header>
+    <div class="hero">
+        <h1>Matemáticas Para la Administración</h1>
+        <h2>LAET105</h2>
+        <a href="/ura/adm/calificaciones_madm.html" class="apple-button">Calificaciones</a>
     </div>
-  </header>
-  <div class="hero">
-    <h1>Matemáticas Para la Administración</h1>
-    <h2>LAET105</h2>
-    <a href="/ura/adm/calificaciones_madm.html" class="apple-button">Calificaciones</a>
-  </div>
-  <!-- OBJETIVO GENERAL -->
-  <section class="container">
-    <h2 class="section-title">Objetivo General</h2>
-    <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno aplicará en casos prácticos el álgebra y la teoría de conjuntos y comprenderá su
-      importancia en la resolución de problemas económicos.
-    </p>
-  </section>
-  <!-- TEMARIO -->
-  <section class="container">
-    <h2 class="section-title">Temario</h2>
-    <div class="temas-grid">
-      <!-- TEMA 1 Repaso de álgebra -->
-      <div class="tema-card">
-        <div class="tema-num">TEMA 1</div>
-        <h3 class="tema-title">Repaso de álgebra</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('1.1 Propósito', `
+    <!-- OBJETIVO GENERAL -->
+    <section class="container">
+        <h2 class="section-title">Objetivo General</h2>
+        <p class="objetivo evaluacion-item tema-card">
+            Al finalizar el curso el alumno aplicará en casos prácticos el álgebra y la teoría de conjuntos y
+            comprenderá su
+            importancia en la resolución de problemas económicos.
+        </p>
+    </section>
+    <!-- TEMARIO -->
+    <section class="container">
+        <h2 class="section-title">Temario</h2>
+        <div class="temas-grid">
+            <!-- TEMA 1 Repaso de álgebra -->
+            <div class="tema-card">
+                <div class="tema-num">TEMA 1</div>
+                <h3 class="tema-title">Repaso de álgebra</h3>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('1.1 Propósito', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender la importancia fundamental del álgebra como base del pensamiento matemático y su aplicación en diversas áreas.</p>
               
@@ -88,9 +89,9 @@
                   <li>Larson, R. (2018). <em>Álgebra intermedia</em>. Cengage Learning.</li>
                 </ul>
               `)">1.1. Propósito <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.2 Conjuntos y Números reales', `
+                    <li onclick="abrirModal('1.2 Conjuntos y Números reales', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Identificar y clasificar los diferentes tipos de conjuntos numéricos que componen el sistema de números reales.</p>
               
@@ -134,9 +135,9 @@
                   <li>Halmos, P. R. (2017). <em>Naive Set Theory</em>. Dover Publications.</li>
                 </ul>
               `)">1.2. Conjuntos y número reales <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.3 Algunas propiedades de los números reales', `
+                    <li onclick="abrirModal('1.3 Algunas propiedades de los números reales', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar las propiedades fundamentales que gobiernan las operaciones con números reales y sus aplicaciones.</p>
             
@@ -192,9 +193,9 @@
                 <li>García, A. (2015). <em>Propiedades de los números reales y sus aplicaciones</em>. Editorial UCR.</li>
               </ul>
             `)">1.3. Algunas propiedades de los números reales <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.4 Operaciones con números reales', `
+                    <li onclick="abrirModal('1.4 Operaciones con números reales', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar las operaciones fundamentales con números reales y aplicar correctamente las reglas de prioridad.</p>
             
@@ -249,9 +250,9 @@
                 <li>Charles, R. I., et al. (2015). <em>Mathematics: Course 2</em>. Pearson.</li>
               </ul>
             `)">1.4. Operaciones con números reales <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.5 Exponentes y radicales', `
+                    <li onclick="abrirModal('1.5 Exponentes y radicales', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las leyes de exponentes y radicales en la simplificación de expresiones algebraicas.</p>
             
@@ -307,9 +308,9 @@
                 <li>Barnett, R. A., et al. (2011). <em>College Algebra</em>. McGraw-Hill.</li>
               </ul>
             `)">1.5. Exponentes y radicales <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.6 Operaciones con expresiones algebraicas', `
+                    <li onclick="abrirModal('1.6 Operaciones con expresiones algebraicas', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Dominar las operaciones fundamentales con expresiones algebraicas: suma, resta, multiplicación y división.</p>
               
@@ -365,9 +366,9 @@
                   <li>Gustafson, R. D., & Frisk, P. D. (2012). <em>Álgebra intermedia</em>. Cengage Learning.</li>
                 </ul>
               `)">1.6. Operaciones con expresiones algebraicas <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.7 Factorización', `
+                    <li onclick="abrirModal('1.7 Factorización', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar los diferentes métodos de factorización para simplificar expresiones algebraicas y resolver ecuaciones.</p>
             
@@ -430,9 +431,9 @@
                 <li>Barnett, R. A. (2011). <em>College Algebra</em>. McGraw-Hill.</li>
               </ul>
             `)">1.7. Factorización <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('1.8 Fracciones', `
+                    <li onclick="abrirModal('1.8 Fracciones', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar las operaciones con fracciones algebraicas y simplificación de expresiones racionales.</p>
             
@@ -498,15 +499,15 @@
                 <li>Angel, A. R., & Porter, S. R. (2018). <em>A Survey of Mathematics with Applications</em>. Pearson.</li>
               </ul>
             `)">1.8. Fracciones <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
-      <!-- TEMA 2 Exponentes y radicales -->
-      <div class="tema-card">
-        <div class="tema-num">TEMA 2</div>
-        <h3 class="tema-title">Exponentes y radicales</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('2.1 Ley de los exponentes', `
+                    </li>
+                </ul>
+            </div>
+            <!-- TEMA 2 Exponentes y radicales -->
+            <div class="tema-card">
+                <div class="tema-num">TEMA 2</div>
+                <h3 class="tema-title">Exponentes y radicales</h3>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('2.1 Ley de los exponentes', `
             <hr><br>
             <p><strong>Objetivo:</strong> Dominar las leyes de exponentes para simplificar expresiones algebraicas y resolver ecuaciones.</p>
           
@@ -587,9 +588,9 @@
                 <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
               </ul>
             `)">2.1. Ley de los exponentes <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('2.2 Exponentes negativos', `
+                    <li onclick="abrirModal('2.2 Exponentes negativos', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender y aplicar las propiedades de los exponentes negativos en la simplificación de expresiones algebraicas.</p>
           
@@ -678,9 +679,9 @@
               <li>Angel, A. R. (2018). <em>Intermediate Algebra for College Students</em>. Pearson.</li>
             </ul>
           `)">2.2. Exponentes negativos <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('2.3 Exponentes fraccionarios', `
+                    <li onclick="abrirModal('2.3 Exponentes fraccionarios', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender la relación entre exponentes fraccionarios y radicales, y aplicar las propiedades correspondientes.</p>
         
@@ -782,9 +783,9 @@
             <li>Spivak, M. (2008). <em>Calculus</em>. Publish or Perish.</li>
           </ul>
         `)">2.3. Exponentes fraccionarios <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('2.4 Ley de los radicales', `
+                    <li onclick="abrirModal('2.4 Ley de los radicales', `
         <hr><br>
         <p><strong>Objetivo:</strong> Dominar las propiedades de los radicales y su aplicación en la simplificación de expresiones algebraicas.</p>
       
@@ -888,9 +889,9 @@
           <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
         </ul>
       `)">2.4. Ley de los radicales <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('2.5 Operaciones con radicales', `
+                    <li onclick="abrirModal('2.5 Operaciones con radicales', `
       <hr><br>
       <p><strong>Objetivo:</strong> Dominar las operaciones básicas con radicales: suma, resta, multiplicación y división.</p>
     
@@ -993,15 +994,15 @@
         <li>Barnett, R. A. (2011). <em>College Algebra</em>. McGraw-Hill.</li>
       </ul>
     `)">2.5. Operaciones con radicales <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
-      <!-- TEMA 3 Relaciones y números -->
-      <div class="tema-card">
-        <div class="tema-num">TEMA 3</div>
-        <h3 class="tema-title">Relaciones y números</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
+                    </li>
+                </ul>
+            </div>
+            <!-- TEMA 3 Relaciones y números -->
+            <div class="tema-card">
+                <div class="tema-num">TEMA 3</div>
+                <h3 class="tema-title">Relaciones y números</h3>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('3.1 Coordenadas rectangulares', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender el sistema de coordenadas rectangulares y su uso para representar puntos en el plano.</p>
               
@@ -1110,9 +1111,9 @@
                   <li>Swokowski, E. W. (2011). <em>Algebra and Trigonometry with Analytic Geometry</em>. Cengage Learning.</li>
                 </ul>
               `)">3.1. Coordenadas rectangulares <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('3.2 Relaciones', `
+                    <li onclick="abrirModal('3.2 Relaciones', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender el concepto de relación matemática y sus diferentes representaciones.</p>
               
@@ -1227,9 +1228,9 @@
                   <li>Suppes, P. (1972). <em>Axiomatic Set Theory</em>. Dover Publications.</li>
                 </ul>
               `)">3.2. Relaciones <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('3.3 Funciones', `
+                    <li onclick="abrirModal('3.3 Funciones', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender el concepto de función como caso especial de relación y sus propiedades fundamentales.</p>
               
@@ -1371,9 +1372,9 @@
                   <li>Stewart, J. (2012). <em>Calculus: Early Transcendentals</em>. Cengage Learning.</li>
                 </ul>
               `)">3.3. Funciones <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('3.4 Gráfica de una función', `
+                    <li onclick="abrirModal('3.4 Gráfica de una función', `
               <hr><br>
               <p><strong>Objetivo:</strong> Aprender a graficar funciones y analizar sus características a partir de su representación visual.</p>
             
@@ -1627,15 +1628,15 @@
                 <li>Thomas, G. B. (2016). <em>Calculus</em>. Pearson.</li>
               </ul>
             `)">3.4. Gráfica de una función <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
-      <!-- TEMA 4 Teoría y conjuntos -->
-      <div class="tema-card">
-        <div class="tema-num">TEMA 4</div>
-        <h3 class="tema-title">Teoría y conjuntos</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('4.1. Teoría y conjuntos: Definiciones fundamentales', `
+                    </li>
+                </ul>
+            </div>
+            <!-- TEMA 4 Teoría y conjuntos -->
+            <div class="tema-card">
+                <div class="tema-num">TEMA 4</div>
+                <h3 class="tema-title">Teoría y conjuntos</h3>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('4.1. Teoría y conjuntos: Definiciones fundamentales', `
               <hr><br>
               <div class='math-module'>
                 
@@ -2082,9 +2083,9 @@
                 </div>
               </div>
               `);">4.1. Teoría y conjuntos: Definiciones fundamentales <span class='emoji-small'>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('4.2. Operaciones de conjunto', `
+                    <li onclick="abrirModal('4.2. Operaciones de conjunto', `
             <hr><br>
             <div class=math-module>
               
@@ -2615,9 +2616,9 @@
               </div>
             </div>
             `);">4.2. Operaciones de conjunto <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('4.3 Diagramas de Venn', `
+                    <li onclick="abrirModal('4.3 Diagramas de Venn', `
               <hr><br>
               <div class=math-module>
                 
@@ -3079,15 +3080,15 @@
                 </div>
               </div>
               `);">4.3 Diagramas de Venn <span class=emoji-small>✅</span>
-          </li>
-        </ul>
-      </div>
-      <!-- TEMA 5 Ecuaciones -->
-      <div class="tema-card">
-        <div class="tema-num">TEMA 5</div>
-        <h3 class="tema-title">Ecuaciones</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('5.1. Ecuaciones lineales en una variable', `
+                    </li>
+                </ul>
+            </div>
+            <!-- TEMA 5 Ecuaciones -->
+            <div class="tema-card">
+                <div class="tema-num">TEMA 5</div>
+                <h3 class="tema-title">Ecuaciones</h3>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('5.1. Ecuaciones lineales en una variable', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender el concepto, métodos de resolución y aplicaciones de las ecuaciones lineales en una variable.</p>
               
@@ -3140,9 +3141,9 @@
                   <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
                 </ul>
               `)">5.1. Ecuaciones lineales en una variable <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('5.2. Ecuaciones lineales en dos o más variables', `
+                    <li onclick="abrirModal('5.2. Ecuaciones lineales en dos o más variables', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender el concepto, métodos de resolución y aplicaciones de las ecuaciones lineales en dos o más variables, incluyendo sistemas de ecuaciones.</p>
               
@@ -3215,9 +3216,9 @@
                   <li>Zitarelli, D. E. (2020). <em>Álgebra lineal: Teoría y aplicaciones</em>. Reverte.</li>
                 </ul>
               `)">5.2. Ecuaciones lineales en dos o más variables <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('5.3. Ecuaciones cuadráticas', `
+                    <li onclick="abrirModal('5.3. Ecuaciones cuadráticas', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender el concepto, métodos de resolución, propiedades y aplicaciones de las ecuaciones cuadráticas o de segundo grado.</p>
               
@@ -3290,9 +3291,9 @@
                   <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
                 </ul>
               `)">5.3. Ecuaciones cuadráticas <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('5.4. Fórmula General', `
+                    <li onclick="abrirModal('5.4. Fórmula General', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender la deducción, aplicación e interpretación de la fórmula general para resolver ecuaciones cuadráticas, incluyendo el análisis del discriminante.</p>
               
@@ -3382,15 +3383,15 @@
                   <li>Singh, S. (2013). <em>History of Mathematics: From Ancient to Modern Times</em>. Pearson.</li>
                 </ul>
               `)">5.4. Fórmula General <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
-      <!-- TEMA 6 Matemáticas Financieras -->
-      <div class="tema-card">
-        <div class="tema-num">TEMA 6</div>
-        <h3 class="tema-title">Matemáticas Financieras</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('6.1. Interés y descuento', `
+                    </li>
+                </ul>
+            </div>
+            <!-- TEMA 6 Matemáticas Financieras -->
+            <div class="tema-card">
+                <div class="tema-num">TEMA 6</div>
+                <h3 class="tema-title">Matemáticas Financieras</h3>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('6.1. Interés y descuento', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Comprender los conceptos de interés simple, compuesto y descuento, sus fórmulas, aplicaciones y diferencias en contextos financieros y comerciales.</p>
               
@@ -3486,9 +3487,9 @@
                   <li>Blank, L. T., & Tarquin, A. J. (2018). <em>Ingeniería económica</em>. McGraw-Hill.</li>
                 </ul>
               `)"><b>6.1. Interés y descuento</b> <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.1.1. Funciones de acumulación', `
+                    <li onclick="abrirModal('6.1.1. Funciones de acumulación', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el concepto, propiedades y aplicaciones de las funciones de acumulación en matemáticas financieras, con especial énfasis en el valor acumulado de inversiones a lo largo del tiempo.</p>
             
@@ -3620,9 +3621,9 @@
                 <li>Kellison, S. G. (2009). <em>The Theory of Interest</em>. McGraw-Hill.</li>
               </ul>
             `)">6.1.1. Funciones de acumulación <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.1.1.1. Modelo de interés simple', `
+                    <li onclick="abrirModal('6.1.1.1. Modelo de interés simple', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el concepto, características, fórmulas y aplicaciones del modelo de interés simple en operaciones financieras a corto plazo.</p>
             
@@ -3793,9 +3794,9 @@
                 <li>García, J. A. (2018). <em>Matemáticas financieras</em>. McGraw-Hill.</li>
               </ul>
             `)">6.1.1.1. Modelo de interés simple <span class="emoji-small">✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.1.1.2. Modelo de interés compuesto', `
+                    <li onclick="abrirModal('6.1.1.2. Modelo de interés compuesto', `
 <hr><br>
 
 <!-- ============================
@@ -3982,11 +3983,11 @@ ctx.stroke();
 </ul>
 
 `);">6.1.1.2. Modelo de interés compuesto <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-        <br>
-        <ul class="tema-list">
-          <li onclick="abrirModal('6.2. Tasa de interés nominal', `
+                    </li>
+                </ul>
+                <br>
+                <ul class="tema-list">
+                    <li onclick="abrirModal('6.2. Tasa de interés nominal', `
   <hr><br>
   <div class=math-module>
     
@@ -4388,9 +4389,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.2. Tasa de interés nominal</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.3. Valor Presente', `
+                    <li onclick="abrirModal('6.3. Valor Presente', `
   <hr><br>
   <div class=math-module>
     
@@ -4824,9 +4825,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.3. Valor Presente</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.4. Tasa de descuento', `
+                    <li onclick="abrirModal('6.4. Tasa de descuento', `
   <hr><br>
   <div class=math-module>
     
@@ -5231,9 +5232,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.4. Tasa de descuento</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.5. Fuerza de interés', `
+                    <li onclick="abrirModal('6.5. Fuerza de interés', `
   <hr><br>
   <div class=math-module>
     
@@ -5653,9 +5654,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.5. Fuerza de interés</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.6. Relación entre tasas de interés y de descuento', `
+                    <li onclick="abrirModal('6.6. Relación entre tasas de interés y de descuento', `
   <hr><br>
   <div class=math-module>
     
@@ -6063,9 +6064,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.6. Relación entre tasas de interés y de descuento</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.7. Tasas variables de interés', `
+                    <li onclick="abrirModal('6.7. Tasas variables de interés', `
   <hr><br>
   <div class=math-module>
     
@@ -6485,9 +6486,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.7. Tasas variables de interés</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.8. Tasa real de interés', `
+                    <li onclick="abrirModal('6.8. Tasa real de interés', `
   <hr><br>
   <div class=math-module>
     
@@ -6871,9 +6872,9 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.8. Tasa real de interés</b> <span class=emoji-small>✅</span>
-          </li>
+                    </li>
 
-          <li onclick="abrirModal('6.9. Ecuaciones de valor', `
+                    <li onclick="abrirModal('6.9. Ecuaciones de valor', `
   <hr><br>
   <div class=math-module>
     
@@ -7256,11 +7257,15 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.9. Ecuaciones de valor</b> <span class=emoji-small>✅</span>
-          </li>
-          <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor</li>
-        </ul><br>
-        <ul class="tema-list">
-          <li onclick="abrirModal('6.11. Anualidades', `
+                    </li>
+                    <li>6.10. Ejemplos prácticos del uso de tasas de interés, tasas de descuento y ecuación de valor
+                    </li>
+                </ul><br>
+                <div class="tema-card">
+                    <div class="tema-num">TEMA 6-D</div>
+                    <h3 class="tema-title">Matemáticas Financieras</h3>
+                    <ul class="tema-list">
+                        <li onclick="abrirModal('6.11. Anualidades', `
   <hr><br>
   <div class=math-module>
     
@@ -7654,212 +7659,220 @@ ctx.stroke();
     </div>
   </div>
   `);"><b>6.11. Anualidades</b> <span class=emoji-small>✅</span>
-          </li>
-          <li>6.11.1. Definición y tipos de anualidades</li>
-          <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
-          <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
-          <li>6.11.4. Perpetuidades</li>
-          <li>6.11.5. Determinación de las variables de una anualidad</li>
-          <li>6.11.6. Anualidades con tasas variables</li>
-          <li>6.11.7. Anualidades anticipadas y diferidas</li>
-          <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa (diferente
-            frecuencia)</li>
-          <li>6.11.9. Anualidades continuas</li>
-          <li>6.11.10. Anualidades crecientes y decrecientes</li>
-        </ul><br>
-        <ul class="tema-list">
-          <li>6.12. Amortización</li>
-          <li>6.12.1 Diferentes esquemas de amortización</li>
-          <ul>
-            <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
-            <li>6.12.1.2. Amortización de una anualidad con n pagos iguales y uno desigual</li>
-            <li>6.12.1.3. Amortización con pagos iguales de capital</li>
-            <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
-          </ul>
-          <li>6.12.2 Construcción de tablas de amortización</li>
-          <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
-          <li>6.13. Depreciación</li>
-          <ul>
-            <li>6.13.1 Definición</li>
-            <li>6.13.2. Métodos de Depreciación</li>
-            <ul>
-              <li>6.13.2.1. Línea recta</li>
-              <li>6.13.2.2. Porcentaje constante</li>
-              <li>6.13.2.3. Suma de dígitos</li>
-              <li>6.13.2.4. Interés sobre la inversión</li>
-              <li>6.13.2.5. Interés sobre la inversión acelerada</li>
-            </ul>
-          </ul>
-        </ul><br>
-      </div>
-    </div>
-  </section>
-  <!-- ACTIVIDADES -->
-  <section class="actividades">
-    <h2 class="section-title">Actividades de Aprendizaje</h2>
+                        </li>
+                    </ul>
 
-    <div>
-      <h3 class="actividades-subtitle">Bajo la conducción del docente</h3>
-      <div class="cards-grid">
-
-        <a href="/ura/comun/ejercicios2.html" target="_blank" rel="noopener noreferrer" class="card-link">
-          <div class="card">
-            <h3><span class="emoji-small">✅</span> Resolver ejercicios</h3>
-            <p>50 ejercicios de aplicación de las matemáticas en los negocios</p>
-            <div class="numerote">50 ejercicios</div>
-          </div>
-        </a>
-
-
-        <div class="card">
-          <h3><span class="emoji-small">✅</span> Uso de software</h3>
-          <p>Uso de software de aplicación matemática en dispositivos móviles para negocios.</p>
-
-          <div class="loguito">
-            <a href="https://www.geogebra.org/classic?lang=es" target="_blank" rel="noopener noreferrer">
-              <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" alt="GeoGebra">
-            </a>
-          </div>
-
-          <div class="loguito">
-            <a href="https://www.desmos.com/calculator?lang=es" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png" alt="Desmos">
-            </a>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <h3> <span class="emoji-small">✅</span> Leer</h3>
-          <p>Lecturas comentadas sobre las matemáticas y su aplicación en los negocios.</p>
-          <div class="loguito librito">
-            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank"
-              rel="noopener noreferrer">
-              <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg"
-                alt="storytelling">
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top: 70px;">
-        <h3 class="actividades-subtitle">De manera independiente</h3>
-        <div class="cards-grid">
-          <div class="card">
-            <h3>Investigar</h3>
-            <p>Investigaciones bibliográficas, hemerográficas y digitales sobre la asignatura de matemáticas en los
-              negocios</p>
-          </div>
-          <div class="card">
-            <h3>Informes</h3>
-            <p>Elaboración de informes sobre lecturas recomendadas sobre matemáticas</p>
-          </div>
-          <div class="card">
-            <h3>Practicar</h3>
-          </div>
-
-          <a href="/ura/comun/formulas.html" target="_self" rel="noopener noreferrer" class="card-link">
-            <div class="card">
-              <h3><span class="emoji-small">✅</span> Fórmulas</h3>
-              <p>Resuelve cualquier cantidad de series de problemas matemáticos con ayuda de estas fórmulas aplicadas en
-                los negocios</p>
-              <div class="loguito librito">
-
-                <img
-                  src="https://media.istockphoto.com/id/1370390878/es/vector/conjunto-de-iconos-de-s%C3%ADmbolos-matem%C3%A1ticos-dise%C3%B1o-de-garabatos-de-asignaturas-de-%C3%A1lgebra-o.jpg?s=612x612&w=0&k=20&c=3tQZBPcbxXC5caJbb0FP9uNc5ZNZrybbgi4pay0kLTw="
-                  alt="formulas">
-              </div>
+                    <li>6.11.1. Definición y tipos de anualidades</li>
+                    <li>6.11.2. Valuación de anualidades vencidas en cualquier fecha</li>
+                    <li>6.11.3. Valuación de anualidades anticipadas en cualquier fecha</li>
+                    <li>6.11.4. Perpetuidades</li>
+                    </ul>
+                </div>
+                <ul class="tema-list" <li>6.11.5. Determinación de las variables de una anualidad</li>
+                    <li>6.11.6. Anualidades con tasas variables</li>
+                    <li>6.11.7. Anualidades anticipadas y diferidas</li>
+                    <li>6.11.8. Anualidades con periodicidad de pago diferente a la convertibilidad de la tasa
+                        (diferente
+                        frecuencia)</li>
+                    <li>6.11.9. Anualidades continuas</li>
+                    <li>6.11.10. Anualidades crecientes y decrecientes</li>
+                </ul><br>
+                <ul class="tema-list">
+                    <li>6.12. Amortización</li>
+                    <li>6.12.1 Diferentes esquemas de amortización</li>
+                    <ul>
+                        <li>6.12.1.1. Amortización de una anualidad con n pagos iguales</li>
+                        <li>6.12.1.2. Amortización de una anualidad con n pagos iguales y uno desigual</li>
+                        <li>6.12.1.3. Amortización con pagos iguales de capital</li>
+                        <li>6.12.1.4. Fondo de amortización (sinking fund)</li>
+                    </ul>
+                    <li>6.12.2 Construcción de tablas de amortización</li>
+                    <li>6.12.3. Efectos de variaciones en la tasa de interés y en el monto de los pagos</li>
+                    <li>6.13. Depreciación</li>
+                    <ul>
+                        <li>6.13.1 Definición</li>
+                        <li>6.13.2. Métodos de Depreciación</li>
+                        <ul>
+                            <li>6.13.2.1. Línea recta</li>
+                            <li>6.13.2.2. Porcentaje constante</li>
+                            <li>6.13.2.3. Suma de dígitos</li>
+                            <li>6.13.2.4. Interés sobre la inversión</li>
+                            <li>6.13.2.5. Interés sobre la inversión acelerada</li>
+                        </ul>
+                    </ul>
+                </ul><br>
             </div>
-          </a>
+        </div>
+    </section>
+    <!-- ACTIVIDADES -->
+    <section class="actividades">
+        <h2 class="section-title">Actividades de Aprendizaje</h2>
 
-          <a href="/ura/comun/trabajo_final.html" target="_blank" rel="noopener noreferrer" class="card-link">
-            <div class="card">
-              <h3><span class="emoji-small">✅</span> Trabajo final</h3>
-              <p>Elaboración de trabajo final sobre la relación que tienen las matemáticas y los negocios además de su
-                importancia en los tiempos actuales</p>
-              <div class="loguito librito">
+        <div>
+            <h3 class="actividades-subtitle">Bajo la conducción del docente</h3>
+            <div class="cards-grid">
 
-                <img src="https://isic.es/wp-content/uploads/2021/01/disfrutar-el-trabajo-1024x414.jpg"
-                  alt="trabajo_final">
-              </div>
+                <a href="/ura/comun/ejercicios2.html" target="_blank" rel="noopener noreferrer" class="card-link">
+                    <div class="card">
+                        <h3><span class="emoji-small">✅</span> Resolver ejercicios</h3>
+                        <p>50 ejercicios de aplicación de las matemáticas en los negocios</p>
+                        <div class="numerote">50 ejercicios</div>
+                    </div>
+                </a>
+
+
+                <div class="card">
+                    <h3><span class="emoji-small">✅</span> Uso de software</h3>
+                    <p>Uso de software de aplicación matemática en dispositivos móviles para negocios.</p>
+
+                    <div class="loguito">
+                        <a href="https://www.geogebra.org/classic?lang=es" target="_blank" rel="noopener noreferrer">
+                            <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" alt="GeoGebra">
+                        </a>
+                    </div>
+
+                    <div class="loguito">
+                        <a href="https://www.desmos.com/calculator?lang=es" target="_blank" rel="noopener noreferrer">
+                            <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png"
+                                alt="Desmos">
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3> <span class="emoji-small">✅</span> Leer</h3>
+                    <p>Lecturas comentadas sobre las matemáticas y su aplicación en los negocios.</p>
+                    <div class="loguito librito">
+                        <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">
+                            <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg"
+                                alt="storytelling">
+                        </a>
+                    </div>
+                </div>
             </div>
-          </a>
 
+            <div style="margin-top: 70px;">
+                <h3 class="actividades-subtitle">De manera independiente</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Investigar</h3>
+                        <p>Investigaciones bibliográficas, hemerográficas y digitales sobre la asignatura de matemáticas
+                            en los
+                            negocios</p>
+                    </div>
+                    <div class="card">
+                        <h3>Informes</h3>
+                        <p>Elaboración de informes sobre lecturas recomendadas sobre matemáticas</p>
+                    </div>
+                    <div class="card">
+                        <h3>Practicar</h3>
+                    </div>
+
+                    <a href="/ura/comun/formulas.html" target="_self" rel="noopener noreferrer" class="card-link">
+                        <div class="card">
+                            <h3><span class="emoji-small">✅</span> Fórmulas</h3>
+                            <p>Resuelve cualquier cantidad de series de problemas matemáticos con ayuda de estas
+                                fórmulas aplicadas en
+                                los negocios</p>
+                            <div class="loguito librito">
+
+                                <img src="https://media.istockphoto.com/id/1370390878/es/vector/conjunto-de-iconos-de-s%C3%ADmbolos-matem%C3%A1ticos-dise%C3%B1o-de-garabatos-de-asignaturas-de-%C3%A1lgebra-o.jpg?s=612x612&w=0&k=20&c=3tQZBPcbxXC5caJbb0FP9uNc5ZNZrybbgi4pay0kLTw="
+                                    alt="formulas">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/ura/comun/trabajo_final.html" target="_blank" rel="noopener noreferrer" class="card-link">
+                        <div class="card">
+                            <h3><span class="emoji-small">✅</span> Trabajo final</h3>
+                            <p>Elaboración de trabajo final sobre la relación que tienen las matemáticas y los negocios
+                                además de su
+                                importancia en los tiempos actuales</p>
+                            <div class="loguito librito">
+
+                                <img src="https://isic.es/wp-content/uploads/2021/01/disfrutar-el-trabajo-1024x414.jpg"
+                                    alt="trabajo_final">
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+    </section>
+    <!-- EVALUACION -->
+    <section class="container">
+        <h2 class="section-title">Evaluación</h2>
+        <div class="evaluacion-grid">
+            <div class="evaluacion-item tema-card">
+                <div class="evaluacion-porcentaje">20%</div>
+                <p class="evaluacion-desc">Dos exámenes parciales</p>
+                <div class="btn">
+                    <!-- <a href="ppmat-adm.html" target="_blank">🔒Primer Parcial</a> -->
+                    <a href="#" target="">🔒Primer Parcial</a>
+                </div>
+                <div class="tema-list">
+                    <!-- <a href="spmat-adm.html" target="_blank">🔒Segundo Parcial</a> -->
+                    <a href="spmat-adm.html" target="_blank">🔓Segundo Parcial</a>
+                </div>
+            </div>
+            <div class="evaluacion-item tema-card">
+                <div class="evaluacion-porcentaje">40%</div>
+                <p class="evaluacion-desc">Actividades bajo conducción de un académico</p>
+            </div>
+            <div class="evaluacion-item tema-card">
+                <div class="evaluacion-porcentaje">30%</div>
+                <p class="evaluacion-desc">Actividades independientes</p>
+            </div>
+            <div class="evaluacion-item tema-card">
+                <div class="evaluacion-porcentaje">10%</div>
+                <p class="evaluacion-desc">Examen final</p>
+            </div>
         </div>
-      </div>
-  </section>
-  <!-- EVALUACION -->
-  <section class="container">
-    <h2 class="section-title">Evaluación</h2>
-    <div class="evaluacion-grid">
-      <div class="evaluacion-item tema-card">
-        <div class="evaluacion-porcentaje">20%</div>
-        <p class="evaluacion-desc">Dos exámenes parciales</p>
-        <div class="btn">
-          <!-- <a href="ppmat-adm.html" target="_blank">🔒Primer Parcial</a> -->
-          <a href="#" target="">🔒Primer Parcial</a>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-info" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div id="modal-text"></div>
         </div>
-        <div class="tema-list">
-          <!-- <a href="spmat-adm.html" target="_blank">🔒Segundo Parcial</a> -->
-          <a href="spmat-adm.html" target="_blank">🔓Segundo Parcial</a>
-        </div>
-      </div>
-      <div class="evaluacion-item tema-card">
-        <div class="evaluacion-porcentaje">40%</div>
-        <p class="evaluacion-desc">Actividades bajo conducción de un académico</p>
-      </div>
-      <div class="evaluacion-item tema-card">
-        <div class="evaluacion-porcentaje">30%</div>
-        <p class="evaluacion-desc">Actividades independientes</p>
-      </div>
-      <div class="evaluacion-item tema-card">
-        <div class="evaluacion-porcentaje">10%</div>
-        <p class="evaluacion-desc">Examen final</p>
-      </div>
     </div>
-  </section>
 
-  <!-- Modal -->
-  <div id="modal-info" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h3 id="modal-title"></h3>
-      <div id="modal-text"></div>
-    </div>
-  </div>
+    <footer>
+        © 2025 Universidad URA – Asignatura
+        <a href="/ura/mat_adm.html" class="no-style-link materias " target="_self">Matemáticas Para la
+            Administración</a> y
+        <a href="/ura/mat_neg1.html" class="no-style-link materias" target="_self">Matemáticas para los Negocios.</a>
+    </footer>
 
-  <footer>
-    © 2025 Universidad URA – Asignatura
-    <a href="/ura/mat_adm.html" class="no-style-link materias " target="_self">Matemáticas Para la
-      Administración</a> y
-    <a href="/ura/mat_neg1.html" class="no-style-link materias" target="_self">Matemáticas para los Negocios.</a>
-  </footer>
+    <script>
+        const modal = document.getElementById('modal-info');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalClose = document.querySelector('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
 
-  <script>
-    const modal = document.getElementById('modal-info');
-    const modalTitle = document.getElementById('modal-title');
-    const modalText = document.getElementById('modal-text');
-    const modalClose = document.querySelector('.modal-close');
-    const modalOverlay = document.querySelector('.modal-overlay');
+        // Función para abrir modal con HTML
+        function abrirModal(titulo, html) {
+            modalTitle.textContent = titulo;
+            modalText.innerHTML = html;
+            modal.classList.add('show');
+            modal.style.display = 'block';
+        }
 
-    // Función para abrir modal con HTML
-    function abrirModal(titulo, html) {
-      modalTitle.textContent = titulo;
-      modalText.innerHTML = html;
-      modal.classList.add('show');
-      modal.style.display = 'block';
-    }
+        // Función para cerrar modal
+        function cerrarModal() {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300); // espera la transición
+        }
 
-    // Función para cerrar modal
-    function cerrarModal() {
-      modal.classList.remove('show');
-      setTimeout(() => modal.style.display = 'none', 300); // espera la transición
-    }
-
-    modalClose.addEventListener('click', cerrarModal);
-    modalOverlay.addEventListener('click', cerrarModal);
-  </script>
+        modalClose.addEventListener('click', cerrarModal);
+        modalOverlay.addEventListener('click', cerrarModal);
+    </script>
 </body>
 
 </html>
