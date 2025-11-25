@@ -3989,1673 +3989,1673 @@ ctx.stroke();
       <div class="tema-card">
         <div class="tema-num">TEMA 6-B</div>
         <h3 class="tema-title">Matemáticas Financieras</h3>
-        <ul class="tema-list>"></ul>
-        <li onclick="abrirModal('6.2. Tasa de interés nominal', `
+        <ul class="tema-list>">
+          <li onclick="abrirModal('6.2. Tasa de interés nominal', `
+    <hr><br>
+    <div class=math-module>
+      
+      <!-- Tiempo estimado -->
+      <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+        <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
+        <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+        <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
+        <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
+        </svg>
+        <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
+      </div>
+      
+      <!-- Objetivo -->
+      <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+        <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+        <span><strong>Objetivo:</strong> Comprender el concepto de tasa de interés nominal como la tasa declarada sin considerar la frecuencia de capitalización, dominar la conversión entre tasas nominales y efectivas, aprender a calcular tasas equivalentes para diferentes periodos de capitalización, y aplicar estos conocimientos en la evaluación de productos financieros como préstamos, inversiones y instrumentos de ahorro.</span>
+      </div>
+      
+      <!-- Idea principal -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+        <p>La tasa de interés nominal es la tasa de interés que se declara en los contratos financieros sin considerar el efecto de la capitalización dentro del periodo. Representa la tasa base sobre la cual se calculan los intereses, pero no refleja el rendimiento real debido a que no incorpora la frecuencia con la que se capitalizan los intereses. La relación fundamental entre la tasa nominal (j) y la tasa efectiva (i) está dada por la fórmula i = (1 + j/m)^m - 1, donde m es el número de periodos de capitalización por año. Comprender esta distinción es crucial para comparar adecuadamente diferentes opciones de inversión o financiamiento.</p>
+      </div>
+      
+      <!-- Ejercicio 1: Conceptos fundamentales y tipos de tasas -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre tasas nominales y efectivas</h4>
+        <p>Análisis de las características y diferencias entre los diferentes tipos de tasas:</p>
+        <table class=math-table>
+          <thead>
+            <tr>
+              <th>Tipo de Tasa</th>
+              <th>Definición</th>
+              <th>Notación</th>
+              <th>Fórmula de Conversión</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tasa Nominal</td>
+              <td>Tasa declarada sin considerar capitalización</td>
+              <td>j</td>
+              <td>Base para cálculo de intereses</td>
+              <td>12% anual capitalizable mensualmente</td>
+            </tr>
+            <tr>
+              <td>Tasa Periódica</td>
+              <td>Tasa por periodo de capitalización</td>
+              <td>j/m</td>
+              <td>Tasa nominal ÷ frecuencia</td>
+              <td>12%/12 = 1% mensual</td>
+            </tr>
+            <tr>
+              <td>Tasa Efectiva</td>
+              <td>Tasa real considerando capitalización</td>
+              <td>i</td>
+              <td>i = (1 + j/m)^m - 1</td>
+              <td>(1.01)^12 - 1 = 12.68%</td>
+            </tr>
+            <tr>
+              <td>Tasa Equivalente</td>
+              <td>Tasas con diferente frecuencia pero mismo efecto</td>
+              <td>i₁, i₂</td>
+              <td>(1 + i₁) = (1 + i₂)^(n₂/n₁)</td>
+              <td>12% anual = 0.9489% mensual</td>
+            </tr>
+            <tr>
+              <td>Proporcional</td>
+              <td>División simple de la tasa nominal</td>
+              <td>j/m</td>
+              <td>Sin capitalización</td>
+              <td>12% anual = 1% mensual proporcional</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa nominal siempre es menor o igual que la tasa efectiva equivalente. La diferencia aumenta con la frecuencia de capitalización y con el nivel de la tasa. Las tasas proporcionales solo son válidas para interés simple, no para compuesto.</p>
+      </div>
+        
+      <!-- Gráfica 1: Proceso de conversión de tasa nominal a efectiva -->
+      <div class=graph-container style=margin-bottom:20px;>
+        <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Conversión de Tasa Nominal a Efectiva</h4>
+        <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+          
+          <!-- Título -->
+          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Proceso de Conversión: Nominal → Efectiva</strong></text>
+          <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal: 12% anual capitalizable mensualmente</text>
+          
+          <!-- Tasa Nominal -->
+          <g transform=translate(100,80)>
+            <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+            <text x=0 y=20 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Nominal</strong></text>
+            <text x=0 y=35 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>j = 12% anual</text>
+            <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Capitalizable mensualmente</text>
+          </g>
+          
+          <!-- Flecha de conversión 1 -->
+          <path d='M 200,110 L 200,140' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=220 y=125 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Paso 1: Dividir entre frecuencia</text>
+          
+          <!-- Tasa Periódica -->
+          <g transform=translate(100,150)>
+            <rect x=-50 y=0 width=100 height=50 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+            <text x=0 y=15 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Tasa Periódica</strong></text>
+            <text x=0 y=30 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>j/m = 12% ÷ 12</text>
+            <text x=0 y=42 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>= 1% mensual</text>
+          </g>
+          
+          <!-- Flecha de conversión 2 -->
+          <path d='M 200,200 L 200,230' stroke=var(--apple-vibrant-green) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=220 y=215 text-anchor=middle font-size=11 fill=var(--apple-vibrant-green)>Paso 2: Aplicar capitalización</text>
+          
+          <!-- Tasa Efectiva -->
+          <g transform=translate(100,240)>
+            <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2 rx=5></rect>
+            <text x=0 y=20 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Efectiva</strong></text>
+            <text x=0 y=35 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>i = (1.01)^12 - 1</text>
+            <text x=0 y=50 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>= 12.68% anual</text>
+          </g>
+          
+          <!-- Fórmula completa -->
+          <rect x=50 y=310 width=300 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+          <text x=200 y=325 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Fórmula General: i = (1 + j/m)<sup>m</sup> - 1</text>
+          
+          <!-- Comparación visual -->
+          <g transform=translate(250,100)>
+            <rect x=0 y=0 width=120 height=180 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+            <text x=60 y=20 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Comparación</strong></text>
+            
+            <circle cx=30 y=50 r=10 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
+            <text x=30 y=52 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>12%</text>
+            <text x=70 y=55 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Nominal</text>
+            
+            <circle cx=30 y=90 r=12 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
+            <text x=30 y=92 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>12.68%</text>
+            <text x=70 y=95 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Efectiva</text>
+            
+            <text x=60 y=120 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>Diferencia: 0.68%</text>
+            <text x=60 y=135 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Por capitalización</text>
+            <text x=60 y=145 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>mensual)</text>
+            
+            <rect x=10 y=155 width=100 height=15 fill=var(--apple-light-green) rx=3></rect>
+            <text x=60 y=165 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>¡Mayor rendimiento!</text>
+          </g>
+          
+          <!-- Definición de flechas -->
+          <defs>
+            <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
+              <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+            </marker>
+          </defs>
+          
+        </svg>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La conversión de tasa nominal a efectiva sigue un proceso de dos pasos: primero se obtiene la tasa periódica dividiendo entre la frecuencia, luego se aplica la capitalización compuesta. La tasa efectiva siempre es mayor que la nominal debido al efecto de los intereses sobre intereses.</p>
+      </div>
+      
+      <!-- Ejercicio 2: Cálculos de conversión y equivalencias -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Conversiones entre tasas nominales</h4>
+        <p>Resolución de problemas de conversión entre diferentes frecuencias de capitalización:</p>
+        <table class=math-table>
+          <thead>
+            <tr>
+              <th>Escenario</th>
+              <th>Tasa Nominal Dada</th>
+              <th>Conversión Solicitada</th>
+              <th>Procedimiento de Cálculo</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mensual a Anual</td>
+              <td>12% anual capitalizable mensualmente</td>
+              <td>Tasa efectiva anual</td>
+              <td>1. i = (1 + 0.12/12)^12 - 1<br>2. i = (1.01)^12 - 1</td>
+              <td>12.6825% anual</td>
+            </tr>
+            <tr>
+              <td>Trimestral a Anual</td>
+              <td>8% anual capitalizable trimestralmente</td>
+              <td>Tasa efectiva anual</td>
+              <td>1. i = (1 + 0.08/4)^4 - 1<br>2. i = (1.02)^4 - 1</td>
+              <td>8.2432% anual</td>
+            </tr>
+            <tr>
+              <td>Semestral a Mensual</td>
+              <td>18% anual capitalizable semestralmente</td>
+              <td>Tasa efectiva mensual</td>
+              <td>1. i<sub>sem</sub> = 18%/2 = 9%<br>2. i<sub>mens</sub> = (1.09)^(1/6) - 1</td>
+              <td>1.4481% mensual</td>
+            </tr>
+            <tr>
+              <td>Diaria a Anual</td>
+              <td>6% anual capitalizable diariamente</td>
+              <td>Tasa efectiva anual</td>
+              <td>1. i = (1 + 0.06/365)^365 - 1<br>2. i ≈ (1.000164)^365 - 1</td>
+              <td>6.1831% anual</td>
+            </tr>
+            <tr>
+              <td>Comparación múltiple</td>
+              <td>10% anual con diferentes capitalizaciones</td>
+              <td>Ranking por rendimiento</td>
+              <td>Anual: 10.0000%<br>Semestral: 10.2500%<br>Trimestral: 10.3813%<br>Mensual: 10.4713%</td>
+              <td>Mensual > Trimestral > Semestral > Anual</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A mayor frecuencia de capitalización, mayor será la tasa efectiva para una misma tasa nominal. Las diferencias son más significativas con tasas nominales más altas. La capitalización continua representa el límite máximo posible.</p>
+      </div>
+      
+      <!-- Gráfica 2: Efecto de la frecuencia de capitalización -->
+      <div class=graph-container style=margin-bottom:20px;>
+        <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Tasa Efectiva vs Frecuencia de Capitalización</h4>
+        <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+          
+          <!-- Título -->
+          <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Efecto de la Frecuencia de Capitalización</strong></text>
+          <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal del 12% anual con diferentes frecuencias</text>
+          
+          <!-- Ejes coordenados -->
+          <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+          <line x1=50 y1=250 x2=50 y2=150 stroke=var(--apple-dark-gray) stroke-width=2></line>
+          
+          <!-- Etiquetas de ejes -->
+          <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Frecuencia de Capitalización</text>
+          <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,200)'>Tasa Efectiva Anual (%)</text>
+          
+          <!-- Marcas del eje X (frecuencia) -->
+          <g transform=translate(0,0)>
+            <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Anual</text>
+            
+            <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Semestral</text>
+            
+            <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Trimestral</text>
+            
+            <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mensual</text>
+            
+            <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Diaria</text>
+          </g>
+          
+          <!-- Marcas del eje Y (tasa efectiva) -->
+          <g transform=translate(0,0)>
+            <line x1=45 y1=240 x2=55 y2=240 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=243 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.0%</text>
+            
+            <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.2%</text>
+            
+            <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.4%</text>
+            
+            <line x1=45 y1=180 x2=55 y2=180 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=183 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.6%</text>
+            
+            <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+            <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.8%</text>
+          </g>
+          
+          <!-- Puntos de datos -->
+          <circle cx=100 cy=240 r=4 fill=var(--apple-vibrant-blue)></circle>
+          <text x=100 y=235 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.000%</text>
+          
+          <circle cx=150 cy=230 r=4 fill=var(--apple-vibrant-blue)></circle>
+          <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.360%</text>
+          
+          <circle cx=200 cy=220 r=4 fill=var(--apple-vibrant-blue)></circle>
+          <text x=200 y=215 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.551%</text>
+          
+          <circle cx=250 cy=210 r=4 fill=var(--apple-vibrant-blue)></circle>
+          <text x=250 y=205 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.683%</text>
+          
+          <circle cx=300 cy=205 r=4 fill=var(--apple-vibrant-blue)></circle>
+          <text x=300 y=200 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.747%</text>
+          
+          <!-- Línea de conexión -->
+          <path d='M 100,240 
+                  L 150,230 
+                  L 200,220 
+                  L 250,210 
+                  L 300,205' 
+                stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+          
+          <!-- Límite de capitalización continua -->
+          <line x1=50 y1=200 x2=350 y2=200 stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></line>
+          <text x=360 y=200 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Continua: 12.750%</text>
+          
+          <!-- Área de mejora -->
+          <path d='M 100,240 L 150,230 L 200,220 L 250,210 L 300,205 L 300,200 L 250,200 L 200,200 L 150,200 L 100,200 Z' 
+                fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
+          <text x=200 y=190 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Beneficio por mayor frecuencia</text>
+          
+          <!-- Leyenda y fórmulas -->
+          <rect x=200 y=100 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+          <text x=290 y=115 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmula General</strong></text>
+          
+          <text x=290 y=130 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>i = (1 + j/m)<sup>m</sup> - 1</text>
+          <text x=290 y=145 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>j = 12% nominal anual</text>
+          <text x=290 y=155 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>m = frecuencia anual</text>
+          <text x=290 y=165 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>i = tasa efectiva anual</text>
+          
+          <!-- Ejemplo numérico -->
+          <rect x=50 y=290 width=300 height=50 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+          <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡La frecuencia importa!</strong></text>
+          <text x=200 y=320 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>De anual a mensual: +0.683% de rendimiento</text>
+          <text x=200 y=335 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>En $10,000: $68.30 adicionales por año</text>
+          
+        </svg>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa efectiva aumenta con la frecuencia de capitalización, pero los incrementos son cada vez menores (rendimientos decrecientes). El mayor salto ocurre al pasar de capitalización anual a semestral, mientras que pasar de mensual a diaria produce mejoras marginales. El límite teórico es la capitalización continua.</p>
+      </div>
+      
+      <!-- Ejercicio 3: Aplicaciones en productos financieros -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Tasas nominales en instrumentos financieros</h4>
+        <p>Análisis de cómo se utilizan las tasas nominales en diferentes productos financieros:</p>
+        <table class=math-table>
+          <thead>
+            <tr>
+              <th>Producto Financiero</th>
+              <th>Tasa Nominal Típica</th>
+              <th>Frecuencia de Capitalización</th>
+              <th>Tasa Efectiva Real</th>
+              <th>Consideraciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tarjetas de Crédito</td>
+              <td>30-50% anual</td>
+              <td>Mensual</td>
+              <td>34.5-61.0% anual</td>
+              <td>Altísimo costo real del crédito</td>
+            </tr>
+            <tr>
+              <td>Hipotecas</td>
+              <td>4-8% anual</td>
+              <td>Mensual</td>
+              <td>4.07-8.30% anual</td>
+              <td>Diferencia pequeña pero significativa</td>
+            </tr>
+            <tr>
+              <td>Certificados de Depósito</td>
+              <td>2-5% anual</td>
+              <td>Trimestral o mensual</td>
+              <td>2.02-5.12% anual</td>
+              <td>Buscar mayor frecuencia para mejor rendimiento</td>
+            </tr>
+            <tr>
+              <td>Préstamos Personales</td>
+              <td>15-25% anual</td>
+              <td>Mensual</td>
+              <td>16.08-28.24% anual</td>
+              <td>Costo real significativamente mayor</td>
+            </tr>
+            <tr>
+              <td>Cuentas de Ahorro</td>
+              <td>0.5-2% anual</td>
+              <td>Diaria o mensual</td>
+              <td>0.50-2.02% anual</td>
+              <td>Poca diferencia por tasas bajas</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los productos de crédito (tarjetas, préstamos) suelen usar capitalización mensual, lo que incrementa significativamente el costo real. Para inversiones, conviene buscar mayor frecuencia de capitalización. Siempre es esencial calcular la tasa efectiva para comparar productos.</p>
+      </div>
+      
+      <!-- Aplicaciones reales -->
+      <div class=content-section style=margin-bottom:20px;>
+        <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+        <ul style=padding-left:18px;line-height:1.6;>
+          <li><strong>Comparación de productos de crédito:</strong> Conversión de tasas nominales a efectivas para evaluar el costo real de tarjetas de crédito y préstamos.</li>
+          <li><strong>Selección de inversiones:</strong> Análisis de certificados de depósito y cuentas de ahorro con diferentes frecuencias de capitalización.</li>
+          <strong>Evaluación de hipotecas:</strong> Cálculo de la tasa efectiva real de préstamos hipotecarios para comparar ofertas.</li>
+          <li><strong>Planificación financiera:</strong> Cálculo preciso de rendimientos esperados considerando la frecuencia de capitalización.</li>
+          <li><strong>Regulación financiera:</strong> Las autoridades exigen divulgar tasas efectivas para transparencia con los consumidores.</li>
+          <li><strong>Negociación de condiciones:</strong> Uso de tasas equivalentes para negociar mejores condiciones en productos financieros.</li>
+          <li><strong>Análisis de bonos:</strong> Cálculo de rendimiento al vencimiento considerando la frecuencia de pago de cupones.</li>
+          <li><strong>Gestión de deuda:</strong> Evaluación de estrategias de pago considerando el costo real del financiamiento.</li>
+        </ul>
+      </div>
+      
+      <!-- Bibliografía -->
+      <div class=bibliography-section style=margin-top:20px;>
+        <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+        <ul style=padding-left:18px;line-height:1.5;>
+          <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+          <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+          <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+          <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+          <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+          <li>Khan Academy: Compound interest. www.khanacademy.org</li>
+        </ul>
+    `);"><b>6.2. Tasa de interés nominal</b> <span class=emoji-small>✅</span>
+          </li>
+
+          <li onclick="abrirModal('6.3. Valor Presente', `
   <hr><br>
   <div class=math-module>
-    
-    <!-- Tiempo estimado -->
-    <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+
+  <!-- Tiempo estimado -->
+  <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 20 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>20 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 20 minutos</span>
+  </div>
+
+  <!-- Objetivo -->
+  <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de valor presente como el valor actual de flujos de efectivo futuros, dominar las técnicas de descuento para calcular valores presentes, aprender a aplicar factores de descuento en diferentes contextos, y utilizar estas herramientas en la evaluación de inversiones, préstamos y decisiones financieras.</span>
+  </div>
+
+  <!-- Idea principal -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>El valor presente (VP) es el valor actual de una cantidad de dinero que se recibirá o pagará en el futuro, descontado a una tasa de interés específica que refleja el costo de oportunidad del capital. Representa el principio fundamental de que el dinero disponible hoy vale más que la misma cantidad en el futuro debido a su capacidad potencial de generar ingresos. El cálculo del valor presente permite comparar flujos de efectivo en diferentes momentos temporales, facilitando la toma de decisiones financieras racionales sobre inversiones, préstamos y otros compromisos financieros.</p>
+  </div>
+
+  <!-- Ejercicio 1: Conceptos fundamentales y fórmulas -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Fundamentos del valor presente</h4>
+      <p>Análisis de los conceptos básicos y fórmulas fundamentales:</p>
+      <table class=math-table>
+      <thead>
+          <tr>
+          <th>Concepto</th>
+          <th>Definición</th>
+          <th>Fórmula</th>
+          <th>Variables</th>
+          <th>Ejemplo</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>Valor Presente Simple</td>
+          <td>Valor actual de un pago único futuro</td>
+          <td>VP = VF / (1 + i)ⁿ</td>
+          <td>VF=Valor futuro, i=tasa, n=periodos</td>
+          <td>VF=$1,210, i=10%, n=2 → VP=$1,000</td>
+          </tr>
+          <tr>
+          <td>Factor de Descuento</td>
+          <td>Multiplicador para calcular VP</td>
+          <td>FD = 1 / (1 + i)ⁿ</td>
+          <td>También llamado factor de actualización</td>
+          <td>i=10%, n=2 → FD=0.8264</td>
+          </tr>
+          <tr>
+          <td>Tasa de Descuento</td>
+          <td>Tasa usada para calcular VP</td>
+          <td>i en VP = VF/(1+i)ⁿ</td>
+          <td>Refleja costo de oportunidad</td>
+          <td>10%, 15%, 20% según riesgo</td>
+          </tr>
+          <tr>
+          <td>Valor Presente Neto</td>
+          <td>VP de flujos menos inversión inicial</td>
+          <td>VPN = ∑[FCₜ/(1+i)ᵗ] - I₀</td>
+          <td>FC=Flujo de caja, I=Inversión</td>
+          <td>Evaluación de proyectos</td>
+          </tr>
+          <tr>
+          <td>Perpetuidad</td>
+          <td>Serie infinita de pagos iguales</td>
+          <td>VP = A / i</td>
+          <td>A=Pago periódico constante</td>
+          <td>A=$100, i=10% → VP=$1,000</td>
+          </tr>
+      </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente siempre es menor o igual al valor futuro debido al descuento. El factor de descuento disminuye exponencialmente con el tiempo y la tasa, reflejando que los flujos más lejanos valen menos en términos presentes.</p>
+  </div>
+
+  <!-- Gráfica 1: Proceso de descuento de valor futuro a valor presente -->
+  <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descuento de Valor Futuro a Valor Presente</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+      
+      <!-- Título -->
+      <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Proceso de Descuento: Valor Futuro → Valor Presente</strong></text>
+      <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa de descuento: 10% anual</text>
+      
+      <!-- Línea de tiempo -->
+      <line x1=50 y1=150 x2=350 y2=150 stroke=var(--apple-dark-gray) stroke-width=3></line>
+      
+      <!-- Valor Futuro -->
+      <g transform=translate(300,80)>
+          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+          <text x=0 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Valor Futuro</strong></text>
+          <text x=0 y=40 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>VF = $1,331</text>
+          <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Dentro de 3 años)</text>
+      </g>
+      
+      <!-- Flecha de descuento -->
+      <path d='M 250,150 L 100,150' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowLeft)></path>
+      <text x=175 y=140 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)><strong>DESCUENTO</strong></text>
+      <text x=175 y=155 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>÷ (1 + 0.10)³</text>
+      
+      <!-- Valor Presente -->
+      <g transform=translate(50,80)>
+          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Valor Presente</strong></text>
+          <text x=0 y=40 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>VP = $1,000</text>
+          <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Hoy)</text>
+      </g>
+      
+      <!-- Marcas de tiempo -->
+      <g transform=translate(0,0)>
+          <line x1=50 y1=145 x2=50 y2=155 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+          <text x=50 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Año 0</text>
+          
+          <line x1=150 y1=145 x2=150 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Año 1</text>
+          
+          <line x1=250 y1=145 x2=250 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Año 2</text>
+          
+          <line x1=350 y1=145 x2=350 y2=155 stroke=var(--apple-vibrant-green) stroke-width=2></line>
+          <text x=350 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Año 3</text>
+      </g>
+      
+      <!-- Factores de descuento intermedios -->
+      <g transform=translate(150,200)>
+          <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 1: 0.9091</text>
+      </g>
+      
+      <g transform=translate(250,200)>
+          <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 2: 0.8264</text>
+      </g>
+      
+      <g transform=translate(350,200)>
+          <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 3: 0.7513</text>
+      </g>
+      
+      <!-- Fórmula completa -->
+      <rect x=50 y=230 width=300 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=200 y=245 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Fórmula de Valor Presente</strong></text>
+      <text x=200 y=260 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>VP = VF × [1 / (1 + i)ⁿ]</text>
+      <text x=200 y=275 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>$1,000 = $1,331 × [1 / (1.10)³]</text>
+      
+      <!-- Explicación conceptual -->
+      <rect x=50 y=300 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+      <text x=200 y=315 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El dinero hoy vale más que mañana!</strong></text>
+      <text x=200 y=330 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>$1,000 hoy equivalen a $1,331 dentro de 3 años al 10% anual</text>
+      
+      <!-- Definición de flechas -->
+      <defs>
+          <marker id=arrowLeft markerWidth=10 markerHeight=7 refX=1 refY=3.5 orient=auto>
+          <polygon points='10 0, 0 3.5, 10 7' fill=var(--apple-dark-gray)></polygon>
+          </marker>
+      </defs>
+      
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El proceso de descuento es inverso al de capitalización. Mientras la capitalización lleva valores presentes a futuros multiplicando por (1+i)ⁿ, el descuento trae valores futuros al presente dividiendo por (1+i)ⁿ o multiplicando por el factor de descuento 1/(1+i)ⁿ.</p>
+  </div>
+
+  <!-- Ejercicio 2: Cálculos prácticos de valor presente -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones del valor presente</h4>
+      <p>Resolución de problemas típicos usando valor presente:</p>
+      <table class=math-table>
+      <thead>
+          <tr>
+          <th>Escenario</th>
+          <th>Datos del Problema</th>
+          <th>Procedimiento de Cálculo</th>
+          <th>Fórmula Aplicada</th>
+          <th>Resultado</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>Inversión Única</td>
+          <td>VF=$5,000, i=8%, n=5 años</td>
+          <td>1. VP = 5000 / (1.08)⁵<br>2. (1.08)⁵ = 1.4693<br>3. VP = 5000 / 1.4693</td>
+          <td>VP = VF / (1+i)ⁿ</td>
+          <td>VP = $3,402.92</td>
+          </tr>
+          <tr>
+          <td>Comparación de Ofertas</td>
+          <td>Oferta A: $10,000 hoy<br>Oferta B: $12,000 en 2 años, i=7%</td>
+          <td>1. VP oferta B = 12000/(1.07)²<br>2. VP = 12000/1.1449</td>
+          <td>VP = VF / (1+i)ⁿ</td>
+          <td>VP = $10,481.66 → Mejor B</td>
+          </tr>
+          <tr>
+          <td>Préstamo</td>
+          <td>Pago $15,000 en 3 años, i=12%</td>
+          <td>1. VP = 15000 / (1.12)³<br>2. (1.12)³ = 1.4049<br>3. VP = 15000/1.4049</td>
+          <td>VP = VF / (1+i)ⁿ</td>
+          <td>VP = $10,677.88</td>
+          </tr>
+          <tr>
+          <td>Bonos Cupón Cero</td>
+          <td>Bono: $1,000 en 10 años, i=6%</td>
+          <td>1. VP = 1000 / (1.06)¹⁰<br>2. (1.06)¹⁰ = 1.7908<br>3. VP = 1000/1.7908</td>
+          <td>VP = VF / (1+i)ⁿ</td>
+          <td>VP = $558.39</td>
+          </tr>
+          <tr>
+          <td>Herencia Futura</td>
+          <td>Herencia $100,000 en 20 años, i=5%</td>
+          <td>1. VP = 100000 / (1.05)²⁰<br>2. (1.05)²⁰ = 2.6533<br>3. VP = 100000/2.6533</td>
+          <td>VP = VF / (1+i)ⁿ</td>
+          <td>VP = $37,688.95</td>
+          </tr>
+      </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A medida que aumentan el plazo o la tasa de descuento, el valor presente disminuye significativamente. Esto explica por qué flujos muy lejanos tienen poco valor presente y por qué las tasas altas reducen drásticamente el valor actual de inversiones futuras.</p>
+  </div>
+
+  <!-- Gráfica 2: Efecto del tiempo y la tasa en el valor presente -->
+  <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Valor Presente vs Tiempo y Tasa</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+      
+      <!-- Título -->
+      <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Valor Presente de $1,000 Futuro</strong></text>
+      <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Efecto del tiempo y la tasa de descuento</text>
+      
+      <!-- Ejes coordenados -->
+      <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      
+      <!-- Etiquetas de ejes -->
+      <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+      <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Presente ($)</text>
+      
+      <!-- Marcas del eje X (tiempo) -->
+      <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
+          
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>15</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>25</text>
+      </g>
+      
+      <!-- Marcas del eje Y (valor presente) -->
+      <g transform=translate(0,0)>
+          <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>800</text>
+          
+          <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>600</text>
+          
+          <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>400</text>
+          
+          <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>0</text>
+      </g>
+      
+      <!-- Curva para 5% -->
+      <path d='M 50,250 
+                  L 100,235 
+                  L 150,220 
+                  L 200,205 
+                  L 250,190 
+                  L 300,175' 
+              stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+      
+      <!-- Curva para 10% -->
+      <path d='M 50,250 
+                  L 100,220 
+                  L 150,190 
+                  L 200,160 
+                  L 250,135 
+                  L 300,115' 
+              stroke=var(--apple-vibrant-green) stroke-width=2 fill=none></path>
+      
+      <!-- Curva para 15% -->
+      <path d='M 50,250 
+                  L 100,205 
+                  L 150,165 
+                  L 200,130 
+                  L 250,100 
+                  L 300,75' 
+              stroke=var(--apple-vibrant-orange) stroke-width=2 fill=none></path>
+      
+      <!-- Curva para 20% -->
+      <path d='M 50,250 
+                  L 100,190 
+                  L 150,140 
+                  L 200,105 
+                  L 250,75 
+                  L 300,55' 
+              stroke=var(--apple-vibrant-red) stroke-width=2 fill=none></path>
+      
+      <!-- Puntos de referencia -->
+      <circle cx=200 cy=205 r=3 fill=var(--apple-vibrant-blue)></circle>
+      <text x=210 y=200 text-anchor=start font-size=9 fill=var(--apple-vibrant-blue)>5%: $614</text>
+      
+      <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-green)></circle>
+      <text x=210 y=155 text-anchor=start font-size=9 fill=var(--apple-vibrant-green)>10%: $386</text>
+      
+      <circle cx=200 cy=130 r=3 fill=var(--apple-vibrant-orange)></circle>
+      <text x=210 y=125 text-anchor=start font-size=9 fill=var(--apple-vibrant-orange)>15%: $247</text>
+      
+      <circle cx=200 cy=105 r=3 fill=var(--apple-vibrant-red)></circle>
+      <text x=210 y=100 text-anchor=start font-size=9 fill=var(--apple-vibrant-red)>20%: $162</text>
+      
+      <!-- Leyenda -->
+      <rect x=200 y=60 width=180 height=100 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Tasas de Descuento</strong></text>
+      
+      <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+      <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>5% anual</text>
+      
+      <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=2></line>
+      <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>10% anual</text>
+      
+      <line x1=210 y1=115 x2=230 y2=115 stroke=var(--apple-vibrant-orange) stroke-width=2></line>
+      <text x=240 y=120 font-size=10 fill=var(--apple-dark-gray)>15% anual</text>
+      
+      <line x1=210 y1=130 x2=230 y2=130 stroke=var(--apple-vibrant-red) stroke-width=2></line>
+      <text x=240 y=135 font-size=10 fill=var(--apple-dark-gray)>20% anual</text>
+      
+      <!-- Anotación importante -->
+      <rect x=50 y=290 width=300 height=50 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+      <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El tiempo y la tasa son cruciales!</strong></text>
+      <text x=200 y=320 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>A 20 años con 20%, $1,000 futuro valen solo $26 hoy</text>
+      <text x=200 y=335 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>El descuento exponencial reduce drásticamente el valor presente</text>
+      
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente disminuye exponencialmente con el tiempo y la tasa de descuento. Tasas más altas o plazos más largos reducen significativamente el valor presente. A 20 años con 20% de descuento, $1,000 futuros valen menos de $50 hoy, demostrando el poder del descuento compuesto.</p>
+  </div>
+
+  <!-- Ejercicio 3: Aplicaciones en decisiones financieras -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Valor presente en decisiones reales</h4>
+      <p>Uso del valor presente en diferentes contextos de toma de decisiones:</p>
+      <table class=math-table>
+      <thead>
+          <tr>
+          <th>Decisión Financiera</th>
+          <th>Contexto</th>
+          <th>Aplicación del VP</th>
+          <th>Criterio de Decisión</th>
+          <th>Ejemplo Práctico</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>Evaluación de Inversiones</td>
+          <td>Selección entre proyectos</td>
+          <td>Cálculo del Valor Presente Neto (VPN)</td>
+          <td>VPN > 0 → Proyecto viable</td>
+          <td>Inversión en nueva maquinaria</td>
+          </tr>
+          <tr>
+          <td>Comparación de Ofertas</td>
+          <td>Elección entre alternativas de pago</td>
+          <td>VP de cada opción</td>
+          <td>Menor VP → Mejor opción</td>
+          <td>Compra al contado vs crédito</td>
+          </tr>
+          <tr>
+          <td>Valuación de Activos</td>
+          <td>Determinar precio justo</td>
+          <td>VP de flujos futuros esperados</td>
+          <td>VP ≈ Precio de mercado</td>
+          <td>Valuación de bonos o acciones</td>
+          </tr>
+          <tr>
+          <td>Análisis de Préstamos</td>
+          <td>Evaluar costo de financiamiento</td>
+          <td>VP de pagos futuros</td>
+          <td>Comparar con monto recibido</td>
+          <td>Préstamo personal o hipotecario</td>
+          </tr>
+          <tr>
+          <td>Planificación de Jubilación</td>
+          <td>Determinar ahorros necesarios</td>
+          <td>VP de gastos futuros</td>
+          <td>VP = Ahorro objetivo</td>
+          <td>Cálculo de fondo de pensiones</td>
+          </tr>
+      </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente permite comparar alternativas en una base común (valor hoy), eliminando las distorsiones temporales. Es la herramienta fundamental para tomar decisiones financieras racionales que consideren el valor temporal del dinero.</p>
+  </div>
+
+  <!-- Aplicaciones reales -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+      <li><strong>Evaluación de proyectos de inversión:</strong> Cálculo del Valor Presente Neto (VPN) para determinar la viabilidad de proyectos empresariales.</li>
+      <li><strong>Valuación de bonos:</strong> Determinación del precio justo de bonos mediante el descuento de flujos de cupones y principal.</li>
+      <li><strong>Análisis de préstamos hipotecarios:</strong> Cálculo de pagos mensuales equivalentes mediante descuento de flujos futuros.</li>
+      <li><strong>Planificación de jubilación:</strong> Cálculo del ahorro necesario hoy para alcanzar un ingreso futuro deseado.</li>
+      <li><strong>Comparación de alternativas de pago:</strong> Elección entre pagar al contado o financiado considerando el valor presente.</li>
+      <li><strong>Valuación de empresas:</strong> Uso de flujos de caja descontados para determinar el valor de una compañía.</li>
+      <li><strong>Análisis de arrendamientos:</strong> Comparación entre comprar o arrendar activos usando valor presente.</li>
+      <li><strong>Decisiones de presupuesto de capital:</strong> Asignación de recursos entre diferentes proyectos de inversión.</li>
+      </ul>
+  </div>
+
+  <!-- Bibliografía -->
+  <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+      <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+      <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+      <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+      <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+      <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+      <li>Khan Academy: Present value. www.khanacademy.org</li>
+      </ul>
+  </div>
+  </div>
+  `);"><b>6.3. Valor Presente</b> <span class=emoji-small>✅</span>
+          </li>
+
+          <li onclick="abrirModal('6.4. Tasa de descuento', `
+  <hr><br>
+  <div class=math-module>
+
+  <!-- Tiempo estimado -->
+  <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
       <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
       <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
       <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
       <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
       </svg>
       <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
-    </div>
-    
-    <!-- Objetivo -->
-    <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+  </div>
+
+  <!-- Objetivo -->
+  <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
       <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-      <span><strong>Objetivo:</strong> Comprender el concepto de tasa de interés nominal como la tasa declarada sin considerar la frecuencia de capitalización, dominar la conversión entre tasas nominales y efectivas, aprender a calcular tasas equivalentes para diferentes periodos de capitalización, y aplicar estos conocimientos en la evaluación de productos financieros como préstamos, inversiones y instrumentos de ahorro.</span>
-    </div>
-    
-    <!-- Idea principal -->
-    <div class=content-section style=margin-bottom:20px;>
+      <span><strong>Objetivo:</strong> Comprender el concepto de tasa de descuento como medida de reducción del valor futuro para obtener el valor presente, dominar los diferentes tipos de descuento (racional y bancario), aprender a calcular valores presentes usando tasas de descuento, y aplicar estos conocimientos en operaciones financieras como descuento de documentos, factoring y evaluación de inversiones.</span>
+  </div>
+
+  <!-- Idea principal -->
+  <div class=content-section style=margin-bottom:20px;>
       <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
-      <p>La tasa de interés nominal es la tasa de interés que se declara en los contratos financieros sin considerar el efecto de la capitalización dentro del periodo. Representa la tasa base sobre la cual se calculan los intereses, pero no refleja el rendimiento real debido a que no incorpora la frecuencia con la que se capitalizan los intereses. La relación fundamental entre la tasa nominal (j) y la tasa efectiva (i) está dada por la fórmula i = (1 + j/m)^m - 1, donde m es el número de periodos de capitalización por año. Comprender esta distinción es crucial para comparar adecuadamente diferentes opciones de inversión o financiamiento.</p>
-    </div>
-    
-    <!-- Ejercicio 1: Conceptos fundamentales y tipos de tasas -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre tasas nominales y efectivas</h4>
-      <p>Análisis de las características y diferencias entre los diferentes tipos de tasas:</p>
+      <p>La tasa de descuento representa el porcentaje que se deduce de un valor futuro para calcular su valor presente, reflejando el costo de oportunidad del dinero en el tiempo. Existen dos tipos principales: el descuento racional (o matemático) que calcula el interés sobre el valor presente, y el descuento bancario (o comercial) que calcula el descuento sobre el valor futuro. Mientras la tasa de interés mide el crecimiento del capital, la tasa de descuento mide la reducción necesaria para traer valores futuros al presente. Esta distinción es fundamental en operaciones de corto plazo como el descuento de pagarés, letras de cambio y otros documentos negociables.</p>
+  </div>
+
+  <!-- Ejercicio 1: Tipos de descuento y sus características -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre descuento racional y bancario</h4>
+      <p>Análisis de las diferencias fundamentales entre los dos tipos principales de descuento:</p>
       <table class=math-table>
-        <thead>
+      <thead>
           <tr>
-            <th>Tipo de Tasa</th>
-            <th>Definición</th>
-            <th>Notación</th>
-            <th>Fórmula de Conversión</th>
-            <th>Ejemplo</th>
+          <th>Característica</th>
+          <th>Descuento Racional (Matemático)</th>
+          <th>Descuento Bancario (Comercial)</th>
+          <th>Fórmula Principal</th>
+          <th>Ejemplo con VF=$1,000, d=20%, n=1 año</th>
           </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
           <tr>
-            <td>Tasa Nominal</td>
-            <td>Tasa declarada sin considerar capitalización</td>
-            <td>j</td>
-            <td>Base para cálculo de intereses</td>
-            <td>12% anual capitalizable mensualmente</td>
-          </tr>
-          <tr>
-            <td>Tasa Periódica</td>
-            <td>Tasa por periodo de capitalización</td>
-            <td>j/m</td>
-            <td>Tasa nominal ÷ frecuencia</td>
-            <td>12%/12 = 1% mensual</td>
+          <td>Base de Cálculo</td>
+          <td>Valor Presente (VP)</td>
+          <td>Valor Futuro (VF)</td>
+          <td>Racional: D = VP × i × n</td>
+          <td>VP = $833.33</td>
           </tr>
           <tr>
-            <td>Tasa Efectiva</td>
-            <td>Tasa real considerando capitalización</td>
-            <td>i</td>
-            <td>i = (1 + j/m)^m - 1</td>
-            <td>(1.01)^12 - 1 = 12.68%</td>
+          <td>Fórmula de VP</td>
+          <td>VP = VF / (1 + i×n)</td>
+          <td>VP = VF × (1 - d×n)</td>
+          <td>Bancario: D = VF × d × n</td>
+          <td>VP = $800.00</td>
           </tr>
           <tr>
-            <td>Tasa Equivalente</td>
-            <td>Tasas con diferente frecuencia pero mismo efecto</td>
-            <td>i₁, i₂</td>
-            <td>(1 + i₁) = (1 + i₂)^(n₂/n₁)</td>
-            <td>12% anual = 0.9489% mensual</td>
+          <td>Relación con Tasa</td>
+          <td>Usa tasa de interés (i)</td>
+          <td>Usa tasa de descuento (d)</td>
+          <td>Equivalencia: i = d/(1-d×n)</td>
+          <td>i = 25% equivalente</td>
           </tr>
           <tr>
-            <td>Proporcional</td>
-            <td>División simple de la tasa nominal</td>
-            <td>j/m</td>
-            <td>Sin capitalización</td>
-            <td>12% anual = 1% mensual proporcional</td>
+          <td>Aplicación Práctica</td>
+          <td>Teórica, matemática</td>
+          <td>Operaciones bancarias reales</td>
+          <td>d = i/(1+i×n)</td>
+          <td>d = 20% declarada</td>
           </tr>
-        </tbody>
+          <tr>
+          <td>Monto del Descuento</td>
+          <td>$166.67</td>
+          <td>$200.00</td>
+          <td>D racional < D bancario</td>
+          <td>Diferencia: $33.33</td>
+          </tr>
+      </tbody>
       </table>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa nominal siempre es menor o igual que la tasa efectiva equivalente. La diferencia aumenta con la frecuencia de capitalización y con el nivel de la tasa. Las tasas proporcionales solo son válidas para interés simple, no para compuesto.</p>
-    </div>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El descuento bancario siempre produce un mayor monto de descuento que el racional para la misma tasa nominal, lo que lo hace más rentable para las instituciones financieras pero más costoso para los clientes. Por esto es crucial convertir tasas de descuento a tasas de interés equivalentes para comparar costos reales.</p>
+  </div>
+
+  <!-- Gráfica 1: Comparación visual entre descuento racional y bancario -->
+  <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descuento Racional vs Bancario</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
       
-    <!-- Gráfica 1: Proceso de conversión de tasa nominal a efectiva -->
-    <div class=graph-container style=margin-bottom:20px;>
-      <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Conversión de Tasa Nominal a Efectiva</h4>
-      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-        
-        <!-- Título -->
-        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Proceso de Conversión: Nominal → Efectiva</strong></text>
-        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal: 12% anual capitalizable mensualmente</text>
-        
-        <!-- Tasa Nominal -->
-        <g transform=translate(100,80)>
-          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
-          <text x=0 y=20 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Nominal</strong></text>
-          <text x=0 y=35 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>j = 12% anual</text>
-          <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Capitalizable mensualmente</text>
-        </g>
-        
-        <!-- Flecha de conversión 1 -->
-        <path d='M 200,110 L 200,140' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
-        <text x=220 y=125 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Paso 1: Dividir entre frecuencia</text>
-        
-        <!-- Tasa Periódica -->
-        <g transform=translate(100,150)>
-          <rect x=-50 y=0 width=100 height=50 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
-          <text x=0 y=15 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Tasa Periódica</strong></text>
-          <text x=0 y=30 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>j/m = 12% ÷ 12</text>
-          <text x=0 y=42 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>= 1% mensual</text>
-        </g>
-        
-        <!-- Flecha de conversión 2 -->
-        <path d='M 200,200 L 200,230' stroke=var(--apple-vibrant-green) stroke-width=3 marker-end=url(#arrowDown)></path>
-        <text x=220 y=215 text-anchor=middle font-size=11 fill=var(--apple-vibrant-green)>Paso 2: Aplicar capitalización</text>
-        
-        <!-- Tasa Efectiva -->
-        <g transform=translate(100,240)>
-          <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2 rx=5></rect>
-          <text x=0 y=20 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Tasa Efectiva</strong></text>
-          <text x=0 y=35 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>i = (1.01)^12 - 1</text>
-          <text x=0 y=50 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>= 12.68% anual</text>
-        </g>
-        
-        <!-- Fórmula completa -->
-        <rect x=50 y=310 width=300 height=30 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-        <text x=200 y=325 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Fórmula General: i = (1 + j/m)<sup>m</sup> - 1</text>
-        
-        <!-- Comparación visual -->
-        <g transform=translate(250,100)>
-          <rect x=0 y=0 width=120 height=180 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-          <text x=60 y=20 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Comparación</strong></text>
+      <!-- Título -->
+      <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Comparación: Descuento de $1,000 a 1 año con 20%</strong></text>
+      
+      <!-- Valor Futuro común -->
+      <rect x=150 y=50 width=100 height=40 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
+      <text x=200 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Valor Futuro: $1,000</strong></text>
+      
+      <!-- Descuento Racional -->
+      <g transform=translate(80,120)>
+          <text x=0 y=0 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)><strong>Descuento Racional</strong></text>
           
-          <circle cx=30 y=50 r=10 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2></circle>
-          <text x=30 y=52 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>12%</text>
-          <text x=70 y=55 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Nominal</text>
+          <!-- Flecha de descuento -->
+          <path d='M 0,10 L 0,40' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=20 y=25 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>÷ (1 + 0.25)</text>
           
-          <circle cx=30 y=90 r=12 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=2></circle>
-          <text x=30 y=92 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>12.68%</text>
-          <text x=70 y=95 text-anchor=start font-size=10 fill=var(--apple-dark-gray)>Efectiva</text>
+          <!-- Valor Presente -->
+          <rect x=-40 y=50 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $833.33</strong></text>
+          <text x=0 y=80 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Base: VP)</text>
           
-          <text x=60 y=120 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>Diferencia: 0.68%</text>
-          <text x=60 y=135 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Por capitalización</text>
-          <text x=60 y=145 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>mensual)</text>
+          <!-- Descuento aplicado -->
+          <rect x=50 y=30 width=70 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=85 y=40 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $166.67</text>
+      </g>
+      
+      <!-- Descuento Bancario -->
+      <g transform=translate(240,120)>
+          <text x=0 y=0 text-anchor=middle font-size=12 fill=var(--apple-vibrant-red)><strong>Descuento Bancario</strong></text>
           
-          <rect x=10 y=155 width=100 height=15 fill=var(--apple-light-green) rx=3></rect>
-          <text x=60 y=165 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>¡Mayor rendimiento!</text>
-        </g>
-        
-        <!-- Definición de flechas -->
-        <defs>
+          <!-- Flecha de descuento -->
+          <path d='M 0,10 L 0,40' stroke=var(--apple-vibrant-red) stroke-width=3 marker-end=url(#arrowDown)></path>
+          <text x=20 y=25 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>× (1 - 0.20)</text>
+          
+          <!-- Valor Presente -->
+          <rect x=-40 y=50 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
+          <text x=0 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $800.00</strong></text>
+          <text x=0 y=80 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Base: VF)</text>
+          
+          <!-- Descuento aplicado -->
+          <rect x=50 y=30 width=70 height=20 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
+          <text x=85 y=40 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $200.00</text>
+      </g>
+      
+      <!-- Diferencia entre ambos -->
+      <path d='M 160,100 L 120,150 L 280,150 L 240,100' stroke=var(--apple-vibrant-purple) stroke-width=2 fill=none stroke-dasharray=5,3></path>
+      <text x=200 y=140 text-anchor=middle font-size=11 fill=var(--apple-vibrant-purple)><strong>Diferencia: $33.33</strong></text>
+      
+      <!-- Explicación de tasas equivalentes -->
+      <rect x=50 y=180 width=300 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=200 y=195 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Equivalencia de Tasas</strong></text>
+      <text x=200 y=210 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Descuento racional con i=25% produce mismo VP que</text>
+      <text x=200 y=225 text-anchor=middle font-size=11 fill=var(--apple-vibrant-red)>Descuento bancario con d=20%</text>
+      <text x=200 y=240 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Fórmula de equivalencia: i = d / (1 - d×n)</text>
+      <text x=200 y=255 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>i = 0.20 / (1 - 0.20×1) = 0.25 = 25%</text>
+      
+      <!-- Aplicación práctica -->
+      <rect x=50 y=270 width=300 height=60 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
+      <text x=200 y=285 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡Importante para comparar costos!</strong></text>
+      <text x=200 y=300 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Siempre convertir tasas de descuento a tasas de interés equivalentes</text>
+      <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>para evaluar el costo real del financiamiento</text>
+      
+      <!-- Definición de flechas -->
+      <defs>
           <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
-            <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
+          <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
           </marker>
-        </defs>
-        
+      </defs>
+      
       </svg>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La conversión de tasa nominal a efectiva sigue un proceso de dos pasos: primero se obtiene la tasa periódica dividiendo entre la frecuencia, luego se aplica la capitalización compuesta. La tasa efectiva siempre es mayor que la nominal debido al efecto de los intereses sobre intereses.</p>
-    </div>
-    
-    <!-- Ejercicio 2: Cálculos de conversión y equivalencias -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Conversiones entre tasas nominales</h4>
-      <p>Resolución de problemas de conversión entre diferentes frecuencias de capitalización:</p>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Aunque ambas operaciones usan una tasa del 20%, el descuento bancario produce un valor presente menor porque aplica la tasa sobre el valor futuro (mayor), mientras el descuento racional la aplica sobre el valor presente (menor). La tasa de interés equivalente revela el costo real: 25% en lugar del 20% aparente.</p>
+  </div>
+
+  <!-- Ejercicio 2: Cálculos prácticos con tasas de descuento -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones de descuento en operaciones reales</h4>
+      <p>Resolución de problemas típicos de descuento de documentos y conversión de tasas:</p>
       <table class=math-table>
-        <thead>
+      <thead>
           <tr>
-            <th>Escenario</th>
-            <th>Tasa Nominal Dada</th>
-            <th>Conversión Solicitada</th>
-            <th>Procedimiento de Cálculo</th>
-            <th>Resultado</th>
+          <th>Operación Financiera</th>
+          <th>Datos del Problema</th>
+          <th>Procedimiento de Cálculo</th>
+          <th>Fórmula Aplicada</th>
+          <th>Resultado</th>
           </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
           <tr>
-            <td>Mensual a Anual</td>
-            <td>12% anual capitalizable mensualmente</td>
-            <td>Tasa efectiva anual</td>
-            <td>1. i = (1 + 0.12/12)^12 - 1<br>2. i = (1.01)^12 - 1</td>
-            <td>12.6825% anual</td>
-          </tr>
-          <tr>
-            <td>Trimestral a Anual</td>
-            <td>8% anual capitalizable trimestralmente</td>
-            <td>Tasa efectiva anual</td>
-            <td>1. i = (1 + 0.08/4)^4 - 1<br>2. i = (1.02)^4 - 1</td>
-            <td>8.2432% anual</td>
+          <td>Descuento de Pagaré</td>
+          <td>VF=$20,000, n=90 días, d=18% anual</td>
+          <td>1. Calcular días: 90/360 = 0.25 años<br>2. VP = 20000 × (1 - 0.18×0.25)</td>
+          <td>VP = VF × (1 - d×n)</td>
+          <td>VP = $19,100</td>
           </tr>
           <tr>
-            <td>Semestral a Mensual</td>
-            <td>18% anual capitalizable semestralmente</td>
-            <td>Tasa efectiva mensual</td>
-            <td>1. i<sub>sem</sub> = 18%/2 = 9%<br>2. i<sub>mens</sub> = (1.09)^(1/6) - 1</td>
-            <td>1.4481% mensual</td>
+          <td>Conversión a Tasa Interés</td>
+          <td>d=15% a 180 días</td>
+          <td>1. n=180/360=0.5 años<br>2. i = 0.15/(1-0.15×0.5)</td>
+          <td>i = d/(1-d×n)</td>
+          <td>i = 16.216% (180 días)</td>
           </tr>
           <tr>
-            <td>Diaria a Anual</td>
-            <td>6% anual capitalizable diariamente</td>
-            <td>Tasa efectiva anual</td>
-            <td>1. i = (1 + 0.06/365)^365 - 1<br>2. i ≈ (1.000164)^365 - 1</td>
-            <td>6.1831% anual</td>
+          <td>Letra de Cambio</td>
+          <td>Valor nominal=$50,000, d=12% anual, n=60 días</td>
+          <td>1. n=60/360=0.1667 años<br>2. VP=50000×(1-0.12×0.1667)</td>
+          <td>VP = VF × (1 - d×n)</td>
+          <td>VP = $49,000</td>
           </tr>
           <tr>
-            <td>Comparación múltiple</td>
-            <td>10% anual con diferentes capitalizaciones</td>
-            <td>Ranking por rendimiento</td>
-            <td>Anual: 10.0000%<br>Semestral: 10.2500%<br>Trimestral: 10.3813%<br>Mensual: 10.4713%</td>
-            <td>Mensual > Trimestral > Semestral > Anual</td>
+          <td>Descuento Comercial</td>
+          <td>Mercancía $8,000, descuento 25% por pago contado</td>
+          <td>1. VP = 8000 × (1 - 0.25)</td>
+          <td>VP = VF × (1 - d)</td>
+          <td>VP = $6,000</td>
           </tr>
-        </tbody>
+          <tr>
+          <td>Análisis de Costo Efectivo</td>
+          <td>Préstamo: $75,000, descuentto $5,000</td>
+          <td>1. VP=70,000, VF=75,000<br>2. d = (75000-70000)/75000<br>3. Convertir a i</td>
+          <td>d = (VF-VP)/VF</td>
+          <td>d=6.67%, i=7.14%</td>
+          </tr>
+      </tbody>
       </table>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A mayor frecuencia de capitalización, mayor será la tasa efectiva para una misma tasa nominal. Las diferencias son más significativas con tasas nominales más altas. La capitalización continua representa el límite máximo posible.</p>
-    </div>
-    
-    <!-- Gráfica 2: Efecto de la frecuencia de capitalización -->
-    <div class=graph-container style=margin-bottom:20px;>
-      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Tasa Efectiva vs Frecuencia de Capitalización</h4>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> En operaciones de descuento, es crucial trabajar con la misma base temporal (generalmente año comercial de 360 días). La conversión a tasa de interés revela que el costo real siempre es mayor que la tasa de descuento declarada.</p>
+  </div>
+
+  <!-- Gráfica 2: Relación entre plazo y valor presente con descuento -->
+  <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Efecto del Plazo en el Descuento Bancario</h4>
       <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-        
-        <!-- Título -->
-        <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Efecto de la Frecuencia de Capitalización</strong></text>
-        <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal del 12% anual con diferentes frecuencias</text>
-        
-        <!-- Ejes coordenados -->
-        <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-        <line x1=50 y1=250 x2=50 y2=150 stroke=var(--apple-dark-gray) stroke-width=2></line>
-        
-        <!-- Etiquetas de ejes -->
-        <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Frecuencia de Capitalización</text>
-        <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,200)'>Tasa Efectiva Anual (%)</text>
-        
-        <!-- Marcas del eje X (frecuencia) -->
-        <g transform=translate(0,0)>
+      
+      <!-- Título -->
+      <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Valor Presente vs Plazo - Descuento del 20% anual</strong></text>
+      <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Valor Futuro: $10,000</text>
+      
+      <!-- Ejes coordenados -->
+      <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      
+      <!-- Etiquetas de ejes -->
+      <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Plazo (meses)</text>
+      <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Presente ($)</text>
+      
+      <!-- Marcas del eje X (meses) -->
+      <g transform=translate(0,0)>
           <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Anual</text>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
           
           <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Semestral</text>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6</text>
           
           <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Trimestral</text>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>9</text>
           
           <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Mensual</text>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12</text>
           
           <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Diaria</text>
-        </g>
-        
-        <!-- Marcas del eje Y (tasa efectiva) -->
-        <g transform=translate(0,0)>
-          <line x1=45 y1=240 x2=55 y2=240 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=243 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.0%</text>
-          
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>15</text>
+      </g>
+      
+      <!-- Marcas del eje Y (valor presente) -->
+      <g transform=translate(0,0)>
           <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.2%</text>
+          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8,000</text>
           
-          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.4%</text>
-          
-          <line x1=45 y1=180 x2=55 y2=180 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=183 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.6%</text>
+          <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>7,000</text>
           
           <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.8%</text>
-        </g>
-        
-        <!-- Puntos de datos -->
-        <circle cx=100 cy=240 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=100 y=235 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.000%</text>
-        
-        <circle cx=150 cy=230 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.360%</text>
-        
-        <circle cx=200 cy=220 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=200 y=215 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.551%</text>
-        
-        <circle cx=250 cy=210 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=250 y=205 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.683%</text>
-        
-        <circle cx=300 cy=205 r=4 fill=var(--apple-vibrant-blue)></circle>
-        <text x=300 y=200 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>12.747%</text>
-        
-        <!-- Línea de conexión -->
-        <path d='M 100,240 
-                 L 150,230 
-                 L 200,220 
-                 L 250,210 
-                 L 300,205' 
-              stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-        
-        <!-- Límite de capitalización continua -->
-        <line x1=50 y1=200 x2=350 y2=200 stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></line>
-        <text x=360 y=200 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Continua: 12.750%</text>
-        
-        <!-- Área de mejora -->
-        <path d='M 100,240 L 150,230 L 200,220 L 250,210 L 300,205 L 300,200 L 250,200 L 200,200 L 150,200 L 100,200 Z' 
+          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6,000</text>
+          
+          <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5,000</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4,000</text>
+      </g>
+      
+      <!-- Línea de descuento bancario -->
+      <path d='M 50,250 
+                  L 100,240 
+                  L 150,230 
+                  L 200,220 
+                  L 250,210 
+                  L 300,200' 
+              stroke=var(--apple-vibrant-red) stroke-width=3 fill=none></path>
+      
+      <!-- Puntos de datos -->
+      <circle cx=100 cy=240 r=3 fill=var(--apple-vibrant-red)></circle>
+      <text x=100 y=235 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$9,500</text>
+      
+      <circle cx=150 cy=230 r=3 fill=var(--apple-vibrant-red)></circle>
+      <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$9,000</text>
+      
+      <circle cx=200 cy=220 r=3 fill=var(--apple-vibrant-red)></circle>
+      <text x=200 y=215 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$8,500</text>
+      
+      <circle cx=250 cy=210 r=3 fill=var(--apple-vibrant-red)></circle>
+      <text x=250 y=205 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$8,000</text>
+      
+      <circle cx=300 cy=200 r=3 fill=var(--apple-vibrant-red)></circle>
+      <text x=300 y=195 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$7,500</text>
+      
+      <!-- Línea de valor futuro constante -->
+      <line x1=50 y1=100 x2=350 y2=100 stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></line>
+      <text x=360 y=100 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Valor Futuro: $10,000</text>
+      
+      <!-- Área de descuento acumulado -->
+      <path d='M 50,250 L 100,240 L 150,230 L 200,220 L 250,210 L 300,200 L 300,100 L 250,100 L 200,100 L 150,100 L 100,100 L 50,100 Z' 
               fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
-        <text x=200 y=190 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Beneficio por mayor frecuencia</text>
-        
-        <!-- Leyenda y fórmulas -->
-        <rect x=200 y=100 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-        <text x=290 y=115 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmula General</strong></text>
-        
-        <text x=290 y=130 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>i = (1 + j/m)<sup>m</sup> - 1</text>
-        <text x=290 y=145 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>j = 12% nominal anual</text>
-        <text x=290 y=155 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>m = frecuencia anual</text>
-        <text x=290 y=165 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>i = tasa efectiva anual</text>
-        
-        <!-- Ejemplo numérico -->
-        <rect x=50 y=290 width=300 height=50 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-        <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡La frecuencia importa!</strong></text>
-        <text x=200 y=320 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>De anual a mensual: +0.683% de rendimiento</text>
-        <text x=200 y=335 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>En $10,000: $68.30 adicionales por año</text>
-        
+      <text x=200 y=150 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Descuento Acumulado</text>
+      
+      <!-- Leyenda y fórmulas -->
+      <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmula de Descuento</strong></text>
+      
+      <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-red) stroke-width=3></line>
+      <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>VP = VF × (1 - d×n)</text>
+      
+      <text x=290 y=105 font-size=9 fill=var(--apple-dark-gray)>d = 20% anual</text>
+      <text x=290 y=115 font-size=9 fill=var(--apple-dark-gray)>n en años (meses/12)</text>
+      <text x=290 y=125 font-size=9 fill=var(--apple-dark-gray)>Máximo descuento: $2,500</text>
+      
+      <!-- Punto crítico: cuando VP = 0 -->
+      <circle cx=350 cy=250 r=4 fill=var(--apple-vibrant-purple)></circle>
+      <text x=340 y=240 text-anchor=end font-size=9 fill=var(--apple-vibrant-purple)>VP = $0 a 5 años</text>
+      <text x=340 y=250 text-anchor=end font-size=8 fill=var(--apple-dark-gray)>(d×n = 1)</text>
+      
       </svg>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La tasa efectiva aumenta con la frecuencia de capitalización, pero los incrementos son cada vez menores (rendimientos decrecientes). El mayor salto ocurre al pasar de capitalización anual a semestral, mientras que pasar de mensual a diaria produce mejoras marginales. El límite teórico es la capitalización continua.</p>
-    </div>
-    
-    <!-- Ejercicio 3: Aplicaciones en productos financieros -->
-    <div class=content-section style=margin-bottom:20px;>
-      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Tasas nominales en instrumentos financieros</h4>
-      <p>Análisis de cómo se utilizan las tasas nominales en diferentes productos financieros:</p>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente disminuye linealmente con el plazo cuando se usa descuento bancario. Cuando el producto d×n alcanza 1 (5 años en este caso), el valor presente se vuelve cero, lo que representa el límite máximo del descuento. En la práctica, los plazos son mucho más cortos para evitar este escenario extremo.</p>
+  </div>
+
+  <!-- Ejercicio 3: Aplicaciones en instrumentos financieros -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Instrumentos que utilizan tasas de descuento</h4>
+      <p>Análisis de productos financieros donde se aplican tasas de descuento:</p>
       <table class=math-table>
-        <thead>
+      <thead>
           <tr>
-            <th>Producto Financiero</th>
-            <th>Tasa Nominal Típica</th>
-            <th>Frecuencia de Capitalización</th>
-            <th>Tasa Efectiva Real</th>
-            <th>Consideraciones</th>
+          <th>Instrumento Financiero</th>
+          <th>Mecanismo de Descuento</th>
+          <th>Plazo Típico</th>
+          <th>Ventajas</th>
+          <th>Consideraciones</th>
           </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
           <tr>
-            <td>Tarjetas de Crédito</td>
-            <td>30-50% anual</td>
-            <td>Mensual</td>
-            <td>34.5-61.0% anual</td>
-            <td>Altísimo costo real del crédito</td>
-          </tr>
-          <tr>
-            <td>Hipotecas</td>
-            <td>4-8% anual</td>
-            <td>Mensual</td>
-            <td>4.07-8.30% anual</td>
-            <td>Diferencia pequeña pero significativa</td>
+          <td>Pagarés Descontados</td>
+          <td>Descuento sobre valor nominal al endosar</td>
+          <td>30-180 días</td>
+          <td>Liquidez inmediata para el tenedor</td>
+          <td>Costo real mayor al aparente</td>
           </tr>
           <tr>
-            <td>Certificados de Depósito</td>
-            <td>2-5% anual</td>
-            <td>Trimestral o mensual</td>
-            <td>2.02-5.12% anual</td>
-            <td>Buscar mayor frecuencia para mejor rendimiento</td>
+          <td>Letras del Tesoro</td>
+          <td>Emitidas con descuento, redimen a valor nominal</td>
+          <td>3-12 meses</td>
+          <td>Bajo riesgo, alta liquidez</td>
+          <td>Rendimiento implícito</td>
           </tr>
           <tr>
-            <td>Préstamos Personales</td>
-            <td>15-25% anual</td>
-            <td>Mensual</td>
-            <td>16.08-28.24% anual</td>
-            <td>Costo real significativamente mayor</td>
+          <td>Factoring</td>
+          <td>Descuento de facturas por cobrar</td>
+          <td>30-90 días</td>
+          <td>Financiamiento rápido de capital de trabajo</td>
+          <td>Pérdida del valor de las facturas</td>
           </tr>
           <tr>
-            <td>Cuentas de Ahorro</td>
-            <td>0.5-2% anual</td>
-            <td>Diaria o mensual</td>
-            <td>0.50-2.02% anual</td>
-            <td>Poca diferencia por tasas bajas</td>
+          <td>Documentos por Cobrar</td>
+          <td>Endoso con descuento antes del vencimiento</td>
+          <td>60-120 días</td>
+          <td>Flexibilidad en gestión de cartera</td>
+          <td>Riesgo de impago transferido</td>
           </tr>
-        </tbody>
+          <tr>
+          <td>Bonos Cupón Cero</td>
+          <td>Emitidos con descuento, sin pagos intermedios</td>
+          <td>1-30 años</td>
+          <td>Reinversión automática</td>
+          <td>Volatilidad de precio</td>
+          </tr>
+      </tbody>
       </table>
-      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los productos de crédito (tarjetas, préstamos) suelen usar capitalización mensual, lo que incrementa significativamente el costo real. Para inversiones, conviene buscar mayor frecuencia de capitalización. Siempre es esencial calcular la tasa efectiva para comparar productos.</p>
-    </div>
-    
-    <!-- Aplicaciones reales -->
-    <div class=content-section style=margin-bottom:20px;>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los instrumentos de descuento son predominantemente de corto plazo y buscan proporcionar liquidez inmediata. Es esencial calcular la tasa de interés equivalente para comprender el costo o rendimiento real de estas operaciones, ya que las tasas de descuento subestiman el costo para el prestatario y sobrestiman el rendimiento para el inversionista.</p>
+  </div>
+
+  <!-- Aplicaciones reales -->
+  <div class=content-section style=margin-bottom:20px;>
       <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
       <ul style=padding-left:18px;line-height:1.6;>
-        <li><strong>Comparación de productos de crédito:</strong> Conversión de tasas nominales a efectivas para evaluar el costo real de tarjetas de crédito y préstamos.</li>
-        <li><strong>Selección de inversiones:</strong> Análisis de certificados de depósito y cuentas de ahorro con diferentes frecuencias de capitalización.</li>
-        <strong>Evaluación de hipotecas:</strong> Cálculo de la tasa efectiva real de préstamos hipotecarios para comparar ofertas.</li>
-        <li><strong>Planificación financiera:</strong> Cálculo preciso de rendimientos esperados considerando la frecuencia de capitalización.</li>
-        <li><strong>Regulación financiera:</strong> Las autoridades exigen divulgar tasas efectivas para transparencia con los consumidores.</li>
-        <li><strong>Negociación de condiciones:</strong> Uso de tasas equivalentes para negociar mejores condiciones en productos financieros.</li>
-        <li><strong>Análisis de bonos:</strong> Cálculo de rendimiento al vencimiento considerando la frecuencia de pago de cupones.</li>
-        <li><strong>Gestión de deuda:</strong> Evaluación de estrategias de pago considerando el costo real del financiamiento.</li>
+      <li><strong>Descuento de pagarés empresariales:</strong> Las empresas descuentan sus pagarés con instituciones financieras para obtener liquidez antes del vencimiento.</li>
+      <li><strong>Financiamiento de capital de trabajo:</strong> Uso de factoring para convertir cuentas por cobrar en efectivo inmediato.</li>
+      <li><strong>Inversiones en letras del tesoro:</strong> Adquisición de instrumentos gubernamentales emitidos con descuento.</li>
+      <li><strong>Gestión de cartera comercial:</td>
+          <td>Endoso de documentos con descuento para optimizar flujo de efectivo.</li>
+      <li><strong>Financiamiento de inventarios:</strong> Descuento de documentos relacionados con compra de mercancías.</li>
+      <li><strong>Operaciones interbancarias:</strong> Transacciones entre bancos utilizando documentos descontados.</li>
+      <li><strong>Financiamiento de exportaciones:</strong> Descuento de documentos de comercio exterior.</li>
+      <li><strong>Gestión de tesorería:</strong> Decisiones sobre mantener documentos hasta vencimiento o descontarlos.</li>
       </ul>
-    </div>
-    
-    <!-- Bibliografía -->
-    <div class=bibliography-section style=margin-top:20px;>
+  </div>
+
+  <!-- Bibliografía -->
+  <div class=bibliography-section style=margin-top:20px;>
       <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
       <ul style=padding-left:18px;line-height:1.5;>
-        <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
-        <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
-        <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
-        <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-        <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
-        <li>Khan Academy: Compound interest. www.khanacademy.org</li>
+      <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
+      <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
+      <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
+      <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+      <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
+      <li>Khan Academy: Discounted cash flow. www.khanacademy.org</li>
       </ul>
-  `);"><b>6.2. Tasa de interés nominal</b> <span class=emoji-small>✅</span>
-        </li>
+  </div>
+  </div>
+  `);"><b>6.4. Tasa de descuento</b> <span class=emoji-small>✅</span>
+          </li>
 
-        <li onclick="abrirModal('6.3. Valor Presente', `
-<hr><br>
-<div class=math-module>
+          <li onclick="abrirModal('6.5. Fuerza de interés', `
+  <hr><br>
+  <div class=math-module>
 
-<!-- Tiempo estimado -->
-<div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
-    <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 20 minutos'>
-    <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
-    <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=28.2743 transform='rotate(-90 10 10)'></circle>
-    <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>20 min</text>
-    </svg>
-    <span style=font-weight:bold;>Tiempo estimado: 20 minutos</span>
-</div>
+  <!-- Tiempo estimado -->
+  <div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
+      <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 30 minutos'>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
+      <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=0 transform='rotate(-90 10 10)'></circle>
+      <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
+      </svg>
+      <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
+  </div>
 
-<!-- Objetivo -->
-<div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-    <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-    <span><strong>Objetivo:</strong> Comprender el concepto de valor presente como el valor actual de flujos de efectivo futuros, dominar las técnicas de descuento para calcular valores presentes, aprender a aplicar factores de descuento en diferentes contextos, y utilizar estas herramientas en la evaluación de inversiones, préstamos y decisiones financieras.</span>
-</div>
+  <!-- Objetivo -->
+  <div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
+      <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
+      <span><strong>Objetivo:</strong> Comprender el concepto de fuerza de interés como medida instantánea de crecimiento del capital, dominar su relación con las tasas de interés nominales y efectivas, aprender a calcular y aplicar la fuerza de interés en contextos de capitalización continua, y analizar sus aplicaciones en modelos financieros avanzados y matemáticas actuariales.</span>
+  </div>
 
-<!-- Idea principal -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
-    <p>El valor presente (VP) es el valor actual de una cantidad de dinero que se recibirá o pagará en el futuro, descontado a una tasa de interés específica que refleja el costo de oportunidad del capital. Representa el principio fundamental de que el dinero disponible hoy vale más que la misma cantidad en el futuro debido a su capacidad potencial de generar ingresos. El cálculo del valor presente permite comparar flujos de efectivo en diferentes momentos temporales, facilitando la toma de decisiones financieras racionales sobre inversiones, préstamos y otros compromisos financieros.</p>
-</div>
+  <!-- Idea principal -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
+      <p>La fuerza de interés, también conocida como intensidad de interés o tasa instantánea, representa la tasa de crecimiento instantánea de una inversión en un momento específico. Es el límite de la tasa de interés cuando el número de periodos de capitalización tiende a infinito, lo que corresponde a la capitalización continua. Matemáticamente, se define como la derivada logarítmica del monto acumulado con respecto al tiempo. La fuerza de interés proporciona la herramienta teórica más precisa para modelar el crecimiento del dinero en el tiempo y es fundamental en matemáticas financieras avanzadas, seguros y modelos económicos donde se requiere precisión en la medición del valor temporal del dinero.</p>
+  </div>
 
-<!-- Ejercicio 1: Conceptos fundamentales y fórmulas -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Fundamentos del valor presente</h4>
-    <p>Análisis de los conceptos básicos y fórmulas fundamentales:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Concepto</th>
-        <th>Definición</th>
-        <th>Fórmula</th>
-        <th>Variables</th>
-        <th>Ejemplo</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Valor Presente Simple</td>
-        <td>Valor actual de un pago único futuro</td>
-        <td>VP = VF / (1 + i)ⁿ</td>
-        <td>VF=Valor futuro, i=tasa, n=periodos</td>
-        <td>VF=$1,210, i=10%, n=2 → VP=$1,000</td>
-        </tr>
-        <tr>
-        <td>Factor de Descuento</td>
-        <td>Multiplicador para calcular VP</td>
-        <td>FD = 1 / (1 + i)ⁿ</td>
-        <td>También llamado factor de actualización</td>
-        <td>i=10%, n=2 → FD=0.8264</td>
-        </tr>
-        <tr>
-        <td>Tasa de Descuento</td>
-        <td>Tasa usada para calcular VP</td>
-        <td>i en VP = VF/(1+i)ⁿ</td>
-        <td>Refleja costo de oportunidad</td>
-        <td>10%, 15%, 20% según riesgo</td>
-        </tr>
-        <tr>
-        <td>Valor Presente Neto</td>
-        <td>VP de flujos menos inversión inicial</td>
-        <td>VPN = ∑[FCₜ/(1+i)ᵗ] - I₀</td>
-        <td>FC=Flujo de caja, I=Inversión</td>
-        <td>Evaluación de proyectos</td>
-        </tr>
-        <tr>
-        <td>Perpetuidad</td>
-        <td>Serie infinita de pagos iguales</td>
-        <td>VP = A / i</td>
-        <td>A=Pago periódico constante</td>
-        <td>A=$100, i=10% → VP=$1,000</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente siempre es menor o igual al valor futuro debido al descuento. El factor de descuento disminuye exponencialmente con el tiempo y la tasa, reflejando que los flujos más lejanos valen menos en términos presentes.</p>
-</div>
+  <!-- Ejercicio 1: Conceptos fundamentales y definiciones -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Fundamentos de la fuerza de interés</h4>
+      <p>Análisis de los conceptos básicos y relaciones matemáticas fundamentales:</p>
+      <table class=math-table>
+      <thead>
+          <tr>
+          <th>Concepto</th>
+          <th>Definición Matemática</th>
+          <th>Interpretación</th>
+          <th>Relación con Otras Tasas</th>
+          <th>Ejemplo</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>Fuerza de Interés (δ)</td>
+          <td>δ(t) = d/dt [ln A(t)]</td>
+          <td>Tasa instantánea de crecimiento</td>
+          <td>Límite cuando m → ∞</td>
+          <td>δ = 0.08</td>
+          </tr>
+          <tr>
+          <td>Capitalización Continua</td>
+          <td>A(t) = A(0) × e^{δt}</td>
+          <td>Crecimiento exponencial continuo</td>
+          <td>VF = VP × e^{δn}</td>
+          <td>$100 → $108.33 en 1 año</td>
+          </tr>
+          <tr>
+          <td>Relación con Tasa Nominal</td>
+          <td>δ = ln(1 + i)</td>
+          <td>Conversión a capitalización continua</td>
+          <td>i = e^δ - 1</td>
+          <td>i=8.33% → δ=8%</td>
+          </tr>
+          <tr>
+          <td>Fuerza Constante</td>
+          <td>δ(t) = δ (constante)</td>
+          <td>Caso más simple y común</td>
+          <td>A(t) = A(0)e^{δt}</td>
+          <td>Crecimiento exponencial puro</td>
+          </tr>
+          <tr>
+          <td>Fuerza Variable</td>
+          <td>δ(t) función del tiempo</td>
+          <td>Tasas que cambian en el tiempo</td>
+          <td>A(t) = A(0)exp(∫δ(s)ds)</td>
+          <td>Modelos económicos reales</td>
+          </tr>
+      </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La fuerza de interés representa la tasa de crecimiento en cada instante, mientras que las tasas discretas promedian el crecimiento sobre periodos. La relación es logarítmica: δ = ln(1+i) para conversión exacta.</p>
+  </div>
 
-<!-- Gráfica 1: Proceso de descuento de valor futuro a valor presente -->
-<div class=graph-container style=margin-bottom:20px;>
-    <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descuento de Valor Futuro a Valor Presente</h4>
-    <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-    
-    <!-- Título -->
-    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Proceso de Descuento: Valor Futuro → Valor Presente</strong></text>
-    <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa de descuento: 10% anual</text>
-    
-    <!-- Línea de tiempo -->
-    <line x1=50 y1=150 x2=350 y2=150 stroke=var(--apple-dark-gray) stroke-width=3></line>
-    
-    <!-- Valor Futuro -->
-    <g transform=translate(300,80)>
-        <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
-        <text x=0 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Valor Futuro</strong></text>
-        <text x=0 y=40 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>VF = $1,331</text>
-        <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Dentro de 3 años)</text>
-    </g>
-    
-    <!-- Flecha de descuento -->
-    <path d='M 250,150 L 100,150' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowLeft)></path>
-    <text x=175 y=140 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)><strong>DESCUENTO</strong></text>
-    <text x=175 y=155 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>÷ (1 + 0.10)³</text>
-    
-    <!-- Valor Presente -->
-    <g transform=translate(50,80)>
-        <rect x=-50 y=0 width=100 height=60 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
-        <text x=0 y=25 text-anchor=middle font-size=14 fill=var(--apple-dark-gray)><strong>Valor Presente</strong></text>
-        <text x=0 y=40 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>VP = $1,000</text>
-        <text x=0 y=50 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>(Hoy)</text>
-    </g>
-    
-    <!-- Marcas de tiempo -->
-    <g transform=translate(0,0)>
-        <line x1=50 y1=145 x2=50 y2=155 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
-        <text x=50 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Año 0</text>
-        
-        <line x1=150 y1=145 x2=150 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=150 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Año 1</text>
-        
-        <line x1=250 y1=145 x2=250 y2=155 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=250 y=170 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Año 2</text>
-        
-        <line x1=350 y1=145 x2=350 y2=155 stroke=var(--apple-vibrant-green) stroke-width=2></line>
-        <text x=350 y=170 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Año 3</text>
-    </g>
-    
-    <!-- Factores de descuento intermedios -->
-    <g transform=translate(150,200)>
-        <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
-        <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 1: 0.9091</text>
-    </g>
-    
-    <g transform=translate(250,200)>
-        <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
-        <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 2: 0.8264</text>
-    </g>
-    
-    <g transform=translate(350,200)>
-        <rect x=-40 y=0 width=80 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
-        <text x=0 y=12 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Factor año 3: 0.7513</text>
-    </g>
-    
-    <!-- Fórmula completa -->
-    <rect x=50 y=230 width=300 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=200 y=245 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Fórmula de Valor Presente</strong></text>
-    <text x=200 y=260 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>VP = VF × [1 / (1 + i)ⁿ]</text>
-    <text x=200 y=275 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)>$1,000 = $1,331 × [1 / (1.10)³]</text>
-    
-    <!-- Explicación conceptual -->
-    <rect x=50 y=300 width=300 height=40 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-    <text x=200 y=315 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El dinero hoy vale más que mañana!</strong></text>
-    <text x=200 y=330 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>$1,000 hoy equivalen a $1,331 dentro de 3 años al 10% anual</text>
-    
-    <!-- Definición de flechas -->
-    <defs>
-        <marker id=arrowLeft markerWidth=10 markerHeight=7 refX=1 refY=3.5 orient=auto>
-        <polygon points='10 0, 0 3.5, 10 7' fill=var(--apple-dark-gray)></polygon>
-        </marker>
-    </defs>
-    
-    </svg>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El proceso de descuento es inverso al de capitalización. Mientras la capitalización lleva valores presentes a futuros multiplicando por (1+i)ⁿ, el descuento trae valores futuros al presente dividiendo por (1+i)ⁿ o multiplicando por el factor de descuento 1/(1+i)ⁿ.</p>
-</div>
+  <!-- Gráfica 1: Comparación de capitalización discreta vs continua -->
+  <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Capitalización Discreta vs Continua</h4>
+      <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+      
+      <!-- Título -->
+      <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Evolución de $100 con tasa del 8% anual</strong></text>
+      
+      <!-- Ejes coordenados -->
+      <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      
+      <!-- Etiquetas de ejes -->
+      <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
+      <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Acumulado ($)</text>
+      
+      <!-- Marcas del eje X -->
+      <g transform=translate(0,0)>
+          <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
+          
+          <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
+          
+          <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
+          
+          <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
+          
+          <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
+      </g>
+      
+      <!-- Marcas del eje Y -->
+      <g transform=translate(0,0)>
+          <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>120</text>
+          
+          <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>140</text>
+          
+          <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>160</text>
+          
+          <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>180</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200</text>
+      </g>
+      
+      <!-- Capitalización anual (discreta) -->
+      <g transform=translate(0,0)>
+          <circle cx=100 cy=208 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <circle cx=150 cy=226 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <circle cx=200 cy=244 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <circle cx=250 cy=262 r=3 fill=var(--apple-vibrant-blue)></circle>
+          <circle cx=300 cy=280 r=3 fill=var(--apple-vibrant-blue)></circle>
+          
+          <path d='M 50,250 L 100,208 L 150,226 L 200,244 L 250,262 L 300,280' 
+              stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+      </g>
+      
+      <!-- Capitalización continua -->
+      <path d='M 50,250 
+                  L 100,208.3 
+                  L 150,217.7 
+                  L 200,227.6 
+                  L 250,238.0 
+                  L 300,249.2' 
+              stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
+      
+      <!-- Puntos de capitalización continua -->
+      <circle cx=100 cy=208.3 r=3 fill=var(--apple-vibrant-green)></circle>
+      <circle cx=150 cy=217.7 r=3 fill=var(--apple-vibrant-green)></circle>
+      <circle cx=200 cy=227.6 r=3 fill=var(--apple-vibrant-green)></circle>
+      <circle cx=250 cy=238.0 r=3 fill=var(--apple-vibrant-green)></circle>
+      <circle cx=300 cy=249.2 r=3 fill=var(--apple-vibrant-green)></circle>
+      
+      <!-- Leyenda -->
+      <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Comparación a 5 años</strong></text>
+      
+      <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
+      <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>Anual: VF = $146.93</text>
+      
+      <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
+      <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Continua: VF = $149.18</text>
+      
+      <text x=290 y=120 font-size=9 fill=var(--apple-dark-gray)>Diferencia: $2.25 (1.53%)</text>
+      <text x=290 y=130 font-size=9 fill=var(--apple-dark-gray)>δ = ln(1.08) = 7.696%</text>
+      
+      <!-- Fórmulas -->
+      <rect x=50 y=290 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmulas de Cálculo</strong></text>
+      <text x=120 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Anual: 100 × (1.08)ⁿ</text>
+      <text x=280 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Continua: 100 × e^{0.07696×n}</text>
+      
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La capitalización continua genera un crecimiento más suave y ligeramente mayor que la capitalización anual. La diferencia se amplía con el tiempo y con tasas más altas. La fuerza de interés equivalente (δ=7.696%) es menor que la tasa nominal (8%) pero produce mayor acumulación debido a la capitalización instantánea.</p>
+  </div>
 
-<!-- Ejercicio 2: Cálculos prácticos de valor presente -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones del valor presente</h4>
-    <p>Resolución de problemas típicos usando valor presente:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Escenario</th>
-        <th>Datos del Problema</th>
-        <th>Procedimiento de Cálculo</th>
-        <th>Fórmula Aplicada</th>
-        <th>Resultado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Inversión Única</td>
-        <td>VF=$5,000, i=8%, n=5 años</td>
-        <td>1. VP = 5000 / (1.08)⁵<br>2. (1.08)⁵ = 1.4693<br>3. VP = 5000 / 1.4693</td>
-        <td>VP = VF / (1+i)ⁿ</td>
-        <td>VP = $3,402.92</td>
-        </tr>
-        <tr>
-        <td>Comparación de Ofertas</td>
-        <td>Oferta A: $10,000 hoy<br>Oferta B: $12,000 en 2 años, i=7%</td>
-        <td>1. VP oferta B = 12000/(1.07)²<br>2. VP = 12000/1.1449</td>
-        <td>VP = VF / (1+i)ⁿ</td>
-        <td>VP = $10,481.66 → Mejor B</td>
-        </tr>
-        <tr>
-        <td>Préstamo</td>
-        <td>Pago $15,000 en 3 años, i=12%</td>
-        <td>1. VP = 15000 / (1.12)³<br>2. (1.12)³ = 1.4049<br>3. VP = 15000/1.4049</td>
-        <td>VP = VF / (1+i)ⁿ</td>
-        <td>VP = $10,677.88</td>
-        </tr>
-        <tr>
-        <td>Bonos Cupón Cero</td>
-        <td>Bono: $1,000 en 10 años, i=6%</td>
-        <td>1. VP = 1000 / (1.06)¹⁰<br>2. (1.06)¹⁰ = 1.7908<br>3. VP = 1000/1.7908</td>
-        <td>VP = VF / (1+i)ⁿ</td>
-        <td>VP = $558.39</td>
-        </tr>
-        <tr>
-        <td>Herencia Futura</td>
-        <td>Herencia $100,000 en 20 años, i=5%</td>
-        <td>1. VP = 100000 / (1.05)²⁰<br>2. (1.05)²⁰ = 2.6533<br>3. VP = 100000/2.6533</td>
-        <td>VP = VF / (1+i)ⁿ</td>
-        <td>VP = $37,688.95</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A medida que aumentan el plazo o la tasa de descuento, el valor presente disminuye significativamente. Esto explica por qué flujos muy lejanos tienen poco valor presente y por qué las tasas altas reducen drásticamente el valor actual de inversiones futuras.</p>
-</div>
+  <!-- Ejercicio 2: Cálculos y conversiones prácticas -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Conversiones y aplicaciones de la fuerza de interés</h4>
+      <p>Resolución de problemas de conversión entre diferentes tipos de tasas:</p>
+      <table class=math-table>
+      <thead>
+          <tr>
+          <th>Tipo de Conversión</th>
+          <th>Datos de Entrada</th>
+          <th>Procedimiento de Cálculo</th>
+          <th>Fórmula Aplicada</th>
+          <th>Resultado</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>Tasa Efectiva a Fuerza</td>
+          <td>i = 10% anual</td>
+          <td>1. δ = ln(1 + i)<br>2. δ = ln(1.10)</td>
+          <td>δ = ln(1 + i)</td>
+          <td>δ = 9.531% anual</td>
+          </tr>
+          <tr>
+          <td>Fuerza a Tasa Efectiva</td>
+          <td>δ = 6% anual</td>
+          <td>1. i = e^δ - 1<br>2. i = e^0.06 - 1</td>
+          <td>i = e^δ - 1</td>
+          <td>i = 6.183% anual</td>
+          </tr>
+          <tr>
+          <td>Tasa Nominal a Fuerza</td>
+          <td>j = 12% capitalizable mensualmente</td>
+          <td>1. i = (1 + j/12)¹² - 1<br>2. δ = ln(1 + i)</td>
+          <td>δ = ln(1 + i)</td>
+          <td>δ = 11.334% anual</td>
+          </tr>
+          <tr>
+          <td>Valor Futuro con δ</td>
+          <td>VP = $5,000, δ = 5%, n = 3 años</td>
+          <td>1. VF = 5000 × e^{0.05×3}<br>2. VF = 5000 × e^0.15</td>
+          <td>VF = VP × e^{δn}</td>
+          <td>VF = $5,809.18</td>
+          </tr>
+          <tr>
+          <td>Valor Presente con δ</td>
+          <td>VF = $10,000, δ = 7%, n = 2 años</td>
+          <td>1. VP = 10000 × e^{-0.07×2}<br>2. VP = 10000 × e^{-0.14}</td>
+          <td>VP = VF × e^{-δn}</td>
+          <td>VP = $8,694.15</td>
+          </tr>
+      </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La conversión entre fuerza de interés y tasa efectiva utiliza la función exponencial natural. La fuerza de interés siempre es menor que la tasa efectiva equivalente, pero produce el mismo crecimiento debido a la capitalización continua.</p>
+  </div>
 
-<!-- Gráfica 2: Efecto del tiempo y la tasa en el valor presente -->
-<div class=graph-container style=margin-bottom:20px;>
-    <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Valor Presente vs Tiempo y Tasa</h4>
-    <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-    
-    <!-- Título -->
-    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Valor Presente de $1,000 Futuro</strong></text>
-    <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Efecto del tiempo y la tasa de descuento</text>
-    
-    <!-- Ejes coordenados -->
-    <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    
-    <!-- Etiquetas de ejes -->
-    <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
-    <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Presente ($)</text>
-    
-    <!-- Marcas del eje X (tiempo) -->
-    <g transform=translate(0,0)>
-        <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
-        
-        <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>10</text>
-        
-        <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>15</text>
-        
-        <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>20</text>
-        
-        <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>25</text>
-    </g>
-    
-    <!-- Marcas del eje Y (valor presente) -->
-    <g transform=translate(0,0)>
-        <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>800</text>
-        
-        <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>600</text>
-        
-        <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>400</text>
-        
-        <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200</text>
-        
-        <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>0</text>
-    </g>
-    
-    <!-- Curva para 5% -->
-    <path d='M 50,250 
-                L 100,235 
-                L 150,220 
-                L 200,205 
-                L 250,190 
-                L 300,175' 
-            stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-    
-    <!-- Curva para 10% -->
-    <path d='M 50,250 
-                L 100,220 
-                L 150,190 
-                L 200,160 
-                L 250,135 
-                L 300,115' 
-            stroke=var(--apple-vibrant-green) stroke-width=2 fill=none></path>
-    
-    <!-- Curva para 15% -->
-    <path d='M 50,250 
-                L 100,205 
-                L 150,165 
-                L 200,130 
-                L 250,100 
-                L 300,75' 
-            stroke=var(--apple-vibrant-orange) stroke-width=2 fill=none></path>
-    
-    <!-- Curva para 20% -->
-    <path d='M 50,250 
-                L 100,190 
-                L 150,140 
-                L 200,105 
-                L 250,75 
-                L 300,55' 
-            stroke=var(--apple-vibrant-red) stroke-width=2 fill=none></path>
-    
-    <!-- Puntos de referencia -->
-    <circle cx=200 cy=205 r=3 fill=var(--apple-vibrant-blue)></circle>
-    <text x=210 y=200 text-anchor=start font-size=9 fill=var(--apple-vibrant-blue)>5%: $614</text>
-    
-    <circle cx=200 cy=160 r=3 fill=var(--apple-vibrant-green)></circle>
-    <text x=210 y=155 text-anchor=start font-size=9 fill=var(--apple-vibrant-green)>10%: $386</text>
-    
-    <circle cx=200 cy=130 r=3 fill=var(--apple-vibrant-orange)></circle>
-    <text x=210 y=125 text-anchor=start font-size=9 fill=var(--apple-vibrant-orange)>15%: $247</text>
-    
-    <circle cx=200 cy=105 r=3 fill=var(--apple-vibrant-red)></circle>
-    <text x=210 y=100 text-anchor=start font-size=9 fill=var(--apple-vibrant-red)>20%: $162</text>
-    
-    <!-- Leyenda -->
-    <rect x=200 y=60 width=180 height=100 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Tasas de Descuento</strong></text>
-    
-    <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
-    <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>5% anual</text>
-    
-    <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=2></line>
-    <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>10% anual</text>
-    
-    <line x1=210 y1=115 x2=230 y2=115 stroke=var(--apple-vibrant-orange) stroke-width=2></line>
-    <text x=240 y=120 font-size=10 fill=var(--apple-dark-gray)>15% anual</text>
-    
-    <line x1=210 y1=130 x2=230 y2=130 stroke=var(--apple-vibrant-red) stroke-width=2></line>
-    <text x=240 y=135 font-size=10 fill=var(--apple-dark-gray)>20% anual</text>
-    
-    <!-- Anotación importante -->
-    <rect x=50 y=290 width=300 height=50 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-    <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡El tiempo y la tasa son cruciales!</strong></text>
-    <text x=200 y=320 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>A 20 años con 20%, $1,000 futuro valen solo $26 hoy</text>
-    <text x=200 y=335 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>El descuento exponencial reduce drásticamente el valor presente</text>
-    
-    </svg>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente disminuye exponencialmente con el tiempo y la tasa de descuento. Tasas más altas o plazos más largos reducen significativamente el valor presente. A 20 años con 20% de descuento, $1,000 futuros valen menos de $50 hoy, demostrando el poder del descuento compuesto.</p>
-</div>
+  <!-- Gráfica 2: Relación entre frecuencia de capitalización y fuerza de interés -->
+  <div class=graph-container style=margin-bottom:20px;>
+      <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Límite hacia la Capitalización Continua</h4>
+      <svg viewBox='0 0 400 400' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
+      
+      <!-- Título -->
+      <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Convergencia a la Capitalización Continua</strong></text>
+      <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal del 12% anual con diferentes frecuencias</text>
+      
+      <!-- Ejes coordenados -->
+      <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      <line x1=50 y1=300 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
+      
+      <!-- Etiquetas de ejes -->
+      <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Frecuencia de Capitalización (veces por año)</text>
+      <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,200)'>Tasa Efectiva Anual (%)</text>
+      
+      <!-- Marcas del eje X (frecuencia) -->
+      <g transform=translate(0,0)>
+          <line x1=100 y1=295 x2=100 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=100 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
+          
+          <line x1=150 y1=295 x2=150 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=150 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
+          
+          <line x1=200 y1=295 x2=200 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
+          
+          <line x1=250 y1=295 x2=250 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=250 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12</text>
+          
+          <line x1=300 y1=295 x2=300 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=300 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>52</text>
+          
+          <line x1=350 y1=295 x2=350 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=350 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>∞</text>
+      </g>
+      
+      <!-- Marcas del eje Y (tasa efectiva) -->
+      <g transform=translate(0,0)>
+          <line x1=45 y1=250 x2=55 y2=250 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=253 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.0%</text>
+          
+          <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.2%</text>
+          
+          <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.4%</text>
+          
+          <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
+          <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.6%</text>
+      </g>
+      
+      <!-- Puntos de datos -->
+      <circle cx=100 cy=250 r=4 fill=var(--apple-vibrant-blue)></circle>
+      <text x=100 y=240 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Anual: 12.000%</text>
+      
+      <circle cx=150 cy=235 r=4 fill=var(--apple-vibrant-blue)></circle>
+      <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Semestral: 12.360%</text>
+      
+      <circle cx=200 cy=220 r=4 fill=var(--apple-vibrant-blue)></circle>
+      <text x=200 y=210 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Trimestral: 12.551%</text>
+      
+      <circle cx=250 cy=210 r=4 fill=var(--apple-vibrant-blue)></circle>
+      <text x=250 y=200 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Mensual: 12.683%</text>
+      
+      <circle cx=300 cy=205 r=4 fill=var(--apple-vibrant-blue)></circle>
+      <text x=300 y=195 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Semanal: 12.734%</text>
+      
+      <!-- Límite asintótico (capitalización continua) -->
+      <line x1=50 y1=200 x2=350 y2=200 stroke=var(--apple-vibrant-green) stroke-width=3 stroke-dasharray=5,3></line>
+      <text x=360 y=200 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Continua: 12.750%</text>
+      
+      <!-- Curva de convergencia -->
+      <path d='M 100,250 
+                  L 150,235 
+                  L 200,220 
+                  L 250,210 
+                  L 300,205 
+                  L 350,200' 
+              stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
+      
+      <!-- Zona de diferencia con el límite -->
+      <path d='M 100,250 L 100,200 L 150,200 L 150,235 L 200,220 L 200,200 L 250,210 L 250,200 L 300,205 L 300,200 L 350,200 L 350,300 L 100,300 Z' 
+              fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
+      <text x=200 y=250 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Diferencia con el límite</text>
+      
+      <!-- Fórmula del límite -->
+      <rect x=100 y=320 width=200 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
+      <text x=200 y=335 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Límite Matemático</strong></text>
+      <text x=200 y=350 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>lim<sub>m→∞</sub> (1 + j/m)<sup>m</sup> = e<sup>j</sup></text>
+      <text x=200 y=365 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Para j=12%: e<sup>0.12</sup> = 1.12750</text>
+      
+      </svg>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A medida que aumenta la frecuencia de capitalización, la tasa efectiva se aproxima asintóticamente al límite de capitalización continua. La mayor ganancia se obtiene al pasar de capitalización anual a mensual, mientras que aumentos posteriores (semanal, diaria) producen mejoras marginales. El límite matemático está dado por la función exponencial.</p>
+  </div>
 
-<!-- Ejercicio 3: Aplicaciones en decisiones financieras -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Valor presente en decisiones reales</h4>
-    <p>Uso del valor presente en diferentes contextos de toma de decisiones:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Decisión Financiera</th>
-        <th>Contexto</th>
-        <th>Aplicación del VP</th>
-        <th>Criterio de Decisión</th>
-        <th>Ejemplo Práctico</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Evaluación de Inversiones</td>
-        <td>Selección entre proyectos</td>
-        <td>Cálculo del Valor Presente Neto (VPN)</td>
-        <td>VPN > 0 → Proyecto viable</td>
-        <td>Inversión en nueva maquinaria</td>
-        </tr>
-        <tr>
-        <td>Comparación de Ofertas</td>
-        <td>Elección entre alternativas de pago</td>
-        <td>VP de cada opción</td>
-        <td>Menor VP → Mejor opción</td>
-        <td>Compra al contado vs crédito</td>
-        </tr>
-        <tr>
-        <td>Valuación de Activos</td>
-        <td>Determinar precio justo</td>
-        <td>VP de flujos futuros esperados</td>
-        <td>VP ≈ Precio de mercado</td>
-        <td>Valuación de bonos o acciones</td>
-        </tr>
-        <tr>
-        <td>Análisis de Préstamos</td>
-        <td>Evaluar costo de financiamiento</td>
-        <td>VP de pagos futuros</td>
-        <td>Comparar con monto recibido</td>
-        <td>Préstamo personal o hipotecario</td>
-        </tr>
-        <tr>
-        <td>Planificación de Jubilación</td>
-        <td>Determinar ahorros necesarios</td>
-        <td>VP de gastos futuros</td>
-        <td>VP = Ahorro objetivo</td>
-        <td>Cálculo de fondo de pensiones</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente permite comparar alternativas en una base común (valor hoy), eliminando las distorsiones temporales. Es la herramienta fundamental para tomar decisiones financieras racionales que consideren el valor temporal del dinero.</p>
-</div>
+  <!-- Ejercicio 3: Aplicaciones avanzadas y casos especiales -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Aplicaciones de la fuerza de interés</h4>
+      <p>Uso de la fuerza de interés en contextos financieros y actuariales avanzados:</p>
+      <table class=math-table>
+      <thead>
+          <tr>
+          <th>Área de Aplicación</th>
+          <th>Contexto Específico</th>
+          <th>Uso de la Fuerza de Interés</th>
+          <th>Ventaja</th>
+          <th>Ejemplo Práctico</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>Matemáticas Actuariales</td>
+          <td>Cálculo de primas de seguros</td>
+          <td>Modelado de reservas técnicas con capitalización continua</td>
+          <td>Mayor precisión en cálculos de largo plazo</td>
+          <td>Primas de seguros de vida</td>
+          </tr>
+          <tr>
+          <td>Finanzas Corporativas</td>
+          <td>Evaluación de proyectos de inversión</td>
+          <td>Flujos de efectivo continuos en el tiempo</td>
+          <td>Modelado más realista de ingresos</td>
+          <td>Proyectos con ingresos constantes</td>
+          </tr>
+          <tr>
+          <td>Economía Matemática</td>
+          <td>Modelos de crecimiento económico</td>
+          <td>Ecuaciones diferenciales de crecimiento</td>
+          <td>Consistencia con teoría económica</td>
+          <td>Modelo de Solow-Swan</td>
+          </tr>
+          <tr>
+          <td>Ingeniería Financiera</td>
+          <td>Precios de derivados financieros</td>
+          <td>Modelo Black-Scholes-Merton</td>
+          <td>Base teórica para opciones</td>
+          <td>Opciones europeas</td>
+          </tr>
+          <tr>
+          <td>Gestión de Riesgos</td>
+          <td>Valor en Riesgo (VaR)</td>
+          <td>Modelado continuo de rendimientos</td>
+          <td>Mayor precisión en medición de riesgo</td>
+          <td>VaR de carteras de inversión</td>
+          </tr>
+      </tbody>
+      </table>
+      <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La fuerza de interés es fundamental en aplicaciones donde se requiere modelado continuo y precisión matemática. Su uso simplifica muchas fórmulas en cálculo diferencial y proporciona la base teórica para modelos financieros avanzados.</p>
+  </div>
 
-<!-- Aplicaciones reales -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
-    <ul style=padding-left:18px;line-height:1.6;>
-    <li><strong>Evaluación de proyectos de inversión:</strong> Cálculo del Valor Presente Neto (VPN) para determinar la viabilidad de proyectos empresariales.</li>
-    <li><strong>Valuación de bonos:</strong> Determinación del precio justo de bonos mediante el descuento de flujos de cupones y principal.</li>
-    <li><strong>Análisis de préstamos hipotecarios:</strong> Cálculo de pagos mensuales equivalentes mediante descuento de flujos futuros.</li>
-    <li><strong>Planificación de jubilación:</strong> Cálculo del ahorro necesario hoy para alcanzar un ingreso futuro deseado.</li>
-    <li><strong>Comparación de alternativas de pago:</strong> Elección entre pagar al contado o financiado considerando el valor presente.</li>
-    <li><strong>Valuación de empresas:</strong> Uso de flujos de caja descontados para determinar el valor de una compañía.</li>
-    <li><strong>Análisis de arrendamientos:</strong> Comparación entre comprar o arrendar activos usando valor presente.</li>
-    <li><strong>Decisiones de presupuesto de capital:</strong> Asignación de recursos entre diferentes proyectos de inversión.</li>
-    </ul>
-</div>
+  <!-- Aplicaciones reales -->
+  <div class=content-section style=margin-bottom:20px;>
+      <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
+      <ul style=padding-left:18px;line-height:1.6;>
+      <li><strong>Modelo Black-Scholes:</strong> Fórmula para valoración de opciones que utiliza capitalización continua como base teórica.</li>
+      <li><strong>Seguros de vida:</strong> Cálculo de reservas técnicas y primas utilizando fuerza de interés para mayor precisión actuarial.</li>
+      <li><strong>Bonos cupón cero:</strong> Valuación de instrumentos que no pagan intereses periódicos utilizando capitalización continua.</li>
+      <li><strong>Análisis de inversiones:</strong> Evaluación de proyectos con flujos de efectivo continuos en el tiempo.</li>
+      <li><strong>Modelos macroeconómicos:</strong> Representación del crecimiento económico mediante ecuaciones diferenciales.</li>
+      <li><strong>Finanzas cuantitativas:</strong> Desarrollo de estrategias de trading algorítmico basadas en modelos continuos.</li>
+      <li><strong>Gestión de carteras:</strong> Optimización de portafolios considerando rendimientos continuos.</li>
+      <li><strong>Derivados financieros:</strong> Valuación de swaps, futuros y otros instrumentos derivados.</li>
+      </ul>
+  </div>
 
-<!-- Bibliografía -->
-<div class=bibliography-section style=margin-top:20px;>
-    <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
-    <ul style=padding-left:18px;line-height:1.5;>
-    <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
-    <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
-    <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
-    <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-    <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
-    <li>Khan Academy: Present value. www.khanacademy.org</li>
-    </ul>
-</div>
-</div>
-`);"><b>6.3. Valor Presente</b> <span class=emoji-small>✅</span>
-        </li>
-
-        <li onclick="abrirModal('6.4. Tasa de descuento', `
-<hr><br>
-<div class=math-module>
-
-<!-- Tiempo estimado -->
-<div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
-    <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 25 minutos'>
-    <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
-    <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=14.1372 transform='rotate(-90 10 10)'></circle>
-    <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>25 min</text>
-    </svg>
-    <span style=font-weight:bold;>Tiempo estimado: 25 minutos</span>
-</div>
-
-<!-- Objetivo -->
-<div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-    <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-    <span><strong>Objetivo:</strong> Comprender el concepto de tasa de descuento como medida de reducción del valor futuro para obtener el valor presente, dominar los diferentes tipos de descuento (racional y bancario), aprender a calcular valores presentes usando tasas de descuento, y aplicar estos conocimientos en operaciones financieras como descuento de documentos, factoring y evaluación de inversiones.</span>
-</div>
-
-<!-- Idea principal -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
-    <p>La tasa de descuento representa el porcentaje que se deduce de un valor futuro para calcular su valor presente, reflejando el costo de oportunidad del dinero en el tiempo. Existen dos tipos principales: el descuento racional (o matemático) que calcula el interés sobre el valor presente, y el descuento bancario (o comercial) que calcula el descuento sobre el valor futuro. Mientras la tasa de interés mide el crecimiento del capital, la tasa de descuento mide la reducción necesaria para traer valores futuros al presente. Esta distinción es fundamental en operaciones de corto plazo como el descuento de pagarés, letras de cambio y otros documentos negociables.</p>
-</div>
-
-<!-- Ejercicio 1: Tipos de descuento y sus características -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Comparación entre descuento racional y bancario</h4>
-    <p>Análisis de las diferencias fundamentales entre los dos tipos principales de descuento:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Característica</th>
-        <th>Descuento Racional (Matemático)</th>
-        <th>Descuento Bancario (Comercial)</th>
-        <th>Fórmula Principal</th>
-        <th>Ejemplo con VF=$1,000, d=20%, n=1 año</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Base de Cálculo</td>
-        <td>Valor Presente (VP)</td>
-        <td>Valor Futuro (VF)</td>
-        <td>Racional: D = VP × i × n</td>
-        <td>VP = $833.33</td>
-        </tr>
-        <tr>
-        <td>Fórmula de VP</td>
-        <td>VP = VF / (1 + i×n)</td>
-        <td>VP = VF × (1 - d×n)</td>
-        <td>Bancario: D = VF × d × n</td>
-        <td>VP = $800.00</td>
-        </tr>
-        <tr>
-        <td>Relación con Tasa</td>
-        <td>Usa tasa de interés (i)</td>
-        <td>Usa tasa de descuento (d)</td>
-        <td>Equivalencia: i = d/(1-d×n)</td>
-        <td>i = 25% equivalente</td>
-        </tr>
-        <tr>
-        <td>Aplicación Práctica</td>
-        <td>Teórica, matemática</td>
-        <td>Operaciones bancarias reales</td>
-        <td>d = i/(1+i×n)</td>
-        <td>d = 20% declarada</td>
-        </tr>
-        <tr>
-        <td>Monto del Descuento</td>
-        <td>$166.67</td>
-        <td>$200.00</td>
-        <td>D racional < D bancario</td>
-        <td>Diferencia: $33.33</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El descuento bancario siempre produce un mayor monto de descuento que el racional para la misma tasa nominal, lo que lo hace más rentable para las instituciones financieras pero más costoso para los clientes. Por esto es crucial convertir tasas de descuento a tasas de interés equivalentes para comparar costos reales.</p>
-</div>
-
-<!-- Gráfica 1: Comparación visual entre descuento racional y bancario -->
-<div class=graph-container style=margin-bottom:20px;>
-    <h4><i class='fas fa-chart-line' style=color:var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Descuento Racional vs Bancario</h4>
-    <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-    
-    <!-- Título -->
-    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Comparación: Descuento de $1,000 a 1 año con 20%</strong></text>
-    
-    <!-- Valor Futuro común -->
-    <rect x=150 y=50 width=100 height=40 fill=var(--apple-light-green) stroke=var(--apple-vibrant-green) stroke-width=2 rx=5></rect>
-    <text x=200 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Valor Futuro: $1,000</strong></text>
-    
-    <!-- Descuento Racional -->
-    <g transform=translate(80,120)>
-        <text x=0 y=0 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)><strong>Descuento Racional</strong></text>
-        
-        <!-- Flecha de descuento -->
-        <path d='M 0,10 L 0,40' stroke=var(--apple-vibrant-blue) stroke-width=3 marker-end=url(#arrowDown)></path>
-        <text x=20 y=25 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>÷ (1 + 0.25)</text>
-        
-        <!-- Valor Presente -->
-        <rect x=-40 y=50 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
-        <text x=0 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $833.33</strong></text>
-        <text x=0 y=80 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Base: VP)</text>
-        
-        <!-- Descuento aplicado -->
-        <rect x=50 y=30 width=70 height=20 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
-        <text x=85 y=40 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $166.67</text>
-    </g>
-    
-    <!-- Descuento Bancario -->
-    <g transform=translate(240,120)>
-        <text x=0 y=0 text-anchor=middle font-size=12 fill=var(--apple-vibrant-red)><strong>Descuento Bancario</strong></text>
-        
-        <!-- Flecha de descuento -->
-        <path d='M 0,10 L 0,40' stroke=var(--apple-vibrant-red) stroke-width=3 marker-end=url(#arrowDown)></path>
-        <text x=20 y=25 text-anchor=middle font-size=10 fill=var(--apple-vibrant-red)>× (1 - 0.20)</text>
-        
-        <!-- Valor Presente -->
-        <rect x=-40 y=50 width=80 height=40 fill=var(--apple-light-blue) stroke=var(--apple-vibrant-blue) stroke-width=2 rx=5></rect>
-        <text x=0 y=70 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>VP: $800.00</strong></text>
-        <text x=0 y=80 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>(Base: VF)</text>
-        
-        <!-- Descuento aplicado -->
-        <rect x=50 y=30 width=70 height=20 fill=var(--apple-light-orange) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=3></rect>
-        <text x=85 y=40 text-anchor=middle font-size=9 fill=var(--apple-dark-gray)>Descuento: $200.00</text>
-    </g>
-    
-    <!-- Diferencia entre ambos -->
-    <path d='M 160,100 L 120,150 L 280,150 L 240,100' stroke=var(--apple-vibrant-purple) stroke-width=2 fill=none stroke-dasharray=5,3></path>
-    <text x=200 y=140 text-anchor=middle font-size=11 fill=var(--apple-vibrant-purple)><strong>Diferencia: $33.33</strong></text>
-    
-    <!-- Explicación de tasas equivalentes -->
-    <rect x=50 y=180 width=300 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=200 y=195 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)><strong>Equivalencia de Tasas</strong></text>
-    <text x=200 y=210 text-anchor=middle font-size=11 fill=var(--apple-vibrant-blue)>Descuento racional con i=25% produce mismo VP que</text>
-    <text x=200 y=225 text-anchor=middle font-size=11 fill=var(--apple-vibrant-red)>Descuento bancario con d=20%</text>
-    <text x=200 y=240 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Fórmula de equivalencia: i = d / (1 - d×n)</text>
-    <text x=200 y=255 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>i = 0.20 / (1 - 0.20×1) = 0.25 = 25%</text>
-    
-    <!-- Aplicación práctica -->
-    <rect x=50 y=270 width=300 height=60 fill=var(--apple-light-yellow) stroke=var(--apple-vibrant-orange) stroke-width=1 rx=5></rect>
-    <text x=200 y=285 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>¡Importante para comparar costos!</strong></text>
-    <text x=200 y=300 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Siempre convertir tasas de descuento a tasas de interés equivalentes</text>
-    <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>para evaluar el costo real del financiamiento</text>
-    
-    <!-- Definición de flechas -->
-    <defs>
-        <marker id=arrowDown markerWidth=10 markerHeight=7 refX=5 refY=3.5 orient=auto>
-        <polygon points='0 0, 10 3.5, 0 7' fill=var(--apple-dark-gray)></polygon>
-        </marker>
-    </defs>
-    
-    </svg>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Aunque ambas operaciones usan una tasa del 20%, el descuento bancario produce un valor presente menor porque aplica la tasa sobre el valor futuro (mayor), mientras el descuento racional la aplica sobre el valor presente (menor). La tasa de interés equivalente revela el costo real: 25% en lugar del 20% aparente.</p>
-</div>
-
-<!-- Ejercicio 2: Cálculos prácticos con tasas de descuento -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Aplicaciones de descuento en operaciones reales</h4>
-    <p>Resolución de problemas típicos de descuento de documentos y conversión de tasas:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Operación Financiera</th>
-        <th>Datos del Problema</th>
-        <th>Procedimiento de Cálculo</th>
-        <th>Fórmula Aplicada</th>
-        <th>Resultado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Descuento de Pagaré</td>
-        <td>VF=$20,000, n=90 días, d=18% anual</td>
-        <td>1. Calcular días: 90/360 = 0.25 años<br>2. VP = 20000 × (1 - 0.18×0.25)</td>
-        <td>VP = VF × (1 - d×n)</td>
-        <td>VP = $19,100</td>
-        </tr>
-        <tr>
-        <td>Conversión a Tasa Interés</td>
-        <td>d=15% a 180 días</td>
-        <td>1. n=180/360=0.5 años<br>2. i = 0.15/(1-0.15×0.5)</td>
-        <td>i = d/(1-d×n)</td>
-        <td>i = 16.216% (180 días)</td>
-        </tr>
-        <tr>
-        <td>Letra de Cambio</td>
-        <td>Valor nominal=$50,000, d=12% anual, n=60 días</td>
-        <td>1. n=60/360=0.1667 años<br>2. VP=50000×(1-0.12×0.1667)</td>
-        <td>VP = VF × (1 - d×n)</td>
-        <td>VP = $49,000</td>
-        </tr>
-        <tr>
-        <td>Descuento Comercial</td>
-        <td>Mercancía $8,000, descuento 25% por pago contado</td>
-        <td>1. VP = 8000 × (1 - 0.25)</td>
-        <td>VP = VF × (1 - d)</td>
-        <td>VP = $6,000</td>
-        </tr>
-        <tr>
-        <td>Análisis de Costo Efectivo</td>
-        <td>Préstamo: $75,000, descuentto $5,000</td>
-        <td>1. VP=70,000, VF=75,000<br>2. d = (75000-70000)/75000<br>3. Convertir a i</td>
-        <td>d = (VF-VP)/VF</td>
-        <td>d=6.67%, i=7.14%</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> En operaciones de descuento, es crucial trabajar con la misma base temporal (generalmente año comercial de 360 días). La conversión a tasa de interés revela que el costo real siempre es mayor que la tasa de descuento declarada.</p>
-</div>
-
-<!-- Gráfica 2: Relación entre plazo y valor presente con descuento -->
-<div class=graph-container style=margin-bottom:20px;>
-    <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Efecto del Plazo en el Descuento Bancario</h4>
-    <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-    
-    <!-- Título -->
-    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Valor Presente vs Plazo - Descuento del 20% anual</strong></text>
-    <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Valor Futuro: $10,000</text>
-    
-    <!-- Ejes coordenados -->
-    <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    
-    <!-- Etiquetas de ejes -->
-    <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Plazo (meses)</text>
-    <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Presente ($)</text>
-    
-    <!-- Marcas del eje X (meses) -->
-    <g transform=translate(0,0)>
-        <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
-        
-        <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6</text>
-        
-        <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>9</text>
-        
-        <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12</text>
-        
-        <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>15</text>
-    </g>
-    
-    <!-- Marcas del eje Y (valor presente) -->
-    <g transform=translate(0,0)>
-        <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>8,000</text>
-        
-        <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>7,000</text>
-        
-        <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>6,000</text>
-        
-        <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5,000</text>
-        
-        <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4,000</text>
-    </g>
-    
-    <!-- Línea de descuento bancario -->
-    <path d='M 50,250 
-                L 100,240 
-                L 150,230 
-                L 200,220 
-                L 250,210 
-                L 300,200' 
-            stroke=var(--apple-vibrant-red) stroke-width=3 fill=none></path>
-    
-    <!-- Puntos de datos -->
-    <circle cx=100 cy=240 r=3 fill=var(--apple-vibrant-red)></circle>
-    <text x=100 y=235 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$9,500</text>
-    
-    <circle cx=150 cy=230 r=3 fill=var(--apple-vibrant-red)></circle>
-    <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$9,000</text>
-    
-    <circle cx=200 cy=220 r=3 fill=var(--apple-vibrant-red)></circle>
-    <text x=200 y=215 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$8,500</text>
-    
-    <circle cx=250 cy=210 r=3 fill=var(--apple-vibrant-red)></circle>
-    <text x=250 y=205 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$8,000</text>
-    
-    <circle cx=300 cy=200 r=3 fill=var(--apple-vibrant-red)></circle>
-    <text x=300 y=195 text-anchor=middle font-size=9 fill=var(--apple-vibrant-red)>$7,500</text>
-    
-    <!-- Línea de valor futuro constante -->
-    <line x1=50 y1=100 x2=350 y2=100 stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=5,3></line>
-    <text x=360 y=100 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Valor Futuro: $10,000</text>
-    
-    <!-- Área de descuento acumulado -->
-    <path d='M 50,250 L 100,240 L 150,230 L 200,220 L 250,210 L 300,200 L 300,100 L 250,100 L 200,100 L 150,100 L 100,100 L 50,100 Z' 
-            fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
-    <text x=200 y=150 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Descuento Acumulado</text>
-    
-    <!-- Leyenda y fórmulas -->
-    <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmula de Descuento</strong></text>
-    
-    <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-red) stroke-width=3></line>
-    <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>VP = VF × (1 - d×n)</text>
-    
-    <text x=290 y=105 font-size=9 fill=var(--apple-dark-gray)>d = 20% anual</text>
-    <text x=290 y=115 font-size=9 fill=var(--apple-dark-gray)>n en años (meses/12)</text>
-    <text x=290 y=125 font-size=9 fill=var(--apple-dark-gray)>Máximo descuento: $2,500</text>
-    
-    <!-- Punto crítico: cuando VP = 0 -->
-    <circle cx=350 cy=250 r=4 fill=var(--apple-vibrant-purple)></circle>
-    <text x=340 y=240 text-anchor=end font-size=9 fill=var(--apple-vibrant-purple)>VP = $0 a 5 años</text>
-    <text x=340 y=250 text-anchor=end font-size=8 fill=var(--apple-dark-gray)>(d×n = 1)</text>
-    
-    </svg>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> El valor presente disminuye linealmente con el plazo cuando se usa descuento bancario. Cuando el producto d×n alcanza 1 (5 años en este caso), el valor presente se vuelve cero, lo que representa el límite máximo del descuento. En la práctica, los plazos son mucho más cortos para evitar este escenario extremo.</p>
-</div>
-
-<!-- Ejercicio 3: Aplicaciones en instrumentos financieros -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Instrumentos que utilizan tasas de descuento</h4>
-    <p>Análisis de productos financieros donde se aplican tasas de descuento:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Instrumento Financiero</th>
-        <th>Mecanismo de Descuento</th>
-        <th>Plazo Típico</th>
-        <th>Ventajas</th>
-        <th>Consideraciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Pagarés Descontados</td>
-        <td>Descuento sobre valor nominal al endosar</td>
-        <td>30-180 días</td>
-        <td>Liquidez inmediata para el tenedor</td>
-        <td>Costo real mayor al aparente</td>
-        </tr>
-        <tr>
-        <td>Letras del Tesoro</td>
-        <td>Emitidas con descuento, redimen a valor nominal</td>
-        <td>3-12 meses</td>
-        <td>Bajo riesgo, alta liquidez</td>
-        <td>Rendimiento implícito</td>
-        </tr>
-        <tr>
-        <td>Factoring</td>
-        <td>Descuento de facturas por cobrar</td>
-        <td>30-90 días</td>
-        <td>Financiamiento rápido de capital de trabajo</td>
-        <td>Pérdida del valor de las facturas</td>
-        </tr>
-        <tr>
-        <td>Documentos por Cobrar</td>
-        <td>Endoso con descuento antes del vencimiento</td>
-        <td>60-120 días</td>
-        <td>Flexibilidad en gestión de cartera</td>
-        <td>Riesgo de impago transferido</td>
-        </tr>
-        <tr>
-        <td>Bonos Cupón Cero</td>
-        <td>Emitidos con descuento, sin pagos intermedios</td>
-        <td>1-30 años</td>
-        <td>Reinversión automática</td>
-        <td>Volatilidad de precio</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> Los instrumentos de descuento son predominantemente de corto plazo y buscan proporcionar liquidez inmediata. Es esencial calcular la tasa de interés equivalente para comprender el costo o rendimiento real de estas operaciones, ya que las tasas de descuento subestiman el costo para el prestatario y sobrestiman el rendimiento para el inversionista.</p>
-</div>
-
-<!-- Aplicaciones reales -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
-    <ul style=padding-left:18px;line-height:1.6;>
-    <li><strong>Descuento de pagarés empresariales:</strong> Las empresas descuentan sus pagarés con instituciones financieras para obtener liquidez antes del vencimiento.</li>
-    <li><strong>Financiamiento de capital de trabajo:</strong> Uso de factoring para convertir cuentas por cobrar en efectivo inmediato.</li>
-    <li><strong>Inversiones en letras del tesoro:</strong> Adquisición de instrumentos gubernamentales emitidos con descuento.</li>
-    <li><strong>Gestión de cartera comercial:</td>
-        <td>Endoso de documentos con descuento para optimizar flujo de efectivo.</li>
-    <li><strong>Financiamiento de inventarios:</strong> Descuento de documentos relacionados con compra de mercancías.</li>
-    <li><strong>Operaciones interbancarias:</strong> Transacciones entre bancos utilizando documentos descontados.</li>
-    <li><strong>Financiamiento de exportaciones:</strong> Descuento de documentos de comercio exterior.</li>
-    <li><strong>Gestión de tesorería:</strong> Decisiones sobre mantener documentos hasta vencimiento o descontarlos.</li>
-    </ul>
-</div>
-
-<!-- Bibliografía -->
-<div class=bibliography-section style=margin-top:20px;>
-    <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
-    <ul style=padding-left:18px;line-height:1.5;>
-    <li>Brealey, R. A., Myers, S. C., & Allen, F. (2020). Principles of Corporate Finance. McGraw-Hill.</li>
-    <li>Ross, S. A., Westerfield, R. W., & Jaffe, J. F. (2019). Corporate Finance. McGraw-Hill.</li>
-    <li>Gitman, L. J., & Zutter, C. J. (2018). Principles of Managerial Finance. Pearson.</li>
-    <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-    <li>Kapoor, J. R., Dlabay, L. R., & Hughes, R. J. (2021). Personal Finance. McGraw-Hill.</li>
-    <li>Khan Academy: Discounted cash flow. www.khanacademy.org</li>
-    </ul>
-</div>
-</div>
-`);"><b>6.4. Tasa de descuento</b> <span class=emoji-small>✅</span>
-        </li>
-
-        <li onclick="abrirModal('6.5. Fuerza de interés', `
-<hr><br>
-<div class=math-module>
-
-<!-- Tiempo estimado -->
-<div class=reading-time style=display:flex;align-items:center;margin-bottom:15px;>
-    <svg width=24 height=24 viewBox='0 0 20 20' style=margin-right:10px; aria-label='Tiempo estimado de lectura: 30 minutos'>
-    <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-blue) stroke-width=2></circle>
-    <circle cx=10 cy=10 r=9 fill=none stroke=var(--apple-vibrant-green) stroke-width=2 stroke-dasharray=56.5487 stroke-dashoffset=0 transform='rotate(-90 10 10)'></circle>
-    <text x=10 y=13 text-anchor=middle font-size=8 fill=var(--apple-black)>30 min</text>
-    </svg>
-    <span style=font-weight:bold;>Tiempo estimado: 30 minutos</span>
-</div>
-
-<!-- Objetivo -->
-<div class=learning-objective style=background:var(--apple-light-gray);padding:12px;border-left:4px solid var(--apple-vibrant-blue);border-radius:6px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);>
-    <i class='fas fa-bullseye' style=color:var(--apple-vibrant-blue);margin-right:8px;></i>
-    <span><strong>Objetivo:</strong> Comprender el concepto de fuerza de interés como medida instantánea de crecimiento del capital, dominar su relación con las tasas de interés nominales y efectivas, aprender a calcular y aplicar la fuerza de interés en contextos de capitalización continua, y analizar sus aplicaciones en modelos financieros avanzados y matemáticas actuariales.</span>
-</div>
-
-<!-- Idea principal -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-lightbulb' style=color:var(--apple-vibrant-orange);margin-right:6px;></i>Idea principal</h4>
-    <p>La fuerza de interés, también conocida como intensidad de interés o tasa instantánea, representa la tasa de crecimiento instantánea de una inversión en un momento específico. Es el límite de la tasa de interés cuando el número de periodos de capitalización tiende a infinito, lo que corresponde a la capitalización continua. Matemáticamente, se define como la derivada logarítmica del monto acumulado con respecto al tiempo. La fuerza de interés proporciona la herramienta teórica más precisa para modelar el crecimiento del dinero en el tiempo y es fundamental en matemáticas financieras avanzadas, seguros y modelos económicos donde se requiere precisión en la medición del valor temporal del dinero.</p>
-</div>
-
-<!-- Ejercicio 1: Conceptos fundamentales y definiciones -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-calculator' style=color:var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 1: Fundamentos de la fuerza de interés</h4>
-    <p>Análisis de los conceptos básicos y relaciones matemáticas fundamentales:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Concepto</th>
-        <th>Definición Matemática</th>
-        <th>Interpretación</th>
-        <th>Relación con Otras Tasas</th>
-        <th>Ejemplo</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Fuerza de Interés (δ)</td>
-        <td>δ(t) = d/dt [ln A(t)]</td>
-        <td>Tasa instantánea de crecimiento</td>
-        <td>Límite cuando m → ∞</td>
-        <td>δ = 0.08</td>
-        </tr>
-        <tr>
-        <td>Capitalización Continua</td>
-        <td>A(t) = A(0) × e^{δt}</td>
-        <td>Crecimiento exponencial continuo</td>
-        <td>VF = VP × e^{δn}</td>
-        <td>$100 → $108.33 en 1 año</td>
-        </tr>
-        <tr>
-        <td>Relación con Tasa Nominal</td>
-        <td>δ = ln(1 + i)</td>
-        <td>Conversión a capitalización continua</td>
-        <td>i = e^δ - 1</td>
-        <td>i=8.33% → δ=8%</td>
-        </tr>
-        <tr>
-        <td>Fuerza Constante</td>
-        <td>δ(t) = δ (constante)</td>
-        <td>Caso más simple y común</td>
-        <td>A(t) = A(0)e^{δt}</td>
-        <td>Crecimiento exponencial puro</td>
-        </tr>
-        <tr>
-        <td>Fuerza Variable</td>
-        <td>δ(t) función del tiempo</td>
-        <td>Tasas que cambian en el tiempo</td>
-        <td>A(t) = A(0)exp(∫δ(s)ds)</td>
-        <td>Modelos económicos reales</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La fuerza de interés representa la tasa de crecimiento en cada instante, mientras que las tasas discretas promedian el crecimiento sobre periodos. La relación es logarítmica: δ = ln(1+i) para conversión exacta.</p>
-</div>
-
-<!-- Gráfica 1: Comparación de capitalización discreta vs continua -->
-<div class=graph-container style=margin-bottom:20px;>
-    <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 1: Capitalización Discreta vs Continua</h4>
-    <svg viewBox='0 0 400 350' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-    
-    <!-- Título -->
-    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Evolución de $100 con tasa del 8% anual</strong></text>
-    
-    <!-- Ejes coordenados -->
-    <line x1=50 y1=250 x2=350 y2=250 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    <line x1=50 y1=250 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    
-    <!-- Etiquetas de ejes -->
-    <text x=200 y=280 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Tiempo (años)</text>
-    <text x=20 y=175 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,175)'>Valor Acumulado ($)</text>
-    
-    <!-- Marcas del eje X -->
-    <g transform=translate(0,0)>
-        <line x1=100 y1=245 x2=100 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=100 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
-        
-        <line x1=150 y1=245 x2=150 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=150 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
-        
-        <line x1=200 y1=245 x2=200 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=200 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>3</text>
-        
-        <line x1=250 y1=245 x2=250 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=250 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
-        
-        <line x1=300 y1=245 x2=300 y2=255 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=300 y=265 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>5</text>
-    </g>
-    
-    <!-- Marcas del eje Y -->
-    <g transform=translate(0,0)>
-        <line x1=45 y1=220 x2=55 y2=220 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=223 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>120</text>
-        
-        <line x1=45 y1=190 x2=55 y2=190 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=193 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>140</text>
-        
-        <line x1=45 y1=160 x2=55 y2=160 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=163 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>160</text>
-        
-        <line x1=45 y1=130 x2=55 y2=130 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=133 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>180</text>
-        
-        <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>200</text>
-    </g>
-    
-    <!-- Capitalización anual (discreta) -->
-    <g transform=translate(0,0)>
-        <circle cx=100 cy=208 r=3 fill=var(--apple-vibrant-blue)></circle>
-        <circle cx=150 cy=226 r=3 fill=var(--apple-vibrant-blue)></circle>
-        <circle cx=200 cy=244 r=3 fill=var(--apple-vibrant-blue)></circle>
-        <circle cx=250 cy=262 r=3 fill=var(--apple-vibrant-blue)></circle>
-        <circle cx=300 cy=280 r=3 fill=var(--apple-vibrant-blue)></circle>
-        
-        <path d='M 50,250 L 100,208 L 150,226 L 200,244 L 250,262 L 300,280' 
-            stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-    </g>
-    
-    <!-- Capitalización continua -->
-    <path d='M 50,250 
-                L 100,208.3 
-                L 150,217.7 
-                L 200,227.6 
-                L 250,238.0 
-                L 300,249.2' 
-            stroke=var(--apple-vibrant-green) stroke-width=3 fill=none></path>
-    
-    <!-- Puntos de capitalización continua -->
-    <circle cx=100 cy=208.3 r=3 fill=var(--apple-vibrant-green)></circle>
-    <circle cx=150 cy=217.7 r=3 fill=var(--apple-vibrant-green)></circle>
-    <circle cx=200 cy=227.6 r=3 fill=var(--apple-vibrant-green)></circle>
-    <circle cx=250 cy=238.0 r=3 fill=var(--apple-vibrant-green)></circle>
-    <circle cx=300 cy=249.2 r=3 fill=var(--apple-vibrant-green)></circle>
-    
-    <!-- Leyenda -->
-    <rect x=200 y=60 width=180 height=80 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=290 y=75 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Comparación a 5 años</strong></text>
-    
-    <line x1=210 y1=85 x2=230 y2=85 stroke=var(--apple-vibrant-blue) stroke-width=2></line>
-    <text x=240 y=90 font-size=10 fill=var(--apple-dark-gray)>Anual: VF = $146.93</text>
-    
-    <line x1=210 y1=100 x2=230 y2=100 stroke=var(--apple-vibrant-green) stroke-width=3></line>
-    <text x=240 y=105 font-size=10 fill=var(--apple-dark-gray)>Continua: VF = $149.18</text>
-    
-    <text x=290 y=120 font-size=9 fill=var(--apple-dark-gray)>Diferencia: $2.25 (1.53%)</text>
-    <text x=290 y=130 font-size=9 fill=var(--apple-dark-gray)>δ = ln(1.08) = 7.696%</text>
-    
-    <!-- Fórmulas -->
-    <rect x=50 y=290 width=300 height=50 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=200 y=305 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Fórmulas de Cálculo</strong></text>
-    <text x=120 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-blue)>Anual: 100 × (1.08)ⁿ</text>
-    <text x=280 y=320 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>Continua: 100 × e^{0.07696×n}</text>
-    
-    </svg>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La capitalización continua genera un crecimiento más suave y ligeramente mayor que la capitalización anual. La diferencia se amplía con el tiempo y con tasas más altas. La fuerza de interés equivalente (δ=7.696%) es menor que la tasa nominal (8%) pero produce mayor acumulación debido a la capitalización instantánea.</p>
-</div>
-
-<!-- Ejercicio 2: Cálculos y conversiones prácticas -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-cogs' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 2: Conversiones y aplicaciones de la fuerza de interés</h4>
-    <p>Resolución de problemas de conversión entre diferentes tipos de tasas:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Tipo de Conversión</th>
-        <th>Datos de Entrada</th>
-        <th>Procedimiento de Cálculo</th>
-        <th>Fórmula Aplicada</th>
-        <th>Resultado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Tasa Efectiva a Fuerza</td>
-        <td>i = 10% anual</td>
-        <td>1. δ = ln(1 + i)<br>2. δ = ln(1.10)</td>
-        <td>δ = ln(1 + i)</td>
-        <td>δ = 9.531% anual</td>
-        </tr>
-        <tr>
-        <td>Fuerza a Tasa Efectiva</td>
-        <td>δ = 6% anual</td>
-        <td>1. i = e^δ - 1<br>2. i = e^0.06 - 1</td>
-        <td>i = e^δ - 1</td>
-        <td>i = 6.183% anual</td>
-        </tr>
-        <tr>
-        <td>Tasa Nominal a Fuerza</td>
-        <td>j = 12% capitalizable mensualmente</td>
-        <td>1. i = (1 + j/12)¹² - 1<br>2. δ = ln(1 + i)</td>
-        <td>δ = ln(1 + i)</td>
-        <td>δ = 11.334% anual</td>
-        </tr>
-        <tr>
-        <td>Valor Futuro con δ</td>
-        <td>VP = $5,000, δ = 5%, n = 3 años</td>
-        <td>1. VF = 5000 × e^{0.05×3}<br>2. VF = 5000 × e^0.15</td>
-        <td>VF = VP × e^{δn}</td>
-        <td>VF = $5,809.18</td>
-        </tr>
-        <tr>
-        <td>Valor Presente con δ</td>
-        <td>VF = $10,000, δ = 7%, n = 2 años</td>
-        <td>1. VP = 10000 × e^{-0.07×2}<br>2. VP = 10000 × e^{-0.14}</td>
-        <td>VP = VF × e^{-δn}</td>
-        <td>VP = $8,694.15</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La conversión entre fuerza de interés y tasa efectiva utiliza la función exponencial natural. La fuerza de interés siempre es menor que la tasa efectiva equivalente, pero produce el mismo crecimiento debido a la capitalización continua.</p>
-</div>
-
-<!-- Gráfica 2: Relación entre frecuencia de capitalización y fuerza de interés -->
-<div class=graph-container style=margin-bottom:20px;>
-    <h4><i class='fas fa-chart-line' style=color=var(--apple-vibrant-green);margin-right:6px;></i>Gráfica 2: Límite hacia la Capitalización Continua</h4>
-    <svg viewBox='0 0 400 400' class=math-graph style=width:100%;height:auto;background:var(--apple-very-light-gray);border-radius:8px;>
-    
-    <!-- Título -->
-    <text x=200 y=30 text-anchor=middle font-size=16 fill=var(--apple-dark-gray)><strong>Convergencia a la Capitalización Continua</strong></text>
-    <text x=200 y=45 text-anchor=middle font-size=12 fill=var(--apple-vibrant-blue)>Tasa nominal del 12% anual con diferentes frecuencias</text>
-    
-    <!-- Ejes coordenados -->
-    <line x1=50 y1=300 x2=350 y2=300 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    <line x1=50 y1=300 x2=50 y2=100 stroke=var(--apple-dark-gray) stroke-width=2></line>
-    
-    <!-- Etiquetas de ejes -->
-    <text x=200 y=330 text-anchor=middle font-size=12 fill=var(--apple-dark-gray)>Frecuencia de Capitalización (veces por año)</text>
-    <text x=20 y=200 text-anchor=middle font-size=12 fill=var(--apple-dark-gray) transform='rotate(-90 20,200)'>Tasa Efectiva Anual (%)</text>
-    
-    <!-- Marcas del eje X (frecuencia) -->
-    <g transform=translate(0,0)>
-        <line x1=100 y1=295 x2=100 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=100 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>1</text>
-        
-        <line x1=150 y1=295 x2=150 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=150 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>2</text>
-        
-        <line x1=200 y1=295 x2=200 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=200 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>4</text>
-        
-        <line x1=250 y1=295 x2=250 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=250 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12</text>
-        
-        <line x1=300 y1=295 x2=300 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=300 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>52</text>
-        
-        <line x1=350 y1=295 x2=350 y2=305 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=350 y=315 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>∞</text>
-    </g>
-    
-    <!-- Marcas del eje Y (tasa efectiva) -->
-    <g transform=translate(0,0)>
-        <line x1=45 y1=250 x2=55 y2=250 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=253 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.0%</text>
-        
-        <line x1=45 y1=200 x2=55 y2=200 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=203 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.2%</text>
-        
-        <line x1=45 y1=150 x2=55 y2=150 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=153 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.4%</text>
-        
-        <line x1=45 y1=100 x2=55 y2=100 stroke=var(--apple-dark-gray) stroke-width=1></line>
-        <text x=35 y=103 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>12.6%</text>
-    </g>
-    
-    <!-- Puntos de datos -->
-    <circle cx=100 cy=250 r=4 fill=var(--apple-vibrant-blue)></circle>
-    <text x=100 y=240 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Anual: 12.000%</text>
-    
-    <circle cx=150 cy=235 r=4 fill=var(--apple-vibrant-blue)></circle>
-    <text x=150 y=225 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Semestral: 12.360%</text>
-    
-    <circle cx=200 cy=220 r=4 fill=var(--apple-vibrant-blue)></circle>
-    <text x=200 y=210 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Trimestral: 12.551%</text>
-    
-    <circle cx=250 cy=210 r=4 fill=var(--apple-vibrant-blue)></circle>
-    <text x=250 y=200 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Mensual: 12.683%</text>
-    
-    <circle cx=300 cy=205 r=4 fill=var(--apple-vibrant-blue)></circle>
-    <text x=300 y=195 text-anchor=middle font-size=9 fill=var(--apple-vibrant-blue)>Semanal: 12.734%</text>
-    
-    <!-- Límite asintótico (capitalización continua) -->
-    <line x1=50 y1=200 x2=350 y2=200 stroke=var(--apple-vibrant-green) stroke-width=3 stroke-dasharray=5,3></line>
-    <text x=360 y=200 text-anchor=start font-size=10 fill=var(--apple-vibrant-green)>Continua: 12.750%</text>
-    
-    <!-- Curva de convergencia -->
-    <path d='M 100,250 
-                L 150,235 
-                L 200,220 
-                L 250,210 
-                L 300,205 
-                L 350,200' 
-            stroke=var(--apple-vibrant-blue) stroke-width=2 fill=none></path>
-    
-    <!-- Zona de diferencia con el límite -->
-    <path d='M 100,250 L 100,200 L 150,200 L 150,235 L 200,220 L 200,200 L 250,210 L 250,200 L 300,205 L 300,200 L 350,200 L 350,300 L 100,300 Z' 
-            fill=var(--apple-light-orange) fill-opacity=0.3 stroke=none></path>
-    <text x=200 y=250 text-anchor=middle font-size=10 fill=var(--apple-vibrant-orange)>Diferencia con el límite</text>
-    
-    <!-- Fórmula del límite -->
-    <rect x=100 y=320 width=200 height=60 fill=white stroke=var(--apple-dark-gray) stroke-width=1 rx=5></rect>
-    <text x=200 y=335 text-anchor=middle font-size=11 fill=var(--apple-dark-gray)><strong>Límite Matemático</strong></text>
-    <text x=200 y=350 text-anchor=middle font-size=10 fill=var(--apple-vibrant-green)>lim<sub>m→∞</sub> (1 + j/m)<sup>m</sup> = e<sup>j</sup></text>
-    <text x=200 y=365 text-anchor=middle font-size=10 fill=var(--apple-dark-gray)>Para j=12%: e<sup>0.12</sup> = 1.12750</text>
-    
-    </svg>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> A medida que aumenta la frecuencia de capitalización, la tasa efectiva se aproxima asintóticamente al límite de capitalización continua. La mayor ganancia se obtiene al pasar de capitalización anual a mensual, mientras que aumentos posteriores (semanal, diaria) producen mejoras marginales. El límite matemático está dado por la función exponencial.</p>
-</div>
-
-<!-- Ejercicio 3: Aplicaciones avanzadas y casos especiales -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-rocket' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Ejercicio 3: Aplicaciones de la fuerza de interés</h4>
-    <p>Uso de la fuerza de interés en contextos financieros y actuariales avanzados:</p>
-    <table class=math-table>
-    <thead>
-        <tr>
-        <th>Área de Aplicación</th>
-        <th>Contexto Específico</th>
-        <th>Uso de la Fuerza de Interés</th>
-        <th>Ventaja</th>
-        <th>Ejemplo Práctico</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>Matemáticas Actuariales</td>
-        <td>Cálculo de primas de seguros</td>
-        <td>Modelado de reservas técnicas con capitalización continua</td>
-        <td>Mayor precisión en cálculos de largo plazo</td>
-        <td>Primas de seguros de vida</td>
-        </tr>
-        <tr>
-        <td>Finanzas Corporativas</td>
-        <td>Evaluación de proyectos de inversión</td>
-        <td>Flujos de efectivo continuos en el tiempo</td>
-        <td>Modelado más realista de ingresos</td>
-        <td>Proyectos con ingresos constantes</td>
-        </tr>
-        <tr>
-        <td>Economía Matemática</td>
-        <td>Modelos de crecimiento económico</td>
-        <td>Ecuaciones diferenciales de crecimiento</td>
-        <td>Consistencia con teoría económica</td>
-        <td>Modelo de Solow-Swan</td>
-        </tr>
-        <tr>
-        <td>Ingeniería Financiera</td>
-        <td>Precios de derivados financieros</td>
-        <td>Modelo Black-Scholes-Merton</td>
-        <td>Base teórica para opciones</td>
-        <td>Opciones europeas</td>
-        </tr>
-        <tr>
-        <td>Gestión de Riesgos</td>
-        <td>Valor en Riesgo (VaR)</td>
-        <td>Modelado continuo de rendimientos</td>
-        <td>Mayor precisión en medición de riesgo</td>
-        <td>VaR de carteras de inversión</td>
-        </tr>
-    </tbody>
-    </table>
-    <p style=margin-top:10px;font-size:0.9em;color=var(--apple-dark-gray);><strong>¿Qué notar?</strong> La fuerza de interés es fundamental en aplicaciones donde se requiere modelado continuo y precisión matemática. Su uso simplifica muchas fórmulas en cálculo diferencial y proporciona la base teórica para modelos financieros avanzados.</p>
-</div>
-
-<!-- Aplicaciones reales -->
-<div class=content-section style=margin-bottom:20px;>
-    <h4><i class='fas fa-industry' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Aplicaciones reales</h4>
-    <ul style=padding-left:18px;line-height:1.6;>
-    <li><strong>Modelo Black-Scholes:</strong> Fórmula para valoración de opciones que utiliza capitalización continua como base teórica.</li>
-    <li><strong>Seguros de vida:</strong> Cálculo de reservas técnicas y primas utilizando fuerza de interés para mayor precisión actuarial.</li>
-    <li><strong>Bonos cupón cero:</strong> Valuación de instrumentos que no pagan intereses periódicos utilizando capitalización continua.</li>
-    <li><strong>Análisis de inversiones:</strong> Evaluación de proyectos con flujos de efectivo continuos en el tiempo.</li>
-    <li><strong>Modelos macroeconómicos:</strong> Representación del crecimiento económico mediante ecuaciones diferenciales.</li>
-    <li><strong>Finanzas cuantitativas:</strong> Desarrollo de estrategias de trading algorítmico basadas en modelos continuos.</li>
-    <li><strong>Gestión de carteras:</strong> Optimización de portafolios considerando rendimientos continuos.</li>
-    <li><strong>Derivados financieros:</strong> Valuación de swaps, futuros y otros instrumentos derivados.</li>
-    </ul>
-</div>
-
-<!-- Bibliografía -->
-<div class=bibliography-section style=margin-top:20px;>
-    <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
-    <ul style=padding-left:18px;line-height:1.5;>
-    <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
-    <li>Bowers, N. L., et al. (1997). Actuarial Mathematics. The Society of Actuaries.</li>
-    <li>Hull, J. C. (2018). Options, Futures and Other Derivatives. Pearson.</li>
-    <li>Black, F., & Scholes, M. (1973). The Pricing of Options and Corporate Liabilities. Journal of Political Economy.</li>
-    <li>Baxter, M., & Rennie, A. (1996). Financial Calculus: An Introduction to Derivative Pricing. Cambridge University Press.</li>
-    <li>Khan Academy: Compound interest and e. www.khanacademy.org</li>
-    </ul>
-</div>
-</div>
-`);"><b>6.5. Fuerza de interés</b> <span class=emoji-small>✅</span>
-        </li>
+  <!-- Bibliografía -->
+  <div class=bibliography-section style=margin-top:20px;>
+      <h4><i class='fas fa-book' style=color=var(--apple-vibrant-blue);margin-right:6px;></i>Bibliografía recomendada</h4>
+      <ul style=padding-left:18px;line-height:1.5;>
+      <li>Kellison, S. G. (2019). The Theory of Interest. McGraw-Hill.</li>
+      <li>Bowers, N. L., et al. (1997). Actuarial Mathematics. The Society of Actuaries.</li>
+      <li>Hull, J. C. (2018). Options, Futures and Other Derivatives. Pearson.</li>
+      <li>Black, F., & Scholes, M. (1973). The Pricing of Options and Corporate Liabilities. Journal of Political Economy.</li>
+      <li>Baxter, M., & Rennie, A. (1996). Financial Calculus: An Introduction to Derivative Pricing. Cambridge University Press.</li>
+      <li>Khan Academy: Compound interest and e. www.khanacademy.org</li>
+      </ul>
+  </div>
+  </div>
+  `);"><b>6.5. Fuerza de interés</b> <span class=emoji-small>✅</span>
+          </li>
         </ul>
       </div>
 
