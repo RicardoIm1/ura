@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones - Computación I INAR0104</title>
+  <link rel="stylesheet" href="/ura/css/estilo.css">
+  <style>
+    .tabla-calificaciones {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .tabla-calificaciones th {
+      background: var(--apple-gradient);
+      color: white;
+      text-align: left;
+      padding: 14px 16px;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .tabla-calificaciones td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--apple-black);
+      font-size: 15px;
+    }
+
+    .tabla-calificaciones tr:nth-child(even) {
+      background-color: var(--apple-light-gray);
+    }
+
+    .tabla-calificaciones tr:hover {
+      background-color: rgba(0, 119, 204, 0.08);
+      transition: 0.3s ease;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background: var(--apple-vibrant-blue);
+      padding: 12px 24px;
+      border-radius: 980px;
+      transition: var(--apple-transition);
+    }
+
+    .back-button:hover {
+      background: var(--apple-vibrant-green);
+      transform: scale(1.05);
+    }
+
+    td[contenteditable="true"] {
+      background-color: rgba(255,255,255,0.6);
+      cursor: text;
+    }
+
+    td[contenteditable="true"]:focus {
+      outline: 2px solid var(--apple-vibrant-blue);
+      background-color: rgba(0, 119, 204, 0.05);
+    }
+
+    td.total, td.promedio {
+      font-weight: 600;
+      text-align: center;
+      color: var(--apple-vibrant-blue);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">
+        <a href="#" target="_self" style="text-decoration: none; color: inherit;">
+          Computación I
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="container">
+  <h2 class="section-title">Evaluación</h2>
+  <div class="evaluacion-grid">
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">30%</div>
+        <p class="evaluacion-desc">Dos exámenes parciales</p><br>
+        <div class="tema-list">
+          🔓<a href="/prog/" target="_blank"> 1er Parcial 24/01/2026</a>
+<!--           <a href="#" target="">🔒 1er Parcial 27/09/25</a>
+ -->        </div>
+        <div class="tema-list">
+          🔓<a href="2do_parcial_com1.pdf" target="_blank"> 2do Parcial 18/10/25</a>
+        </div>
+      </div>
+    
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">20%</div>
+      <p class="evaluacion-desc">Reporte de prácticas de laboratorio</p><br>
+      <!-- <h6>Es tu rendimiento en clase según las </h6> -->
+    </div>
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">10%</div>
+      <p class="evaluacion-desc">Investigaciones bibliográficas</p><br>
+      <!-- <h6>Son las firmas que tienes en tus tareas</h6> -->
+    </div>
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">30%</div>
+      <p class="evaluacion-desc">Examen final</p><br>
+      <!-- <h6>Voy a promediar tus dos parciales para esta calificación</h6> -->
+    </div>
+  </div>
+</section>
+  
+  <section class="container">
+    <h1 class="section-title">Calificaciones de Computación I</h1>
+
+    <table class="tabla-calificaciones" id="tablaCalificaciones">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Primer Parcial</th>
+          <th>Segundo Parcial</th>
+          <th>Reporte de prácticas de laboratorio</th>
+          <th>Investigaciones bibliográficas</th>
+          <th>Examen Final</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Aceves Carrillo Diego Alexander</td><td contenteditable="true">18%</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">8%​</td><td contenteditable="true">28%​</td><td class="total"></td></tr>
+        <tr><td>Arias Barraza Mayra</td><td contenteditable="true">18%</td><td contenteditable="true">20%​</td><td contenteditable="true">20​%</td><td contenteditable="true">10​%</td><td contenteditable="true">28%​</td><td class="total"></td></tr>
+        <tr><td>Bautista Aguilar Germán</td><td contenteditable="true">15%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%​</td><td contenteditable="true">10%​</td><td contenteditable="true">25%​</td><td class="total"></td></tr>
+        <tr><td>Cazares Flores Axel Oswaldo</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%</td><td contenteditable="true">10%</td><td contenteditable="true">30%</td><td class="total"></td></tr>
+        <tr><td>Cobián Landeros David Eduardo</td><td contenteditable="true">18%</td><td contenteditable="true">14%​</td><td contenteditable="true">20%</td><td contenteditable="true">10%​</td><td contenteditable="true">25%</td><td class="total"></td></tr>
+        <tr><td>García Velasco Miguel Alejandro</td><td contenteditable="true">20%</td><td contenteditable="true">14%​</td><td contenteditable="true">20​%</td><td contenteditable="true">10%​</td><td contenteditable="true">27%</td><td class="total"></td></tr>
+        <tr><td>León Vargas Brayam Daniel</td><td contenteditable="true">10%</td><td contenteditable="true">18%</td><td contenteditable="true">20​%</td><td contenteditable="true">10%​</td><td contenteditable="true">19%</td><td class="total"></td></tr>
+        <tr><td>López Trujillo Maritza Guadalupe</td><td contenteditable="true">8%</td><td contenteditable="true">15%​</td><td contenteditable="true">20%​</td><td contenteditable="true">10%</td><td contenteditable="true">16%</td><td class="total"></td></tr>
+        <tr><td>Machuca Vázquez Mariela Astrid</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td class="total"></td></tr>
+        <tr><td>Mendoza Covarrubias Edwin</td><td contenteditable="true">10%</td><td contenteditable="true">NP​</td><td contenteditable="true">10%</td><td contenteditable="true">5%</td><td contenteditable="true">NP</td><td class="total"></td></tr>
+        <tr><td>Santana Macías José Eduardo</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%</td><td contenteditable="true">8%​</td><td contenteditable="true">30%​</td><td class="total"></td></tr>
+        <tr><td>Tapia López Luis Antonio</td><td contenteditable="true">18%</td><td contenteditable="true">NP</td><td contenteditable="true">10%</td><td contenteditable="true">4%​</td><td contenteditable="true">NP​</td><td class="total"></td></tr>
+      </tbody>
+    </table>
+    <a href="/ura/comp/" class="back-button">⬅ Volver</a>
+  </section>
+
+  <footer>
+    © 2025 Universidad URA – Asignatura
+    <a href="/ura/" class="no-style-link materias" target="_self">Inicio.</a>
+  </footer>
+
+  <script>
+function calcularTotalesYPromedios() {
+  const filas = document.querySelectorAll("#tablaCalificaciones tbody tr");
+
+  filas.forEach(fila => {
+    const celdas = fila.querySelectorAll("td[contenteditable='true']");
+    let suma = 0;
+    let conteo = 0;
+
+    celdas.forEach(celda => {
+      const texto = celda.textContent || '';
+      // 🔧 Limpieza robusta: elimina todo menos números, punto o signo
+      const valor = parseFloat(texto.replace(/[^\d.-]/g, ''));
+
+      if (!isNaN(valor)) {
+        suma += valor;
+        conteo++;
+      }
+    });
+
+    const totalCelda = fila.querySelector(".total");
+
+    if (conteo > 0) {
+      const total = suma.toFixed(1);
+      totalCelda.textContent = total + "%";
+
+      // 🎨 Color dinámico tipo semáforo
+      let color;
+      if (suma >= 100) color = "var(--apple-vibrant-green)";
+      else if (suma >= 80) color = "orange";
+      else color = "crimson";
+
+      fila.style.transition = "background-color 0.6s ease";
+      fila.style.backgroundColor = color + "20"; // fondo semitransparente
+
+      // ✨ Efecto de rebote sutil en la celda de total
+      totalCelda.style.transition = "transform 0.3s ease";
+      totalCelda.style.transform = "scale(1.2)";
+      setTimeout(() => totalCelda.style.transform = "scale(1)", 300);
+    } else {
+      totalCelda.textContent = "";
+      fila.style.backgroundColor = "";
+    }
+  });
+}
+
+// 🧠 Escucha cambios en la tabla
+document.querySelector("#tablaCalificaciones").addEventListener("input", calcularTotalesYPromedios);
+
+// 🚀 Calcula automáticamente al cargar la página
+window.addEventListener("DOMContentLoaded", calcularTotalesYPromedios);
+</script>
+
+</body>
+</html>
