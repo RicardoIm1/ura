@@ -880,4 +880,5 @@
             font-weight: bold;
             font-size: 1.1em;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            margin-top: 10px;
+            margin: 10px;
+        }
