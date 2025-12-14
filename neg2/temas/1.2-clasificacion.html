@@ -1,0 +1,190 @@
+<li class="contenido-tema">
+    <h2>1.2 Clasificación de las matrices</h2>
+    
+    <div class="tiempo-lectura">
+        <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect x="0" y="15" width="100" height="10" rx="5" fill="#e0e0e0"/>
+            <rect x="0" y="15" width="75" height="10" rx="5" fill="#4CAF50"/>
+            <circle cx="95" cy="20" r="12" fill="#2196F3"/>
+            <path d="M92 20 L98 24 L98 16 Z" fill="white"/>
+            <text x="48" y="23" font-family="Arial" font-size="8" fill="white" text-anchor="middle">75 min</text>
+        </svg>
+        <p class="texto-tiempo">Tiempo estimado de comprensión: 75 minutos</p>
+    </div>
+    
+    <div class="objetivo">
+        <h3>🎯 Objetivo del tema</h3>
+        <p>Al finalizar esta sección, el estudiante será capaz de identificar y clasificar matrices según sus propiedades estructurales, comprendiendo las implicaciones de cada tipo en operaciones algebraicas y aplicaciones computacionales.</p>
+    </div>
+    
+    <div class="idea-principal">
+        <h3>💡 Idea principal</h3>
+        <p>Las matrices no son simplemente tablas de números; su estructura interna determina cómo se comportan matemáticamente. La clasificación organiza las matrices en categorías según patrones específicos (simetría, forma especial, contenido), lo que permite predecir sus propiedades, simplificar cálculos y seleccionar algoritmos eficientes para resolver problemas computacionales.</p>
+    </div>
+    
+    <div class="ejercicios-visuales">
+        <h3>📊 Ejercicios visualmente claros</h3>
+        
+        <div class="tabla-clasificacion">
+            <h4>Tabla 1.2.1: Clasificación básica de matrices</h4>
+            <svg width="700" height="300" viewBox="0 0 700 300">
+                <!-- Encabezados -->
+                <rect x="0" y="0" width="700" height="40" fill="#2c3e50"/>
+                
+                <!-- Títulos de columnas -->
+                <text x="100" y="25" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Tipo</text>
+                <text x="300" y="25" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Definición</text>
+                <text x="550" y="25" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Ejemplo 3×3</text>
+                
+                <!-- Líneas de separación -->
+                <line x1="200" y1="0" x2="200" y2="300" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="5,5"/>
+                <line x1="400" y1="0" x2="400" y2="300" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="5,5"/>
+                
+                <!-- Fila 1: Matriz cuadrada -->
+                <rect x="0" y="40" width="700" height="40" fill="#ecf0f1"/>
+                <text x="100" y="65" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle">Cuadrada</text>
+                <text x="300" y="65" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">m = n</text>
+                <text x="550" y="65" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">[3 1 4; 1 5 9; 2 6 5]</text>
+                
+                <!-- Fila 2: Matriz diagonal -->
+                <rect x="0" y="80" width="700" height="40" fill="#ffffff"/>
+                <text x="100" y="105" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle">Diagonal</text>
+                <text x="300" y="105" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">aij = 0 si i ≠ j</text>
+                <text x="550" y="105" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">[2 0 0; 0 3 0; 0 0 5]</text>
+                
+                <!-- Fila 3: Matriz identidad -->
+                <rect x="0" y="120" width="700" height="40" fill="#ecf0f1"/>
+                <text x="100" y="145" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle">Identidad</text>
+                <text x="300" y="145" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">Diagonal con 1's</text>
+                <text x="550" y="145" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">[1 0 0; 0 1 0; 0 0 1]</text>
+                
+                <!-- Fila 4: Matriz triangular -->
+                <rect x="0" y="160" width="700" height="40" fill="#ffffff"/>
+                <text x="100" y="185" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle">Triangular superior</text>
+                <text x="300" y="185" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">aij = 0 si i > j</text>
+                <text x="550" y="185" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">[2 4 1; 0 3 5; 0 0 6]</text>
+                
+                <!-- Fila 5: Matriz simétrica -->
+                <rect x="0" y="200" width="700" height="40" fill="#ecf0f1"/>
+                <text x="100" y="225" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle">Simétrica</text>
+                <text x="300" y="225" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">A = Aᵀ</text>
+                <text x="550" y="225" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">[1 2 3; 2 5 4; 3 4 6]</text>
+                
+                <!-- Fila 6: Matriz dispersa -->
+                <rect x="0" y="240" width="700" height="40" fill="#ffffff"/>
+                <text x="100" y="265" font-family="Arial" font-size="12" fill="#2c3e50" text-anchor="middle">Dispersa</text>
+                <text x="300" y="265" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">Mayoría de ceros</text>
+                <text x="550" y="265" font-family="Arial" font-size="11" fill="#2c3e50" text-anchor="middle">[0 0 7; 0 2 0; 0 0 0]</text>
+            </svg>
+            <p class="nota-grafica"><span class="emoji-small">🔍</span> <strong>Qué notar:</strong> Observe cómo cada tipo define restricciones en las posiciones permitidas para elementos no nulos. La estructura diagonal es un caso especial de triangular, que a su vez es caso especial de cuadrada.</p>
+        </div>
+        
+        <div class="diagrama-relaciones">
+            <h4>Figura 1.2.1: Relaciones de inclusión entre tipos de matrices</h4>
+            <svg width="600" height="400" viewBox="0 0 600 400">
+                <!-- Matriz general (fondo) -->
+                <rect x="50" y="50" width="500" height="300" rx="10" fill="#f8f9fa" stroke="#95a5a6" stroke-width="2"/>
+                <text x="300" y="40" font-family="Arial" font-size="16" fill="#2c3e50" text-anchor="middle" font-weight="bold">Matrices m×n</text>
+                
+                <!-- Conjunto de matrices cuadradas -->
+                <ellipse cx="300" cy="200" rx="180" ry="120" fill="rgba(52, 152, 219, 0.2)" stroke="#3498db" stroke-width="2"/>
+                <text x="300" y="180" font-family="Arial" font-size="14" fill="#2980b9" text-anchor="middle" font-weight="bold">Matrices cuadradas</text>
+                <text x="300" y="200" font-family="Arial" font-size="12" fill="#2980b9" text-anchor="middle">(m = n)</text>
+                
+                <!-- Conjunto de matrices triangulares -->
+                <ellipse cx="250" cy="220" rx="120" ry="80" fill="rgba(46, 204, 113, 0.3)" stroke="#2ecc71" stroke-width="2"/>
+                <text x="250" y="210" font-family="Arial" font-size="13" fill="#27ae60" text-anchor="middle" font-weight="bold">Triangulares</text>
+                
+                <!-- Conjunto de matrices diagonales -->
+                <ellipse cx="220" cy="240" rx="70" ry="50" fill="rgba(155, 89, 182, 0.4)" stroke="#9b59b6" stroke-width="2"/>
+                <text x="220" y="235" font-family="Arial" font-size="12" fill="#8e44ad" text-anchor="middle" font-weight="bold">Diagonales</text>
+                
+                <!-- Conjunto de matrices identidad -->
+                <circle cx="200" cy="250" r="25" fill="rgba(231, 76, 60, 0.5)" stroke="#e74c3c" stroke-width="2"/>
+                <text x="200" y="250" font-family="Arial" font-size="10" fill="#c0392b" text-anchor="middle" font-weight="bold">I</text>
+                
+                <!-- Conjunto de matrices simétricas (se superpone) -->
+                <ellipse cx="350" cy="180" rx="100" ry="70" fill="rgba(241, 196, 15, 0.3)" stroke="#f1c40f" stroke-width="2"/>
+                <text x="350" y="175" font-family="Arial" font-size="13" fill="#f39c12" text-anchor="middle" font-weight="bold">Simétricas</text>
+                
+                <!-- Flechas de relación -->
+                <path d="M150 300 Q100 280 80 250" stroke="#7f8c8d" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+                <text x="120" y="310" font-family="Arial" font-size="10" fill="#7f8c8d" text-anchor="middle">Inclusión</text>
+                
+                <!-- Leyenda -->
+                <rect x="400" y="300" width="180" height="90" fill="#f1f2f6" stroke="#bdc3c7" stroke-width="1" rx="5"/>
+                <text x="410" y="320" font-family="Arial" font-size="11" fill="#2c3e50">I ⊂ Diagonales ⊂ Triangulares</text>
+                <text x="410" y="340" font-family="Arial" font-size="11" fill="#2c3e50">Triangulares ⊂ Cuadradas</text>
+                <text x="410" y="360" font-family="Arial" font-size="11" fill="#2c3e50">Simétricas ⊂ Cuadradas</text>
+                <text x="410" y="380" font-family="Arial" font-size="11" fill="#2c3e50">Cuadradas ⊂ Matrices generales</text>
+                
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#7f8c8d"/>
+                    </marker>
+                </defs>
+            </svg>
+            <p class="nota-grafica"><span class="emoji-small">🔍</span> <strong>Qué notar:</strong> Los conjuntos anidados muestran relaciones de subconjunto. Toda matriz identidad es diagonal, toda diagonal es triangular, toda triangular es cuadrada. Las matrices simétricas son un subconjunto de las cuadradas que se superpone parcialmente con las triangulares.</p>
+        </div>
+    </div>
+    
+    <div class="aplicaciones-reales">
+        <h3>🌍 Ejemplos de aplicaciones reales y directas</h3>
+        
+        <div class="aplicacion">
+            <h4>1. Gráficos por computadora y transformaciones 3D</h4>
+            <p><strong>Tipo de matriz utilizada:</strong> Matrices cuadradas 4×4 (homogéneas)</p>
+            <p><strong>Aplicación:</strong> En motores de videojuegos y software CAD, las transformaciones geométricas (rotación, escalado, traslación) se representan como multiplicación de matrices. Las matrices de rotación son ortogonales (subconjunto de cuadradas), preservando distancias y ángulos.</p>
+            <p><strong>Ventaja computacional:</strong> Al reconocer que son matrices ortogonales, se puede invertir simplemente transponiendo (A⁻¹ = Aᵀ), ahorrando operaciones costosas.</p>
+        </div>
+        
+        <div class="aplicacion">
+            <h4>2. Análisis de circuitos eléctricos</h4>
+            <p><strong>Tipo de matriz utilizada:</strong> Matrices dispersas y simétricas</p>
+            <p><strong>Aplicación:</strong> Las leyes de Kirchhoff generan sistemas lineales donde la matriz de admitancias es simétrica y muy dispersa (menos del 5% de elementos no nulos).</p>
+            <p><strong>Ventaja computacional:</strong> Al identificar la estructura dispersa, se usan algoritmos especializados (almacenamiento CRS) que reducen memoria de gigabytes a megabytes y aceleran cálculos 100 veces.</p>
+        </div>
+        
+        <div class="aplicacion">
+            <h4>3. Machine Learning - Redes Neuronales</h4>
+            <p><strong>Tipo de matriz utilizada:</strong> Matrices triangulares (factorizaciones LU, Cholesky)</p>
+            <p><strong>Aplicación:</strong> En el entrenamiento de redes, resolver sistemas normales (XᵀX)β = Xᵀy. Cuando XᵀX es definida positiva, se usa factorización de Cholesky (descomposición en triangular superior por su transpuesta).</p>
+            <p><strong>Ventaja computacional:</strong> Resolver sistemas triangulares requiere O(n²) operaciones vs O(n³) para eliminación gaussiana completa.</p>
+        </div>
+        
+        <div class="aplicacion">
+            <h4>4. Criptografía RSA</h4>
+            <p><strong>Tipo de matriz utilizada:</strong> Matrices de permutación (caso especial de matrices cuadradas)</p>
+            <p><strong>Aplicación:</strong> En algoritmos de cifrado, las permutaciones se representan como matrices con un solo 1 por fila y columna. Su inversa es igual a su transpuesta.</p>
+            <p><strong>Ventaja matemática:</strong> Esta propiedad garantiza que deshacer la permutación es computacionalmente trivial, crucial para el rendimiento en sistemas de seguridad.</p>
+        </div>
+    </div>
+    
+    <div class="bibliografia">
+        <h3>📚 Bibliografía confiable y verificable</h3>
+        <ul>
+            <li><strong>Strang, G. (2016).</strong> <em>Introduction to Linear Algebra</em> (5ª ed.). Wellesley-Cambridge Press. <span class="detalle-biblio">- Capítulo 1: Vectors and Matrices, sección 1.5: Special Matrices</span></li>
+            
+            <li><strong>Golub, G. H., & Van Loan, C. F. (2013).</strong> <em>Matrix Computations</em> (4ª ed.). Johns Hopkins University Press. <span class="detalle-biblio">- Capítulo 1: Matrix Multiplication, sección 1.2: Matrix Properties and Structure</span></li>
+            
+            <li><strong>Trefethen, L. N., & Bau, D. (1997).</strong> <em>Numerical Linear Algebra</em>. SIAM. <span class="detalle-biblio">- Lecture 1: Matrix-Vector Multiplication, classification by sparsity pattern</span></li>
+            
+            <li><strong>Meyer, C. D. (2000).</strong> <em>Matrix Analysis and Applied Linear Algebra</em>. SIAM. <span class="detalle-biblio">- Chapter 3: Matrix Algebra, section 3.2: Special Types of Matrices</span></li>
+            
+            <li><strong>Khan Academy - Linear Algebra:</strong> <em>Matrices and transformations</em>. <span class="detalle-biblio">Recurso interactivo gratuito: https://www.khanacademy.org/math/linear-algebra/matrix-transformations</span></li>
+            
+            <li><strong>MIT OpenCourseWare:</strong> <em>18.06 Linear Algebra, Spring 2010</em>. <span class="detalle-biblio">Video lectures: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/</span></li>
+        </ul>
+    </div>
+    
+    <div class="resumen-caja">
+        <h3>📝 Puntos clave para recordar</h3>
+        <ol>
+            <li>La clasificación no es arbitraria: cada tipo tiene <strong>propiedades algebraicas específicas</strong> que determinan qué operaciones son válidas y eficientes.</li>
+            <li>Las matrices <strong>diagonales</strong> y <strong>triangulares</strong> simplifican enormemente la resolución de sistemas lineales.</li>
+            <li>La <strong>simetría</strong> (A = Aᵀ) implica autovalores reales y diagonalización ortogonal, crucial en física e ingeniería.</li>
+            <li>Las matrices <strong>dispersas</strong> (llenas de ceros) requieren almacenamiento y algoritmos especializados para eficiencia.</li>
+            <li>En aplicaciones computacionales, identificar correctamente el tipo de matriz puede reducir tiempos de cálculo de <strong>horas a segundos</strong>.</li>
+        </ol>
+    </div>
+</li>
