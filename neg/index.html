@@ -10,7 +10,25 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+<style>
+    .pdf-link-simple {
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
 
+    .pdf-link-simple:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-link-simple::before {
+      content: "📄";
+      margin-right: 8px;
+    }
+  </style>
 <body>
   <header>
     <div class="header-content">
@@ -36,8 +54,12 @@
   </section>
 
   <section class="container">
-    <h2 class="section-title">Temario</h2>
-    <div class="temas-grid">
+  <h2>
+      <a href="https://drive.google.com/file/d/1y0Vzo_KdbsOEH4M4W4ibHvsMNX5IhoQo/view?usp=drive_link" target="_blank"
+        class="pdf-link-simple">
+        Temario PDF
+      </a>
+    </h2>    <div class="temas-grid">
 
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
