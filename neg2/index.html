@@ -4,309 +4,575 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matemáticas Aplicadas a los Negocios II - Universidad URA</title>
+  <title>Fundamentos de Programación - Universidad URA</title>
   <link rel="stylesheet" href="/ura/css/estilo.css">
   <!-- MathJax para renderizar notación matemática elegante -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .loguito {
+      display: inline-block;
+      margin: 10px 15px 10px 0;
+      transition: all 0.3s ease;
+    }
+
+    .loguito a {
+      display: block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
+    }
+
+    .loguito:hover a {
+      background-color: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+      border-color: #007bff;
+    }
+
+    .loguito img {
+      width: 120px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      filter: grayscale(30%);
+      transition: filter 0.3s ease;
+    }
+
+
+    .loguito:hover img {
+      filter: grayscale(0%);
+    }
+
+    .librito img {
+      height: 200px;
+      width: 150px;
+    }
+
+    /* Modal */
+    #modal-info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 1000;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      /* Efecto de difuminado */
+      -webkit-backdrop-filter: blur(10px);
+      /* Compatibilidad con Safari */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      background: rgba(245, 245, 245, 0.95);
+      /* Fondo semitransparente */
+      backdrop-filter: blur(20px);
+      /* Difuminado adicional para el contenido */
+      -webkit-backdrop-filter: blur(20px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      overflow-y: auto;
+      max-height: 80%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Borde sutil para efecto de cristal */
+    }
+
+    .modal.show .modal-overlay {
+      opacity: 1;
+    }
+
+    .modal.show .modal-content {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      /* Asegura que esté por encima del contenido */
+    }
+
+    /* Ajuste de listas dentro del modal */
+    #modal-text ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    #modal-text h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <div class="header-content">
       <a href="/ura/">
-        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo"> </a>
-      <div class="header-title">Matemáticas Para la Administración</div>
+        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">Fundamentos de Programación</div>
     </div>
   </header>
 
   <div class="hero">
-    <h1>Matemáticas Aplicadas a los Negocios II</h1>
-    <h2>LCIA209</h2>
-    <a href="calificaciones_mneg1.html" class="apple-button">Calificaciones</a>
+    <h1>Fundamentos de Programación</h1>
+    <h2>IAG207</h2>
+    <a href="/ura/comp/calificaciones_com.html" class="apple-button">Calificaciones</a>
   </div>
 
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno aplicará modelos matemáticos lineales, diferenciales e
-      integrales relativos a la optimización de fenómenos económicos empresariales, utilizará
-      elementos analíticos de la estadística inferencial al estudio de dichos fenómenos para un
-      mejor conocimiento y análisis en futuros cursos.
+      Al finalizar el curso el alumno analizará procedimientos y protocolos para la creación de
+      algoritmos, escritura de código y prueba de programas de cómputo en lenguaje estructurado C. con
+      el fin de sustentar conocimientos de programación de mayor especialización.
     </p>
   </section>
 
   <section class="container">
     <h2 class="section-title">Temario</h2>
     <div class="temas-grid">
-
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
-        <h3 class="tema-title">Matrices</h3>
+        <h3 class="tema-title">Introducción a Computadores Digitales</h3>
         <ul class="tema-list">
-          <li onclick="abrirModal('1.1. Lenguaje Algebraico', `
+          <li onclick="abrirModal('1.1 Computación Análoga', `
               <hr><br>
-              <p><strong>Objetivo:</strong> Comprender los fundamentos del lenguaje algebraico, su simbología, estructura y aplicación en la traducción de expresiones del lenguaje común al matemático y viceversa.</p>
+            <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
+            <h4>Definición</h4>
+            <ul>
+              <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o movimiento).</li>
+              <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
+            </ul>
+            <h4>Características</h4>
+            <ul>
+              <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
+              <li>Ofrece resultados aproximados.</li>
+              <li>Muy usada antes de la aparición de computadoras digitales.</li>
+            </ul>
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Regla de cálculo para operaciones matemáticas.</li>
+              <li>Relojes de manecillas.</li>
+              <li>Termómetros de mercurio.</li>
+            </ul>
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+            </ul>
+          `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
+                <hr><br>
+              <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
+
+            <h4>Definición</h4>
+            <ul>
+              <li>Conjunto de técnicas y procedimientos que permiten representar, procesar, analizar y manipular información utilizando sistemas discretos.</li>
+              <li>Convierte datos del mundo real en valores discretos (generalmente binarios) para su almacenamiento, transmisión y procesamiento mediante computadoras.</li>
+              <li>Base de la computación digital, presente en smartphones, sistemas de control industrial, análisis de datos clínicos y prácticamente toda tecnología moderna.</li>
+            </ul>
+
+            <h4>Características</h4>
+            <ul>
+              <li>Trabaja con información discreta en lugar de continua, usando ceros y unos como lenguaje fundamental.</li>
+              <li>Permite precisión, reproducibilidad y facilidad de manipulación de datos.</li>
+              <li>Capacidad de aplicar algoritmos complejos para resolver problemas que serían difíciles o imposibles de abordar con métodos análogos.</li>
+              <li>Facilita el almacenamiento, la comunicación y el control de información de manera confiable y eficiente.</li>
+              <li>Sirve de soporte a simulaciones, modelado y análisis de datos en diversas áreas del conocimiento.</li>
+            </ul>
+
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Computadoras personales y servidores que procesan información digital.</li>
+              <li>Smartphones y tablets que ejecutan aplicaciones basadas en datos discretos.</li>
+              <li>Sistemas de control industrial, como robots y automatización de fábricas.</li>
+              <li>Dispositivos médicos que digitalizan señales biológicas para diagnóstico y monitoreo.</li>
+            </ul>
+
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+          </ul>
+            `)">1.2 Introducción a métodos digitales <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.3 Descripción de componentes', `
+                <hr><br>
+                <p><strong>Objetivo:</strong> Conocer los principales componentes de un sistema digital, su funcionamiento y cómo interactúan para procesar información.</p>
+
+                <h4>Definición</h4>
+                <ul>
+                  <li>Los componentes de un sistema digital son los elementos físicos y lógicos que permiten la representación, procesamiento, almacenamiento y comunicación de información en forma discreta.</li>
+                  <li>Incluyen tanto hardware (circuitos, procesadores, memoria, periféricos) como software (sistemas operativos y programas) que controlan el flujo y la manipulación de datos.</li>
+                  <li>Son la base de cualquier dispositivo digital moderno, desde microcontroladores hasta supercomputadoras.</li>
+                </ul>
+
+                <h4>Principales Componentes</h4>
+                <ul>
+                  <li><strong>Unidad Central de Procesamiento (CPU):</strong> Componente encargado de ejecutar instrucciones, procesar datos y coordinar el funcionamiento de todo el sistema.</li>
+                  <li><strong>Memoria:</strong> Almacena datos e instrucciones de manera temporal (RAM) o permanente (ROM, discos, memorias flash).</li>
+                  <li><strong>Dispositivos de Entrada:</strong> Permiten la interacción con el sistema, como teclados, sensores, micrófonos y cámaras.</li>
+                  <li><strong>Dispositivos de Salida:</strong> Permiten mostrar o transmitir información procesada, como pantallas, impresoras o actuadores en sistemas de control.</li>
+                  <li><strong>Bus de Datos:</strong> Conjunto de líneas que transportan información entre la CPU, memoria y periféricos.</li>
+                  <li><strong>Controladores y Interfaces:</strong> Administran la comunicación con dispositivos externos y aseguran que los datos se transfieran correctamente.</li>
+                  <li><strong>Software de Sistema:</strong> Sistemas operativos y firmware que gestionan recursos y permiten ejecutar aplicaciones.</li>
+                </ul>
+
+                <h4>Características</h4>
+                <ul>
+                  <li>Interconexión eficiente entre componentes, permitiendo un flujo de información rápido y confiable.</li>
+                  <li>Capacidad de procesamiento secuencial y paralelo mediante CPU y otros procesadores especializados.</li>
+                  <li>Almacenamiento jerárquico, que permite acceso rápido a datos frecuentes y conservación a largo plazo de información crítica.</li>
+                  <li>Modularidad, facilitando la actualización y sustitución de componentes sin afectar el funcionamiento general.</li>
+                  <li>Compatibilidad entre hardware y software para ejecutar algoritmos y procesos de manera correcta.</li>
+                </ul>
+
+                <h4>Ejemplos</h4>
+                <ul>
+                  <li>Un microcontrolador Arduino que integra CPU, memoria y puertos de entrada/salida para proyectos electrónicos.</li>
+                  <li>Computadoras personales con CPU, RAM, disco duro, tarjeta gráfica y periféricos conectados mediante buses.</li>
+                  <li>Servidores de datos que utilizan múltiples CPUs, memorias de alta velocidad y sistemas redundantes para garantizar disponibilidad.</li>
+                  <li>Smartphones que combinan procesador, memoria, sensores y sistemas operativos móviles en un solo dispositivo compacto.</li>
+                </ul>
+
+                <h4>Fuentes Bibliográficas</h4>
+                <ul>
+                  <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                  <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+                  <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+                  <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+                </ul>
+            </ul>
+          `)">1.3 Descripción de componentes <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.4 Lectura de entrada', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Entender cómo los sistemas digitales reciben información del mundo exterior y la preparan para su procesamiento interno.</p>
             
-              <h4>Definición y conceptos básicos</h4>
+              <h4>Definición</h4>
               <ul>
-                <li><span style='color: red; font-weight: bold;'>Lenguaje algebraico:</span> Sistema de comunicación que utiliza símbolos, letras y números para representar relaciones matemáticas de forma precisa y concisa.</li>
-                <li><span style='color: red; font-weight: bold;'>Variable:</span> Símbolo (generalmente una letra) que representa una cantidad desconocida o que puede variar.</li>
-                <li><span style='color: red; font-weight: bold;'>Constante:</span> Valor fijo y conocido que no cambia en una expresión algebraica.</li>
-                <li><span style='color: red; font-weight: bold;'>Expresión algebraica:</span> Combinación de variables, constantes y operaciones matemáticas.</li>
-                <li><span style='color: red; font-weight: bold;'>Término algebraico:</span> Partes de una expresión separadas por signos + o -.</li>
-                <li><span style='color: red; font-weight: bold;'>Ecuación:</span> Igualdad entre dos expresiones algebraicas que contiene al menos una variable.</li>
+                <li>La lectura de entrada se refiere al proceso mediante el cual un sistema digital captura datos desde dispositivos o sensores externos para ser procesados por la CPU.</li>
+                <li>Convierte señales físicas (como presión, luz, sonido o movimiento) en información discreta que puede ser entendida y manipulada por el sistema.</li>
+                <li>Es el primer paso para la interacción entre el mundo real y los sistemas digitales, permitiendo la automatización, control y análisis de datos.</li>
               </ul>
             
-              <h4>Elementos del lenguaje algebraico</h4>
-              <table class='math-table'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Símbolo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Significado</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x, y, z, a, b, c</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Variables (cantidades desconocidas)</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x + 5 = 12</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Adición, suma, más</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a + b</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Sustracción, resta, menos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x - 3</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>×, ⋅, ( )</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación, por, veces</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x, a⋅b, 3(x+y)</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>÷, /</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>División, entre, dividido por</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x/2, a÷b</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>=</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Igualdad, es igual a</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>y = 2x + 1</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>≠</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Desigualdad, no es igual a</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x ≠ 0</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>>, <</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Mayor que, menor que</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x > 5, y < 10</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>², ³, ⁿ</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Potenciación, elevado a</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x², y³, aⁿ</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>√</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Raíz cuadrada</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>√x, √(a+b)</td>
-                </tr>
-              </table>
-            
-              <h4>Traducción del lenguaje común al algebraico</h4>
-              <table class='math-table'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Expresión verbal</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Expresión algebraica</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Un número aumentado en 5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x + 5</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x representa el número desconocido</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El doble de un número</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>2x</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicar por 2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>La mitad de un número</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x/2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Dividir entre 2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El triple de un número disminuido en 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>3x - 2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Primero triple, luego disminuir</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>La suma de dos números diferentes</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a + b</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Usar diferentes variables</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El cuadrado de un número</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x²</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Elevar al exponente 2</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>La diferencia de dos números</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a - b</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Orden importante: primero menos segundo</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El producto de dos números</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a × b o ab</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación implícita o explícita</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>El cociente de dos números</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>a/b</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>División: numerador/denominador</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Tres números consecutivos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x, x+1, x+2</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Patrón de números seguidos</td>
-                </tr>
-              </table>
-            
-              <h4>Ejemplos detallados de traducción</h4>
-              
-              <p><strong>Ejemplo 1: Expresiones simples</strong></p>
-              <p>Traducir al lenguaje algebraico: 'La suma de un número y su cuadrado'</p>
-              <ol>
-                <li>Paso 1: Identificar el número desconocido → <span style='color: red; font-weight: bold;'>x</span></li>
-                <li>Paso 2: Identificar 'su cuadrado' → <span style='color: red; font-weight: bold;'>x²</span></li>
-                <li>Paso 3: Identificar 'la suma de' → <span style='color: red; font-weight: bold;'>+</span></li>
-                <li>Paso 4: Unir todos los elementos → <span style='color: red; font-weight: bold;'>x + x²</span></li>
-                <li>Expresión algebraica: <span style='color: red; font-weight: bold;'>x + x²</span> o <span style='color: red; font-weight: bold;'>x² + x</span></li>
-              </ol>
-              
-              <p><strong>Ejemplo 2: Expresiones compuestas</strong></p>
-              <p>Traducir al lenguaje algebraico: 'El triple de la diferencia entre dos números'</p>
-              <ol>
-                <li>Paso 1: Identificar los números → <span style='color: red; font-weight: bold;'>a y b</span></li>
-                <li>Paso 2: 'diferencia entre dos números' → <span style='color: red; font-weight: bold;'>a - b</span></li>
-                <li>Paso 3: 'el triple de' → <span style='color: red; font-weight: bold;'>3 ×</span></li>
-                <li>Paso 4: Unir todos los elementos → <span style='color: red; font-weight: bold;'>3(a - b)</span></li>
-                <li><span style='color: red; font-weight: bold;'>¡Importante!</span> Los paréntesis son necesarios para indicar que la diferencia se multiplica por 3</li>
-              </ol>
-              
-              <p><strong>Ejemplo 3: Expresión con múltiples operaciones</strong></p>
-              <p>Traducir al lenguaje algebraico: 'La raíz cuadrada de la suma de los cuadrados de dos números'</p>
-              <ol>
-                <li>Paso 1: Identificar los números → <span style='color: red; font-weight: bold;'>x y y</span></li>
-                <li>Paso 2: 'cuadrados de dos números' → <span style='color: red; font-weight: bold;'>x² y y²</span></li>
-                <li>Paso 3: 'suma de los cuadrados' → <span style='color: red; font-weight: bold;'>x² + y²</span></li>
-                <li>Paso 4: 'raíz cuadrada de' → <span style='color: red; font-weight: bold;'>√( )</span></li>
-                <li>Paso 5: Unir todos los elementos → <span style='color: red; font-weight: bold;'>√(x² + y²)</span></li>
-                <li><span style='color: red; font-weight: bold;'>¡Importante!</span> Los paréntesis bajo el radical son esenciales</li>
-              </ol>
-            
-              <h4>Clasificación de expresiones algebraicas</h4>
-              <table class='math-table'>
-                <tr style='background-color: #f2f2f2;'>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Tipo</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
-                  <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplos</th>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Monomio</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con un solo término</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>5x, -3y², 7</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Binomio</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con dos términos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x + y, 2a - 3b, x² + 4</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Trinomio</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con tres términos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>x² + 2x + 1, a + b + c</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Polinomio</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con múltiples términos</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>4x³ - 2x² + 5x - 7</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresión racional</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Cociente de dos polinomios</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>(x+1)/(x-2), 3/(y²+1)</td>
-                </tr>
-                <tr>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Expresión radical</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>Contiene radicales</td>
-                  <td style='border: 1px solid #ddd; padding: 8px;'>√x, √(a+b), ³√(x²)</td>
-                </tr>
-              </table>
-            
-              <h4>Jerarquía de operaciones</h4>
-              <p>Reglas esenciales para interpretar y evaluar expresiones algebraicas:</p>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>Paréntesis y agrupación:</span> Operaciones dentro de paréntesis, corchetes y llaves</li>
-                <li><span style='color: red; font-weight: bold;'>Exponentes y radicales:</span> Potencias y raíces</li>
-                <li><span style='color: red; font-weight: bold;'>Multiplicación y división:</span> De izquierda a derecha</li>
-                <li><span style='color: red; font-weight: bold;'>Suma y resta:</span> De izquierda a derecha</li>
-              </ol>
-              
-              <p><strong>Ejemplo:</strong> Evaluar 2 + 3 × 4² - (5 - 1)/2</p>
-              <ol>
-                <li>Paréntesis: (5-1) = 4 → 2 + 3 × 4² - 4/2</li>
-                <li>Exponentes: 4² = 16 → 2 + 3 × 16 - 4/2</li>
-                <li>Multiplicación/división: 3×16=48, 4/2=2 → 2 + 48 - 2</li>
-                <li>Suma/resta: 2+48=50, 50-2=48 → <span style='color: red; font-weight: bold;'>48</span></li>
-              </ol>
-            
-              <h4>Ejercicio de aplicación integral</h4>
-              <p>Traducir al lenguaje algebraico las siguientes expresiones:</p>
-              <ol>
-                <li>El producto de tres números consecutivos</li>
-                <li>La suma de los cuadrados de dos números</li>
-                <li>El área de un rectángulo de base x y altura y</li>
-                <li>La edad de Juan dentro de 5 años si actualmente tiene a años</li>
-                <li>La distancia recorrida a velocidad constante v en tiempo t</li>
-              </ol>
-              
-              <p><strong>Solución:</strong></p>
-              <ol>
-                <li><span style='color: red; font-weight: bold;'>x(x+1)(x+2)</span> (tres números consecutivos)</li>
-                <li><span style='color: red; font-weight: bold;'>a² + b²</span> (suma de cuadrados)</li>
-                <li><span style='color: red; font-weight: bold;'>x × y</span> (área = base × altura)</li>
-                <li><span style='color: red; font-weight: bold;'>a + 5</span> (edad actual más 5 años)</li>
-                <li><span style='color: red; font-weight: bold;'>v × t</span> (distancia = velocidad × tiempo)</li>
-              </ol>
-            
-              <h4>Errores comunes y consideraciones importantes</h4>
+              <h4>Principales Dispositivos de Entrada</h4>
               <ul>
-                <li><span style='color: red; font-weight: bold;'>Confundir 'diferencia' con 'cociente':</span> La diferencia es resta (a - b), el cociente es división (a/b)</li>
-                <li><span style='color: red; font-weight: bold;'>Olvidar paréntesis en expresiones compuestas:</span> 'El doble de la suma' es 2(x+y), no 2x+y</li>
-                <li><span style='color: red; font-weight: bold;'>Orden en la resta:</span> 'a disminuido en b' es a-b, no b-a</li>
-                <li><span style='color: red; font-weight: bold;'>Variables diferentes para cantidades diferentes:</span> Usar x e y para números distintos</li>
-                <li><span style='color: red; font-weight: bold;'>Notación de multiplicación:</span> 2x significa 2 × x, no 20</li>
-                <li><span style='color: red; font-weight: bold;'>Coeficiente 1 implícito:</span> x significa 1x, -y significa -1y</li>
+                <li><strong>Teclados y ratones:</strong> Permiten ingresar datos y comandos de forma directa.</li>
+                <li><strong>Sensores:</strong> Capturan información física como temperatura, presión, luz o humedad.</li>
+                <li><strong>Micrófonos y cámaras:</strong> Digitalizan señales de audio y video para procesamiento y almacenamiento.</li>
+                <li><strong>Lectores de código:</strong> Incluyen códigos de barras y QR que convierten información codificada en datos legibles por el sistema.</li>
+                <li><strong>Dispositivos táctiles y pantallas interactivas:</strong> Permiten la interacción directa con interfaces gráficas y aplicaciones.</li>
+                <li><strong>Interfaces de red:</strong> Reciben información proveniente de otros sistemas digitales a través de protocolos de comunicación.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Transforma señales analógicas o físicas en información digital interpretable.</li>
+                <li>Precisión y fidelidad en la captura de datos para asegurar un procesamiento confiable.</li>
+                <li>Velocidad de respuesta suficiente para mantener sincronización con el procesamiento interno.</li>
+                <li>Compatibilidad con los estándares de comunicación y formatos de datos del sistema.</li>
+                <li>Posibilidad de integración con múltiples dispositivos simultáneamente para sistemas complejos.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Un sensor de temperatura conectado a un microcontrolador para controlar un sistema de climatización.</li>
+                <li>La cámara de un smartphone que captura imágenes y video para aplicaciones de reconocimiento facial.</li>
+                <li>Lectores de tarjetas RFID que permiten el acceso seguro a instalaciones o sistemas electrónicos.</li>
+                <li>Teclados y pantallas táctiles en cajeros automáticos que registran la información del usuario.</li>
+                <li>Micrófonos digitales que capturan audio para asistentes de voz y sistemas de dictado.</li>
               </ul>
             
               <h4>Fuentes Bibliográficas</h4>
               <ul>
-                <li>Baldor, A. (2019). <em>Álgebra</em>. Grupo Editorial Patria.</li>
-                <li>Swokowski, E. W., & Cole, J. A. (2011). <em>Álgebra y trigonometría con geometría analítica</em>. Cengage Learning.</li>
-                <li> Sullivan, M. (2018). <em>Álgebra y trigonometría</em>. Pearson Educación.</li>
-                <li>Zill, D. G., & Dewar, J. M. (2012). <em>Álgebra y trigonometría</em>. McGraw-Hill.</li>
+                <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+                <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+                <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
               </ul>
-            `)"><b>1.1. Lenguaje Algebraico</b> <span class="emoji-small">✅</span>
+            `)">1.4 Lectura de entrada <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.5 Unidad de memoria', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender la función, tipos y características de la memoria en un sistema computacional.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>La unidad de memoria es el componente del computador responsable de almacenar datos e instrucciones para su posterior procesamiento.</li>
+                <li>Actúa como un almacén temporal o permanente de información que puede ser accedida rápidamente por la CPU.</li>
+                <li>Es fundamental para el funcionamiento de cualquier sistema digital, ya que determina la capacidad de almacenamiento y la velocidad de acceso a la información.</li>
+              </ul>
+            
+              <h4>Tipos de Memoria</h4>
+              <ul>
+                <li><strong>Memoria Principal (RAM):</strong> Memoria de acceso aleatorio volátil que almacena temporalmente datos y programas en ejecución.</li>
+                <li><strong>Memoria ROM:</strong> Memoria de solo lectura no volátil que contiene instrucciones fundamentales para el arranque del sistema.</li>
+                <li><strong>Memoria Caché:</strong> Memoria de alta velocidad que almacena copias de datos frecuentemente accedidos para acelerar el procesamiento.</li>
+                <li><strong>Memoria Virtual:</strong> Extensión de la memoria principal que utiliza espacio en el almacenamiento secundario.</li>
+                <li><strong>Memoria Flash:</strong> Memoria no volátil utilizada en dispositivos de almacenamiento como SSDs y unidades USB.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li><strong>Capacidad:</strong> Cantidad de información que puede almacenar, medida en bytes (KB, MB, GB, TB).</li>
+                <li><strong>Velocidad de acceso:</strong> Tiempo que tarda la CPU en acceder a los datos almacenados.</li>
+                <li><strong>Volatilidad:</strong> Determina si la información se mantiene o se pierde al apagar el sistema.</li>
+                <li><strong>Método de acceso:</strong> Forma en que se accede a la información (aleatorio, secuencial, directo).</li>
+                <li><strong>Tecnología:</strong> Implementación física de la memoria (semiconductores, magnética, óptica).</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Los módulos DDR4 en computadoras modernas que permiten multitarea eficiente.</li>
+                <li>La memoria ROM BIOS que contiene el firmware necesario para iniciar el sistema operativo.</li>
+                <li>Memoria caché L3 en procesadores Intel Core i7 que acelera el acceso a datos frecuentes.</li>
+                <li>Memoria flash en tarjetas SD utilizadas en cámaras digitales y smartphones.</li>
+                <li>Memoria virtual implementada en el disco duro para extender la capacidad de la RAM.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Stallings, W. (2020). <em>Computer Organization and Architecture: Designing for Performance</em>. Pearson.</li>
+                <li>Null, L., & Lobur, J. (2018). <em>The Essentials of Computer Organization and Architecture</em>. Jones & Bartlett Learning.</li>
+                <li>Hamacher, C., Vranesic, Z., & Zaky, S. (2011). <em>Computer Organization</em>. McGraw-Hill.</li>
+              </ul>
+            `)">1.5 Unidad de memoria <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.6 Almacenamiento en código', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Analizar los métodos y formatos utilizados para almacenar información en sistemas digitales mediante codificación.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>El almacenamiento en código se refiere a la representación de información mediante sistemas de codificación que permiten su preservación y recuperación.</li>
+                <li>Implica la transformación de datos en formatos digitales que pueden ser interpretados por los sistemas computacionales.</li>
+                <li>Es fundamental para la persistencia de datos y la interoperabilidad entre diferentes sistemas y aplicaciones.</li>
+              </ul>
+            
+              <h4>Métodos de Codificación</h4>
+              <ul>
+                <li><strong>Sistemas numéricos:</strong> Representación de información usando binario, octal, hexadecimal y decimal.</li>
+                <li><strong>Códigos de caracteres:</strong> Sistemas como ASCII, Unicode y UTF-8 para representar texto.</li>
+                <li><strong>Formatos de archivo:</strong> Estructuras específicas para diferentes tipos de datos (texto, imagen, audio, video).</li>
+                <li><strong>Compresión de datos:</strong> Técnicas para reducir el espacio de almacenamiento (lossless y lossy).</li>
+                <li><strong>Codificación para detección y corrección de errores:</strong> Métodos como paridad, Hamming y CRC.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li><strong>Eficiencia:</strong> Optimización del espacio requerido para almacenar información.</li>
+                <li>Integridad: Capacidad de detectar y corregir errores en los datos almacenados.</li>
+                <li>Interoperabilidad: Compatibilidad entre diferentes sistemas y plataformas.</li>
+                <li>Seguridad: Protección de datos mediante técnicas de cifrado y codificación.</li>
+                <li>Escalabilidad: Adaptación a volúmenes crecientes de información.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>El código ASCII que representa caracteres alfanuméricos como números binarios.</li>
+                <li>Formatos de imagen como JPEG y PNG que utilizan diferentes algoritmos de compresión.</li>
+                <li>Archivos comprimidos ZIP que reducen el tamaño mediante algoritmos lossless.</li>
+                <li>Base de datos que almacenan información en tablas con relaciones codificadas.</li>
+                <li>Sistemas de cifrado como AES que codifican información para proteger su confidencialidad.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Tanenbaum, A. S., & Austin, T. (2016). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Khan, Z. (2018). <em>Data Representation in Computer Systems</em>. Springer.</li>
+                <li>Salomon, D. (2007). <em>Data Compression: The Complete Reference</em>. Springer.</li>
+                <li>Unicode Consortium. (2020). <em>The Unicode Standard</em>. Unicode, Inc.</li>
+              </ul>
+            `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.7 Números binarios', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>El sistema binario es un sistema de numeración posicional que utiliza solo dos dígitos: 0 y 1.</li>
+                <li>Es la base del funcionamiento de los sistemas digitales, ya que los componentes electrónicos pueden representar fácilmente dos estados (encendido/apagado, verdadero/falso).</li>
+                <li>Permite representar cualquier tipo de información (números, texto, imágenes, sonido) mediante combinaciones de bits.</li>
+              </ul>
+            
+              <h4>Conceptos Fundamentales</h4>
+              <ul>
+                <li><strong>Bit:</strong> Unidad básica de información que representa un dígito binario (0 o 1).</li>
+                <li><strong>Byte:</strong> Grupo de 8 bits que representa un carácter o unidad de información básica.</li>
+                <li><strong>Conversión entre sistemas:</strong> Métodos para transformar números entre binario, decimal, octal y hexadecimal.</li>
+                <li><strong>Aritmética binaria:</strong> Operaciones matemáticas (suma, resta, multiplicación, división) con números binarios.</li>
+                <li><strong>Representación de números negativos:</strong> Sistemas como signo-magnitud, complemento a uno y complemento a dos.</li>
+                <li><strong>Punto flotante:</strong> Representación de números reales mediante notación científica en binario.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Simplicidad de implementación en circuitos electrónicos.</li>
+                <li>Fiabilidad en la representación y transmisión de datos.</li>
+                <li>Eficiencia en operaciones lógicas y aritméticas.</li>
+                <li>Escalabilidad para representar información compleja.</li>
+                <li>Universalidad como estándar en sistemas digitales.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Representación del número decimal 10 como 1010 en binario.</li>
+                <li>Suma binaria: 1010 (10) + 0110 (6) = 10000 (16).</li>
+                <li>Representación del carácter 'A' en ASCII como el número binario 01000001.</li>
+                <li>Uso del complemento a dos para representar números negativos.</li>
+                <li>Almacenamiento de imágenes mediante valores binarios que representan píxeles.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Mano, M. M., & Ciletti, M. D. (2018). <em>Digital Design: With an Introduction to the Verilog HDL</em>. Pearson.</li>
+                <li>Null, L., & Lobur, J. (2014). <em>Essentials of Computer Organization and Architecture</em>. Jones & Bartlett Learning.</li>
+                <li>Khan, M. (2019). <em>Binary Arithmetic and Boolean Algebra</em>. McGraw-Hill.</li>
+                <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+              </ul>
+            `)">1.7. Números binarios <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Identificar y comprender la interconexión y funcionamiento de los componentes principales de un sistema computacional.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>La organización de componentes se refiere a la disposición estructural y las interconexiones entre las unidades funcionales de un computador.</li>
+                <li>Define cómo los diferentes componentes (CPU, memoria, E/S) interactúan para ejecutar instrucciones y procesar datos.</li>
+                <li>Establece la arquitectura básica que determina el rendimiento, eficiencia y capacidades del sistema.</li>
+              </ul>
+            
+              <h4>Componentes Principales</h4>
+              <ul>
+                <li><strong>Unidad Central de Procesamiento (CPU):</strong> Cerebro del computador que ejecuta instrucciones y procesa datos.</li>
+                <li><strong>Memoria Principal:</strong> Almacena datos e instrucciones necesarios para la ejecución de programas.</li>
+                <li><strong>Dispositivos de Entrada/Salida:</strong> Permiten la comunicación entre el computador y el exterior.</li>
+                <li><strong>Buses del Sistema:</strong> Canales de comunicación que interconectan los componentes del computador.</li>
+                <li><strong>Unidad de Control:</strong> Coordina las actividades de todos los componentes del sistema.</li>
+                <li><strong>Almacenamiento Secundario:</strong> Provee capacidad de almacenamiento no volátil a largo plazo.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Arquitectura definida por el conjunto de instrucciones y organización de hardware.</li>
+                <li>Jerarquía de memoria que equilibra velocidad, capacidad y costo.</li>
+                <li>Mecanismos de interrupción para gestionar eventos asíncronos.</li>
+                <li>Técnicas de paralelismo para mejorar el rendimiento.</li>
+                <li>Modos de direccionamiento para acceder a datos e instrucciones.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Arquitectura Von Neumann con unidad de procesamiento, memoria y buses unificados.</li>
+                <li>Arquitectura Harvard con memorias separadas para datos e instrucciones.</li>
+                <li>Sistemas multiprocesador con varias CPUs compartiendo recursos.</li>
+                <li>Computadoras con buses PCI Express para alta velocidad de transferencia.</li>
+                <li>Sistemas con memoria caché multinivel para reducir latencia.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Stallings, W. (2019). <em>Computer Organization and Architecture: Designing for Performance</em>. Pearson.</li>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+              </ul>
+            `)">1.8. Organización de los componentes fundamentales del computador <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Analizar la estructura, tipos y funcionamiento de las instrucciones en lenguaje de máquina que ejecuta directamente el procesador.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Las instrucciones en lenguaje de máquina son comandos en formato binario que la CPU puede ejecutar directamente.</li>
+                <li>Representan las operaciones más básicas que puede realizar un computador, específicas para cada arquitectura de procesador.</li>
+                <li>Forman el conjunto de instrucciones (instruction set) que define las capacidades fundamentales de un procesador.</li>
+              </ul>
+            
+              <h4>Tipos de Instrucciones</h4>
+              <ul>
+                <li><strong>Transferencia de datos:</strong> Mover información entre memoria, registros y dispositivos.</li>
+                <li><strong>Aritméticas:</strong> Realizar operaciones matemáticas como suma, resta, multiplicación y división.</li>
+                <li><strong>Lógicas:</strong> Operaciones booleanas como AND, OR, NOT y XOR.</li>
+                <li><strong>Control de flujo:</strong> Alterar la secuencia de ejecución (saltos, bifurcaciones, llamadas a subrutinas).</li>
+                <li><strong>Manejo de dispositivos:</strong> Controlar operaciones de entrada/salida con periféricos.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Codificadas en formato binario específico para cada arquitectura.</li>
+                <li>Ejecutadas directamente por el hardware del procesador.</li>
+                <li>Organizadas en ciclos de instrucción (fetch, decode, execute).</li>
+                <li>Diferentes modos de direccionamiento para acceder a operandos.</li>
+                <li>Varían en longitud y complejidad según la arquitectura (CISC vs RISC).</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Instrucción ADD en x86: 00000011 11000011 (suma los registros AX y BX).</li>
+                <li>Instrucción LOAD en arquitectura MIPS: 100011 00001 00010 0000000000000000.</li>
+                <li>Salto condicional JZ (Jump if Zero) en ensamblador x86.</li>
+                <li>Instrucción MOV para transferencia de datos en múltiples arquitecturas.</li>
+                <li>Llamada a interrupción INT en x86 para solicitar servicios del sistema operativo.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Intel Corporation. (2019). <em>Intel 64 and IA-32 Architectures Software Developer's Manual</em>.</li>
+                <li>ARM Limited. (2020). <em>ARM Architecture Reference Manual</em>.</li>
+                <li>Sweetman, D. (2006). <em>See MIPS Run</em>. Morgan Kaufmann.</li>
+              </ul>
+            `)">1.9. Instrucciones en lenguaje de máquina <span class="emoji-small">✅</span>
           </li>
         </ul>
-
       </div>
-
     </div>
   </section>
 
@@ -314,44 +580,23 @@
     <h2 class="section-title">Actividades de Aprendizaje</h2>
 
     <div>
-      <h3 class="actividades-subtitle">Bajo la conducción del docente</h3>
+      <h3 class="actividades-subtitle">Bajo la conducción del docente en laboratorio de cómputo</h3>
       <div class="cards-grid">
-
-        <a href="/comun/ejercicios2.html" target="_blank" rel="noopener noreferrer" class="card-link">
-          <div class="card">
-            <h3><span class="emoji-small">✅</span> Resolver ejercicios</h3>
-            <p>50 ejercicios de aplicación de las matemáticas en los negocios</p>
-            <div class="numerote">50 ejercicios</div>
-          </div>
-        </a>
-
-        <div class="card">
-          <h3><span class="emoji-small">✅</span> Uso de software</h3>
-          <p>Uso de software de aplicación matemática en dispositivos móviles para negocios.</p>
-
-          <div class="loguito">
-            <a href="https://www.geogebra.org/classic?lang=es" target="_blank" rel="noopener noreferrer">
-              <img src="https://pbs.twimg.com/media/E0a9_yMXMAYpJk2.jpg:large" alt="GeoGebra">
-            </a>
-          </div>
-
-          <div class="loguito">
-            <a href="https://www.desmos.com/calculator?lang=es" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn6.aptoide.com/imgs/2/c/d/2cdb6662835934a802962ffb4e614407_fgraphic.png" alt="Desmos">
-            </a>
-          </div>
+        <div class="card" onclick="window.open('diagramas.html', '_blank')">
+          <h3><span class="emoji-small">✅</span> Ejercicios de diagramas de flujo</h3>
+          <p>El alumno realizará ejercicios de diagramas de flujo con diversas propuestas.</p>
         </div>
-
         <div class="card">
-          <h3>Leer</h3>
-          <p>Lecturas comentadas sobre las matemáticas y su aplicación en los negocios.</p>
-          <div class="loguito librito">
-            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank"
-              rel="noopener noreferrer">
-              <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg"
-                alt="storytelling">
-            </a>
-          </div>
+          <h3>Elaboración de programas</h3>
+          <p>El alumno elaborará programas utilizando formatos establecidos.</p>
+        </div>
+        <div class="card">
+          <h3>Modificaciones a programas</h3>
+          <p>Los alumnos efectuarán modificaciones a los programas realizados con subrutinas y subprogramas.</p>
+        </div>
+        <div class="card">
+          <h3>Ejercicios con computadoras manuales</h3>
+          <p>Se harán ejercicios con computadoras manuales Texas y Casio.</p>
         </div>
       </div>
     </div>
@@ -360,42 +605,43 @@
       <h3 class="actividades-subtitle">De manera independiente</h3>
       <div class="cards-grid">
         <div class="card">
-          <h3>Investigar</h3>
-          <p>Investigaciones bibliográficas, hemerográficas y digitales sobre la asignatura de matemáticas en los
-            negocios</p>
+          <h3> <span class="emoji-small">✅</span> Investigaciones bibliográficas</h3>
+          <h5>Producto a Entregar de uno de los siguientes libros:</h5>
+          <p>Como resultado de tu lectura, deberás crear una guía de estudio. Esta guía debe ser un documento útil que
+            sintetice y organice los conceptos clave del libro, para facilitar su comprensión y estudio, lo harás a mano
+            y con tinta de colores.</p>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">
+              <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg"
+                alt="storytelling">
+            </a>
+          </div>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1D8rHXJS3KA7OD_RFCNrbemIK63DLdTq4/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://infolibros.org/thumbnails/temp/ManipulandoelDOMconJavascriptVicentMonchoMasGemmaSubiranaGrau-thumbnail-112813.webp"
+                alt="manipulando el dom con JS">
+            </a>
+          </div>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1lMa1dZrONcwQJWt6eWxX1aWXzrL9HVMU/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              <img src="https://editorialgrupo-aea.com/public/presses/2/submission_18_18_coverImage_es_ES.jpg"
+                alt="programacion web del frontend al backend">
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Programas con proposiciones</h3>
+          <p>Se hará un programa utilizando las proposiciones y formatos establecidos.</p>
         </div>
         <div class="card">
-          <h3>Informes</h3>
-          <p>Elaboración de informes sobre lecturas recomendadas sobre matemáticas</p>
+          <h3>Solución de problemas</h3>
+          <p>Se resolverán problemas aplicados a cálculo mediante computadoras manuales.</p>
         </div>
-
-
-        <a href="formulas.html" target="_self" rel="noopener noreferrer" class="card-link">
-          <div class="card">
-            <h3><span class="emoji-small">✅</span> Fórmulas</h3>
-            <p>Resuelve cualquier cantidad de series de problemas matemáticos con ayuda de estas fórmulas aplicadas en
-              los negocios</p>
-            <div class="loguito librito">
-
-              <img
-                src="https://media.istockphoto.com/id/1370390878/es/vector/conjunto-de-iconos-de-s%C3%ADmbolos-matem%C3%A1ticos-dise%C3%B1o-de-garabatos-de-asignaturas-de-%C3%A1lgebra-o.jpg?s=612x612&w=0&k=20&c=3tQZBPcbxXC5caJbb0FP9uNc5ZNZrybbgi4pay0kLTw="
-                alt="formulas">
-            </div>
-          </div>
-        </a>
-
-        <a href="/ura/comun/trabajo_final.html" target="_blank" rel="noopener noreferrer" class="card-link">
-          <div class="card">
-            <h3><span class="emoji-small">✅</span> Trabajo final</h3>
-            <p>Elaboración de trabajo final sobre la relación que tienen las matemáticas y los negocios además de su
-              importancia en los tiempos actuales</p>
-            <div class="loguito librito">
-              <img src="https://isic.es/wp-content/uploads/2021/01/disfrutar-el-trabajo-1024x414.jpg"
-                alt="trabajo_final">
-            </div>
-          </div>
-        </a>
-
       </div>
     </div>
   </section>
@@ -403,38 +649,37 @@
   <section class="container">
     <h2 class="section-title">Evaluación</h2>
     <div class="evaluacion-grid">
-
       <div class="evaluacion-item tema-card">
         <div class="evaluacion-porcentaje">40%</div>
-        <p class="evaluacion-desc">Dos exámenes parciales</p>
+        <p class="evaluacion-desc">Dos exámenes parciales</p><br>
         <div class="tema-list">
-          <!--  <div class="btn">-->
-          <a href="" target="">🔒Primer Parcial</a>
-          <!-- <a href="1er_parcial_mat_neg1.pdf" target="_blank">🔓Primer Parcial</a> -->
-          <!--           <a href="#" target="_blank">🔒Segundo Parcial</a>
- -->
+          <!--           🔓<a href="ppcom1.html" target="_blank"> 1er Parcial 27/09/25</a> -->
+          <a href="" target="">🔒 1er Parcial 27/09/25</a>
+        </div>
+        <div class="tema-list">
+          <!-- 🔓<a href="2do_parcial_com1.pdf" target="_blank"> 2do Parcial 18/10/25</a> -->
+          <a href="" target="">🔒 2do Parcial 18/10/25</a>
         </div>
       </div>
 
       <div class="evaluacion-item tema-card">
         <div class="evaluacion-porcentaje">20%</div>
-        <p class="evaluacion-desc">Actividades bajo conducción de un académico</p>
+        <p class="evaluacion-desc">Reporte de prácticas de laboratorio</p><br>
+        <!--       <h6>Todos tienen 20% por rendimiento en clase</h6>
+ -->
       </div>
       <div class="evaluacion-item tema-card">
-        <div class="evaluacion-porcentaje">20%</div>
-        <p class="evaluacion-desc">Actividades independientes</p>
+        <div class="evaluacion-porcentaje">10%</div>
+        <p class="evaluacion-desc">Investigaciones bibliográficas</p><br>
+        <!--       <h6>Son las firmas que tienes en tus tareas</h6> -->
       </div>
       <div class="evaluacion-item tema-card">
-        <div class="evaluacion-porcentaje">20%</div>
-        <p class="evaluacion-desc">Examen final</p>
+        <div class="evaluacion-porcentaje">30%</div>
+        <p class="evaluacion-desc">Examen final</p><br>
+        <!-- <h6>Voy a promediar tus dos parciales para esta calificación</h6> -->
       </div>
     </div>
   </section>
-
-  <footer>
-    © 2025 Universidad URA – Asignatura
-    <a href="/ura/" class="no-style-link materias" target="_self">Inicio.</a>
-  </footer>
 
   <!-- Modal -->
   <div id="modal-info" class="modal">
@@ -471,6 +716,9 @@
     modalOverlay.addEventListener('click', cerrarModal);
   </script>
 
+  <footer>
+    © 2025 Universidad URA – Asignatura Computación I
+  </footer>
 </body>
 
 </html>
