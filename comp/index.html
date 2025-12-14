@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,6 @@
   <!-- MathJax para renderizar notación matemática elegante -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
   <style>
     .loguito {
       display: inline-block;
@@ -42,7 +42,6 @@
       filter: grayscale(30%);
       transition: filter 0.3s ease;
     }
-
 
     .loguito:hover img {
       filter: grayscale(0%);
@@ -83,9 +82,7 @@
       left: 50%;
       transform: translate(-50%, -60%);
       background: rgba(245, 245, 245, 0.95);
-      /* Fondo semitransparente */
       backdrop-filter: blur(20px);
-      /* Difuminado adicional para el contenido */
       -webkit-backdrop-filter: blur(20px);
       padding: 30px;
       border-radius: 20px;
@@ -98,7 +95,6 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       font-size: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      /* Borde sutil para efecto de cristal */
     }
 
     .modal.show .modal-overlay {
@@ -131,6 +127,25 @@
       margin-bottom: 10px;
     }
   </style>
+  <style>
+    .pdf-link-simple {
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .pdf-link-simple:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-link-simple::before {
+      content: "📄";
+      margin-right: 8px;
+    }
+  </style>
 
 </head>
 
@@ -153,14 +168,20 @@
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno será capaz de explicar el procesamiento de información por computadora, 
+      Al finalizar el curso el alumno será capaz de explicar el procesamiento de información por computadora,
       utilizando la terminología técnica de identificación de los principales componentes de un sistema de computación,
-      definiendo sus respectivas funciones, así como describir la historia de la computación y distinguir problemas susceptibles de soluciones mediante la computación.
+      definiendo sus respectivas funciones, así como describir la historia de la computación y distinguir problemas
+      susceptibles de soluciones mediante la computación.
     </p>
   </section>
 
   <section class="container">
-    <h2 class="section-title">Temario</h2>
+    <h2>
+      <a href="https://drive.google.com/file/d/1tNzDcpNKmFSRYLhraxKdWXvEHm_HXMAE/view?usp=sharing" target="_blank"
+        class="pdf-link-simple">
+        Temario
+      </a>
+    </h2>
     <div class="temas-grid">
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
@@ -195,7 +216,7 @@
           `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
           </li>
 
-            <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
+          <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
                 <hr><br>
               <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
 
@@ -232,7 +253,7 @@
             `)">1.2 Introducción a métodos digitales <span class="emoji-small">✅</span>
           </li>
 
-            <li onclick="abrirModal('1.3 Descripción de componentes', `
+          <li onclick="abrirModal('1.3 Descripción de componentes', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Conocer los principales componentes de un sistema digital, su funcionamiento y cómo interactúan para procesar información.</p>
 
@@ -279,10 +300,10 @@
                   <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
                 </ul>
             </ul>
-          `)">1.3 Descripción de componentes  <span class="emoji-small">✅</span>  
+          `)">1.3 Descripción de componentes <span class="emoji-small">✅</span>
           </li>
 
-            <li onclick="abrirModal('1.4 Lectura de entrada', `
+          <li onclick="abrirModal('1.4 Lectura de entrada', `
               <hr><br>
               <p><strong>Objetivo:</strong> Entender cómo los sistemas digitales reciben información del mundo exterior y la preparan para su procesamiento interno.</p>
             
@@ -328,10 +349,10 @@
                 <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
                 <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
               </ul>
-            `)">1.4 Lectura de entrada  <span class="emoji-small">✅</span>
-           </li>
+            `)">1.4 Lectura de entrada <span class="emoji-small">✅</span>
+          </li>
 
-           <li onclick="abrirModal('1.5 Unidad de memoria', `
+          <li onclick="abrirModal('1.5 Unidad de memoria', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender la función, tipos y características de la memoria en un sistema computacional.</p>
             
@@ -426,7 +447,7 @@
               </ul>
             `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
           </li>
-          
+
           <li onclick="abrirModal('1.7 Números binarios', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
@@ -572,9 +593,9 @@
               </ul>
             `)">1.9. Instrucciones en lenguaje de máquina <span class="emoji-small">✅</span>
           </li>
-        </ul>            
+        </ul>
       </div>
-      
+
       <div class="tema-card">
         <div class="tema-num">TEMA 2</div>
         <h3 class="tema-title">Programación</h3>
@@ -655,9 +676,9 @@
               <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
             </ul>
           `)">2.1. Descripción general <span class="emoji-small">✅</span>
-        </li>
-          
-        <li onclick="abrirModal('2.2. Tipos de proposiciones', `
+          </li>
+
+          <li onclick="abrirModal('2.2. Tipos de proposiciones', `
             <hr><br>
             <p><strong>Objetivo:</strong> Identificar y clasificar los diferentes tipos de proposiciones lógicas según su estructura y características fundamentales.</p>
           
@@ -749,9 +770,9 @@
               <li>Tarski, A. (1995). <em>Introducción a la lógica y a la metodología de las ciencias deductivas</em>. Espasa-Calpe.</li>
             </ul>
           `)">2.2. Tipos de proposiciones <span class="emoji-small">✅</span>
-        </li>
-          
-        <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
+          </li>
+
+          <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación aritmética en programación, incluyendo su sintaxis, operadores y uso en algoritmos.</p>
         
@@ -856,9 +877,9 @@
             <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
           </ul>
         `)">2.3. Proposiciones de asignación aritmética <span class="emoji-small">✅</span>
-        </li>
-        
-        <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
+          </li>
+
+          <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación lógica en programación, incluyendo operadores booleanos y su aplicación en condiciones y toma de decisiones.</p>
             
@@ -991,9 +1012,9 @@
                 <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
               </ul>
             `)">2.4. Proposiciones de asignación lógica <span class="emoji-small">✅</span>
-        </li>
+          </li>
 
-        <li onclick="abrirModal('2.5. Proposición de flujo', `
+          <li onclick="abrirModal('2.5. Proposición de flujo', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de flujo de control que permiten alterar la secuencia de ejecución de un programa mediante estructuras condicionales e iterativas.</p>
         
@@ -1136,9 +1157,9 @@
             <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
           </ul>
         `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
-        </li>
-        
-        <li onclick="abrirModal('2.6. Diagramas', `
+          </li>
+
+          <li onclick="abrirModal('2.6. Diagramas', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender los diferentes tipos de diagramas utilizados en programación y análisis de sistemas para representar visualmente procesos, estructuras y flujos de información.</p>
           
@@ -1252,15 +1273,15 @@
               <li>Object Management Group. (2017). <em>Unified Modeling Language Specification</em>. OMG.</li>
             </ul>
           `)">2.6. Diagramas <span class="emoji-small">✅</span>
-        </li>        
-      </ul>
-    </div>
-    
-    <div class="tema-card">
-      <div class="tema-num">TEMA 3</div>
-      <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
-      <ul class="tema-list">
-        <li onclick="abrirModal('3.1. Proposición de entrada', `
+          </li>
+        </ul>
+      </div>
+
+      <div class="tema-card">
+        <div class="tema-num">TEMA 3</div>
+        <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('3.1. Proposición de entrada', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de entrada que permiten capturar datos del usuario o de fuentes externas para su procesamiento en programas.</p>
         
@@ -1407,8 +1428,8 @@
             <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
           </ul>
         `)">3.1. Proposición de entrada <span class="emoji-small">✅</span>
-        </li>
-  
+          </li>
+
           <li onclick="abrirModal('3.2. Proposición de salida', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender las proposiciones de salida que permiten mostrar resultados, información y datos desde el programa hacia el usuario o dispositivos externos.</p>
@@ -1565,9 +1586,9 @@
               <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
             </ul>
           `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
-        </li>
+          </li>
 
-        <li onclick="abrirModal('3.3. Proposición de control', `
+          <li onclick="abrirModal('3.3. Proposición de control', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de control que permiten dirigir el flujo de ejecución de un programa mediante estructuras de decisión y bucles.</p>
             
@@ -1719,10 +1740,10 @@
                 <li>Bloch, J. (2008). <em>Effective Java</em>. Addison-Wesley.</li>
                 <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
               </ul>
-            `)">3.3. Proposición de control <span class="emoji-small">✅</span>        
-        </li>
-         
-        <li onclick="abrirModal('3.4. Proposición de formato', `
+            `)">3.3. Proposición de control <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('3.4. Proposición de formato', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de formato que permiten controlar la presentación y estructuración de datos en la salida de programas.</p>
             
@@ -1871,8 +1892,8 @@
                 <li>Microsoft Corporation. (2021). <em>Standard Numeric Format Strings</em>. MSDN Documentation.</li>
               </ul>
             `)">3.4. Proposición de formato <span class="emoji-small">✅</span>
-        </li>
-  
+          </li>
+
           <li onclick="abrirModal('3.5. Formato I', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales y técnicas básicas de formato para la presentación de datos en programas, incluyendo alineación, padding y especificadores simples.</p>
@@ -2014,9 +2035,9 @@
                 <li>IEEE Computer Society. (2020). <em>Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
               </ul>
             `)">3.5. Formato I <span class="emoji-small">✅</span>
-        </li>
-        
-        <li onclick="abrirModal('3.6. Formato F', `
+          </li>
+
+          <li onclick="abrirModal('3.6. Formato F', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el formato F para números de punto flotante, incluyendo precisión decimal, notación científica y representación de valores reales en programación.</p>
             
@@ -2150,9 +2171,9 @@
                 <li>Python Software Foundation. (2021). <em>Format Specification Mini-Language</em>. Python Documentation.</li>
               </ul>
             `)">3.6. Formato F <span class="emoji-small">✅</span>
-        </li>
-          
-            <li onclick="abrirModal('3.7. Formato E', `
+          </li>
+
+          <li onclick="abrirModal('3.7. Formato E', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el formato E para notación científica, comprendiendo su sintaxis, aplicaciones y uso en la representación de números muy grandes o muy pequeños.</p>
             
@@ -2287,7 +2308,7 @@
             `)">3.7. Formato E <span class="emoji-small">✅</span>
           </li>
 
-        <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
+          <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
               <hr><br>
               <p><strong>Objetivo:</strong> Explorar funcionalidades avanzadas de formato que permiten personalización extensiva, localización internacional y técnicas especializadas para presentación de datos.</p>
             
@@ -2425,9 +2446,9 @@
                 <li>Python Software Foundation. (2021). <em>locale — Internationalization services</em>. Python Documentation.</li>
               </ul>
             `)">3.8. Capacidades adicionales de formato <span class="emoji-small">✅</span>
-        </li>
-          
-            <li onclick="abrirModal('3.9. Código Hollerith', `
+          </li>
+
+          <li onclick="abrirModal('3.9. Código Hollerith', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el código Hollerith como sistema histórico de representación de datos en tarjetas perforadas y su influencia en el desarrollo de la informática moderna.</p>
             
@@ -2555,15 +2576,15 @@
                 <li>IBM Archives. (2021). <em>Hollerith Tabulating Machine</em>. IBM Corporation.</li>
               </ul>
             `)">3.9. Código Hollerith <span class="emoji-small">✅</span>
-        </li>
-      </ul>
-    </div>
-    
-        <div class="tema-card">
-            <div class="tema-num">TEMA 4</div>
-            <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
-            <ul class="tema-list">
-                <li onclick="abrirModal('4.1 Introducción', `
+          </li>
+        </ul>
+      </div>
+
+      <div class="tema-card">
+        <div class="tema-num">TEMA 4</div>
+        <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('4.1 Introducción', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Comprender la importancia de la programación modular y cómo las funciones y subrutinas mejoran la organización del código.</p>
                 
@@ -2594,9 +2615,9 @@
                         <li>Joyanes, L. (2018). <em>Fundamentos de programación</em>. McGraw-Hill.</li>
                     </ul>
                 `)">4.1. Introducción <span class="emoji-small">✅</span>
-                </li>
-                
-                <li onclick="abrirModal('4.2 Definiciones', `
+          </li>
+
+          <li onclick="abrirModal('4.2 Definiciones', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Conocer los conceptos básicos y la terminología relacionada con funciones y subprogramas.</p>
                 
@@ -2638,9 +2659,9 @@
                         <li>López, M. (2019). <em>Introducción a la programación</em>. Editorial Universitaria.</li>
                     </ul>
                 `)">4.2. Definiciones <span class="emoji-small">✅</span>
-                </li>
-                
-                <li onclick="abrirModal('4.3 Tipos de subprogramas', `
+          </li>
+
+          <li onclick="abrirModal('4.3 Tipos de subprogramas', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Identificar los diferentes tipos de subprogramas y cuándo usar cada uno.</p>
                 
@@ -2687,9 +2708,9 @@
                         <li>Zelle, J. M. (2017). <em>Python Programming: An Introduction to Computer Science</em>. Franklin.</li>
                     </ul>
                 `)">4.3. Tipos de subprogramas <span class="emoji-small">✅</span>
-                </li>
-                
-                <li onclick="abrirModal('4.4 Formación de un subprograma', `
+          </li>
+
+          <li onclick="abrirModal('4.4 Formación de un subprograma', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Aprender las partes que componen un subprograma y cómo crearlo correctamente.</p>
                 
@@ -2747,9 +2768,9 @@
                         <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
                     </ul>
                 `)">4.4. Formación de un subprograma <span class="emoji-small">✅</span>
-                </li>
-                
-                <li onclick="abrirModal('4.5 Subprogramas de función', `
+          </li>
+
+          <li onclick="abrirModal('4.5 Subprogramas de función', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Dominar el uso de funciones que devuelven valores y entender su utilidad.</p>
                 
@@ -2809,9 +2830,9 @@
                         <li>Sedgewick, R., & Wayne, K. (2017). <em>Computer Science: An Interdisciplinary Approach</em>. Addison-Wesley.</li>
                     </ul>
                 `)">4.5. Subprogramas de función <span class="emoji-small">✅</span>
-                </li>
-                
-                <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
+          </li>
+
+          <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Comprender el uso de subrutinas y cuándo son más apropiadas que las funciones.</p>
                 
@@ -2874,9 +2895,9 @@
                         <li>Dale, N., & Weems, C. (2010). <em>Programming and Problem Solving with C++</em>. Jones & Bartlett.</li>
                     </ul>
                 `)">4.6. Subprogramas de subrutinas <span class="emoji-small">✅</span>
-                </li>
-                
-                <li onclick="abrirModal('4.7 Subprogramas combinados', `
+          </li>
+
+          <li onclick="abrirModal('4.7 Subprogramas combinados', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Aprender a combinar diferentes tipos de subprogramas para crear soluciones más complejas.</p>
                 
@@ -2969,98 +2990,107 @@
                         <li>Sommerville, I. (2016). <em>Software Engineering</em>. Pearson.</li>
                     </ul>
                 `)">4.7. Subprogramas combinados <span class="emoji-small">✅</span>
-                </li>
-            </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
 
-    
-    <div class="tema-card">
-      <div class="tema-num">TEMA 5</div>
-      <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
-      <ul class="tema-list">
-        <li>5.1. Introducción</li>
-        <li>5.2. Ejemplos de paquetes</li>
-        <li>5.3. Texas instrument TI-59</li>
-        <li>5.4. Manejo de calculador</li>
-        <li>5.5. Casio FX-502P</li>
-        <li>5.6. Códigos</li>
-        <li>5.7. Instrucciones</li>
-        <li>5.8. Interpretación de datos</li>
-        <li>5.9. Corrección de programas</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
-<section class="actividades">
-  <h2 class="section-title">Actividades de Aprendizaje</h2>
-  
-  <div>
-    <h3 class="actividades-subtitle">Bajo la conducción del docente en laboratorio de cómputo</h3>
-    <div class="cards-grid">
-      <div class="card" onclick="window.open('diagramas.html', '_blank')">
-        <h3><span class="emoji-small">✅</span> Ejercicios de diagramas de flujo</h3>
-        <p>El alumno realizará ejercicios de diagramas de flujo con diversas propuestas.</p>
-      </div>
-      <div class="card">
-        <h3>Elaboración de programas</h3>
-        <p>El alumno elaborará programas utilizando formatos establecidos.</p>
-      </div>
-      <div class="card">
-        <h3>Modificaciones a programas</h3>
-        <p>Los alumnos efectuarán modificaciones a los programas realizados con subrutinas y subprogramas.</p>
-      </div>
-      <div class="card">
-        <h3>Ejercicios con computadoras manuales</h3>
-        <p>Se harán ejercicios con computadoras manuales Texas y Casio.</p>
+      <div class="tema-card">
+        <div class="tema-num">TEMA 5</div>
+        <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
+        <ul class="tema-list">
+          <li>5.1. Introducción</li>
+          <li>5.2. Ejemplos de paquetes</li>
+          <li>5.3. Texas instrument TI-59</li>
+          <li>5.4. Manejo de calculador</li>
+          <li>5.5. Casio FX-502P</li>
+          <li>5.6. Códigos</li>
+          <li>5.7. Instrucciones</li>
+          <li>5.8. Interpretación de datos</li>
+          <li>5.9. Corrección de programas</li>
+        </ul>
       </div>
     </div>
-  </div>
-  
-  <div style="margin-top: 70px;">
-    <h3 class="actividades-subtitle">De manera independiente</h3>
-    <div class="cards-grid">
-     <div class="card">
-        <h3> <span class="emoji-small">✅</span> Investigaciones bibliográficas</h3>
-        <h5>Producto a Entregar de uno de los siguientes libros:</h5>
-        <p>Como resultado de tu lectura, deberás crear una guía de estudio. Esta guía debe ser un documento útil que sintetice y organice los conceptos clave del libro, para facilitar su comprensión y estudio, lo harás a mano y con tinta de colores.</p>
-         <div class="loguito librito">
-            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg" alt="storytelling">
-            </a>
+  </section>
+
+  <section class="actividades">
+    <h2 class="section-title">Actividades de Aprendizaje</h2>
+
+    <div>
+      <h3 class="actividades-subtitle">Bajo la conducción del docente en laboratorio de cómputo</h3>
+      <div class="cards-grid">
+        <div class="card" onclick="window.open('diagramas.html', '_blank')">
+          <h3><span class="emoji-small">✅</span> Ejercicios de diagramas de flujo</h3>
+          <p>El alumno realizará ejercicios de diagramas de flujo con diversas propuestas.</p>
         </div>
-         <div class="loguito librito">
-            <a href="https://drive.google.com/file/d/1D8rHXJS3KA7OD_RFCNrbemIK63DLdTq4/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                <img src="https://infolibros.org/thumbnails/temp/ManipulandoelDOMconJavascriptVicentMonchoMasGemmaSubiranaGrau-thumbnail-112813.webp" alt="manipulando el dom con JS">
-            </a>
+        <div class="card">
+          <h3>Elaboración de programas</h3>
+          <p>El alumno elaborará programas utilizando formatos establecidos.</p>
         </div>
-         <div class="loguito librito">
-            <a href="https://drive.google.com/file/d/1lMa1dZrONcwQJWt6eWxX1aWXzrL9HVMU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                <img src="https://editorialgrupo-aea.com/public/presses/2/submission_18_18_coverImage_es_ES.jpg" alt="programacion web del frontend al backend">
-            </a>
+        <div class="card">
+          <h3>Modificaciones a programas</h3>
+          <p>Los alumnos efectuarán modificaciones a los programas realizados con subrutinas y subprogramas.</p>
         </div>
-      </div>
-      
-      <div class="card">
-        <h3>Programas con proposiciones</h3>
-        <p>Se hará un programa utilizando las proposiciones y formatos establecidos.</p>
-      </div>
-      <div class="card">
-        <h3>Solución de problemas</h3>
-        <p>Se resolverán problemas aplicados a cálculo mediante computadoras manuales.</p>
+        <div class="card">
+          <h3>Ejercicios con computadoras manuales</h3>
+          <p>Se harán ejercicios con computadoras manuales Texas y Casio.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="container">
-  <h2 class="section-title">Evaluación</h2>
-  <div class="evaluacion-grid">
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">40%</div>
+    <div style="margin-top: 70px;">
+      <h3 class="actividades-subtitle">De manera independiente</h3>
+      <div class="cards-grid">
+        <div class="card">
+          <h3> <span class="emoji-small">✅</span> Investigaciones bibliográficas</h3>
+          <h5>Producto a Entregar de uno de los siguientes libros:</h5>
+          <p>Como resultado de tu lectura, deberás crear una guía de estudio. Esta guía debe ser un documento útil que
+            sintetice y organice los conceptos clave del libro, para facilitar su comprensión y estudio, lo harás a mano
+            y con tinta de colores.</p>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">
+              <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg"
+                alt="storytelling">
+            </a>
+          </div>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1D8rHXJS3KA7OD_RFCNrbemIK63DLdTq4/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://infolibros.org/thumbnails/temp/ManipulandoelDOMconJavascriptVicentMonchoMasGemmaSubiranaGrau-thumbnail-112813.webp"
+                alt="manipulando el dom con JS">
+            </a>
+          </div>
+          <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1lMa1dZrONcwQJWt6eWxX1aWXzrL9HVMU/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              <img src="https://editorialgrupo-aea.com/public/presses/2/submission_18_18_coverImage_es_ES.jpg"
+                alt="programacion web del frontend al backend">
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Programas con proposiciones</h3>
+          <p>Se hará un programa utilizando las proposiciones y formatos establecidos.</p>
+        </div>
+        <div class="card">
+          <h3>Solución de problemas</h3>
+          <p>Se resolverán problemas aplicados a cálculo mediante computadoras manuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Evaluación</h2>
+    <div class="evaluacion-grid">
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">40%</div>
         <p class="evaluacion-desc">Dos exámenes parciales</p><br>
         <div class="tema-list">
-<!--           🔓<a href="ppcom1.html" target="_blank"> 1er Parcial 27/09/25</a> -->
+          <!--           🔓<a href="ppcom1.html" target="_blank"> 1er Parcial 27/09/25</a> -->
           <a href="" target="">🔒 1er Parcial 27/09/25</a>
         </div>
         <div class="tema-list">
@@ -3068,62 +3098,64 @@
           <a href="" target="">🔒 2do Parcial 18/10/25</a>
         </div>
       </div>
-    
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">20%</div>
-      <p class="evaluacion-desc">Reporte de prácticas de laboratorio</p><br>
-<!--       <h6>Todos tienen 20% por rendimiento en clase</h6>
- -->    </div>
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">10%</div>
-      <p class="evaluacion-desc">Investigaciones bibliográficas</p><br>
-<!--       <h6>Son las firmas que tienes en tus tareas</h6> -->
+
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">20%</div>
+        <p class="evaluacion-desc">Reporte de prácticas de laboratorio</p><br>
+        <!--       <h6>Todos tienen 20% por rendimiento en clase</h6>
+ -->
+      </div>
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">10%</div>
+        <p class="evaluacion-desc">Investigaciones bibliográficas</p><br>
+        <!--       <h6>Son las firmas que tienes en tus tareas</h6> -->
+      </div>
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">30%</div>
+        <p class="evaluacion-desc">Examen final</p><br>
+        <!-- <h6>Voy a promediar tus dos parciales para esta calificación</h6> -->
+      </div>
     </div>
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">30%</div>
-      <p class="evaluacion-desc">Examen final</p><br>
-      <!-- <h6>Voy a promediar tus dos parciales para esta calificación</h6> -->
+  </section>
+
+  <!-- Modal -->
+  <div id="modal-info" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-text"></div>
     </div>
   </div>
-</section>
 
-<!-- Modal -->
-<div id="modal-info" class="modal">
-  <div class="modal-overlay"></div>
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <h3 id="modal-title"></h3>
-    <div id="modal-text"></div>
-  </div>
-</div>
+  <script>
+    const modal = document.getElementById('modal-info');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const modalClose = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
 
-<script>
-  const modal = document.getElementById('modal-info');
-  const modalTitle = document.getElementById('modal-title');
-  const modalText = document.getElementById('modal-text');
-  const modalClose = document.querySelector('.modal-close');
-  const modalOverlay = document.querySelector('.modal-overlay');
+    // Función para abrir modal con HTML
+    function abrirModal(titulo, html) {
+      modalTitle.textContent = titulo;
+      modalText.innerHTML = html;
+      modal.classList.add('show');
+      modal.style.display = 'block';
+    }
 
-  // Función para abrir modal con HTML
-  function abrirModal(titulo, html) {
-    modalTitle.textContent = titulo;
-    modalText.innerHTML = html;
-    modal.classList.add('show');
-    modal.style.display = 'block';
-  }
+    // Función para cerrar modal
+    function cerrarModal() {
+      modal.classList.remove('show');
+      setTimeout(() => modal.style.display = 'none', 300); // espera la transición
+    }
 
-  // Función para cerrar modal
-  function cerrarModal() {
-    modal.classList.remove('show');
-    setTimeout(() => modal.style.display = 'none', 300); // espera la transición
-  }
+    modalClose.addEventListener('click', cerrarModal);
+    modalOverlay.addEventListener('click', cerrarModal);
+  </script>
 
-  modalClose.addEventListener('click', cerrarModal);
-  modalOverlay.addEventListener('click', cerrarModal);
-</script>
-
-<footer>
-  © 2025 Universidad URA – Asignatura Computación I
-</footer>
+  <footer>
+    © 2025 Universidad URA – Asignatura Computación I
+  </footer>
 </body>
+
 </html>
