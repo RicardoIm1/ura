@@ -1,335 +1,176 @@
 <li class="contenido-tema">
-<style>
-    .grafica-container {
-        margin: 20px auto;
-        text-align: center;
-        background: white;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .grafica-svg {
-        display: block;
-        margin: 0 auto;
-    }
-    .instrucciones-paso {
-        background: #f8f9fa;
-        border-left: 4px solid #4a6fa5;
-        padding: 10px 15px;
-        margin: 10px 0;
-        font-size: 0.95em;
-    }
-    .tabla-procedimiento {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
-    .tabla-procedimiento th {
-        background: #2c3e50;
-        color: white;
-        padding: 12px;
-        text-align: left;
-    }
-    .tabla-procedimiento td {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-    .ejercicio-resuelto {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 8px;
-        padding: 20px;
-        margin: 25px 0;
-        color: white;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .ejercicio-resuelto h3 {
-        color: white;
-        margin-top: 0;
-        border-bottom: 2px solid rgba(255,255,255,0.3);
-        padding-bottom: 10px;
-    }
-    .formula-destacada {
-        background: rgba(255,255,255,0.1);
-        border-radius: 6px;
-        padding: 15px;
-        margin: 15px 0;
-        text-align: center;
-        font-size: 1.2em;
-        border: 1px solid rgba(255,255,255,0.2);
-    }
-    .nota-importante {
-        background: rgba(255,193,7,0.15);
-        border-left: 4px solid #ffc107;
-        padding: 12px;
-        margin: 15px 0;
-        border-radius: 0 6px 6px 0;
-    }
-</style>
+  <h2 class="titulo-tema">1.2.1 Matriz Cuadrada</h2>
 
-<h1>1.2.1 Función Cuadrática: La Belleza de las Parábolas</h1>
-
-<div class="grafica-container">
-    <svg width="60" height="60" viewBox="0 0 60 60" class="grafica-svg">
-        <defs>
-            <linearGradient id="relojGradiente" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-            </linearGradient>
-        </defs>
-        <circle cx="30" cy="30" r="25" fill="url(#relojGradiente)" stroke="#2c3e50" stroke-width="2"/>
-        <circle cx="30" cy="30" r="18" fill="white" stroke="#2c3e50" stroke-width="1.5"/>
-        
-        <!-- Manecillas del reloj -->
-        <line x1="30" y1="30" x2="30" y2="15" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
-        <line x1="30" y1="30" x2="45" y2="30" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
-        
-        <!-- Parábola decorativa -->
-        <path d="M20,45 Q30,25 40,45" fill="none" stroke="white" stroke-width="2"/>
-        
-        <text x="30" y="35" text-anchor="middle" font-size="10" fill="#2c3e50" font-weight="bold">10</text>
-        <text x="30" y="48" text-anchor="middle" font-size="8" fill="#4a6fa5">min</text>
+  <div class="tiempo-lectura">
+    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" fill="#e6f3ff" stroke="#0066cc" stroke-width="2"/>
+      <path d="M50 50 L50 25" stroke="#0066cc" stroke-width="4" stroke-linecap="round"/>
+      <path d="M50 50 L70 65" stroke="#0066cc" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="3" fill="#0066cc"/>
+      <text x="50" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">15 min</text>
     </svg>
-    <p><strong>Tiempo estimado de estudio:</strong> 10 minutos (basado en Stanford Math 51 y MIT 18.01)</p>
-</div>
+    <p class="texto-tiempo">Tiempo estimado de comprensión</p>
+  </div>
 
-<h2>🎯 Objetivo del tema</h2>
-<p>Domina la función cuadrática f(x) = ax² + bx + c: desde su forma algebraica hasta su representación geométrica como parábola. Aprenderás a encontrar vértices, raíces, y aplicar estos conceptos a problemas reales de física, economía y diseño.</p>
+  <div class="objetivo-tema">
+    <h3>🎯 Objetivo del Tema</h3>
+    <p>Al finalizar este tema, el estudiante será capaz de:</p>
+    <ul>
+      <li>Definir formalmente una matriz cuadrada y reconocer su estructura.</li>
+      <li>Identificar y ubicar los elementos de la diagonal principal y secundaria.</li>
+      <li>Clasificar matrices cuadradas según sus propiedades (simétrica, diagonal, identidad, etc.).</li>
+      <li>Comprender la importancia de las matrices cuadradas en operaciones como el cálculo de determinantes y valores propios.</li>
+    </ul>
+  </div>
 
-<h2>💡 Idea principal</h2>
-<p>La función cuadrática es la puerta de entrada al mundo no-lineal. Donde la linealidad suma, la cuadrática multiplica efectos. Esta simple elevación al cuadrado genera curvas elegantes (parábolas) que modelan desde la caída libre de objetos hasta estrategias de maximización de ganancias.</p>
+  <div class="idea-principal">
+    <h3>💡 Idea Principal</h3>
+    <p>Una <strong>matriz cuadrada</strong> es una disposición de números (o elementos matemáticos) en filas y columnas donde el número de filas (<em>n</em>) es igual al número de columnas (<em>n</em>). Esta igualdad le confiere propiedades especiales que no tienen las matrices rectangulares, convirtiéndola en una herramienta fundamental para representar y resolver sistemas de ecuaciones lineales, transformaciones geométricas en el espacio, y en general, para modelar problemas donde las dimensiones de entrada y salida son iguales. Su estructura simétrica (n×n) es la base para conceptos avanzados como la diagonalización y el cálculo de valores y vectores propios.</p>
+  </div>
 
-<h2>📊 Ejercicios visualmente claros</h2>
+  <div class="ejercicios-visuales">
+    <h3>📊 Ejercicios Visualmente Claros</h3>
 
-<div class="ejercicio-resuelto">
-    <h3>✨ Ejercicio 1: La familia de parábolas</h3>
-    <p><strong>Visualiza cómo cambia la parábola al modificar 'a' en f(x) = ax²</strong></p>
-    
-    <div class="grafica-container">
-        <svg width="450" height="320" viewBox="0 0 450 320" class="grafica-svg">
-            <!-- Sistema de coordenadas con estilo moderno -->
-            <defs>
-                <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.1" />
-                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.1" />
-                </linearGradient>
-            </defs>
-            
-            <rect x="50" y="50" width="350" height="220" fill="url(#gridGrad)" rx="8"/>
-            
-            <!-- Grid sutil -->
-            <g stroke="rgba(102, 126, 234, 0.2)" stroke-width="1">
-                <!-- Líneas horizontales -->
-                <line x1="50" y1="105" x2="400" y2="105"/>
-                <line x1="50" y1="160" x2="400" y2="160"/>
-                <line x1="50" y1="215" x2="400" y2="215"/>
-                <!-- Líneas verticales -->
-                <line x1="125" y1="50" x2="125" y2="270"/>
-                <line x1="225" y1="50" x2="225" y2="270"/>
-                <line x1="325" y1="50" x2="325" y2="270"/>
-            </g>
-            
-            <!-- Ejes principales -->
-            <line x1="50" y1="160" x2="400" y2="160" stroke="#2c3e50" stroke-width="2"/>
-            <line x1="225" y1="50" x2="225" y2="270" stroke="#2c3e50" stroke-width="2"/>
-            
-            <!-- Parábola 1: f(x) = x² (azul fuerte) -->
-            <path d="M 50,210 Q 137.5,105 225,105 Q 312.5,105 400,210" 
-                  fill="none" stroke="#667eea" stroke-width="4" stroke-linecap="round"/>
-            
-            <!-- Parábola 2: f(x) = 2x² (magenta) -->
-            <path d="M 50,230 Q 137.5,80 225,80 Q 312.5,80 400,230" 
-                  fill="none" stroke="#e83e8c" stroke-width="3" stroke-dasharray="6,3"/>
-            
-            <!-- Parábola 3: f(x) = 0.5x² (verde) -->
-            <path d="M 50,190 Q 137.5,130 225,130 Q 312.5,130 400,190" 
-                  fill="none" stroke="#28a745" stroke-width="3" stroke-dasharray="3,3"/>
-            
-            <!-- Puntos del vértice -->
-            <circle cx="225" cy="105" r="6" fill="#667eea" stroke="white" stroke-width="2"/>
-            <circle cx="225" cy="80" r="6" fill="#e83e8c" stroke="white" stroke-width="2"/>
-            <circle cx="225" cy="130" r="6" fill="#28a745" stroke="white" stroke-width="2"/>
-            
-            <!-- Etiquetas de funciones -->
-            <g font-size="12" fill="white">
-                <rect x="260" y="90" width="70" height="20" fill="#667eea" rx="4"/>
-                <text x="265" y="105">f(x)=x²</text>
-                
-                <rect x="260" y="65" width="70" height="20" fill="#e83e8c" rx="4"/>
-                <text x="265" y="80">g(x)=2x²</text>
-                
-                <rect x="260" y="115" width="80" height="20" fill="#28a745" rx="4"/>
-                <text x="265" y="130">h(x)=0.5x²</text>
-            </g>
-            
-            <!-- Marcas en ejes -->
-            <g font-size="10" fill="#2c3e50" text-anchor="middle">
-                <text x="125" y="175">-2</text>
-                <text x="225" y="175">0</text>
-                <text x="325" y="175">2</text>
-                <text x="415" y="165">x</text>
-                <text x="235" y="40">y</text>
-            </g>
+    <div class="ejercicio">
+      <h4>1. Estructura y elementos clave de una matriz cuadrada 3×3</h4>
+      <p>Identifica las partes principales de la siguiente matriz A:</p>
+
+      <div class="grafica-contenedor">
+        <svg width="320" height="220" xmlns="http://www.w3.org/2000/svg">
+          <!-- Rectángulo de la matriz -->
+          <rect x="50" y="30" width="220" height="160" fill="none" stroke="#333" stroke-width="2"/>
+
+          <!-- Líneas verticales -->
+          <line x1="116.67" y1="30" x2="116.67" y2="190" stroke="#aaa" stroke-width="1" stroke-dasharray="5,5"/>
+          <line x1="183.33" y1="30" x2="183.33" y2="190" stroke="#aaa" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- Líneas horizontales -->
+          <line x1="50" y1="83.33" x2="270" y2="83.33" stroke="#aaa" stroke-width="1" stroke-dasharray="5,5"/>
+          <line x1="50" y1="136.67" x2="270" y2="136.67" stroke="#aaa" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- Elementos de la matriz - Diagonal Principal (Roja) -->
+          <circle cx="100" cy="60" r="15" fill="none" stroke="#e74c3c" stroke-width="2"/>
+          <text x="100" y="65" text-anchor="middle" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e74c3c">a₁₁</text>
+
+          <circle cx="166.67" cy="110" r="15" fill="none" stroke="#e74c3c" stroke-width="2"/>
+          <text x="166.67" y="115" text-anchor="middle" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e74c3c">a₂₂</text>
+
+          <circle cx="233.33" cy="160" r="15" fill="none" stroke="#e74c3c" stroke-width="2"/>
+          <text x="233.33" y="165" text-anchor="middle" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#e74c3c">a₃₃</text>
+
+          <!-- Elementos - Diagonal Secundaria (Azul) -->
+          <circle cx="233.33" cy="60" r="15" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="233.33" y="65" text-anchor="middle" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#3498db">a₁₃</text>
+
+          <circle cx="166.67" cy="110" r="18" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="166.67" y="115" text-anchor="middle" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#3498db">a₂₂</text>
+
+          <circle cx="100" cy="160" r="15" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="100" y="165" text-anchor="middle" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#3498db">a₃₁</text>
+
+          <!-- Elementos restantes (Gris) -->
+          <text x="100" y="115" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#7f8c8d">a₁₂</text>
+          <text x="166.67" cy="160" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#7f8c8d">a₂₃</text>
+          <text x="166.67" cy="60" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#7f8c8d">a₂₁</text>
+          <text x="233.33" cy="115" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#7f8c8d">a₃₂</text>
+
+          <!-- Leyenda -->
+          <circle cx="280" cy="50" r="6" fill="none" stroke="#e74c3c" stroke-width="2"/>
+          <text x="295" y="55" text-anchor="start" font-family="Arial, sans-serif" font-size="12" fill="#333">Diagonal Principal</text>
+
+          <circle cx="280" cy="70" r="6" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="295" y="75" text-anchor="start" font-family="Arial, sans-serif" font-size="12" fill="#333">Diagonal Secundaria</text>
+
+          <text x="280" cy="90" text-anchor="start" font-family="Arial, sans-serif" font-size="12" fill="#7f8c8d">● Otros elementos</text>
         </svg>
-        <div class="nota-importante">
-            <strong>📌 Observa:</strong> El coeficiente 'a' actúa como el "control de apertura". Mayor |a| = parábola más cerrada. a > 0 = sonrisa 😊, a < 0 = tristeza 😔
-        </div>
-    </div>
-    
-    <h4>🔧 Procedimiento constructivo:</h4>
-    <table class="tabla-procedimiento">
-        <tr style="background: rgba(255,255,255,0.1);">
-            <th style="color: white;">Paso</th>
-            <th style="color: white;">Acción</th>
-            <th style="color: white;">Significado</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Crear tabla de valores x: -3, -2, -1, 0, 1, 2, 3</td>
-            <td>Rango simétrico para ver simetría</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Calcular f(x) = x² para cada x</td>
-            <td>(-3)²=9, (-2)²=4, (-1)²=1, 0²=0, ...</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Multiplicar por 2 para g(x) = 2x²</td>
-            <td>Amplificación vertical: estira la curva</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Dividir entre 2 para h(x) = 0.5x²</td>
-            <td>Compresión vertical: achata la curva</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Graficar puntos y conectar</td>
-            <td>Curva suave → parábola perfecta</td>
-        </tr>
-    </table>
-</div>
+      </div>
 
-<div class="ejercicio-resuelto">
-    <h3>🎯 Ejercicio 2: Encontrando las raíces</h3>
-    <p><strong>Resuelve x² - 5x + 6 = 0 gráfica y algebraicamente</strong></p>
-    
-    <div class="formula-destacada">
-        📐 Fórmula Cuadrática: x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+      <div class="instrucciones">
+        <h5>Instrucciones y Comentarios:</h5>
+        <ol>
+          <li><strong>Definición:</strong> Una matriz A de orden <em>n</em> tiene <em>n</em> filas y <em>n</em> columnas. En este caso, <em>n=3</em>.</li>
+          <li><strong>Notación:</strong> El elemento <code>aᵢⱼ</code> se encuentra en la fila <em>i</em> y columna <em>j</em>.</li>
+          <li><strong>Diagonal Principal (roja):</strong> Conjunto de elementos donde <em>i = j</em> (<code>a₁₁, a₂₂, a₃₃</code>). Es una línea recta desde la esquina superior izquierda a la inferior derecha.</li>
+          <li><strong>Diagonal Secundaria (azul punteada):</strong> Conjunto de elementos donde <em>i + j = n + 1</em> (<code>a₁₃, a₂₂, a₃₁</code>). Nótese que a₂₂ pertenece a ambas diagonales.</li>
+        </ol>
+      </div>
     </div>
-    
-    <div class="grafica-container">
-        <svg width="450" height="280" viewBox="0 0 450 280" class="grafica-svg">
-            <!-- Fondo con gradiente -->
-            <defs>
-                <linearGradient id="parabolaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#4a6fa5;stop-opacity:0.3" />
-                    <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:0.3" />
-                </linearGradient>
-            </defs>
-            
-            <rect x="50" y="50" width="350" height="180" fill="url(#parabolaGrad)" rx="8"/>
-            
-            <!-- Ejes -->
-            <line x1="50" y1="140" x2="400" y2="140" stroke="#2c3e50" stroke-width="1.5"/>
-            <line x1="225" y1="50" x2="225" y2="230" stroke="#2c3e50" stroke-width="1.5"/>
-            
-            <!-- Parábola principal -->
-            <path d="M 50,220 Q 137.5,90 225,90 Q 312.5,90 400,220" 
-                  fill="none" stroke="#2c3e50" stroke-width="4"/>
-            
-            <!-- Área bajo la curva -->
-            <path d="M 50,220 Q 137.5,90 225,90 Q 312.5,90 400,220 L 400,220 L 50,220 Z" 
-                  fill="rgba(102, 126, 234, 0.1)"/>
-            
-            <!-- Raíces (intersecciones con eje x) -->
-            <g stroke="#e83e8c" stroke-width="3">
-                <line x1="150" y1="140" x2="150" y2="90" stroke-dasharray="5,3"/>
-                <line x1="300" y1="140" x2="300" y2="90" stroke-dasharray="5,3"/>
-            </g>
-            
-            <!-- Puntos de las raíces -->
-            <circle cx="150" cy="140" r="6" fill="#e83e8c" stroke="white" stroke-width="2">
-                <title>Raíz x=2</title>
-            </circle>
-            <circle cx="300" cy="140" r="6" fill="#e83e8c" stroke="white" stroke-width="2">
-                <title>Raíz x=3</title>
-            </circle>
-            
-            <!-- Vértice -->
-            <circle cx="225" cy="90" r="6" fill="#28a745" stroke="white" stroke-width="2">
-                <title>Vértice (2.5, -0.25)</title>
-            </circle>
-            
-            <!-- Etiquetas -->
-            <g font-size="12" fill="#2c3e50">
-                <text x="145" y="130" text-anchor="middle">x=2</text>
-                <text x="295" y="130" text-anchor="middle">x=3</text>
-                <text x="235" y="85">V(2.5,-0.25)</text>
-                <text x="320" y="100" font-size="14" fill="#667eea">y = x² - 5x + 6</text>
-            </g>
-            
-            <!-- Flechas de intersección -->
-            <path d="M150,125 L150,155" fill="none" stroke="#e83e8c" stroke-width="2" marker-end="url(#arrowhead)"/>
-            <path d="M300,125 L300,155" fill="none" stroke="#e83e8c" stroke-width="2" marker-end="url(#arrowhead)"/>
-            
-            <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#e83e8c"/>
-                </marker>
-            </defs>
-        </svg>
-        <div class="nota-importante">
-            <strong>💡 Insight:</strong> Las raíces son donde la parábola "besa" el eje X. El vértice está exactamente a la mitad entre las raíces.
-        </div>
+
+    <div class="ejercicio">
+      <h4>2. Comparación de Tipos de Matrices Cuadradas</h4>
+      <p>La siguiente tabla clasifica matrices cuadradas según sus características estructurales.</p>
+
+      <div class="tabla-contenedor">
+        <table class="tabla-ejercicio">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Definición / Condición</th>
+              <th>Ejemplo (3×3)</th>
+              <th>Propiedad Clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Matriz Diagonal</strong></td>
+              <td>aᵢⱼ = 0 para todo i ≠ j</td>
+              <td><code>| 2 0 0 |<br>| 0 -1 0 |<br>| 0 0 5 |</code></td>
+              <td>Solo la diagonal principal puede tener valores no nulos.</td>
+            </tr>
+            <tr>
+              <td><strong>Matriz Identidad (Iₙ)</strong></td>
+              <td>Matriz diagonal con aᵢᵢ = 1</td>
+              <td><code>| 1 0 0 |<br>| 0 1 0 |<br>| 0 0 1 |</code></td>
+              <td>Elemento neutro del producto de matrices: A·I = I·A = A.</td>
+            </tr>
+            <tr>
+              <td><strong>Matriz Simétrica</strong></td>
+              <td>A = Aᵀ (aᵢⱼ = aⱼᵢ)</td>
+              <td><code>| 1 2 4 |<br>| 2 3 5 |<br>| 4 5 6 |</code></td>
+              <td>Es simétrica respecto a su diagonal principal. Refleja relaciones mutuas (ej: distancias).</td>
+            </tr>
+            <tr>
+              <td><strong>Matriz Triangular Superior</strong></td>
+              <td>aᵢⱼ = 0 para todo i > j</td>
+              <td><code>| 3 1 0 |<br>| 0 -2 4 |<br>| 0 0 1 |</code></td>
+              <td>Todos los elementos por debajo de la diagonal principal son cero. Fundamental en eliminación gaussiana.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>¿Qué notar?</strong> La estructura de una matriz cuadrada define completamente sus propiedades y su utilidad computacional. Una matriz diagonal es fácil de invertir, una simétrica ahorra memoria al almacenarse, y una triangular simplifica la resolución de sistemas lineales.</p>
     </div>
-    
-    <h4>🧮 Solución paso a paso:</h4>
-    <div class="instrucciones-paso">
-        <strong>Paso 1:</strong> Identificar a=1, b=-5, c=6
-    </div>
-    <div class="instrucciones-paso">
-        <strong>Paso 2:</strong> Calcular discriminante: D = (-5)² - 4(1)(6) = 25 - 24 = 1
-        <br><small>D > 0 → ¡Dos soluciones reales!</small>
-    </div>
-    <div class="instrucciones-paso">
-        <strong>Paso 3:</strong> Aplicar fórmula:
-        <br>x = \frac{5 \pm \sqrt{1}}{2} = \frac{5 \pm 1}{2}
-    </div>
-    <div class="instrucciones-paso">
-        <strong>Paso 4:</strong> Obtener soluciones:
-        <br>x₁ = (5 + 1)/2 = 3
-        <br>x₂ = (5 - 1)/2 = 2
-    </div>
-    <div class="instrucciones-paso">
-        <strong>✨ Verificación:</strong> (x-2)(x-3) = x² - 5x + 6 ✓
-    </div>
-</div>
+  </div>
 
-<h2>🚀 Ejemplos de aplicaciones reales</h2>
+  <div class="aplicaciones-reales">
+    <h3>🌍 Ejemplos de Aplicaciones Reales y Directas</h3>
+    <ul>
+      <li>
+        <strong>Gráficos por Computadora y Robótica:</strong> Las <em>matrices de transformación</em> (rotación, escala, traslación) que manipulan objetos 2D y 3D son cuadradas (4×4 en gráficos 3D). La rotación de un brazo robótico se calcula multiplicando matrices de rotación cuadradas.
+      </li>
+      <li>
+        <strong>Análisis de Circuitos Eléctricos:</strong> En la ley de mallas de Kirchhoff, las impedancias (resistencia, capacitancia, inductancia) se organizan en una <em>matriz de impedancias</em> cuadrada. Resolver el sistema (encontrar corrientes) implica operaciones con esta matriz.
+      </li>
+      <li>
+        <strong>Criptografía (Cifrado Hill):</strong> Un algoritmo clásico que usa una matriz cuadrada como clave para cifrar y descifrar mensajes. La mensaje se divide en bloques que se multiplican por la matriz (operación módulo 26). La condición para descifrar es que la matriz clave sea invertible (determinante ≠ 0).
+      </li>
+      <li>
+        <strong>Google PageRank:</strong> El algoritmo original clasifica páginas web modelando la web como un grafo. La <em>matriz de adyacencia</em> que representa los enlaces es cuadrada (n×n para n páginas). El vector de ranking principal es un <em>vector propio</em> de esta matriz, un concepto que solo existe para matrices cuadradas.
+      </li>
+      <li>
+        <strong>Mecánica Cuántica:</strong> Los operadores que representan observables físicos (como energía o momento) son matrices cuadradas infinitas o finitas. Los valores posibles de una medición son los <em>valores propios</em> de dicha matriz.
+      </li>
+    </ul>
+  </div>
 
-<h3>1. ⚽ Física: Tiro parabólico</h3>
-<p>Cuando lanzas una pelota, su altura h(t) = -4.9t² + v₀t + h₀ es cuadrática. El vértice te da la altura máxima, las raíces el tiempo de vuelo.</p>
-
-<h3>2. 💰 Economía: Maximizar ganancias</h3>
-<p>Si G(x) = -2x² + 100x - 500 modela ganancias, el vértice en x=25 unidades da la máxima ganancia: $750.</p>
-
-<h3>3. 🌉 Ingeniería: Puentes colgantes</h3>
-<p>Los cables de puentes siguen parábolas. La ecuación y = (w/2T)x² describe su forma, donde w es peso y T tensión.</p>
-
-<h3>4. 🎮 Diseño de videojuegos</h3>
-<p>Trayectorias de proyectiles, curvas de aceleración, y efectos de partículas usan funciones cuadráticas para movimiento realista.</p>
-
-<h2>📚 Bibliografía esencial</h2>
-<ul>
-    <li><strong>📖 "Precálculo: Matemáticas para el Cálculo"</strong> - Stewart, Redlin, Watson. Sección 3.1: Funciones cuadráticas y sus gráficas.</li>
-    <li><strong>🌐 Khan Academy:</strong> Curso completo de Álgebra II - Funciones cuadráticas (gratuito)</li>
-    <li><strong>🎓 MIT OpenCourseWare:</strong> 18.01 Cálculo I - Aplicaciones de derivadas a funciones cuadráticas</li>
-    <li><strong>🔬 "Física Universitaria"</strong> - Sears, Zemansky. Volumen 1: Movimiento parabólico.</li>
-    <li><strong>💻 3Blue1Brown:</strong> Serie "Essence of Calculus" - Visualización de funciones cuadráticas</li>
-</ul>
-
-<div style="text-align: center; margin-top: 30px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
-    <strong>✨ Recuerda:</strong> La función cuadrática es tu amiga, no tu enemiga. Domínala y dominarás gran parte de las matemáticas aplicadas.
-</div>
+  <div class="bibliografia">
+    <h3>📚 Bibliografía Confiable y Verificable</h3>
+    <ul>
+      <li>Poole, D. (2015). <em>Linear Algebra: A Modern Introduction</em> (4th ed.). Cengage Learning. (Capítulo 3: Matrices. Excelente para definiciones fundamentales y primeros ejemplos).</li>
+      <li>Strang, G. (2016). <em>Introduction to Linear Algebra</em> (5th ed.). Wellesley-Cambridge Press. (Texto clásico. Capítulo 1: Vectors and Matrices. Explicación clara de matrices cuadradas y sus operaciones básicas).</li>
+      <li>Anton, H., Rorres, C. (2014). <em>Álgebra Lineal con Aplicaciones</em> (11ª ed.). Editorial Limusa. (Incluye abundantes aplicaciones prácticas de las matrices cuadradas en ingeniería).</li>
+      <li>Khan Academy. (s.f.). <em>Matrices Cuadradas, Determinantes e Inversas.</em> Recuperado de: https://es.khanacademy.org/math/algebra-home/alg-matrices</li>
+      <li>MIT OpenCourseWare. (2010). <em>18.06 Linear Algebra, Spring 2010.</em> Recuperado de: https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/ (Ver lecciones sobre diagonalización y valores propios).</li>
+    </ul>
+  </div>
 </li>
