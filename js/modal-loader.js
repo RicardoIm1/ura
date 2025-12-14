@@ -12,10 +12,10 @@ const temasConfig = {
         archivo: 'temas/1.2-operaciones.html',
         descripcion: 'Suma, resta y multiplicación de matrices'
     },
-    '1.3': {
-        titulo: '1.3. Determinantes',
-        archivo: 'temas/1.3-determinantes.html',
-        descripcion: 'Cálculo y propiedades de determinantes'
+    '1.2.1': {
+        titulo: '1.2.1 Cuadrada',
+        archivo: 'temas/1.2.1.html',
+        descripcion: 'Matriz cuadrada'
     }
     // Agrega más temas aquí...
 };
