@@ -15,7 +15,7 @@ const temasConfig = {
     '1.2.1': {
         titulo: '1.2.1 Cuadrada',
         archivo: 'temas/1.2.1.html',
-        descripcion: 'Matriz cuadrada'
+        descripcion: 'Cuadrada'
     }
     // Agrega más temas aquí...
 };
