@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,6 +131,25 @@
       margin-bottom: 10px;
     }
   </style>
+  <style>
+    .pdf-link-simple {
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .pdf-link-simple:hover {
+      text-decoration: underline;
+    }
+
+    .pdf-link-simple::before {
+      content: "📄";
+      margin-right: 8px;
+    }
+  </style>
 </head>
 
 <body>
@@ -151,14 +171,20 @@
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno será capaz de explicar el procesamiento de información por computadora, 
+      Al finalizar el curso el alumno será capaz de explicar el procesamiento de información por computadora,
       utilizando la terminología técnica de identificación de los principales componentes de un sistema de computación,
-      definiendo sus respectivas funciones, así como describir la historia de la computación y distinguir problemas susceptibles de soluciones mediante la computación.
+      definiendo sus respectivas funciones, así como describir la historia de la computación y distinguir problemas
+      susceptibles de soluciones mediante la computación.
     </p>
   </section>
 
   <section class="container">
-    <h2 class="section-title">Temario</h2>
+    <h2>
+      <a href="https://drive.google.com/file/d/1tNzDcpNKmFSRYLhraxKdWXvEHm_HXMAE/view?usp=sharing" target="_blank"
+        class="pdf-link-simple">
+        Temario PDF
+      </a>
+    </h2>
     <div class="temas-grid">
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
@@ -192,81 +218,81 @@
             </ul>
           `)">1.1 Breve reseña de la computación. <span class="emoji-small">✅</span>
           </li>
-        </ul>            
+        </ul>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section class="actividades">
-  <h2 class="section-title">Actividades de Aprendizaje</h2>
-  
-  <div>
-    <h3 class="actividades-subtitle">Bajo la conducción del docente</h3>
-    <div class="cards-grid">
-      <!-- <div class="card" onclick="window.open('diagramas.html', '_blank')">
+  <section class="actividades">
+    <h2 class="section-title">Actividades de Aprendizaje</h2>
+
+    <div>
+      <h3 class="actividades-subtitle">Bajo la conducción del docente</h3>
+      <div class="cards-grid">
+        <!-- <div class="card" onclick="window.open('diagramas.html', '_blank')">
         <h3><span class="emoji-small">✅</span> Ejercicios de diagramas de flujo</h3>
         <p>El alumno realizará ejercicios de diagramas de flujo con diversas propuestas.</p>
       </div> -->
-      <div class="card">
-        <h3>Programación en lenguaje C</h3>
-        <p>Realiza el estudio y análisis de temas relacionados con la programación en C.</p>
-      </div>
-      <div class="card">
-        <h3>Ejemplos de aplicación</h3>
-        <p>Realiza estudio de ejemplos de aplicación.</p>
-      </div>
-      <div class="card">
-        <h3>Analiza la solución de problemas</h3>
-      </div>
-      <div class="card">
-        <h3>Revisa tareas indicadas por el docente</h3>
-      </div>
-      <div class="card">
-        <h3>Prácticas de laboratorio</h3>
-        <p>Realiza prácticas de laboratorio de programación en el lenguaje C.</p>
-      </div>
-      <div class="card">
-        <h3>Expon temas en equipos de trabajo</h3>
-      </div>
-      <div class="card">
-        <h3>Realiza lecturas recomendadas</h3>
-      </div>
-    </div>
-  </div>
-  
-  <div style="margin-top: 70px;">
-    <h3 class="actividades-subtitle">De manera independiente</h3>
-    <div class="cards-grid">
-      <div class="card">
-        <h3>Integra una carpeta de control de lecturas especializadas</h3>
-      </div>
-      <div class="card">
-        <h3>Elabora organizadores gráficos que sistematicen la información más importante del curso</h3>
-      </div>
-      <div class="card">
-        <h3>Redacción de reportes de investigación documental y de campo sobre temas contenidos en este curso</h3>
-      </div>
-      <div class="card">
-        <h3>Desarrolla un proyecto final construyendo un programa de cómputo en lenguaje C</h3>
-      </div>
-      <div class="card">
-        <h3>Elabora reportes de prácticas de laboratorio</h3>
-      </div>
-      <div class="card">
-        <h3>Elabora tareas</h3>
+        <div class="card">
+          <h3>Programación en lenguaje C</h3>
+          <p>Realiza el estudio y análisis de temas relacionados con la programación en C.</p>
+        </div>
+        <div class="card">
+          <h3>Ejemplos de aplicación</h3>
+          <p>Realiza estudio de ejemplos de aplicación.</p>
+        </div>
+        <div class="card">
+          <h3>Analiza la solución de problemas</h3>
+        </div>
+        <div class="card">
+          <h3>Revisa tareas indicadas por el docente</h3>
+        </div>
+        <div class="card">
+          <h3>Prácticas de laboratorio</h3>
+          <p>Realiza prácticas de laboratorio de programación en el lenguaje C.</p>
+        </div>
+        <div class="card">
+          <h3>Expon temas en equipos de trabajo</h3>
+        </div>
+        <div class="card">
+          <h3>Realiza lecturas recomendadas</h3>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="container">
-  <h2 class="section-title">Evaluación</h2>
-  <div class="evaluacion-grid">
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">20%</div>
+    <div style="margin-top: 70px;">
+      <h3 class="actividades-subtitle">De manera independiente</h3>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Integra una carpeta de control de lecturas especializadas</h3>
+        </div>
+        <div class="card">
+          <h3>Elabora organizadores gráficos que sistematicen la información más importante del curso</h3>
+        </div>
+        <div class="card">
+          <h3>Redacción de reportes de investigación documental y de campo sobre temas contenidos en este curso</h3>
+        </div>
+        <div class="card">
+          <h3>Desarrolla un proyecto final construyendo un programa de cómputo en lenguaje C</h3>
+        </div>
+        <div class="card">
+          <h3>Elabora reportes de prácticas de laboratorio</h3>
+        </div>
+        <div class="card">
+          <h3>Elabora tareas</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Evaluación</h2>
+    <div class="evaluacion-grid">
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">20%</div>
         <p class="evaluacion-desc">Dos exámenes parciales</p><br>
         <div class="tema-list">
-<!--    🔓<a href="ppcom1.html" target="_blank"> 1er Parcial 27/09/25</a> -->
+          <!--    🔓<a href="ppcom1.html" target="_blank"> 1er Parcial 27/09/25</a> -->
           <a href="" target="">🔒 1er Parcial 17/01/2026</a>
         </div>
         <div class="tema-list">
@@ -274,59 +300,60 @@
           <a href="" target="">🔒 2do Parcial 31/01/2026</a>
         </div>
       </div>
-    
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">40%</div>
-      <p class="evaluacion-desc">Actividades bajo la conducción del docente</p><br>
+
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">40%</div>
+        <p class="evaluacion-desc">Actividades bajo la conducción del docente</p><br>
+      </div>
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">30%</div>
+        <p class="evaluacion-desc">Actividades de aprendizaje independiente</p><br>
+      </div>
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">10%</div>
+        <p class="evaluacion-desc">Examen final</p><br>
+      </div>
     </div>
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">30%</div>
-      <p class="evaluacion-desc">Actividades de aprendizaje independiente</p><br>
-    </div>
-    <div class="evaluacion-item tema-card">
-      <div class="evaluacion-porcentaje">10%</div>
-      <p class="evaluacion-desc">Examen final</p><br>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal-info" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-text"></div>
     </div>
   </div>
-</section>
 
-<!-- Modal -->
-<div id="modal-info" class="modal">
-  <div class="modal-overlay"></div>
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <h3 id="modal-title"></h3>
-    <div id="modal-text"></div>
-  </div>
-</div>
+  <script>
+    const modal = document.getElementById('modal-info');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const modalClose = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
 
-<script>
-  const modal = document.getElementById('modal-info');
-  const modalTitle = document.getElementById('modal-title');
-  const modalText = document.getElementById('modal-text');
-  const modalClose = document.querySelector('.modal-close');
-  const modalOverlay = document.querySelector('.modal-overlay');
+    // Función para abrir modal con HTML
+    function abrirModal(titulo, html) {
+      modalTitle.textContent = titulo;
+      modalText.innerHTML = html;
+      modal.classList.add('show');
+      modal.style.display = 'block';
+    }
 
-  // Función para abrir modal con HTML
-  function abrirModal(titulo, html) {
-    modalTitle.textContent = titulo;
-    modalText.innerHTML = html;
-    modal.classList.add('show');
-    modal.style.display = 'block';
-  }
+    // Función para cerrar modal
+    function cerrarModal() {
+      modal.classList.remove('show');
+      setTimeout(() => modal.style.display = 'none', 300); // espera la transición
+    }
 
-  // Función para cerrar modal
-  function cerrarModal() {
-    modal.classList.remove('show');
-    setTimeout(() => modal.style.display = 'none', 300); // espera la transición
-  }
+    modalClose.addEventListener('click', cerrarModal);
+    modalOverlay.addEventListener('click', cerrarModal);
+  </script>
 
-  modalClose.addEventListener('click', cerrarModal);
-  modalOverlay.addEventListener('click', cerrarModal);
-</script>
-
-<footer>
-  © 2025 Universidad URA – Asignatura Fundamentos de Programación
-</footer>
+  <footer>
+    © 2025 Universidad URA – Asignatura Fundamentos de Programación
+  </footer>
 </body>
+
 </html>
