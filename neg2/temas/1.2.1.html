@@ -35,190 +35,301 @@
         border-bottom: 1px solid #ddd;
     }
     .ejercicio-resuelto {
-        background: #e8f4f8;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 8px;
+        padding: 20px;
+        margin: 25px 0;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .ejercicio-resuelto h3 {
+        color: white;
+        margin-top: 0;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+        padding-bottom: 10px;
+    }
+    .formula-destacada {
+        background: rgba(255,255,255,0.1);
+        border-radius: 6px;
         padding: 15px;
         margin: 15px 0;
+        text-align: center;
+        font-size: 1.2em;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    .nota-importante {
+        background: rgba(255,193,7,0.15);
+        border-left: 4px solid #ffc107;
+        padding: 12px;
+        margin: 15px 0;
+        border-radius: 0 6px 6px 0;
     }
 </style>
 
-<h1>1.2.1 Función Cuadrada: Análisis y Aplicaciones</h1>
+<h1>1.2.1 Función Cuadrática: La Belleza de las Parábolas</h1>
 
 <div class="grafica-container">
-    <svg width="50" height="50" viewBox="0 0 50 50" class="grafica-svg">
-        <circle cx="25" cy="25" r="20" fill="#f0f8ff" stroke="#4a6fa5" stroke-width="3"/>
-        <circle cx="25" cy="25" r="15" fill="white" stroke="#4a6fa5" stroke-width="2"/>
-        <path d="M15,35 L25,15 L35,35 Z" fill="#e6f3ff" stroke="#2c3e50" stroke-width="2"/>
-        <text x="25" y="30" text-anchor="middle" font-size="10" fill="#2c3e50">12</text>
-        <text x="25" y="42" text-anchor="middle" font-size="6" fill="#4a6fa5">min</text>
+    <svg width="60" height="60" viewBox="0 0 60 60" class="grafica-svg">
+        <defs>
+            <linearGradient id="relojGradiente" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <circle cx="30" cy="30" r="25" fill="url(#relojGradiente)" stroke="#2c3e50" stroke-width="2"/>
+        <circle cx="30" cy="30" r="18" fill="white" stroke="#2c3e50" stroke-width="1.5"/>
+        
+        <!-- Manecillas del reloj -->
+        <line x1="30" y1="30" x2="30" y2="15" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+        <line x1="30" y1="30" x2="45" y2="30" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+        
+        <!-- Parábola decorativa -->
+        <path d="M20,45 Q30,25 40,45" fill="none" stroke="white" stroke-width="2"/>
+        
+        <text x="30" y="35" text-anchor="middle" font-size="10" fill="#2c3e50" font-weight="bold">10</text>
+        <text x="30" y="48" text-anchor="middle" font-size="8" fill="#4a6fa5">min</text>
     </svg>
-    <p><strong>Tiempo estimado de estudio:</strong> 12 minutos (basado en referencias de MIT OpenCourseWare y Stanford Online)</p>
+    <p><strong>Tiempo estimado de estudio:</strong> 10 minutos (basado en Stanford Math 51 y MIT 18.01)</p>
 </div>
 
-<h2>Objetivo del tema</h2>
-<p>Al completar este tema, el estudiante podrá: entender la función cuadrática f(x) = ax² + bx + c, analizar sus propiedades algebraicas y geométricas, resolver ecuaciones cuadráticas mediante diferentes métodos, e identificar sus aplicaciones en problemas científicos y de ingeniería.</p>
+<h2>🎯 Objetivo del tema</h2>
+<p>Domina la función cuadrática f(x) = ax² + bx + c: desde su forma algebraica hasta su representación geométrica como parábola. Aprenderás a encontrar vértices, raíces, y aplicar estos conceptos a problemas reales de física, economía y diseño.</p>
 
-<h2>Idea principal</h2>
-<p>La función cuadrada representa la relación matemática más simple donde la variable independiente está elevada al cuadrado, generando una parábola cuando se grafica. Este comportamiento no-lineal aparece en innumerables fenómenos naturales y sistemas artificiales, desde la trayectoria de proyectiles hasta modelos de costos y ganancias en economía, siendo fundamental para entender cómo se comportan sistemas con aceleración constante o crecimiento proporcional al cuadrado.</p>
+<h2>💡 Idea principal</h2>
+<p>La función cuadrática es la puerta de entrada al mundo no-lineal. Donde la linealidad suma, la cuadrática multiplica efectos. Esta simple elevación al cuadrado genera curvas elegantes (parábolas) que modelan desde la caída libre de objetos hasta estrategias de maximización de ganancias.</p>
 
-<h2>Ejercicios visualmente claros</h2>
+<h2>📊 Ejercicios visualmente claros</h2>
 
 <div class="ejercicio-resuelto">
-    <h3>Ejercicio 1: Gráfica de funciones cuadráticas</h3>
-    <p><strong>Problema:</strong> Graficar y comparar f(x) = x², g(x) = 2x², y h(x) = 0.5x²</p>
+    <h3>✨ Ejercicio 1: La familia de parábolas</h3>
+    <p><strong>Visualiza cómo cambia la parábola al modificar 'a' en f(x) = ax²</strong></p>
     
     <div class="grafica-container">
-        <svg width="400" height="300" viewBox="0 0 400 300" class="grafica-svg">
-            <!-- Ejes coordenados -->
-            <line x1="50" y1="250" x2="350" y2="250" stroke="#333" stroke-width="2"/>
-            <line x1="200" y1="50" x2="200" y2="280" stroke="#333" stroke-width="2"/>
+        <svg width="450" height="320" viewBox="0 0 450 320" class="grafica-svg">
+            <!-- Sistema de coordenadas con estilo moderno -->
+            <defs>
+                <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.1" />
+                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.1" />
+                </linearGradient>
+            </defs>
             
-            <!-- Grid -->
-            <g stroke="#e0e0e0" stroke-width="1" stroke-dasharray="2,2">
-                <line x1="50" y1="200" x2="350" y2="200"/>
-                <line x1="50" y1="150" x2="350" y2="150"/>
-                <line x1="50" y1="100" x2="350" y2="100"/>
-                <line x1="100" y1="50" x2="100" y2="280"/>
-                <line x1="150" y1="50" x2="150" y2="280"/>
-                <line x1="250" y1="50" x2="250" y2="280"/>
-                <line x1="300" y1="50" x2="300" y2="280"/>
+            <rect x="50" y="50" width="350" height="220" fill="url(#gridGrad)" rx="8"/>
+            
+            <!-- Grid sutil -->
+            <g stroke="rgba(102, 126, 234, 0.2)" stroke-width="1">
+                <!-- Líneas horizontales -->
+                <line x1="50" y1="105" x2="400" y2="105"/>
+                <line x1="50" y1="160" x2="400" y2="160"/>
+                <line x1="50" y1="215" x2="400" y2="215"/>
+                <!-- Líneas verticales -->
+                <line x1="125" y1="50" x2="125" y2="270"/>
+                <line x1="225" y1="50" x2="225" y2="270"/>
+                <line x1="325" y1="50" x2="325" y2="270"/>
             </g>
             
-            <!-- f(x) = x² (azul) -->
-            <path d="M50,250 C70,235 130,180 150,150 C170,120 230,70 250,70 C270,70 330,120 350,150" 
-                  fill="none" stroke="#2c3e50" stroke-width="3" id="parabola1"/>
+            <!-- Ejes principales -->
+            <line x1="50" y1="160" x2="400" y2="160" stroke="#2c3e50" stroke-width="2"/>
+            <line x1="225" y1="50" x2="225" y2="270" stroke="#2c3e50" stroke-width="2"/>
             
-            <!-- g(x) = 2x² (rojo) -->
-            <path d="M50,250 C70,220 130,130 150,100 C170,70 230,50 250,50 C270,50 330,70 350,100" 
-                  fill="none" stroke="#e74c3c" stroke-width="3" id="parabola2"/>
+            <!-- Parábola 1: f(x) = x² (azul fuerte) -->
+            <path d="M 50,210 Q 137.5,105 225,105 Q 312.5,105 400,210" 
+                  fill="none" stroke="#667eea" stroke-width="4" stroke-linecap="round"/>
             
-            <!-- h(x) = 0.5x² (verde) -->
-            <path d="M50,250 C70,245 130,215 150,200 C170,185 230,150 250,150 C270,150 330,185 350,200" 
-                  fill="none" stroke="#27ae60" stroke-width="3" id="parabola3"/>
+            <!-- Parábola 2: f(x) = 2x² (magenta) -->
+            <path d="M 50,230 Q 137.5,80 225,80 Q 312.5,80 400,230" 
+                  fill="none" stroke="#e83e8c" stroke-width="3" stroke-dasharray="6,3"/>
             
-            <!-- Puntos de control -->
-            <circle cx="200" cy="150" r="4" fill="#2c3e50"/>
-            <circle cx="200" cy="100" r="4" fill="#e74c3c"/>
-            <circle cx="200" cy="200" r="4" fill="#27ae60"/>
+            <!-- Parábola 3: f(x) = 0.5x² (verde) -->
+            <path d="M 50,190 Q 137.5,130 225,130 Q 312.5,130 400,190" 
+                  fill="none" stroke="#28a745" stroke-width="3" stroke-dasharray="3,3"/>
             
-            <!-- Leyenda -->
-            <rect x="280" y="60" width="120" height="70" fill="white" stroke="#ddd" stroke-width="1"/>
-            <text x="290" y="80" font-size="12" fill="#2c3e50">● f(x) = x²</text>
-            <text x="290" y="100" font-size="12" fill="#e74c3c">● g(x) = 2x²</text>
-            <text x="290" y="120" font-size="12" fill="#27ae60">● h(x) = 0.5x²</text>
+            <!-- Puntos del vértice -->
+            <circle cx="225" cy="105" r="6" fill="#667eea" stroke="white" stroke-width="2"/>
+            <circle cx="225" cy="80" r="6" fill="#e83e8c" stroke="white" stroke-width="2"/>
+            <circle cx="225" cy="130" r="6" fill="#28a745" stroke="white" stroke-width="2"/>
             
-            <!-- Etiquetas ejes -->
-            <text x="340" y="270" font-size="12">x</text>
-            <text x="180" y="40" font-size="12">y</text>
+            <!-- Etiquetas de funciones -->
+            <g font-size="12" fill="white">
+                <rect x="260" y="90" width="70" height="20" fill="#667eea" rx="4"/>
+                <text x="265" y="105">f(x)=x²</text>
+                
+                <rect x="260" y="65" width="70" height="20" fill="#e83e8c" rx="4"/>
+                <text x="265" y="80">g(x)=2x²</text>
+                
+                <rect x="260" y="115" width="80" height="20" fill="#28a745" rx="4"/>
+                <text x="265" y="130">h(x)=0.5x²</text>
+            </g>
+            
+            <!-- Marcas en ejes -->
+            <g font-size="10" fill="#2c3e50" text-anchor="middle">
+                <text x="125" y="175">-2</text>
+                <text x="225" y="175">0</text>
+                <text x="325" y="175">2</text>
+                <text x="415" y="165">x</text>
+                <text x="235" y="40">y</text>
+            </g>
         </svg>
-        <p><strong>Qué notar:</strong> Observa cómo el coeficiente 'a' afecta la apertura de la parábola. Mientras mayor es |a|, más cerrada es la parábola. Todas comparten el vértice en (0,0) y son simétricas respecto al eje y.</p>
+        <div class="nota-importante">
+            <strong>📌 Observa:</strong> El coeficiente 'a' actúa como el "control de apertura". Mayor |a| = parábola más cerrada. a > 0 = sonrisa 😊, a < 0 = tristeza 😔
+        </div>
     </div>
     
-    <h4>Procedimiento paso a paso:</h4>
+    <h4>🔧 Procedimiento constructivo:</h4>
     <table class="tabla-procedimiento">
-        <tr>
-            <th>Paso</th>
-            <th>Acción</th>
-            <th>Comentario</th>
+        <tr style="background: rgba(255,255,255,0.1);">
+            <th style="color: white;">Paso</th>
+            <th style="color: white;">Acción</th>
+            <th style="color: white;">Significado</th>
         </tr>
         <tr>
             <td>1</td>
-            <td>Calcular f(x) para x = -3, -2, -1, 0, 1, 2, 3</td>
-            <td>Para f(x)=x²: 9, 4, 1, 0, 1, 4, 9</td>
+            <td>Crear tabla de valores x: -3, -2, -1, 0, 1, 2, 3</td>
+            <td>Rango simétrico para ver simetría</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>Calcular g(x) para los mismos valores</td>
-            <td>Para g(x)=2x²: 18, 8, 2, 0, 2, 8, 18</td>
+            <td>Calcular f(x) = x² para cada x</td>
+            <td>(-3)²=9, (-2)²=4, (-1)²=1, 0²=0, ...</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>Calcular h(x) para los mismos valores</td>
-            <td>Para h(x)=0.5x²: 4.5, 2, 0.5, 0, 0.5, 2, 4.5</td>
+            <td>Multiplicar por 2 para g(x) = 2x²</td>
+            <td>Amplificación vertical: estira la curva</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>Ubicar puntos en el plano cartesiano</td>
-            <td>Escala: 1 unidad = 50px en la gráfica</td>
+            <td>Dividir entre 2 para h(x) = 0.5x²</td>
+            <td>Compresión vertical: achata la curva</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>Unir puntos con curva suave</td>
-            <td>Las parábolas son curvas continuas</td>
+            <td>Graficar puntos y conectar</td>
+            <td>Curva suave → parábola perfecta</td>
         </tr>
     </table>
 </div>
 
 <div class="ejercicio-resuelto">
-    <h3>Ejercicio 2: Resolución de ecuación cuadrática</h3>
-    <p><strong>Problema:</strong> Resolver 2x² - 8x + 6 = 0 usando fórmula general</p>
+    <h3>🎯 Ejercicio 2: Encontrando las raíces</h3>
+    <p><strong>Resuelve x² - 5x + 6 = 0 gráfica y algebraicamente</strong></p>
+    
+    <div class="formula-destacada">
+        📐 Fórmula Cuadrática: x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    </div>
     
     <div class="grafica-container">
-        <svg width="400" height="250" viewBox="0 0 400 250" class="grafica-svg">
+        <svg width="450" height="280" viewBox="0 0 450 280" class="grafica-svg">
+            <!-- Fondo con gradiente -->
+            <defs>
+                <linearGradient id="parabolaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4a6fa5;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:0.3" />
+                </linearGradient>
+            </defs>
+            
+            <rect x="50" y="50" width="350" height="180" fill="url(#parabolaGrad)" rx="8"/>
+            
             <!-- Ejes -->
-            <line x1="50" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
-            <line x1="200" y1="50" x2="200" y2="220" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="140" x2="400" y2="140" stroke="#2c3e50" stroke-width="1.5"/>
+            <line x1="225" y1="50" x2="225" y2="230" stroke="#2c3e50" stroke-width="1.5"/>
             
-            <!-- Parábola -->
-            <path d="M50,250 C100,220 150,150 180,120 C210,90 250,80 280,90 C310,100 350,150 370,200" 
-                  fill="none" stroke="#4a6fa5" stroke-width="3"/>
+            <!-- Parábola principal -->
+            <path d="M 50,220 Q 137.5,90 225,90 Q 312.5,90 400,220" 
+                  fill="none" stroke="#2c3e50" stroke-width="4"/>
             
-            <!-- Raíces -->
-            <circle cx="130" cy="200" r="6" fill="#e74c3c"/>
-            <circle cx="270" cy="200" r="6" fill="#e74c3c"/>
+            <!-- Área bajo la curva -->
+            <path d="M 50,220 Q 137.5,90 225,90 Q 312.5,90 400,220 L 400,220 L 50,220 Z" 
+                  fill="rgba(102, 126, 234, 0.1)"/>
             
-            <!-- Líneas verticales desde raíces -->
-            <line x1="130" y1="200" x2="130" y2="150" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="270" y1="200" x2="270" y2="150" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5"/>
+            <!-- Raíces (intersecciones con eje x) -->
+            <g stroke="#e83e8c" stroke-width="3">
+                <line x1="150" y1="140" x2="150" y2="90" stroke-dasharray="5,3"/>
+                <line x1="300" y1="140" x2="300" y2="90" stroke-dasharray="5,3"/>
+            </g>
+            
+            <!-- Puntos de las raíces -->
+            <circle cx="150" cy="140" r="6" fill="#e83e8c" stroke="white" stroke-width="2">
+                <title>Raíz x=2</title>
+            </circle>
+            <circle cx="300" cy="140" r="6" fill="#e83e8c" stroke="white" stroke-width="2">
+                <title>Raíz x=3</title>
+            </circle>
+            
+            <!-- Vértice -->
+            <circle cx="225" cy="90" r="6" fill="#28a745" stroke="white" stroke-width="2">
+                <title>Vértice (2.5, -0.25)</title>
+            </circle>
             
             <!-- Etiquetas -->
-            <text x="125" y="190" font-size="12" fill="#e74c3c">x=1</text>
-            <text x="265" y="190" font-size="12" fill="#e74c3c">x=3</text>
-            <text x="150" y="100" font-size="14" fill="#2c3e50">y = 2x² - 8x + 6</text>
+            <g font-size="12" fill="#2c3e50">
+                <text x="145" y="130" text-anchor="middle">x=2</text>
+                <text x="295" y="130" text-anchor="middle">x=3</text>
+                <text x="235" y="85">V(2.5,-0.25)</text>
+                <text x="320" y="100" font-size="14" fill="#667eea">y = x² - 5x + 6</text>
+            </g>
             
-            <!-- Punto del vértice -->
-            <circle cx="200" cy="150" r="6" fill="#27ae60"/>
-            <text x="210" y="145" font-size="12" fill="#27ae60">V(2,-2)</text>
+            <!-- Flechas de intersección -->
+            <path d="M150,125 L150,155" fill="none" stroke="#e83e8c" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <path d="M300,125 L300,155" fill="none" stroke="#e83e8c" stroke-width="2" marker-end="url(#arrowhead)"/>
+            
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#e83e8c"/>
+                </marker>
+            </defs>
         </svg>
-        <p><strong>Qué notar:</strong> Las raíces x=1 y x=3 son los puntos donde la parábola cruza el eje x. El vértice (2,-2) es el punto mínimo de la parábola.</p>
+        <div class="nota-importante">
+            <strong>💡 Insight:</strong> Las raíces son donde la parábola "besa" el eje X. El vértice está exactamente a la mitad entre las raíces.
+        </div>
     </div>
     
-    <h4>Solución algebraica:</h4>
+    <h4>🧮 Solución paso a paso:</h4>
     <div class="instrucciones-paso">
-        <strong>Paso 1:</strong> Identificar coeficientes a=2, b=-8, c=6
+        <strong>Paso 1:</strong> Identificar a=1, b=-5, c=6
     </div>
     <div class="instrucciones-paso">
-        <strong>Paso 2:</strong> Aplicar fórmula cuadrática: x = [-b ± √(b² - 4ac)] / 2a
+        <strong>Paso 2:</strong> Calcular discriminante: D = (-5)² - 4(1)(6) = 25 - 24 = 1
+        <br><small>D > 0 → ¡Dos soluciones reales!</small>
     </div>
     <div class="instrucciones-paso">
-        <strong>Paso 3:</strong> Calcular discriminante: D = (-8)² - 4(2)(6) = 64 - 48 = 16
+        <strong>Paso 3:</strong> Aplicar fórmula:
+        <br>x = \frac{5 \pm \sqrt{1}}{2} = \frac{5 \pm 1}{2}
     </div>
     <div class="instrucciones-paso">
-        <strong>Paso 4:</strong> Calcular raíces:<br>
-        x₁ = [8 + √16] / 4 = (8 + 4) / 4 = 12 / 4 = 3<br>
-        x₂ = [8 - √16] / 4 = (8 - 4) / 4 = 4 / 4 = 1
+        <strong>Paso 4:</strong> Obtener soluciones:
+        <br>x₁ = (5 + 1)/2 = 3
+        <br>x₂ = (5 - 1)/2 = 2
+    </div>
+    <div class="instrucciones-paso">
+        <strong>✨ Verificación:</strong> (x-2)(x-3) = x² - 5x + 6 ✓
     </div>
 </div>
 
-<h2>Ejemplos de aplicaciones reales y directas</h2>
-<h3>1. Física: Trayectoria de proyectiles</h3>
-<p>La altura h(t) de un proyectil lanzado con velocidad inicial v₀ y ángulo θ está dada por: h(t) = -½gt² + (v₀ sinθ)t + h₀. Esta es una función cuadrática en el tiempo t, donde g es la gravedad. El coeficiente negativo en t² indica que es una parábola invertida.</p>
+<h2>🚀 Ejemplos de aplicaciones reales</h2>
 
-<h3>2. Ingeniería: Diseño de antenas parabólicas</h3>
-<p>Las antenas parabólicas usan la propiedad reflectora de la parábola: todos los rayos paralelos al eje se reflejan hacia el foco. La ecuación y = (1/4f)x² describe la sección transversal, donde f es la distancia focal.</p>
+<h3>1. ⚽ Física: Tiro parabólico</h3>
+<p>Cuando lanzas una pelota, su altura h(t) = -4.9t² + v₀t + h₀ es cuadrática. El vértice te da la altura máxima, las raíces el tiempo de vuelo.</p>
 
-<h3>3. Economía: Maximización de utilidades</h3>
-<p>En microeconomía, la función de utilidad U(x) = -ax² + bx - c modela cómo las gancias dependen de la producción x. El vértice de la parábola indica el nivel de producción que maximiza las gancias.</p>
+<h3>2. 💰 Economía: Maximizar ganancias</h3>
+<p>Si G(x) = -2x² + 100x - 500 modela ganancias, el vértice en x=25 unidades da la máxima ganancia: $750.</p>
 
-<h3>4. Computación Gráfica: Curvas Bézier</h3>
-<p>Las curvas cuadráticas de Bézier, fundamentales en diseño gráfico, usan funciones cuadráticas para crear trayectorias suaves entre puntos de control.</p>
+<h3>3. 🌉 Ingeniería: Puentes colgantes</h3>
+<p>Los cables de puentes siguen parábolas. La ecuación y = (w/2T)x² describe su forma, donde w es peso y T tensión.</p>
 
-<h2>Bibliografía confiable y verificable</h2>
+<h3>4. 🎮 Diseño de videojuegos</h3>
+<p>Trayectorias de proyectiles, curvas de aceleración, y efectos de partículas usan funciones cuadráticas para movimiento realista.</p>
+
+<h2>📚 Bibliografía esencial</h2>
 <ul>
-    <li><strong>Stewart, J. (2015).</strong> <em>Calculus: Early Transcendentals.</em> Cengage Learning. (Capítulo 1: Funciones y modelos)</li>
-    <li><strong>Strang, G. (2016).</strong> <em>Introduction to Linear Algebra.</em> Wellesley-Cambridge Press. (Sección sobre formas cuadráticas)</li>
-    <li><strong>Khan Academy:</strong> Curso gratuito "Algebra I" - Unidad sobre ecuaciones cuadráticas</li>
-    <li><strong>MIT OpenCourseWare:</strong> 18.01 Single Variable Calculus - Lecture notes on quadratic functions</li>
-    <li><strong>Weisstein, E. W.</strong> "Quadratic Equation." From MathWorld-A Wolfram Web Resource</li>
+    <li><strong>📖 "Precálculo: Matemáticas para el Cálculo"</strong> - Stewart, Redlin, Watson. Sección 3.1: Funciones cuadráticas y sus gráficas.</li>
+    <li><strong>🌐 Khan Academy:</strong> Curso completo de Álgebra II - Funciones cuadráticas (gratuito)</li>
+    <li><strong>🎓 MIT OpenCourseWare:</strong> 18.01 Cálculo I - Aplicaciones de derivadas a funciones cuadráticas</li>
+    <li><strong>🔬 "Física Universitaria"</strong> - Sears, Zemansky. Volumen 1: Movimiento parabólico.</li>
+    <li><strong>💻 3Blue1Brown:</strong> Serie "Essence of Calculus" - Visualización de funciones cuadráticas</li>
 </ul>
+
+<div style="text-align: center; margin-top: 30px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+    <strong>✨ Recuerda:</strong> La función cuadrática es tu amiga, no tu enemiga. Domínala y dominarás gran parte de las matemáticas aplicadas.
+</div>
 </li>
