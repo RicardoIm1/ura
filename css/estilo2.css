@@ -56,7 +56,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: opacity 0.3s ease;
     opacity: 0;
 }
@@ -83,7 +83,7 @@
     max-width: 1000px;
     max-height: 85vh;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     animation: modalSlideIn 0.3s ease;
     overflow: hidden;
     display: flex;
@@ -95,6 +95,7 @@
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -117,7 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
 }
 
@@ -166,8 +167,13 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .error-carga {
@@ -204,19 +210,117 @@
         margin: 20px auto;
         max-height: 90vh;
     }
-    
+
     #modal-title {
         font-size: 1.2em;
         padding: 20px 15px 10px;
     }
-    
+
     .subtema-link {
         padding: 10px 12px;
     }
-    
+
     .subtema-num {
         width: 35px;
         height: 35px;
         font-size: 0.9em;
     }
+}
+
+/* Estilos para las secciones dentro del modal */
+.objetivo-tema,
+.idea-principal,
+.ejercicios-visuales,
+.aplicaciones-reales,
+.bibliografia {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tiempo-lectura {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.tiempo-lectura svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.texto-tiempo {
+    margin-top: 0.5rem;
+    color: #666;
+    font-style: italic;
+}
+
+.ejercicio {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.grafica-contenedor {
+    margin: 1rem 0;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.tabla-ejercicio {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.tabla-ejercicio th,
+.tabla-ejercicio td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-ejercicio th {
+    background-color: #0066cc;
+    color: white;
+    font-weight: 600;
+}
+
+.tabla-ejercicio tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.instrucciones {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.instrucciones ol {
+    margin-left: 1.5rem;
+}
+
+.instrucciones li {
+    margin-bottom: 0.75rem;
+}
+
+code {
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
 }
