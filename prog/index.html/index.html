@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de Programación - Universidad URA</title>
+  <link rel="stylesheet" href="/ura/css/estilo.css">
+  <!-- MathJax para renderizar notación matemática elegante -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .loguito {
+      display: inline-block;
+      margin: 10px 15px 10px 0;
+      transition: all 0.3s ease;
+    }
+
+    .loguito a {
+      display: block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
+    }
+
+    .loguito:hover a {
+      background-color: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+      border-color: #007bff;
+    }
+
+    .loguito img {
+      width: 120px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      filter: grayscale(30%);
+      transition: filter 0.3s ease;
+    }
+
+
+    .loguito:hover img {
+      filter: grayscale(0%);
+    }
+
+    .librito img {
+      height: 200px;
+      width: 150px;
+    }
+
+    /* Modal */
+    #modal-info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 1000;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      /* Efecto de difuminado */
+      -webkit-backdrop-filter: blur(10px);
+      /* Compatibilidad con Safari */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      background: rgba(245, 245, 245, 0.95);
+      /* Fondo semitransparente */
+      backdrop-filter: blur(20px);
+      /* Difuminado adicional para el contenido */
+      -webkit-backdrop-filter: blur(20px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      overflow-y: auto;
+      max-height: 80%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Borde sutil para efecto de cristal */
+    }
+
+    .modal.show .modal-overlay {
+      opacity: 1;
+    }
+
+    .modal.show .modal-content {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+      /* Asegura que esté por encima del contenido */
+    }
+
+    /* Ajuste de listas dentro del modal */
+    #modal-text ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    #modal-text h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/ura/">
+        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">Matemáticas Para la Administración</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Computación I</h1>
+    <h2>INAR0104</h2>
+    <a href="/ura/comp/calificaciones_com.html" class="apple-button">Calificaciones</a>
+  </div>
+
+  <section class="container">
+    <h2 class="section-title">Objetivo General</h2>
+    <p class="objetivo evaluacion-item tema-card">
+      Al finalizar el curso el alumno será capaz de explicar el procesamiento de información por computadora, 
+      utilizando la terminología técnica de identificación de los principales componentes de un sistema de computación,
+      definiendo sus respectivas funciones, así como describir la historia de la computación y distinguir problemas susceptibles de soluciones mediante la computación.
+    </p>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Temario</h2>
+    <div class="temas-grid">
+      <div class="tema-card">
+        <div class="tema-num">TEMA 1</div>
+        <h3 class="tema-title">Introducción a Computadores Digitales</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('1.1 Computación Análoga', `
+              <hr><br>
+            <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
+            <h4>Definición</h4>
+            <ul>
+              <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o movimiento).</li>
+              <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
+            </ul>
+            <h4>Características</h4>
+            <ul>
+              <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
+              <li>Ofrece resultados aproximados.</li>
+              <li>Muy usada antes de la aparición de computadoras digitales.</li>
+            </ul>
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Regla de cálculo para operaciones matemáticas.</li>
+              <li>Relojes de manecillas.</li>
+              <li>Termómetros de mercurio.</li>
+            </ul>
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+            </ul>
+          `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
+          </li>
+
+            <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
+                <hr><br>
+              <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
+
+            <h4>Definición</h4>
+            <ul>
+              <li>Conjunto de técnicas y procedimientos que permiten representar, procesar, analizar y manipular información utilizando sistemas discretos.</li>
+              <li>Convierte datos del mundo real en valores discretos (generalmente binarios) para su almacenamiento, transmisión y procesamiento mediante computadoras.</li>
+              <li>Base de la computación digital, presente en smartphones, sistemas de control industrial, análisis de datos clínicos y prácticamente toda tecnología moderna.</li>
+            </ul>
+
+            <h4>Características</h4>
+            <ul>
+              <li>Trabaja con información discreta en lugar de continua, usando ceros y unos como lenguaje fundamental.</li>
+              <li>Permite precisión, reproducibilidad y facilidad de manipulación de datos.</li>
+              <li>Capacidad de aplicar algoritmos complejos para resolver problemas que serían difíciles o imposibles de abordar con métodos análogos.</li>
+              <li>Facilita el almacenamiento, la comunicación y el control de información de manera confiable y eficiente.</li>
+              <li>Sirve de soporte a simulaciones, modelado y análisis de datos en diversas áreas del conocimiento.</li>
+            </ul>
+
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Computadoras personales y servidores que procesan información digital.</li>
+              <li>Smartphones y tablets que ejecutan aplicaciones basadas en datos discretos.</li>
+              <li>Sistemas de control industrial, como robots y automatización de fábricas.</li>
+              <li>Dispositivos médicos que digitalizan señales biológicas para diagnóstico y monitoreo.</li>
+            </ul>
+
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+          </ul>
+            `)">1.2 Introducción a métodos digitales <span class="emoji-small">✅</span>
+          </li>
+
+            <li onclick="abrirModal('1.3 Descripción de componentes', `
+                <hr><br>
+                <p><strong>Objetivo:</strong> Conocer los principales componentes de un sistema digital, su funcionamiento y cómo interactúan para procesar información.</p>
+
+                <h4>Definición</h4>
+                <ul>
+                  <li>Los componentes de un sistema digital son los elementos físicos y lógicos que permiten la representación, procesamiento, almacenamiento y comunicación de información en forma discreta.</li>
+                  <li>Incluyen tanto hardware (circuitos, procesadores, memoria, periféricos) como software (sistemas operativos y programas) que controlan el flujo y la manipulación de datos.</li>
+                  <li>Son la base de cualquier dispositivo digital moderno, desde microcontroladores hasta supercomputadoras.</li>
+                </ul>
+
+                <h4>Principales Componentes</h4>
+                <ul>
+                  <li><strong>Unidad Central de Procesamiento (CPU):</strong> Componente encargado de ejecutar instrucciones, procesar datos y coordinar el funcionamiento de todo el sistema.</li>
+                  <li><strong>Memoria:</strong> Almacena datos e instrucciones de manera temporal (RAM) o permanente (ROM, discos, memorias flash).</li>
+                  <li><strong>Dispositivos de Entrada:</strong> Permiten la interacción con el sistema, como teclados, sensores, micrófonos y cámaras.</li>
+                  <li><strong>Dispositivos de Salida:</strong> Permiten mostrar o transmitir información procesada, como pantallas, impresoras o actuadores en sistemas de control.</li>
+                  <li><strong>Bus de Datos:</strong> Conjunto de líneas que transportan información entre la CPU, memoria y periféricos.</li>
+                  <li><strong>Controladores y Interfaces:</strong> Administran la comunicación con dispositivos externos y aseguran que los datos se transfieran correctamente.</li>
+                  <li><strong>Software de Sistema:</strong> Sistemas operativos y firmware que gestionan recursos y permiten ejecutar aplicaciones.</li>
+                </ul>
+
+                <h4>Características</h4>
+                <ul>
+                  <li>Interconexión eficiente entre componentes, permitiendo un flujo de información rápido y confiable.</li>
+                  <li>Capacidad de procesamiento secuencial y paralelo mediante CPU y otros procesadores especializados.</li>
+                  <li>Almacenamiento jerárquico, que permite acceso rápido a datos frecuentes y conservación a largo plazo de información crítica.</li>
+                  <li>Modularidad, facilitando la actualización y sustitución de componentes sin afectar el funcionamiento general.</li>
+                  <li>Compatibilidad entre hardware y software para ejecutar algoritmos y procesos de manera correcta.</li>
+                </ul>
+
+                <h4>Ejemplos</h4>
+                <ul>
+                  <li>Un microcontrolador Arduino que integra CPU, memoria y puertos de entrada/salida para proyectos electrónicos.</li>
+                  <li>Computadoras personales con CPU, RAM, disco duro, tarjeta gráfica y periféricos conectados mediante buses.</li>
+                  <li>Servidores de datos que utilizan múltiples CPUs, memorias de alta velocidad y sistemas redundantes para garantizar disponibilidad.</li>
+                  <li>Smartphones que combinan procesador, memoria, sensores y sistemas operativos móviles en un solo dispositivo compacto.</li>
+                </ul>
+
+                <h4>Fuentes Bibliográficas</h4>
+                <ul>
+                  <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                  <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+                  <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+                  <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+                </ul>
+            </ul>
+          `)">1.3 Descripción de componentes  <span class="emoji-small">✅</span>  
+          </li>
+
+            <li onclick="abrirModal('1.4 Lectura de entrada', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Entender cómo los sistemas digitales reciben información del mundo exterior y la preparan para su procesamiento interno.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>La lectura de entrada se refiere al proceso mediante el cual un sistema digital captura datos desde dispositivos o sensores externos para ser procesados por la CPU.</li>
+                <li>Convierte señales físicas (como presión, luz, sonido o movimiento) en información discreta que puede ser entendida y manipulada por el sistema.</li>
+                <li>Es el primer paso para la interacción entre el mundo real y los sistemas digitales, permitiendo la automatización, control y análisis de datos.</li>
+              </ul>
+            
+              <h4>Principales Dispositivos de Entrada</h4>
+              <ul>
+                <li><strong>Teclados y ratones:</strong> Permiten ingresar datos y comandos de forma directa.</li>
+                <li><strong>Sensores:</strong> Capturan información física como temperatura, presión, luz o humedad.</li>
+                <li><strong>Micrófonos y cámaras:</strong> Digitalizan señales de audio y video para procesamiento y almacenamiento.</li>
+                <li><strong>Lectores de código:</strong> Incluyen códigos de barras y QR que convierten información codificada en datos legibles por el sistema.</li>
+                <li><strong>Dispositivos táctiles y pantallas interactivas:</strong> Permiten la interacción directa con interfaces gráficas y aplicaciones.</li>
+                <li><strong>Interfaces de red:</strong> Reciben información proveniente de otros sistemas digitales a través de protocolos de comunicación.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Transforma señales analógicas o físicas en información digital interpretable.</li>
+                <li>Precisión y fidelidad en la captura de datos para asegurar un procesamiento confiable.</li>
+                <li>Velocidad de respuesta suficiente para mantener sincronización con el procesamiento interno.</li>
+                <li>Compatibilidad con los estándares de comunicación y formatos de datos del sistema.</li>
+                <li>Posibilidad de integración con múltiples dispositivos simultáneamente para sistemas complejos.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Un sensor de temperatura conectado a un microcontrolador para controlar un sistema de climatización.</li>
+                <li>La cámara de un smartphone que captura imágenes y video para aplicaciones de reconocimiento facial.</li>
+                <li>Lectores de tarjetas RFID que permiten el acceso seguro a instalaciones o sistemas electrónicos.</li>
+                <li>Teclados y pantallas táctiles en cajeros automáticos que registran la información del usuario.</li>
+                <li>Micrófonos digitales que capturan audio para asistentes de voz y sistemas de dictado.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
+                <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+                <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              </ul>
+            `)">1.4 Lectura de entrada  <span class="emoji-small">✅</span>
+           </li>
+
+           <li onclick="abrirModal('1.5 Unidad de memoria', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender la función, tipos y características de la memoria en un sistema computacional.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>La unidad de memoria es el componente del computador responsable de almacenar datos e instrucciones para su posterior procesamiento.</li>
+                <li>Actúa como un almacén temporal o permanente de información que puede ser accedida rápidamente por la CPU.</li>
+                <li>Es fundamental para el funcionamiento de cualquier sistema digital, ya que determina la capacidad de almacenamiento y la velocidad de acceso a la información.</li>
+              </ul>
+            
+              <h4>Tipos de Memoria</h4>
+              <ul>
+                <li><strong>Memoria Principal (RAM):</strong> Memoria de acceso aleatorio volátil que almacena temporalmente datos y programas en ejecución.</li>
+                <li><strong>Memoria ROM:</strong> Memoria de solo lectura no volátil que contiene instrucciones fundamentales para el arranque del sistema.</li>
+                <li><strong>Memoria Caché:</strong> Memoria de alta velocidad que almacena copias de datos frecuentemente accedidos para acelerar el procesamiento.</li>
+                <li><strong>Memoria Virtual:</strong> Extensión de la memoria principal que utiliza espacio en el almacenamiento secundario.</li>
+                <li><strong>Memoria Flash:</strong> Memoria no volátil utilizada en dispositivos de almacenamiento como SSDs y unidades USB.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li><strong>Capacidad:</strong> Cantidad de información que puede almacenar, medida en bytes (KB, MB, GB, TB).</li>
+                <li><strong>Velocidad de acceso:</strong> Tiempo que tarda la CPU en acceder a los datos almacenados.</li>
+                <li><strong>Volatilidad:</strong> Determina si la información se mantiene o se pierde al apagar el sistema.</li>
+                <li><strong>Método de acceso:</strong> Forma en que se accede a la información (aleatorio, secuencial, directo).</li>
+                <li><strong>Tecnología:</strong> Implementación física de la memoria (semiconductores, magnética, óptica).</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Los módulos DDR4 en computadoras modernas que permiten multitarea eficiente.</li>
+                <li>La memoria ROM BIOS que contiene el firmware necesario para iniciar el sistema operativo.</li>
+                <li>Memoria caché L3 en procesadores Intel Core i7 que acelera el acceso a datos frecuentes.</li>
+                <li>Memoria flash en tarjetas SD utilizadas en cámaras digitales y smartphones.</li>
+                <li>Memoria virtual implementada en el disco duro para extender la capacidad de la RAM.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Stallings, W. (2020). <em>Computer Organization and Architecture: Designing for Performance</em>. Pearson.</li>
+                <li>Null, L., & Lobur, J. (2018). <em>The Essentials of Computer Organization and Architecture</em>. Jones & Bartlett Learning.</li>
+                <li>Hamacher, C., Vranesic, Z., & Zaky, S. (2011). <em>Computer Organization</em>. McGraw-Hill.</li>
+              </ul>
+            `)">1.5 Unidad de memoria <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.6 Almacenamiento en código', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Analizar los métodos y formatos utilizados para almacenar información en sistemas digitales mediante codificación.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>El almacenamiento en código se refiere a la representación de información mediante sistemas de codificación que permiten su preservación y recuperación.</li>
+                <li>Implica la transformación de datos en formatos digitales que pueden ser interpretados por los sistemas computacionales.</li>
+                <li>Es fundamental para la persistencia de datos y la interoperabilidad entre diferentes sistemas y aplicaciones.</li>
+              </ul>
+            
+              <h4>Métodos de Codificación</h4>
+              <ul>
+                <li><strong>Sistemas numéricos:</strong> Representación de información usando binario, octal, hexadecimal y decimal.</li>
+                <li><strong>Códigos de caracteres:</strong> Sistemas como ASCII, Unicode y UTF-8 para representar texto.</li>
+                <li><strong>Formatos de archivo:</strong> Estructuras específicas para diferentes tipos de datos (texto, imagen, audio, video).</li>
+                <li><strong>Compresión de datos:</strong> Técnicas para reducir el espacio de almacenamiento (lossless y lossy).</li>
+                <li><strong>Codificación para detección y corrección de errores:</strong> Métodos como paridad, Hamming y CRC.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li><strong>Eficiencia:</strong> Optimización del espacio requerido para almacenar información.</li>
+                <li>Integridad: Capacidad de detectar y corregir errores en los datos almacenados.</li>
+                <li>Interoperabilidad: Compatibilidad entre diferentes sistemas y plataformas.</li>
+                <li>Seguridad: Protección de datos mediante técnicas de cifrado y codificación.</li>
+                <li>Escalabilidad: Adaptación a volúmenes crecientes de información.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>El código ASCII que representa caracteres alfanuméricos como números binarios.</li>
+                <li>Formatos de imagen como JPEG y PNG que utilizan diferentes algoritmos de compresión.</li>
+                <li>Archivos comprimidos ZIP que reducen el tamaño mediante algoritmos lossless.</li>
+                <li>Base de datos que almacenan información en tablas con relaciones codificadas.</li>
+                <li>Sistemas de cifrado como AES que codifican información para proteger su confidencialidad.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Tanenbaum, A. S., & Austin, T. (2016). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Khan, Z. (2018). <em>Data Representation in Computer Systems</em>. Springer.</li>
+                <li>Salomon, D. (2007). <em>Data Compression: The Complete Reference</em>. Springer.</li>
+                <li>Unicode Consortium. (2020). <em>The Unicode Standard</em>. Unicode, Inc.</li>
+              </ul>
+            `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
+          </li>
+          
+          <li onclick="abrirModal('1.7 Números binarios', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>El sistema binario es un sistema de numeración posicional que utiliza solo dos dígitos: 0 y 1.</li>
+                <li>Es la base del funcionamiento de los sistemas digitales, ya que los componentes electrónicos pueden representar fácilmente dos estados (encendido/apagado, verdadero/falso).</li>
+                <li>Permite representar cualquier tipo de información (números, texto, imágenes, sonido) mediante combinaciones de bits.</li>
+              </ul>
+            
+              <h4>Conceptos Fundamentales</h4>
+              <ul>
+                <li><strong>Bit:</strong> Unidad básica de información que representa un dígito binario (0 o 1).</li>
+                <li><strong>Byte:</strong> Grupo de 8 bits que representa un carácter o unidad de información básica.</li>
+                <li><strong>Conversión entre sistemas:</strong> Métodos para transformar números entre binario, decimal, octal y hexadecimal.</li>
+                <li><strong>Aritmética binaria:</strong> Operaciones matemáticas (suma, resta, multiplicación, división) con números binarios.</li>
+                <li><strong>Representación de números negativos:</strong> Sistemas como signo-magnitud, complemento a uno y complemento a dos.</li>
+                <li><strong>Punto flotante:</strong> Representación de números reales mediante notación científica en binario.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Simplicidad de implementación en circuitos electrónicos.</li>
+                <li>Fiabilidad en la representación y transmisión de datos.</li>
+                <li>Eficiencia en operaciones lógicas y aritméticas.</li>
+                <li>Escalabilidad para representar información compleja.</li>
+                <li>Universalidad como estándar en sistemas digitales.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Representación del número decimal 10 como 1010 en binario.</li>
+                <li>Suma binaria: 1010 (10) + 0110 (6) = 10000 (16).</li>
+                <li>Representación del carácter 'A' en ASCII como el número binario 01000001.</li>
+                <li>Uso del complemento a dos para representar números negativos.</li>
+                <li>Almacenamiento de imágenes mediante valores binarios que representan píxeles.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Mano, M. M., & Ciletti, M. D. (2018). <em>Digital Design: With an Introduction to the Verilog HDL</em>. Pearson.</li>
+                <li>Null, L., & Lobur, J. (2014). <em>Essentials of Computer Organization and Architecture</em>. Jones & Bartlett Learning.</li>
+                <li>Khan, M. (2019). <em>Binary Arithmetic and Boolean Algebra</em>. McGraw-Hill.</li>
+                <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+              </ul>
+            `)">1.7. Números binarios <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Identificar y comprender la interconexión y funcionamiento de los componentes principales de un sistema computacional.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>La organización de componentes se refiere a la disposición estructural y las interconexiones entre las unidades funcionales de un computador.</li>
+                <li>Define cómo los diferentes componentes (CPU, memoria, E/S) interactúan para ejecutar instrucciones y procesar datos.</li>
+                <li>Establece la arquitectura básica que determina el rendimiento, eficiencia y capacidades del sistema.</li>
+              </ul>
+            
+              <h4>Componentes Principales</h4>
+              <ul>
+                <li><strong>Unidad Central de Procesamiento (CPU):</strong> Cerebro del computador que ejecuta instrucciones y procesa datos.</li>
+                <li><strong>Memoria Principal:</strong> Almacena datos e instrucciones necesarios para la ejecución de programas.</li>
+                <li><strong>Dispositivos de Entrada/Salida:</strong> Permiten la comunicación entre el computador y el exterior.</li>
+                <li><strong>Buses del Sistema:</strong> Canales de comunicación que interconectan los componentes del computador.</li>
+                <li><strong>Unidad de Control:</strong> Coordina las actividades de todos los componentes del sistema.</li>
+                <li><strong>Almacenamiento Secundario:</strong> Provee capacidad de almacenamiento no volátil a largo plazo.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Arquitectura definida por el conjunto de instrucciones y organización de hardware.</li>
+                <li>Jerarquía de memoria que equilibra velocidad, capacidad y costo.</li>
+                <li>Mecanismos de interrupción para gestionar eventos asíncronos.</li>
+                <li>Técnicas de paralelismo para mejorar el rendimiento.</li>
+                <li>Modos de direccionamiento para acceder a datos e instrucciones.</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Arquitectura Von Neumann con unidad de procesamiento, memoria y buses unificados.</li>
+                <li>Arquitectura Harvard con memorias separadas para datos e instrucciones.</li>
+                <li>Sistemas multiprocesador con varias CPUs compartiendo recursos.</li>
+                <li>Computadoras con buses PCI Express para alta velocidad de transferencia.</li>
+                <li>Sistemas con memoria caché multinivel para reducir latencia.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Stallings, W. (2019). <em>Computer Organization and Architecture: Designing for Performance</em>. Pearson.</li>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+                <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
+              </ul>
+            `)">1.8. Organización de los componentes fundamentales del computador <span class="emoji-small">✅</span>
+          </li>
+
+          <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Analizar la estructura, tipos y funcionamiento de las instrucciones en lenguaje de máquina que ejecuta directamente el procesador.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Las instrucciones en lenguaje de máquina son comandos en formato binario que la CPU puede ejecutar directamente.</li>
+                <li>Representan las operaciones más básicas que puede realizar un computador, específicas para cada arquitectura de procesador.</li>
+                <li>Forman el conjunto de instrucciones (instruction set) que define las capacidades fundamentales de un procesador.</li>
+              </ul>
+            
+              <h4>Tipos de Instrucciones</h4>
+              <ul>
+                <li><strong>Transferencia de datos:</strong> Mover información entre memoria, registros y dispositivos.</li>
+                <li><strong>Aritméticas:</strong> Realizar operaciones matemáticas como suma, resta, multiplicación y división.</li>
+                <li><strong>Lógicas:</strong> Operaciones booleanas como AND, OR, NOT y XOR.</li>
+                <li><strong>Control de flujo:</strong> Alterar la secuencia de ejecución (saltos, bifurcaciones, llamadas a subrutinas).</li>
+                <li><strong>Manejo de dispositivos:</strong> Controlar operaciones de entrada/salida con periféricos.</li>
+              </ul>
+            
+              <h4>Características</h4>
+              <ul>
+                <li>Codificadas en formato binario específico para cada arquitectura.</li>
+                <li>Ejecutadas directamente por el hardware del procesador.</li>
+                <li>Organizadas en ciclos de instrucción (fetch, decode, execute).</li>
+                <li>Diferentes modos de direccionamiento para acceder a operandos.</li>
+                <li>Varían en longitud y complejidad según la arquitectura (CISC vs RISC).</li>
+              </ul>
+            
+              <h4>Ejemplos</h4>
+              <ul>
+                <li>Instrucción ADD en x86: 00000011 11000011 (suma los registros AX y BX).</li>
+                <li>Instrucción LOAD en arquitectura MIPS: 100011 00001 00010 0000000000000000.</li>
+                <li>Salto condicional JZ (Jump if Zero) en ensamblador x86.</li>
+                <li>Instrucción MOV para transferencia de datos en múltiples arquitecturas.</li>
+                <li>Llamada a interrupción INT en x86 para solicitar servicios del sistema operativo.</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Patterson, D. A., & Hennessy, J. L. (2017). <em>Computer Organization and Design: The Hardware/Software Interface</em>. Morgan Kaufmann.</li>
+                <li>Intel Corporation. (2019). <em>Intel 64 and IA-32 Architectures Software Developer's Manual</em>.</li>
+                <li>ARM Limited. (2020). <em>ARM Architecture Reference Manual</em>.</li>
+                <li>Sweetman, D. (2006). <em>See MIPS Run</em>. Morgan Kaufmann.</li>
+              </ul>
+            `)">1.9. Instrucciones en lenguaje de máquina <span class="emoji-small">✅</span>
+          </li>
+        </ul>            
+      </div>
+      
+      <div class="tema-card">
+        <div class="tema-num">TEMA 2</div>
+        <h3 class="tema-title">Programación</h3>
+        <ul class="tema-list">
+          <li onclick="abrirModal('2.1. Programación', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales, características y aplicaciones de la programación como disciplina esencial en la informática.</p>
+            
+            <h4>Definición</h4>
+            <ul>
+              <li>La programación es el <span style='color: #e74c3c;'>proceso de crear un conjunto de instrucciones</span> que le dicen a una computadora cómo realizar una tarea específica.</li>
+              <li>Consiste en <span style='color: #3498db;'>escribir, probar, depurar y mantener</span> el código fuente de programas computacionales.</li>
+              <li>Es una disciplina que combina <span style='color: #2ecc71;'>lógica, algoritmos y estructuras de datos</span> para resolver problemas.</li>
+            </ul>
+            
+            <h4>Elementos Fundamentales</h4>
+            <ul>
+              <li><strong>Algoritmos:</strong> Secuencia lógica de pasos para resolver un problema.</li>
+              <li><strong>Lenguajes de programación:</strong> Conjunto de reglas y sintaxis para escribir programas.</li>
+              <li><strong>Estructuras de datos:</strong> Formas de organizar y almacenar información.</li>
+              <li><strong>Paradigmas de programación:</strong> Estilos y metodologías para desarrollar software.</li>
+              <li><strong>Herramientas de desarrollo:</strong> Editores, compiladores, depuradores, etc.</li>
+            </ul>
+          
+            <h4>Proceso de Desarrollo de Software</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Análisis de requisitos</span>: Comprender qué debe hacer el programa.</li>
+              <li><span style='color: #e74c3c;'>Diseño del algoritmo</span>: Planificar la solución al problema.</li>
+              <li><span style='color: #e74c3c;'>Codificación</span>: Escribir el código en un lenguaje de programación.</li>
+              <li><span style='color: #e74c3c;'>Pruebas y depuración</span>: Verificar que el programa funcione correctamente.</li>
+              <li><span style='color: #e74c3c;'>Documentación</span>: Explicar cómo funciona el programa.</li>
+              <li><span style='color: #e74c3c;'>Mantenimiento</span>: Actualizar y mejorar el programa.</li>
+            </ol>
+          
+            <h4>Paradigmas de Programación Principales</h4>
+            <ul>
+              <li><strong>Programación estructurada:</strong> Uso de secuencias, selecciones e iteraciones.</li>
+              <li><strong>Programación orientada a objetos (POO):</strong> Basada en objetos y clases.</li>
+              <li><strong>Programación funcional:</strong> Uso de funciones matemáticas puras.</li>
+              <li><strong>Programación imperativa:</strong> Describe cómo lograr un objetivo paso a paso.</li>
+              <li><strong>Programación declarativa:</strong> Describe qué se quiere lograr, no cómo.</li>
+            </ul>
+          
+            <h4>Niveles de Lenguajes de Programación</h4>
+            <ul>
+              <li><strong>Lenguaje máquina:</strong> Código binario ejecutado directamente por el hardware.</li>
+              <li><strong>Lenguaje ensamblador:</strong> Representación simbólica del lenguaje máquina.</li>
+              <li><strong>Lenguajes de alto nivel:</strong> Más cercanos al lenguaje humano (Python, Java, C++).</li>
+              <li><strong>Lenguajes de muy alto nivel:</strong> Especializados en dominios específicos.</li>
+            </ul>
+          
+            <h4>Aplicaciones de la Programación</h4>
+            <ul>
+              <li><strong>Desarrollo web:</strong> Sitios y aplicaciones web.</li>
+              <li><strong>Inteligencia artificial:</strong> Machine learning, redes neuronales.</li>
+              <li><strong>Videojuegos:</strong> Desarrollo de software de entretenimiento.</li>
+              <li><strong>Sistemas embebidos:</strong> Control de dispositivos electrónicos.</li>
+              <li><strong>Ciencia de datos:</strong> Análisis y visualización de datos.</li>
+              <li><strong>Aplicaciones móviles:</strong> Software para smartphones y tablets.</li>
+            </ul>
+          
+            <h4>Habilidades del Programador</h4>
+            <ul>
+              <li>Pensamiento lógico y algorítmico.</li>
+              <li>Capacidad de resolución de problemas.</li>
+              <li>Atención al detalle.</li>
+              <li>Trabajo en equipo y colaboración.</li>
+              <li>Aprendizaje continuo y adaptación.</li>
+              <li>Creatividad e innovación.</li>
+            </ul>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+              <li>Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>. Addison-Wesley.</li>
+              <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
+              <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+              <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
+            </ul>
+          `)">2.1. Descripción general <span class="emoji-small">✅</span>
+        </li>
+          
+        <li onclick="abrirModal('2.2. Tipos de proposiciones', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Identificar y clasificar los diferentes tipos de proposiciones lógicas según su estructura y características fundamentales.</p>
+          
+            <h4>Definición de Proposición</h4>
+            <ul>
+              <li>Una proposición es una <span style='color: #e74c3c;'>oración declarativa</span> que puede ser calificada como verdadera o falsa, pero no ambas.</li>
+              <li>Debe tener un <span style='color: #3498db;'>valor de verdad definido</span> (verdadero o falso).</li>
+              <li>No puede ser una pregunta, orden o exclamación.</li>
+            </ul>
+          
+            <h4>Clasificación Principal</h4>
+            <ul>
+              <li><strong>Proposiciones simples o atómicas:</strong> No contienen otras proposiciones como partes.</li>
+              <li><strong>Proposiciones compuestas o moleculares:</strong> Formadas por la combinación de proposiciones simples.</li>
+            </ul>
+          
+            <h4>Proposiciones Simples</h4>
+            <ul>
+              <li><span style='color: #e74c3c;'>Características:</span>
+                <ul>
+                  <li>Expresan una única idea</li>
+                  <li>No pueden dividirse en proposiciones más pequeñas</li>
+                  <li>Se representan con letras minúsculas (p, q, r, s...)</li>
+                </ul>
+              </li>
+              <li><span style='color: #3498db;'>Ejemplos:</span>
+                <ul>
+                  <li>'El sol es una estrella' (Verdadera)</li>
+                  <li>'2 + 3 = 6' (Falsa)</li>
+                  <li>'Lima es la capital de Perú' (Verdadera)</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Proposiciones Compuestas</h4>
+            <ul>
+              <li><span style='color: #e74c3c;'>Conectivos lógicos:</span> Palabras que unen proposiciones simples</li>
+              <li><span style='color: #3498db;'>Tipos según el conectivo:</span>
+                <ol>
+                  <li><strong>Conjunción (∧):</strong> 'p y q' - Es verdadera solo cuando ambas son verdaderas</li>
+                  <li><strong>Disyunción (∨):</strong> 'p o q' - Es falsa solo cuando ambas son falsas</li>
+                  <li><strong>Condicional (→):</strong> 'Si p entonces q' - Es falsa solo cuando p es verdadera y q falsa</li>
+                  <li><strong>Bicondicional (↔):</strong> 'p si y solo si q' - Es verdadera cuando ambas tienen el mismo valor</li>
+                  <li><strong>Negación (¬):</strong> 'No p' - Invierte el valor de verdad</li>
+                </ol>
+              </li>
+            </ul>
+          
+            <h4>Clasificación por Modalidad</h4>
+            <ul>
+              <li><strong>Proposiciones afirmativas:</strong> Afirman algo sobre un sujeto</li>
+              <li><strong>Proposiciones negativas:</strong> Niegan algo sobre un sujeto</li>
+              <li><strong>Proposiciones universales:</strong> Aplican a todos los elementos de un conjunto</li>
+              <li><strong>Proposiciones particulares:</strong> Aplican a algunos elementos de un conjunto</li>
+            </ul>
+          
+            <h4>Proposiciones según la Lógica Aristotélica</h4>
+            <ul>
+              <li><strong>Tipo A:</strong> Universal afirmativa - 'Todo S es P'</li>
+              <li><strong>Tipo E:</strong> Universal negativa - 'Ningún S es P'</li>
+              <li><strong>Tipo I:</strong> Particular afirmativa - 'Algún S es P'</li>
+              <li><strong>Tipo O:</strong> Particular negativa - 'Algún S no es P'</li>
+            </ul>
+          
+            <h4>Ejemplos de Proposiciones Compuestas</h4>
+            <ul>
+              <li><span style='color: #2ecc71;'>Conjunción:</span> 'Hace sol y hace calor'</li>
+              <li><span style='color: #2ecc71;'>Disyunción:</span> 'Estudiaré matemáticas o física'</li>
+              <li><span style='color: #2ecc71;'>Condicional:</span> 'Si llueve, entonces cancelaremos el picnic'</li>
+              <li><span style='color: #2ecc71;'>Bicondicional:</span> 'Un triángulo es equilátero si y solo si tiene tres lados iguales'</li>
+              <li><span style='color: #2ecc71;'>Negación:</span> 'No es cierto que la Tierra sea plana'</li>
+            </ul>
+          
+            <h4>Reglas para Identificar Proposiciones</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Verificar que sea una oración declarativa</span></li>
+              <li><span style='color: #e74c3c;'>Confirmar que tenga valor de verdad definido</span></li>
+              <li><span style='color: #e74c3c;'>Excluir preguntas, órdenes y exclamaciones</span></li>
+              <li><span style='color: #e74c3c;'>Identificar si es simple o compuesta</span></li>
+              <li><span style='color: #e74c3c;'>Determinar los conectivos lógicos presentes</span></li>
+            </ol>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Copi, I. M., & Cohen, C. (2011). <em>Introducción a la lógica</em>. Limusa.</li>
+              <li>Irving, M. (2009). <em>Lógica y teoría de conjuntos</em>. Universidad Nacional Autónoma de México.</li>
+              <li>Quine, W. V. O. (1981). <em>Métodos de lógica</em>. Ariel.</li>
+              <li>Suppes, P. (2012). <em>Introduction to Logic</em>. Dover Publications.</li>
+              <li>Tarski, A. (1995). <em>Introducción a la lógica y a la metodología de las ciencias deductivas</em>. Espasa-Calpe.</li>
+            </ul>
+          `)">2.2. Tipos de proposiciones <span class="emoji-small">✅</span>
+        </li>
+          
+        <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación aritmética en programación, incluyendo su sintaxis, operadores y uso en algoritmos.</p>
+        
+          <h4>Definición</h4>
+          <ul>
+            <li>Una proposición de asignación aritmética es una <span style='color: #e74c3c;'>instrucción que asigna un valor</span> a una variable mediante una expresión aritmética.</li>
+            <li>Es una de las <span style='color: #3498db;'>operaciones fundamentales</span> en la mayoría de los lenguajes de programación.</li>
+            <li>Sigue la estructura: <span style='color: #2ecc71;'>variable = expresión_aritmética</span></li>
+          </ul>
+        
+          <h4>Sintaxis Básica</h4>
+          <ul>
+            <li><strong>Operador de asignación:</strong> = (igual) en la mayoría de lenguajes</li>
+            <li><strong>Variable destino:</strong> Recibe el resultado de la expresión</li>
+            <li><strong>Expresión aritmética:</strong> Combinación de variables, constantes y operadores</li>
+            <li><strong>Terminador:</strong> ; (punto y coma) en lenguajes como C, Java, JavaScript</li>
+          </ul>
+        
+          <h4>Operadores Aritméticos</h4>
+          <ul>
+            <li><strong>Suma:</strong> + (ejemplo: x = a + b)</li>
+            <li><strong>Resta:</strong> - (ejemplo: y = c - d)</li>
+            <li><strong>Multiplicación:</strong> * (ejemplo: z = e * f)</li>
+            <li><strong>División:</strong> / (ejemplo: w = g / h)</li>
+            <li><strong>Módulo:</strong> % (resto de la división, ejemplo: r = i % j)</li>
+            <li><strong>Potenciación:</strong> ** o ^ (depende del lenguaje)</li>
+          </ul>
+        
+          <h4>Tipos de Asignación Aritmética</h4>
+          <ul>
+            <li><strong>Asignación simple:</strong> Variable = expresión</li>
+            <li><strong>Asignación compuesta:</strong> Combinación con operadores (+=, -=, *=, /=)</li>
+            <li><strong>Asignación múltiple:</strong> Varias variables en una sola instrucción</li>
+            <li><strong>Asignación con incremento/decremento:</strong> ++, -- (prefijo y sufijo)</li>
+          </ul>
+        
+          <h4>Reglas de Precedencia de Operadores</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Paréntesis</span> (siempre tienen la máxima prioridad)</li>
+            <li><span style='color: #e74c3c;'>Potenciación</span> (si está disponible)</li>
+            <li><span style='color: #e74c3c;'>Multiplicación, División y Módulo</span> (de izquierda a derecha)</li>
+            <li><span style='color: #e74c3c;'>Suma y Resta</span> (de izquierda a derecha)</li>
+            <li><span style='color: #e74c3c;'>Asignación</span> (generalmente la menor prioridad)</li>
+          </ol>
+        
+          <h4>Ejemplos en Diferentes Lenguajes</h4>
+          <ul>
+            <li><strong>Python:</strong>
+              <ul>
+                <li>x = 5 + 3 * 2  # x = 11</li>
+                <li>y = (5 + 3) * 2  # y = 16</li>
+                <li>z = 10 // 3  # división entera, z = 3</li>
+              </ul>
+            </li>
+            <li><strong>Java/C/JavaScript:</strong>
+              <ul>
+                <li>int a = 10 + 5 * 2;  // a = 20</li>
+                <li>double b = 15.0 / 4.0;  // b = 3.75</li>
+                <li>int c = 17 % 5;  // c = 2</li>
+              </ul>
+            </li>
+            <li><strong>Asignaciones compuestas:</strong>
+              <ul>
+                <li>total += precio  // equivalente a total = total + precio</li>
+                <li>contador -= 1  // equivalente a contador = contador - 1</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Errores Comunes y Consideraciones</h4>
+          <ul>
+            <li><span style='color: #e74c3c;'>División por cero:</span> Provoca error en tiempo de ejecución</li>
+            <li><span style='color: #3498db;'>Desbordamiento:</span> Cuando el resultado excede el rango de la variable</li>
+            <li><span style='color: #2ecc71;'>Precisión en números decimales:</span> Errores de redondeo en operaciones con float/double</li>
+            <li><span style='color: #f39c12;'>Variables no inicializadas:</span> Usar variables sin valor asignado previamente</li>
+          </ul>
+        
+          <h4>Aplicaciones Prácticas</h4>
+          <ul>
+            <li>Cálculos matemáticos en programas científicos</li>
+            <li>Procesamiento de datos numéricos</li>
+            <li>Contadores y acumuladores en bucles</li>
+            <li>Conversiones de unidades</li>
+            <li>Cálculos financieros y estadísticos</li>
+          </ul>
+        
+          <h4>Buenas Prácticas</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Usar paréntesis</span> para clarificar la precedencia</li>
+            <li><span style='color: #e74c3c;'>Inicializar variables</span> antes de usarlas</li>
+            <li><span style='color: #e74c3c;'>Elegir el tipo de dato apropiado</span> para el cálculo</li>
+            <li><span style='color: #e74c3c;'>Validar divisiones</span> para evitar división por cero</li>
+            <li><span style='color: #e74c3c;'>Comentar operaciones complejas</span> para mejor legibilidad</li>
+          </ol>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+            <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
+            <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+            <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
+            <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+          </ul>
+        `)">2.3. Proposiciones de asignación aritmética <span class="emoji-small">✅</span>
+        </li>
+        
+        <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación lógica en programación, incluyendo operadores booleanos y su aplicación en condiciones y toma de decisiones.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una proposición de asignación lógica es una <span style='color: #e74c3c;'>instrucción que asigna un valor booleano</span> (verdadero o falso) a una variable.</li>
+                <li>Se basa en la <span style='color: #3498db;'>evaluación de expresiones lógicas</span> que resultan en true o false.</li>
+                <li>Sigue la estructura: <span style='color: #2ecc71;'>variable = expresión_lógica</span></li>
+              </ul>
+            
+              <h4>Operadores Lógicos Fundamentales</h4>
+              <ul>
+                <li><strong>AND (∧):</strong> Verdadero solo si ambos operandos son verdaderos</li>
+                <li><strong>OR (∨):</strong> Falso solo si ambos operandos son falsos</li>
+                <li><strong>NOT (¬):</strong> Invierte el valor de verdad</li>
+                <li><strong>XOR (⊕):</strong> Verdadero si los operandos son diferentes</li>
+              </ul>
+            
+              <h4>Tablas de Verdad</h4>
+              <ul>
+                <li><strong>AND:</strong>
+                  <ul>
+                    <li>true AND true = true</li>
+                    <li>true AND false = false</li>
+                    <li>false AND true = false</li>
+                    <li>false AND false = false</li>
+                  </ul>
+                </li>
+                <li><strong>OR:</strong>
+                  <ul>
+                    <li>true OR true = true</li>
+                    <li>true OR false = true</li>
+                    <li>false OR true = true</li>
+                    <li>false OR false = false</li>
+                  </ul>
+                </li>
+                <li><strong>NOT:</strong>
+                  <ul>
+                    <li>NOT true = false</li>
+                    <li>NOT false = true</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Operadores Relacionales en Asignaciones Lógicas</h4>
+              <ul>
+                <li><strong>Igualdad:</strong> == o === (depende del lenguaje)</li>
+                <li><strong>Desigualdad:</strong> != o !==</li>
+                <li><strong>Mayor que:</strong> ></li>
+                <li><strong>Menor que:</strong> <</li>
+                <li><strong>Mayor o igual que:</strong> >=</li>
+                <li><strong>Menor o igual que:</strong> <=</li>
+              </ul>
+            
+              <h4>Tipos de Asignaciones Lógicas</h4>
+              <ul>
+                <li><strong>Asignación directa:</strong> variable = true/false</li>
+                <li><strong>Asignación por comparación:</strong> variable = (a > b)</li>
+                <li><strong>Asignación con operadores lógicos:</strong> variable = (x && y) || z</li>
+                <li><strong>Asignación condicional:</strong> variable = (condición) ? valor1 : valor2</li>
+              </ul>
+            
+              <h4>Precedencia de Operadores Lógicos</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Paréntesis</span> (máxima prioridad)</li>
+                <li><span style='color: #e74c3c;'>Operadores relacionales</span> (>, <, >=, <=, ==, !=)</li>
+                <li><span style='color: #e74c3c;'>NOT</span> (¬)</li>
+                <li><span style='color: #e74c3c;'>AND</span> (∧)</li>
+                <li><span style='color: #e74c3c;'>OR</span> (∨)</li>
+                <li><span style='color: #e74c3c;'>Asignación</span> (=)</li>
+              </ol>
+            
+              <h4>Ejemplos en Diferentes Lenguajes</h4>
+              <ul>
+                <li><strong>Python:</strong>
+                  <ul>
+                    <li>es_mayor = edad >= 18</li>
+                    <li>es_valido = (nombre != '') and (edad > 0)</li>
+                    <li>es_par = (numero % 2 == 0)</li>
+                  </ul>
+                </li>
+                <li><strong>Java/JavaScript:</strong>
+                  <ul>
+                    <li>boolean aprobado = nota >= 6.0;</li>
+                    <li>boolean puedeVotar = (edad >= 18) && (esCiudadano == true);</li>
+                    <li>boolean esTriangulo = (a + b > c) && (a + c > b) && (b + c > a);</li>
+                  </ul>
+                </li>
+                <li><strong>Asignaciones compuestas:</strong>
+                  <ul>
+                    <li>estado = !estado  // invierte el valor booleano</li>
+                    <li>activado = activado || nuevo_estado  // se activa si alguno es true</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Leyes de la Lógica Booleana</h4>
+              <ul>
+                <li><strong>Ley de identidad:</strong> A AND true = A, A OR false = A</li>
+                <li><strong>Ley de dominación:</strong> A AND false = false, A OR true = true</li>
+                <li><strong>Ley de idempotencia:</strong> A AND A = A, A OR A = A</li>
+                <li><strong>Ley de complemento:</strong> A AND NOT A = false, A OR NOT A = true</li>
+                <li><strong>Leyes de De Morgan:</strong> NOT (A AND B) = NOT A OR NOT B</li>
+              </ul>
+            
+              <h4>Aplicaciones Prácticas</h4>
+              <ul>
+                <li>Validación de datos de entrada</li>
+                <li>Control de flujo en condicionales (if, while)</li>
+                <li>Sistemas de reglas y toma de decisiones</li>
+                <li>Circuitos lógicos y electrónica digital</li>
+                <li>Bases de datos y consultas booleanas</li>
+                <li>Inteligencia artificial y sistemas expertos</li>
+              </ul>
+            
+              <h4>Consideraciones Importantes</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Evaluación de cortocircuito:</span> Algunos lenguajes evalúan solo lo necesario</li>
+                <li><span style='color: #3498db;'>Conversión automática:</span> Cómo se convierten otros tipos a booleanos</li>
+                <li><span style='color: #2ecc71;'>Precisión en comparaciones:</span> Cuidado con comparaciones de punto flotante</li>
+                <li><span style='color: #f39c12;'>Legibilidad:</span> Usar paréntesis para clarificar expresiones complejas</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kleene, S. C. (2002). <em>Mathematical Logic</em>. Dover Publications.</li>
+                <li>Mendelson, E. (2015). <em>Introduction to Mathematical Logic</em>. Chapman and Hall.</li>
+                <li>Boole, G. (1854). <em>An Investigation of the Laws of Thought</em>. Macmillan.</li>
+                <li>Floyd, T. L. (2015). <em>Digital Fundamentals</em>. Pearson Education.</li>
+                <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
+              </ul>
+            `)">2.4. Proposiciones de asignación lógica <span class="emoji-small">✅</span>
+        </li>
+
+        <li onclick="abrirModal('2.5. Proposición de flujo', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender las proposiciones de flujo de control que permiten alterar la secuencia de ejecución de un programa mediante estructuras condicionales e iterativas.</p>
+        
+          <h4>Definición</h4>
+          <ul>
+            <li>Una proposición de flujo es una <span style='color: #e74c3c;'>instrucción que controla el orden de ejecución</span> de las sentencias en un programa.</li>
+            <li>Permite <span style='color: #3498db;'>alterar la secuencia lineal</span> de ejecución basándose en condiciones o repeticiones.</li>
+            <li>Es fundamental para implementar <span style='color: #2ecc71;'>lógica de decisión y bucles</span> en programación.</li>
+          </ul>
+        
+          <h4>Tipos de Proposiciones de Flujo</h4>
+          <ul>
+            <li><strong>Estructuras condicionales:</strong> Permiten ejecutar código basado en condiciones</li>
+            <li><strong>Estructuras iterativas:</strong> Permiten repetir código múltiples veces</li>
+            <li><strong>Estructuras de salto:</strong> Permiten transferir el control a otra parte del código</li>
+            <li><strong>Estructuras de selección múltiple:</strong> Para casos con múltiples alternativas</li>
+          </ul>
+        
+          <h4>Estructuras Condicionales</h4>
+          <ul>
+            <li><strong>IF simple:</strong> Ejecuta código si la condición es verdadera
+              <ul>
+                <li>if (condición) { código }</li>
+              </ul>
+            </li>
+            <li><strong>IF-ELSE:</strong> Ejecuta un bloque u otro según la condición
+              <ul>
+                <li>if (condición) { código1 } else { código2 }</li>
+              </ul>
+            </li>
+            <li><strong>IF-ELSE IF:</strong> Múltiples condiciones en cascada
+              <ul>
+                <li>if (cond1) { } else if (cond2) { } else { }</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Estructuras Iterativas (Bucles)</h4>
+          <ul>
+            <li><strong>WHILE:</strong> Repite mientras la condición sea verdadera
+              <ul>
+                <li>while (condición) { código }</li>
+              </ul>
+            </li>
+            <li><strong>DO-WHILE:</strong> Ejecuta al menos una vez y luego repite mientras la condición sea verdadera
+              <ul>
+                <li>do { código } while (condición)</li>
+              </ul>
+            </li>
+            <li><strong>FOR:</strong> Bucle con inicialización, condición e incremento
+              <ul>
+                <li>for (inicialización; condición; incremento) { código }</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Estructuras de Selección Múltiple</h4>
+          <ul>
+            <li><strong>SWITCH-CASE:</strong> Selecciona entre múltiples casos basados en un valor
+              <ul>
+                <li>switch (variable) { case valor1: código; break; case valor2: código; break; default: código; }</li>
+              </ul>
+            </li>
+            <li><strong>Match (en lenguajes modernos):</strong> Pattern matching para selección avanzada</li>
+          </ul>
+        
+          <h4>Instrucciones de Control de Flujo</h4>
+          <ul>
+            <li><strong>BREAK:</strong> Termina la ejecución de un bucle o switch</li>
+            <li><strong>CONTINUE:</strong> Salta a la siguiente iteración de un bucle</li>
+            <li><strong>RETURN:</strong> Retorna un valor y termina la ejecución de una función</li>
+            <li><strong>GOTO:</strong> Salto incondicional (considerado mala práctica en programación moderna)</li>
+          </ul>
+        
+          <h4>Flujo de Ejecución Paso a Paso</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Evaluación de condición</span> en estructuras condicionales</li>
+            <li><span style='color: #e74c3c;'>Ejecución selectiva</span> del bloque correspondiente</li>
+            <li><span style='color: #e74c3c;'>Inicialización y verificación</span> en bucles</li>
+            <li><span style='color: #e74c3c;'>Repetición controlada</span> con condición de terminación</li>
+            <li><span style='color: #e74c3c;'>Salida del flujo controlado</span> y continuación del programa</li>
+          </ol>
+        
+          <h4>Ejemplos Prácticos</h4>
+          <ul>
+            <li><strong>Condicional IF:</strong>
+              <ul>
+                <li>if (edad >= 18) { console.log('Mayor de edad'); } else { console.log('Menor de edad'); }</li>
+              </ul>
+            </li>
+            <li><strong>Bucle FOR:</strong>
+              <ul>
+                <li>for (let i = 0; i < 10; i++) { console.log('Iteración: ' + i); }</li>
+              </ul>
+            </li>
+            <li><strong>Bucle WHILE:</strong>
+              <ul>
+                <li>while (contador < 5) { console.log(contador); contador++; }</li>
+              </ul>
+            </li>
+            <li><strong>SWITCH-CASE:</strong>
+              <ul>
+                <li>switch (diaSemana) { case 1: console.log('Lunes'); break; case 2: console.log('Martes'); break; default: console.log('Otro día'); }</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Anidamiento de Estructuras de Flujo</h4>
+          <ul>
+            <li>Los bucles pueden contener condicionales y viceversa</li>
+            <li>Los condicionales pueden anidarse para lógica compleja</li>
+            <li>Los bucles pueden anidarse para procesar estructuras multidimensionales</li>
+            <li>Es importante mantener la legibilidad del código anidado</li>
+          </ul>
+        
+          <h4>Buenas Prácticas en el Control de Flujo</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Evitar bucles infinitos</span> asegurando condiciones de salida</li>
+            <li><span style='color: #e74c3c;'>Mantener la legibilidad</span> con indentación consistente</li>
+            <li><span style='color: #e74c3c;'>Usar break y continue</span> con moderación</li>
+            <li><span style='color: #e74c3c;'>Preferir estructuras claras</span> sobre código complejo anidado</li>
+            <li><span style='color: #e74c3c;'>Validar condiciones</span> antes de entrar en bucles</li>
+          </ol>
+        
+          <h4>Aplicaciones en Algoritmos</h4>
+          <ul>
+            <li>Búsqueda y filtrado de datos</li>
+            <li>Validación y procesamiento de entradas</li>
+            <li>Implementación de menús y interfaces</li>
+            <li>Procesamiento por lotes y iteraciones</li>
+            <li>Control de estados y máquinas de estado</li>
+          </ul>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+            <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+            <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
+            <li>Gamma, E., et al. (1994). <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>. Addison-Wesley.</li>
+            <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
+          </ul>
+        `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
+        </li>
+        
+        <li onclick="abrirModal('2.6. Diagramas', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender los diferentes tipos de diagramas utilizados en programación y análisis de sistemas para representar visualmente procesos, estructuras y flujos de información.</p>
+          
+            <h4>Definición</h4>
+            <ul>
+              <li>Un diagrama es una <span style='color: #e74c3c;'>representación gráfica y simbólica</span> que muestra las relaciones entre diferentes componentes de un sistema.</li>
+              <li>Sirve como <span style='color: #3498db;'>herramienta de comunicación visual</span> para documentar, diseñar y analizar procesos.</li>
+              <li>Facilita la <span style='color: #2ecc71;'>comprensión de sistemas complejos</span> mediante abstracción y simplificación.</li>
+            </ul>
+          
+            <h4>Tipos de Diagramas en Programación</h4>
+            <ul>
+              <li><strong>Diagramas de flujo (Flowcharts):</strong> Representan algoritmos y procesos</li>
+              <li><strong>Diagramas UML (Unified Modeling Language):</strong> Para modelado de software orientado a objetos</li>
+              <li><strong>Diagramas de clases:</strong> Muestran la estructura estática del sistema</li>
+              <li><strong>Diagramas de secuencia:</strong> Representan interacciones temporales entre objetos</li>
+              <li><strong>Diagramas de casos de uso:</strong> Describen funcionalidades desde la perspectiva del usuario</li>
+            </ul>
+          
+            <h4>Símbolos de Diagramas de Flujo</h4>
+            <ul>
+              <li><strong>Óvalo:</strong> Inicio/Final del proceso</li>
+              <li><strong>Rectángulo:</strong> Proceso o instrucción</li>
+              <li><strong>Rombo:</strong> Decisión o condición</li>
+              <li><strong>Paralelogramo:</strong> Entrada/Salida de datos</li>
+              <li><strong>Flechas:</strong> Dirección del flujo</li>
+              <li><strong>Círculo:</strong> Conector entre páginas</li>
+            </ul>
+          
+            <h4>Diagramas UML Principales</h4>
+            <ul>
+              <li><strong>Diagrama de clases:</strong> Clases, atributos, métodos y relaciones</li>
+              <li><strong>Diagrama de objetos:</strong> Instancias específicas en un momento dado</li>
+              <li><strong>Diagrama de estados:</strong> Comportamiento de objetos en respuesta a eventos</li>
+              <li><strong>Diagrama de actividades:</strong> Flujo de trabajo entre actividades</li>
+              <li><strong>Diagrama de componentes:</strong> Organización física del sistema</li>
+              <li><strong>Diagrama de despliegue:</strong> Infraestructura hardware del sistema</li>
+            </ul>
+          
+            <h4>Reglas para Crear Diagramas Efectivos</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Definir claramente el propósito</span> del diagrama</li>
+              <li><span style='color: #e74c3c;'>Mantener la simplicidad</span> y evitar el desorden visual</li>
+              <li><span style='color: #e74c3c;'>Usar símbolos estándar</span> reconocidos universalmente</li>
+              <li><span style='color: #e74c3c;'>Asegurar la consistencia</span> en tamaños y estilos</li>
+              <li><span style='color: #e74c3c;'>Incluir leyendas explicativas</span> cuando sea necesario</li>
+            </ol>
+          
+            <h4>Herramientas para Crear Diagramas</h4>
+            <ul>
+              <li><strong>Software especializado:</strong> Microsoft Visio, Lucidchart, Draw.io</li>
+              <li><strong>Herramientas UML:</strong> Enterprise Architect, StarUML, Visual Paradigm</li>
+              <li><strong>Aplicaciones online:</strong> Diagrams.net, Creately, Gliffy</li>
+              <li><strong>Software libre:</strong> Dia, yEd Graph Editor</li>
+              <li><strong>Integradas en IDEs:</strong> PlantUML, herramientas UML en Eclipse/IntelliJ</li>
+            </ul>
+          
+            <h4>Ejemplos de Aplicación</h4>
+            <ul>
+              <li><strong>Diagrama de flujo para login:</strong>
+                <ul>
+                  <li>Inicio → Ingresar usuario/contraseña → Validar → ¿Válido? → Sí: Acceder / No: Mostrar error</li>
+                </ul>
+              </li>
+              <li><strong>Diagrama de clases para sistema bancario:</strong>
+                <ul>
+                  <li>Clases: Cuenta, Cliente, Transacción, Banco</li>
+                  <li>Relaciones: Herencia, Asociación, Composición</li>
+                </ul>
+              </li>
+              <li><strong>Diagrama de secuencia para compra online:</strong>
+                <ul>
+                  <li>Cliente → Sistema → Base de datos → Pasarela de pago → Confirmación</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Ventajas del Uso de Diagramas</h4>
+            <ul>
+              <li><span style='color: #3498db;'>Comunicación clara</span> entre miembros del equipo</li>
+              <li><span style='color: #3498db;'>Detección temprana</span> de errores en el diseño</li>
+              <li><span style='color: #3498db;'>Documentación visual</span> fácil de entender</li>
+              <li><span style='color: #3498db;'>Análisis de procesos</span> y optimización</li>
+              <li><span style='color: #3498db;'>Facilita el mantenimiento</span> del sistema</li>
+            </ul>
+          
+            <h4>Mejores Prácticas en Diagramación</h4>
+            <ul>
+              <li><strong>Flujo consistente:</strong> Mantener dirección uniforme (generalmente de arriba hacia abajo)</li>
+              <li><strong>Etiquetado claro:</strong> Usar nombres descriptivos para elementos</li>
+              <li><strong>Agrupación lógica:</strong> Organizar elementos relacionados cercanos</li>
+              <li><strong>Evitar cruces:</strong> Minimizar el entrecruzamiento de líneas</li>
+              <li><strong>Versiones:</strong> Mantener histórico de cambios importantes</li>
+            </ul>
+          
+            <h4>Diagramas Específicos por Área</h4>
+            <ul>
+              <li><strong>Base de datos:</strong> Diagramas Entidad-Relación (ER)</li>
+              <li><strong>Redes:</strong> Diagramas de topología de red</li>
+              <li><strong>Procesos empresariales:</strong> BPMN (Business Process Model and Notation)</li>
+              <li><strong>Arquitectura:</strong> Diagramas de arquitectura de software</li>
+              <li><strong>Datos:</strong> Diagramas de flujo de datos (DFD)</li>
+            </ul>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Fowler, M. (2004). <em>UML Distilled: A Brief Guide to the Standard Object Modeling Language</em>. Addison-Wesley.</li>
+              <li>Booch, G., Rumbaugh, J., & Jacobson, I. (2005). <em>The Unified Modeling Language User Guide</em>. Addison-Wesley.</li>
+              <li>Yourdon, E. (2006). <em>Just Enough Structured Analysis</em>. Yourdon Press.</li>
+              <li>Harel, D. (1987). <em>Statecharts: A Visual Formalism for Complex Systems</em>. Science of Computer Programming.</li>
+              <li>Object Management Group. (2017). <em>Unified Modeling Language Specification</em>. OMG.</li>
+            </ul>
+          `)">2.6. Diagramas <span class="emoji-small">✅</span>
+        </li>        
+      </ul>
+    </div>
+    
+    <div class="tema-card">
+      <div class="tema-num">TEMA 3</div>
+      <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('3.1. Proposición de entrada', `
+          <hr><br>
+          <p><strong>Objetivo:</strong> Comprender las proposiciones de entrada que permiten capturar datos del usuario o de fuentes externas para su procesamiento en programas.</p>
+        
+          <h4>Definición</h4>
+          <ul>
+            <li>Una proposición de entrada es una <span style='color: #e74c3c;'>instrucción que permite leer datos</span> desde dispositivos de entrada hacia la memoria del programa.</li>
+            <li>Facilita la <span style='color: #3498db;'>interacción usuario-programa</span> mediante la captura de información externa.</li>
+            <li>Es esencial para crear programas <span style='color: #2ecc71;'>dinámicos y interactivos</span> que respondan a entradas variables.</li>
+          </ul>
+        
+          <h4>Dispositivos de Entrada Comunes</h4>
+          <ul>
+            <li><strong>Teclado:</strong> Entrada de texto y comandos</li>
+            <li><strong>Mouse:</strong> Entrada de coordenadas y clics</li>
+            <li><strong>Archivos:</strong> Lectura de datos desde almacenamiento</li>
+            <li><strong>Red:</strong> Recepción de datos desde servidores</li>
+            <li><strong>Sensores:</strong> Captura de datos del entorno físico</li>
+            <li><strong>Micrófono:</strong> Entrada de audio</li>
+          </ul>
+        
+          <h4>Funciones de Entrada por Lenguaje</h4>
+          <ul>
+            <li><strong>Python:</strong>
+              <ul>
+                <li>input(): Lee una línea de texto desde teclado</li>
+                <li>open().read(): Lee datos desde archivos</li>
+              </ul>
+            </li>
+            <li><strong>Java:</strong>
+              <ul>
+                <li>Scanner.nextLine(): Lee entrada del usuario</li>
+                <li>System.console().readLine(): Entrada desde consola</li>
+              </ul>
+            </li>
+            <li><strong>C++:</strong>
+              <ul>
+                <li>cin >> variable: Entrada estándar</li>
+                <li>getline(cin, variable): Lee línea completa</li>
+              </ul>
+            </li>
+            <li><strong>JavaScript:</strong>
+              <ul>
+                <li>prompt(): Cuadro de diálogo para entrada</li>
+                <li>addEventListener(): Captura eventos de entrada</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Tipos de Datos de Entrada</h4>
+          <ul>
+            <li><strong>Texto:</strong> Cadenas de caracteres (strings)</li>
+            <li><strong>Numéricos:</strong> Enteros, decimales, flotantes</li>
+            <li><strong>Booleanos:</strong> Valores verdadero/falso</li>
+            <li><strong>Fechas y horas:</strong> Información temporal</li>
+            <li><strong>Archivos binarios:</strong> Imágenes, documentos, etc.</li>
+            <li><strong>Estructurados:</strong> JSON, XML, CSV</li>
+          </ul>
+        
+          <h4>Proceso de Captura de Entrada</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Solicitud de entrada</span> al usuario o sistema</li>
+            <li><span style='color: #e74c3c;'>Espera y recepción</span> de los datos</li>
+            <li><span style='color: #e74c3c;'>Validación y verificación</span> de la entrada</li>
+            <li><span style='color: #e74c3c;'>Conversión de tipo</span> si es necesario</li>
+            <li><span style='color: #e74c3c;'>Almacenamiento en variables</span> para su uso</li>
+          </ol>
+        
+          <h4>Validación de Entrada</h4>
+          <ul>
+            <li><strong>Verificación de tipo:</strong> Confirmar que los datos tienen el formato esperado</li>
+            <li><strong>Rangos permitidos:</strong> Validar que los valores estén dentro de límites aceptables</li>
+            <li><strong>Formato específico:</strong> Verificar patrones como emails, teléfonos, etc.</li>
+            <li><strong>Entrada obligatoria:</strong> Asegurar que se proporcionen datos requeridos</li>
+            <li><strong>Sanitización:</strong> Eliminar caracteres peligrosos o maliciosos</li>
+          </ul>
+        
+          <h4>Ejemplos Prácticos</h4>
+          <ul>
+            <li><strong>Entrada básica en Python:</strong>
+              <ul>
+                <li>nombre = input('Ingrese su nombre: ')</li>
+                <li>edad = int(input('Ingrese su edad: '))</li>
+              </ul>
+            </li>
+            <li><strong>Entrada con validación en Java:</strong>
+              <ul>
+                <li>Scanner sc = new Scanner(System.in);</li>
+                <li>System.out.print('Ingrese número: ');</li>
+                <li>while (!sc.hasNextInt()) { sc.next(); }</li>
+                <li>int numero = sc.nextInt();</li>
+              </ul>
+            </li>
+            <li><strong>Entrada desde archivo:</strong>
+              <ul>
+                <li>with open('datos.txt', 'r') as archivo:</li>
+                <li>contenido = archivo.read()</li>
+              </ul>
+            </li>
+          </ul>
+        
+          <h4>Manejo de Errores en Entrada</h4>
+          <ul>
+            <li><strong>Excepciones por tipo incorrecto:</strong> Capturar errores de conversión</li>
+            <li><strong>Valores fuera de rango:</strong> Mensajes de error específicos</li>
+            <li><strong>Entrada vacía o nula:</strong> Manejo de casos especiales</li>
+            <li><strong>Archivos no encontrados:</strong> Verificación de existencia</li>
+            <li><strong>Timeouts:</strong> Límites de tiempo para respuesta</li>
+          </ul>
+        
+          <h4>Buenas Prácticas en Entrada de Datos</h4>
+          <ol>
+            <li><span style='color: #e74c3c;'>Siempre validar la entrada</span> antes de procesarla</li>
+            <li><span style='color: #e74c3c;'>Proporcionar mensajes claros</span> al solicitar datos</li>
+            <li><span style='color: #e74c3c;'>Usar tipos de datos apropiados</span> para cada entrada</li>
+            <li><span style='color: #e74c3c;'>Manejar excepciones adecuadamente</span></li>
+            <li><span style='color: #e74c3c;'>Limitar y sanitizar entradas</span> por seguridad</li>
+          </ol>
+        
+          <h4>Aplicaciones de Entrada de Datos</h4>
+          <ul>
+            <li>Formularios web y aplicaciones de escritorio</li>
+            <li>Sistemas de autenticación y login</li>
+            <li>Procesamiento de archivos y bases de datos</li>
+            <li>Interfaces de usuario gráficas (GUI)</li>
+            <li>Sistemas de control y monitoreo</li>
+            <li>Aplicaciones móviles con entrada táctil</li>
+          </ul>
+        
+          <h4>Consideraciones de Seguridad</h4>
+          <ul>
+            <li><span style='color: #e74c3c;'>Prevención de inyección SQL</span> en bases de datos</li>
+            <li><span style='color: #3498db;'>Validación contra XSS</span> (Cross-Site Scripting)</li>
+            <li><span style='color: #2ecc71;'>Sanitización de entradas HTML</span></li>
+            <li><span style='color: #f39c12;'>Límites de tamaño</span> para prevenir desbordamientos</li>
+            <li><span style='color: #9b59b6;'>Autenticación y autorización</span> de fuentes de entrada</li>
+          </ul>
+        
+          <h4>Fuentes Bibliográficas</h4>
+          <ul>
+            <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+            <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
+            <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
+            <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+            <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+          </ul>
+        `)">3.1. Proposición de entrada <span class="emoji-small">✅</span>
+        </li>
+  
+          <li onclick="abrirModal('3.2. Proposición de salida', `
+            <hr><br>
+            <p><strong>Objetivo:</strong> Comprender las proposiciones de salida que permiten mostrar resultados, información y datos desde el programa hacia el usuario o dispositivos externos.</p>
+          
+            <h4>Definición</h4>
+            <ul>
+              <li>Una proposición de salida es una <span style='color: #e74c3c;'>instrucción que envía datos</span> desde el programa hacia dispositivos de salida o almacenamiento.</li>
+              <li>Permite <span style='color: #3498db;'>comunicar resultados e información</span> generada por el programa al usuario o a otros sistemas.</li>
+              <li>Es fundamental para <span style='color: #2ecc71;'>visualizar y persistir</span> los resultados del procesamiento.</li>
+            </ul>
+          
+            <h4>Dispositivos de Salida Comunes</h4>
+            <ul>
+              <li><strong>Pantalla/Monitor:</strong> Visualización de texto e interfaces gráficas</li>
+              <li><strong>Impresora:</strong> Salida física en papel</li>
+              <li><strong>Archivos:</strong> Almacenamiento permanente de datos</li>
+              <li><strong>Red:</strong> Envío de datos a servidores o otros dispositivos</li>
+              <li><strong>Altavoces:</strong> Salida de audio y sonidos</li>
+              <li><strong>Puertos serie/paralelo:</strong> Comunicación con dispositivos externos</li>
+            </ul>
+          
+            <h4>Funciones de Salida por Lenguaje</h4>
+            <ul>
+              <li><strong>Python:</strong>
+                <ul>
+                  <li>print(): Muestra texto en consola</li>
+                  <li>open().write(): Escribe en archivos</li>
+                  <li>sys.stdout.write(): Salida estándar</li>
+                </ul>
+              </li>
+              <li><strong>Java:</strong>
+                <ul>
+                  <li>System.out.println(): Imprime línea en consola</li>
+                  <li>System.out.print(): Imprime sin salto de línea</li>
+                  <li>PrintWriter: Para escritura en archivos</li>
+                </ul>
+              </li>
+              <li><strong>C++:</strong>
+                <ul>
+                  <li>cout << variable: Salida estándar</li>
+                  <li>printf(): Salida formateada</li>
+                  <li>ofstream: Escritura en archivos</li>
+                </ul>
+              </li>
+              <li><strong>JavaScript:</strong>
+                <ul>
+                  <li>console.log(): Salida a consola del navegador</li>
+                  <li>document.write(): Escribe en documento HTML</li>
+                  <li>alert(): Muestra cuadro de diálogo</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Formatos de Salida</h4>
+            <ul>
+              <li><strong>Texto plano:</strong> Salida simple sin formato</li>
+              <li><strong>Texto formateado:</strong> Con especificadores de formato</li>
+              <li><strong>HTML/XML:</strong> Para aplicaciones web</li>
+              <li><strong>JSON/CSV:</strong> Intercambio de datos estructurados</li>
+              <li><strong>Gráficos/Imágenes:</strong> Visualización gráfica de datos</li>
+              <li><strong>Binario:</strong> Datos en formato crudo</li>
+            </ul>
+          
+            <h4>Proceso de Generación de Salida</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Preparación de datos</span> a mostrar o almacenar</li>
+              <li><span style='color: #e74c3c;'>Formateo y estructuración</span> según el destino</li>
+              <li><span style='color: #e74c3c;'>Selección del dispositivo</span> de salida apropiado</li>
+              <li><span style='color: #e74c3c;'>Transmisión o escritura</span> de los datos</li>
+              <li><span style='color: #e74c3c;'>Verificación de éxito</span> de la operación</li>
+            </ol>
+          
+            <h4>Especificadores de Formato Comunes</h4>
+            <ul>
+              <li><strong>Enteros:</strong> %d (decimal), %x (hexadecimal), %o (octal)</li>
+              <li><strong>Decimales:</strong> %f (flotante), %.2f (2 decimales)</li>
+              <li><strong>Cadenas:</strong> %s (string)</li>
+              <li><strong>Caracteres:</strong> %c (char)</li>
+              <li><strong>Booleanos:</strong> Representación como true/false o 1/0</li>
+              <li><strong>Fechas:</strong> Formatos específicos (dd/mm/aaaa, etc.)</li>
+            </ul>
+          
+            <h4>Ejemplos Prácticos</h4>
+            <ul>
+              <li><strong>Salida básica en Python:</strong>
+                <ul>
+                  <li>print('Hola, mundo!')</li>
+                  <li>print(f'El resultado es: {resultado}')</li>
+                  <li>print('Nombre:', nombre, 'Edad:', edad)</li>
+                </ul>
+              </li>
+              <li><strong>Salida formateada en C++:</strong>
+                <ul>
+                  <li>cout << 'Valor: ' << valor << endl;</li>
+                  <li>printf('Promedio: %.2f', promedio);</li>
+                </ul>
+              </li>
+              <li><strong>Escritura en archivo:</strong>
+                <ul>
+                  <li>with open('reporte.txt', 'w') as archivo:</li>
+                  <li>archivo.write('Datos del sistema\n')</li>
+                </ul>
+              </li>
+              <li><strong>Salida HTML en JavaScript:</strong>
+                <ul>
+                  <li>document.getElementById('resultado').innerHTML = mensaje;</li>
+                </ul>
+              </li>
+            </ul>
+          
+            <h4>Manejo de Errores en Salida</h4>
+            <ul>
+              <li><strong>Dispositivo no disponible:</strong> Verificar conectividad</li>
+              <li><strong>Espacio insuficiente:</strong> En disco o memoria</li>
+              <li><strong>Permisos denegados:</strong> Para escritura en archivos</li>
+              <li><strong>Formato incompatible:</strong> Con el dispositivo de destino</li>
+              <li><strong>Timeout:</strong> En operaciones de red</li>
+            </ul>
+          
+            <h4>Buenas Prácticas en Salida de Datos</h4>
+            <ol>
+              <li><span style='color: #e74c3c;'>Formatear la salida para legibilidad</span></li>
+              <li><span style='color: #e74c3c;'>Incluir mensajes informativos y claros</span></li>
+              <li><span style='color: #e74c3c;'>Manejar adecuadamente los caracteres especiales</span></li>
+              <li><span style='color: #e74c3c;'>Verificar permisos y disponibilidad</span> de dispositivos</li>
+              <li><span style='color: #e74c3c;'>Implementar logs y registro de actividades</span></li>
+            </ol>
+          
+            <h4>Aplicaciones de Salida de Datos</h4>
+            <ul>
+              <li>Generación de reportes y documentos</li>
+              <li>Interfaces de usuario y dashboards</li>
+              <li>Exportación de datos a diferentes formatos</li>
+              <li>Comunicación entre sistemas y APIs</li>
+              <li>Registro de logs y auditoría</li>
+              <li>Visualización gráfica de información</li>
+            </ul>
+          
+            <h4>Consideraciones de Rendimiento</h4>
+            <ul>
+              <li><span style='color: #e74c3c;'>Bufferización:</span> Optimización de operaciones I/O</li>
+              <li><span style='color: #3498db;'>Asincronía:</span> No bloquear el programa durante salidas lentas</li>
+              <li><span style='color: #2ecc71;'>Compresión:</span> Reducción del tamaño de datos de salida</li>
+              <li><span style='color: #f39c12;'>Caché:</span> Almacenamiento temporal para salidas frecuentes</li>
+              <li><span style='color: #9b59b6;'>Streaming:</span> Transmisión continua de datos</li>
+            </ul>
+          
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+              <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
+              <li>Stroustrup, B. (2013). <em>The C++ Programming Language</em>. Addison-Wesley.</li>
+              <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+              <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
+            </ul>
+          `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
+        </li>
+
+        <li onclick="abrirModal('3.3. Proposición de control', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de control que permiten dirigir el flujo de ejecución de un programa mediante estructuras de decisión y bucles.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una proposición de control es una <span style='color: #e74c3c;'>instrucción que determina el orden de ejecución</span> de otras instrucciones en un programa.</li>
+                <li>Permite <span style='color: #3498db;'>alterar el flujo secuencial</span> basándose en condiciones o repeticiones.</li>
+                <li>Es esencial para implementar <span style='color: #2ecc71;'>lógica de programación compleja</span> y algoritmos no lineales.</li>
+              </ul>
+            
+              <h4>Tipos de Proposiciones de Control</h4>
+              <ul>
+                <li><strong>Estructuras condicionales:</strong> if, if-else, if-else if, switch-case</li>
+                <li><strong>Estructuras iterativas:</strong> for, while, do-while, for-each</li>
+                <li><strong>Estructuras de salto:</strong> break, continue, return, goto</li>
+                <li><strong>Manejo de excepciones:</strong> try-catch, throw, finally</li>
+              </ul>
+            
+              <h4>Estructuras Condicionales</h4>
+              <ul>
+                <li><strong>IF simple:</strong> Ejecuta código si condición es verdadera
+                  <ul>
+                    <li>if (condición) { /* código */ }</li>
+                  </ul>
+                </li>
+                <li><strong>IF-ELSE:</strong> Ejecuta un bloque u otro según condición
+                  <ul>
+                    <li>if (condición) { /* código A */ } else { /* código B */ }</li>
+                  </ul>
+                </li>
+                <li><strong>IF-ELSE IF:</strong> Múltiples condiciones en cascada
+                  <ul>
+                    <li>if (cond1) { } else if (cond2) { } else { }</li>
+                  </ul>
+                </li>
+                <li><strong>SWITCH-CASE:</strong> Selección múltiple basada en valor
+                  <ul>
+                    <li>switch (variable) { case valor1: break; case valor2: break; default: }</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Estructuras Iterativas (Bucles)</h4>
+              <ul>
+                <li><strong>FOR:</strong> Bucle con inicialización, condición e incremento
+                  <ul>
+                    <li>for (int i=0; i<10; i++) { /* código */ }</li>
+                  </ul>
+                </li>
+                <li><strong>WHILE:</strong> Repite mientras condición sea verdadera
+                  <ul>
+                    <li>while (condición) { /* código */ }</li>
+                  </ul>
+                </li>
+                <li><strong>DO-WHILE:</strong> Ejecuta al menos una vez antes de verificar condición
+                  <ul>
+                    <li>do { /* código */ } while (condición);</li>
+                  </ul>
+                </li>
+                <li><strong>FOR-EACH:</strong> Itera sobre elementos de una colección
+                  <ul>
+                    <li>for (elemento : colección) { /* código */ }</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Instrucciones de Control de Flujo</h4>
+              <ul>
+                <li><strong>BREAK:</strong> Termina la ejecución de un bucle o switch</li>
+                <li><strong>CONTINUE:</strong> Salta a la siguiente iteración de un bucle</li>
+                <li><strong>RETURN:</strong> Retorna valor y termina ejecución de función</li>
+                <li><strong>GOTO:</strong> Salto incondicional (evitar en programación moderna)</li>
+                <li><strong>THROW:</strong> Lanza una excepción para manejo de errores</li>
+              </ul>
+            
+              <h4>Anidamiento de Estructuras de Control</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Bucles dentro de condicionales</span> y viceversa</li>
+                <li><span style='color: #e74c3c;'>Múltiples niveles de anidamiento</span> para lógica compleja</li>
+                <li><span style='color: #e74c3c;'>Estructuras try-catch</span> alrededor de código propenso a errores</li>
+                <li><span style='color: #e74c3c;'>Switch dentro de bucles</span> para procesamiento por casos</li>
+                <li><span style='color: #e74c3c;'>Condicionales dentro de funciones</span> para control de retorno</li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos</h4>
+              <ul>
+                <li><strong>Condicional IF en Python:</strong>
+                  <ul>
+                    <li>if edad >= 18: print('Mayor de edad') else: print('Menor de edad')</li>
+                  </ul>
+                </li>
+                <li><strong>Bucle FOR en Java:</strong>
+                  <ul>
+                    <li>for (int i=0; i<5; i++) { System.out.println('Iteración: ' + i); }</li>
+                  </ul>
+                </li>
+                <li><strong>SWITCH en JavaScript:</strong>
+                  <ul>
+                    <li>switch(dia) { case 1: console.log('Lunes'); break; case 2: console.log('Martes'); break; default: console.log('Otro día'); }</li>
+                  </ul>
+                </li>
+                <li><strong>WHILE con BREAK:</strong>
+                  <ul>
+                    <li>while (true) { if (condición) break; /* código */ }</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Manejo de Excepciones</h4>
+              <ul>
+                <li><strong>TRY-CATCH:</strong> Captura y maneja errores en tiempo de ejecución</li>
+                <li><strong>FINALLY:</strong> Bloque que siempre se ejecuta, haya o no error</li>
+                <li><strong>THROW:</strong> Lanza excepciones personalizadas</li>
+                <li><strong>Múltiples CATCH:</strong> Manejo específico por tipo de excepción</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Control de Flujo</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Evitar bucles infinitos</span> con condiciones de salida claras</li>
+                <li><span style='color: #e74c3c;'>Mantener la legibilidad</span> con indentación consistente</li>
+                <li><span style='color: #e74c3c;'>Limitar el anidamiento excesivo</span> para mayor claridad</li>
+                <li><span style='color: #e74c3c;'>Usar break y continue</span> con moderación y claridad</li>
+                <li><span style='color: #e74c3c;'>Manejar todas las excepciones</span> posibles</li>
+              </ol>
+            
+              <h4>Patrones Comunes de Control</h4>
+              <ul>
+                <li><strong>Validación de entrada:</strong> if anidados para verificar datos</li>
+                <li><strong>Búsqueda en colecciones:</strong> for/while con break al encontrar</li>
+                <li><strong>Menús interactivos:</strong> do-while con switch-case</li>
+                <li><strong>Procesamiento por lotes:</strong> for para iterar sobre arrays</li>
+                <li><strong>Control de estados:</strong> switch para máquinas de estado</li>
+              </ul>
+            
+              <h4>Consideraciones de Rendimiento</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Complejidad algorítmica</span> de estructuras anidadas</li>
+                <li><span style='color: #3498db;'>Optimización de condiciones</span> más probables primero</li>
+                <li><span style='color: #2ecc71;'>Uso eficiente de bucles</span> para grandes volúmenes</li>
+                <li><span style='color: #f39c12;'>Evitar condiciones redundantes</span> o innecesarias</li>
+                <li><span style='color: #9b59b6;'>Cacheo de resultados</span> en condiciones costosas</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+                <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
+                <li>Bloch, J. (2008). <em>Effective Java</em>. Addison-Wesley.</li>
+                <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
+              </ul>
+            `)">3.3. Proposición de control <span class="emoji-small">✅</span>        
+        </li>
+         
+        <li onclick="abrirModal('3.4. Proposición de formato', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de formato que permiten controlar la presentación y estructuración de datos en la salida de programas.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Una proposición de formato es una <span style='color: #e74c3c;'>instrucción que especifica cómo deben presentarse</span> los datos en la salida.</li>
+                <li>Permite <span style='color: #3498db;'>controlar la apariencia y estructura</span> de la información mostrada al usuario.</li>
+                <li>Es esencial para crear <span style='color: #2ecc71;'>salidas legibles y profesionales</span> en aplicaciones.</li>
+              </ul>
+            
+              <h4>Elementos de Formato Comunes</h4>
+              <ul>
+                <li><strong>Alineación:</strong> Izquierda, derecha, centrado, justificado</li>
+                <li><strong>Longitud de campo:</strong> Ancho fijo para valores</li>
+                <li><strong>Precisión decimal:</strong> Número de dígitos después del punto</li>
+                <li><strong>Relleno:</strong> Caracteres para completar espacios (espacios, ceros)</li>
+                <li><strong>Separadores:</strong> Comas para miles, puntos para decimales</li>
+                <li><strong>Notación:</strong> Decimal, científica, hexadecimal, octal</li>
+              </ul>
+            
+              <h4>Funciones de Formato por Lenguaje</h4>
+              <ul>
+                <li><strong>Python:</strong>
+                  <ul>
+                    <li>format(): Formato de cadenas con placeholders</li>
+                    <li>f-strings: Interpolación con expresiones</li>
+                    <li>% operator: Formato estilo printf</li>
+                  </ul>
+                </li>
+                <li><strong>Java:</strong>
+                  <ul>
+                    <li>String.format(): Formato similar a printf</li>
+                    <li>System.out.printf(): Salida formateada directa</li>
+                    <li>DecimalFormat: Formato numérico avanzado</li>
+                  </ul>
+                </li>
+                <li><strong>C++:</strong>
+                  <ul>
+                    <li>printf(): Función de formato clásica</li>
+                    <li>cout con manipuladores: setw, setprecision, fixed</li>
+                    <li>sprintf(): Formato a string</li>
+                  </ul>
+                </li>
+                <li><strong>JavaScript:</strong>
+                  <ul>
+                    <li>template literals: Interpolación con backticks</li>
+                    <li>toFixed(), toPrecision(): Formato numérico</li>
+                    <li>Intl.NumberFormat(): Formato internacional</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Especificadores de Formato Principales</h4>
+              <ul>
+                <li><strong>Enteros:</strong> %d (decimal), %x (hex), %o (octal)</li>
+                <li><strong>Flotantes:</strong> %f (fijo), %e (científico), %g (automático)</li>
+                <li><strong>Cadenas:</strong> %s (string), %c (carácter)</li>
+                <li><strong>Booleanos:</strong> Representación como true/false o 1/0</li>
+                <li><strong>Fechas:</strong> Formatos personalizados (dd/mm/aaaa, etc.)</li>
+              </ul>
+            
+              <h4>Proceso de Aplicación de Formato</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el tipo de dato</span> a formatear</li>
+                <li><span style='color: #e74c3c;'>Seleccionar el especificador</span> apropiado</li>
+                <li><span style='color: #e74c3c;'>Definir opciones de formato</span> (ancho, precisión, etc.)</li>
+                <li><span style='color: #e74c3c;'>Aplicar el formato</span> a los datos</li>
+                <li><span style='color: #e74c3c;'>Validar el resultado</span> formateado</li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos de Formato</h4>
+              <ul>
+                <li><strong>Python f-strings:</strong>
+                  <ul>
+                    <li>f'Nombre: {nombre:>10}'  # Alineado a derecha</li>
+                    <li>f'Porcentaje: {ratio:.1%}'  # Porcentaje con 1 decimal</li>
+                  </ul>
+                </li>
+                <li><strong>Java String.format():</strong>
+                  <ul>
+                    <li>String.format('%,d', 1000000)  // '1,000,000'</li>
+                    <li>String.format('%.2f', 3.14159)  // '3.14'</li>
+                    <li>String.format('%10s', 'Hola')  // '      Hola'</li>
+                  </ul>
+                </li>
+                <li><strong>C++ printf():</strong>
+                  <ul>
+                    <li>printf('%08d', 42)  // '00000042'</li>
+                    <li>printf('%-10s', 'texto')  // 'texto     '</li>
+                    <li>printf('%.3e', 1234.5678)  // '1.235e+03'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Formatos Específicos por Tipo de Dato</h4>
+              <ul>
+                <li><strong>Monetarios:</strong> Símbolo de moneda, separadores, decimales</li>
+                <li><strong>Fechas y horas:</strong> Día/mes/año, formato 12/24 horas</li>
+                <li><strong>Porcentajes:</strong> Multiplicación por 100, símbolo %</li>
+                <li><strong>Números telefónicos:</strong> Formatos internacionales</li>
+                <li><strong>Direcciones IP:</strong> Cuatro octetos separados por puntos</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Mantener consistencia</span> en todo el programa</li>
+                <li><span style='color: #e74c3c;'>Considerar la localización</span> del usuario</li>
+                <li><span style='color: #e74c3c;'>Validar formatos personalizados</span> exhaustivamente</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos complejos</span> para mantenimiento</li>
+                <li><span style='color: #e74c3c;'>Usar constantes para formatos reutilizables</span></li>
+              </ol>
+            
+              <h4>Formatos Internacionales (Localización)</h4>
+              <ul>
+                <li><strong>Fecha:</strong> EE.UU. (mm/dd/aaaa) vs Europa (dd/mm/aaaa)</li>
+                <li><strong>Decimales:</strong> Punto (1.5) vs coma (1,5)</li>
+                <li><strong>Separadores de miles:</strong> Coma (1,000) vs punto (1.000)</li>
+                <li><strong>Moneda:</strong> Posición del símbolo, separadores</li>
+                <li><strong>Horario:</strong> 12h (AM/PM) vs 24h (00:00-23:59)</li>
+              </ul>
+            
+              <h4>Herramientas de Formato Avanzado</h4>
+              <ul>
+                <li><strong>Expresiones regulares:</strong> Para validación y transformación</li>
+                <li><strong>Librerías de internacionalización:</strong> Para soporte multiidioma</li>
+                <li><strong>Plantillas y templates:</strong> Para documentos estructurados</li>
+                <li><strong>Formatos estándar:</strong> JSON, XML, CSV para intercambio</li>
+                <li><strong>CSS/HTML:</strong> Para formato en aplicaciones web</li>
+              </ul>
+            
+              <h4>Consideraciones de Rendimiento</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Costo computacional</span> de operaciones de formato</li>
+                <li><span style='color: #3498db;'>Reutilización de objetos</span> de formato cuando sea posible</li>
+                <li><span style='color: #2ecc71;'>Cacheo de resultados</span> para formatos costosos</li>
+                <li><span style='color: #f39c12;'>Optimización de concatenaciones</span> de cadenas</li>
+                <li><span style='color: #9b59b6;'>Uso de StringBuilder</span> para múltiples operaciones</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Lutz, M. (2013). <em>Learning Python</em>. O'Reilly Media.</li>
+                <li>Horstmann, C. S. (2018). <em>Core Java Volume I: Fundamentals</em>. Pearson.</li>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
+                <li>Microsoft Corporation. (2021). <em>Standard Numeric Format Strings</em>. MSDN Documentation.</li>
+              </ul>
+            `)">3.4. Proposición de formato <span class="emoji-small">✅</span>
+        </li>
+  
+          <li onclick="abrirModal('3.5. Formato I', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales y técnicas básicas de formato para la presentación de datos en programas, incluyendo alineación, padding y especificadores simples.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Formato I se refiere a las <span style='color: #e74c3c;'>técnicas básicas de formateo</span> que controlan la presentación visual de datos en salida.</li>
+                <li>Enfocado en <span style='color: #3498db;'>operaciones fundamentales de formato</span> como alineación y relleno.</li>
+                <li>Proporciona la <span style='color: #2ecc71;'>base esencial</span> para formatos más avanzados.</li>
+              </ul>
+            
+              <h4>Conceptos Fundamentales</h4>
+              <ul>
+                <li><strong>Campo de salida:</strong> Espacio reservado para mostrar un valor</li>
+                <li><strong>Ancho de campo:</strong> Número total de caracteres ocupados</li>
+                <li><strong>Alineación:</strong> Posición del texto dentro del campo</li>
+                <li><strong>Carácter de relleno:</strong> Carácter usado para espacios vacíos</li>
+                <li><strong>Precisión:</strong> Número de dígitos decimales mostrados</li>
+              </ul>
+            
+              <h4>Alineación Básica</h4>
+              <ul>
+                <li><strong>Alineación a la izquierda:</strong> Texto comienza en el borde izquierdo</li>
+                <li><strong>Alineación a la derecha:</strong> Texto termina en el borde derecho</li>
+                <li><strong>Centrado:</strong> Texto equidistante de ambos bordes</li>
+                <li><strong>Justificado:</strong> Texto expandido para llenar todo el ancho</li>
+              </ul>
+            
+              <h4>Especificadores de Formato Básicos</h4>
+              <ul>
+                <li><strong>%d:</strong> Entero decimal con signo</li>
+                <li><strong>%f:</strong> Número de punto flotante</li>
+                <li><strong>%s:</strong> Cadena de caracteres</li>
+                <li><strong>%c:</strong> Carácter individual</li>
+                <li><strong>%%:</strong> Literal del símbolo porcentaje</li>
+              </ul>
+            
+              <h4>Modificadores de Ancho y Precisión</h4>
+              <ul>
+                <li><strong>Ancho mínimo:</strong> %10d (10 caracteres mínimo)</li>
+                <li><strong>Precisión decimal:</strong> %.2f (2 decimales)</li>
+                <li><strong>Combinación:</strong> %10.2f (10 caracteres, 2 decimales)</li>
+                <li><strong>Relleno con ceros:</strong> %08d (rellena con ceros a 8 dígitos)</li>
+                <li><strong>Alineación izquierda:</strong> %-10s (alinea a izquierda en 10 espacios)</li>
+              </ul>
+            
+              <h4>Proceso de Formato Básico</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el tipo de dato</span> a formatear</li>
+                <li><span style='color: #e74c3c;'>Seleccionar el especificador</span> apropiado</li>
+                <li><span style='color: #e74c3c;'>Determinar el ancho de campo</span> necesario</li>
+                <li><span style='color: #e74c3c;'>Aplicar alineación y relleno</span></li>
+                <li><span style='color: #e74c3c;'>Generar la salida formateada</span></li>
+              </ol>
+            
+              <h4>Ejemplos de Formato Básico</h4>
+              <ul>
+                <li><strong>Enteros con ancho fijo:</strong>
+                  <ul>
+                    <li>printf('%5d', 42)   → '   42'</li>
+                    <li>printf('%05d', 42)  → '00042'</li>
+                    <li>printf('%-5d', 42)  → '42   '</li>
+                  </ul>
+                </li>
+                <li><strong>Decimales con precisión:</strong>
+                  <ul>
+                    <li>printf('%.2f', 3.14159) → '3.14'</li>
+                    <li>printf('%6.2f', 3.14)   → '  3.14'</li>
+                    <li>printf('%06.2f', 3.14)  → '003.14'</li>
+                  </ul>
+                </li>
+                <li><strong>Cadenas alineadas:</strong>
+                  <ul>
+                    <li>printf('%10s', 'Hola')   → '      Hola'</li>
+                    <li>printf('%-10s', 'Hola')  → 'Hola      '</li>
+                    <li>printf('%.3s', 'Hola')   → 'Hol'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Tablas de Formato Básico</h4>
+              <ul>
+                <li><strong>Creación de columnas alineadas:</strong>
+                  <ul>
+                    <li>printf('%-15s %8.2f', 'Producto A', 25.50)</li>
+                    <li>printf('%-15s %8.2f', 'Producto B', 150.75)</li>
+                  </ul>
+                </li>
+                <li><strong>Encabezados de columnas:</strong>
+                  <ul>
+                    <li>printf('%-15s %8s', 'Nombre', 'Precio')</li>
+                    <li>printf('%-15s %8s', '──────', '──────')</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Caracteres de Relleno Comunes</h4>
+              <ul>
+                <li><strong>Espacios:</strong> Relleno por defecto, más legible</li>
+                <li><strong>Ceros:</strong> Para números, especialmente códigos</li>
+                <li><strong>Guiones:</strong> Para separadores visuales</li>
+                <li><strong>Asteriscos:</strong> Para información confidencial</li>
+                <li><strong>Puntos:</strong> Para alineación decimal</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato Básico</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Mantener consistencia</span> en ancho de columnas</li>
+                <li><span style='color: #e74c3c;'>Usar alineación apropiada</span> para cada tipo de dato</li>
+                <li><span style='color: #e74c3c;'>Evitar truncamiento accidental</span> de información</li>
+                <li><span style='color: #e74c3c;'>Considerar la legibilidad</span> del resultado final</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos complejos</span></li>
+              </ol>
+            
+              <h4>Errores Comunes en Formato Básico</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Ancho insuficiente</span> para datos largos</li>
+                <li><span style='color: #3498db;'>Precisión excesiva</span> que genera ruido visual</li>
+                <li><span style='color: #2ecc71;'>Mezcla de alineaciones</span> en la misma columna</li>
+                <li><span style='color: #f39c12;'>Uso incorrecto de especificadores</span> de tipo</li>
+                <li><span style='color: #9b59b6;'>Falta de separación</span> entre columnas</li>
+              </ul>
+            
+              <h4>Aplicaciones Prácticas</h4>
+              <ul>
+                <li>Reportes tabulares simples</li>
+                <li>Listados de datos alineados</li>
+                <li>Formatos de ticket y recibos</li>
+                <li>Interfaces de línea de comandos</li>
+                <li>Logs y mensajes del sistema</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>Prata, S. (2004). <em>C Primer Plus</em>. Sams Publishing.</li>
+                <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en C</em>. Pearson Educación.</li>
+                <li>Lopez, M. (2019). <em>Formatos de Salida en Programación</em>. Editorial Técnica.</li>
+                <li>IEEE Computer Society. (2020). <em>Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+              </ul>
+            `)">3.5. Formato I <span class="emoji-small">✅</span>
+        </li>
+        
+        <li onclick="abrirModal('3.6. Formato F', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar el formato F para números de punto flotante, incluyendo precisión decimal, notación científica y representación de valores reales en programación.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Formato F se refiere específicamente al <span style='color: #e74c3c;'>formateo de números de punto flotante</span> en programación.</li>
+                <li>Utiliza el especificador <span style='color: #3498db;'>%f para representar valores reales</span> con parte decimal.</li>
+                <li>Permite controlar <span style='color: #2ecc71;'>precisión, redondeo y presentación</span> de números decimales.</li>
+              </ul>
+            
+              <h4>Especificador F Básico</h4>
+              <ul>
+                <li><strong>%f:</strong> Notación de punto fijo por defecto</li>
+                <li><strong>%.nf:</strong> Especifica 'n' dígitos decimales</li>
+                <li><strong>%m.nf:</strong> Ancho total 'm' con 'n' decimales</li>
+                <li><strong>%+f:</strong> Muestra signo siempre</li>
+                <li><strong>% f:</strong> Usa espacio para positivos</li>
+              </ul>
+            
+              <h4>Modificadores de Precisión</h4>
+              <ul>
+                <li><strong>%.0f:</strong> Sin decimales (redondea al entero más cercano)</li>
+                <li><strong>%.2f:</strong> Dos dígitos decimales (para moneda)</li>
+                <li><strong>%.4f:</strong> Cuatro dígitos (precisión media)</li>
+                <li><strong>%.6f:</strong> Seis dígitos (alta precisión)</li>
+                <li><strong>%.*f:</strong> Precisión dinámica mediante variable</li>
+              </ul>
+            
+              <h4>Notaciones para Punto Flotante</h4>
+              <ul>
+                <li><strong>%f:</strong> Notación de punto fijo (3.141593)</li>
+                <li><strong>%e:</strong> Notación científica (3.141593e+00)</li>
+                <li><strong>%g:</strong> Notación automática (elige %f o %e)</li>
+                <li><strong>%E:</strong> Notación científica con E mayúscula</li>
+                <li><strong>%G:</strong> Notación automática con E mayúscula</li>
+              </ul>
+            
+              <h4>Características del Formato F</h4>
+              <ul>
+                <li><strong>Redondeo automático:</strong> Ajusta al número de decimales especificado</li>
+                <li><strong>Relleno con ceros:</strong> Completa decimales faltantes con ceros</li>
+                <li><strong>Separador decimal:</strong> Usa punto (.) como estándar internacional</li>
+                <li><strong>Manejo de signo:</strong> Controla visualización de signo positivo/negativo</li>
+                <li><strong>Alineación:</strong> Por defecto alineado a la derecha</li>
+              </ul>
+            
+              <h4>Proceso de Formateo F</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el valor flotante</span> a formatear</li>
+                <li><span style='color: #e74c3c;'>Determinar la precisión requerida</span> (número de decimales)</li>
+                <li><span style='color: #e74c3c;'>Seleccionar la notación</span> (fija, científica, automática)</li>
+                <li><span style='color: #e74c3c;'>Aplicar redondeo y ajustes</span> según especificaciones</li>
+                <li><span style='color: #e74c3c;'>Generar la representación final</span></li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos de Formato F</h4>
+              <ul>
+                <li><strong>Precisión básica:</strong>
+                  <ul>
+                    <li>printf('%.2f', 3.14159) → '3.14'</li>
+                    <li>printf('%.4f', 2.71828) → '2.7183'</li>
+                    <li>printf('%.0f', 4.75)    → '5'</li>
+                  </ul>
+                </li>
+                <li><strong>Ancho y precisión combinados:</strong>
+                  <ul>
+                    <li>printf('%8.2f', 123.456)  → '  123.46'</li>
+                    <li>printf('%08.2f', 45.67)   → '00045.67'</li>
+                    <li>printf('%-8.2f', 12.34)   → '12.34   '</li>
+                  </ul>
+                </li>
+                <li><strong>Notación científica:</strong>
+                  <ul>
+                    <li>printf('%.2e', 1234567.89) → '1.23e+06'</li>
+                    <li>printf('%.4E', 0.000123)   → '1.2300E-04'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Casos Especiales</h4>
+              <ul>
+                <li><strong>Valores muy grandes:</strong> Notación científica automática</li>
+                <li><strong>Valores muy pequeños:</strong> Precisión extendida</li>
+                <li><strong>Valores infinitos:</strong> 'inf' o 'INF'</li>
+                <li><strong>Valores NaN (Not a Number):</strong> 'nan' o 'NAN'</li>
+                <li><strong>Ceros con signo:</strong> '+0.00' o '-0.00'</li>
+              </ul>
+            
+              <h4>Aplicaciones Específicas</h4>
+              <ul>
+                <li><strong>Cálculos financieros:</strong> Siempre 2 decimales para moneda</li>
+                <li><strong>Mediciones científicas:</strong> Precisión variable según instrumento</li>
+                <li><strong>Gráficos y visualizaciones:</strong> Etiquetas de ejes formateadas</li>
+                <li><strong>Reportes técnicos:</strong> Consistencia en número de decimales</li>
+                <li><strong>Interfaces de usuario:</strong> Formato amigable para usuarios</li>
+              </ul>
+            
+              <h4>Consideraciones de Precisión</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Errores de redondeo:</span> Acumulación en operaciones múltiples</li>
+                <li><span style='color: #3498db;'>Límites de representación:</span> Precisión limitada de float/double</li>
+                <li><span style='color: #2ecc71;'>Comparaciones seguras:</span> Usar tolerancias en lugar de igualdad exacta</li>
+                <li><span style='color: #f39c12;'>Propagación de error:</span> En cálculos en cadena</li>
+                <li><span style='color: #9b59b6;'>Precisión vs. rendimiento:</span> Trade-off en aplicaciones críticas</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato F</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Usar precisión consistente</span> en todo el sistema</li>
+                <li><span style='color: #e74c3c;'>Evitar decimales excesivos</span> que no aportan información</li>
+                <li><span style='color: #e74c3c;'>Considerar el contexto de uso</span> para elegir notación</li>
+                <li><span style='color: #e74c3c;'>Validar rangos esperados</span> antes de formatear</li>
+                <li><span style='color: #e74c3c;'>Documentar decisiones de precisión</span></li>
+              </ol>
+            
+              <h4>Diferencias entre Lenguajes</h4>
+              <ul>
+                <li><strong>C/C++:</strong> printf('%f'), cout con precision()</li>
+                <li><strong>Java:</strong> String.format('%f'), DecimalFormat</li>
+                <li><strong>Python:</strong> format(), f-strings, '%.2f' % valor</li>
+                <li><strong>JavaScript:</strong> toFixed(), toPrecision()</li>
+                <li><strong>C#:</strong> String.Format(),.ToString('F2')</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+                <li>Goldberg, D. (1991). <em>What Every Computer Scientist Should Know About Floating-Point Arithmetic</em>. ACM Computing Surveys.</li>
+                <li>Kernighan, B. W., & Ritchie, D. M. (1988). <em>El lenguaje de programación C</em>. Prentice Hall.</li>
+                <li>Oracle Corporation. (2021). <em>Java DecimalFormat Documentation</em>. Oracle Java Docs.</li>
+                <li>Python Software Foundation. (2021). <em>Format Specification Mini-Language</em>. Python Documentation.</li>
+              </ul>
+            `)">3.6. Formato F <span class="emoji-small">✅</span>
+        </li>
+          
+            <li onclick="abrirModal('3.7. Formato E', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Dominar el formato E para notación científica, comprendiendo su sintaxis, aplicaciones y uso en la representación de números muy grandes o muy pequeños.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Formato E se refiere a la <span style='color: #e74c3c;'>notación científica o exponencial</span> para representar números.</li>
+                <li>Utiliza el especificador <span style='color: #3498db;'>%e para valores en formato mantisa-exponente</span>.</li>
+                <li>Es ideal para <span style='color: #2ecc71;'>números extremadamente grandes o pequeños</span> donde la notación decimal es impráctica.</li>
+              </ul>
+            
+              <h4>Estructura de la Notación Científica</h4>
+              <ul>
+                <li><strong>Mantisa:</strong> Parte decimal normalizada (1.0 ≤ |mantisa| < 10.0)</li>
+                <li><strong>Exponente:</strong> Potencia de 10 que escala la mantisa</li>
+                <li><strong>Formato general:</strong> ±m.nnnne±xx</li>
+                <li><strong>Ejemplo:</strong> 6.022e+23 (Número de Avogadro)</li>
+                <li><strong>Ejemplo:</strong> 1.602e-19 (Carga del electrón)</li>
+              </ul>
+            
+              <h4>Especificadores de Notación Científica</h4>
+              <ul>
+                <li><strong>%e:</strong> Notación científica minúscula (1.23e+04)</li>
+                <li><strong>%E:</strong> Notación científica mayúscula (1.23E+04)</li>
+                <li><strong>%.ne:</strong> Precisión de 'n' dígitos en mantisa</li>
+                <li><strong>%m.ne:</strong> Ancho total 'm' con 'n' dígitos de precisión</li>
+                <li><strong>%+e:</strong> Siempre muestra signo</li>
+              </ul>
+            
+              <h4>Normalización en Notación Científica</h4>
+              <ul>
+                <li><strong>Regla básica:</strong> Un dígito antes del punto decimal</li>
+                <li><strong>Rango de mantisa:</strong> Entre 1.0 y 9.999...</li>
+                <li><strong>Ajuste automático:</strong> El sistema normaliza automáticamente</li>
+                <li><strong>Ejemplo:</strong> 1234.56 → 1.23456e+03</li>
+                <li><strong>Ejemplo:</strong> 0.000123 → 1.23e-04</li>
+              </ul>
+            
+              <h4>Ventajas del Formato E</h4>
+              <ul>
+                <li><strong>Compactación:</strong> Representa números grandes en poco espacio</li>
+                <li><strong>Claridad:</strong> Facilita comparación de órdenes de magnitud</li>
+                <li><strong>Prevención de errores:</strong> Evita confusiones con ceros</li>
+                <li><strong>Estandarización:</strong> Formato universalmente reconocido</li>
+                <li><strong>Precisión relativa:</strong> Mantiene cifras significativas</li>
+              </ul>
+            
+              <h4>Proceso de Conversión a Notación Científica</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el número</span> a convertir</li>
+                <li><span style='color: #e74c3c;'>Mover el punto decimal</span> hasta tener un dígito antes del punto</li>
+                <li><span style='color: #e74c3c;'>Contar las posiciones movidas</span> para determinar el exponente</li>
+                <li><span style='color: #e74c3c;'>Aplicar redondeo</span> según la precisión requerida</li>
+                <li><span style='color: #e74c3c;'>Formatear la representación final</span></li>
+              </ol>
+            
+              <h4>Ejemplos Prácticos de Formato E</h4>
+              <ul>
+                <li><strong>Números grandes:</strong>
+                  <ul>
+                    <li>printf('%.2e', 123456789) → '1.23e+08'</li>
+                    <li>printf('%.4E', 299792458) → '2.9979E+08' (velocidad de la luz)</li>
+                    <li>printf('%12.3e', 6.022e23) → '   6.022e+23'</li>
+                  </ul>
+                </li>
+                <li><strong>Números pequeños:</strong>
+                  <ul>
+                    <li>printf('%.3e', 0.000000001) → '1.000e-09'</li>
+                    <li>printf('%.2E', 0.0000000667) → '6.67E-08' (constante gravitacional)</li>
+                    <li>printf('%+10.2e', 0.005) → ' +5.00e-03'</li>
+                  </ul>
+                </li>
+                <li><strong>Precisión variable:</strong>
+                  <ul>
+                    <li>printf('%.0e', 1500) → '2e+03'</li>
+                    <li>printf('%.6e', 3.1415926535) → '3.141593e+00'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Campos de Aplicación</h4>
+              <ul>
+                <li><strong>Física:</strong> Constantes fundamentales, medidas atómicas</li>
+                <li><strong>Química:</strong> Número de Avogadro, constantes de equilibrio</li>
+                <li><strong>Ingeniería:</strong> Tolerancias muy pequeñas, medidas nanométricas</li>
+                <li><strong>Astronomía:</strong> Distancias interestelares, masas planetarias</li>
+                <li><strong>Computación científica:</strong> Algoritmos numéricos, análisis de error</li>
+              </ul>
+            
+              <h4>Comparación con Otros Formatos</h4>
+              <ul>
+                <li><strong>vs. Formato F:</strong> E para rango amplio, F para valores cotidianos</li>
+                <li><strong>vs. Formato G:</strong> E siempre científico, G elige automáticamente</li>
+                <li><strong>vs. Notación de ingeniería:</strong> E usa múltiplos de 3 en exponente</li>
+                <li><strong>vs. Formato decimal:</strong> E más compacto para extremos</li>
+              </ul>
+            
+              <h4>Consideraciones de Uso</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Audiencia objetivo:</strong> Usuarios técnicos vs. generales</li>
+                <li><span style='color: #3498db;'>Contexto de presentación:</strong> Gráficos, tablas, texto</li>
+                <li><span style='color: #2ecc71;'>Consistencia:</strong> Mantener mismo formato en conjuntos de datos</li>
+                <li><span style='color: #f39c12;'>Precisión adecuada:</strong> Ni muy poca ni excesiva</li>
+                <li><span style='color: #9b59b6;'>Límites del sistema:</strong> Rangos de exponente soportados</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato E</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Usar para valores fuera del rango 0.001 a 1000</span></li>
+                <li><span style='color: #e74c3c;'>Mantener cifras significativas consistentes</span></li>
+                <li><span style='color: #e74c3c;'>Incluir siempre el signo del exponente</span></li>
+                <li><span style='color: #e74c3c;'>Validar que la mantisa esté normalizada</span></li>
+                <li><span style='color: #e74c3c;'>Documentar el significado de valores específicos</span></li>
+              </ol>
+            
+              <h4>Manejo de Casos Especiales</h4>
+              <ul>
+                <li><strong>Valores infinitos:</strong> 'inf' o 'INF' en notación científica</li>
+                <li><strong>Valores NaN:</strong> 'nan' o 'NAN'</li>
+                <li><strong>Ceros:</strong> '0.000000e+00' o variantes</li>
+                <li><strong>Límites de precisión:</strong> Redondeo en valores límite</li>
+                <li><strong>Desbordamiento:</strong> Manejo de exponentes muy grandes</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
+                <li>Goldberg, D. (1991). <em>What Every Computer Scientist Should Know About Floating-Point Arithmetic</em>. ACM Computing Surveys.</li>
+                <li>Press, W. H., et al. (2007). <em>Numerical Recipes: The Art of Scientific Computing</em>. Cambridge University Press.</li>
+                <li>Higham, N. J. (2002). <em>Accuracy and Stability of Numerical Algorithms</em>. SIAM.</li>
+                <li>Knuth, D. E. (1997). <em>The Art of Computer Programming, Volume 2: Seminumerical Algorithms</em>. Addison-Wesley.</li>
+              </ul>
+            `)">3.7. Formato E <span class="emoji-small">✅</span>
+          </li>
+
+        <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Explorar funcionalidades avanzadas de formato que permiten personalización extensiva, localización internacional y técnicas especializadas para presentación de datos.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>Capacidades adicionales de formato incluyen <span style='color: #e74c3c;'>funcionalidades avanzadas más allá de los especificadores básicos</span>.</li>
+                <li>Permiten <span style='color: #3498db;'>personalización extensiva y adaptación a necesidades específicas</span> de presentación.</li>
+                <li>Incluyen <span style='color: #2ecc71;'>técnicas para internacionalización, alineación compleja y formatos especializados</span>.</li>
+              </ul>
+            
+              <h4>Formatos Personalizados Avanzados</h4>
+              <ul>
+                <li><strong>Formatos condicionales:</strong> Cambian según el valor del dato</li>
+                <li><strong>Formatos compuestos:</strong> Combinan múltiples tipos en una salida</li>
+                <li><strong>Formatos anidados:</strong> Incluyen formatos dentro de formatos</li>
+                <li><strong>Formatos dinámicos:</strong> Se generan en tiempo de ejecución</li>
+                <li><strong>Plantillas reutilizables:</strong> Patrones de formato almacenados</li>
+              </ul>
+            
+              <h4>Internacionalización y Localización (i18n/l10n)</h4>
+              <ul>
+                <li><strong>Configuración regional (Locale):</strong> Formatos específicos por país/idioma</li>
+                <li><strong>Moneda:</strong> Símbolos, posición y separadores locales</li>
+                <li><strong>Fechas y horas:</strong> Formatos culturalmente apropiados</li>
+                <li><strong>Números:</strong> Separadores decimales y de miles locales</li>
+                <li><strong>Texto bidireccional:</strong> Soporte para idiomas RTL (derecha a izquierda)</li>
+              </ul>
+            
+              <h4>Formatos Especializados por Tipo de Dato</h4>
+              <ul>
+                <li><strong>Direcciones IP:</strong> Formato IPv4 (192.168.1.1) e IPv6</li>
+                <li><strong>Números telefónicos:</strong> Formatos internacionales E.164</li>
+                <li><strong>ISBN/ISSN:</strong> Formatos estandarizados para publicaciones</li>
+                <li><strong>Códigos de barras:</strong> Representación numérica especializada</li>
+                <li><strong>Coordenadas geográficas:</strong> Grados, minutos, segundos o decimales</li>
+              </ul>
+            
+              <h4>Técnicas de Alineación Avanzada</h4>
+              <ul>
+                <li><strong>Alineación decimal:</strong> Puntos decimales alineados verticalmente</li>
+                <li><strong>Alineación mixta:</strong> Diferentes alineaciones en la misma línea</li>
+                <li><strong>Justificación completa:</strong> Texto expandido para llenar ancho</li>
+                <li><strong>Alineación visual:</strong> Basada en contenido semántico</li>
+                <li><strong>Tablas complejas:</strong> Múltiples niveles de anidamiento</li>
+              </ul>
+            
+              <h4>Proceso de Formato Avanzado</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Analizar requisitos de presentación</span> específicos</li>
+                <li><span style='color: #e74c3c;'>Seleccionar técnicas de formato apropiadas</span></li>
+                <li><span style='color: #e74c3c;'>Configurar parámetros de localización</span></li>
+                <li><span style='color: #e74c3c;'>Implementar lógica de formato condicional</span></li>
+                <li><span style='color: #e74c3c;'>Validar y probar el resultado final</span></li>
+              </ol>
+            
+              <h4>Ejemplos de Formatos Avanzados</h4>
+              <ul>
+                <li><strong>Formato condicional en Python:</strong>
+                  <ul>
+                    <li>valor = -1500.75</li>
+                    <li>print(f'{valor:+,.2f}') → '-1,500.75'</li>
+                    <li>print(f'{valor:>12,}') → '     -1,501'</li>
+                  </ul>
+                </li>
+                <li><strong>Localización en Java:</strong>
+                  <ul>
+                    <li>NumberFormat fmt = NumberFormat.getCurrencyInstance(Locale.FRANCE);</li>
+                    <li>fmt.format(1234.56) → '1 234,56 €'</li>
+                  </ul>
+                </li>
+                <li><strong>Formato personalizado en C#:</strong>
+                  <ul>
+                    <li>DateTime.Now.ToString('yyyy-MM-dd HH:mm:ss') → '2024-01-15 14:30:25'</li>
+                  </ul>
+                </li>
+                <li><strong>Plantillas en JavaScript:</strong>
+                  <ul>
+                    <li>const formatoMoneda = new Intl.NumberFormat('es-MX', {style: 'currency', currency: 'MXN'});</li>
+                    <li>formatoMoneda.format(1500.5) → '$1,500.50'</li>
+                  </ul>
+                </li>
+              </ul>
+            
+              <h4>Formatos para Medidas y Unidades</h4>
+              <ul>
+                <li><strong>Sistema métrico:</strong> km, m, cm, mm con conversiones automáticas</li>
+                <li><strong>Sistema imperial:</strong> millas, pies, pulgadas con fracciones</li>
+                <li><strong>Unidades científicas:</strong> Notación con unidades SI</li>
+                <li><strong>Conversión automática:</strong> Entre sistemas de medida</li>
+                <li><strong>Precisión contextual:</strong> Diferente precisión según unidad</li>
+              </ul>
+            
+              <h4>Formatos Gráficos y Visuales</h4>
+              <ul>
+                <li><strong>Barras de progreso:</strong> Representación visual de porcentajes</li>
+                <li><strong>Colores condicionales:</strong> Cambio de color según valores</li>
+                <li><strong>Iconos e indicadores:</strong> Símbolos visuales para estados</li>
+                <li><strong>Gráficos ASCII:</strong> Representación textual de datos gráficos</li>
+                <li><strong>Tablas formateadas:</strong> Bordes, sombreado, encabezados</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en Formato Avanzado</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Mantener la consistencia</span> en toda la aplicación</li>
+                <li><span style='color: #e74c3c;'>Considerar la accesibilidad</span> para todos los usuarios</li>
+                <li><span style='color: #e74c3c;'>Optimizar el rendimiento</span> de formatos complejos</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos personalizados</span> extensivamente</li>
+                <li><span style='color: #e74c3c;'>Probar con datos extremos</span> y casos límite</li>
+              </ol>
+            
+              <h4>Herramientas y Librerías Avanzadas</h4>
+              <ul>
+                <li><strong>ICU (International Components for Unicode):</strong> Estándar para internacionalización</li>
+                <li><strong>MessageFormat:</strong> Para mensajes complejos con pluralización</li>
+                <li><strong>Plantillas Mustache/Handlebars:</strong> Para formatos reutilizables</li>
+                <li><strong>Librerías de gráficos:</strong> Para visualización avanzada</li>
+                <li><strong>Formatos estándar:</strong> JSON Schema, XML Schema para validación</li>
+              </ul>
+            
+              <h4>Consideraciones de Rendimiento</h4>
+              <ul>
+                <li><span style='color: #e74c3c;'>Cacheo de objetos de formato</span> para reutilización</li>
+                <li><span style='color: #3498db;'>Compilación de plantillas</span> en tiempo de desarrollo</li>
+                <li><span style='color: #2ecc71;'>Lazy evaluation:</span> Formateo bajo demanda</li>
+                <li><span style='color: #f39c12;'>Optimización de concatenaciones</span> de cadenas</li>
+                <li><span style='color: #9b59b6;'>Uso de StringBuilder</span> para múltiples operaciones</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Unicode Consortium. (2021). <em>Unicode Standard Annex #35: Unicode Locale Data Markup Language</em>.</li>
+                <li>Microsoft Corporation. (2021). <em>Globalization and Localization in .NET</em>. MSDN Documentation.</li>
+                <li>Oracle Corporation. (2021). <em>Internationalization Enhancements in Java</em>. Oracle Java Docs.</li>
+                <li>Mozilla Developer Network. (2021). <em>Internationalization in JavaScript</em>. MDN Web Docs.</li>
+                <li>Python Software Foundation. (2021). <em>locale — Internationalization services</em>. Python Documentation.</li>
+              </ul>
+            `)">3.8. Capacidades adicionales de formato <span class="emoji-small">✅</span>
+        </li>
+          
+            <li onclick="abrirModal('3.9. Código Hollerith', `
+              <hr><br>
+              <p><strong>Objetivo:</strong> Comprender el código Hollerith como sistema histórico de representación de datos en tarjetas perforadas y su influencia en el desarrollo de la informática moderna.</p>
+            
+              <h4>Definición</h4>
+              <ul>
+                <li>El código Hollerith es un <span style='color: #e74c3c;'>sistema de codificación de caracteres</span> utilizado en tarjetas perforadas para el procesamiento de datos.</li>
+                <li>Fue desarrollado por <span style='color: #3498db;'>Herman Hollerith</span> para el censo de Estados Unidos de 1890.</li>
+                <li>Representa el <span style='color: #2ecc71;'>primer sistema mecanizado de procesamiento de datos</span> que condujo a la fundación de IBM.</li>
+              </ul>
+            
+              <h4>Contexto Histórico</h4>
+              <ul>
+                <li><strong>1890:</strong> Primera aplicación exitosa en el censo estadounidense</li>
+                <li><strong>1896:</strong> Hollerith funda la Tabulating Machine Company</li>
+                <li><strong>1924:</strong> La empresa se convierte en International Business Machines (IBM)</li>
+                <li><strong>1950s-1970s:</strong> Uso extensivo en computación mainframe</li>
+                <li><strong>1980s:</strong> Declive gradual con la llegada de medios magnéticos</li>
+              </ul>
+            
+              <h4>Estructura de la Tarjeta Perforada</h4>
+              <ul>
+                <li><strong>Dimensiones estándar:</strong> 7⅜ × 3¼ pulgadas (187 × 82 mm)</li>
+                <li><strong>Columnas:</strong> 80 columnas para caracteres</li>
+                <li><strong>Filas:</strong> 12 filas de posición de perforación (0-9 más 2 zonas)</li>
+                <li><strong>Material:</strong> Cartulina de alta calidad y durabilidad</li>
+                <li><strong>Capacidad:</strong> 80 caracteres por tarjeta</li>
+              </ul>
+            
+              <h4>Sistema de Codificación</h4>
+              <ul>
+                <li><strong>Zonas:</strong> Filas 12 (Zona superior) y 11 (Zona 9-8)</li>
+                <li><strong>Dígitos:</strong> Filas 0-9 para números y combinaciones</li>
+                <li><strong>Letras:</strong> Combinación de zona + dígito (ej: Zona 12 + Fila 1 = A)</li>
+                <li><strong>Símbolos:</strong> Combinaciones especiales de perforaciones</li>
+                <li><strong>Carácter nulo:</strong> Ausencia de perforaciones</li>
+              </ul>
+            
+              <h4>Proceso de Codificación y Decodificación</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Identificar el carácter</span> a representar</li>
+                <li><span style='color: #e74c3c;'>Determinar la combinación</span> de zona y dígito correspondiente</li>
+                <li><span style='color: #e74c3c;'>Perforar las posiciones</span> específicas en la tarjeta</li>
+                <li><span style='color: #e74c3c;'>Verificar la perforación</span> mediante inspección visual o mecánica</li>
+                <li><span style='color: #e74c3c;'>Leer mediante sensores</span> mecánicos o ópticos</li>
+              </ol>
+            
+              <h4>Ejemplos de Codificación Hollerith</h4>
+              <ul>
+                <li><strong>Número 5:</strong> Perforación única en fila 5</li>
+                <li><strong>Letra A:</strong> Perforaciones en zona 12 y fila 1</li>
+                <li><strong>Letra J:</strong> Perforaciones en zona 11 y fila 1</li>
+                <li><strong>Símbolo +:</strong> Perforaciones en zona 12 y filas 6, 8</li>
+                <li><strong>Espacio:</strong> Sin perforaciones en la columna</li>
+              </ul>
+            
+              <h4>Equipos y Máquinas Hollerith</h4>
+              <ul>
+                <li><strong>Perforadora:</strong> Máquina para crear las tarjetas</li>
+                <li><strong>Clasificadora:</strong> Ordenaba tarjetas según criterios</li>
+                <li><strong>Tabuladora:</strong> Contaba y sumaba datos de las tarjetas</li>
+                <li><strong>Reproductora:</strong> Copiaba tarjetas perforadas</li>
+                <li><strong>Intérprete:</strong> Imprimía caracteres en el borde de la tarjeta</li>
+              </ul>
+            
+              <h4>Ventajas del Sistema Hollerith</h4>
+              <ul>
+                <li><strong>Alta velocidad:</strong> Procesamiento más rápido que manual</li>
+                <li><strong>Precisión:</strong> Reducción de errores humanos</li>
+                <li><strong>Reutilizabilidad:</strong> Tarjetas podían reprocesarse</li>
+                <li><strong>Almacenamiento:</strong> Archivo físico permanente</li>
+                <li><strong>Estandarización:</strong> Formato universalmente aceptado</li>
+              </ul>
+            
+              <h4>Limitaciones y Desventajas</h4>
+              <ul>
+                <li><strong>Capacidad limitada:</strong> Solo 80 caracteres por tarjeta</li>
+                <li><strong>Fragilidad:</strong> Daño por manipulación o condiciones ambientales</li>
+                <li><strong>Velocidad:</strong> Lenta comparada con medios electrónicos</li>
+                <li><strong>Costo:</strong> Equipos especializados y mantenimiento</li>
+                <li><strong>Error humano:</strong> Perforaciones incorrectas o dañadas</li>
+              </ul>
+            
+              <h4>Legado e Influencia</h4>
+              <ul>
+                <li><strong>IBM:</strong> Base del imperio empresarial de IBM</li>
+                <li><strong>Formatos modernos:</strong> Influencia en codificaciones como EBCDIC</li>
+                <li><strong>Términos sobrevivientes:</strong> 'Bug' por insectos atrapados en máquinas</li>
+                <li><strong>Arquitectura:</strong> Conceptos que influyeron en diseño de computadoras</li>
+                <li><strong>Museos:</strong> Preservación como patrimonio tecnológico</li>
+              </ul>
+            
+              <h4>Aplicaciones Históricas</h4>
+              <ul>
+                <li><strong>Censos poblacionales:</strong> Estados Unidos y otros países</li>
+                <li><strong>Nóminas y contabilidad:</strong> Empresas y gobiernos</li>
+                <li><strong>Investigación científica:</strong> Procesamiento de datos estadísticos</li>
+                <li><strong>Gestión de inventarios:</strong> Control de almacenes y producción</li>
+                <li><strong>Reservaciones:</strong> Aerolíneas y sistemas de transporte</li>
+              </ul>
+            
+              <h4>Buenas Prácticas en el Uso Histórico</h4>
+              <ol>
+                <li><span style='color: #e74c3c;'>Verificar perforaciones</span> antes del procesamiento</li>
+                <li><span style='color: #e74c3c;'>Almacenar tarjetas</span> en condiciones controladas</li>
+                <li><span style='color: #e74c3c;'>Utilizar secuencias de control</span> para validación</li>
+                <li><span style='color: #e74c3c;'>Mantener equipos</span> con limpieza y calibración regular</li>
+                <li><span style='color: #e74c3c;'>Documentar formatos</span> de codificación específicos</li>
+              </ol>
+            
+              <h4>Transición a Tecnologías Modernas</h4>
+              <ul>
+                <li><strong>Cintas magnéticas:</strong> Mayor capacidad y velocidad</li>
+                <li><strong>Discos duros:</strong> Acceso aleatorio y mayor densidad</li>
+                <li><strong>Medios ópticos:</strong> CD, DVD para almacenamiento masivo</li>
+                <li><strong>Almacenamiento sólido:</strong> Memorias flash y SSD</li>
+                <li><strong>Cloud computing:</strong> Almacenamiento distribuido y remoto</li>
+              </ul>
+            
+              <h4>Fuentes Bibliográficas</h4>
+              <ul>
+                <li>Hollerith, H. (1889). <em>An Electric Tabulating System</em>. US Patent 395,782.</li>
+                <li>Austrian, G. D. (1982). <em>Herman Hollerith: Forgotten Giant of Information Processing</em>. Columbia University Press.</li>
+                <li>Pugh, E. W. (1995). <em>Building IBM: Shaping an Industry and Its Technology</em>. MIT Press.</li>
+                <li>Ceruzzi, P. E. (2003). <em>A History of Modern Computing</em>. MIT Press.</li>
+                <li>IBM Archives. (2021). <em>Hollerith Tabulating Machine</em>. IBM Corporation.</li>
+              </ul>
+            `)">3.9. Código Hollerith <span class="emoji-small">✅</span>
+        </li>
+      </ul>
+    </div>
+    
+        <div class="tema-card">
+            <div class="tema-num">TEMA 4</div>
+            <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
+            <ul class="tema-list">
+                <li onclick="abrirModal('4.1 Introducción', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Comprender la importancia de la programación modular y cómo las funciones y subrutinas mejoran la organización del código.</p>
+                
+                    <h4>¿Por qué necesitamos funciones?</h4>
+                    <ul>
+                        <li>Imagina que estás construyendo una casa: en lugar de hacer todo de una vez, divides el trabajo en partes (cimientos, paredes, techo).</li>
+                        <li>En programación pasa igual: las funciones nos permiten dividir un programa grande en partes más pequeñas y manejables.</li>
+                        <li>Esto hace que el código sea más fácil de entender, mantener y reparar.</li>
+                    </ul>
+                
+                    <h4>Ventajas de usar funciones</h4>
+                    <ul>
+                        <li><strong>Reutilización:</strong> Escribes una vez, usas muchas veces.</li>
+                        <li><strong>Organización:</strong> Código más ordenado y fácil de leer.</li>
+                        <li><strong>Depuración más fácil:</strong> Si hay un error, sabes dónde buscar.</li>
+                        <li><strong>Trabajo en equipo:</strong> Cada programador puede trabajar en una función diferente.</li>
+                    </ul>
+                
+                    <div>
+                        <strong>Ejemplo práctico:</strong><br>
+                        Sin funciones: Tienes que calcular el área de un círculo 10 veces en tu programa, y escribes la fórmula 10 veces.<br>
+                        Con funciones: Escribes la fórmula una vez en una función, y la llamas 10 veces.
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en C++</em>. Pearson.</li>
+                        <li>Joyanes, L. (2018). <em>Fundamentos de programación</em>. McGraw-Hill.</li>
+                    </ul>
+                `)">4.1. Introducción <span class="emoji-small">✅</span>
+                </li>
+                
+                <li onclick="abrirModal('4.2 Definiciones', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Conocer los conceptos básicos y la terminología relacionada con funciones y subprogramas.</p>
+                
+                    <h4>¿Qué es un subprograma?</h4>
+                    <ul>
+                        <li>Es un <strong>bloque de código</strong> que realiza una tarea específica.</li>
+                        <li>Es como una <strong>mini-receta</strong> dentro de una receta más grande.</li>
+                        <li>Se puede <strong>llamar</strong> (usar) desde diferentes partes del programa principal.</li>
+                    </ul>
+                
+                    <h4>Términos importantes</h4>
+                    <ul>
+                        <li><strong>Función:</strong> Subprograma que devuelve un valor.</li>
+                        <li><strong>Subrutina:</strong> Subprograma que NO devuelve un valor (solo realiza acciones).</li>
+                        <li><strong>Parámetros:</strong> Datos que le pasamos al subprograma para que trabaje con ellos.</li>
+                        <li><strong>Argumentos:</strong> Los valores concretos que pasamos cuando llamamos al subprograma.</li>
+                        <li><strong>Retorno:</strong> Valor que devuelve una función después de ejecutarse.</li>
+                    </ul>
+                
+                    <div>
+                        <strong>Analogía de la cocina:</strong><br>
+                        <strong>Función:</strong> Como un horno que recibe una masa (parámetro) y devuelve un pastel (valor de retorno).<br>
+                        <strong>Subrutina:</strong> Como lavar los platos: realizas una acción, pero no devuelves nada.
+                    </div>
+                
+                    <div>
+                        // Ejemplo en pseudocódigo<br>
+                        FUNCIÓN sumar(a, b) {<br>
+                        &nbsp;&nbsp;RETORNAR a + b<br>
+                        }<br><br>
+                        
+                        // Llamada a la función<br>
+                        resultado = sumar(5, 3)  // resultado vale 8
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Barnes, J., & Kolling, M. (2016). <em>Programación orientada a objetos con Java</em>. Pearson.</li>
+                        <li>López, M. (2019). <em>Introducción a la programación</em>. Editorial Universitaria.</li>
+                    </ul>
+                `)">4.2. Definiciones <span class="emoji-small">✅</span>
+                </li>
+                
+                <li onclick="abrirModal('4.3 Tipos de subprogramas', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Identificar los diferentes tipos de subprogramas y cuándo usar cada uno.</p>
+                
+                    <h4>Clasificación por lo que devuelven</h4>
+                    <ul>
+                        <li><strong>Funciones (devuelven valor):</strong> Como una calculadora que siempre te da un resultado.</li>
+                        <li><strong>Subrutinas (no devuelven valor):</strong> Como una alarma que suena pero no te da información.</li>
+                    </ul>
+                
+                    <h4>Clasificación por cómo se usan</h4>
+                    <ul>
+                        <li><strong>Integradas (built-in):</strong> Vienen con el lenguaje de programación.</li>
+                        <li><strong>Definidas por el usuario:</strong> Las crea el programador según sus necesidades.</li>
+                    </ul>
+                
+                    <h4>Clasificación por su visibilidad</h4>
+                    <ul>
+                        <li><strong>Públicas:</strong> Se pueden usar desde cualquier parte del programa.</li>
+                        <li><strong>Privadas:</strong> Solo se pueden usar dentro de cierto contexto.</li>
+                    </ul>
+                
+                    <div>
+                        <strong>Ejemplos de la vida real:</strong><br>
+                        <strong>Función integrada:</strong> Como la función 'sqrt' (raíz cuadrada) que ya viene en matemáticas.<br>
+                        <strong>Función personalizada:</strong> Como una receta secreta de tu abuela para hacer galletas.
+                    </div>
+                
+                    <div>
+                        // Ejemplos en diferentes lenguajes<br>
+                        <br>
+                        // Python - Función integrada<br>
+                        longitud = len('Hola')  // len es una función integrada<br>
+                        <br>
+                        // Python - Función definida por usuario<br>
+                        def saludar(nombre):<br>
+                        &nbsp;&nbsp;return 'Hola ' + nombre<br>
+                        <br>
+                        mensaje = saludar('Ana')  // mensaje vale 'Hola Ana'
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Gaddis, T. (2017). <em>Starting Out with Programming Logic and Design</em>. Pearson.</li>
+                        <li>Zelle, J. M. (2017). <em>Python Programming: An Introduction to Computer Science</em>. Franklin.</li>
+                    </ul>
+                `)">4.3. Tipos de subprogramas <span class="emoji-small">✅</span>
+                </li>
+                
+                <li onclick="abrirModal('4.4 Formación de un subprograma', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Aprender las partes que componen un subprograma y cómo crearlo correctamente.</p>
+                
+                    <h4>Partes de un subprograma</h4>
+                    <ul>
+                        <li><strong>Encabezado/Cabecera:</strong> El 'nombre' y 'firma' del subprograma.</li>
+                        <li><strong>Parámetros:</strong> Las 'variables' que recibe para trabajar.</li>
+                        <li><strong>Cuerpo:</strong> Las instrucciones que realiza.</li>
+                        <li><strong>Valor de retorno (opcional):</strong> Lo que devuelve al terminar.</li>
+                    </ul>
+                
+                    <h4>Pasos para crear un subprograma</h4>
+                    <ul>
+                        <li><strong>Paso 1:</strong> Decidir qué va a hacer el subprograma.</li>
+                        <li><strong>Paso 2:</strong> Elegir un nombre descriptivo.</li>
+                        <li><strong>Paso 3:</strong> Definir qué parámetros necesita.</li>
+                        <li><strong>Paso 4:</strong> Escribir las instrucciones en el cuerpo.</li>
+                        <li><strong>Paso 5:</strong> Decidir si devuelve algún valor.</li>
+                    </ul>
+                
+                    <div class='example'>
+                        <strong>Analogía de una receta de cocina:</strong><br>
+                        <strong>Encabezado:</strong> 'Preparar jugo de naranja'<br>
+                        <strong>Parámetros:</strong> naranjas, azúcar, agua<br>
+                        <strong>Cuerpo:</strong> Exprimir naranjas, mezclar ingredientes...<br>
+                        <strong>Retorno:</strong> El jugo listo para servir
+                    </div>
+                
+                    <div class='code-block'>
+                        // Estructura general de una función<br>
+                        TIPO-DATO nombreFuncion(parámetro1, parámetro2, ...) {<br>
+                        &nbsp;&nbsp;// CUERPO - Instrucciones aquí<br>
+                        &nbsp;&nbsp;// ...<br>
+                        &nbsp;&nbsp;return valor;  // Opcional<br>
+                        }<br>
+                        <br>
+                        // Ejemplo concreto<br>
+                        float calcularAreaCirculo(float radio) {<br>
+                        &nbsp;&nbsp;float area = 3.1416 * radio * radio;<br>
+                        &nbsp;&nbsp;return area;<br>
+                        }
+                    </div>
+                
+                    <h4>Buenas prácticas</h4>
+                    <ul>
+                        <li>Usar nombres descriptivos (calcularPromedio, no funcion1).</li>
+                        <li>Un subprograma debe hacer solo UNA cosa bien.</li>
+                        <li>Documentar qué hace el subprograma.</li>
+                        <li>Manejar posibles errores en los parámetros.</li>
+                    </ul>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
+                        <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
+                    </ul>
+                `)">4.4. Formación de un subprograma <span class="emoji-small">✅</span>
+                </li>
+                
+                <li onclick="abrirModal('4.5 Subprogramas de función', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Dominar el uso de funciones que devuelven valores y entender su utilidad.</p>
+                
+                    <h4>Características de las funciones</h4>
+                    <ul>
+                        <li><strong>Siempre devuelven un valor</strong> (de lo contrario, serían subrutinas).</li>
+                        <li>Se pueden usar en expresiones matemáticas.</li>
+                        <li>Pueden llamarse a sí mismas (recursión).</li>
+                        <li>Pueden devolver diferentes tipos de datos.</li>
+                    </ul>
+                
+                    <h4>¿Cuándo usar una función?</h4>
+                    <ul>
+                        <li>Cuando necesitas <strong>calcular algo</strong> y obtener un resultado.</li>
+                        <li>Cuando una operación se <strong>repite muchas veces</strong> en tu programa.</li>
+                        <li>Cuando quieres <strong>simplificar cálculos complejos</strong>.</li>
+                    </ul>
+                
+                    <div>
+                        <strong>Ejemplo del mundo real:</strong><br>
+                        Una <strong>calculadora de impuestos</strong> es una función perfecta:<br>
+                        - Recibe: tu salario (parámetro)<br>
+                        - Calcula: cuánto impuesto debes pagar<br>
+                        - Devuelve: el monto a pagar (valor de retorno)
+                    </div>
+                
+                    <div>
+                        // Ejemplos de funciones útiles<br>
+                        <br>
+                        // Función para calcular el IVA<br>
+                        float calcularIVA(float precio) {<br>
+                        &nbsp;&nbsp;return precio * 0.16;<br>
+                        }<br>
+                        <br>
+                        // Función para verificar si un número es par<br>
+                        boolean esPar(int numero) {<br>
+                        &nbsp;&nbsp;return (numero % 2 == 0);<br>
+                        }<br>
+                        <br>
+                        // Uso de las funciones<br>
+                        float iva = calcularIVA(100);  // iva vale 16<br>
+                        if (esPar(10)) {  // Esto será verdadero<br>
+                        &nbsp;&nbsp;print('El número es par');<br>
+                        }
+                    </div>
+                
+                    <h4>Ventajas específicas de las funciones</h4>
+                    <ul>
+                        <li>Permiten crear <strong>expresiones más legibles</strong>.</li>
+                        <li>Facilitan las <strong>pruebas unitarias</strong>.</li>
+                        <li>Mejoran el <strong>rendimiento</strong> al evitar código repetido.</li>
+                    </ul>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Roberts, E. (2011). <em>Programming Abstractions in C++</em>. Pearson.</li>
+                        <li>Sedgewick, R., & Wayne, K. (2017). <em>Computer Science: An Interdisciplinary Approach</em>. Addison-Wesley.</li>
+                    </ul>
+                `)">4.5. Subprogramas de función <span class="emoji-small">✅</span>
+                </li>
+                
+                <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Comprender el uso de subrutinas y cuándo son más apropiadas que las funciones.</p>
+                
+                    <h4>¿Qué son las subrutinas?</h4>
+                    <ul>
+                        <li>Son subprogramas que <strong>realizan acciones</strong> pero <strong>no devuelven valores</strong>.</li>
+                        <li>Se enfocan en <strong>hacer</strong> algo en lugar de <strong>calcular</strong> algo.</li>
+                        <li>También se llaman <strong>procedimientos</strong> o <strong>métodos void</strong>.</li>
+                    </ul>
+                
+                    <h4>¿Cuándo usar una subrutina?</h4>
+                    <ul>
+                        <li>Cuando necesitas <strong>mostrar información</strong> en pantalla.</li>
+                        <li>Para <strong>modificar variables globales</strong> o estructuras de datos.</li>
+                        <li>Cuando realizas una <strong>serie de pasos</strong> que no producen un resultado calculable.</li>
+                        <li>Para <strong>configurar</strong> o <strong>inicializar</strong> partes del programa.</li>
+                    </ul>
+                
+                    <div>
+                        <strong>Ejemplo de la vida real:</strong><br>
+                        Un <strong>robot limpiador</strong> es como una subrutina:<br>
+                        - Recibe: la instrucción 'limpiar la casa'<br>
+                        - Realiza: pasa la aspiradora, trapea, etc.<br>
+                        - No devuelve: ningún valor, solo deja la casa limpia
+                    </div>
+                
+                    <div class='code-block'>
+                        // Ejemplos de subrutinas útiles<br>
+                        <br>
+                        // Subrutina para mostrar un menú<br>
+                        void mostrarMenu() {<br>
+                        &nbsp;&nbsp;print('1. Agregar contacto');<br>
+                        &nbsp;&nbsp;print('2. Buscar contacto');<br>
+                        &nbsp;&nbsp;print('3. Salir');<br>
+                        }<br>
+                        <br>
+                        // Subrutina para inicializar el juego<br>
+                        void inicializarJuego() {<br>
+                        &nbsp;&nbsp;cargarImagenes();<br>
+                        &nbsp;&nbsp;reproducirMusica();<br>
+                        &nbsp;&nbsp;mostrarPantallaInicio();<br>
+                        }<br>
+                        <br>
+                        // Uso de subrutinas<br>
+                        mostrarMenu();  // Simplemente muestra el menú<br>
+                        inicializarJuego();  // Prepara todo para jugar
+                    </div>
+                
+                    <h4>Diferencias clave con las funciones</h4>
+                    <ul>
+                        <li><strong>Funciones:</strong> Se usan en expresiones (derecha del =).</li>
+                        <li><strong>Subrutinas:</strong> Se llaman como instrucciones independientes.</li>
+                        <li><strong>Funciones:</strong> Devuelven un valor que puedes guardar.</li>
+                        <li><strong>Subrutinas:</strong> Realizan acciones directamente.</li>
+                    </ul>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Forouzan, B. A., & Gilberg, R. F. (2017). <em>Computer Science: A Structured Programming Approach</em>. Cengage.</li>
+                        <li>Dale, N., & Weems, C. (2010). <em>Programming and Problem Solving with C++</em>. Jones & Bartlett.</li>
+                    </ul>
+                `)">4.6. Subprogramas de subrutinas <span class="emoji-small">✅</span>
+                </li>
+                
+                <li onclick="abrirModal('4.7 Subprogramas combinados', `
+                    <hr><br>
+                    <p><strong>Objetivo:</strong> Aprender a combinar diferentes tipos de subprogramas para crear soluciones más complejas.</p>
+                
+                    <h4>¿Qué son los subprogramas combinados?</h4>
+                    <ul>
+                        <li>Son <strong>sistemas</strong> donde múltiples subprogramas trabajan juntos.</li>
+                        <li>Las funciones y subrutinas se <strong>llaman entre sí</strong> para resolver problemas complejos.</li>
+                        <li>Crean una <strong>estructura modular</strong> que facilita el desarrollo de programas grandes.</li>
+                    </ul>
+                
+                    <h4>Ventajas de la combinación</h4>
+                    <ul>
+                        <li><strong>Divide y vencerás:</strong> Problemas grandes se dividen en pequeños.</li>
+                        <li><strong>Reutilización máxima:</strong> Un subprograma puede usarse en múltiples proyectos.</li>
+                        <li><strong>Mantenimiento más fácil:</strong> Cambias una parte sin afectar las demás.</li>
+                        <li><strong>Trabajo en equipo:</strong> Cada programador trabaja en subprogramas diferentes.</li>
+                    </ul>
+                
+                    <div class='example'>
+                        <strong>Analogía de una fábrica de autos:</strong><br>
+                        Cada estación (subprograma) hace una parte:<br>
+                        - Estación 1: Fabricar chasis (subrutina)<br>
+                        - Estación 2: Pintar auto (subrutina)<br>
+                        - Estación 3: Calcular costo (función)<br>
+                        - Estación 4: Controlar calidad (función)<br>
+                        Todas juntas producen un auto completo.
+                    </div>
+                
+                    <div>
+                        // Ejemplo: Sistema de gestión de estudiantes<br>
+                        <br>
+                        // Subprogramas individuales<br>
+                        void agregarEstudiante() { ... }<br>
+                        float calcularPromedio(int[] calificaciones) { ... }<br>
+                        void mostrarReporte() { ... }<br>
+                        boolean aproboMateria(float promedio) { ... }<br>
+                        <br>
+                        // Subprograma principal que combina todos<br>
+                        void gestionarEstudiantes() {<br>
+                        &nbsp;&nbsp;agregarEstudiante();<br>
+                        &nbsp;&nbsp;float promedio = calcularPromedio(calificaciones);<br>
+                        &nbsp;&nbsp;if (aproboMateria(promedio)) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;print('¡Felicidades, aprobaste!');<br>
+                        &nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;mostrarReporte();<br>
+                        }
+                    </div>
+                
+                    <h4>Estrategias para combinar subprogramas</h4>
+                    <ul>
+                        <li><strong>Top-down:</strong> Empiezas con el problema general y lo divides.</li>
+                        <li><strong>Bottom-up:</strong> Creas subprogramas pequeños y los unes.</li>
+                        <li><strong>Modular:</strong> Agrupas subprogramas relacionados en módulos.</li>
+                    </ul>
+                
+                    <h4>Ejemplo práctico completo</h4>
+                    <div>
+                        // Sistema simple de calculadora<br>
+                        <br>
+                        // Funciones básicas<br>
+                        float sumar(float a, float b) { return a + b; }<br>
+                        float restar(float a, float b) { return a - b; }<br>
+                        <br>
+                        // Subrutinas de interfaz<br>
+                        void mostrarResultado(float resultado) { ... }<br>
+                        void mostrarError() { ... }<br>
+                        <br>
+                        // Función principal que combina todo<br>
+                        void calculadora() {<br>
+                        &nbsp;&nbsp;float num1 = leerNumero();<br>
+                        &nbsp;&nbsp;float num2 = leerNumero();<br>
+                        &nbsp;&nbsp;char operacion = leerOperacion();<br>
+                        &nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;float resultado;<br>
+                        &nbsp;&nbsp;if (operacion == '+') {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;resultado = sumar(num1, num2);<br>
+                        &nbsp;&nbsp;} else if (operacion == '-') {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;resultado = restar(num1, num2);<br>
+                        &nbsp;&nbsp;} else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;mostrarError();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+                        &nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;mostrarResultado(resultado);<br>
+                        }
+                    </div>
+                
+                    <h4>Fuentes Bibliográficas</h4>
+                    <ul>
+                        <li>Pressman, R. S. (2014). <em>Software Engineering: A Practitioner's Approach</em>. McGraw-Hill.</li>
+                        <li>Sommerville, I. (2016). <em>Software Engineering</em>. Pearson.</li>
+                    </ul>
+                `)">4.7. Subprogramas combinados <span class="emoji-small">✅</span>
+                </li>
+            </ul>
+        </div>
+
+    
+    <div class="tema-card">
+      <div class="tema-num">TEMA 5</div>
+      <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
+      <ul class="tema-list">
+        <li>5.1. Introducción</li>
+        <li>5.2. Ejemplos de paquetes</li>
+        <li>5.3. Texas instrument TI-59</li>
+        <li>5.4. Manejo de calculador</li>
+        <li>5.5. Casio FX-502P</li>
+        <li>5.6. Códigos</li>
+        <li>5.7. Instrucciones</li>
+        <li>5.8. Interpretación de datos</li>
+        <li>5.9. Corrección de programas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="actividades">
+  <h2 class="section-title">Actividades de Aprendizaje</h2>
+  
+  <div>
+    <h3 class="actividades-subtitle">Bajo la conducción del docente en laboratorio de cómputo</h3>
+    <div class="cards-grid">
+      <div class="card" onclick="window.open('diagramas.html', '_blank')">
+        <h3><span class="emoji-small">✅</span> Ejercicios de diagramas de flujo</h3>
+        <p>El alumno realizará ejercicios de diagramas de flujo con diversas propuestas.</p>
+      </div>
+      <div class="card">
+        <h3>Elaboración de programas</h3>
+        <p>El alumno elaborará programas utilizando formatos establecidos.</p>
+      </div>
+      <div class="card">
+        <h3>Modificaciones a programas</h3>
+        <p>Los alumnos efectuarán modificaciones a los programas realizados con subrutinas y subprogramas.</p>
+      </div>
+      <div class="card">
+        <h3>Ejercicios con computadoras manuales</h3>
+        <p>Se harán ejercicios con computadoras manuales Texas y Casio.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div style="margin-top: 70px;">
+    <h3 class="actividades-subtitle">De manera independiente</h3>
+    <div class="cards-grid">
+     <div class="card">
+        <h3> <span class="emoji-small">✅</span> Investigaciones bibliográficas</h3>
+        <h5>Producto a Entregar de uno de los siguientes libros:</h5>
+        <p>Como resultado de tu lectura, deberás crear una guía de estudio. Esta guía debe ser un documento útil que sintetice y organice los conceptos clave del libro, para facilitar su comprensión y estudio, lo harás a mano y con tinta de colores.</p>
+         <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1BDMHC_ICqOP4DBsDM5IhV0nh-yCdRRDq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img src="https://m.media-amazon.com/images/I/41ds5Abn-bL._SX342_SY445_ControlCacheEqualizer_.jpg" alt="storytelling">
+            </a>
+        </div>
+         <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1D8rHXJS3KA7OD_RFCNrbemIK63DLdTq4/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <img src="https://infolibros.org/thumbnails/temp/ManipulandoelDOMconJavascriptVicentMonchoMasGemmaSubiranaGrau-thumbnail-112813.webp" alt="manipulando el dom con JS">
+            </a>
+        </div>
+         <div class="loguito librito">
+            <a href="https://drive.google.com/file/d/1lMa1dZrONcwQJWt6eWxX1aWXzrL9HVMU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <img src="https://editorialgrupo-aea.com/public/presses/2/submission_18_18_coverImage_es_ES.jpg" alt="programacion web del frontend al backend">
+            </a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3>Programas con proposiciones</h3>
+        <p>Se hará un programa utilizando las proposiciones y formatos establecidos.</p>
+      </div>
+      <div class="card">
+        <h3>Solución de problemas</h3>
+        <p>Se resolverán problemas aplicados a cálculo mediante computadoras manuales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Evaluación</h2>
+  <div class="evaluacion-grid">
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">40%</div>
+        <p class="evaluacion-desc">Dos exámenes parciales</p><br>
+        <div class="tema-list">
+<!--           🔓<a href="ppcom1.html" target="_blank"> 1er Parcial 27/09/25</a> -->
+          <a href="" target="">🔒 1er Parcial 27/09/25</a>
+        </div>
+        <div class="tema-list">
+          <!-- 🔓<a href="2do_parcial_com1.pdf" target="_blank"> 2do Parcial 18/10/25</a> -->
+          <a href="" target="">🔒 2do Parcial 18/10/25</a>
+        </div>
+      </div>
+    
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">20%</div>
+      <p class="evaluacion-desc">Reporte de prácticas de laboratorio</p><br>
+<!--       <h6>Todos tienen 20% por rendimiento en clase</h6>
+ -->    </div>
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">10%</div>
+      <p class="evaluacion-desc">Investigaciones bibliográficas</p><br>
+<!--       <h6>Son las firmas que tienes en tus tareas</h6> -->
+    </div>
+    <div class="evaluacion-item tema-card">
+      <div class="evaluacion-porcentaje">30%</div>
+      <p class="evaluacion-desc">Examen final</p><br>
+      <!-- <h6>Voy a promediar tus dos parciales para esta calificación</h6> -->
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="modal-info" class="modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <div id="modal-text"></div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal-info');
+  const modalTitle = document.getElementById('modal-title');
+  const modalText = document.getElementById('modal-text');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  // Función para abrir modal con HTML
+  function abrirModal(titulo, html) {
+    modalTitle.textContent = titulo;
+    modalText.innerHTML = html;
+    modal.classList.add('show');
+    modal.style.display = 'block';
+  }
+
+  // Función para cerrar modal
+  function cerrarModal() {
+    modal.classList.remove('show');
+    setTimeout(() => modal.style.display = 'none', 300); // espera la transición
+  }
+
+  modalClose.addEventListener('click', cerrarModal);
+  modalOverlay.addEventListener('click', cerrarModal);
+</script>
+
+<footer>
+  © 2025 Universidad URA – Asignatura Computación I
+</footer>
+</body>
+</html>
