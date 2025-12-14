@@ -1,0 +1,222 @@
+/* css/estilos2.css - Estilos adicionales para el modal y temas */
+
+/* Estilos para enlaces de subtemas */
+.subtema-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.subtema-link:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+    text-decoration: none;
+    color: #2c3e50;
+    border-color: #4a6fa5;
+}
+
+.subtema-num {
+    background: #4a6fa5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.subtema-titulo {
+    flex-grow: 1;
+    font-size: 0.95em;
+}
+
+.subtema-emoji {
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+/* Modal mejorado */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #666;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.modal-close:hover {
+    color: #333;
+    background: #f8f9fa;
+    transform: rotate(90deg);
+}
+
+#modal-title {
+    padding: 25px 30px 15px;
+    margin: 0;
+    background: linear-gradient(135deg, #4a6fa5 0%, #2c3e50 100%);
+    color: white;
+    font-size: 1.5em;
+    border-bottom: 3px solid #3498db;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#modal-text {
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Estados de carga */
+.cargando {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    color: #666;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #4a6fa5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-carga {
+    padding: 40px;
+    text-align: center;
+    color: #d32f2f;
+    background: #ffebee;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* Scrollbar personalizado para el modal */
+#modal-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modal-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#modal-text::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+#modal-text::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        max-height: 90vh;
+    }
+    
+    #modal-title {
+        font-size: 1.2em;
+        padding: 20px 15px 10px;
+    }
+    
+    .subtema-link {
+        padding: 10px 12px;
+    }
+    
+    .subtema-num {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9em;
+    }
+}

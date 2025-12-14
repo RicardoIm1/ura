@@ -9,6 +9,10 @@
   <!-- MathJax para renderizar notación matemática elegante -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- CSS adicional para el modal -->
+<link rel="stylesheet" href="/ura/css/estilos2.css">
+<!-- Tu script de carga de modal -->
+<script src="/ura/js/modal-loader.js" defer></script>
 </head>
 <style>
   .pdf-link-simple {
@@ -64,11 +68,34 @@
     </h2>
     <div class="temas-grid">
 
+      <!-- En la sección de Temas -->
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
         <h3 class="tema-title">Matrices</h3>
         <ul class="tema-list">
-          <!-- AQUI QUIERO PONER CON JS A MANERA DE MODAL EL CONTENIDO DEL 1.1.html -->
+          <!-- Enlaces a subtemas -->
+          <li>
+            <a href="#" data-tema="1.1" class="subtema-link">
+              <span class="subtema-num">1.1</span>
+              <span class="subtema-titulo">Definición de matriz, orden y nomenclatura</span>
+              <span class="subtema-emoji">📊</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-tema="1.2" class="subtema-link">
+              <span class="subtema-num">1.2</span>
+              <span class="subtema-titulo">Operaciones con matrices</span>
+              <span class="subtema-emoji">➕</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-tema="1.3" class="subtema-link">
+              <span class="subtema-num">1.3</span>
+              <span class="subtema-titulo">Determinantes</span>
+              <span class="subtema-emoji">🔢</span>
+            </a>
+          </li>
+          <!-- Agrega más subtemas según necesites -->
         </ul>
       </div>
 
@@ -85,7 +112,8 @@
         <a href="#.html" target="_self" rel="noopener noreferrer" class="card-link">
           <div class="card">
             <span class="percentage-badge">5%</span>
-            <h3><!-- <span class="emoji-small">✅</span> --> Resolución de ejercicios de matemáticas y su aplicación en los
+            <h3><!-- <span class="emoji-small">✅</span> --> Resolución de ejercicios de matemáticas y su aplicación en
+              los
               negocios.</h3>
             <div class="numerote">50 ejercicios</div>
           </div>
@@ -108,7 +136,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="card">
           <span class="percentage-badge">5%</span>
           <h3>Leer</h3>
@@ -147,20 +175,22 @@
           <h3>Investigar</h3>
           <p>Investigaciones bibliográficas, hemerográficas y digitales sobre la asignatura de matemáticas en los
             negocios</p>
-            <div class="loguito librito">
-              <img src="https://static8.depositphotos.com/1001469/914/i/600/depositphotos_9149465-stock-photo-graphs-charts-business-table-the.jpg"
-                alt="investigar">
-            </div>
+          <div class="loguito librito">
+            <img
+              src="https://static8.depositphotos.com/1001469/914/i/600/depositphotos_9149465-stock-photo-graphs-charts-business-table-the.jpg"
+              alt="investigar">
+          </div>
         </div>
         <div class="card">
           <span class="percentage-badge">5%</span>
           <h3>Informes</h3>
           <p>Elaboración de informes sobre lecturas recomendadas sobre las
             matemáticas en el mundo de los negocios.</p>
-            <div class="loguito librito">
-              <img src="https://st2.depositphotos.com/4012355/10958/i/380/depositphotos_109588030-stock-photo-math-concept-abstract.jpg"
-                alt="informes">
-            </div>
+          <div class="loguito librito">
+            <img
+              src="https://st2.depositphotos.com/4012355/10958/i/380/depositphotos_109588030-stock-photo-math-concept-abstract.jpg"
+              alt="informes">
+          </div>
         </div>
 
         <a href="#" target="_self" rel="noopener noreferrer" class="card-link">
