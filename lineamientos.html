@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineamientos Docentes - UR Bahía de Banderas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a237e;
+            --primary-light: #534bae;
+            --secondary: #00acc1;
+            --accent: #ff4081;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #212529;
+            --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .university-name {
+            text-align: center;
+        }
+        
+        .university-name h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .university-name h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .document-title {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .document-title h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        /* Content Styles */
+        .content {
+            padding: 3rem 0;
+        }
+        
+        .salutation {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .salutation h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .salutation p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+        
+        .objective-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2.5rem;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .objective-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .objective-card h4 i {
+            color: var(--accent);
+        }
+        
+        .objective-card p {
+            color: var(--dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        /* Guidelines Grid */
+        .guidelines-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .guideline-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            height: 100%;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .guideline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .guideline-number {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: -20px 0 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .guideline-content {
+            padding: 1.5rem;
+        }
+        
+        .guideline-content h5 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            min-height: 3rem;
+        }
+        
+        .guideline-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .highlight {
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        
+        .email-container {
+            background-color: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .email-container p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .email-address {
+            font-weight: 600;
+            color: var(--primary);
+            word-break: break-all;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        .closing {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .closing p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+        
+        .signature {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .signature h5 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .signature p {
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 1.5rem 0;
+            }
+            
+            .university-name h1 {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                padding: 2rem 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .salutation, .objective-card, .guideline-content {
+                padding: 1.5rem;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="university-name">
+                    <h1>UNIVERSIDAD REGIONAL</h1>
+                    <h2>Bahía de Banderas</h2>
+                </div>
+            </div>
+            <div class="document-title">
+                <h3><i class="fas fa-file-alt"></i> LINEAMIENTOS INTERNOS PARA DOCENTES</h3>
+            </div>
+        </div>
+    </header>
+    
+    <main class="content container">
+        <section class="salutation">
+            <h4>ESTIMADOS DOCENTES:</h4>
+            <p>En este documento encontrarán los lineamientos actualizados para el cumplimiento de sus funciones académico-administrativas durante el próximo periodo. Les pedimos revisarlos con atención, ya que son de aplicación obligatoria.</p>
+        </section>
+        
+        <section class="objective-card">
+            <h4><i class="fas fa-bullseye"></i> OBJETIVO</h4>
+            <p>Establecer los lineamientos que regulan el desempeño, compromiso y responsabilidad del personal docente para garantizar la calidad académica, el adecuado funcionamiento institucional y el óptimo desarrollo formativo de los estudiantes.</p>
+        </section>
+        
+        <h3 class="guidelines-title">LINEAMIENTOS ACADÉMICO-ADMINISTRATIVOS</h3>
+        
+        <div class="guidelines-grid">
+            <!-- Lineamiento 1 -->
+            <div class="guideline-card">
+                <div class="guideline-number">1</div>
+                <div class="guideline-content">
+                    <h5>Cumplimiento de horarios</h5>
+                    <p>El docente deberá presentarse puntualmente al inicio de cada clase y permanecer hasta el término establecido. <span class="highlight">No se podrá abandonar el aula antes del horario indicado sin justificación previa.</span></p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 2 -->
+            <div class="guideline-card">
+                <div class="guideline-number">2</div>
+                <div class="guideline-content">
+                    <h5>Entrega de planeaciones</h5>
+                    <p>La planeación académica deberá entregarse a más tardar una semana después de iniciar clases. La entrega se realizará únicamente vía correo electrónico al área académica correspondiente.</p>
+                    <div class="email-container">
+                        <p><i class="fas fa-envelope"></i> <strong>Correo electrónico:</strong></p>
+                        <p class="email-address">sub_acad_arandas1@ceura.edu.mx</p>
+                        <p><i class="fas fa-copy"></i> <strong>Con copia a:</strong></p>
+                        <p class="email-address">dir_bahiadebanderas@ceura.edu.mx</p>
+                    </div>
+                    <p style="margin-top: 1rem;">Cualquier actualización deberá ser notificada oportunamente.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 3 -->
+            <div class="guideline-card">
+                <div class="guideline-number">3</div>
+                <div class="guideline-content">
+                    <h5>Pase de lista obligatorio</h5>
+                    <p>El docente deberá registrar asistencia de los alumnos en cada sesión. <span class="highlight">Los reportes de asistencia deberán ser verídicos</span> y enviados cuando la Dirección Académica los solicite.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 4 -->
+            <div class="guideline-card">
+                <div class="guideline-number">4</div>
+                <div class="guideline-content">
+                    <h5>Documentación del docente</h5>
+                    <p>Todo docente deberá entregar su documentación completa, actualizada y en tiempo, según lo solicite el área administrativa. <span class="highlight">La omisión en la entrega puede limitar su asignación de grupos.</span></p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 5 -->
+            <div class="guideline-card">
+                <div class="guideline-number">5</div>
+                <div class="guideline-content">
+                    <h5>Asistencia y registro adecuado</h5>
+                    <p>Es muy importante el llenado correcto de su registro en nuestras listas de asistencias, colocando siempre el tema que estarán impartiendo en el día con su firma, <span class="highlight">puesto que estos registros los usamos para subir a sistema su nómina en tiempo y forma.</span></p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 6 -->
+            <div class="guideline-card">
+                <div class="guideline-number">6</div>
+                <div class="guideline-content">
+                    <h5>Ausencias y suplencias</h5>
+                    <p>En caso de requerir faltar, el docente deberá:</p>
+                    <ul style="padding-left: 1.5rem; margin-top: 0.5rem; color: var(--gray);">
+                        <li>Notificar con anticipación a la Dirección del plantel.</li>
+                        <li>Gestionar un docente suplente que cumpla con el perfil adecuado.</li>
+                        <li>Enviar por escrito el motivo de la ausencia y el nombre del suplente.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 7 -->
+            <div class="guideline-card">
+                <div class="guideline-number">7</div>
+                <div class="guideline-content">
+                    <h5>Evaluaciones y entrega de calificaciones</h5>
+                    <p>El docente deberá aplicar evaluaciones en las fechas establecidas por la institución. <span class="highlight">Las calificaciones deberán ser entregadas en tiempo y forma</span>, según los lineamientos del calendario académico.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 8 -->
+            <div class="guideline-card">
+                <div class="guideline-number">8</div>
+                <div class="guideline-content">
+                    <h5>Comportamiento profesional</h5>
+                    <p>Mantener un trato respetuoso, ético y cordial hacia alumnos, padres de familia, compañeros y personal administrativo. <span class="highlight">Evitar actitudes, comentarios o acciones que puedan considerarse discriminatorias o inapropiadas.</span></p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 9 -->
+            <div class="guideline-card">
+                <div class="guideline-number">9</div>
+                <div class="guideline-content">
+                    <h5>Uso adecuado de recursos institucionales</h5>
+                    <p>Hacer uso responsable de instalaciones, equipo audiovisual, materiales y mobiliario asignado. Reportar cualquier daño o necesidad de mantenimiento.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 10 -->
+            <div class="guideline-card">
+                <div class="guideline-number">10</div>
+                <div class="guideline-content">
+                    <h5>Seguimiento académico</h5>
+                    <p>Mantener comunicación constante con la Dirección del plantel sobre el desempeño de los alumnos. Reportar situaciones especiales: conductas inapropiadas, bajo rendimiento, ausencias prolongadas, entre otros.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 11 -->
+            <div class="guideline-card">
+                <div class="guideline-number">11</div>
+                <div class="guideline-content">
+                    <h5>Cumplimiento del programa académico</h5>
+                    <p>Respetar el temario oficial de la materia y evitar contenidos ajenos a los objetivos del curso. <span class="highlight">Cubrir el 100% del programa asignado durante el cuatrimestre.</span> En caso de requerir hacer alguna modificación en temario, es importante hacer de conocimiento de dirección de plantel, para realizar los ajustes necesarios.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 12 -->
+            <div class="guideline-card">
+                <div class="guideline-number">12</div>
+                <div class="guideline-content">
+                    <h5>Imagen institucional</h5>
+                    <p>Mantener un código de vestimenta formal y alineada que solicita la institución. Respetar y promover los valores, misión y visión de la universidad.</p>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 13 -->
+            <div class="guideline-card">
+                <div class="guideline-number">13</div>
+                <div class="guideline-content">
+                    <h5>Prohibiciones</h5>
+                    <ul style="padding-left: 1.5rem; color: var(--gray);">
+                        <li>Modificar calificaciones sin sustento académico.</li>
+                        <li>Solicitar o recibir beneficios personales de alumnos.</li>
+                        <li>Consumir bebidas alcohólicas o presentarse bajo efectos de sustancias dentro del plantel.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Lineamiento 14 -->
+            <div class="guideline-card">
+                <div class="guideline-number">14</div>
+                <div class="guideline-content">
+                    <h5>Participación en actividades institucionales</h5>
+                    <p>El docente apoyará en eventos académicos, ceremonias, capacitaciones y actividades extracurriculares cuando sea requerido.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="closing">
+                <p>Agradecemos de antemano su amable atención, apoyo y colaboración, para el buen funcionamiento académico y administrativo de nuestra institución.</p>
+                <p>Sin más por el momento, quedo siempre a sus órdenes.</p>
+            </div>
+            
+            <div class="signature">
+                <h5>ATENTAMENTE</h5>
+                <p><strong>Mtra. Ginelia Anhel Sosa Sosa</strong></p>
+                <p>Directora General del plantel Bahía de Banderas</p>
+                <p>Universidad Regional de los Altos</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Efecto de aparición gradual para las tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.guideline-card');
+            
+            cards.forEach((card, index) => {
+                // Establecer un retraso escalonado para la animación
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + index * 50);
+            });
+            
+            // Efecto interactivo para los correos electrónicos
+            const emailElements = document.querySelectorAll('.email-address');
+            emailElements.forEach(email => {
+                email.addEventListener('click', function() {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = this.textContent;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                    
+                    // Feedback visual
+                    const originalText = this.textContent;
+                    this.textContent = '¡Correo copiado!';
+                    this.style.color = 'var(--accent)';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.color = '';
+                    }, 1500);
+                });
+                
+                email.style.cursor = 'pointer';
+                email.title = 'Haz clic para copiar el correo';
+            });
+        });
+    </script>
+</body>
+</html>
