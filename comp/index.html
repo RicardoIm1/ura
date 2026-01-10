@@ -145,6 +145,18 @@
       content: "📄";
       margin-right: 8px;
     }
+ /* imagenes en 1.1 */
+    .image-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .image-caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+  }
   </style>
 
 </head>
@@ -188,35 +200,76 @@
         <h3 class="tema-title">Introducción a Computadores Digitales</h3>
         <ul class="tema-list">
           <li onclick="abrirModal('1.1 Computación Análoga', `
-              <hr><br>
-            <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
-            <h4>Definición</h4>
-            <ul>
-              <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o movimiento).</li>
-              <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
-            </ul>
-            <h4>Características</h4>
-            <ul>
-              <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
-              <li>Ofrece resultados aproximados.</li>
-              <li>Muy usada antes de la aparición de computadoras digitales.</li>
-            </ul>
-            <h4>Ejemplos</h4>
-            <ul>
-              <li>Regla de cálculo para operaciones matemáticas.</li>
-              <li>Relojes de manecillas.</li>
-              <li>Termómetros de mercurio.</li>
-            </ul>
-            <h4>Fuentes Bibliográficas</h4>
-            <ul>
-              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
-              <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
-              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
-            </ul>
-          `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
-          </li>
+  <hr><br>
+  <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
+  
+  <div class=" image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Analog_Computer_Norden_Bombsight.jpg/800px-Analog_Computer_Norden_Bombsight.jpg"
+              alt="Computadora análoga Norden Bombsight"
+              style="width:100%; max-width:600px; border-radius:8px; margin:15px 0;">
+            <p class="image-caption"><em>Computadora análoga Norden Bombsight usada en aviación militar (1940s)</em></p>
+      </div>
 
-          <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
+      <h4>Definición</h4>
+      <ul>
+        <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o
+          movimiento).</li>
+        <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
+      </ul>
+
+      <div class="image-container">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Operations_using_a_slide_rule.jpg/800px-Operations_using_a_slide_rule.jpg"
+          alt="Persona usando regla de cálculo" style="width:100%; max-width:500px; border-radius:8px; margin:15px 0;">
+        <p class="image-caption"><em>Uso de una regla de cálculo, dispositivo análogo para operaciones matemáticas</em>
+        </p>
+      </div>
+
+      <h4>Características</h4>
+      <ul>
+        <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
+        <li>Ofrece resultados aproximados.</li>
+        <li>Muy usada antes de la aparición de computadoras digitales.</li>
+      </ul>
+
+      <div class="image-gallery" style="display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+        <div style="flex: 1; min-width: 200px;">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Analogue_clock_face.jpg/400px-Analogue_clock_face.jpg"
+            alt="Reloj de manecillas" style="width:100%; border-radius:8px;">
+          <p style="font-size:12px; text-align:center;"><em>Reloj de manecillas analógico</em></p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Clinical_thermometer-01.jpg/400px-Clinical_thermometer-01.jpg"
+            alt="Termómetro de mercurio" style="width:100%; border-radius:8px;">
+          <p style="font-size:12px; text-align:center;"><em>Termómetro de mercurio analógico</em></p>
+        </div>
+      </div>
+
+      <h4>Ejemplos</h4>
+      <ul>
+        <li>Regla de cálculo para operaciones matemáticas.</li>
+        <li>Relojes de manecillas.</li>
+        <li>Termómetros de mercurio.</li>
+      </ul>
+
+      <h4>Fuentes Bibliográficas</h4>
+      <ul>
+        <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+        <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
+        <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+      </ul>
+
+      <div
+        style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #4CAF50;">
+        <p style="margin:0; font-size:14px;"><strong>Nota:</strong> Las imágenes son ilustrativas y provienen de
+          Wikimedia Commons bajo licencias Creative Commons.</p>
+      </div>
+      `)">1.1 Computación Análoga <span class="emoji-small">✅</span></li>
+
+      <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
                 <hr><br>
               <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
 
@@ -251,9 +304,9 @@
               <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
           </ul>
             `)">1.2 Introducción a métodos digitales <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.3 Descripción de componentes', `
+      <li onclick="abrirModal('1.3 Descripción de componentes', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Conocer los principales componentes de un sistema digital, su funcionamiento y cómo interactúan para procesar información.</p>
 
@@ -301,9 +354,9 @@
                 </ul>
             </ul>
           `)">1.3 Descripción de componentes <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.4 Lectura de entrada', `
+      <li onclick="abrirModal('1.4 Lectura de entrada', `
               <hr><br>
               <p><strong>Objetivo:</strong> Entender cómo los sistemas digitales reciben información del mundo exterior y la preparan para su procesamiento interno.</p>
             
@@ -350,9 +403,9 @@
                 <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
               </ul>
             `)">1.4 Lectura de entrada <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.5 Unidad de memoria', `
+      <li onclick="abrirModal('1.5 Unidad de memoria', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender la función, tipos y características de la memoria en un sistema computacional.</p>
             
@@ -398,9 +451,9 @@
                 <li>Hamacher, C., Vranesic, Z., & Zaky, S. (2011). <em>Computer Organization</em>. McGraw-Hill.</li>
               </ul>
             `)">1.5 Unidad de memoria <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.6 Almacenamiento en código', `
+      <li onclick="abrirModal('1.6 Almacenamiento en código', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar los métodos y formatos utilizados para almacenar información en sistemas digitales mediante codificación.</p>
             
@@ -446,9 +499,9 @@
                 <li>Unicode Consortium. (2020). <em>The Unicode Standard</em>. Unicode, Inc.</li>
               </ul>
             `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.7 Números binarios', `
+      <li onclick="abrirModal('1.7 Números binarios', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
             
@@ -495,9 +548,9 @@
                 <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
               </ul>
             `)">1.7. Números binarios <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
+      <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
               <hr><br>
               <p><strong>Objetivo:</strong> Identificar y comprender la interconexión y funcionamiento de los componentes principales de un sistema computacional.</p>
             
@@ -544,9 +597,9 @@
                 <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
               </ul>
             `)">1.8. Organización de los componentes fundamentales del computador <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
+      <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar la estructura, tipos y funcionamiento de las instrucciones en lenguaje de máquina que ejecuta directamente el procesador.</p>
             
@@ -592,15 +645,15 @@
                 <li>Sweetman, D. (2006). <em>See MIPS Run</em>. Morgan Kaufmann.</li>
               </ul>
             `)">1.9. Instrucciones en lenguaje de máquina <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+      </li>
+      </ul>
+    </div>
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 2</div>
-        <h3 class="tema-title">Programación</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('2.1. Programación', `
+    <div class="tema-card">
+      <div class="tema-num">TEMA 2</div>
+      <h3 class="tema-title">Programación</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('2.1. Programación', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales, características y aplicaciones de la programación como disciplina esencial en la informática.</p>
             
@@ -676,9 +729,9 @@
               <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
             </ul>
           `)">2.1. Descripción general <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.2. Tipos de proposiciones', `
+        <li onclick="abrirModal('2.2. Tipos de proposiciones', `
             <hr><br>
             <p><strong>Objetivo:</strong> Identificar y clasificar los diferentes tipos de proposiciones lógicas según su estructura y características fundamentales.</p>
           
@@ -770,9 +823,9 @@
               <li>Tarski, A. (1995). <em>Introducción a la lógica y a la metodología de las ciencias deductivas</em>. Espasa-Calpe.</li>
             </ul>
           `)">2.2. Tipos de proposiciones <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
+        <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación aritmética en programación, incluyendo su sintaxis, operadores y uso en algoritmos.</p>
         
@@ -877,9 +930,9 @@
             <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
           </ul>
         `)">2.3. Proposiciones de asignación aritmética <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
+        <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación lógica en programación, incluyendo operadores booleanos y su aplicación en condiciones y toma de decisiones.</p>
             
@@ -1012,9 +1065,9 @@
                 <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
               </ul>
             `)">2.4. Proposiciones de asignación lógica <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.5. Proposición de flujo', `
+        <li onclick="abrirModal('2.5. Proposición de flujo', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de flujo de control que permiten alterar la secuencia de ejecución de un programa mediante estructuras condicionales e iterativas.</p>
         
@@ -1157,9 +1210,9 @@
             <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
           </ul>
         `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.6. Diagramas', `
+        <li onclick="abrirModal('2.6. Diagramas', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender los diferentes tipos de diagramas utilizados en programación y análisis de sistemas para representar visualmente procesos, estructuras y flujos de información.</p>
           
@@ -1273,15 +1326,15 @@
               <li>Object Management Group. (2017). <em>Unified Modeling Language Specification</em>. OMG.</li>
             </ul>
           `)">2.6. Diagramas <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 3</div>
-        <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('3.1. Proposición de entrada', `
+    <div class="tema-card">
+      <div class="tema-num">TEMA 3</div>
+      <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('3.1. Proposición de entrada', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de entrada que permiten capturar datos del usuario o de fuentes externas para su procesamiento en programas.</p>
         
@@ -1428,9 +1481,9 @@
             <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
           </ul>
         `)">3.1. Proposición de entrada <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.2. Proposición de salida', `
+        <li onclick="abrirModal('3.2. Proposición de salida', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender las proposiciones de salida que permiten mostrar resultados, información y datos desde el programa hacia el usuario o dispositivos externos.</p>
           
@@ -1586,9 +1639,9 @@
               <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
             </ul>
           `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.3. Proposición de control', `
+        <li onclick="abrirModal('3.3. Proposición de control', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de control que permiten dirigir el flujo de ejecución de un programa mediante estructuras de decisión y bucles.</p>
             
@@ -1741,9 +1794,9 @@
                 <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
               </ul>
             `)">3.3. Proposición de control <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.4. Proposición de formato', `
+        <li onclick="abrirModal('3.4. Proposición de formato', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de formato que permiten controlar la presentación y estructuración de datos en la salida de programas.</p>
             
@@ -1892,9 +1945,9 @@
                 <li>Microsoft Corporation. (2021). <em>Standard Numeric Format Strings</em>. MSDN Documentation.</li>
               </ul>
             `)">3.4. Proposición de formato <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.5. Formato I', `
+        <li onclick="abrirModal('3.5. Formato I', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales y técnicas básicas de formato para la presentación de datos en programas, incluyendo alineación, padding y especificadores simples.</p>
             
@@ -2035,9 +2088,9 @@
                 <li>IEEE Computer Society. (2020). <em>Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
               </ul>
             `)">3.5. Formato I <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.6. Formato F', `
+        <li onclick="abrirModal('3.6. Formato F', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el formato F para números de punto flotante, incluyendo precisión decimal, notación científica y representación de valores reales en programación.</p>
             
@@ -2171,9 +2224,9 @@
                 <li>Python Software Foundation. (2021). <em>Format Specification Mini-Language</em>. Python Documentation.</li>
               </ul>
             `)">3.6. Formato F <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.7. Formato E', `
+        <li onclick="abrirModal('3.7. Formato E', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el formato E para notación científica, comprendiendo su sintaxis, aplicaciones y uso en la representación de números muy grandes o muy pequeños.</p>
             
@@ -2306,9 +2359,9 @@
                 <li>Knuth, D. E. (1997). <em>The Art of Computer Programming, Volume 2: Seminumerical Algorithms</em>. Addison-Wesley.</li>
               </ul>
             `)">3.7. Formato E <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
+        <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
               <hr><br>
               <p><strong>Objetivo:</strong> Explorar funcionalidades avanzadas de formato que permiten personalización extensiva, localización internacional y técnicas especializadas para presentación de datos.</p>
             
@@ -2446,9 +2499,9 @@
                 <li>Python Software Foundation. (2021). <em>locale — Internationalization services</em>. Python Documentation.</li>
               </ul>
             `)">3.8. Capacidades adicionales de formato <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.9. Código Hollerith', `
+        <li onclick="abrirModal('3.9. Código Hollerith', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el código Hollerith como sistema histórico de representación de datos en tarjetas perforadas y su influencia en el desarrollo de la informática moderna.</p>
             
@@ -2576,15 +2629,15 @@
                 <li>IBM Archives. (2021). <em>Hollerith Tabulating Machine</em>. IBM Corporation.</li>
               </ul>
             `)">3.9. Código Hollerith <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 4</div>
-        <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('4.1 Introducción', `
+    <div class="tema-card">
+      <div class="tema-num">TEMA 4</div>
+      <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('4.1 Introducción', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Comprender la importancia de la programación modular y cómo las funciones y subrutinas mejoran la organización del código.</p>
                 
@@ -2615,9 +2668,9 @@
                         <li>Joyanes, L. (2018). <em>Fundamentos de programación</em>. McGraw-Hill.</li>
                     </ul>
                 `)">4.1. Introducción <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.2 Definiciones', `
+        <li onclick="abrirModal('4.2 Definiciones', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Conocer los conceptos básicos y la terminología relacionada con funciones y subprogramas.</p>
                 
@@ -2659,9 +2712,9 @@
                         <li>López, M. (2019). <em>Introducción a la programación</em>. Editorial Universitaria.</li>
                     </ul>
                 `)">4.2. Definiciones <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.3 Tipos de subprogramas', `
+        <li onclick="abrirModal('4.3 Tipos de subprogramas', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Identificar los diferentes tipos de subprogramas y cuándo usar cada uno.</p>
                 
@@ -2708,9 +2761,9 @@
                         <li>Zelle, J. M. (2017). <em>Python Programming: An Introduction to Computer Science</em>. Franklin.</li>
                     </ul>
                 `)">4.3. Tipos de subprogramas <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.4 Formación de un subprograma', `
+        <li onclick="abrirModal('4.4 Formación de un subprograma', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Aprender las partes que componen un subprograma y cómo crearlo correctamente.</p>
                 
@@ -2768,9 +2821,9 @@
                         <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
                     </ul>
                 `)">4.4. Formación de un subprograma <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.5 Subprogramas de función', `
+        <li onclick="abrirModal('4.5 Subprogramas de función', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Dominar el uso de funciones que devuelven valores y entender su utilidad.</p>
                 
@@ -2830,9 +2883,9 @@
                         <li>Sedgewick, R., & Wayne, K. (2017). <em>Computer Science: An Interdisciplinary Approach</em>. Addison-Wesley.</li>
                     </ul>
                 `)">4.5. Subprogramas de función <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
+        <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Comprender el uso de subrutinas y cuándo son más apropiadas que las funciones.</p>
                 
@@ -2895,9 +2948,9 @@
                         <li>Dale, N., & Weems, C. (2010). <em>Programming and Problem Solving with C++</em>. Jones & Bartlett.</li>
                     </ul>
                 `)">4.6. Subprogramas de subrutinas <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.7 Subprogramas combinados', `
+        <li onclick="abrirModal('4.7 Subprogramas combinados', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Aprender a combinar diferentes tipos de subprogramas para crear soluciones más complejas.</p>
                 
@@ -2990,26 +3043,26 @@
                         <li>Sommerville, I. (2016). <em>Software Engineering</em>. Pearson.</li>
                     </ul>
                 `)">4.7. Subprogramas combinados <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 5</div>
-        <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
-        <ul class="tema-list">
-          <li>5.1. Introducción</li>
-          <li>5.2. Ejemplos de paquetes</li>
-          <li>5.3. Texas instrument TI-59</li>
-          <li>5.4. Manejo de calculador</li>
-          <li>5.5. Casio FX-502P</li>
-          <li>5.6. Códigos</li>
-          <li>5.7. Instrucciones</li>
-          <li>5.8. Interpretación de datos</li>
-          <li>5.9. Corrección de programas</li>
-        </ul>
-      </div>
+    <div class="tema-card">
+      <div class="tema-num">TEMA 5</div>
+      <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
+      <ul class="tema-list">
+        <li>5.1. Introducción</li>
+        <li>5.2. Ejemplos de paquetes</li>
+        <li>5.3. Texas instrument TI-59</li>
+        <li>5.4. Manejo de calculador</li>
+        <li>5.5. Casio FX-502P</li>
+        <li>5.6. Códigos</li>
+        <li>5.7. Instrucciones</li>
+        <li>5.8. Interpretación de datos</li>
+        <li>5.9. Corrección de programas</li>
+      </ul>
+    </div>
     </div>
   </section>
 
