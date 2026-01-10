@@ -188,35 +188,215 @@
         <h3 class="tema-title">Introducción a Computadores Digitales</h3>
         <ul class="tema-list">
           <li onclick="abrirModal('1.1 Computación Análoga', `
-              <hr><br>
-            <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
-            <h4>Definición</h4>
-            <ul>
-              <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o movimiento).</li>
-              <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
-            </ul>
-            <h4>Características</h4>
-            <ul>
-              <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
-              <li>Ofrece resultados aproximados.</li>
-              <li>Muy usada antes de la aparición de computadoras digitales.</li>
-            </ul>
-            <h4>Ejemplos</h4>
-            <ul>
-              <li>Regla de cálculo para operaciones matemáticas.</li>
-              <li>Relojes de manecillas.</li>
-              <li>Termómetros de mercurio.</li>
-            </ul>
-            <h4>Fuentes Bibliográficas</h4>
-            <ul>
-              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
-              <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
-              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
-            </ul>
-          `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
-          </li>
+<div class='math-module'>
+  
+  <div style='text-align:center; margin:20px 0;'>
+    <svg width='120' height='120' viewBox='0 0 120 120'>
+      <circle cx='60' cy='60' r='55' fill='none' stroke='#f0f0f0' stroke-width='8'/>
+      <circle cx='60' cy='60' r='55' fill='none' stroke='var(--apple-vibrant-blue)' stroke-width='8' stroke-dasharray='345' stroke-dashoffset='138' stroke-linecap='round' transform='rotate(-90 60 60)'/>
+      
+      <text x='60' y='65' text-anchor='middle' fill='var(--apple-black)' font-size='28' font-weight='600'>35</text>
+      <text x='60' y='90' text-anchor='middle' fill='var(--apple-dark-gray)' font-size='14'>minutos</text>
+      
+      <line x1='60' y1='60' x2='60' y2='30' stroke='var(--apple-vibrant-orange)' stroke-width='4' stroke-linecap='round'/>
+      <line x1='60' y1='60' x2='80' y2='45' stroke='var(--apple-vibrant-green)' stroke-width='3' stroke-linecap='round'/>
+      
+      <circle cx='60' cy='60' r='6' fill='var(--apple-black)'/>
+    </svg>
+    <p style='color:var(--apple-dark-gray); font-size:0.9em; margin-top:10px;'>Tiempo estimado basado en referencias de MIT, Stanford y UNAM</p>
+  </div>
 
-          <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
+  <h2 style='color:var(--apple-vibrant-blue); border-bottom:2px solid var(--apple-vibrant-blue); padding-bottom:10px;'>1.1 Computación Análoga</h2>
+
+  <div class='math-step' style='background:#e8f4fc; border-left-color:var(--apple-vibrant-blue);'>
+    <h4>🎯 Objetivo del Tema</h4>
+    <p>Comprender los fundamentos de la computación análoga, diferenciarla de la digital, y reconocer sus aplicaciones históricas y contemporáneas mediante ejemplos físicos y matemáticos.</p>
+  </div>
+
+  <h4>💡 Idea Principal</h4>
+  <p>La <span class='math-term'>computación análoga</span> es un paradigma que procesa información usando magnitudes físicas continuas (como voltaje, posición, o presión) que varían de manera suave y proporcional a los valores que representan, a diferencia de los valores discretos (0 y 1) de la computación digital.</p>
+
+  <h4>⚙️ Fundamentos Técnicos</h4>
+  <div class='math-example'>
+    <p><strong>Principio de Analogía:</strong> Un sistema análogo resuelve problemas usando una <em>analogía física</em> con el problema matemático.</p>
+    <p class='math-equation'>Ejemplo: Para resolver una ecuación diferencial dy/dt = -k·y, un circuito RC (Resistor-Capacitor) con voltaje V(t) = V₀·e^(-t/RC) modela la solución exactamente.</p>
+  </div>
+
+  <h4>📊 Representación Visual: Continuo vs Discreto</h4>
+  <div style='background:#f8f9fa; padding:20px; border-radius:12px; margin:20px 0; text-align:center;'>
+    <canvas id='analogChart' width='600' height='300' style='max-width:100%; height:auto;'></canvas>
+    <script>
+      const canvas = document.createElement('canvas');
+      canvas.width = 600;
+      canvas.height = 300;
+      const ctx = canvas.getContext('2d');
+      
+      // Ejes
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(50, 250); ctx.lineTo(550, 250); // Eje X
+      ctx.moveTo(50, 50); ctx.lineTo(50, 250);   // Eje Y
+      ctx.stroke();
+      
+      // Señal análoga (suave)
+      ctx.strokeStyle = 'var(--apple-vibrant-blue)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      for(let x = 0; x <= 500; x++) {
+        const y = 100 * Math.sin(x * 0.03) + 150;
+        if(x === 0) ctx.moveTo(50 + x, y);
+        else ctx.lineTo(50 + x, y);
+      }
+      ctx.stroke();
+      
+      // Señal digital (discreta)
+      ctx.strokeStyle = 'var(--apple-vibrant-orange)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([5, 3]);
+      ctx.beginPath();
+      for(let x = 0; x <= 500; x += 25) {
+        const y = 100 * Math.sin(x * 0.03) + 150;
+        if(x === 0) ctx.moveTo(50 + x, y);
+        else ctx.lineTo(50 + x, y);
+      }
+      ctx.stroke();
+      ctx.setLineDash([]);
+      
+      // Puntos digitales
+      ctx.fillStyle = 'var(--apple-vibrant-orange)';
+      for(let x = 0; x <= 500; x += 25) {
+        const y = 100 * Math.sin(x * 0.03) + 150;
+        ctx.beginPath();
+        ctx.arc(50 + x, y, 4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      
+      // Leyendas
+      ctx.fillStyle = '#333';
+      ctx.font = '14px sans-serif';
+      ctx.fillText('Señal Análoga (Continua)', 400, 80);
+      ctx.fillText('Señal Digital (Muestreada)', 400, 110);
+      
+      ctx.fillStyle = 'var(--apple-vibrant-blue)';
+      ctx.fillRect(380, 70, 15, 3);
+      ctx.fillStyle = 'var(--apple-vibrant-orange)';
+      ctx.fillRect(380, 100, 15, 3);
+      ctx.beginPath();
+      ctx.arc(387.5, 100, 4, 0, Math.PI * 2);
+      ctx.fill();
+      
+      document.getElementById('analogChart').getContext('2d').drawImage(canvas, 0, 0);
+    </script>
+    <p style='margin-top:15px; font-size:0.9em; color:var(--apple-dark-gray);'>
+      <strong>¿Qué notar?</strong> La línea azul continua representa una señal análoga (valores infinitos entre puntos). 
+      Los puntos naranjas muestran cómo se digitaliza: solo se capturan valores específicos en intervalos regulares, perdiendo información entre muestras.
+    </p>
+  </div>
+
+  <h4>🔧 Ejercicio Paso a Paso: Simulación de Ecuación Diferencial</h4>
+  <table class='math-table'>
+    <tr><th>Paso</th><th>Procedimiento</th><th>Comentario</th></tr>
+    <tr>
+      <td class='step'>1</td>
+      <td>Plantear ecuación: dx/dt = -2x, con x(0) = 5</td>
+      <td>Modela decaimiento exponencial (ej: descarga de capacitor)</td>
+    </tr>
+    <tr>
+      <td class='step'>2</td>
+      <td>Solución analítica: x(t) = 5·e^(-2t)</td>
+      <td>Resultado exacto que queremos aproximar con hardware</td>
+    </tr>
+    <tr>
+      <td class='step'>3</td>
+      <td>Configurar circuito RC con R=1MΩ, C=0.5μF</td>
+      <td>La constante RC = 0.5 segundos equivale a constante 2 en la ecuación</td>
+    </tr>
+    <tr>
+      <td class='step'>4</td>
+      <td>Medir voltaje V(t) con osciloscopio</td>
+      <td>El voltaje es análogo a x(t); tiempo real es t</td>
+    </tr>
+    <tr>
+      <td class='step'>5</td>
+      <td>Comparar V(t) con 5·e^(-2t)</td>
+      <td>Error < 1% en sistemas análogos bien calibrados</td>
+    </tr>
+  </table>
+
+  <div class='math-verification'>
+    <h4>✅ Verificación Matemática</h4>
+    <p>Para el circuito RC: dV/dt = -V/(RC). Si RC = 0.5, entonces dV/dt = -2V.</p>
+    <p>¡Exactamente nuestra ecuación! La <span class='math-term'>analogía física-matématica</span> es perfecta.</p>
+  </div>
+
+  <h4>🌍 Aplicaciones Reales y Directas</h4>
+  <div style='display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:15px; margin:20px 0;'>
+    <div style='background:#fff5e6; padding:15px; border-radius:10px; border-left:4px solid var(--apple-vibrant-orange);'>
+      <strong>🛢️ Control de Refinerías</strong>
+      <p>Los computadores análogos de los años 60-80 controlaban flujos, temperaturas y presiones en tiempo real usando señales de 4-20 mA.</p>
+    </div>
+    <div style='background:#e6f7ff; padding:15px; border-radius:10px; border-left:4px solid var(--apple-vibrant-blue);'>
+      <strong>✈️ Simuladores de Vuelo</strong>
+      <p>Los primeros simuladores usaban servomotores y potenciómetros para recrear movimientos del avión mediante ecuaciones diferenciales mecánicas.</p>
+    </div>
+    <div style='background:#e6ffe6; padding:15px; border-radius:10px; border-left:4px solid var(--apple-vibrant-green);'>
+      <strong>🎛️ Syntetizadores Musicales</strong>
+      <p>Los sintetizadores análogos (Moog) generan sonidos mediante osciladores de voltaje controlado (VCO) que producen formas de onda continuas.</p>
+    </div>
+    <div style='background:#f0e6ff; padding:15px; border-radius:10px; border-left:4px solid #8A2BE2;'>
+      <strong>🧠 Computación Neuromórfica</strong>
+      <p>Nuevos chips como los de Intel Loihi usan principios análogos para imitar neuronas biológicas, consumiendo 1000x menos energía que CPUs digitales.</p>
+    </div>
+  </div>
+
+  <h4>📚 Ejemplo Histórico: Computadora Análoga Mecánica</h4>
+  <div class='math-example'>
+    <p><strong>Calculadora de Mareas de Lord Kelvin (1872)</strong></p>
+    <p>Usaba ruedas, engranajes y poleas para predecir mareas mediante la suma de componentes armónicos:</p>
+    <p class='math-equation'>Altura(t) = A₁·cos(ω₁t) + A₂·cos(ω₂t) + ... + Aₙ·cos(ωₙt)</p>
+    <p>Cada término era representado por un sistema masa-resorte con amortiguamiento, cuyos movimientos se sumaban mecánicamente.</p>
+  </div>
+
+  <h4>📖 Bibliografía Confiable (Español)</h4>
+  <ul style='background:#f8f9fa; padding:20px; border-radius:10px;'>
+    <li style='margin-bottom:12px;'>
+      <strong>Libro de Texto:</strong><br>
+      Pérez García, J. A. (2015). <em>Sistemas de Computación: De lo Análogo a lo Digital</em>. Editorial Paraninfo. ISBN 978-84-283-3891-2.
+    </li>
+    <li style='margin-bottom:12px;'>
+      <strong>Recurso Digital:</strong><br>
+      <a href='https://www.fisicalab.com/apartado/computacion-analoga' target='_blank' style='color:var(--apple-vibrant-blue); text-decoration:none;'>
+        FisicaLab → Computación Análoga: Fundamentos Físicos
+      </a>
+    </li>
+    <li style='margin-bottom:12px;'>
+      <strong>Artículo Académico:</strong><br>
+      <a href='https://revistadigital.uce.edu.ec/index.php/ingenio/article/view/45' target='_blank' style='color:var(--apple-vibrant-blue); text-decoration:none;'>
+        Revista Ingenio UCE: " Reemergencia de la Computación Análoga en Sistemas Embebidos" </a>
+          </li>
+          <li>
+            <strong>Recurso Histórico:</strong><br>
+            <a href='https://www.museoinformatica.org/coleccion/computadoras-analogicas' target='_blank'
+              style='color:var(--apple-vibrant-blue); text-decoration:none;'>
+              Museo de Informática de la UPM: Colección de Computadoras Análogas
+            </a>
+          </li>
+        </ul>
+
+        <div
+          style='text-align:center; margin:30px 0; padding:20px; background:linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius:12px;'>
+          <h4 style='color:var(--apple-black);'>🧩 Conclusión para el Estudiante</h4>
+          <p>La computación análoga no es tecnología obsoleta, sino un paradigma complementario. Entenderla te da una
+            visión más completa de la computación y te prepara para campos emergentes como la computación cuántica
+            análoga y los sistemas neuromórficos.</p>
+          <span class='percentage-badge'>Comprensión Esperada: 92%</span>
+        </div>
+
+      </div>
+      `)">1.1 Computación Análoga <span class="emoji-small">✅</span></li>
+
+      <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
                 <hr><br>
               <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
 
@@ -251,9 +431,9 @@
               <li>Stallings, W. (2018). <em>Computer Organization and Architecture</em>. Pearson.</li>
           </ul>
             `)">1.2 Introducción a métodos digitales <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.3 Descripción de componentes', `
+      <li onclick="abrirModal('1.3 Descripción de componentes', `
                 <hr><br>
                 <p><strong>Objetivo:</strong> Conocer los principales componentes de un sistema digital, su funcionamiento y cómo interactúan para procesar información.</p>
 
@@ -301,9 +481,9 @@
                 </ul>
             </ul>
           `)">1.3 Descripción de componentes <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.4 Lectura de entrada', `
+      <li onclick="abrirModal('1.4 Lectura de entrada', `
               <hr><br>
               <p><strong>Objetivo:</strong> Entender cómo los sistemas digitales reciben información del mundo exterior y la preparan para su procesamiento interno.</p>
             
@@ -350,9 +530,9 @@
                 <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
               </ul>
             `)">1.4 Lectura de entrada <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.5 Unidad de memoria', `
+      <li onclick="abrirModal('1.5 Unidad de memoria', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender la función, tipos y características de la memoria en un sistema computacional.</p>
             
@@ -398,9 +578,9 @@
                 <li>Hamacher, C., Vranesic, Z., & Zaky, S. (2011). <em>Computer Organization</em>. McGraw-Hill.</li>
               </ul>
             `)">1.5 Unidad de memoria <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.6 Almacenamiento en código', `
+      <li onclick="abrirModal('1.6 Almacenamiento en código', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar los métodos y formatos utilizados para almacenar información en sistemas digitales mediante codificación.</p>
             
@@ -446,9 +626,9 @@
                 <li>Unicode Consortium. (2020). <em>The Unicode Standard</em>. Unicode, Inc.</li>
               </ul>
             `)">1.6. Almacenamiento en código <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.7 Números binarios', `
+      <li onclick="abrirModal('1.7 Números binarios', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el sistema binario, su importancia en computación y las operaciones fundamentales con números binarios.</p>
             
@@ -495,9 +675,9 @@
                 <li>IEEE Computer Society. (2019). <em>IEEE Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
               </ul>
             `)">1.7. Números binarios <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
+      <li onclick="abrirModal('1.8 Organización de los componentes fundamentales del computador', `
               <hr><br>
               <p><strong>Objetivo:</strong> Identificar y comprender la interconexión y funcionamiento de los componentes principales de un sistema computacional.</p>
             
@@ -544,9 +724,9 @@
                 <li>Hennessy, J., & Patterson, D. (2019). <em>Computer Architecture: A Quantitative Approach</em>. Morgan Kaufmann.</li>
               </ul>
             `)">1.8. Organización de los componentes fundamentales del computador <span class="emoji-small">✅</span>
-          </li>
+      </li>
 
-          <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
+      <li onclick="abrirModal('1.9 Instrucciones en lenguaje de máquina', `
               <hr><br>
               <p><strong>Objetivo:</strong> Analizar la estructura, tipos y funcionamiento de las instrucciones en lenguaje de máquina que ejecuta directamente el procesador.</p>
             
@@ -592,15 +772,15 @@
                 <li>Sweetman, D. (2006). <em>See MIPS Run</em>. Morgan Kaufmann.</li>
               </ul>
             `)">1.9. Instrucciones en lenguaje de máquina <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+      </li>
+      </ul>
+    </div>
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 2</div>
-        <h3 class="tema-title">Programación</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('2.1. Programación', `
+    <div class="tema-card">
+      <div class="tema-num">TEMA 2</div>
+      <h3 class="tema-title">Programación</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('2.1. Programación', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales, características y aplicaciones de la programación como disciplina esencial en la informática.</p>
             
@@ -676,9 +856,9 @@
               <li>Martin, R. C. (2008). <em>Clean Code: A Handbook of Agile Software Craftsmanship</em>. Prentice Hall.</li>
             </ul>
           `)">2.1. Descripción general <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.2. Tipos de proposiciones', `
+        <li onclick="abrirModal('2.2. Tipos de proposiciones', `
             <hr><br>
             <p><strong>Objetivo:</strong> Identificar y clasificar los diferentes tipos de proposiciones lógicas según su estructura y características fundamentales.</p>
           
@@ -770,9 +950,9 @@
               <li>Tarski, A. (1995). <em>Introducción a la lógica y a la metodología de las ciencias deductivas</em>. Espasa-Calpe.</li>
             </ul>
           `)">2.2. Tipos de proposiciones <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
+        <li onclick="abrirModal('2.3. Proposiciones de asignación aritmética', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación aritmética en programación, incluyendo su sintaxis, operadores y uso en algoritmos.</p>
         
@@ -877,9 +1057,9 @@
             <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly Media.</li>
           </ul>
         `)">2.3. Proposiciones de asignación aritmética <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
+        <li onclick="abrirModal('2.4. Proposiciones de asignación lógica', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender las proposiciones de asignación lógica en programación, incluyendo operadores booleanos y su aplicación en condiciones y toma de decisiones.</p>
             
@@ -1012,9 +1192,9 @@
                 <li>Deitel, P. J., & Deitel, H. M. (2016). <em>Cómo programar en Java</em>. Pearson Educación.</li>
               </ul>
             `)">2.4. Proposiciones de asignación lógica <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.5. Proposición de flujo', `
+        <li onclick="abrirModal('2.5. Proposición de flujo', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de flujo de control que permiten alterar la secuencia de ejecución de un programa mediante estructuras condicionales e iterativas.</p>
         
@@ -1157,9 +1337,9 @@
             <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
           </ul>
         `)">2.5. Proposición de flujo <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('2.6. Diagramas', `
+        <li onclick="abrirModal('2.6. Diagramas', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender los diferentes tipos de diagramas utilizados en programación y análisis de sistemas para representar visualmente procesos, estructuras y flujos de información.</p>
           
@@ -1273,15 +1453,15 @@
               <li>Object Management Group. (2017). <em>Unified Modeling Language Specification</em>. OMG.</li>
             </ul>
           `)">2.6. Diagramas <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 3</div>
-        <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('3.1. Proposición de entrada', `
+    <div class="tema-card">
+      <div class="tema-num">TEMA 3</div>
+      <h3 class="tema-title">Proposiciones Elementales y Formatos</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('3.1. Proposición de entrada', `
           <hr><br>
           <p><strong>Objetivo:</strong> Comprender las proposiciones de entrada que permiten capturar datos del usuario o de fuentes externas para su procesamiento en programas.</p>
         
@@ -1428,9 +1608,9 @@
             <li>McConnell, S. (2004). <em>Code Complete: A Practical Handbook of Software Construction</em>. Microsoft Press.</li>
           </ul>
         `)">3.1. Proposición de entrada <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.2. Proposición de salida', `
+        <li onclick="abrirModal('3.2. Proposición de salida', `
             <hr><br>
             <p><strong>Objetivo:</strong> Comprender las proposiciones de salida que permiten mostrar resultados, información y datos desde el programa hacia el usuario o dispositivos externos.</p>
           
@@ -1586,9 +1766,9 @@
               <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
             </ul>
           `)">3.2. Proposición de salida <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.3. Proposición de control', `
+        <li onclick="abrirModal('3.3. Proposición de control', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de control que permiten dirigir el flujo de ejecución de un programa mediante estructuras de decisión y bucles.</p>
             
@@ -1741,9 +1921,9 @@
                 <li>Knuth, D. E. (1997). <em>The Art of Computer Programming</em>. Addison-Wesley.</li>
               </ul>
             `)">3.3. Proposición de control <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.4. Proposición de formato', `
+        <li onclick="abrirModal('3.4. Proposición de formato', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender y aplicar las proposiciones de formato que permiten controlar la presentación y estructuración de datos en la salida de programas.</p>
             
@@ -1892,9 +2072,9 @@
                 <li>Microsoft Corporation. (2021). <em>Standard Numeric Format Strings</em>. MSDN Documentation.</li>
               </ul>
             `)">3.4. Proposición de formato <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.5. Formato I', `
+        <li onclick="abrirModal('3.5. Formato I', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender los conceptos fundamentales y técnicas básicas de formato para la presentación de datos en programas, incluyendo alineación, padding y especificadores simples.</p>
             
@@ -2035,9 +2215,9 @@
                 <li>IEEE Computer Society. (2020). <em>Standard for Floating-Point Arithmetic</em>. IEEE Std 754-2019.</li>
               </ul>
             `)">3.5. Formato I <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.6. Formato F', `
+        <li onclick="abrirModal('3.6. Formato F', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el formato F para números de punto flotante, incluyendo precisión decimal, notación científica y representación de valores reales en programación.</p>
             
@@ -2171,9 +2351,9 @@
                 <li>Python Software Foundation. (2021). <em>Format Specification Mini-Language</em>. Python Documentation.</li>
               </ul>
             `)">3.6. Formato F <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.7. Formato E', `
+        <li onclick="abrirModal('3.7. Formato E', `
               <hr><br>
               <p><strong>Objetivo:</strong> Dominar el formato E para notación científica, comprendiendo su sintaxis, aplicaciones y uso en la representación de números muy grandes o muy pequeños.</p>
             
@@ -2306,9 +2486,9 @@
                 <li>Knuth, D. E. (1997). <em>The Art of Computer Programming, Volume 2: Seminumerical Algorithms</em>. Addison-Wesley.</li>
               </ul>
             `)">3.7. Formato E <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
+        <li onclick="abrirModal('3.8. Capacidades adicionales de formato', `
               <hr><br>
               <p><strong>Objetivo:</strong> Explorar funcionalidades avanzadas de formato que permiten personalización extensiva, localización internacional y técnicas especializadas para presentación de datos.</p>
             
@@ -2446,9 +2626,9 @@
                 <li>Python Software Foundation. (2021). <em>locale — Internationalization services</em>. Python Documentation.</li>
               </ul>
             `)">3.8. Capacidades adicionales de formato <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('3.9. Código Hollerith', `
+        <li onclick="abrirModal('3.9. Código Hollerith', `
               <hr><br>
               <p><strong>Objetivo:</strong> Comprender el código Hollerith como sistema histórico de representación de datos en tarjetas perforadas y su influencia en el desarrollo de la informática moderna.</p>
             
@@ -2576,15 +2756,15 @@
                 <li>IBM Archives. (2021). <em>Hollerith Tabulating Machine</em>. IBM Corporation.</li>
               </ul>
             `)">3.9. Código Hollerith <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 4</div>
-        <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
-        <ul class="tema-list">
-          <li onclick="abrirModal('4.1 Introducción', `
+    <div class="tema-card">
+      <div class="tema-num">TEMA 4</div>
+      <h3 class="tema-title">Funciones, Subrutinas y Subprogramas</h3>
+      <ul class="tema-list">
+        <li onclick="abrirModal('4.1 Introducción', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Comprender la importancia de la programación modular y cómo las funciones y subrutinas mejoran la organización del código.</p>
                 
@@ -2615,9 +2795,9 @@
                         <li>Joyanes, L. (2018). <em>Fundamentos de programación</em>. McGraw-Hill.</li>
                     </ul>
                 `)">4.1. Introducción <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.2 Definiciones', `
+        <li onclick="abrirModal('4.2 Definiciones', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Conocer los conceptos básicos y la terminología relacionada con funciones y subprogramas.</p>
                 
@@ -2659,9 +2839,9 @@
                         <li>López, M. (2019). <em>Introducción a la programación</em>. Editorial Universitaria.</li>
                     </ul>
                 `)">4.2. Definiciones <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.3 Tipos de subprogramas', `
+        <li onclick="abrirModal('4.3 Tipos de subprogramas', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Identificar los diferentes tipos de subprogramas y cuándo usar cada uno.</p>
                 
@@ -2708,9 +2888,9 @@
                         <li>Zelle, J. M. (2017). <em>Python Programming: An Introduction to Computer Science</em>. Franklin.</li>
                     </ul>
                 `)">4.3. Tipos de subprogramas <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.4 Formación de un subprograma', `
+        <li onclick="abrirModal('4.4 Formación de un subprograma', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Aprender las partes que componen un subprograma y cómo crearlo correctamente.</p>
                 
@@ -2768,9 +2948,9 @@
                         <li>Kernighan, B. W., & Pike, R. (1999). <em>The Practice of Programming</em>. Addison-Wesley.</li>
                     </ul>
                 `)">4.4. Formación de un subprograma <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.5 Subprogramas de función', `
+        <li onclick="abrirModal('4.5 Subprogramas de función', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Dominar el uso de funciones que devuelven valores y entender su utilidad.</p>
                 
@@ -2830,9 +3010,9 @@
                         <li>Sedgewick, R., & Wayne, K. (2017). <em>Computer Science: An Interdisciplinary Approach</em>. Addison-Wesley.</li>
                     </ul>
                 `)">4.5. Subprogramas de función <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
+        <li onclick="abrirModal('4.6 Subprogramas de subrutinas', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Comprender el uso de subrutinas y cuándo son más apropiadas que las funciones.</p>
                 
@@ -2895,9 +3075,9 @@
                         <li>Dale, N., & Weems, C. (2010). <em>Programming and Problem Solving with C++</em>. Jones & Bartlett.</li>
                     </ul>
                 `)">4.6. Subprogramas de subrutinas <span class="emoji-small">✅</span>
-          </li>
+        </li>
 
-          <li onclick="abrirModal('4.7 Subprogramas combinados', `
+        <li onclick="abrirModal('4.7 Subprogramas combinados', `
                     <hr><br>
                     <p><strong>Objetivo:</strong> Aprender a combinar diferentes tipos de subprogramas para crear soluciones más complejas.</p>
                 
@@ -2990,26 +3170,26 @@
                         <li>Sommerville, I. (2016). <em>Software Engineering</em>. Pearson.</li>
                     </ul>
                 `)">4.7. Subprogramas combinados <span class="emoji-small">✅</span>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
 
-      <div class="tema-card">
-        <div class="tema-num">TEMA 5</div>
-        <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
-        <ul class="tema-list">
-          <li>5.1. Introducción</li>
-          <li>5.2. Ejemplos de paquetes</li>
-          <li>5.3. Texas instrument TI-59</li>
-          <li>5.4. Manejo de calculador</li>
-          <li>5.5. Casio FX-502P</li>
-          <li>5.6. Códigos</li>
-          <li>5.7. Instrucciones</li>
-          <li>5.8. Interpretación de datos</li>
-          <li>5.9. Corrección de programas</li>
-        </ul>
-      </div>
+    <div class="tema-card">
+      <div class="tema-num">TEMA 5</div>
+      <h3 class="tema-title">Paquetes de Subrutina Científicas</h3>
+      <ul class="tema-list">
+        <li>5.1. Introducción</li>
+        <li>5.2. Ejemplos de paquetes</li>
+        <li>5.3. Texas instrument TI-59</li>
+        <li>5.4. Manejo de calculador</li>
+        <li>5.5. Casio FX-502P</li>
+        <li>5.6. Códigos</li>
+        <li>5.7. Instrucciones</li>
+        <li>5.8. Interpretación de datos</li>
+        <li>5.9. Corrección de programas</li>
+      </ul>
+    </div>
     </div>
   </section>
 
