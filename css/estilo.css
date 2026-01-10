@@ -61,10 +61,11 @@
         }
 
         .header-title {
+            display: flex;
             font-size: 18px;
             font-weight: 500;
             color: var(--apple-black);
-            align-items: flex-end;
+            align-items: space-between;
         }
 
         h6 {
