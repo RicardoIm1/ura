@@ -1,161 +1,28 @@
-<li>
-<article class="tema-universitario">
-    <header>
-        <h2>1.1 Computación Análoga</h2>
-        <div class="tiempo-lectura">
-            <svg viewBox="0 0 100 100" width="60" height="60">
-                <circle cx="50" cy="50" r="45" fill="#f0f7ff" stroke="#4a86e8" stroke-width="3"/>
-                <circle cx="50" cy="50" r="3" fill="#4a86e8"/>
-                <g transform="rotate(90 50 50)">
-                    <line x1="50" y1="50" x2="50" y2="25" stroke="#4a86e8" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="50" y1="50" x2="50" y2="15" stroke="#e84a5f" stroke-width="3" stroke-linecap="round" transform="rotate(180 50 50)"/>
-                </g>
-                <text x="50" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">25 min</text>
-            </svg>
-            <p>Tiempo estimado de comprensión: 25 minutos</p>
-        </div>
-    </header>
-
-    <section class="objetivo">
-        <h3>Objetivo del tema</h3>
-        <p>Al finalizar este tema, el estudiante podrá: <strong>comprender los principios fundamentales de la computación análoga, diferenciarla de la digital, analizar sus componentes básicos y reconocer sus aplicaciones y limitaciones en la ingeniería moderna.</strong></p>
-    </section>
-
-    <section class="idea-principal">
-        <h3>Idea principal</h3>
-        <p>La <strong>computación análoga</strong> es un paradigma donde las variables del problema se representan mediante cantidades físicas continuas (como voltajes, corrientes o posiciones mecánicas) que son manipuladas por el sistema para modelar y resolver ecuaciones. A diferencia de las computadoras digitales que operan con valores discretos (0 y 1), los sistemas análogos procesan información en tiempo real mediante la analogía directa entre el sistema físico y el problema matemático. Su fortaleza radica en resolver ecuaciones diferenciales complejas de forma inherentemente paralela, aunque su precisión está limitada por los componentes físicos.</p>
-    </section>
-
-    <section class="ejercicios-visuales">
-        <h3>Análisis visual: Integrador Análogo vs. Solución Digital</h3>
-        <p>El siguiente gráfico compara la solución de una ecuación diferencial simple (dy/dt = -y) obtenida por un circuito integrador análogo RC básico con la solución digital numérica (método de Euler). Observa cómo el sistema análogo produce una solución continua de forma natural.</p>
-
-        <div class="grafico-container">
-            <svg viewBox="0 0 600 400" class="grafico-precision">
-                <!-- Ejes y cuadrícula -->
-                <defs>
-                    <pattern id="gridPattern" width="50" height="50" patternUnits="userSpaceOnUse">
-                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
-                    </pattern>
-                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
-                    </marker>
-                </defs>
-                <rect x="50" y="30" width="500" height="300" fill="url(#gridPattern)"/>
-                <!-- Eje X -->
-                <line x1="50" y1="330" x2="550" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <text x="560" y="335" font-family="Arial" font-size="14">Tiempo (t)</text>
-                <!-- Eje Y -->
-                <line x1="50" y1="30" x2="50" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <text x="30" y="20" font-family="Arial" font-size="14">y(t)</text>
-                <!-- Escalas -->
-                <text x="50" y="345" text-anchor="middle" font-family="Arial" font-size="12">0</text>
-                <text x="300" y="345" text-anchor="middle" font-family="Arial" font-size="12">5</text>
-                <text x="550" y="345" text-anchor="middle" font-family="Arial" font-size="12">10</text>
-                <text x="40" y="330" text-anchor="end" font-family="Arial" font-size="12">0</text>
-                <text x="40" y="205" text-anchor="end" font-family="Arial" font-size="12">0.5</text>
-                <text x="40" y="80" text-anchor="end" font-family="Arial" font-size="12">1.0</text>
-
-                <!-- Solución Analítica Exacta (Exponencial Decay) -->
-                <path d="M 50 80 C 120 100, 200 150, 300 205 C 400 260, 480 300, 550 315"
-                      fill="none" stroke="#4a86e8" stroke-width="3" stroke-dasharray="5,3" id="curva-exacta"/>
-                <text x="570" y="315" font-family="Arial" font-size="12" fill="#4a86e8">Exacta: y=e⁻ᵗ</text>
-
-                <!-- Solución del Integrador Análogo (suave) -->
-                <path d="M 50 80 C 115 102, 195 155, 295 210 C 395 265, 475 305, 550 320"
-                      fill="none" stroke="#e84a5f" stroke-width="4" id="curva-analoga"/>
-                <circle cx="295" cy="210" r="4" fill="#e84a5f"/>
-                <circle cx="395" cy="265" r="4" fill="#e84a5f"/>
-                <text x="570" y="280" font-family="Arial" font-size="12" fill="#e84a5f">Computador Análogo</text>
-
-                <!-- Solución Digital (Método de Euler, puntos discretos) -->
-                <g id="puntos-digitales">
-                    <circle cx="50" cy="80" r="4" fill="#2ecc71"/>
-                    <circle cx="150" cy="125" r="4" fill="#2ecc71"/>
-                    <circle cx="250" cy="175" r="4" fill="#2ecc71"/>
-                    <circle cx="350" cy="230" r="4" fill="#2ecc71"/>
-                    <circle cx="450" cy="285" r="4" fill="#2ecc71"/>
-                    <circle cx="550" cy="325" r="4" fill="#2ecc71"/>
-                    <polyline points="50,80 150,125 250,175 350,230 450,285 550,325"
-                              fill="none" stroke="#2ecc71" stroke-width="2" stroke-dasharray="3,3"/>
-                </g>
-                <text x="570" y="250" font-family="Arial" font-size="12" fill="#2ecc71">Computador Digital (Euler)</text>
-
-                <!-- Punto de interés -->
-                <circle cx="300" cy="205" r="6" fill="none" stroke="#333" stroke-width="1.5"/>
-                <text x="310" y="195" font-family="Arial" font-size="11" fill="#333">t=5, y≈0.007</text>
-            </svg>
-        </div>
-
-        <div class="instrucciones-grafico">
-            <h4>¿Qué notar en la gráfica?</h4>
+<li onclick="abrirModal('1.1 Computación Análoga', `
+              <hr><br>
+            <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
+            <h4>Definición</h4>
             <ul>
-                <li><strong>Curva roja continua:</strong> Representa la salida de un computador análogo (circuito RC). Es una solución <em>continua y en tiempo real</em> de la ecuación dy/dt = -y. No necesita iteraciones.</li>
-                <li><strong>Puntos verdes discretos:</strong> Representan la solución de un método numérico digital (Euler). Cada punto es un cálculo discreto en un intervalo de tiempo ∆t. La precisión depende del tamaño de ∆t.</li>
-                <li><strong>Línea azul discontinua:</strong> La solución matemática exacta (y=e⁻ᵗ). Ambas aproximaciones se desvían ligeramente por limitaciones físicas (análogo) o discretización (digital).</li>
-                <li><strong>Conclusión visual:</strong> El sistema análogo genera la curva completa de forma inherente y paralela, mientras que el digital la construye punto a punto de forma secuencial.</li>
+              <li>Modelo de computación que procesa información mediante magnitudes físicas continuas (voltaje, presión o movimiento).</li>
+              <li>No trabaja con ceros y unos, sino con valores que cambian de manera constante dentro de un rango.</li>
             </ul>
-        </div>
-
-        <div class="tabla-comparativa">
-            <h4>Tabla: Comparativa entre señales análogas y digitales</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Característica</th>
-                        <th>Señal/Computación Análoga</th>
-                        <th>Señal/Computación Digital</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Naturaleza</strong></td>
-                        <td>Continua en el tiempo y amplitud</td>
-                        <td>Discreta en el tiempo y amplitud (valores binarios)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Representación</strong></td>
-                        <td>Voltaje, corriente, posición</td>
-                        <td>Bits (0 y 1), números binarios</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Precisión</strong></td>
-                        <td>Limitada por ruido y tolerancia de componentes</td>
-                        <td>Limitada por el número de bits (resolución)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Procesamiento</strong></td>
-                        <td>Operaciones en paralelo (físicamente)</td>
-                        <td>Operaciones secuenciales (instrucciones)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ventaja principal</strong></td>
-                        <td>Velocidad para ecuaciones diferenciales, modelado directo</td>
-                        <td>Flexibilidad, exactitud, almacenamiento, reprogramabilidad</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="aplicaciones-reales">
-        <h3>Ejemplos de aplicaciones reales y directas</h3>
-        <ul>
-            <li><strong>Simuladores de vuelo analógicos:</strong> Antes de la digitalización masiva, complejos sistemas mecánicos e hidráulicos se utilizaban para modelar las ecuaciones de movimiento de una aeronave en tiempo real, proporcionando una respuesta física continua e inmediata a los controles del piloto.</li>
-            <li><strong>Calculadoras mecánicas para artillería:</strong> Durante la Segunda Guerra Mundial, computadores análogos como el <em>Polynomial Plotter</em> resolvían ecuaciones balísticas de forma mecánica, ajustando ángulos de disparo en función de distancia, viento y temperatura.</li>
-            <li><strong>Circuitos PLL (Phase-Locked Loop) en telecomunicaciones:</strong> Un ejemplo moderno. Un PLL es un circuito análogo (a menudo con componentes digitales) que ajusta continuamente la fase y frecuencia de una señal. Es fundamental en la sintonización de radios, recuperación de reloj en sistemas digitales y GPS.</li>
-            <li><strong>Neuronas y sinapsis en chips neuromórficos:</strong> Investigación de vanguardia. Compañías como Intel e IBM desarrollan chips donde los voltajes y corrientes en transistores especiales imitan el comportamiento análogo de neuronas biológicas, buscando una eficiencia energética extrema para tareas de inteligencia artificial.</li>
-        </ul>
-    </section>
-
-    <section class="bibliografia">
-        <h3>Bibliografía confiable y verificable</h3>
-        <ol>
-            <li>Korn, G. A., & Korn, T. M. (2015). <em>Electronic Analog and Hybrid Computers</em> (2nd ed.). Dover Publications. <span class="doi">[Texto clásico y completo sobre el diseño y uso de computadores análogos.]</span></li>
-            <li>Ulmann, B. (2013). <em>Analog and Hybrid Computer Programming</em>. De Gruyter Oldenbourg. <span class="doi">[Enfoque práctico en la programación y aplicación de estos sistemas.]</span></li>
-            <li>IEEE Spectrum. (2020, Julio). <em>Is There a Future for Analog Computing?</em>. Recuperado de <a href="https://spectrum.ieee.org" target="_blank">spectrum.ieee.org</a>. <span class="doi">[Artículo de divulgación sobre el resurgimiento análogo en computación neuromórfica.]</span></li>
-            <li>Massachusetts Institute of Technology (MIT). (2016). <em>6.302 Feedback Systems: Lecture Notes on Operational Amplifiers and Analog Computation</em>. MIT OpenCourseWare. <span class="doi">[Recurso educativo abierto con fundamentos teóricos y ejercicios.]</span></li>
-        </ol>
-    </section>
-</article>
+            <h4>Características</h4>
+            <ul>
+              <li>Usa dispositivos mecánicos, eléctricos o hidráulicos.</li>
+              <li>Ofrece resultados aproximados.</li>
+              <li>Muy usada antes de la aparición de computadoras digitales.</li>
+            </ul>
+            <h4>Ejemplos</h4>
+            <ul>
+              <li>Regla de cálculo para operaciones matemáticas.</li>
+              <li>Relojes de manecillas.</li>
+              <li>Termómetros de mercurio.</li>
+            </ul>
+            <h4>Fuentes Bibliográficas</h4>
+            <ul>
+              <li>Rojas, R. (2000). <em>Historia de las máquinas de calcular y de los ordenadores</em>. Springer.</li>
+              <li>Stein, C. (2018). <em>Analog Computing: Techniques and Applications</em>. Wiley.</li>
+              <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
+            </ul>
+          `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
 </li>
