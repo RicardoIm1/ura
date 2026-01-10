@@ -60,11 +60,8 @@
             margin-top: 5px;
         }
 
-        .header-title p{
-            margin-left: 0px;
-        }
-        
         .header-title {
+            margin-left: 0px;
             font-size: 18px;
             font-weight: 500;
             color: var(--apple-black);
