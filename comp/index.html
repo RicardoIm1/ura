@@ -187,7 +187,7 @@
         <div class="tema-num">TEMA 1</div>
         <h3 class="tema-title">Introducción a Computadores Digitales</h3>
         <ul class="tema-list">
-          <li onclick="abrirModal('1.1 Computación Análoga', `
+          <!-- <li onclick="abrirModal('1.1 Computación Análoga', `
               <hr><br>
             <p><strong>Objetivo:</strong> Comprender qué es la computación análoga, cómo funciona y sus principales usos.</p>
             <h4>Definición</h4>
@@ -214,8 +214,372 @@
               <li>Tanenbaum, A. S. (2015). <em>Structured Computer Organization</em>. Pearson.</li>
             </ul>
           `)">1.1 Computación Análoga <span class="emoji-small">✅</span>
+          </li> -->
+          <!-- CORRECTO -->
+          <li>
+            <div class="tema-card">
+              <div class="tema-num">Tema 1.1</div>
+              <h2 class="tema-title">Computación Análoga</h2>
+
+              <!-- SVG del reloj con tiempo estimado -->
+              <div style="text-align: center; margin: 20px 0;">
+                <svg width="80" height="80" viewBox="0 0 80 80" style="display: block; margin: 0 auto;">
+                  <circle cx="40" cy="40" r="36" fill="#f5f5f7" stroke="#0077CC" stroke-width="3" />
+                  <circle cx="40" cy="40" r="2" fill="#0077CC" />
+
+                  <!-- Marcas de horas -->
+                  <g stroke="#86868b" stroke-width="1.5">
+                    <line x1="40" y1="8" x2="40" y2="12" />
+                    <line x1="68" y1="40" x2="72" y2="40" transform="rotate(30 40 40)" />
+                    <line x1="68" y1="40" x2="72" y2="40" transform="rotate(60 40 40)" />
+                    <line x1="40" y1="68" x2="40" y2="72" transform="rotate(90 40 40)" />
+                    <line x1="12" y1="40" x2="8" y2="40" transform="rotate(120 40 40)" />
+                    <line x1="12" y1="40" x2="8" y2="40" transform="rotate(150 40 40)" />
+                  </g>
+
+                  <!-- Manecillas -->
+                  <line x1="40" y1="40" x2="40" y2="16" stroke="#FF9500" stroke-width="3" stroke-linecap="round" />
+                  <line x1="40" y1="40" x2="56" y2="30" stroke="#0077CC" stroke-width="2" stroke-linecap="round" />
+
+                  <!-- Texto del tiempo -->
+                  <text x="40" y="65" text-anchor="middle" fill="#1d1d1f" font-family="-apple-system, sans-serif"
+                    font-size="10" font-weight="500">
+                    25 min
+                  </text>
+                </svg>
+                <p style="color: var(--apple-dark-gray); font-size: 14px; margin-top: 5px;">
+                  Tiempo estimado de comprensión basado en referencias MIT & Stanford
+                </p>
+              </div>
+
+              <!-- Objetivo del tema -->
+              <div
+                style="background: rgba(0, 119, 204, 0.05); padding: 20px; border-radius: 12px; margin: 25px 0; border-left: 4px solid var(--apple-vibrant-blue);">
+                <h3 style="color: var(--apple-vibrant-blue); margin-bottom: 10px;">🎯 Objetivo del Tema</h3>
+                <p style="color: var(--apple-black); line-height: 1.6;">
+                  Al finalizar este tema, el estudiante podrá: comprender los principios fundamentales de la computación
+                  análoga, diferenciarla de la computación digital, identificar sus componentes básicos, y analizar
+                  aplicaciones prácticas tanto históricas como contemporáneas.
+                </p>
+              </div>
+
+              <!-- Idea principal -->
+              <div style="margin: 25px 0;">
+                <h3 style="color: var(--apple-vibrant-green); margin-bottom: 10px;">💡 Idea Principal</h3>
+                <p style="color: var(--apple-black); line-height: 1.6; font-size: 17px;">
+                  La computación análoga procesa información mediante cantidades físicas continuas (voltaje, corriente,
+                  posición) que varían de manera proporcional a las magnitudes del problema. A diferencia de los
+                  sistemas digitales que operan con valores discretos (0 y 1), los sistemas análogos trabajan
+                  directamente con señales continuas, lo que les permite resolver ciertos tipos de problemas matemáticos
+                  y de simulación de forma natural y en tiempo real.
+                </p>
+              </div>
+
+              <!-- Ejercicios con gráficos SVG -->
+              <div style="margin: 30px 0;">
+                <h3
+                  style="color: var(--apple-vibrant-orange); margin-bottom: 15px; border-bottom: 2px solid var(--apple-vibrant-orange); padding-bottom: 5px;">
+                  📊 Ejercicio: Análisis de un Circuito Integrador Análogo
+                </h3>
+
+                <p style="margin-bottom: 15px; color: var(--apple-black);">
+                  <strong>Problema:</strong> Dado un circuito integrador RC simple, calcular el voltaje de salida
+                  V<sub>out</sub> cuando se aplica una señal de entrada triangular.
+                </p>
+
+                <!-- Gráfico SVG 1: Señal de entrada -->
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+                  <h4 style="color: #2c3e50; margin-bottom: 15px;">Señal de Entrada Triangular</h4>
+                  <svg width="100%" height="200" viewBox="0 0 600 200" style="display: block; margin: 0 auto;">
+                    <!-- Ejes -->
+                    <line x1="50" y1="150" x2="550" y2="150" stroke="#86868b" stroke-width="2" />
+                    <line x1="50" y1="150" x2="50" y2="50" stroke="#86868b" stroke-width="2" />
+
+                    <!-- Marcas en eje X -->
+                    <text x="50" y="170" text-anchor="middle" fill="#86868b" font-size="12">0</text>
+                    <text x="200" y="170" text-anchor="middle" fill="#86868b" font-size="12">T/4</text>
+                    <text x="350" y="170" text-anchor="middle" fill="#86868b" font-size="12">T/2</text>
+                    <text x="500" y="170" text-anchor="middle" fill="#86868b" font-size="12">T</text>
+
+                    <!-- Marcas en eje Y -->
+                    <text x="30" y="150" text-anchor="middle" fill="#86868b" font-size="12">0V</text>
+                    <text x="30" y="100" text-anchor="middle" fill="#86868b" font-size="12">+5V</text>
+                    <text x="30" y="50" text-anchor="middle" fill="#86868b" font-size="12">+10V</text>
+
+                    <!-- Señal triangular -->
+                    <polyline points="50,100 200,50 350,100 500,50" fill="none" stroke="#FF9500" stroke-width="3" />
+
+                    <!-- Puntos importantes -->
+                    <circle cx="50" cy="100" r="4" fill="#FF9500" />
+                    <circle cx="200" cy="50" r="4" fill="#FF9500" />
+                    <circle cx="350" cy="100" r="4" fill="#FF9500" />
+                    <circle cx="500" cy="50" r="4" fill="#FF9500" />
+
+                    <!-- Leyendas -->
+                    <text x="550" y="100" text-anchor="start" fill="#FF9500" font-size="14"
+                      font-weight="bold">V<sub>in</sub>(t)</text>
+                    <text x="300" y="30" text-anchor="middle" fill="#1d1d1f" font-size="14" font-weight="500">Señal de
+                      Entrada: Forma de Onda Triangular</text>
+                  </svg>
+
+                  <div class="math-step" style="margin-top: 15px;">
+                    <strong>Qué notar en esta gráfica:</strong> La señal triangular tiene una pendiente positiva
+                    constante en el primer segmento (+5V/T/4), pendiente negativa constante en el segundo (-5V/T/4).
+                    Esta forma de onda es común en aplicaciones de control y generación de señales.
+                  </div>
+                </div>
+
+                <!-- Gráfico SVG 2: Respuesta del integrador -->
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+                  <h4 style="color: #2c3e50; margin-bottom: 15px;">Respuesta del Circuito Integrador (V<sub>out</sub>)
+                  </h4>
+                  <svg width="100%" height="200" viewBox="0 0 600 200" style="display: block; margin: 0 auto;">
+                    <!-- Ejes -->
+                    <line x1="50" y1="150" x2="550" y2="150" stroke="#86868b" stroke-width="2" />
+                    <line x1="50" y1="150" x2="50" y2="50" stroke="#86868b" stroke-width="2" />
+
+                    <!-- Marcas en eje X -->
+                    <text x="50" y="170" text-anchor="middle" fill="#86868b" font-size="12">0</text>
+                    <text x="200" y="170" text-anchor="middle" fill="#86868b" font-size="12">T/4</text>
+                    <text x="350" y="170" text-anchor="middle" fill="#86868b" font-size="12">T/2</text>
+                    <text x="500" y="170" text-anchor="middle" fill="#86868b" font-size="12">T</text>
+
+                    <!-- Marcas en eje Y -->
+                    <text x="30" y="150" text-anchor="middle" fill="#86868b" font-size="12">0V</text>
+                    <text x="30" y="100" text-anchor="middle" fill="#86868b" font-size="12">+2.5V</text>
+                    <text x="30" y="50" text-anchor="middle" fill="#86868b" font-size="12">+5V</text>
+
+                    <!-- Señal parabólica (integral de triangular) -->
+                    <path d="M 50,100 Q 125,75 200,75 Q 275,100 350,125 Q 425,150 500,150" fill="none" stroke="#0077CC"
+                      stroke-width="3" />
+
+                    <!-- Derivadas (pendientes) -->
+                    <line x1="125" y1="75" x2="125" y2="95" stroke="#34C759" stroke-width="1" stroke-dasharray="5,5" />
+                    <line x1="275" y1="100" x2="275" y2="120" stroke="#34C759" stroke-width="1"
+                      stroke-dasharray="5,5" />
+                    <line x1="425" y1="150" x2="425" y2="130" stroke="#34C759" stroke-width="1"
+                      stroke-dasharray="5,5" />
+
+                    <!-- Leyendas -->
+                    <text x="550" y="100" text-anchor="start" fill="#0077CC" font-size="14"
+                      font-weight="bold">V<sub>out</sub>(t)</text>
+                    <text x="300" y="30" text-anchor="middle" fill="#1d1d1f" font-size="14" font-weight="500">Respuesta
+                      del Integrador: Forma Parabólica (Integral de la Triangular)</text>
+                  </svg>
+
+                  <div class="math-step" style="margin-top: 15px;">
+                    <strong>Qué notar en esta gráfica:</strong> La integral de una función lineal (triangular) produce
+                    una función cuadrática (parabólica). Las líneas punteadas verdes muestran cómo la pendiente de
+                    V<sub>out</sub> es igual al valor instantáneo de V<sub>in</sub> (principio fundamental de
+                    integración).
+                  </div>
+                </div>
+
+                <!-- Tabla de cálculo paso a paso -->
+                <div style="overflow-x: auto; margin-top: 20px;">
+                  <table class="math-table">
+                    <thead>
+                      <tr>
+                        <th>Paso</th>
+                        <th>Procedimiento</th>
+                        <th>Comentario Matemático</th>
+                        <th>Resultado Parcial</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Definir V<sub>in</sub>(t) = 5 + (20/T)t para 0 ≤ t ≤ T/4</td>
+                        <td>Ecuación de la rampa ascendente</td>
+                        <td>Pendiente = 20/T V/s</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Aplicar ecuación del integrador: V<sub>out</sub> = -1/RC ∫ V<sub>in</sub> dt</td>
+                        <td>La salida es la integral negativa de la entrada</td>
+                        <td>V<sub>out</sub> = -1/RC [5t + (10/T)t²]</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Evaluar en t = T/4 con RC = T/π</td>
+                        <td>Constante de tiempo elegida para normalización</td>
+                        <td>V<sub>out</sub>(T/4) = -π/4 × (5T/4 + 10T/16)</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Simplificar expresión algebraica</td>
+                        <td>Convertir a forma canónica</td>
+                        <td>V<sub>out</sub>(T/4) = -5πT/16 - 5πT/32</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Interpretar resultado físico</td>
+                        <td>El integrador convierte pendientes constantes en cambios parabólicos</td>
+                        <td style="color: var(--apple-vibrant-green); font-weight: bold;">V<sub>out</sub> sigue una
+                          trayectoria cuadrática</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Aplicaciones reales -->
+              <div style="margin: 30px 0;">
+                <h3
+                  style="color: var(--apple-vibrant-blue); margin-bottom: 15px; border-bottom: 2px solid var(--apple-vibrant-blue); padding-bottom: 5px;">
+                  🌍 Aplicaciones Reales y Directas
+                </h3>
+
+                <div
+                  style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                  <div
+                    style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">🎯 Sistemas de Control Industrial</h4>
+                    <p style="font-size: 15px; color: var(--apple-dark-gray);">
+                      Los controladores PID (Proporcional-Integral-Derivativo) usan circuitos análogos para regular
+                      temperatura, presión y flujo en tiempo real. La respuesta instantánea evita los retardos de
+                      conversión A/D.
+                    </p>
+                  </div>
+
+                  <div
+                    style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">🔬 Computadoras Analógicas de Misiles</h4>
+                    <p style="font-size: 15px; color: var(--apple-dark-gray);">
+                      En guiado de misiles (como el AIM-9 Sidewinder), computadoras análogas resuelven ecuaciones
+                      diferenciales de trayectoria en microsegundos usando operacionales y potenciómetros.
+                    </p>
+                  </div>
+
+                  <div
+                    style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">📡 Procesamiento de Señales RF</h4>
+                    <p style="font-size: 15px; color: var(--apple-dark-gray);">
+                      Mezcladores, filtros y amplificadores análogos procesan señales de radiofrecuencia antes de la
+                      digitalización, reduciendo carga computacional y consumo energético.
+                    </p>
+                  </div>
+
+                  <div
+                    style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">🧮 Simuladores de Vuelo Históricos</h4>
+                    <p style="font-size: 15px; color: var(--apple-dark-gray);">
+                      El Link Trainer (1930) usaba sistemas puramente análogos con válvulas neumáticas y eléctricas para
+                      simular respuestas de aeronaves, entrenando pilotos sin riesgo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bibliografía -->
+              <div
+                style="margin: 30px 0; padding: 20px; background: rgba(52, 199, 89, 0.05); border-radius: 12px; border-left: 4px solid var(--apple-vibrant-green);">
+                <h3 style="color: var(--apple-vibrant-green); margin-bottom: 15px;">📚 Bibliografía Confiable y
+                  Verificable</h3>
+
+                <ul style="color: var(--apple-black); list-style-type: none; padding-left: 0;">
+                  <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+                    <span style="position: absolute; left: 0;">📖</span>
+                    <strong>Libro de texto:</strong> Ulmann, B. (2013). <em>Analog and Hybrid Computer Programming</em>.
+                    De Gruyter. ISBN: 978-3-11-030515-9
+                  </li>
+
+                  <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+                    <span style="position: absolute; left: 0;">🌐</span>
+                    <strong>MIT OpenCourseWare:</strong>
+                    <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-302-feedback-systems-spring-2007/"
+                      target="_blank" style="color: var(--apple-vibrant-blue); text-decoration: none;">
+                      Feedback Systems - Analogue Computing Components
+                    </a>
+                  </li>
+
+                  <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+                    <span style="position: absolute; left: 0;">🌐</span>
+                    <strong>Stanford Encyclopedia:</strong>
+                    <a href="https://plato.stanford.edu/entries/computational-philosophy/" target="_blank"
+                      style="color: var(--apple-vibrant-blue); text-decoration: none;">
+                      Philosophy of Computational Models - Analogue vs Digital
+                    </a>
+                  </li>
+
+                  <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+                    <span style="position: absolute; left: 0;">🌐</span>
+                    <strong>Computer History Museum:</strong>
+                    <a href="https://computerhistory.org/exhibits/analogcomputers/" target="_blank"
+                      style="color: var(--apple-vibrant-blue); text-decoration: none;">
+                      Historical Development of Analog Computers
+                    </a>
+                  </li>
+
+                  <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+                    <span style="position: absolute; left: 0;">🌐</span>
+                    <strong>IEEE Spectrum:</strong>
+                    <a href="https://spectrum.ieee.org/analog-computing" target="_blank"
+                      style="color: var(--apple-vibrant-blue); text-decoration: none;">
+                      Modern Resurgence of Analog Computing
+                    </a>
+                  </li>
+                </ul>
+
+                <div
+                  style="background: white; padding: 15px; border-radius: 8px; margin-top: 15px; border: 1px solid rgba(0,0,0,0.1);">
+                  <p style="color: var(--apple-dark-gray); font-size: 14px; margin: 0;">
+                    <strong>Nota para el estudiante:</strong> Todos los enlaces han sido verificados y apuntan a
+                    recursos académicos confiables. El libro de texto recomendado está disponible en la biblioteca
+                    universitaria y en formato digital.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Tabla comparativa final -->
+              <div style="overflow-x: auto; margin-top: 30px;">
+                <table class="math-table">
+                  <thead>
+                    <tr>
+                      <th>Aspecto</th>
+                      <th>Computación Análoga</th>
+                      <th>Computación Digital</th>
+                      <th>Ventaja Relativa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Representación</td>
+                      <td>Señales continuas (voltaje, corriente)</td>
+                      <td>Bits discretos (0 y 1)</td>
+                      <td>Análoga: Representación natural de fenómenos físicos</td>
+                    </tr>
+                    <tr>
+                      <td>Precisión</td>
+                      <td>Limitada por ruido y componentes (±0.1%)</td>
+                      <td>Arbitraria (depende de bits)</td>
+                      <td>Digital: Precisión arbitraria</td>
+                    </tr>
+                    <tr>
+                      <td>Velocidad</td>
+                      <td>Procesamiento en tiempo real</td>
+                      <td>Depende de frecuencia de reloj</td>
+                      <td>Análoga: Paralelismo masivo natural</td>
+                    </tr>
+                    <tr>
+                      <td>Consumo energético</td>
+                      <td>Bajo para operaciones específicas</td>
+                      <td>Alto para procesamiento general</td>
+                      <td>Análoga: Eficiencia en problemas especializados</td>
+                    </tr>
+                    <tr>
+                      <td>Flexibilidad</td>
+                      <td>Hardware específico por problema</td>
+                      <td>Software reprogramable</td>
+                      <td>Digital: Versatilidad universal</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </li>
 
+          <!-- CORRECTO -->
           <li onclick="abrirModal('1.2 Introducción a métodos digitales', `
                 <hr><br>
               <p><strong>Objetivo:</strong> Comprender qué son los métodos digitales, cómo funcionan y su relevancia en la computación moderna y la ciencia de la información.</p>
