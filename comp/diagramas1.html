@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicios de Diagramas de Flujo</title>
+
+  <link rel="stylesheet" href="/ura/css/estilo.css">
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- ⛔ CSS ORIGINAL RESPETADO ⛔ -->
+  <!-- (tu bloque <style> va aquí sin cambios) -->
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <a href="/ura/comp/">
+      <img src="/ura/img/logo-ura.png" alt="Logo" class="header-logo">
+    </a>
+    <div class="header-title">Ejercicios de Diagramas de Flujo</div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Ejercicios de Diagramas de Flujo</h1>
+  <p class="hero-subtitle">
+    Pensar antes de programar. Dibujar antes de codificar.
+  </p>
+</section>
+
+<div class="container">
+  <div class="exercises-grid" id="exerciseGrid"></div>
+</div>
+
+<footer>
+  © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
+</footer>
+
+<!-- MODAL -->
+<div id="exercise-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" data-close>&times;</span>
+
+    <h2 id="exercise-detail-title"></h2>
+    <p id="exercise-detail-description"></p>
+
+    <div class="flowchart-container">
+      <div class="flowchart-problem">
+        <h3 class="modal-section-title">Enunciado</h3>
+        <p id="problem-statement"></p>
+
+        <h3 class="modal-section-title">Objetivos de aprendizaje</h3>
+        <ul id="learning-objectives"></ul>
+
+        <h3 class="modal-section-title">Pistas</h3>
+        <ul id="hints"></ul>
+
+        <button class="apple-button" id="btnSolution">
+          Ver solución
+        </button>
+      </div>
+
+      <div class="flowchart-diagram">
+        <h3 class="modal-section-title">Área de trabajo</h3>
+        <div id="drawing-area">
+          Visualiza el diagrama antes de escribir código.
+        </div>
+
+        <div id="proposed-solution" style="display:none;">
+          <h4 style="color: var(--apple-vibrant-green);">
+            Solución propuesta (diagrama textual)
+          </h4>
+          <div id="solution-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===============================
+   📦 MODELO DE DATOS
+================================= */
+
+const EXERCISES = [
+  {
+    id: 1,
+    title: "Número par o impar",
+    level: "easy",
+    description: "Identifica si un número entero es par o impar.",
+    problem: "Solicita un número entero al usuario y determina si es par o impar.",
+    objectives: [
+      "Comprender el operador módulo (%)",
+      "Usar decisiones simples (IF / ELSE)",
+      "Representar decisiones en un diagrama"
+    ],
+    hints: [
+      "El residuo de dividir un número entre 2 determina la paridad",
+      "Solo necesitas una condición"
+    ],
+    solution: [
+      "Inicio",
+      "Leer número N",
+      "¿N mod 2 = 0?",
+      "Sí → Mostrar 'Par'",
+      "No → Mostrar 'Impar'",
+      "Fin"
+    ]
+  },
+  {
+    id: 2,
+    title: "Promedio de calificaciones",
+    level: "easy",
+    description: "Calcula el promedio de tres calificaciones.",
+    problem:
+      "Solicita tres calificaciones numéricas, calcula el promedio y determina si el alumno aprueba (≥ 70).",
+    objectives: [
+      "Realizar operaciones aritméticas",
+      "Aplicar una condición lógica",
+      "Representar procesos secuenciales"
+    ],
+    hints: [
+      "Promedio = (C1 + C2 + C3) / 3",
+      "La decisión se toma después del cálculo"
+    ],
+    solution: [
+      "Inicio",
+      "Leer C1, C2, C3",
+      "Promedio ← (C1 + C2 + C3) / 3",
+      "¿Promedio ≥ 70?",
+      "Sí → Mostrar 'Aprobado'",
+      "No → Mostrar 'Reprobado'",
+      "Fin"
+    ]
+  },
+  {
+    id: 3,
+    title: "Mayor de tres números",
+    level: "medium",
+    description: "Determina el número mayor entre tres valores.",
+    problem:
+      "Lee tres números distintos y muestra cuál de ellos es el mayor.",
+    objectives: [
+      "Comparar múltiples valores",
+      "Diseñar decisiones compuestas",
+      "Evitar ambigüedades lógicas"
+    ],
+    hints: [
+      "Compara dos valores a la vez",
+      "Usa condiciones compuestas (AND)"
+    ],
+    solution: [
+      "Inicio",
+      "Leer A, B, C",
+      "¿A > B y A > C?",
+      "Sí → Mostrar 'A es mayor'",
+      "No → ¿B > C?",
+      "Sí → Mostrar 'B es mayor'",
+      "No → Mostrar 'C es mayor'",
+      "Fin"
+    ]
+  }
+];
+
+/* ===============================
+   ⚙️ ESTADO Y CACHE DOM
+================================= */
+
+let currentExercise = null;
+
+const DOM = {
+  grid: document.getElementById("exerciseGrid"),
+  modal: document.getElementById("exercise-modal"),
+  title: document.getElementById("exercise-detail-title"),
+  desc: document.getElementById("exercise-detail-description"),
+  problem: document.getElementById("problem-statement"),
+  objectives: document.getElementById("learning-objectives"),
+  hints: document.getElementById("hints"),
+  solutionBox: document.getElementById("proposed-solution"),
+  solution: document.getElementById("solution-content"),
+  btnSolution: document.getElementById("btnSolution")
+};
+
+/* ===============================
+   🧱 RENDER
+================================= */
+
+function renderGrid() {
+  DOM.grid.innerHTML = EXERCISES.map(e => `
+    <div class="exercise-card" data-id="${e.id}">
+      <h2 class="exercise-title">${e.title}</h2>
+      <span class="difficulty ${e.level}">
+        ${e.level === "easy" ? "Fácil" : "Medio"}
+      </span>
+      <p class="exercise-description">${e.description}</p>
+      <div class="exercise-action">Haz clic para ver detalles</div>
+    </div>
+  `).join("");
+}
+
+function openExercise(id) {
+  currentExercise = EXERCISES.find(e => e.id === id);
+  if (!currentExercise) return;
+
+  DOM.title.textContent = currentExercise.title;
+  DOM.desc.textContent = currentExercise.description;
+  DOM.problem.textContent = currentExercise.problem;
+
+  DOM.objectives.innerHTML = currentExercise.objectives
+    .map(o => `<li>${o}</li>`).join("");
+
+  DOM.hints.innerHTML = currentExercise.hints
+    .map(h => `<li>${h}</li>`).join("");
+
+  DOM.solutionBox.style.display = "none";
+  DOM.modal.classList.add("show");
+}
+
+function showSolution() {
+  if (!currentExercise) return;
+
+  DOM.solution.innerHTML = currentExercise.solution
+    .map(step => `• ${step}`)
+    .join("<br>");
+
+  DOM.solutionBox.style.display = "block";
+}
+
+/* ===============================
+   🎯 EVENTOS
+================================= */
+
+DOM.grid.addEventListener("click", e => {
+  const card = e.target.closest(".exercise-card");
+  if (card) openExercise(Number(card.dataset.id));
+});
+
+DOM.btnSolution.addEventListener("click", showSolution);
+
+DOM.modal.addEventListener("click", e => {
+  if (e.target === DOM.modal || e.target.dataset.close !== undefined) {
+    DOM.modal.classList.remove("show");
+  }
+});
+
+/* ===============================
+   🚀 INIT
+================================= */
+
+renderGrid();
+</script>
+
+</body>
+</html>
