@@ -25,39 +25,27 @@
 <body>
     <h1>Mi Primer Función</h1>
 
-    <p>function calculadora(a, b, operacion) { <br>
+    <p>function calculadora(a, b, operacion) {<br>
     switch(operacion) {<br>
-        case '+': return a + b;<br>
-        case '-': return a - b;<br>
-        case '*': return a * b;<br>
-        case '/': return b !== 0 ? a / b : "Error: División por cero";<br>
-        default: return "Operación no válida";<br>
+        case '+':<br>
+            return a + b<br>
+        case '-'<br>
+            return a - b<br>
+        case '*'<br>
+            return a * b<br>
+        case '/'<br>
+            return b !== 0 ? a / b : "Error: División por cero"<br>
+        default:<br>
+            return "Operación no válida"<br>
     }<br>
 }<br>
-<br>
-// Mini interfaz interactiva<br>
-function probarCalculadora() {<br>
-    alert("Vamos a probar la calculadora. Abre la consola (F12) para ver los resultados.");<br>
-    <br>
-    const tests = [<br>
-        [10, 5, '+', 15],<br>
-        [10, 5, '-', 5],<br>
-        [10, 5, '*', 50],<br>
-        [10, 5, '/', 2],<br>
-        [10, 0, '/', "Error: División por cero"]<br>
-    ];<br>
-    <br>
-    tests.forEach(([a, b, op, esperado]) => {<br>
-        const resultado = calculadora(a, b, op);<br>
-        const esCorrecto = resultado === esperado ? "✓" : "✗";<br>
-        console.log(`${esCorrecto} calculadora(${a}, ${b}, '${op}') = ${resultado}`);<br>
-    });<br>
-    <br>
-    console.log("\n¡Puedes probar tú mismo!");<br>
-    console.log("Ejemplo: calculadora(8, 2, '+') devuelve", calculadora(8, 2, '+'));<br>
-}<br>
-<br>
-probarCalculadora();</p><br>
-<br>
+
+// Pruebas<br>
+console.log("10 + 5 =", calculadora(10, 5, '+'))<br>
+console.log("10 - 5 =", calculadora(10, 5, '-'))<br>
+console.log("10 * 5 =", calculadora(10, 5, '*'))<br>
+console.log("10 / 5 =", calculadora(10, 5, '/'))<br>
+console.log("10 / 0 =", calculadora(10, 0, '/'))<br>
+console.log("10 & 5 =", calculadora(10, 5, '&')); // Operación inválida</p><br>
 </body>
 </html>
