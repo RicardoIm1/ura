@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Primer Funcion</title>
 </head>
-<style>
+<style> <br>
     body {
         font-family: monospace, sans-serif;
         margin: 20px;
@@ -25,27 +25,26 @@
 <body>
     <h1>Mi Primer Función</h1>
 
-    <p>function calculadora(a, b, operacion) {<br>
-    switch(operacion) {<br>
+    <p>function calculadora(a, b, operacion) { <br>
+    switch(operacion) { <br>
         case '+':<br>
-            return a + b<br>
-        case '-'<br>
-            return a - b<br>
-        case '*'<br>
-            return a * b<br>
-        case '/'<br>
-            return b !== 0 ? a / b : "Error: División por cero"<br>
+            return a + b;<br>
+        case '-':<br>
+            return a - b;<br>
+        case '*':<br>
+            return a * b;<br>
+        case '/':<br>
+            return b !== 0 ? a / b : "Error: División por cero";<br>
         default:<br>
-            return "Operación no válida"<br>
+            return "Operación no válida";<br>
     }<br>
 }<br>
-
-// Pruebas<br>
-console.log("10 + 5 =", calculadora(10, 5, '+'))<br>
-console.log("10 - 5 =", calculadora(10, 5, '-'))<br>
-console.log("10 * 5 =", calculadora(10, 5, '*'))<br>
-console.log("10 / 5 =", calculadora(10, 5, '/'))<br>
-console.log("10 / 0 =", calculadora(10, 0, '/'))<br>
-console.log("10 & 5 =", calculadora(10, 5, '&')); // Operación inválida</p><br>
+<br>
+// Uso:<br>
+console.log(calculadora(10, 5, '+')); // 15<br>
+console.log(calculadora(10, 5, '-')); // 5<br>
+console.log(calculadora(10, 5, '*')); // 50<br>
+console.log(calculadora(10, 5, '/')); // 2<br>
+console.log(calculadora(10, 0, '/')); // Error: División por cero</p><br>
 </body>
 </html>
