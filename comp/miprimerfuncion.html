@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +12,12 @@
             background-color: #070707;
             color: #19e606;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #19e606;
         }
+
         pre {
             color: #19e606;
             /* background-color: #1a1a1a; */
@@ -24,14 +28,20 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
+        .container {
+            
+            max-width: 800px;
+            margin: auto;
+        }   
     </style>
 </head>
+
 <body>
     <h1>Mi Primer Función</h1>
+    <div class="container">
+        <h2>Paso 1: Revisa que tu código sea como este:</h2>
 
-    <h2>Paso 1: Revisa que tu código sea como este:</h2>
-    
-    <pre><code>function calculadora(a, b, operacion) {
+        <pre><code>function calculadora(a, b, operacion) {
     switch(operacion) {
         case '+':
             return a + b;
@@ -52,5 +62,7 @@ console.log(calculadora(10, 5, '-')); // 5
 console.log(calculadora(10, 5, '*')); // 50
 console.log(calculadora(10, 5, '/')); // 2
 console.log(calculadora(10, 0, '/')); // Error: División por cero</code></pre>
+    </div>
 </body>
+
 </html>
