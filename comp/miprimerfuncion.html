@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primer Funcion</title>
+    <title>Mi Primer Función</title>
     <link rel="stylesheet" href="/ura/css/estilo.css">
     <style>
         body {
@@ -13,28 +13,81 @@
             background-color: #070707;
             color: #19e606;
             font-size: 1.2rem;
+            line-height: 1.6;
         }
 
         h1,
         h2 {
             color: #19e606;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
 
         pre {
             color: #19e606;
-            background-color: #070707;
-            padding: 15px;
+            background-color: #1a1a1a;
+            padding: 20px;
             border-radius: 5px;
             border: 1px solid #19e606;
             overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            white-space: pre;  /* Cambiado de pre-wrap a pre */
+            font-size: 1rem;
+            line-height: 1.4;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(25, 230, 6, 0.1);
+        }
+
+        pre code {
+            display: block;
+            font-family: 'Courier New', monospace;
         }
 
         .container {
-
             max-width: 800px;
             margin: auto;
+            padding: 0 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        p code {
+            background-color: #1a1a1a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #19e606;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #19e606;
+            color: #19e606;
+            font-size: 0.9rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 1px solid #19e606;
+        }
+
+        .header-logo {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -73,13 +126,13 @@
 }
 
 // Uso:
-console.log(calculadora(10, 5, '+')); // 15
-console.log(calculadora(10, 5, '-')); // 5
-console.log(calculadora(10, 5, '*')); // 50
-console.log(calculadora(10, 5, '/')); // 2
-console.log(calculadora(10, 0, '/')); // Error: División por cero</code></pre>
+console.log(calculadora(10, 5, '+'));  // 15
+console.log(calculadora(10, 5, '-'));  // 5
+console.log(calculadora(10, 5, '*'));  // 50
+console.log(calculadora(10, 5, '/'));  // 2
+console.log(calculadora(10, 0, '/'));  // Error: División por cero</code></pre>
     </div>
-    <br>
+
     <div class="container">
         <h2>Paso 2: Explicación del código</h2>
         <p>Este código define una función llamada <code>calculadora</code> que toma tres parámetros: <code>a</code>,
@@ -87,22 +140,23 @@ console.log(calculadora(10, 0, '/')); // Error: División por cero</code></pre>
             una de las cuatro operaciones matemáticas básicas (suma, resta, multiplicación o división) entre
             <code>a</code> y <code>b</code>. Si la operación es una división, también verifica que <code>b</code> no sea
             cero para evitar errores. Si la operación no es válida, devuelve un mensaje de error.
-        </p><br>
+        </p>
         <p>Luego, se muestran ejemplos de cómo usar la función <code>calculadora</code> con diferentes operaciones y se
             imprimen los resultados en la consola.</p>
     </div>
-    <br>
+
     <div class="container">
         <h2>Paso 3: Prueba el código</h2>
         <p>Puedes copiar y pegar este código en la consola de tu navegador web o en un entorno de desarrollo de
             JavaScript para ver cómo funciona. Modifica los valores de <code>a</code>, <code>b</code> y
-            <code>operacion</code> para experimentar con diferentes cálculos.
-        </p>
+            <code>operacion</code> para experimentar con diferentes cálculos.</p>
     </div>
-    <br>
+
     <div class="container">
         <h2>¡Diviértete programando!</h2>
+        <p>Recuerda que la práctica es esencial para aprender programación. Experimenta con el código, haz cambios y observa cómo se comporta.</p>
     </div>
+
     <footer>
         © 2025 Universidad URA – Asignatura Computación I
     </footer>
