@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Calificaciones - Computación I</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(25, 25, 35, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(100, 100, 255, 0.1);
+        }
+
+        .header h1 {
+            color: #4cc9f0;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header .subtitle {
+            color: #f72585;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .periodo {
+            color: #7209b7;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(30, 30, 46, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(76, 201, 240, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            color: #4cc9f0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f72585;
+        }
+
+        .table-container {
+            background: rgba(25, 25, 35, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow-x: auto;
+            border: 1px solid rgba(100, 100, 255, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1200px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(100, 100, 255, 0.1);
+        }
+
+        tr:nth-child(even) {
+            background: rgba(40, 40, 60, 0.5);
+        }
+
+        tr:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .nombre-alumno {
+            font-weight: bold;
+            color: #4cc9f0;
+            min-width: 250px;
+            position: sticky;
+            left: 0;
+            background: rgba(25, 25, 35, 0.95);
+        }
+
+        .asistencia {
+            color: #4ade80;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .falta {
+            color: #f87171;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .calificacion {
+            color: #fbbf24;
+            font-weight: bold;
+            text-align: center;
+            background: rgba(251, 191, 36, 0.1);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #4cc9f0;
+        }
+
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #f87171;
+            background: rgba(248, 113, 113, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(100, 100, 255, 0.1);
+        }
+
+        .update-time {
+            color: #9ca3af;
+            font-size: 0.8rem;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-container {
+                padding: 10px;
+            }
+            
+            th, td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Sistema de Calificaciones</h1>
+            <div class="subtitle">Computación I</div>
+            <div class="periodo" id="periodo"></div>
+        </div>
+
+        <div class="stats" id="stats">
+            <!-- Las estadísticas se cargarán dinámicamente -->
+        </div>
+
+        <div class="update-time" id="updateTime"></div>
+
+        <div class="table-container">
+            <div class="loading" id="loading">
+                <div>Cargando datos...</div>
+                <div style="margin-top: 10px; font-size: 0.9rem;">Conectando con el servidor...</div>
+            </div>
+            
+            <div class="error" id="error" style="display: none;">
+                Error al cargar los datos. Por favor, intenta nuevamente.
+            </div>
+
+            <table id="calificacionesTable" style="display: none;">
+                <thead id="tableHeader">
+                    <!-- Encabezados se cargarán dinámicamente -->
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Datos se cargarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Universidad URA – Sistema de Gestión Académica</p>
+            <p>Actualización automática cada 5 minutos</p>
+        </div>
+    </div>
+
+    <script>
+        // URL de tu Google Apps Script (REEMPLAZA ESTO CON TU URL)
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycby7MBTYVkfam6qZ0OHAiV6NmzMMCU3FGdEDxQOe24-y-TQyygFj56h8qKpV-U5BUbMD7A/exec';
+
+        // Función para cargar datos usando JSONP
+        function cargarDatos() {
+            const loadingElement = document.getElementById('loading');
+            const errorElement = document.getElementById('error');
+            const tableElement = document.getElementById('calificacionesTable');
+            
+            // Crear script para JSONP
+            const callbackName = 'callback_' + new Date().getTime();
+            const script = document.createElement('script');
+            script.src = `${GAS_URL}?callback=${callbackName}`;
+            
+            // Definir la función de callback
+            window[callbackName] = function(data) {
+                try {
+                    // Limpiar el script
+                    document.body.removeChild(script);
+                    delete window[callbackName];
+                    
+                    // Ocultar loading
+                    loadingElement.style.display = 'none';
+                    
+                    // Procesar los datos
+                    procesarDatos(data);
+                    
+                    // Mostrar la tabla
+                    tableElement.style.display = 'table';
+                    errorElement.style.display = 'none';
+                    
+                    // Actualizar hora
+                    document.getElementById('updateTime').textContent = 
+                        `Última actualización: ${new Date().toLocaleString()}`;
+                        
+                } catch (error) {
+                    console.error('Error procesando datos:', error);
+                    mostrarError();
+                }
+            };
+            
+            // Manejar errores de carga
+            script.onerror = function() {
+                document.body.removeChild(script);
+                delete window[callbackName];
+                mostrarError();
+            };
+            
+            // Agregar script al DOM
+            document.body.appendChild(script);
+        }
+        
+        function mostrarError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('calificacionesTable').style.display = 'none';
+        }
+        
+        function procesarDatos(data) {
+            // Actualizar período
+            document.getElementById('periodo').textContent = data.periodo;
+            
+            // Calcular estadísticas
+            const totalAlumnos = data.asistencias.alumnos.length;
+            let totalAsistencias = 0;
+            let totalFaltas = 0;
+            let alumnosCompletos = 0;
+            
+            data.asistencias.alumnos.forEach(alumno => {
+                alumno.asistencias.forEach(asistencia => {
+                    if (asistencia === 'ASISTENCIA') totalAsistencias++;
+                    if (asistencia === 'FALTA') totalFaltas++;
+                });
+                
+                // Verificar si tiene todas las asistencias registradas
+                const asistenciasRegistradas = alumno.asistencias.filter(a => a !== '').length;
+                if (asistenciasRegistradas === 4) alumnosCompletos++;
+            });
+            
+            // Actualizar estadísticas
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <h3>Total de Alumnos</h3>
+                    <div class="number">${totalAlumnos}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Asistencias</h3>
+                    <div class="number">${totalAsistencias}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Faltas</h3>
+                    <div class="number">${totalFaltas}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Alumnos con registro completo</h3>
+                    <div class="number">${alumnosCompletos}</div>
+                </div>
+            `;
+            
+            // Crear encabezados de la tabla
+            const thead = document.getElementById('tableHeader');
+            thead.innerHTML = '';
+            const headerRow = document.createElement('tr');
+            
+            data.asistencias.columnas.forEach((columna, index) => {
+                const th = document.createElement('th');
+                th.textContent = columna;
+                
+                // Destacar columnas importantes
+                if (index === 0) {
+                    th.style.position = 'sticky';
+                    th.style.left = '0';
+                    th.style.zIndex = '20';
+                }
+                
+                if (columna.includes('CALIFICACION')) {
+                    th.style.background = 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)';
+                }
+                
+                headerRow.appendChild(th);
+            });
+            
+            thead.appendChild(headerRow);
+            
+            // Crear filas de alumnos
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            
+            data.asistencias.alumnos.forEach((alumno, rowIndex) => {
+                const row = document.createElement('tr');
+                
+                // Nombre del alumno
+                const nombreCell = document.createElement('td');
+                nombreCell.textContent = alumno.nombre;
+                nombreCell.className = 'nombre-alumno';
+                row.appendChild(nombreCell);
+                
+                // Asistencias
+                alumno.asistencias.forEach(asistencia => {
+                    const cell = document.createElement('td');
+                    cell.textContent = asistencia;
+                    cell.className = asistencia === 'ASISTENCIA' ? 'asistencia' : 
+                                    asistencia === 'FALTA' ? 'falta' : '';
+                    row.appendChild(cell);
+                });
+                
+                // Parcial 1
+                const parcial1Cell = document.createElement('td');
+                parcial1Cell.textContent = alumno.parcial1;
+                row.appendChild(parcial1Cell);
+                
+                // Parcial 2
+                const parcial2Cell = document.createElement('td');
+                parcial2Cell.textContent = alumno.parcial2;
+                row.appendChild(parcial2Cell);
+                
+                // Prácticas
+                const practicasCell = document.createElement('td');
+                practicasCell.textContent = alumno.practicas;
+                row.appendChild(practicasCell);
+                
+                // Investigaciones
+                const investigacionesCell = document.createElement('td');
+                investigacionesCell.textContent = alumno.investigaciones;
+                row.appendChild(investigacionesCell);
+                
+                // Examen Final
+                const examenCell = document.createElement('td');
+                examenCell.textContent = alumno.examenFinal;
+                row.appendChild(examenCell);
+                
+                // Calificación
+                const calificacionCell = document.createElement('td');
+                calificacionCell.textContent = alumno.calificacion;
+                calificacionCell.className = 'calificacion';
+                row.appendChild(calificacionCell);
+                
+                tbody.appendChild(row);
+            });
+        }
+        
+        // Cargar datos al iniciar
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarDatos();
+            
+            // Recargar automáticamente cada 5 minutos
+            setInterval(cargarDatos, 5 * 60 * 1000);
+        });
+    </script>
+</body>
+</html>
