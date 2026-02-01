@@ -7,5 +7,40 @@
 </head>
 <body>
     <h1>Mi Primer Función</h1>
+
+    <p>function calculadora(a, b, operacion) {
+    switch(operacion) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': return b !== 0 ? a / b : "Error: División por cero";
+        default: return "Operación no válida";
+    }
+}
+
+// Mini interfaz interactiva
+function probarCalculadora() {
+    alert("Vamos a probar la calculadora. Abre la consola (F12) para ver los resultados.");
+    
+    const tests = [
+        [10, 5, '+', 15],
+        [10, 5, '-', 5],
+        [10, 5, '*', 50],
+        [10, 5, '/', 2],
+        [10, 0, '/', "Error: División por cero"]
+    ];
+    
+    tests.forEach(([a, b, op, esperado]) => {
+        const resultado = calculadora(a, b, op);
+        const esCorrecto = resultado === esperado ? "✓" : "✗";
+        console.log(`${esCorrecto} calculadora(${a}, ${b}, '${op}') = ${resultado}`);
+    });
+    
+    console.log("\n¡Puedes probar tú mismo!");
+    console.log("Ejemplo: calculadora(8, 2, '+') devuelve", calculadora(8, 2, '+'));
+}
+
+probarCalculadora();</p>
+
 </body>
 </html>
