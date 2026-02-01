@@ -4,48 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Primer Funcion</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+            background-color: #070707;
+            color: #19e606;
+        }
+        h1, h2 {
+            color: #19e606;
+        }
+        pre {
+            color: #19e606;
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #19e606;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: monospace, sans-serif;
-        margin: 20px;
-        background-color: #070707;
-    }
-    h1, h2 {
-        color: #19e606;
-    }
-    p {
-        color: #19e606;
-        /* background: #fff; */
-        padding: 15px;
-        border-radius: 5px;
-        /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
-    }   
-</style>
 <body>
     <h1>Mi Primer Función</h1>
 
-    <h2>Paso 1: Revisa que tu código sea como este:</h2><br>
-    <p>function calculadora(a, b, operacion) { <br>
-    switch(operacion) { <br>
-        case '+':<br>
-            return a + b;<br>
-        case '-':<br>
-            return a - b;<br>
-        case '*':<br>
-            return a * b;<br>
-        case '/':<br>
-            return b !== 0 ? a / b : "Error: División por cero";<br>
-        default:<br>
-            return "Operación no válida";<br>
-    }<br>
-}<br>
-<br>
-// Uso:<br>
-console.log(calculadora(10, 5, '+')); // 15<br>
-console.log(calculadora(10, 5, '-')); // 5<br>
-console.log(calculadora(10, 5, '*')); // 50<br>
-console.log(calculadora(10, 5, '/')); // 2<br>
-console.log(calculadora(10, 0, '/')); // Error: División por cero</p><br>
+    <h2>Paso 1: Revisa que tu código sea como este:</h2>
+    
+    <pre><code>function calculadora(a, b, operacion) {
+    switch(operacion) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return b !== 0 ? a / b : "Error: División por cero";
+        default:
+            return "Operación no válida";
+    }
+}
+
+// Uso:
+console.log(calculadora(10, 5, '+')); // 15
+console.log(calculadora(10, 5, '-')); // 5
+console.log(calculadora(10, 5, '*')); // 50
+console.log(calculadora(10, 5, '/')); // 2
+console.log(calculadora(10, 0, '/')); // Error: División por cero</code></pre>
 </body>
 </html>
