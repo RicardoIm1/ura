@@ -1,0 +1,300 @@
+<div class="tema-contenido">
+
+  <!-- 1. TÍTULO DEL TEMA -->
+  <!-- <h2>1.1. El término algebraico y sus partes</h2> -->
+
+  <!-- 2. SVG RELOJ TIEMPO ESTIMADO -->
+  <div class="tiempo-estimado">
+    <svg width="120" height="120" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="55" stroke="#4a6fa5" stroke-width="3" fill="none" />
+      <circle cx="60" cy="60" r="50" stroke="#e0e7ff" stroke-width="8" fill="none" />
+      <!-- Marcas de minutos -->
+      <g id="marcas">
+        <line x1="60" y1="15" x2="60" y2="20" stroke="#4a6fa5" stroke-width="2" />
+        <line x1="60" y1="100" x2="60" y2="95" stroke="#4a6fa5" stroke-width="2" />
+        <line x1="15" y1="60" x2="20" y2="60" stroke="#4a6fa5" stroke-width="2" />
+        <line x1="100" y1="60" x2="95" y2="60" stroke="#4a6fa5" stroke-width="2" />
+      </g>
+      <!-- Aguja del reloj -->
+      <line x1="60" y1="60" x2="60" y2="30" stroke="#2c3e50" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 60" to="180 60 60"
+          dur="2s" repeatCount="indefinite" />
+      </line>
+      <circle cx="60" cy="60" r="4" fill="#2c3e50" />
+      <text x="60" y="75" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="14" font-weight="bold">25
+        min</text>
+    </svg>
+    <p class="tiempo-texto">Tiempo estimado basado en programas de MIT, Stanford y UC Berkeley</p>
+  </div>
+
+  <!-- 3. OBJETIVO DEL TEMA -->
+  <div class="objetivo">
+    <h3>📌 Objetivo del tema</h3>
+    <p>Al finalizar este tema, serás capaz de:</p>
+    <ul>
+      <li>Comprender y definir formalmente qué es el Lenguaje algebraico</li>
+    </ul>
+  </div>
+
+  <!-- 4. IDEA PRINCIPAL -->
+  <div class="idea-principal">
+    <h3>🎯 Idea principal</h3>
+    <p>El lenguaje algebraico es el <sgtong>lenguaje de las matemáticas que permite representar fenómenos del mundo real
+        mediante el uso de variables y constantes</sgtong>. Según las fuentes, este lenguaje se basa en los siguientes
+      componentes fundamentales:</p>
+  </div>
+
+  <h4>Elementos del lenguaje algebraico</h4>
+  <table class='math-table'>
+    <tr style='background-color: #f2f2f2;'>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Símbolo</th>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Significado</th>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplo</th>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x, y, z, a, b, c</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Variables (cantidades desconocidas)</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x + 5 = 12</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>+</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Adición, suma, más</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>a + b</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>-</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Sustracción, resta, menos</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x - 3</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>×, ⋅, ( )</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación, por, veces</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>2x, a⋅b, 3(x+y)</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>÷, /</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>División, entre, dividido por</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x/2, a÷b</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>=</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Igualdad, es igual a</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>y = 2x + 1</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>≠</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Desigualdad, no es igual a</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x ≠ 0</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>>, << /td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Mayor que, menor que</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x > 5, y < 10</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>², ³, ⁿ</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Potenciación, elevado a</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x², y³, aⁿ</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>√</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Raíz cuadrada</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>√x, √(a+b)</td>
+    </tr>
+  </table>
+
+  <h4>Traducción del lenguaje común al algebraico</h4>
+  <table class='math-table'>
+    <tr style='background-color: #f2f2f2;'>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Expresión verbal</th>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Expresión algebraica</th>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Explicación</th>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Un número aumentado en 5</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x + 5</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x representa el número desconocido</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>El doble de un número</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>2x</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicar por 2</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>La mitad de un número</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x/2</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Dividir entre 2</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>El triple de un número disminuido en 2</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>3x - 2</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Primero triple, luego disminuir</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>La suma de dos números diferentes</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>a + b</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Usar diferentes variables</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>El cuadrado de un número</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x²</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Elevar al exponente 2</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>La diferencia de dos números</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>a - b</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Orden importante: primero menos segundo</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>El producto de dos números</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>a × b o ab</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Multiplicación implícita o explícita</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>El cociente de dos números</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>a/b</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>División: numerador/denominador</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Tres números consecutivos</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x, x+1, x+2</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Patrón de números seguidos</td>
+    </tr>
+  </table>
+
+  <h4>Ejemplos detallados de traducción</h4>
+
+  <p><strong>Ejemplo 1: Expresiones simples</strong></p>
+  <p>Traducir al lenguaje algebraico: 'La suma de un número y su cuadrado'</p>
+  <ol>
+    <li>Paso 1: Identificar el número desconocido → <span style='color: red; font-weight: bold;'>x</span></li>
+    <li>Paso 2: Identificar 'su cuadrado' → <span style='color: red; font-weight: bold;'>x²</span></li>
+    <li>Paso 3: Identificar 'la suma de' → <span style='color: red; font-weight: bold;'>+</span></li>
+    <li>Paso 4: Unir todos los elementos → <span style='color: red; font-weight: bold;'>x + x²</span></li>
+    <li>Expresión algebraica: <span style='color: red; font-weight: bold;'>x + x²</span> o <span
+        style='color: red; font-weight: bold;'>x² + x</span></li>
+  </ol>
+
+  <p><strong>Ejemplo 2: Expresiones compuestas</strong></p>
+  <p>Traducir al lenguaje algebraico: 'El triple de la diferencia entre dos números'</p>
+  <ol>
+    <li>Paso 1: Identificar los números → <span style='color: red; font-weight: bold;'>a y b</span></li>
+    <li>Paso 2: 'diferencia entre dos números' → <span style='color: red; font-weight: bold;'>a - b</span></li>
+    <li>Paso 3: 'el triple de' → <span style='color: red; font-weight: bold;'>3 ×</span></li>
+    <li>Paso 4: Unir todos los elementos → <span style='color: red; font-weight: bold;'>3(a - b)</span></li>
+    <li><span style='color: red; font-weight: bold;'>¡Importante!</span> Los paréntesis son necesarios para indicar que
+      la diferencia se multiplica por 3</li>
+  </ol>
+
+  <p><strong>Ejemplo 3: Expresión con múltiples operaciones</strong></p>
+  <p>Traducir al lenguaje algebraico: 'La raíz cuadrada de la suma de los cuadrados de dos números'</p>
+  <ol>
+    <li>Paso 1: Identificar los números → <span style='color: red; font-weight: bold;'>x y y</span></li>
+    <li>Paso 2: 'cuadrados de dos números' → <span style='color: red; font-weight: bold;'>x² y y²</span></li>
+    <li>Paso 3: 'suma de los cuadrados' → <span style='color: red; font-weight: bold;'>x² + y²</span></li>
+    <li>Paso 4: 'raíz cuadrada de' → <span style='color: red; font-weight: bold;'>√( )</span></li>
+    <li>Paso 5: Unir todos los elementos → <span style='color: red; font-weight: bold;'>√(x² + y²)</span></li>
+    <li><span style='color: red; font-weight: bold;'>¡Importante!</span> Los paréntesis bajo el radical son esenciales
+    </li>
+  </ol>
+
+  <h4>Clasificación de expresiones algebraicas</h4>
+  <table class='math-table'>
+    <tr style='background-color: #f2f2f2;'>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Tipo</th>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Definición</th>
+      <th style='border: 1px solid #ddd; padding: 8px;'>Ejemplos</th>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Monomio</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con un solo término</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>5x, -3y², 7</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Binomio</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con dos términos</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x + y, 2a - 3b, x² + 4</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Trinomio</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con tres términos</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>x² + 2x + 1, a + b + c</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Polinomio</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Expresión con múltiples términos</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>4x³ - 2x² + 5x - 7</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Expresión racional</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Cociente de dos polinomios</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>(x+1)/(x-2), 3/(y²+1)</td>
+    </tr>
+    <tr>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Expresión radical</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>Contiene radicales</td>
+      <td style='border: 1px solid #ddd; padding: 8px;'>√x, √(a+b), ³√(x²)</td>
+    </tr>
+  </table>
+
+  <h4>Jerarquía de operaciones</h4>
+  <p>Reglas esenciales para interpretar y evaluar expresiones algebraicas:</p>
+  <ol>
+    <li><span style='color: red; font-weight: bold;'>Paréntesis y agrupación:</span> Operaciones dentro de paréntesis,
+      corchetes y llaves</li>
+    <li><span style='color: red; font-weight: bold;'>Exponentes y radicales:</span> Potencias y raíces</li>
+    <li><span style='color: red; font-weight: bold;'>Multiplicación y división:</span> De izquierda a derecha</li>
+    <li><span style='color: red; font-weight: bold;'>Suma y resta:</span> De izquierda a derecha</li>
+  </ol>
+
+  <p><strong>Ejemplo:</strong> Evaluar 2 + 3 × 4² - (5 - 1)/2</p>
+  <ol>
+    <li>Paréntesis: (5-1) = 4 → 2 + 3 × 4² - 4/2</li>
+    <li>Exponentes: 4² = 16 → 2 + 3 × 16 - 4/2</li>
+    <li>Multiplicación/división: 3×16=48, 4/2=2 → 2 + 48 - 2</li>
+    <li>Suma/resta: 2+48=50, 50-2=48 → <span style='color: red; font-weight: bold;'>48</span></li>
+  </ol>
+
+  <h4>Ejercicio de aplicación integral</h4>
+  <p>Traducir al lenguaje algebraico las siguientes expresiones:</p>
+  <ol>
+    <li>El producto de tres números consecutivos</li>
+    <li>La suma de los cuadrados de dos números</li>
+    <li>El área de un rectángulo de base x y altura y</li>
+    <li>La edad de Juan dentro de 5 años si actualmente tiene a años</li>
+    <li>La distancia recorrida a velocidad constante v en tiempo t</li>
+  </ol>
+
+  <p><strong>Solución:</strong></p>
+  <ol>
+    <li><span style='color: red; font-weight: bold;'>x(x+1)(x+2)</span> (tres números consecutivos)</li>
+    <li><span style='color: red; font-weight: bold;'>a² + b²</span> (suma de cuadrados)</li>
+    <li><span style='color: red; font-weight: bold;'>x × y</span> (área = base × altura)</li>
+    <li><span style='color: red; font-weight: bold;'>a + 5</span> (edad actual más 5 años)</li>
+    <li><span style='color: red; font-weight: bold;'>v × t</span> (distancia = velocidad × tiempo)</li>
+  </ol>
+
+  <h4>Errores comunes y consideraciones importantes</h4>
+  <ul>
+    <li><span style='color: red; font-weight: bold;'>Confundir 'diferencia' con 'cociente':</span> La diferencia es
+      resta (a - b), el cociente es división (a/b)</li>
+    <li><span style='color: red; font-weight: bold;'>Olvidar paréntesis en expresiones compuestas:</span> 'El doble de
+      la suma' es 2(x+y), no 2x+y</li>
+    <li><span style='color: red; font-weight: bold;'>Orden en la resta:</span> 'a disminuido en b' es a-b, no b-a</li>
+    <li><span style='color: red; font-weight: bold;'>Variables diferentes para cantidades diferentes:</span> Usar x e y
+      para números distintos</li>
+    <li><span style='color: red; font-weight: bold;'>Notación de multiplicación:</span> 2x significa 2 × x, no 20</li>
+    <li><span style='color: red; font-weight: bold;'>Coeficiente 1 implícito:</span> x significa 1x, -y significa -1y
+    </li>
+  </ul>
+
+  <!-- 7. BIBLIOGRAFÍA -->
+  <div class="bibliografia">
+    <h3>📚 Bibliografía confiable y verificable</h3>
+    <ul>
+      <li><strong>Frank S. Budick</strong> (2007). <em>Matemáticas Aplicadas para Administración, economía y ciencias
+          sociales. </em> (4ª ed.). McGraw Hill Interamericana. <span class="isbn">ISBN: 970-10-5698-1</span> <em>//
+          Libro de referencia estándar en universidades como MIT</em></li>
+    </ul>
+  </div>
+</div>
