@@ -32,7 +32,7 @@
     content: "📄";
     margin-right: 8px;
   }
-  
+
 </style>
 
 <body>
@@ -147,7 +147,7 @@
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://st2.depositphotos.com/1004061/9519/i/450/depositphotos_95194858-stock-photo-complex-of-math-formulas-on.jpg"
-                alt="ejercicios neg2">
+                alt="ejercicios neg1">
             </a>
           </div>
         </div>
@@ -203,7 +203,7 @@
             <div class="loguito librito">
               <img
                 src="https://st3.depositphotos.com/4187167/12961/i/450/depositphotos_129617986-stock-photo-mathematical-equations-in-white.jpg"
-                alt="trabajo_final_neg2">
+                alt="trabajo_final_neg1">
             </div>
           </div>
         </a>
@@ -283,7 +283,7 @@
         
         // ✅ CORRECCIÓN: Cargar desde la carpeta correcta
         // Ajusta esta ruta según tu estructura real
-        const rutaArchivo = `/ura/neg2/temas/${nombreArchivo}.html`;
+        const rutaArchivo = `/ura/neg1/temas/${nombreArchivo}.html`;
         const respuesta = await fetch(rutaArchivo);
         
         if (!respuesta.ok) {
@@ -300,7 +300,7 @@
             <h4>❌ Error al cargar el contenido</h4>
             <p><strong>Archivo:</strong> ${nombreArchivo}.html</p>
             <p><strong>Error:</strong> ${error.message}</p>
-            <p>Verifica que el archivo exista en: <code>/ura/neg2/temas/</code></p>
+            <p>Verifica que el archivo exista en: <code>/ura/neg1/temas/</code></p>
             <button onclick="cargarTemaModal('${titulo}', '${nombreArchivo}')" 
                     style="margin-top: 15px; padding: 8px 16px; background: #0066cc; color: white; border: none; border-radius: 4px;">
               Reintentar
