@@ -468,6 +468,7 @@
         }
 
         .btn-subida {
+            width: 90%;
             background: var(--apple-vibrant-green);
             color: white;
             padding: 10px 16px;
@@ -500,7 +501,7 @@
 
         /* Botón de enviar */
         .btn-enviar {
-            width: 80%;
+            width: 100%;
             background: var(--apple-gradient);
             color: white;
             padding: 16px;
