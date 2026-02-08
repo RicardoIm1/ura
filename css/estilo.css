@@ -500,7 +500,7 @@
 
         /* Botón de enviar */
         .btn-enviar {
-            width: 100%;
+            width: 80%;
             background: var(--apple-gradient);
             color: white;
             padding: 16px;
