@@ -29,6 +29,10 @@
             letter-spacing: -0.022em;
         }
 
+        div {
+            margin: 1rem 0;
+        }
+
         /* Header estilo Apple */
         header {
             background: rgba(255, 255, 255, 0.8);
