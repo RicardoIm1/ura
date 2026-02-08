@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones - Matemáticas Aplicadas a los Negocios 1</title>
+  <link rel="stylesheet" href="/ura/css/estilo.css">
+  <style>
+    .tabla-calificaciones {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .tabla-calificaciones th {
+      background: var(--apple-gradient);
+      color: white;
+      text-align: left;
+      padding: 14px 16px;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .tabla-calificaciones td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--apple-black);
+      font-size: 15px;
+    }
+
+    .tabla-calificaciones tr:nth-child(even) {
+      background-color: var(--apple-light-gray);
+    }
+
+    .tabla-calificaciones tr:hover {
+      background-color: rgba(0, 119, 204, 0.08);
+      transition: 0.3s ease;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background: var(--apple-vibrant-blue);
+      padding: 12px 24px;
+      border-radius: 980px;
+      transition: var(--apple-transition);
+    }
+
+    .back-button:hover {
+      background: var(--apple-vibrant-green);
+      transform: scale(1.05);
+    }
+
+    td[contenteditable="true"] {
+      background-color: rgba(255, 255, 255, 0.6);
+      cursor: text;
+    }
+
+    td[contenteditable="true"]:focus {
+      outline: 2px solid var(--apple-vibrant-blue);
+      background-color: rgba(0, 119, 204, 0.05);
+    }
+
+    td.total,
+    td.promedio {
+      font-weight: 600;
+      text-align: center;
+      color: var(--apple-vibrant-blue);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/ura/neg/">
+        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+      </a>
+      <div class="header-title">
+        <a href="#" target="_self" style="text-decoration: none; color: inherit;">
+          Matemáticas Aplicadas a los Negocios 1
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2 class="section-title">Evaluación</h2>
+    <div class="evaluacion-grid">
+
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">40%</div>
+        <p class="evaluacion-desc">Dos exámenes parciales</p>
+      </div>
+
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">20%</div>
+        <p class="evaluacion-desc">Actividades bajo conducción de un académico</p>
+      </div>
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">20%</div>
+        <p class="evaluacion-desc">Actividades independientes</p>
+      </div>
+      <div class="evaluacion-item tema-card">
+        <div class="evaluacion-porcentaje">20%</div>
+        <p class="evaluacion-desc">Examen final</p>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h1 class="section-title">Calificaciones de Matemáticas para los Negocios 2</h1>
+        <h4 class="section-title">ene- abr 2026</h4>
+    <table class="tabla-calificaciones" id="tablaCalificaciones">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Primer Parcial</th>
+          <th>Segundo Parcial</th>
+          <th>Actividades bajo conducción del docente</th>
+          <th>Actividades independientes</th>
+          <th>Examen Final</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr><td>Flores Rodríguez Hanna Roberta</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%​</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td class="total"></td></tr>
+        <tr><td>Galindo Gutiérrez Kenya</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%</td><td class="total"></td></tr>
+        <tr><td>González Cruz Jaqueline</td><td contenteditable="true">14%</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td class="total"></td></tr>
+        <tr><td>Guerrero Merino Valeria</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td class="total"></td></tr>
+        <tr><td>Hernández Almeida José Manuel</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%​</td><td contenteditable="true">20%​</td><td contenteditable="true">20%​</td><td class="total"></td></tr>
+        <tr><td>Navarro Flores Zenaida</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td contenteditable="true">20%</td><td class="total"></td></tr>
+        <tr><td>Novela Vazquez dora Jacquelin</td><td contenteditable="true">20%</td><td contenteditable="true">20%​</td><td contenteditable="true">20%​</td><td contenteditable="true">NP​</td><td contenteditable="true">NP</td><td class="total"></td></tr>
+        <tr><td>Tapia Francisco Javier</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td contenteditable="true">NP​</td><td contenteditable="true">NP</td><td contenteditable="true">NP</td><td class="total"></td></tr> -->
+      </tbody>
+    </table>
+    <a href="/ura/neg2/" class="back-button">⬅ Volver</a>
+  </section>
+
+  <footer>
+    © 2025 Universidad URA – Asignatura
+    <a href="/ura/adm/" class="no-style-link materias " target="_self">Matemáticas Para la
+      Administración</a> y
+    <a href="/ura/neg/" class="no-style-link materias" target="_self">Matemáticas Aplicadas a los Negocios 1.</a>
+    <a href="/ura/neg2/" class="no-style-link materias" target="_self">Matemáticas Aplicadas a los Negocios 2.</a>
+  </footer>
+
+  <script>
+    function calcularTotalesYPromedios() {
+      const filas = document.querySelectorAll("#tablaCalificaciones tbody tr");
+
+      filas.forEach(fila => {
+        const celdas = fila.querySelectorAll("td[contenteditable='true']");
+        let suma = 0;
+        let conteo = 0;
+
+        celdas.forEach(celda => {
+          const texto = celda.textContent || '';
+          // 🔧 Limpieza robusta: elimina todo menos números, punto o signo
+          const valor = parseFloat(texto.replace(/[^\d.-]/g, ''));
+
+          if (!isNaN(valor)) {
+            suma += valor;
+            conteo++;
+          }
+        });
+
+        const totalCelda = fila.querySelector(".total");
+
+        if (conteo > 0) {
+          const total = suma.toFixed(1);
+          totalCelda.textContent = total + "%";
+
+          // 🎨 Color dinámico tipo semáforo
+          let color;
+          if (suma >= 100) color = "var(--apple-vibrant-green)";
+          else if (suma >= 80) color = "orange";
+          else color = "crimson";
+
+          fila.style.transition = "background-color 0.6s ease";
+          fila.style.backgroundColor = color + "20"; // fondo semitransparente
+
+          // ✨ Efecto de rebote sutil en la celda de total
+          totalCelda.style.transition = "transform 0.3s ease";
+          totalCelda.style.transform = "scale(1.2)";
+          setTimeout(() => totalCelda.style.transform = "scale(1)", 300);
+        } else {
+          totalCelda.textContent = "";
+          fila.style.backgroundColor = "";
+        }
+      });
+    }
+
+    // 🧠 Escucha cambios en la tabla
+    document.querySelector("#tablaCalificaciones").addEventListener("input", calcularTotalesYPromedios);
+
+    // 🚀 Calcula automáticamente al cargar la página
+    window.addEventListener("DOMContentLoaded", calcularTotalesYPromedios);
+  </script>
+
+</body>
+
+</html>
