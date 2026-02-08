@@ -38,7 +38,7 @@
   <header>
     <div class="header-content">
       <a href="/ura/">
-        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo"> 
+        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
       </a>
       <div class="header-title">Matemáticas Aplicadas a los Negocios 1</div>
     </div>
@@ -53,10 +53,9 @@
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno aplicará modelos matemáticos lineales, diferenciales e
-      integrales relativos a la optimización de fenómenos económicos empresariales, utilizará
-      elementos analíticos de la estadística inferencial al estudio de dichos fenómenos para un
-      mejor conocimiento y análisis en futuros cursos.
+      Al finalizar el curso el alumno aplicará modelos matemáticos, algebraicos, geométricos, analíticos y de la
+      estadística descriptiva, a la interpretación de fenómenos económico empresariales para un mejor conocimiento y
+      análisis en futuros cursos.
     </p>
   </section>
 
@@ -81,13 +80,13 @@
               1.1. Lenguaje algebraico
             </button>
             <button class="btn-tema" onclick="cargarTemaModal('1.1.1 El término algebraico y sus partes ', '1.1.1')">
-              1.1.1 El término algebraico y sus partes 
+              1.1.1 El término algebraico y sus partes
             </button>
           </li>
           <!-- Agrega más subtemas según necesites -->
         </ul>
       </div>
-      
+
       <div class="tema-card">
         <div class="tema-num">TEMA 2</div>
         <h3 class="tema-title">Ecuaciones lineales</h3>
@@ -95,7 +94,8 @@
           <!-- Enlaces a subtemas -->
           <li>
             <!-- BOTÓN CORREGIDO: Solo pasa el nombre del archivo -->
-            <button class="btn-tema" onclick="cargarTemaModal('2.1 Ecuaciones con una incógnita de primer grado', '2.1')">
+            <button class="btn-tema"
+              onclick="cargarTemaModal('2.1 Ecuaciones con una incógnita de primer grado', '2.1')">
               2.1 Ecuaciones con una incógnita de primer grado
             </button>
           </li>
@@ -292,24 +292,24 @@
             <p style="font-size: 0.9em; color: #666;">Archivo: ${nombreArchivo}.html</p>
           </div>
         `;
-        
+
         // Mostrar modal inmediatamente
         modalTitle.textContent = titulo;
         modal.classList.add('show');
         modal.style.display = 'block';
-        
+
         // ✅ CORRECCIÓN: Cargar desde la carpeta correcta
         // Ajusta esta ruta según tu estructura real
         const rutaArchivo = `/ura/neg1/temas/${nombreArchivo}.html`;
         const respuesta = await fetch(rutaArchivo);
-        
+
         if (!respuesta.ok) {
           throw new Error(`No se encontró el archivo: ${rutaArchivo}`);
         }
-        
+
         const contenido = await respuesta.text();
         modalText.innerHTML = contenido;
-        
+
       } catch (error) {
         console.error('Error cargando el tema:', error);
         modalText.innerHTML = `
@@ -335,9 +335,9 @@
 
     modalClose.addEventListener('click', cerrarModal);
     modalOverlay.addEventListener('click', cerrarModal);
-    
+
     // Cerrar con tecla ESC
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && modal.classList.contains('show')) {
         cerrarModal();
       }
