@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matemáticas Aplicadas a los Negocios 2 - Universidad URA</title>
+  <title>Matemáticas Aplicadas a los Negocios 1 - Universidad URA</title>
   <link rel="stylesheet" href="/ura/css/estilo.css">
   <!-- MathJax para renderizar notación matemática elegante -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -38,17 +38,15 @@
   <header>
     <div class="header-content">
       <a href="/ura/">
-        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo"> 
       </a>
-      <div class="header-title">
-        <p>Materias del Profesor Ricardo</p>
-      </div>
-      <div class="header-title">Matemáticas Aplicadas a los Negocios 2</div>
+      <div class="header-title"><p>Materias del Profesor Ricardo</p></div>
+      <div class="header-title">Matemáticas Aplicadas a los Negocios 1</div>
     </div>
   </header>
 
   <div class="hero">
-    <h1>Matemáticas Aplicadas a los Negocios 2</h1>
+    <h1>Matemáticas Aplicadas a los Negocios 1</h1>
     <h2>LCIA209</h2>
     <a href="calificaciones_mneg2.html" class="apple-button">Calificaciones</a>
   </div>
@@ -56,15 +54,16 @@
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno aplicará modelos matemáticos, algebraicos, geométricos, analíticos y de la
-      estadística descriptiva, a la interpretación de fenómenos económico empresariales para un mejor conocimiento y
-      análisis en futuros cursos.
+      Al finalizar el curso el alumno aplicará modelos matemáticos lineales, diferenciales e
+      integrales relativos a la optimización de fenómenos económicos empresariales, utilizará
+      elementos analíticos de la estadística inferencial al estudio de dichos fenómenos para un
+      mejor conocimiento y análisis en futuros cursos.
     </p>
   </section>
 
   <section class="container">
     <h2>
-      <a href="https://drive.google.com/file/d/1y0Vzo_KdbsOEH4M4W4ibHvsMNX5IhoQo/view?usp=drive_link" target="_blank"
+      <a href="https://drive.google.com/file/d/1RE1XfHK_0gnTG0W6nu3113oUnEnD8b16/view?usp=sharing" target="_blank"
         class="pdf-link-simple">
         Temario PDF
       </a>
@@ -74,18 +73,18 @@
       <!-- En la sección de Temas -->
       <div class="tema-card">
         <div class="tema-num">TEMA 1</div>
-        <h3 class="tema-title">Revisión de Conceptos</h3>
+        <h3 class="tema-title">Matrices</h3>
         <ul class="tema-list">
           <!-- Enlaces a subtemas -->
           <li>
-            <a href="/ura/neg1/temas/1.1-matrices.html" data-tema="1.1" class="subtema-link">
+            <a href="/ura/neg2/temas/1.1-matrices.html" data-tema="1.1" class="subtema-link">
               <span class="subtema-num">1.1</span>
-              <span class="subtema-titulo">Lenguaje algebraico</span>
+              <span class="subtema-titulo">Definición de matriz, orden y nomenclatura</span>
               <span class="subtema-emoji">📊</span>
             </a>
           </li>
           <li>
-            <a href="/ura/neg1/temas/1.2-clasificacion.html" data-tema="1.2" class="subtema-link">
+            <a href="/ura/neg2/temas/1.2-clasificacion.html" data-tema="1.2" class="subtema-link">
               <span class="subtema-num">1.2</span>
               <span class="subtema-titulo">Clasificación de las matrices</span>
               <span class="subtema-emoji">➕</span>
@@ -98,7 +97,7 @@
             </button>
           </li>
           <li>
-            <a href="/ura/neg1/temas/1.2.1.html" data-tema="1.2.1" class="subtema-link">
+            <a href="/ura/neg2/temas/1.2.1.html" data-tema="1.2.1" class="subtema-link">
               <span class="subtema-num">1.2.1</span>
               <span class="subtema-titulo"> Cuadrada</span>
               <span class="subtema-emoji">🔢</span>
@@ -297,24 +296,24 @@
             <p style="font-size: 0.9em; color: #666;">Archivo: ${nombreArchivo}.html</p>
           </div>
         `;
-
+        
         // Mostrar modal inmediatamente
         modalTitle.textContent = titulo;
         modal.classList.add('show');
         modal.style.display = 'block';
-
+        
         // ✅ CORRECCIÓN: Cargar desde la carpeta correcta
         // Ajusta esta ruta según tu estructura real
         const rutaArchivo = `/ura/neg2/temas/${nombreArchivo}.html`;
         const respuesta = await fetch(rutaArchivo);
-
+        
         if (!respuesta.ok) {
           throw new Error(`No se encontró el archivo: ${rutaArchivo}`);
         }
-
+        
         const contenido = await respuesta.text();
         modalText.innerHTML = contenido;
-
+        
       } catch (error) {
         console.error('Error cargando el tema:', error);
         modalText.innerHTML = `
@@ -340,9 +339,9 @@
 
     modalClose.addEventListener('click', cerrarModal);
     modalOverlay.addEventListener('click', cerrarModal);
-
+    
     // Cerrar con tecla ESC
-    document.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape' && modal.classList.contains('show')) {
         cerrarModal();
       }
