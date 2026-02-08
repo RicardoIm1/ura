@@ -487,6 +487,27 @@
             color: white;
         }
 
+        .btn-tema {
+            width: 90%;
+            background: var(--apple-vibrant-green);
+            color: white;
+            padding: 10px 16px;
+            border-radius: var(--apple-border-radius);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--apple-transition);
+            border: none;
+            white-space: nowrap;
+            margin-bottom: 1rem;
+        }
+
+        .btn-tema:hover {
+            background: var(--apple-blue-hover);
+            transform: scale(1.03);
+            color: white;
+        }
+
         #screenshot {
             display: none;
         }
