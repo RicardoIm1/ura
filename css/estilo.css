@@ -494,12 +494,13 @@
             padding: 10px 16px;
             border-radius: var(--apple-border-radius);
             cursor: pointer;
-            font-size: 14px;
+            font-size: auto;
             font-weight: 500;
             transition: var(--apple-transition);
             border: none;
             white-space: nowrap;
             margin-bottom: 1rem;
+            text-align: left;
         }
 
         .btn-tema:hover {
