@@ -3013,29 +3013,28 @@
         </ul>
       </div> -->
 
-<div class="tema-card" onclick="abrirModalDesdeArchivo('/ura/comp/temas/5.html')">
+      <div class="tema-card" onclick="abrirModalDesdeArchivo('/ura/comp/temas/5.html')">
 
-    <div class="tema-num">TEMA 5</div>
+        <div class="tema-num">TEMA 5</div>
 
-    <h3 class="tema-title">
-        Paquetes de Subrutina Científicas
-    </h3>
+        <h3 class="tema-title">
+          Paquetes de Subrutina Científicas
+        </h3>
 
-    <ul class="tema-list">
-        <li>5.1. Introducción</li>
-        <li>5.2. Ejemplos de paquetes</li>
-        <li>5.3. Texas instrument TI-59</li>
-        <li>5.4. Manejo de calculador</li>
-        <li>5.5. Casio FX-502P</li>
-        <li>5.6. Códigos</li>
-        <li>5.7. Instrucciones</li>
-        <li>5.8. Interpretación de datos</li>
-        <li>5.9. Corrección de programas</li>
-    </ul>
+        <ul class="tema-list">
+          <li>5.1. Introducción</li>
+          <li>5.2. Ejemplos de paquetes</li>
+          <li>5.3. Texas instrument TI-59</li>
+          <li>5.4. Manejo de calculador</li>
+          <li>5.5. Casio FX-502P</li>
+          <li>5.6. Códigos</li>
+          <li>5.7. Instrucciones</li>
+          <li>5.8. Interpretación de datos</li>
+          <li>5.9. Corrección de programas</li>
+        </ul>
 
-</div>
+      </div>
 
-    
     </div>
   </section>
 
@@ -3189,7 +3188,30 @@
   <footer>
     © 2025 Universidad URA – Asignatura Computación I
   </footer>
-  
+
+  <script>
+    function abrirModalDesdeArchivo(ruta) {
+      const modal = document.getElementById("modal-info");
+      const modalText = document.getElementById("modal-text");
+
+      fetch(ruta)
+        .then(response => response.text())
+        .then(data => {
+          modalText.innerHTML = data;
+          modal.style.display = "block";
+
+          setTimeout(() => {
+            modal.classList.add("show");
+          }, 10);
+        })
+        .catch(error => {
+          modalText.innerHTML = "<p>Error al cargar el contenido.</p>";
+          modal.style.display = "block";
+          modal.classList.add("show");
+        });
+    }
+  </script>
+
 </body>
 
 </html>
