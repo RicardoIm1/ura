@@ -1,172 +1,197 @@
 <div class="tema-card" onclick="abrirModalDesdeArchivo('/ura/comp/temas/5.html')">
-
 <section class="container">
 
-    <h2 class="section-title">5. Paquetes de Subrutinas Científicas</h2>
+    <h2 class="section-title">5. Paquetes de Subrutinas Científicas: Automatización del Cálculo Técnico</h2>
 
     <div class="objetivo">
-        Comprender el uso de paquetes de subrutinas científicas en calculadoras programables,
-        su estructura lógica, aplicación práctica y proceso de corrección.
+        Comprender en profundidad el concepto, la estructura lógica, la aplicación práctica y el proceso de depuración de los paquetes de subrutinas científicas en calculadoras programables, reconociendo su importancia histórica y su legado en la programación moderna.
     </div>
 
     <div class="math-module">
 
-        <h4>5.1 Introducción</h4>
+        <h4>5.1 Introducción: El Nacimiento del Software de Aplicación</h4>
         <p>
-            Un <span class="math-term">paquete de subrutinas científicas</span> es un conjunto organizado
-            de programas diseñados para resolver problemas matemáticos, estadísticos,
-            financieros o de ingeniería mediante bloques reutilizables.
+            Un <span class="math-term">paquete de subrutinas científicas</span> representa uno de los primeros ejemplos de <strong>software de aplicación</strong> en la historia de la computación personal y técnica. Antes de la era de las computadoras personales, ingenieros, científicos y estudiantes dependían de calculadoras mecánicas o de costosos mainframes. La llegada de las calculadoras programables en la década de 1970 democratizó el acceso a la potencia de cómputo. Estos paquetes no eran más que colecciones de programas, a menudo almacenados en tarjetas magnéticas, cintas o manuales impresos, que permitían a los usuarios resolver problemas complejos sin tener que programar desde cero cada algoritmo.
         </p>
-
         <div class="math-example">
-            <strong>Conceptos clave:</strong>
+            <strong>Conceptos clave desarrollados:</strong>
             <ul>
-                <li><span class="math-highlight">Subrutina:</span> bloque de instrucciones con tarea específica.</li>
-                <li><span class="math-highlight">Paquete:</span> conjunto estructurado de subrutinas.</li>
-                <li><span class="math-highlight">Objetivo:</span> automatizar cálculos complejos o repetitivos.</li>
+                <li><span class="math-highlight">Subrutina:</span> Bloque de código autocontenido y reutilizable, diseñado para realizar una tarea matemática específica y bien definida (ej: calcular una raíz cuadrada, una función trigonométrica, o resolver una integral definida). Su característica fundamental es la capacidad de ser "llamada" desde diferentes puntos del programa principal y, una vez finalizada, retornar el control al punto de llamada. Esto promueve la modularidad y la eficiencia.</li>
+                <li><span class="math-highlight">Paquete:</span> Conjunto estructurado y organizado de subrutinas interrelacionadas. La estructura puede ser temática (un paquete de estadística, uno de matemáticas financieras) o funcional (un paquete de resolución de ecuaciones diferenciales). La organización permitía a los usuarios cargar el paquete necesario y usar sus subrutinas como si fueran funciones nativas de la calculadora.</li>
+                <li><span class="math-highlight">Objetivo fundamental:</span> Automatizar cálculos complejos, tediosos o repetitivos, reduciendo drásticamente el tiempo de resolución y minimizando los errores humanos inherentes a los cálculos manuales o al uso de tablas impresas. El objetivo último era <strong>aumentar la productividad y la precisión</strong> en entornos científicos y técnicos.</li>
             </ul>
         </div>
 
-        <h4>5.2 Ejemplos de paquetes</h4>
+        <h4>5.2 Clasificación y Ejemplos de Paquetes por Disciplina</h4>
+        <p>Los paquetes de subrutinas se diversificaron para cubrir un amplio espectro de necesidades. Esta especialización fue clave para su adopción. A continuación, se presenta una clasificación más detallada:</p>
 
         <table class="math-table">
             <thead>
                 <tr>
-                    <th>Área</th>
-                    <th>Aplicaciones</th>
+                    <th>Área de Aplicación</th>
+                    <th>Subrutinas Típicas y Aplicaciones Específicas</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Matemáticas</td>
-                    <td>Resolución de ecuaciones, regresión lineal</td>
+                    <td><strong>Matemáticas Puras y Aplicadas</strong></td>
+                    <td>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li><strong>Álgebra:</strong> Resolución de ecuaciones lineales (método de Gauss-Jordan), ecuaciones cuadráticas y cúbicas, sistemas de ecuaciones.</li>
+                            <li><strong>Cálculo:</strong> Integración numérica (regla del trapecio, Simpson), derivación numérica, búsqueda de raíces (método de Newton-Raphson, bisección).</li>
+                            <li><strong>Números Complejos:</strong> Operaciones básicas (+, -, *, /), conversión a forma polar y rectangular.</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Estadística</td>
-                    <td>Media, desviación estándar, correlación</td>
+                    <td><strong>Estadística y Probabilidad</strong></td>
+                    <td>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li><strong>Estadística Descriptiva:</strong> Cálculo de media, mediana, moda, varianza, desviación estándar (poblacional y muestral).</li>
+                            <li><strong>Regresión:</strong> Regresión lineal (mínimos cuadrados), regresión exponencial, potencial y logarítmica.</li>
+                            <li><strong>Distribuciones:</strong> Cálculo de probabilidades para distribuciones binomial, Poisson y normal (incluyendo el cálculo de puntuaciones Z).</li>
+                            <li><strong>Pruebas de Hipótesis:</strong> Cálculo de estadísticos t y chi-cuadrado.</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Finanzas</td>
-                    <td>Interés compuesto, amortización</td>
+                    <td><strong>Finanzas y Contabilidad</strong></td>
+                    <td>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li><strong>Matemáticas Financieras:</strong> Cálculo de interés simple y compuesto, valor futuro y valor presente de flujos de efectivo.</li>
+                            <li><strong>Amortización:</strong> Creación de tablas de amortización de préstamos, cálculo de cuotas periódicas.</li>
+                            <li><strong>Análisis de Inversiones:</strong> Cálculo del Valor Actual Neto (VAN) y la Tasa Interna de Retorno (TIR).</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Ingeniería</td>
-                    <td>Conversión de unidades, fórmulas físicas</td>
+                    <td><strong>Ingeniería y Ciencias Físicas</strong></td>
+                    <td>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li><strong>Conversión de Unidades:</strong> Paquetes completos dedicados a la conversión entre sistemas (métrico, imperial, etc.) para longitudes, masas, presiones, temperaturas, etc.</li>
+                            <li><strong>Física:</strong> Cálculos de cinemática (MRU, MRUA), dinámica (leyes de Newton), electricidad (ley de Ohm, circuitos serie-paralelo), termodinámica.</li>
+                            <li><strong>Topografía y Navegación:</strong> Resolución de triángulos (teorema del seno/coseno), cálculos de rumbos y distancias, transformaciones de coordenadas geográficas.</li>
+                        </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
-        <h4>5.3 Texas Instruments TI-59</h4>
+        <h4>5.3 Estudio de Caso: Texas Instruments TI-59, Un Hito en la Programación</h4>
 
         <div class="math-example">
-            Calculadora programable avanzada con lector de tarjetas magnéticas.
+            La <strong>TI-59</strong> (lanzada en 1977) fue mucho más que una calculadora; fue un verdadero computador de escritorio de bolsillo. Su característica más revolucionaria fue el <strong>lector/escritor de tarjetas magnéticas</strong>.
         </div>
-
+        <p>Este periférico permitía no solo almacenar programas de hasta 960 pasos (divididos en dos caras de tarjeta), sino también <strong>datos</strong>. Un ingeniero podía, por ejemplo, cargar un programa de análisis de vigas, introducir los parámetros de su proyecto y guardar los resultados en la misma tarjeta para su posterior revisión. Texas Instruments y terceros vendían bibliotecas completas de tarjetas magnéticas (<em>Solid State Software</em>) que cubrían desde estadística hasta navegación astronómica, convirtiendo a la TI-59 en una herramienta indispensable en oficinas de ingeniería y universidades de todo el mundo. Su legado es tal que aún hoy se encuentran entusiastas que restauran y programan estas máquinas.</p>
         <ul>
-            <li>Programación con cientos de pasos.</li>
-            <li>Almacenamiento externo en tarjetas magnéticas.</li>
-            <li>Bibliotecas científicas intercambiables.</li>
-            <li>Uso extendido en ingeniería y educación técnica.</li>
+            <li><strong>Capacidad de Programación:</strong> Hasta 960 pasos de programa, con 100 registros de memoria (hasta 60 de los cuales podían usarse para almacenamiento de datos).</li>
+            <li><strong>Almacenamiento Externo:</strong> Tarjetas magnéticas, cada una con dos pistas que podían contener programa o datos.</li>
+            <li><strong>Bibliotecas Intercambiables:</strong> El concepto de "software" como producto comercial tangible se popularizó con estos paquetes.</li>
+            <li><strong>Impacto Profesional:</strong> Su uso se extendió en ingeniería civil, mecánica, eléctrica, y en la educación técnica superior, estableciendo un estándar de facto para la computación técnica portátil durante casi una década.</li>
         </ul>
 
-        <h4>5.4 Manejo de calculadora</h4>
+        <h4>5.4 Metodología para el Manejo y Desarrollo de Programas</h4>
+        <p>Crear un programa fiable en estos sistemas requería una disciplina casi artesanal. El espacio de memoria era limitado y las herramientas de depuración, prácticamente inexistentes. Por ello, se seguía una metodología rigurosa:</p>
 
-        <div class="math-step">1. Definir claramente las variables.</div>
-        <div class="math-step">2. Numerar instrucciones con orden lógico.</div>
-        <div class="math-step">3. Probar cada bloque antes de integrarlo.</div>
-        <div class="math-step">4. Documentar cada segmento del programa.</div>
+        <div class="math-step"><strong>Fase 1: Análisis y Definición.</strong> Definir claramente las variables de entrada, el proceso de cálculo y las variables de salida. Se solía hacer un diagrama de flujo en papel para visualizar la lógica del programa.</div>
+        <div class="math-step"><strong>Fase 2: Codificación y Numeración.</strong> Escribir las instrucciones una por una, numerándolas en el orden de ejecución. Se asignaban etiquetas (LBL) a los puntos clave y subrutinas.</div>
+        <div class="math-step"><strong>Fase 3: Prueba Unitaria (por Bloques).</strong> Probar cada subrutina de forma aislada con datos de entrada sencillos y cuyo resultado fuera conocido. Esto aislaba los errores y facilitaba su corrección.</div>
+        <div class="math-step"><strong>Fase 4: Integración y Prueba del Sistema.</strong> Una vez verificadas las partes, se integraban en el programa principal y se probaban con un conjunto más amplio de casos, incluyendo valores límite.</div>
+        <div class="math-step"><strong>Fase 5: Documentación y Archivado.</strong> Documentar cada segmento del programa, las variables utilizadas y la función de cada subrutina. Finalmente, el programa se guardaba en una tarjeta magnética, etiquetándola claramente con su nombre y fecha.</div>
 
-        <h4>5.5 Casio FX-502P</h4>
+        <h4>5.5 Estudio de Caso: Casio FX-502P, Precisión y Portabilidad</h4>
 
         <div class="math-example">
-            Modelo compacto orientado a programación científica paso a paso.
+            La <strong>Casio FX-502P</strong> (y su hermana mayor, la FX-602P) representaba la filosofía de diseño japonesa de la época: máxima funcionalidad en un formato compacto y eficiente.
         </div>
-
+        <p>A diferencia de la TI-59, la FX-502P carecía de lector de tarjetas magnéticas integrado (aunque existía un accesorio externo opcional, el FA-2). Esto significaba que los programas se perdían al apagar la calculadora, a menos que se mantuviera en modo de espera o se cargaran desde un cassette externo. Su fortaleza residía en un lenguaje de programación muy potente y estructurado para su tamaño, que incluía subrutinas anidadas, saltos condicionales avanzados y una gran cantidad de funciones científicas preprogramadas. Fue muy popular en entornos educativos y de investigación por su facilidad de uso y portabilidad.</p>
         <ul>
-            <li>Memoria limitada pero funcional.</li>
-            <li>Programación secuencial estructurada.</li>
-            <li>Aplicaciones estadísticas y científicas.</li>
+            <li><strong>Memoria:</strong> Ofrecía 256 pasos de programa y 22 memorias de datos, expandibles en algunos modelos.</li>
+            <li><strong>Programación Estructurada:</strong> Su lenguaje permitía una programación más cercana a los lenguajes de alto nivel, con un uso eficiente de subrutinas y etiquetas.</li>
+            <li><strong>Aplicaciones Científicas:</strong> Su extenso set de funciones preprogramadas (incluyendo permutaciones, combinaciones, generación de números aleatorios) la hacían ideal para estadística y probabilidad.</li>
         </ul>
 
-        <h4>5.6 Códigos</h4>
+        <h4>5.6 Anatomía de un Código: Más Allá de la Simpleza</h4>
 
         <p>
-            Los códigos combinan operaciones aritméticas, saltos condicionales
-            y llamadas a subrutinas.
+            Los códigos, aunque simples en apariencia, combinaban hábilmente operaciones aritméticas de pila (en el caso de las HP) o algebraicas (TI, Casio), con instrucciones de control de flujo como saltos condicionales (basados en comparaciones o flags) y llamadas a subrutinas. La gestión de la memoria era crucial, reutilizando constantemente los registros para ahorrar espacio.
         </p>
-
         <div class="math-example">
+            <strong>Ejemplo comentado de una subrutina en notación TI (similar a la mostrada):</strong>
             <pre>
-01 LBL A
-02 STO 1
-03 RCL 2
-04 +
-05 RTN
+01 LBL A       ; Define una etiqueta llamada 'A' para el inicio de la subrutina.
+02 STO 1       ; Toma el valor que está en la pantalla (X) y lo guarda en el registro de memoria 1.
+03 RCL 2       ; Recupera (copia) el valor almacenado en el registro de memoria 2 y lo pone en pantalla.
+04 +           ; Suma el valor actual en pantalla (RCL 2) al valor que estaba en el registro de operaciones (STO 1). El resultado queda en pantalla.
+05 RTN         ; Retorna de la subrutina, llevando el resultado (la suma) a la pantalla del programa que la llamó.
             </pre>
         </div>
 
-        <h4>5.7 Instrucciones</h4>
-
+        <h4>5.7 Instrucciones Esenciales y su Función Lógica</h4>
+        <p>Estas instrucciones formaban el vocabulario básico con el que se construía la lógica de los programas.</p>
         <table class="math-table">
             <thead>
                 <tr>
                     <th>Instrucción</th>
-                    <th>Función</th>
+                    <th>Función Detallada y Uso</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>LBL</td>
-                    <td>Define etiqueta</td>
+                    <td><strong>LBL (Label)</strong></td>
+                    <td>Define un punto de entrada o una etiqueta (A, B, C, etc.). Es el destino de las instrucciones de salto GTO y de llamada a subrutina (generalmente usando la tecla de la letra directamente en modo programa).</td>
                 </tr>
                 <tr>
-                    <td>GTO</td>
-                    <td>Salto incondicional</td>
+                    <td><strong>GTO (Go To)</strong></td>
+                    <td>Salto incondicional. Transfiere el flujo del programa a otra línea (GTO 035) o a una etiqueta (GTO A). Se usaba para crear bucles o bifurcaciones simples.</td>
                 </tr>
                 <tr>
-                    <td>STO</td>
-                    <td>Almacena valor</td>
+                    <td><strong>STO (Store)</strong></td>
+                    <td>Almacena el número mostrado en un registro de memoria específico (STO 01, STO 02). Es fundamental para guardar resultados intermedios.</td>
                 </tr>
                 <tr>
-                    <td>RCL</td>
-                    <td>Recupera valor</td>
+                    <td><strong>RCL (Recall)</strong></td>
+                    <td>Recupera el número de un registro de memoria y lo muestra en pantalla para ser usado en una operación (RCL 01).</td>
                 </tr>
                 <tr>
-                    <td>RTN</td>
-                    <td>Retorna desde subrutina</td>
+                    <td><strong>RTN (ReTurN)</strong></td>
+                    <td>Retorna desde una subrutina. Al ejecutarse, el programa continúa desde la instrucción inmediatamente posterior a la que llamó a la subrutina. Es obligatorio para evitar que la ejecución "caiga" en cascada.</td>
+                </tr>
+                 <tr>
+                    <td><strong>IF / x=t</strong></td>
+                    <td>Saltos condicionales. En la TI-59, por ejemplo, "x=t" comparaba el valor en pantalla con el valor de un registro y saltaba a una etiqueta si eran iguales. Esto permitía la toma de decisiones lógicas.</td>
                 </tr>
             </tbody>
         </table>
 
-        <h4>5.8 Interpretación de datos</h4>
+        <h4>5.8 Interpretación y Validación de Datos: El Rol Crítico del Usuario</h4>
 
         <div class="math-verification">
-            La calculadora ejecuta instrucciones. La interpretación corresponde al usuario.
+            <strong>La calculadora ejecuta, el usuario interpreta.</strong> Este principio es fundamental. Un resultado numérico carece de significado sin un análisis crítico por parte del operador.
         </div>
-
+        <p>La responsabilidad del usuario iba más allá de introducir datos. Debía ser un filtro crítico para asegurar la validez de los resultados. Este proceso de verificación incluía:</p>
         <ul>
-            <li>Verificar unidades.</li>
-            <li>Confirmar coherencia numérica.</li>
-            <li>Evaluar si el modelo aplicado es adecuado.</li>
-            <li>Analizar sensibilidad ante cambios de variables.</li>
+            <li><strong>Verificación de Unidades y Escalas:</strong> Asegurarse de que los datos de entrada estaban en las unidades correctas (ej: metros o pies) y que el resultado era coherente en magnitud y unidad (ej: no esperar una velocidad de 1000 m/s para un coche).</li>
+            <li><strong>Confirmación de Coherencia Numérica y Física:</strong> Preguntarse: "¿Tiene sentido este resultado?". Si se calcula el área de una habitación y da 5000 m², probablemente haya un error. La intuición y el conocimiento del dominio son la primera barrera contra resultados absurdos.</li>
+            <li><strong>Evaluación del Modelo Aplicado:</strong> ¿Es la fórmula o el método numérico el adecuado para el problema? Usar una regresión lineal para datos con tendencia exponencial dará resultados incorrectos, aunque el programa esté bien escrito.</li>
+            <li><strong>Análisis de Sensibilidad:</strong> Variar ligeramente los datos de entrada para observar cómo cambia el resultado. Si pequeños cambios producen variaciones enormes e inesperadas, podría haber un problema de inestabilidad numérica o un error en el programa.</li>
         </ul>
 
-        <h4>5.9 Corrección de programas</h4>
-
-        <div class="math-step">Depuración por bloques.</div>
-        <div class="math-step">Validación con casos conocidos.</div>
-        <div class="math-step">Revisión de saltos condicionales.</div>
-        <div class="math-step">Documentación final del flujo lógico.</div>
+        <h4>5.9 Depuración y Corrección de Programas: El Arte de Encontrar Fallos</h4>
+        <p>Depurar en una calculadora de 8 segmentos no era tarea fácil. Requería paciencia y un enfoque metódico.</p>
+        <div class="math-step"><strong>Depuración por Bloques (Single-Step):</strong> Ejecutar el programa paso a paso (single-step) para observar el contenido de los registros y la pantalla en cada etapa, identificando dónde se desvía el resultado del esperado.</div>
+        <div class="math-step"><strong>Validación con Casos Conocidos (Test Cases):</strong> Usar problemas con solución conocida (ej: de libros de texto o tablas) para verificar el funcionamiento global del programa.</div>
+        <div class="math-step"><strong>Revisión de Saltos Condicionales y Bucles:</strong> Verificar que las condiciones (IF, x=t) evalúan correctamente y que los bucles (usando GTO y contadores) tienen un número finito de iteraciones y no se convierten en infinitos.</div>
+        <div class="math-step"><strong>Documentación del Flujo Lógico:</strong> Revisar el diagrama de flujo o los comentarios del código para asegurar que la secuencia de operaciones refleja fielmente el algoritmo deseado.</div>
 
         <div class="math-verification">
-            Errores comunes:
+            <strong>Errores comunes y cómo evitarlos:</strong>
             <ul>
-                <li>Saltos mal direccionados.</li>
-                <li>Variables sobrescritas.</li>
-                <li>Falta de retorno en subrutinas.</li>
+                <li><span class="math-highlight">Saltos mal direccionados:</span> Usar GTO a una línea que no existe o que no es la deseada. La solución: usar preferentemente etiquetas (LBL) en lugar de números de línea.</li>
+                <li><span class="math-highlight">Variables sobrescritas accidentalmente:</span> Usar el mismo registro de memoria para dos propósitos distintos. La solución: llevar un registro escrito (en papel) de qué memoria contiene cada variable.</li>
+                <li><span class="math-highlight">Falta de retorno en subrutinas (RTN):</span> Si una subrutina no termina con RTN, el programa continuará ejecutando las instrucciones siguientes, probablemente causando un fallo. La solución: verificar que toda subrutina tenga su correspondiente RTN al final.</li>
+                <li><span class="math-highlight">No inicializar variables:</span> Usar un registro de memoria sin haberle asignado un valor previamente (puede contener un valor residual de un cálculo anterior). La solución: siempre que sea necesario, inicializar las variables (por ejemplo, STO 0 para poner un 0) al inicio del programa.</li>
             </ul>
         </div>
-
     </div>
-
 </section>
