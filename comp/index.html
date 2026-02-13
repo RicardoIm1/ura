@@ -3189,7 +3189,29 @@
     © 2025 Universidad URA – Asignatura Computación I
   </footer>
 
-  
+  <script>
+function abrirModalDesdeArchivo(ruta) {
+    const modal = document.getElementById("modal-info");
+    const modalText = document.getElementById("modal-text");
+
+    fetch(ruta)
+        .then(response => response.text())
+        .then(data => {
+            modalText.innerHTML = data;
+            modal.style.display = "block";
+
+            setTimeout(() => {
+                modal.classList.add("show");
+            }, 10);
+        })
+        .catch(error => {
+            modalText.innerHTML = "<p>Error al cargar el contenido.</p>";
+            modal.style.display = "block";
+            modal.classList.add("show");
+        });
+}
+</script>
+
 </body>
 
 </html>
