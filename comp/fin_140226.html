@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen · Computación 1</title>
+    <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-dark-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-blue: #0071e3;
+            --apple-blue-hover: #0077ed;
+            --apple-gradient: linear-gradient(135deg, #0077CC, #8A2BE2);
+            --apple-border-radius: 12px;
+            --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --apple-vibrant-blue: #0077CC;
+            --apple-vibrant-orange: #FF9500;
+            --apple-vibrant-green: #34C759;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: var(--apple-black);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 22px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--apple-black);
+        }
+
+        .hero {
+            background: var(--apple-gradient);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.003em;
+        }
+
+        .hero p {
+            font-size: 22px;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 22px;
+        }
+
+        .exam-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .exam-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .exam-header p {
+            color: var(--apple-dark-gray);
+            font-size: 18px;
+        }
+
+        .question-card {
+            background: var(--apple-light-gray);
+            border-radius: 18px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: var(--apple-transition);
+            border-left: 6px solid var(--apple-vibrant-blue);
+        }
+
+        .question-card:hover {
+            box-shadow: 0 8px 20px rgba(0,119,204,0.12);
+            transform: translateY(-2px);
+        }
+
+        .q-num {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--apple-vibrant-blue);
+            margin-bottom: 12px;
+        }
+
+        .q-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style: none;
+            padding-left: 8px;
+        }
+
+        .options li {
+            font-size: 17px;
+            padding: 8px 12px;
+            margin: 4px 0;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: background 0.2s;
+        }
+
+        .options li:hover {
+            background: #f0f0f5;
+        }
+
+        .opt-letter {
+            font-weight: 600;
+            color: var(--apple-vibrant-orange);
+            margin-right: 10px;
+        }
+
+        .answer-key {
+            margin-top: 60px;
+            background: var(--apple-light-gray);
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .answer-key h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--apple-black);
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .key-item {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,119,204,0.2);
+        }
+
+        .key-item span {
+            color: var(--apple-vibrant-blue);
+            font-weight: 700;
+            margin-left: 6px;
+            background: var(--apple-light-gray);
+            padding: 3px 10px;
+            border-radius: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 22px;
+            font-size: 17px;
+            color: var(--apple-dark-gray);
+            background: var(--apple-light-gray);
+            margin-top: 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 36px; }
+            .question-card { padding: 18px; }
+            .key-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <span class="header-title">💻 Fundamentos de computación</span>
+            <span style="color: var(--apple-dark-gray);">Examen · 50 preguntas</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Examen de Computación 1</h1>
+        <p>Conceptos de hardware, software, lógica, formato y subprogramas</p>
+    </section>
+
+    <div class="container">
+        <div class="exam-header">
+            <h2>📋 Evaluación de conocimientos</h2>
+            <p>Selecciona la opción correcta para cada pregunta. Las respuestas están al final.</p>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- Preguntas 1–50 (ordenadas por tema)      -->
+        <!-- ========================================= -->
+
+        <!-- 1.1 Análoga -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 1</div>
+            <div class="q-text">¿Qué tipo de magnitudes emplea la computación análoga para procesar información?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Discretas (ceros y unos)</li>
+                <li><span class="opt-letter">B</span> Continuas como voltaje, presión o movimiento</li>
+                <li><span class="opt-letter">C</span> Símbolos lógicos booleanos</li>
+                <li><span class="opt-letter">D</span> Únicamente valores enteros</li>
+            </ul>
+        </div>
+
+        <!-- 1.2 Digital -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 2</div>
+            <div class="q-text">¿Cuál es la base de la computación digital?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Señales continuas de voltaje</li>
+                <li><span class="opt-letter">B</span> Información discreta (binaria: 0 y 1)</li>
+                <li><span class="opt-letter">C</span> Dispositivos hidráulicos</li>
+                <li><span class="opt-letter">D</span> Reglas de cálculo mecánicas</li>
+            </ul>
+        </div>
+
+        <!-- 1.3 Componentes (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 3</div>
+            <div class="q-text">¿Cuál de los siguientes NO es un componente principal de un sistema digital?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Unidad Central de Procesamiento (CPU)</li>
+                <li><span class="opt-letter">B</span> Memoria RAM</li>
+                <li><span class="opt-letter">C</span> Regulador de voltaje analógico</li>
+                <li><span class="opt-letter">D</span> Bus de datos</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 4</div>
+            <div class="q-text">¿Qué función cumple el bus de datos en una computadora?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Almacenar instrucciones de arranque</li>
+                <li><span class="opt-letter">B</span> Transportar información entre la CPU, la memoria y los periféricos</li>
+                <li><span class="opt-letter">C</span> Realizar operaciones aritméticas</li>
+                <li><span class="opt-letter">D</span> Convertir señales analógicas en digitales</li>
+            </ul>
+        </div>
+
+        <!-- 1.4 Entrada -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 5</div>
+            <div class="q-text">¿Qué proceso describe la "lectura de entrada" en un sistema digital?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Mostrar resultados en pantalla</li>
+                <li><span class="opt-letter">B</span> Capturar datos del mundo exterior y convertirlos a información digital</li>
+                <li><span class="opt-letter">C</span> Guardar información en el disco duro</li>
+                <li><span class="opt-letter">D</span> Ejecutar instrucciones de máquina</li>
+            </ul>
+        </div>
+
+        <!-- 1.5 Memoria (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 6</div>
+            <div class="q-text">¿Qué tipo de memoria es volátil y almacena temporalmente los programas en ejecución?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> ROM</li>
+                <li><span class="opt-letter">B</span> Memoria Flash</li>
+                <li><span class="opt-letter">C</span> RAM</li>
+                <li><span class="opt-letter">D</span> Disco duro</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 7</div>
+            <div class="q-text">La memoria caché se caracteriza por:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Ser de alta velocidad y almacenar copias de datos frecuentes</li>
+                <li><span class="opt-letter">B</span> Ser de solo lectura y permanente</li>
+                <li><span class="opt-letter">C</span> Utilizar espacio en el disco duro como extensión</li>
+                <li><span class="opt-letter">D</span> Ser no volátil y de gran capacidad</li>
+            </ul>
+        </div>
+
+        <!-- 1.6 Almacenamiento en código (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 8</div>
+            <div class="q-text">¿A qué se refiere el concepto "almacenamiento en código"?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Almacenar programas en la CPU</li>
+                <li><span class="opt-letter">B</span> Representar información mediante codificación para su preservación y recuperación</li>
+                <li><span class="opt-letter">C</span> Compilar código fuente</li>
+                <li><span class="opt-letter">D</span> Leer datos desde un teclado</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 9</div>
+            <div class="q-text">¿Cuál de los siguientes es un código de caracteres ampliamente usado?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> JPEG</li>
+                <li><span class="opt-letter">B</span> MP3</li>
+                <li><span class="opt-letter">C</span> ASCII</li>
+                <li><span class="opt-letter">D</span> ZIP</li>
+            </ul>
+        </div>
+
+        <!-- 1.7 Binarios (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 10</div>
+            <div class="q-text">¿Cuántos bits forman un byte?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> 4</li>
+                <li><span class="opt-letter">B</span> 8</li>
+                <li><span class="opt-letter">C</span> 16</li>
+                <li><span class="opt-letter">D</span> 32</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 11</div>
+            <div class="q-text">¿Cómo se representa el número decimal 10 en sistema binario?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> 1000</li>
+                <li><span class="opt-letter">B</span> 1010</li>
+                <li><span class="opt-letter">C</span> 1100</li>
+                <li><span class="opt-letter">D</span> 1110</li>
+            </ul>
+        </div>
+
+        <!-- 1.8 Organización (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 12</div>
+            <div class="q-text">¿Qué arquitectura de computador utiliza memorias separadas para datos e instrucciones?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Von Neumann</li>
+                <li><span class="opt-letter">B</span> Harvard</li>
+                <li><span class="opt-letter">C</span> CISC</li>
+                <li><span class="opt-letter">D</span> RISC</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 13</div>
+            <div class="q-text">¿Qué componente se encarga de coordinar las actividades de todos los elementos del computador?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Unidad Aritmético Lógica (ALU)</li>
+                <li><span class="opt-letter">B</span> Unidad de Control</li>
+                <li><span class="opt-letter">C</span> Memoria caché</li>
+                <li><span class="opt-letter">D</span> Disco duro</li>
+            </ul>
+        </div>
+
+        <!-- 1.9 Lenguaje máquina (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 14</div>
+            <div class="q-text">Las instrucciones en lenguaje de máquina son:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Comandos en lenguaje natural</li>
+                <li><span class="opt-letter">B</span> Comandos en formato binario ejecutados directamente por la CPU</li>
+                <li><span class="opt-letter">C</span> Instrucciones de alto nivel como Python</li>
+                <li><span class="opt-letter">D</span> Diagramas de flujo</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 15</div>
+            <div class="q-text">¿Qué tipo de instrucción en lenguaje máquina altera la secuencia normal de ejecución?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Aritméticas (suma, resta)</li>
+                <li><span class="opt-letter">B</span> Transferencia de datos</li>
+                <li><span class="opt-letter">C</span> Control de flujo (saltos, bifurcaciones)</li>
+                <li><span class="opt-letter">D</span> Lógicas (AND, OR)</li>
+            </ul>
+        </div>
+
+        <!-- 2.1 Programación (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 16</div>
+            <div class="q-text">¿Qué es un algoritmo en programación?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Un lenguaje de programación</li>
+                <li><span class="opt-letter">B</span> Una secuencia lógica de pasos para resolver un problema</li>
+                <li><span class="opt-letter">C</span> Un dispositivo de hardware</li>
+                <li><span class="opt-letter">D</span> Un tipo de dato</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 17</div>
+            <div class="q-text">¿Cuál de los siguientes es un paradigma de programación?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Compilador</li>
+                <li><span class="opt-letter">B</span> Editor de texto</li>
+                <li><span class="opt-letter">C</span> Programación orientada a objetos</li>
+                <li><span class="opt-letter">D</span> Depurador</li>
+            </ul>
+        </div>
+
+        <!-- 2.2 Proposiciones (4) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 18</div>
+            <div class="q-text">¿Qué es una proposición en lógica?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Una pregunta retórica</li>
+                <li><span class="opt-letter">B</span> Una oración declarativa que puede ser verdadera o falsa</li>
+                <li><span class="opt-letter">C</span> Un comando de programación</li>
+                <li><span class="opt-letter">D</span> Una exclamación</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 19</div>
+            <div class="q-text">¿Qué conectivo lógico representa la conjunción "y"?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> ∨</li>
+                <li><span class="opt-letter">B</span> ∧</li>
+                <li><span class="opt-letter">C</span> →</li>
+                <li><span class="opt-letter">D</span> ¬</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 20</div>
+            <div class="q-text">La expresión "Si p entonces q" corresponde a la proposición:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Conjunción</li>
+                <li><span class="opt-letter">B</span> Disyunción</li>
+                <li><span class="opt-letter">C</span> Condicional</li>
+                <li><span class="opt-letter">D</span> Bicondicional</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 21</div>
+            <div class="q-text">¿Cuándo es verdadera una disyunción (p ∨ q)?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Solo cuando ambas son verdaderas</li>
+                <li><span class="opt-letter">B</span> Solo cuando ambas son falsas</li>
+                <li><span class="opt-letter">C</span> Cuando al menos una es verdadera</li>
+                <li><span class="opt-letter">D</span> Nunca es verdadera</li>
+            </ul>
+        </div>
+
+        <!-- 2.3 Asignación aritmética (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 22</div>
+            <div class="q-text">¿Qué es una proposición de asignación aritmética en programación?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Una instrucción que muestra un mensaje</li>
+                <li><span class="opt-letter">B</span> Una instrucción que asigna un valor a una variable mediante una expresión aritmética</li>
+                <li><span class="opt-letter">C</span> Una estructura de control iterativa</li>
+                <li><span class="opt-letter">D</span> Una declaración de variable</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 23</div>
+            <div class="q-text">En muchos lenguajes, el operador que devuelve el resto de una división entera es:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> /</li>
+                <li><span class="opt-letter">B</span> %</li>
+                <li><span class="opt-letter">C</span> &</li>
+                <li><span class="opt-letter">D</span> #</li>
+            </ul>
+        </div>
+
+        <!-- 2.4 Asignación lógica (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 24</div>
+            <div class="q-text">¿Cuál es el resultado de la expresión lógica: true AND false?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> true</li>
+                <li><span class="opt-letter">B</span> false</li>
+                <li><span class="opt-letter">C</span> undefined</li>
+                <li><span class="opt-letter">D</span> depende del lenguaje</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 25</div>
+            <div class="q-text">¿Qué operador lógico invierte el valor de verdad de una proposición?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> AND</li>
+                <li><span class="opt-letter">B</span> OR</li>
+                <li><span class="opt-letter">C</span> NOT</li>
+                <li><span class="opt-letter">D</span> XOR</li>
+            </ul>
+        </div>
+
+        <!-- 2.5 Proposiciones de flujo (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 26</div>
+            <div class="q-text">¿Qué estructura de control permite repetir un bloque de código mientras se cumple una condición?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> if-else</li>
+                <li><span class="opt-letter">B</span> switch</li>
+                <li><span class="opt-letter">C</span> while</li>
+                <li><span class="opt-letter">D</span> break</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 27</div>
+            <div class="q-text">La instrucción que termina inmediatamente la ejecución de un bucle o sentencia switch es:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> continue</li>
+                <li><span class="opt-letter">B</span> break</li>
+                <li><span class="opt-letter">C</span> return</li>
+                <li><span class="opt-letter">D</span> goto</li>
+            </ul>
+        </div>
+
+        <!-- 2.6 Diagramas (3) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 28</div>
+            <div class="q-text">En un diagrama de flujo, ¿qué figura representa una decisión o condición?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Rectángulo</li>
+                <li><span class="opt-letter">B</span> Óvalo</li>
+                <li><span class="opt-letter">C</span> Rombo</li>
+                <li><span class="opt-letter">D</span> Paralelogramo</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 29</div>
+            <div class="q-text">¿Qué tipo de diagrama UML muestra la estructura estática del sistema (clases, atributos, relaciones)?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Diagrama de secuencia</li>
+                <li><span class="opt-letter">B</span> Diagrama de clases</li>
+                <li><span class="opt-letter">C</span> Diagrama de casos de uso</li>
+                <li><span class="opt-letter">D</span> Diagrama de actividades</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 30</div>
+            <div class="q-text">¿Qué símbolo en diagrama de flujo indica el inicio o fin de un proceso?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Rectángulo</li>
+                <li><span class="opt-letter">B</span> Óvalo</li>
+                <li><span class="opt-letter">C</span> Rombo</li>
+                <li><span class="opt-letter">D</span> Flecha</li>
+            </ul>
+        </div>
+
+        <!-- 3.1 Entrada (3) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 31</div>
+            <div class="q-text">Una proposición de entrada en un programa sirve para:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Mostrar datos en pantalla</li>
+                <li><span class="opt-letter">B</span> Leer datos desde un dispositivo de entrada hacia la memoria</li>
+                <li><span class="opt-letter">C</span> Definir una constante</li>
+                <li><span class="opt-letter">D</span> Realizar una operación aritmética</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 32</div>
+            <div class="q-text">¿Cuál es una buena práctica al manejar entrada de datos?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> No validar la entrada para mayor velocidad</li>
+                <li><span class="opt-letter">B</span> Validar y sanitizar siempre la entrada antes de procesarla</li>
+                <li><span class="opt-letter">C</span> Ignorar entradas incorrectas</li>
+                <li><span class="opt-letter">D</span> Usar el mismo tipo de dato sin verificar</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 33</div>
+            <div class="q-text">¿Cuál de los siguientes es un dispositivo de entrada que digitaliza señales de audio?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Teclado</li>
+                <li><span class="opt-letter">B</span> Micrófono</li>
+                <li><span class="opt-letter">C</span> Monitor</li>
+                <li><span class="opt-letter">D</span> Impresora</li>
+            </ul>
+        </div>
+
+        <!-- 3.2 Salida (1) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 34</div>
+            <div class="q-text">¿Qué es una proposición de salida?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Una instrucción que envía datos desde el programa hacia dispositivos de salida</li>
+                <li><span class="opt-letter">B</span> Una instrucción que lee datos del teclado</li>
+                <li><span class="opt-letter">C</span> Una instrucción que define una variable</li>
+                <li><span class="opt-letter">D</span> Una instrucción de salto condicional</li>
+            </ul>
+        </div>
+
+        <!-- 3.3 Control (2) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 35</div>
+            <div class="q-text">¿Cuál de las siguientes es una estructura de control típica?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Variable</li>
+                <li><span class="opt-letter">B</span> Constante</li>
+                <li><span class="opt-letter">C</span> if-else</li>
+                <li><span class="opt-letter">D</span> Operador de suma</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 36</div>
+            <div class="q-text">¿Qué instrucción se utiliza para lanzar una excepción (error controlado) en muchos lenguajes?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> break</li>
+                <li><span class="opt-letter">B</span> continue</li>
+                <li><span class="opt-letter">C</span> throw</li>
+                <li><span class="opt-letter">D</span> return</li>
+            </ul>
+        </div>
+
+        <!-- 3.4 Formato general (1) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 37</div>
+            <div class="q-text">¿Qué permiten las proposiciones de formato en un programa?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Definir el tipo de dato de una variable</li>
+                <li><span class="opt-letter">B</span> Controlar la presentación de los datos en la salida</li>
+                <li><span class="opt-letter">C</span> Leer datos desde un archivo</li>
+                <li><span class="opt-letter">D</span> Asignar valores booleanos</li>
+            </ul>
+        </div>
+
+        <!-- 3.5 Formato I (1) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 38</div>
+            <div class="q-text">En formato básico, ¿qué significa alinear un texto a la izquierda dentro de un campo?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> El texto termina en el borde derecho</li>
+                <li><span class="opt-letter">B</span> El texto comienza en el borde izquierdo</li>
+                <li><span class="opt-letter">C</span> El texto se expande para llenar el ancho</li>
+                <li><span class="opt-letter">D</span> El texto se centra</li>
+            </ul>
+        </div>
+
+        <!-- 3.6 Formato F (1) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 39</div>
+            <div class="q-text">El especificador de formato %f (Formato F) se utiliza para:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Números enteros</li>
+                <li><span class="opt-letter">B</span> Números de punto flotante (reales)</li>
+                <li><span class="opt-letter">C</span> Cadenas de texto</li>
+                <li><span class="opt-letter">D</span> Valores booleanos</li>
+            </ul>
+        </div>
+
+        <!-- 3.7 Formato E (1) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 40</div>
+            <div class="q-text">¿Para qué tipo de números es especialmente útil el formato E (notación científica)?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Números enteros pequeños</li>
+                <li><span class="opt-letter">B</span> Números muy grandes o muy pequeños</li>
+                <li><span class="opt-letter">C</span> Solo para números negativos</li>
+                <li><span class="opt-letter">D</span> Texto alfabético</li>
+            </ul>
+        </div>
+
+        <!-- 3.8 Capacidades adicionales (1) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 41</div>
+            <div class="q-text">La internacionalización (i18n) en el contexto de formato se refiere a:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Usar siempre el mismo formato numérico</li>
+                <li><span class="opt-letter">B</span> Adaptar los formatos según la configuración regional (idioma, país)</li>
+                <li><span class="opt-letter">C</span> Formatear solo números enteros</li>
+                <li><span class="opt-letter">D</span> Ignorar diferencias culturales</li>
+            </ul>
+        </div>
+
+        <!-- 3.9 Hollerith (3) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 42</div>
+            <div class="q-text">¿Quién desarrolló el código de tarjetas perforadas que lleva su nombre, utilizado en el censo de 1890?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Charles Babbage</li>
+                <li><span class="opt-letter">B</span> Herman Hollerith</li>
+                <li><span class="opt-letter">C</span> Alan Turing</li>
+                <li><span class="opt-letter">D</span> John von Neumann</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 43</div>
+            <div class="q-text">¿Cuántas columnas de caracteres tenía una tarjeta perforada Hollerith estándar?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> 40</li>
+                <li><span class="opt-letter">B</span> 60</li>
+                <li><span class="opt-letter">C</span> 80</li>
+                <li><span class="opt-letter">D</span> 100</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 44</div>
+            <div class="q-text">¿Qué empresa surgió a partir de la compañía de máquinas tabuladoras de Hollerith?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Microsoft</li>
+                <li><span class="opt-letter">B</span> IBM</li>
+                <li><span class="opt-letter">C</span> Apple</li>
+                <li><span class="opt-letter">D</span> Google</li>
+            </ul>
+        </div>
+
+        <!-- Capítulo 4: Subprogramas (7 preguntas) -->
+        <div class="question-card">
+            <div class="q-num">Pregunta 45</div>
+            <div class="q-text">¿Qué ventaja principal ofrecen las funciones en programación modular?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Hacen que el programa sea más largo</li>
+                <li><span class="opt-letter">B</span> Permiten reutilizar código y organizar mejor el programa</li>
+                <li><span class="opt-letter">C</span> Evitan el uso de variables</li>
+                <li><span class="opt-letter">D</span> Solo sirven para operaciones matemáticas</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 46</div>
+            <div class="q-text">Según la terminología de subprogramas, una función se diferencia de una subrutina porque:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> La función no puede tener parámetros</li>
+                <li><span class="opt-letter">B</span> La función siempre devuelve un valor</li>
+                <li><span class="opt-letter">C</span> La subrutina siempre devuelve un valor</li>
+                <li><span class="opt-letter">D</span> La función solo puede ser llamada una vez</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 47</div>
+            <div class="q-text">¿Cómo se denomina a los datos que se pasan a un subprograma cuando se invoca?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Parámetros formales</li>
+                <li><span class="opt-letter">B</span> Argumentos (o parámetros reales)</li>
+                <li><span class="opt-letter">C</span> Retornos</li>
+                <li><span class="opt-letter">D</span> Direcciones</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 48</div>
+            <div class="q-text">¿Qué parte de un subprograma contiene las instrucciones que ejecuta?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Encabezado</li>
+                <li><span class="opt-letter">B</span> Parámetros</li>
+                <li><span class="opt-letter">C</span> Cuerpo</li>
+                <li><span class="opt-letter">D</span> Valor de retorno</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 49</div>
+            <div class="q-text">¿Cuándo es más apropiado usar una subrutina (procedimiento) en lugar de una función?</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Cuando necesitamos devolver un valor calculado</li>
+                <li><span class="opt-letter">B</span> Cuando realizamos una acción (como mostrar un mensaje) sin devolver un resultado</li>
+                <li><span class="opt-letter">C</span> Cuando queremos hacer una operación matemática</li>
+                <li><span class="opt-letter">D</span> Siempre es mejor usar funciones</li>
+            </ul>
+        </div>
+
+        <div class="question-card">
+            <div class="q-num">Pregunta 50</div>
+            <div class="q-text">En el enfoque de programación modular "divide y vencerás", los subprogramas combinados permiten:</div>
+            <ul class="options">
+                <li><span class="opt-letter">A</span> Que un solo programador escriba todo el código</li>
+                <li><span class="opt-letter">B</span> Dividir un problema grande en partes más pequeñas y manejables</li>
+                <li><span class="opt-letter">C</span> Evitar el uso de parámetros</li>
+                <li><span class="opt-letter">D</span> Usar un solo tipo de subprograma</li>
+            </ul>
+        </div>
+
+        <!-- ============== CLAVE DE RESPUESTAS ============== -->
+        <div class="answer-key">
+            <h3>📌 Respuestas correctas</h3>
+            <div class="key-grid">
+                <div class="key-item">1 <span>B</span></div>
+                <div class="key-item">2 <span>B</span></div>
+                <div class="key-item">3 <span>C</span></div>
+                <div class="key-item">4 <span>B</span></div>
+                <div class="key-item">5 <span>B</span></div>
+                <div class="key-item">6 <span>C</span></div>
+                <div class="key-item">7 <span>A</span></div>
+                <div class="key-item">8 <span>B</span></div>
+                <div class="key-item">9 <span>C</span></div>
+                <div class="key-item">10 <span>B</span></div>
+                <div class="key-item">11 <span>B</span></div>
+                <div class="key-item">12 <span>B</span></div>
+                <div class="key-item">13 <span>B</span></div>
+                <div class="key-item">14 <span>B</span></div>
+                <div class="key-item">15 <span>C</span></div>
+                <div class="key-item">16 <span>B</span></div>
+                <div class="key-item">17 <span>C</span></div>
+                <div class="key-item">18 <span>B</span></div>
+                <div class="key-item">19 <span>B</span></div>
+                <div class="key-item">20 <span>C</span></div>
+                <div class="key-item">21 <span>C</span></div>
+                <div class="key-item">22 <span>B</span></div>
+                <div class="key-item">23 <span>B</span></div>
+                <div class="key-item">24 <span>B</span></div>
+                <div class="key-item">25 <span>C</span></div>
+                <div class="key-item">26 <span>C</span></div>
+                <div class="key-item">27 <span>B</span></div>
+                <div class="key-item">28 <span>C</span></div>
+                <div class="key-item">29 <span>B</span></div>
+                <div class="key-item">30 <span>B</span></div>
+                <div class="key-item">31 <span>B</span></div>
+                <div class="key-item">32 <span>B</span></div>
+                <div class="key-item">33 <span>B</span></div>
+                <div class="key-item">34 <span>A</span></div>
+                <div class="key-item">35 <span>C</span></div>
+                <div class="key-item">36 <span>C</span></div>
+                <div class="key-item">37 <span>B</span></div>
+                <div class="key-item">38 <span>B</span></div>
+                <div class="key-item">39 <span>B</span></div>
+                <div class="key-item">40 <span>B</span></div>
+                <div class="key-item">41 <span>B</span></div>
+                <div class="key-item">42 <span>B</span></div>
+                <div class="key-item">43 <span>C</span></div>
+                <div class="key-item">44 <span>B</span></div>
+                <div class="key-item">45 <span>B</span></div>
+                <div class="key-item">46 <span>B</span></div>
+                <div class="key-item">47 <span>B</span></div>
+                <div class="key-item">48 <span>C</span></div>
+                <div class="key-item">49 <span>B</span></div>
+                <div class="key-item">50 <span>B</span></div>
+            </div>
+            <p style="text-align:center; margin-top:30px; color:var(--apple-dark-gray);">✅ Revisa tus respuestas y repasa los temas en los que hayas fallado.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Examen basado en el contenido de COMPUTACION 1.pdf · 50 preguntas · Diseño estilo Apple</p>
+    </footer>
+</body>
+</html>
