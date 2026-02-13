@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,7 +120,7 @@
         }
 
         .question-card:hover {
-            box-shadow: 0 8px 20px rgba(0,119,204,0.12);
+            box-shadow: 0 8px 20px rgba(0, 119, 204, 0.12);
             transform: translateY(-2px);
         }
 
@@ -147,7 +148,7 @@
             margin: 4px 0;
             background: white;
             border-radius: 10px;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             transition: background 0.2s;
         }
 
@@ -166,7 +167,7 @@
             background: var(--apple-light-gray);
             border-radius: 24px;
             padding: 30px;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .answer-key h3 {
@@ -190,8 +191,8 @@
             text-align: center;
             font-size: 16px;
             font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,119,204,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 119, 204, 0.2);
         }
 
         .key-item span {
@@ -214,18 +215,28 @@
         }
 
         @media (max-width: 700px) {
-            .hero h1 { font-size: 36px; }
-            .question-card { padding: 18px; }
-            .key-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .question-card {
+                padding: 18px;
+            }
+
+            .key-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="header-content">
-            <span class="header-title">💻 Fundamentos de computación</span>
-            <span style="color: var(--apple-dark-gray);">Examen · 50 preguntas</span>
-        </div>
+    <div class="header-content">
+        <a href="/ura/">
+            <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+        </a>
+        <div class="header-title">Computación 1</div>
+    </div>
     </header>
 
     <section class="hero">
@@ -284,7 +295,8 @@
             <div class="q-text">¿Qué función cumple el bus de datos en una computadora?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Almacenar instrucciones de arranque</li>
-                <li><span class="opt-letter">B</span> Transportar información entre la CPU, la memoria y los periféricos</li>
+                <li><span class="opt-letter">B</span> Transportar información entre la CPU, la memoria y los periféricos
+                </li>
                 <li><span class="opt-letter">C</span> Realizar operaciones aritméticas</li>
                 <li><span class="opt-letter">D</span> Convertir señales analógicas en digitales</li>
             </ul>
@@ -296,7 +308,8 @@
             <div class="q-text">¿Qué proceso describe la "lectura de entrada" en un sistema digital?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Mostrar resultados en pantalla</li>
-                <li><span class="opt-letter">B</span> Capturar datos del mundo exterior y convertirlos a información digital</li>
+                <li><span class="opt-letter">B</span> Capturar datos del mundo exterior y convertirlos a información
+                    digital</li>
                 <li><span class="opt-letter">C</span> Guardar información en el disco duro</li>
                 <li><span class="opt-letter">D</span> Ejecutar instrucciones de máquina</li>
             </ul>
@@ -305,7 +318,8 @@
         <!-- 1.5 Memoria (2) -->
         <div class="question-card">
             <div class="q-num">Pregunta 6</div>
-            <div class="q-text">¿Qué tipo de memoria es volátil y almacena temporalmente los programas en ejecución?</div>
+            <div class="q-text">¿Qué tipo de memoria es volátil y almacena temporalmente los programas en ejecución?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> ROM</li>
                 <li><span class="opt-letter">B</span> Memoria Flash</li>
@@ -331,7 +345,8 @@
             <div class="q-text">¿A qué se refiere el concepto "almacenamiento en código"?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Almacenar programas en la CPU</li>
-                <li><span class="opt-letter">B</span> Representar información mediante codificación para su preservación y recuperación</li>
+                <li><span class="opt-letter">B</span> Representar información mediante codificación para su preservación
+                    y recuperación</li>
                 <li><span class="opt-letter">C</span> Compilar código fuente</li>
                 <li><span class="opt-letter">D</span> Leer datos desde un teclado</li>
             </ul>
@@ -374,7 +389,8 @@
         <!-- 1.8 Organización (2) -->
         <div class="question-card">
             <div class="q-num">Pregunta 12</div>
-            <div class="q-text">¿Qué arquitectura de computador utiliza memorias separadas para datos e instrucciones?</div>
+            <div class="q-text">¿Qué arquitectura de computador utiliza memorias separadas para datos e instrucciones?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Von Neumann</li>
                 <li><span class="opt-letter">B</span> Harvard</li>
@@ -385,7 +401,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 13</div>
-            <div class="q-text">¿Qué componente se encarga de coordinar las actividades de todos los elementos del computador?</div>
+            <div class="q-text">¿Qué componente se encarga de coordinar las actividades de todos los elementos del
+                computador?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Unidad Aritmético Lógica (ALU)</li>
                 <li><span class="opt-letter">B</span> Unidad de Control</li>
@@ -400,7 +417,8 @@
             <div class="q-text">Las instrucciones en lenguaje de máquina son:</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Comandos en lenguaje natural</li>
-                <li><span class="opt-letter">B</span> Comandos en formato binario ejecutados directamente por la CPU</li>
+                <li><span class="opt-letter">B</span> Comandos en formato binario ejecutados directamente por la CPU
+                </li>
                 <li><span class="opt-letter">C</span> Instrucciones de alto nivel como Python</li>
                 <li><span class="opt-letter">D</span> Diagramas de flujo</li>
             </ul>
@@ -408,7 +426,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 15</div>
-            <div class="q-text">¿Qué tipo de instrucción en lenguaje máquina altera la secuencia normal de ejecución?</div>
+            <div class="q-text">¿Qué tipo de instrucción en lenguaje máquina altera la secuencia normal de ejecución?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Aritméticas (suma, resta)</li>
                 <li><span class="opt-letter">B</span> Transferencia de datos</li>
@@ -491,7 +510,8 @@
             <div class="q-text">¿Qué es una proposición de asignación aritmética en programación?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Una instrucción que muestra un mensaje</li>
-                <li><span class="opt-letter">B</span> Una instrucción que asigna un valor a una variable mediante una expresión aritmética</li>
+                <li><span class="opt-letter">B</span> Una instrucción que asigna un valor a una variable mediante una
+                    expresión aritmética</li>
                 <li><span class="opt-letter">C</span> Una estructura de control iterativa</li>
                 <li><span class="opt-letter">D</span> Una declaración de variable</li>
             </ul>
@@ -534,7 +554,8 @@
         <!-- 2.5 Proposiciones de flujo (2) -->
         <div class="question-card">
             <div class="q-num">Pregunta 26</div>
-            <div class="q-text">¿Qué estructura de control permite repetir un bloque de código mientras se cumple una condición?</div>
+            <div class="q-text">¿Qué estructura de control permite repetir un bloque de código mientras se cumple una
+                condición?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> if-else</li>
                 <li><span class="opt-letter">B</span> switch</li>
@@ -545,7 +566,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 27</div>
-            <div class="q-text">La instrucción que termina inmediatamente la ejecución de un bucle o sentencia switch es:</div>
+            <div class="q-text">La instrucción que termina inmediatamente la ejecución de un bucle o sentencia switch
+                es:</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> continue</li>
                 <li><span class="opt-letter">B</span> break</li>
@@ -568,7 +590,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 29</div>
-            <div class="q-text">¿Qué tipo de diagrama UML muestra la estructura estática del sistema (clases, atributos, relaciones)?</div>
+            <div class="q-text">¿Qué tipo de diagrama UML muestra la estructura estática del sistema (clases, atributos,
+                relaciones)?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Diagrama de secuencia</li>
                 <li><span class="opt-letter">B</span> Diagrama de clases</li>
@@ -613,7 +636,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 33</div>
-            <div class="q-text">¿Cuál de los siguientes es un dispositivo de entrada que digitaliza señales de audio?</div>
+            <div class="q-text">¿Cuál de los siguientes es un dispositivo de entrada que digitaliza señales de audio?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Teclado</li>
                 <li><span class="opt-letter">B</span> Micrófono</li>
@@ -627,7 +651,8 @@
             <div class="q-num">Pregunta 34</div>
             <div class="q-text">¿Qué es una proposición de salida?</div>
             <ul class="options">
-                <li><span class="opt-letter">A</span> Una instrucción que envía datos desde el programa hacia dispositivos de salida</li>
+                <li><span class="opt-letter">A</span> Una instrucción que envía datos desde el programa hacia
+                    dispositivos de salida</li>
                 <li><span class="opt-letter">B</span> Una instrucción que lee datos del teclado</li>
                 <li><span class="opt-letter">C</span> Una instrucción que define una variable</li>
                 <li><span class="opt-letter">D</span> Una instrucción de salto condicional</li>
@@ -648,7 +673,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 36</div>
-            <div class="q-text">¿Qué instrucción se utiliza para lanzar una excepción (error controlado) en muchos lenguajes?</div>
+            <div class="q-text">¿Qué instrucción se utiliza para lanzar una excepción (error controlado) en muchos
+                lenguajes?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> break</li>
                 <li><span class="opt-letter">B</span> continue</li>
@@ -672,7 +698,8 @@
         <!-- 3.5 Formato I (1) -->
         <div class="question-card">
             <div class="q-num">Pregunta 38</div>
-            <div class="q-text">En formato básico, ¿qué significa alinear un texto a la izquierda dentro de un campo?</div>
+            <div class="q-text">En formato básico, ¿qué significa alinear un texto a la izquierda dentro de un campo?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> El texto termina en el borde derecho</li>
                 <li><span class="opt-letter">B</span> El texto comienza en el borde izquierdo</li>
@@ -696,7 +723,8 @@
         <!-- 3.7 Formato E (1) -->
         <div class="question-card">
             <div class="q-num">Pregunta 40</div>
-            <div class="q-text">¿Para qué tipo de números es especialmente útil el formato E (notación científica)?</div>
+            <div class="q-text">¿Para qué tipo de números es especialmente útil el formato E (notación científica)?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Números enteros pequeños</li>
                 <li><span class="opt-letter">B</span> Números muy grandes o muy pequeños</li>
@@ -711,7 +739,8 @@
             <div class="q-text">La internacionalización (i18n) en el contexto de formato se refiere a:</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Usar siempre el mismo formato numérico</li>
-                <li><span class="opt-letter">B</span> Adaptar los formatos según la configuración regional (idioma, país)</li>
+                <li><span class="opt-letter">B</span> Adaptar los formatos según la configuración regional (idioma,
+                    país)</li>
                 <li><span class="opt-letter">C</span> Formatear solo números enteros</li>
                 <li><span class="opt-letter">D</span> Ignorar diferencias culturales</li>
             </ul>
@@ -720,7 +749,8 @@
         <!-- 3.9 Hollerith (3) -->
         <div class="question-card">
             <div class="q-num">Pregunta 42</div>
-            <div class="q-text">¿Quién desarrolló el código de tarjetas perforadas que lleva su nombre, utilizado en el censo de 1890?</div>
+            <div class="q-text">¿Quién desarrolló el código de tarjetas perforadas que lleva su nombre, utilizado en el
+                censo de 1890?</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Charles Babbage</li>
                 <li><span class="opt-letter">B</span> Herman Hollerith</li>
@@ -765,7 +795,8 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 46</div>
-            <div class="q-text">Según la terminología de subprogramas, una función se diferencia de una subrutina porque:</div>
+            <div class="q-text">Según la terminología de subprogramas, una función se diferencia de una subrutina
+                porque:</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> La función no puede tener parámetros</li>
                 <li><span class="opt-letter">B</span> La función siempre devuelve un valor</li>
@@ -798,10 +829,12 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 49</div>
-            <div class="q-text">¿Cuándo es más apropiado usar una subrutina (procedimiento) en lugar de una función?</div>
+            <div class="q-text">¿Cuándo es más apropiado usar una subrutina (procedimiento) en lugar de una función?
+            </div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Cuando necesitamos devolver un valor calculado</li>
-                <li><span class="opt-letter">B</span> Cuando realizamos una acción (como mostrar un mensaje) sin devolver un resultado</li>
+                <li><span class="opt-letter">B</span> Cuando realizamos una acción (como mostrar un mensaje) sin
+                    devolver un resultado</li>
                 <li><span class="opt-letter">C</span> Cuando queremos hacer una operación matemática</li>
                 <li><span class="opt-letter">D</span> Siempre es mejor usar funciones</li>
             </ul>
@@ -809,10 +842,12 @@
 
         <div class="question-card">
             <div class="q-num">Pregunta 50</div>
-            <div class="q-text">En el enfoque de programación modular "divide y vencerás", los subprogramas combinados permiten:</div>
+            <div class="q-text">En el enfoque de programación modular "divide y vencerás", los subprogramas combinados
+                permiten:</div>
             <ul class="options">
                 <li><span class="opt-letter">A</span> Que un solo programador escriba todo el código</li>
-                <li><span class="opt-letter">B</span> Dividir un problema grande en partes más pequeñas y manejables</li>
+                <li><span class="opt-letter">B</span> Dividir un problema grande en partes más pequeñas y manejables
+                </li>
                 <li><span class="opt-letter">C</span> Evitar el uso de parámetros</li>
                 <li><span class="opt-letter">D</span> Usar un solo tipo de subprograma</li>
             </ul>
@@ -820,7 +855,8 @@
     </div>
 
     <footer>
-        <p>Examen basado en el contenido de COMPUTACION 1.pdf · 50 preguntas </p>
+        © 2025 Universidad URA – Asignatura Computación I
     </footer>
 </body>
+
 </html>
