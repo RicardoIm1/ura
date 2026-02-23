@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.65, maximum-scale=0.65, minimum-scale=0.65, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0.65, maximum-scale=0.65, minimum-scale=0.65, user-scalable=no">
     <title>Preguntas</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
@@ -22,7 +24,7 @@
 
         header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
         }
 
@@ -59,7 +61,7 @@
             padding: 40px;
             width: 100%;
             max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: slideUp 0.5s ease-out;
         }
 
@@ -68,6 +70,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -94,7 +97,9 @@
             font-size: 0.95rem;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 12px 15px;
             border: 2px solid #e0e0e0;
@@ -104,7 +109,9 @@
             background: white;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
@@ -199,7 +206,7 @@
         }
 
         footer {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             text-align: center;
             padding: 15px;
@@ -211,279 +218,286 @@
             .ticket-card {
                 padding: 30px 20px;
             }
-            
+
             h2 {
                 font-size: 1.75rem;
             }
-            
+
             .header-title {
                 font-size: 1.2rem;
             }
-            
+
             .nombre-archivo {
                 max-width: 150px;
             }
         }
     </style>
 </head>
+
 <body>
-<header>
     <div class="header-content">
-      <a href="index.html">
-        <img src="Logotipo-URA_curvas2-e1708836754389.png" alt="Logotipo URA" class="header-logo">
-      </a>
-      <div class="header-title">Materias del Profesor Ricardo</div>
-    </div>
-  </header>
-
-    <div class="container">
-        <div class="ticket-card">
-            <h2>Preguntas❓</h2>
-            <div class="form-group">
-                <label for="pregunta">¿Cuál es tu pregunta?</label>
-                <input type="text" id="pregunta" placeholder="Ejemplo: ¿Qué son las razones y las proporciones?">
-            </div>
-            <div class="form-group">
-                <label for="nombre">¿Cuál es tu Nombre?</label>
-                <input type="text" id="nombre" placeholder="Escribe tu nombre completo iniciando por tus apellidos">
-            </div>
-            <div class="form-group">
-                <label for="celular">¿Número de celular?</label>
-                <input type="tel" id="celular" placeholder="Escribe diez dígitos" pattern="[0-9]{10}" maxlength="10">
-            </div>
-
-            <div class="form-group">
-                <label for="materia">Materia</label>
-                <div class="select-wrapper">
-                    <select id="materia" required>
-                        <option value="" disabled selected>Selecciona la materia</option>
-                        <option value="LAET105">Matemáticas para la Administración</option>
-                        <option value="LCIA103">Matemáticas Aplicadas a los Negocios 1</option>
-                        <option value="LCIA209">Matemáticas Aplicadas a los Negocios 2</option>
-                        <option value="INAR0104">Computación 1</option>
-                        <option value="IAG207">Fundamentos de Programación</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="preguntaDetallada">Descripción detallada de tu pregunta</label>
-                <textarea id="preguntaDetallada" rows="4" placeholder="Describe tu problema con detalle..."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label>Adjunto (opcional - imagen, PDF o video)</label>
-                <div class="archivo-personalizado">
-                    <label for="adjunto" class="apple-button">📷 Elegir archivo</label>
-                    <input type="file" id="adjunto" accept="image/*,application/pdf,video/*">
-                    <span id="nombreArchivo" class="nombre-archivo">Ningún archivo seleccionado</span>
-                </div>
-                <small style="color: #666; display: block; margin-top: 5px;">Máximo 10MB. Se guardará una referencia, no el archivo.</small>
-            </div>
-            
-            <button class="apple-button btn-enviar" onclick="registrarPregunta()">Registrar Pregunta</button>
-            <div id="mensajeEstado" class="estado-formulario"></div>
+        <a href="/ura/">
+            <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+        </a>
+        <div class="header-title">
+            <a href="https://urauniversidad.com" target="_blank" style="text-decoration: none; color: inherit;">
+                Universidad Regional de los Altos
+            </a>
         </div>
-    </div>
-    
-    <footer>
-        © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
-    </footer>
+        </header>
 
-    <script>
-        // --- CONFIGURACIÓN ---
-        // PEGA AQUÍ LA URL DE TU APLICACIÓN WEB DE GAS (SIN /exec AL FINAL)
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycbw4V4EcP8Wya6uLuLtY6thfWCZI9x6AYRTEGnOmtycxqDyg8tsjr6SITQlrvZWsxdJA/exec'; // <--- CAMBIA ESTO
+        <div class="container">
+            <div class="ticket-card">
+                <h2>Preguntas❓</h2>
+                <div class="form-group">
+                    <label for="pregunta">¿Cuál es tu pregunta?</label>
+                    <input type="text" id="pregunta" placeholder="Ejemplo: ¿Qué son las razones y las proporciones?">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">¿Cuál es tu Nombre?</label>
+                    <input type="text" id="nombre" placeholder="Escribe tu nombre completo iniciando por tus apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="celular">¿Número de celular?</label>
+                    <input type="tel" id="celular" placeholder="Escribe diez dígitos" pattern="[0-9]{10}"
+                        maxlength="10">
+                </div>
 
-        // --- FUNCIONES ---
-        function generarUUID() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
+                <div class="form-group">
+                    <label for="materia">Materia</label>
+                    <div class="select-wrapper">
+                        <select id="materia" required>
+                            <option value="" disabled selected>Selecciona la materia</option>
+                            <option value="LAET105">Matemáticas para la Administración</option>
+                            <option value="LCIA103">Matemáticas Aplicadas a los Negocios 1</option>
+                            <option value="LCIA209">Matemáticas Aplicadas a los Negocios 2</option>
+                            <option value="INAR0104">Computación 1</option>
+                            <option value="IAG207">Fundamentos de Programación</option>
+                        </select>
+                    </div>
+                </div>
 
-        function obtenerIPCliente() {
-            // Método simple para obtener IP (usa una API pública)
-            return fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
-                .then(data => data.ip)
-                .catch(() => 'No disponible');
-        }
+                <div class="form-group">
+                    <label for="preguntaDetallada">Descripción detallada de tu pregunta</label>
+                    <textarea id="preguntaDetallada" rows="4"
+                        placeholder="Describe tu problema con detalle..."></textarea>
+                </div>
 
-        async function registrarPregunta() {
-            // Obtener valores del formulario
-            const pregunta = document.getElementById("pregunta").value.trim();
-            const nombre = document.getElementById("nombre").value.trim();
-            const celular = document.getElementById("celular").value.trim();
-            const materia = document.getElementById("materia").value;
-            const preguntaDetallada = document.getElementById("preguntaDetallada").value.trim();
-            const archivo = document.getElementById("adjunto").files[0];
+                <div class="form-group">
+                    <label>Adjunto (opcional - imagen, PDF o video)</label>
+                    <div class="archivo-personalizado">
+                        <label for="adjunto" class="apple-button">📷 Elegir archivo</label>
+                        <input type="file" id="adjunto" accept="image/*,application/pdf,video/*">
+                        <span id="nombreArchivo" class="nombre-archivo">Ningún archivo seleccionado</span>
+                    </div>
+                    <small style="color: #666; display: block; margin-top: 5px;">Máximo 10MB. Se guardará una
+                        referencia, no el archivo.</small>
+                </div>
 
-            // Validaciones
-            if (!pregunta || !nombre || !materia || !preguntaDetallada || !celular) {
-                mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
-                return;
+                <button class="apple-button btn-enviar" onclick="registrarPregunta()">Registrar Pregunta</button>
+                <div id="mensajeEstado" class="estado-formulario"></div>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
+        </footer>
+
+        <script>
+            // --- CONFIGURACIÓN ---
+            // PEGA AQUÍ LA URL DE TU APLICACIÓN WEB DE GAS (SIN /exec AL FINAL)
+            const GAS_URL = 'https://script.google.com/macros/s/AKfycbw4V4EcP8Wya6uLuLtY6thfWCZI9x6AYRTEGnOmtycxqDyg8tsjr6SITQlrvZWsxdJA/exec'; // <--- CAMBIA ESTO
+
+            // --- FUNCIONES ---
+            function generarUUID() {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
             }
 
-            if (!/^\d{10}$/.test(celular)) {
-                mostrarMensaje("⚠️ El número de celular debe tener 10 dígitos.", false);
-                return;
+            function obtenerIPCliente() {
+                // Método simple para obtener IP (usa una API pública)
+                return fetch('https://api.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => data.ip)
+                    .catch(() => 'No disponible');
             }
 
-            if (!GAS_URL || GAS_URL.includes('...')) {
-                mostrarMensaje("⚠️ Error de configuración: Falta la URL de GAS.", false);
-                return;
-            }
+            async function registrarPregunta() {
+                // Obtener valores del formulario
+                const pregunta = document.getElementById("pregunta").value.trim();
+                const nombre = document.getElementById("nombre").value.trim();
+                const celular = document.getElementById("celular").value.trim();
+                const materia = document.getElementById("materia").value;
+                const preguntaDetallada = document.getElementById("preguntaDetallada").value.trim();
+                const archivo = document.getElementById("adjunto").files[0];
 
-            mostrarMensaje("🕒 Procesando...", true);
-
-            try {
-                // Generar UUID
-                const uuid = generarUUID();
-                
-                // Obtener IP (o dejarla para que la obtenga GAS)
-                const ip = await obtenerIPCliente();
-
-                // Preparar datos base
-                const datos = {
-                    uuid: uuid,
-                    pregunta: pregunta,
-                    nombre: nombre,
-                    celular: celular,
-                    materia: materia,
-                    preguntaDetallada: preguntaDetallada,
-                    adjuntoURL: '' // Por defecto vacío
-                };
-
-                // Si hay archivo, subirlo primero (opcional - si quieres guardar el archivo en Drive)
-                if (archivo) {
-                    mostrarMensaje("🕒 Preparando archivo...", true);
-                    
-                    // Leer archivo como base64
-                    const base64 = await leerArchivoComoBase64(archivo);
-                    
-                    // Subir archivo (implementa esta función si decides usarla)
-                    // const urlArchivo = await subirArchivo(base64, archivo.name, archivo.type);
-                    // if (urlArchivo) {
-                    //     datos.adjuntoURL = urlArchivo;
-                    // }
-                    
-                    // Por ahora, solo guardamos el nombre como referencia (opción simple)
-                    datos.adjuntoURL = `[Archivo: ${archivo.name}]`; // Solo referencia textual
+                // Validaciones
+                if (!pregunta || !nombre || !materia || !preguntaDetallada || !celular) {
+                    mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
+                    return;
                 }
 
-                // Enviar datos a GAS
-                await enviarAGAS(datos, ip);
-                
-                // Éxito
-                lanzarConfeti();
-                mostrarMensaje(`✔️ ¡Pregunta registrada! Tu folio UUID: ${uuid}`, true);
-                limpiarFormulario();
-
-            } catch (error) {
-                console.error("Error:", error);
-                mostrarMensaje("❌ Error al registrar: " + error.message, false);
-            }
-        }
-
-        function leerArchivoComoBase64(archivo) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => {
-                    const base64 = reader.result.split(',')[1];
-                    resolve(base64);
-                };
-                reader.onerror = reject;
-                reader.readAsDataURL(archivo);
-            });
-        }
-
-        async function enviarAGAS(datos, ip) {
-            // Construir URL con IP como parámetro (GAS puede leerlo)
-            const url = new URL(GAS_URL);
-            url.searchParams.append('ip', ip);
-
-            const response = await fetch(url.toString(), {
-                method: 'POST',
-                mode: 'no-cors', // Importante para evitar CORS
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(datos)
-            });
-
-            // Con 'no-cors' no podemos leer la respuesta directamente,
-            // asumimos éxito si no hay error de red
-            return true;
-        }
-
-        function limpiarFormulario() {
-            document.getElementById("pregunta").value = "";
-            document.getElementById("nombre").value = "";
-            document.getElementById("celular").value = "";
-            document.getElementById("materia").value = "";
-            document.getElementById("preguntaDetallada").value = "";
-            document.getElementById("adjunto").value = "";
-            document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
-            
-            // Limpiar localStorage
-            ['pregunta', 'nombre', 'celular', 'materia', 'preguntaDetallada'].forEach(id => {
-                localStorage.removeItem(id);
-            });
-        }
-
-        function mostrarMensaje(texto, exito) {
-            const msg = document.getElementById("mensajeEstado");
-            msg.textContent = texto;
-            msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
-
-            setTimeout(() => {
-                if (msg.textContent === texto) {
-                    msg.className = "estado-formulario";
-                    msg.textContent = "";
+                if (!/^\d{10}$/.test(celular)) {
+                    mostrarMensaje("⚠️ El número de celular debe tener 10 dígitos.", false);
+                    return;
                 }
-            }, 5000);
-        }
 
-        function lanzarConfeti() {
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#0071e3', '#7c4dff', '#34c759', '#ff9500'],
-                scalar: 1.2
-            });
-        }
+                if (!GAS_URL || GAS_URL.includes('...')) {
+                    mostrarMensaje("⚠️ Error de configuración: Falta la URL de GAS.", false);
+                    return;
+                }
 
-        // Event listeners
-        document.getElementById("adjunto").addEventListener("change", function () {
-            const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
-            document.getElementById("nombreArchivo").textContent = nombre;
-        });
+                mostrarMensaje("🕒 Procesando...", true);
 
-        // Guardar en localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input, select, textarea');
-            
-            inputs.forEach(input => {
-                if (input.type !== 'file') {
-                    const savedValue = localStorage.getItem(input.id);
-                    if (savedValue) {
-                        input.value = savedValue;
+                try {
+                    // Generar UUID
+                    const uuid = generarUUID();
+
+                    // Obtener IP (o dejarla para que la obtenga GAS)
+                    const ip = await obtenerIPCliente();
+
+                    // Preparar datos base
+                    const datos = {
+                        uuid: uuid,
+                        pregunta: pregunta,
+                        nombre: nombre,
+                        celular: celular,
+                        materia: materia,
+                        preguntaDetallada: preguntaDetallada,
+                        adjuntoURL: '' // Por defecto vacío
+                    };
+
+                    // Si hay archivo, subirlo primero (opcional - si quieres guardar el archivo en Drive)
+                    if (archivo) {
+                        mostrarMensaje("🕒 Preparando archivo...", true);
+
+                        // Leer archivo como base64
+                        const base64 = await leerArchivoComoBase64(archivo);
+
+                        // Subir archivo (implementa esta función si decides usarla)
+                        // const urlArchivo = await subirArchivo(base64, archivo.name, archivo.type);
+                        // if (urlArchivo) {
+                        //     datos.adjuntoURL = urlArchivo;
+                        // }
+
+                        // Por ahora, solo guardamos el nombre como referencia (opción simple)
+                        datos.adjuntoURL = `[Archivo: ${archivo.name}]`; // Solo referencia textual
                     }
-                    
-                    input.addEventListener('input', function() {
-                        localStorage.setItem(input.id, input.value);
-                    });
-                }
-            });
-        });
 
-        // Validar celular mientras se escribe
-        document.getElementById('celular').addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
-        });
-    </script>
+                    // Enviar datos a GAS
+                    await enviarAGAS(datos, ip);
+
+                    // Éxito
+                    lanzarConfeti();
+                    mostrarMensaje(`✔️ ¡Pregunta registrada! Tu folio UUID: ${uuid}`, true);
+                    limpiarFormulario();
+
+                } catch (error) {
+                    console.error("Error:", error);
+                    mostrarMensaje("❌ Error al registrar: " + error.message, false);
+                }
+            }
+
+            function leerArchivoComoBase64(archivo) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        const base64 = reader.result.split(',')[1];
+                        resolve(base64);
+                    };
+                    reader.onerror = reject;
+                    reader.readAsDataURL(archivo);
+                });
+            }
+
+            async function enviarAGAS(datos, ip) {
+                // Construir URL con IP como parámetro (GAS puede leerlo)
+                const url = new URL(GAS_URL);
+                url.searchParams.append('ip', ip);
+
+                const response = await fetch(url.toString(), {
+                    method: 'POST',
+                    mode: 'no-cors', // Importante para evitar CORS
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(datos)
+                });
+
+                // Con 'no-cors' no podemos leer la respuesta directamente,
+                // asumimos éxito si no hay error de red
+                return true;
+            }
+
+            function limpiarFormulario() {
+                document.getElementById("pregunta").value = "";
+                document.getElementById("nombre").value = "";
+                document.getElementById("celular").value = "";
+                document.getElementById("materia").value = "";
+                document.getElementById("preguntaDetallada").value = "";
+                document.getElementById("adjunto").value = "";
+                document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
+
+                // Limpiar localStorage
+                ['pregunta', 'nombre', 'celular', 'materia', 'preguntaDetallada'].forEach(id => {
+                    localStorage.removeItem(id);
+                });
+            }
+
+            function mostrarMensaje(texto, exito) {
+                const msg = document.getElementById("mensajeEstado");
+                msg.textContent = texto;
+                msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
+
+                setTimeout(() => {
+                    if (msg.textContent === texto) {
+                        msg.className = "estado-formulario";
+                        msg.textContent = "";
+                    }
+                }, 5000);
+            }
+
+            function lanzarConfeti() {
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#0071e3', '#7c4dff', '#34c759', '#ff9500'],
+                    scalar: 1.2
+                });
+            }
+
+            // Event listeners
+            document.getElementById("adjunto").addEventListener("change", function () {
+                const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
+                document.getElementById("nombreArchivo").textContent = nombre;
+            });
+
+            // Guardar en localStorage
+            document.addEventListener('DOMContentLoaded', function () {
+                const inputs = document.querySelectorAll('input, select, textarea');
+
+                inputs.forEach(input => {
+                    if (input.type !== 'file') {
+                        const savedValue = localStorage.getItem(input.id);
+                        if (savedValue) {
+                            input.value = savedValue;
+                        }
+
+                        input.addEventListener('input', function () {
+                            localStorage.setItem(input.id, input.value);
+                        });
+                    }
+                });
+            });
+
+            // Validar celular mientras se escribe
+            document.getElementById('celular').addEventListener('input', function (e) {
+                this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+            });
+        </script>
 </body>
+
 </html>
