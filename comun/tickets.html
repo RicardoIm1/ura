@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.65, maximum-scale=0.65, minimum-scale=0.65, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0.65, maximum-scale=0.65, minimum-scale=0.65, user-scalable=no">
     <title>Preguntas</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
@@ -22,7 +24,7 @@
 
         header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
         }
 
@@ -59,7 +61,7 @@
             padding: 40px;
             width: 100%;
             max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: slideUp 0.5s ease-out;
         }
 
@@ -68,6 +70,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -94,7 +97,9 @@
             font-size: 0.95rem;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 12px 15px;
             border: 2px solid #e0e0e0;
@@ -104,7 +109,9 @@
             background: white;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
@@ -199,7 +206,7 @@
         }
 
         footer {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             text-align: center;
             padding: 15px;
@@ -211,33 +218,34 @@
             .ticket-card {
                 padding: 30px 20px;
             }
-            
+
             h2 {
                 font-size: 1.75rem;
             }
-            
+
             .header-title {
                 font-size: 1.2rem;
             }
-            
+
             .nombre-archivo {
                 max-width: 150px;
             }
         }
     </style>
 </head>
+
 <body>
-  <header>
-    <div class="header-content">
-      <a href="/ura/">
-        <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
-      </a>
-      <div class="header-title">
-        <a href="https://urauniversidad.com" target="_blank" style="text-decoration: none; color: inherit;">
-          Universidad Regional de los Altos
-        </a>
-      </div>
-  </header>
+    <header>
+        <div class="header-content">
+            <a href="/ura/">
+                <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+            </a>
+            <div class="header-title">
+                <a href="https://urauniversidad.com" target="_blank" style="text-decoration: none; color: inherit;">
+                    Universidad Regional de los Altos
+                </a>
+            </div>
+    </header>
 
     <div class="container">
         <div class="ticket-card">
@@ -248,11 +256,13 @@
             </div>
             <div class="form-group">
                 <label for="nombre">¿Cuál es tu Nombre?</label>
-                <input type="text" id="nombre" placeholder="Escribe tu nombre completo iniciando por tus apellidos">
+                <input type="text" id="nombre" placeholder="Escribe tu nombre completo..." value="">
+                <!-- ID debe ser "nombre" -->
             </div>
             <div class="form-group">
                 <label for="celular">¿Número de celular?</label>
-                <input type="tel" id="celular" placeholder="Escribe diez dígitos" pattern="[0-9]{10}" maxlength="10">
+                <input type="tel" id="celular" placeholder="Escribe diez dígitos" pattern="[0-9]{10}" maxlength="10"
+                    value=""> <!-- ID debe ser "celular" -->
             </div>
 
             <div class="form-group">
@@ -273,7 +283,7 @@
                 <label for="preguntaDetallada">Descripción detallada de tu pregunta</label>
                 <textarea id="preguntaDetallada" rows="4" placeholder="Describe tu problema con detalle..."></textarea>
             </div>
-            
+
             <div class="form-group">
                 <label>Adjunto (opcional - imagen, PDF o video)</label>
                 <div class="archivo-personalizado">
@@ -281,14 +291,15 @@
                     <input type="file" id="adjunto" accept="image/*,application/pdf,video/*">
                     <span id="nombreArchivo" class="nombre-archivo">Ningún archivo seleccionado</span>
                 </div>
-                <small style="color: #666; display: block; margin-top: 5px;">Máximo 10MB. Se guardará una referencia, no el archivo.</small>
+                <small style="color: #666; display: block; margin-top: 5px;">Máximo 10MB. Se guardará una referencia, no
+                    el archivo.</small>
             </div>
-            
+
             <button class="apple-button btn-enviar" onclick="registrarPregunta()">Registrar Pregunta</button>
             <div id="mensajeEstado" class="estado-formulario"></div>
         </div>
     </div>
-    
+
     <footer>
         © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
     </footer>
@@ -300,7 +311,7 @@
 
         // --- FUNCIONES ---
         function generarUUID() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
                 var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
@@ -344,7 +355,7 @@
             try {
                 // Generar UUID
                 const uuid = generarUUID();
-                
+
                 // Obtener IP (o dejarla para que la obtenga GAS)
                 const ip = await obtenerIPCliente();
 
@@ -362,23 +373,23 @@
                 // Si hay archivo, subirlo primero (opcional - si quieres guardar el archivo en Drive)
                 if (archivo) {
                     mostrarMensaje("🕒 Preparando archivo...", true);
-                    
+
                     // Leer archivo como base64
                     const base64 = await leerArchivoComoBase64(archivo);
-                    
+
                     // Subir archivo (implementa esta función si decides usarla)
                     // const urlArchivo = await subirArchivo(base64, archivo.name, archivo.type);
                     // if (urlArchivo) {
                     //     datos.adjuntoURL = urlArchivo;
                     // }
-                    
+
                     // Por ahora, solo guardamos el nombre como referencia (opción simple)
                     datos.adjuntoURL = `[Archivo: ${archivo.name}]`; // Solo referencia textual
                 }
 
                 // Enviar datos a GAS
                 await enviarAGAS(datos, ip);
-                
+
                 // Éxito
                 lanzarConfeti();
                 mostrarMensaje(`✔️ ¡Pregunta registrada! Tu folio UUID: ${uuid}`, true);
@@ -429,7 +440,7 @@
             document.getElementById("preguntaDetallada").value = "";
             document.getElementById("adjunto").value = "";
             document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
-            
+
             // Limpiar localStorage
             ['pregunta', 'nombre', 'celular', 'materia', 'preguntaDetallada'].forEach(id => {
                 localStorage.removeItem(id);
@@ -466,17 +477,17 @@
         });
 
         // Guardar en localStorage
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const inputs = document.querySelectorAll('input, select, textarea');
-            
+
             inputs.forEach(input => {
                 if (input.type !== 'file') {
                     const savedValue = localStorage.getItem(input.id);
                     if (savedValue) {
                         input.value = savedValue;
                     }
-                    
-                    input.addEventListener('input', function() {
+
+                    input.addEventListener('input', function () {
                         localStorage.setItem(input.id, input.value);
                     });
                 }
@@ -484,165 +495,167 @@
         });
 
         // Validar celular mientras se escribe
-        document.getElementById('celular').addEventListener('input', function(e) {
+        document.getElementById('celular').addEventListener('input', function (e) {
             this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
         });
     </script>
 </body>
+
 </html>
 
-    <script>
-        function registrarTicket() {
-            const folio = "TCK-" + Date.now();
-            const titulo = document.getElementById("titulo").value.trim();
-            const cliente = document.getElementById("cliente").value.trim();
-            const prioridad = document.getElementById("prioridad").value;
-            const notas = document.getElementById("notas").value.trim();
-            const archivo = document.getElementById("screenshot").files[0];
+<script>
+    function registrarTicket() {
+        const folio = "TCK-" + Date.now();
+        const titulo = document.getElementById("titulo").value.trim();
+        const cliente = document.getElementById("cliente").value.trim();
+        const prioridad = document.getElementById("prioridad").value;
+        const notas = document.getElementById("notas").value.trim();
+        const archivo = document.getElementById("screenshot").files[0];
 
-            if (!titulo || !cliente || !prioridad || !notas) {
-                mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
-                return;
-            }
-
-            // Simular la función de Google Apps Script para demostración
-            if (typeof google === 'undefined' || !google.script.run) {
-                // Modo demostración
-                setTimeout(() => {
-                    lanzarConfeti();
-                    mostrarMensaje(`✔️ ¡Modo demostración! Ticket enviado con éxito. Tu folio sería: ${folio}`, true);
-                    limpiarFormulario();
-                }, 1500);
-                
-                mostrarMensaje("🕒 Procesando ticket...", true);
-                return;
-            }
-
-            if (archivo) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const base64 = e.target.result.split(',')[1];
-
-                    mostrarMensaje("🕒 Subiendo imagen...", true);
-
-                    google.script.run
-                        .withSuccessHandler(urlImagen => {
-                            guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen);
-                        })
-                        .withFailureHandler(err => {
-                            mostrarMensaje("❌ Error al subir imagen: " + err.message, false);
-                        })
-                        .subirCaptura(base64, archivo.name);
-                };
-                reader.readAsDataURL(archivo);
-            } else {
-                guardarDatos(folio, titulo, cliente, prioridad, notas, "");
-            }
+        if (!titulo || !cliente || !prioridad || !notas) {
+            mostrarMensaje("⚠️ Todos los campos son obligatorios.", false);
+            return;
         }
 
-        function guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen) {
-            const datos = {
-                id: folio,
-                titulo,
-                cliente,
-                prioridad,
-                estado: "Abierto",
-                fecha: new Date().toLocaleString(),
-                notas,
-                imagen: urlImagen
-            };
-
-            mostrarMensaje("🕒 Guardando ticket…", true);
-
-            google.script.run
-                .withSuccessHandler(() => {
-                    lanzarConfeti();
-                    mostrarMensaje(`✔️ Ticket enviado con éxito. Tu folio es: ${folio}`, true);
-                    limpiarFormulario();
-                })
-                .withFailureHandler(err => {
-                    mostrarMensaje("❌ Error al guardar: " + err.message, false);
-                })
-                .guardarEnSheets(datos);
-        }
-
-        function limpiarFormulario() {
-            document.getElementById("titulo").value = "";
-            document.getElementById("cliente").value = "";
-            document.getElementById("prioridad").value = "";
-            document.getElementById("notas").value = "";
-            document.getElementById("screenshot").value = "";
-            document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
-        }
-
-        function mostrarMensaje(texto, exito) {
-            const msg = document.getElementById("mensajeEstado");
-            msg.textContent = texto;
-            msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
-
+        // Simular la función de Google Apps Script para demostración
+        if (typeof google === 'undefined' || !google.script.run) {
+            // Modo demostración
             setTimeout(() => {
-                if (msg.textContent === texto) {
-                    msg.className = "estado-formulario";
-                    msg.textContent = "";
+                lanzarConfeti();
+                mostrarMensaje(`✔️ ¡Modo demostración! Ticket enviado con éxito. Tu folio sería: ${folio}`, true);
+                limpiarFormulario();
+            }, 1500);
+
+            mostrarMensaje("🕒 Procesando ticket...", true);
+            return;
+        }
+
+        if (archivo) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const base64 = e.target.result.split(',')[1];
+
+                mostrarMensaje("🕒 Subiendo imagen...", true);
+
+                google.script.run
+                    .withSuccessHandler(urlImagen => {
+                        guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen);
+                    })
+                    .withFailureHandler(err => {
+                        mostrarMensaje("❌ Error al subir imagen: " + err.message, false);
+                    })
+                    .subirCaptura(base64, archivo.name);
+            };
+            reader.readAsDataURL(archivo);
+        } else {
+            guardarDatos(folio, titulo, cliente, prioridad, notas, "");
+        }
+    }
+
+    function guardarDatos(folio, titulo, cliente, prioridad, notas, urlImagen) {
+        const datos = {
+            id: folio,
+            titulo,
+            cliente,
+            prioridad,
+            estado: "Abierto",
+            fecha: new Date().toLocaleString(),
+            notas,
+            imagen: urlImagen
+        };
+
+        mostrarMensaje("🕒 Guardando ticket…", true);
+
+        google.script.run
+            .withSuccessHandler(() => {
+                lanzarConfeti();
+                mostrarMensaje(`✔️ Ticket enviado con éxito. Tu folio es: ${folio}`, true);
+                limpiarFormulario();
+            })
+            .withFailureHandler(err => {
+                mostrarMensaje("❌ Error al guardar: " + err.message, false);
+            })
+            .guardarEnSheets(datos);
+    }
+
+    function limpiarFormulario() {
+        document.getElementById("titulo").value = "";
+        document.getElementById("cliente").value = "";
+        document.getElementById("prioridad").value = "";
+        document.getElementById("notas").value = "";
+        document.getElementById("screenshot").value = "";
+        document.getElementById("nombreArchivo").textContent = "Ningún archivo seleccionado";
+    }
+
+    function mostrarMensaje(texto, exito) {
+        const msg = document.getElementById("mensajeEstado");
+        msg.textContent = texto;
+        msg.className = "estado-formulario mostrar " + (exito ? "exito" : "error");
+
+        setTimeout(() => {
+            if (msg.textContent === texto) {
+                msg.className = "estado-formulario";
+                msg.textContent = "";
+            }
+        }, 5000);
+    }
+
+    function lanzarConfeti() {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#0071e3', '#7c4dff', '#34c759', '#ff9500'],
+            scalar: 1.2
+        });
+    }
+
+    document.getElementById("screenshot").addEventListener("change", function () {
+        const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
+        document.getElementById("nombreArchivo").textContent = nombre;
+    });
+
+    // Mejorar la experiencia del formulario
+    document.addEventListener('DOMContentLoaded', function () {
+        const inputs = document.querySelectorAll('input, select, textarea');
+
+        inputs.forEach(input => {
+            // Guardar estado de los campos para no perderlos al recargar
+            if (input.type !== 'file') {
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue) {
+                    input.value = savedValue;
                 }
-            }, 5000);
-        }
 
-        function lanzarConfeti() {
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#0071e3', '#7c4dff', '#34c759', '#ff9500'],
-                scalar: 1.2
+                input.addEventListener('input', function () {
+                    localStorage.setItem(input.id, input.value);
+                });
+            }
+
+            // Mejorar la usabilidad con teclado
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' && input.type !== 'textarea') {
+                    e.preventDefault();
+                    const nextInput = input.nextElementSibling;
+                    if (nextInput && (nextInput.tagName === 'INPUT' || nextInput.tagName === 'SELECT' || nextInput.tagName === 'TEXTAREA')) {
+                        nextInput.focus();
+                    } else {
+                        registrarTicket();
+                    }
+                }
             });
-        }
-
-        document.getElementById("screenshot").addEventListener("change", function () {
-            const nombre = this.files[0]?.name || "Ningún archivo seleccionado";
-            document.getElementById("nombreArchivo").textContent = nombre;
         });
 
-        // Mejorar la experiencia del formulario
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input, select, textarea');
-            
+        // Limpiar el almacenamiento al enviar el formulario
+        document.querySelector('.btn-enviar').addEventListener('click', function () {
             inputs.forEach(input => {
-                // Guardar estado de los campos para no perderlos al recargar
                 if (input.type !== 'file') {
-                    const savedValue = localStorage.getItem(input.id);
-                    if (savedValue) {
-                        input.value = savedValue;
-                    }
-                    
-                    input.addEventListener('input', function() {
-                        localStorage.setItem(input.id, input.value);
-                    });
+                    localStorage.removeItem(input.id);
                 }
-                
-                // Mejorar la usabilidad con teclado
-                input.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' && input.type !== 'textarea') {
-                        e.preventDefault();
-                        const nextInput = input.nextElementSibling;
-                        if (nextInput && (nextInput.tagName === 'INPUT' || nextInput.tagName === 'SELECT' || nextInput.tagName === 'TEXTAREA')) {
-                            nextInput.focus();
-                        } else {
-                            registrarTicket();
-                        }
-                    }
-                });
-            });
-            
-            // Limpiar el almacenamiento al enviar el formulario
-            document.querySelector('.btn-enviar').addEventListener('click', function() {
-                inputs.forEach(input => {
-                    if (input.type !== 'file') {
-                        localStorage.removeItem(input.id);
-                    }
-                });
             });
         });
-    </script>
+    });
+</script>
 </body>
+
 </html>
