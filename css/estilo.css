@@ -474,7 +474,7 @@
         .btn-trans {
             width: 90%;
             background: transparent;
-            color: white;
+            color: var(--apple-vibrant-blue);
             padding: 10px 16px;
             border-radius: var(--apple-border-radius);
             cursor: pointer;
