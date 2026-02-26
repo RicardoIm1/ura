@@ -928,3 +928,7 @@
         .tema-contenido .tiempo-estimado .objetivo .idea-principal {
             margin-bottom: 1rem;
         }
+        .deita p{
+            margin-bottom: 1rem;
+            background-color: #3498db;
+        }
