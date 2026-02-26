@@ -1,0 +1,127 @@
+<div class="tema-contenido">
+
+    <!-- 1. TÍTULO DEL TEMA -->
+    <!-- <h2>1.1. Definición de matriz, orden y nomenclatura</h2> -->
+
+    <!-- 2. SVG RELOJ TIEMPO ESTIMADO -->
+    <div class="tiempo-estimado">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="55" stroke="#4a6fa5" stroke-width="3" fill="none" />
+            <circle cx="60" cy="60" r="50" stroke="#e0e7ff" stroke-width="8" fill="none" />
+            <!-- Marcas de minutos -->
+            <g id="marcas">
+                <line x1="60" y1="15" x2="60" y2="20" stroke="#4a6fa5" stroke-width="2" />
+                <line x1="60" y1="100" x2="60" y2="95" stroke="#4a6fa5" stroke-width="2" />
+                <line x1="15" y1="60" x2="20" y2="60" stroke="#4a6fa5" stroke-width="2" />
+                <line x1="100" y1="60" x2="95" y2="60" stroke="#4a6fa5" stroke-width="2" />
+            </g>
+            <!-- Aguja del reloj -->
+            <line x1="60" y1="60" x2="60" y2="30" stroke="#2c3e50" stroke-width="3" stroke-linecap="round">
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 60"
+                    to="180 60 60" dur="2s" repeatCount="indefinite" />
+            </line>
+            <circle cx="60" cy="60" r="4" fill="#2c3e50" />
+            <text x="60" y="75" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="14"
+                font-weight="bold">2
+                min</text>
+        </svg>
+        <p class="tiempo-texto">Tiempo estimado basado en programas de MIT, Stanford y UC Berkeley</p>
+    </div>
+
+    <!-- 3. OBJETIVO DEL TEMA -->
+    <div class="objetivo">
+        <h3>📌 Objetivo del tema</h3>
+        <p>Al finalizar este tema, serás capaz de:</p>
+        <ul>
+            <li>Comprender y definir formalmente qué es una matriz</li>
+        </ul>
+    </div>
+
+    <!-- 4. IDEA PRINCIPAL -->
+    <div class="idea-principal">
+        <h3>🎯 Idea principal</h3>
+        <p>Siempre que se manejan datos, se debe interesar en organizarlos de manera tal que sean
+            <strong>significativos</strong> y se puedan identificar con facilidad. Resumir los datos en forma tabular
+            puede ayudar en esta función. Una matriz es una forma común para resumir y presentar números o datos.
+        </p>
+    </div>
+
+    <h4>Definición</h4>
+    <ul>
+        <li><span style='color: red; font-weight: bold;'>Matriz:</span> Una matriz es un arreglo rectangular de
+            elementos.</li>
+    </ul>
+    <p>Los elementos de una matriz por lo general son números reales, pero no siempre. Considere las calificaciones de
+        prueba de cinco estudiantes en tres exámenes. Éstas se presentan en la siguiente matriz.</p>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+        }
+
+        .matriz {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .titulo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .fila {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .numero-estudiante {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        .notas {
+            display: inline-block;
+        }
+    </style>
+    <div class="matriz">
+        <div class="titulo">Prueba</div>
+        <div class="fila">
+            <span class="numero-estudiante">Estudiante 1</span>
+            <span class="notas">75 82 86</span>
+        </div>
+        <div class="fila">
+            <span class="numero-estudiante">Estudiante 2</span>
+            <span class="notas">91 95 100</span>
+        </div>
+        <div class="fila">
+            <span class="numero-estudiante">Estudiante 3</span>
+            <span class="notas">65 70 68</span>
+        </div>
+        <div class="fila">
+            <span class="numero-estudiante">Estudiante 4</span>
+            <span class="notas">59 80 99</span>
+        </div>
+        <div class="fila">
+            <span class="numero-estudiante">Estudiante 5</span>
+            <span class="notas">75 76 74</span>
+        </div>
+    </div>
+    <h4>Orden</h4>
+
+    <!-- 7. BIBLIOGRAFÍA -->
+    <div class="bibliografia">
+        <h3>📚 Bibliografía confiable y verificable</h3>
+        <ul>
+            <li><strong>Frank S. Budick</strong> (2007). <em>Matemáticas Aplicadas para Administración, economía y
+                    ciencias
+                    sociales. </em> (4ª ed.). McGraw Hill Interamericana. <span class="isbn">ISBN: 970-10-5698-1</span>
+                <em>//
+                    Libro de referencia estándar en universidades como MIT</em>
+            </li>
+        </ul>
+    </div>
+</div>
