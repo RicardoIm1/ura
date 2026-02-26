@@ -924,3 +924,7 @@
             margin: 10px;
             justify-content: center;
         }
+
+        .tema-contenido .tiempo-estimado .objetivo .idea-principal {
+            margin-bottom: 1rem;
+        }
