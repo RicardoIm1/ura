@@ -472,7 +472,7 @@
         }
 
         .btn-trans {
-            width: 90%;
+            width: 5rem;
             background: transparent;
             color: var(--apple-vibrant-blue);
             padding: 10px 16px;
