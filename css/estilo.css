@@ -471,6 +471,20 @@
             margin-top: 8px;
         }
 
+        .btn-trans {
+            width: 90%;
+            background: transparent;
+            color: white;
+            padding: 10px 16px;
+            border-radius: var(--apple-border-radius);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--apple-transition);
+            border: none;
+            white-space: nowrap;
+        }
+
         .btn-subida {
             width: 90%;
             background: var(--apple-vibrant-green);
