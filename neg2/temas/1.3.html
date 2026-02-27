@@ -1,0 +1,130 @@
+<li>
+  <h3>1.3 Operaciones con matrices</h3>
+
+  <svg width="60" height="30" viewBox="0 0 60 30" style="display:block; margin:0.5rem 0;">
+    <circle cx="15" cy="15" r="12" fill="none" stroke="black" stroke-width="2"/>
+    <path d="M15 7 L15 15 L22 20" stroke="black" stroke-width="2" fill="none"/>
+    <text x="32" y="18" font-family="Arial" font-size="12" fill="black">40 min</text>
+  </svg>
+
+  <h4>Objetivo del tema</h4>
+  <p>Comprender y aplicar las operaciones básicas entre matrices: suma, resta, multiplicación por un escalar y multiplicación entre matrices. El estudiante será capaz de identificar las dimensiones requeridas para cada operación, ejecutar los cálculos con precisión y reconocer situaciones donde estas operaciones son utilizadas en contextos prácticos como computación, economía e ingeniería.</p>
+
+  <h4>Idea principal</h4>
+  <p>Las matrices son arreglos rectangulares de números que se pueden combinar mediante reglas específicas. La suma y resta requieren que las matrices tengan exactamente las mismas dimensiones, mientras que la multiplicación de matrices exige que el número de columnas de la primera coincida con el número de filas de la segunda. Estas operaciones no son conmutativas y tienen propiedades algebraicas que extienden el álgebra de números reales, pero con diferencias clave.</p>
+
+  <h4>Ejercicios visualmente claros</h4>
+  <p>A continuación se presentan dos ejercicios resueltos paso a paso. Las matrices se muestran en formato visual y se incluyen gráficas que ayudan a interpretar la multiplicación como combinación lineal.</p>
+
+  <h5>Ejercicio 1: Suma y multiplicación escalar</h5>
+  <p>Dadas las matrices A y B, calcular 2A + B.</p>
+  <table style="border-collapse: collapse; margin: 1rem 0;">
+    <tr><td style="padding: 0.5rem;">A = </td>
+        <td style="border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">2</td>
+        <td style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">-1</td>
+        <td style="border-right: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">0</td></tr>
+    <tr><td></td>
+        <td style="border-left: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">3</td>
+        <td style="border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">4</td>
+        <td style="border-right: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">-2</td></tr>
+  </table>
+  <table style="border-collapse: collapse; margin: 1rem 0;">
+    <tr><td style="padding: 0.5rem;">B = </td>
+        <td style="border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">1</td>
+        <td style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">3</td>
+        <td style="border-right: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">4</td></tr>
+    <tr><td></td>
+        <td style="border-left: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">-2</td>
+        <td style="border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">0</td>
+        <td style="border-right: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">1</td></tr>
+  </table>
+
+  <p><strong>Paso a paso:</strong></p>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li><code>1. Calcular 2A: se multiplica cada elemento de A por 2.</code></li>
+    <li><code>2A = [[4, -2, 0], [6, 8, -4]]</code></li>
+    <li><code>2. Sumar 2A + B: se suman elementos en la misma posición.</code></li>
+    <li><code>[[4+1, -2+3, 0+4], [6+(-2), 8+0, -4+1]] = [[5, 1, 4], [4, 8, -3]]</code></li>
+  </ul>
+
+  <h5>Ejercicio 2: Multiplicación de matrices (2x3 por 3x2)</h5>
+  <p>Sean C (2x3) y D (3x2). El resultado será una matriz de dimensión 2x2.</p>
+  <table style="border-collapse: collapse; margin: 1rem 0;">
+    <tr><td style="padding: 0.5rem;">C = </td>
+        <td style="border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">1</td>
+        <td style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">0</td>
+        <td style="border-right: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">2</td></tr>
+    <tr><td></td>
+        <td style="border-left: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">-1</td>
+        <td style="border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">3</td>
+        <td style="border-right: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">1</td></tr>
+  </table>
+  <table style="border-collapse: collapse; margin: 1rem 0;">
+    <tr><td style="padding: 0.5rem;">D = </td>
+        <td style="border-left: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">2</td>
+        <td style="border-right: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">1</td></tr>
+    <tr><td></td>
+        <td style="border-left: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">0</td>
+        <td style="border-right: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">3</td></tr>
+    <tr><td></td>
+        <td style="border-left: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">4</td>
+        <td style="border-right: 1px solid black; border-bottom: 1px solid black; padding: 0.3rem 0.6rem;">-1</td></tr>
+  </table>
+
+  <p><strong>Procedimiento comentado:</strong></p>
+  <pre style="background: #f5f5f5; padding: 1rem; overflow-x: auto;">
+// Elemento (1,1) = fila1 de C · col1 de D = (1*2)+(0*0)+(2*4) = 2+0+8 = 10
+// Elemento (1,2) = fila1 de C · col2 de D = (1*1)+(0*3)+(2*-1) = 1+0-2 = -1
+// Elemento (2,1) = fila2 de C · col1 de D = (-1*2)+(3*0)+(1*4) = -2+0+4 = 2
+// Elemento (2,2) = fila2 de C · col2 de D = (-1*1)+(3*3)+(1*-1) = -1+9-1 = 7
+// Resultado: C x D = [[10, -1], [2, 7]]
+  </pre>
+
+  <h5>Interpretación gráfica de la multiplicación</h5>
+  <p>La siguiente figura representa cómo la matriz C (transformación) actúa sobre los vectores columna de D. Cada columna de D se transforma en una columna del resultado.</p>
+
+  <!-- Gráfica con SVG que muestra vectores y combinación lineal -->
+  <svg width="320" height="220" viewBox="0 0 320 220" style="border:1px solid #ccc; background:#fafafa;">
+    <!-- Ejes coordenados -->
+    <line x1="30" y1="190" x2="290" y2="190" stroke="black" stroke-width="1.5" />
+    <line x1="30" y1="190" x2="30" y2="30" stroke="black" stroke-width="1.5" />
+    <!-- Etiquetas ejes -->
+    <text x="280" y="180" font-family="Arial" font-size="10">x</text>
+    <text x="10" y="40" font-family="Arial" font-size="10">y</text>
+    
+    <!-- Vector d1 = (2,0) desde origen (30,190) -> (30+2*20,190-0*20) = (70,190) en azul -->
+    <line x1="30" y1="190" x2="70" y2="190" stroke="blue" stroke-width="2" />
+    <text x="75" y="185" fill="blue" font-size="9">d1 (2,0)</text>
+    <!-- Vector d2 = (1,3) -> (30+1*20,190-3*20) = (50,130) en azul -->
+    <line x1="30" y1="190" x2="50" y2="130" stroke="blue" stroke-width="2" />
+    <text x="55" y="120" fill="blue" font-size="9">d2 (1,3)</text>
+    
+    <!-- Vectores resultantes después de C: c1 = (10,2) y c2 = (-1,7) -->
+    <!-- escalamos para visualizar, factor 4 en lugar de 20 para no salir del canvas -->
+    <!-- c1 (10,2) -> origen (150,190) y punta (150+10*4,190-2*4) = (190,182) en rojo -->
+    <line x1="150" y1="190" x2="190" y2="182" stroke="red" stroke-width="2" />
+    <text x="195" y="175" fill="red" font-size="9">C·d1 (10,2)</text>
+    <!-- c2 (-1,7) -> punta (150-1*4,190-7*4) = (146,162) en rojo -->
+    <line x1="150" y1="190" x2="146" y2="162" stroke="red" stroke-width="2" />
+    <text x="130" y="150" fill="red" font-size="9">C·d2 (-1,7)</text>
+    
+    <!-- Línea divisoria y explicación -->
+    <line x1="120" y1="30" x2="120" y2="200" stroke="gray" stroke-dasharray="4 2" />
+    <text x="40" y="20" font-size="10">Vectores columna de D</text>
+    <text x="170" y="20" font-size="10">Vectores columna de C·D</text>
+    <text x="30" y="210" font-size="9" fill="#333">Notar: C multiplica cada columna de D, dando las columnas del producto.</text>
+  </svg>
+
+  <h4>Ejemplos de aplicaciones reales y directas</h4>
+  <ul>
+    <li><strong>Computación gráfica:</strong> Las transformaciones geométricas (rotación, escalado, traslación) se representan con matrices. Multiplicar la matriz de transformación por las coordenadas de los vértices de un objeto produce su nueva posición.</li>
+    <li><strong>Economía:</strong> En el análisis input-output de Leontief, las operaciones con matrices permiten calcular la producción necesaria en cada sector para satisfacer la demanda final.</li>
+    <li><strong>Ingeniería de control:</strong> Los sistemas dinámicos se modelan con ecuaciones de estado en forma matricial, y las operaciones como suma y multiplicación se usan para combinar subsistemas.</li>
+    <li><strong>Redes y grafos:</strong> La multiplicación de la matriz de adyacencia de un grafo cuenta caminos entre nodos, fundamental en algoritmos de rutas y recomendaciones.</li>
+  </ul>
+
+  <h4>Bibliografía confiable y verificable</h4>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li>• Strang, G. (2016). <em>Introduction to Linear Algebra</em> (5th ed.). Wellesley-Cambridge Press. Capítulo 2: Matrices and Gaussian Elimination.</li>
+  </ul>
+</li>
