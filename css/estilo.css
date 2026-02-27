@@ -70,9 +70,8 @@
             color: var(--apple-black);
         }
 
-        h2, h6 {
-            color: var(--apple-vibrant-orange);
-        }
+        h2 { color: var(--apple-vibrant-blue);}
+        h6 { color: var(--apple-vibrant-orange);}
 
         /* Hero section */
         .hero {
