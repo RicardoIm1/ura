@@ -26,132 +26,143 @@
         </svg>
         <p class="tiempo-texto">Tiempo estimado basado en programas de MIT, Stanford y UC Berkeley</p>
     </div>
+    <div class="desarrollo">
+        <h1></h1>Clasificación de Matrices</h1>
 
-    <h1></h1>Clasificación de Matrices</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de Matriz</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo / Característica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Por dimensión -->
+                <tr class="categoria">
+                    <td colspan="3">🔹 SEGÚN SU DIMENSIÓN</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Fila</strong></td>
+                    <td>Tiene una sola fila [citation:1][citation:6]</td>
+                    <td><span class="ejemplo">[1 2 3]</span> (1×3)</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Columna</strong></td>
+                    <td>Tiene una sola columna [citation:1][citation:6]</td>
+                    <td><span class="ejemplo">[1; 2; 3]</span> (3×1)</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Rectangular</strong></td>
+                    <td>Número de filas ≠ número de columnas [citation:1][citation:6]</td>
+                    <td><span class="ejemplo">2×3, 3×2, 4×3</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Cuadrada</strong></td>
+                    <td>Mismo número de filas que columnas (n×n) [citation:1][citation:4][citation:7]</td>
+                    <td><span class="ejemplo">2×2, 3×3, 4×4</span></td>
+                </tr>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo de Matriz</th>
-                <th>Descripción</th>
-                <th>Ejemplo / Característica</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Por dimensión -->
-            <tr class="categoria">
-                <td colspan="3">🔹 SEGÚN SU DIMENSIÓN</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Fila</strong></td>
-                <td>Tiene una sola fila [citation:1][citation:6]</td>
-                <td><span class="ejemplo">[1 2 3]</span> (1×3)</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Columna</strong></td>
-                <td>Tiene una sola columna [citation:1][citation:6]</td>
-                <td><span class="ejemplo">[1; 2; 3]</span> (3×1)</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Rectangular</strong></td>
-                <td>Número de filas ≠ número de columnas [citation:1][citation:6]</td>
-                <td><span class="ejemplo">2×3, 3×2, 4×3</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Cuadrada</strong></td>
-                <td>Mismo número de filas que columnas (n×n) [citation:1][citation:4][citation:7]</td>
-                <td><span class="ejemplo">2×2, 3×3, 4×4</span></td>
-            </tr>
+                <!-- Matrices cuadradas especiales -->
+                <tr class="categoria">
+                    <td colspan="3">🔹 MATRICES CUADRADAS ESPECIALES</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Triangular Superior</strong></td>
+                    <td>Elementos debajo de la diagonal principal son cero [citation:1][citation:6][citation:7]</td>
+                    <td><span class="ejemplo">[a b c; 0 d e; 0 0 f]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Triangular Inferior</strong></td>
+                    <td>Elementos encima de la diagonal principal son cero [citation:1][citation:6][citation:7]</td>
+                    <td><span class="ejemplo">[a 0 0; b c 0; d e f]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Diagonal</strong></td>
+                    <td>Solo los elementos de la diagonal principal son no nulos [citation:1][citation:6][citation:7]
+                    </td>
+                    <td><span class="ejemplo">[a 0 0; 0 b 0; 0 0 c]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Escalar</strong></td>
+                    <td>Matriz diagonal con todos los elementos de la diagonal iguales
+                        [citation:1][citation:6][citation:7]
+                    </td>
+                    <td><span class="ejemplo">[k 0 0; 0 k 0; 0 0 k]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Identidad</strong></td>
+                    <td>Matriz diagonal con unos en la diagonal principal [citation:1][citation:6][citation:7]</td>
+                    <td><span class="ejemplo">[1 0 0; 0 1 0; 0 0 1]</span></td>
+                </tr>
 
-            <!-- Matrices cuadradas especiales -->
-            <tr class="categoria">
-                <td colspan="3">🔹 MATRICES CUADRADAS ESPECIALES</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Triangular Superior</strong></td>
-                <td>Elementos debajo de la diagonal principal son cero [citation:1][citation:6][citation:7]</td>
-                <td><span class="ejemplo">[a b c; 0 d e; 0 0 f]</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Triangular Inferior</strong></td>
-                <td>Elementos encima de la diagonal principal son cero [citation:1][citation:6][citation:7]</td>
-                <td><span class="ejemplo">[a 0 0; b c 0; d e f]</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Diagonal</strong></td>
-                <td>Solo los elementos de la diagonal principal son no nulos [citation:1][citation:6][citation:7]</td>
-                <td><span class="ejemplo">[a 0 0; 0 b 0; 0 0 c]</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Escalar</strong></td>
-                <td>Matriz diagonal con todos los elementos de la diagonal iguales [citation:1][citation:6][citation:7]
-                </td>
-                <td><span class="ejemplo">[k 0 0; 0 k 0; 0 0 k]</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Identidad</strong></td>
-                <td>Matriz diagonal con unos en la diagonal principal [citation:1][citation:6][citation:7]</td>
-                <td><span class="ejemplo">[1 0 0; 0 1 0; 0 0 1]</span></td>
-            </tr>
+                <!-- Por propiedades de sus elementos -->
+                <tr class="categoria">
+                    <td colspan="3">🔹 SEGÚN SUS ELEMENTOS</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Nula (Cero)</strong></td>
+                    <td>Todos sus elementos son cero [citation:1][citation:4][citation:6]</td>
+                    <td><span class="ejemplo">[0 0 0; 0 0 0; 0 0 0]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Simétrica</strong></td>
+                    <td>A = Aᵀ (elementos simétricos iguales) [citation:1][citation:6][citation:7]</td>
+                    <td><span class="ejemplo">[a b c; b d e; c e f]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Antisimétrica</strong></td>
+                    <td>A = -Aᵀ (diagonal principal = 0) [citation:1][citation:6]</td>
+                    <td><span class="ejemplo">[0 a b; -a 0 c; -b -c 0]</span></td>
+                </tr>
 
-            <!-- Por propiedades de sus elementos -->
-            <tr class="categoria">
-                <td colspan="3">🔹 SEGÚN SUS ELEMENTOS</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Nula (Cero)</strong></td>
-                <td>Todos sus elementos son cero [citation:1][citation:4][citation:6]</td>
-                <td><span class="ejemplo">[0 0 0; 0 0 0; 0 0 0]</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Simétrica</strong></td>
-                <td>A = Aᵀ (elementos simétricos iguales) [citation:1][citation:6][citation:7]</td>
-                <td><span class="ejemplo">[a b c; b d e; c e f]</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Antisimétrica</strong></td>
-                <td>A = -Aᵀ (diagonal principal = 0) [citation:1][citation:6]</td>
-                <td><span class="ejemplo">[0 a b; -a 0 c; -b -c 0]</span></td>
-            </tr>
+                <!-- Operaciones especiales -->
+                <tr class="categoria">
+                    <td colspan="3">🔹 POR OPERACIONES ESPECIALES</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Traspuesta (Aᵀ)</strong></td>
+                    <td>Se obtiene cambiando filas por columnas [citation:1][citation:6][citation:7]</td>
+                    <td>Si A es 2×3, Aᵀ es 3×2</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Regular (Inversible)</strong></td>
+                    <td>Matriz cuadrada que tiene inversa (determinante ≠ 0) [citation:1]</td>
+                    <td>Existe A⁻¹ tal que A·A⁻¹ = I</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Singular</strong></td>
+                    <td>Matriz cuadrada que NO tiene inversa (determinante = 0) [citation:1]</td>
+                    <td>No existe A⁻¹</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Ortogonal</strong></td>
+                    <td>A · Aᵀ = Aᵀ · A = I [citation:1]</td>
+                    <td>A⁻¹ = Aᵀ</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Idempotente</strong></td>
+                    <td>A² = A [citation:1]</td>
+                    <td>Al multiplicarse por sí misma da la misma matriz</td>
+                </tr>
+                <tr>
+                    <td><strong>Matriz Involutiva</strong></td>
+                    <td>A² = I [citation:1]</td>
+                    <td>Su cuadrado es la matriz identidad</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!-- Operaciones especiales -->
-            <tr class="categoria">
-                <td colspan="3">🔹 POR OPERACIONES ESPECIALES</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Traspuesta (Aᵀ)</strong></td>
-                <td>Se obtiene cambiando filas por columnas [citation:1][citation:6][citation:7]</td>
-                <td>Si A es 2×3, Aᵀ es 3×2</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Regular (Inversible)</strong></td>
-                <td>Matriz cuadrada que tiene inversa (determinante ≠ 0) [citation:1]</td>
-                <td>Existe A⁻¹ tal que A·A⁻¹ = I</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Singular</strong></td>
-                <td>Matriz cuadrada que NO tiene inversa (determinante = 0) [citation:1]</td>
-                <td>No existe A⁻¹</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Ortogonal</strong></td>
-                <td>A · Aᵀ = Aᵀ · A = I [citation:1]</td>
-                <td>A⁻¹ = Aᵀ</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Idempotente</strong></td>
-                <td>A² = A [citation:1]</td>
-                <td>Al multiplicarse por sí misma da la misma matriz</td>
-            </tr>
-            <tr>
-                <td><strong>Matriz Involutiva</strong></td>
-                <td>A² = I [citation:1]</td>
-                <td>Su cuadrado es la matriz identidad</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p style="text-align: center; margin-top: 20px; color: #666; font-size: 14px;">
-        Fuentes: Superprof [citation:1], Sangakoo [citation:4], profesor10demates [citation:6], MathsIsFun [citation:7]
-    </p>
-</div>
+        <!-- 8. BIBLIOGRAFÍA -->
+        <div class="bibliografia">
+            <h3>Bibliografía</h3>
+            <ul>
+                <li><strong>Frank S. Budick</strong> (2007). <em>Matemáticas Aplicadas para Administración, economía y
+                        ciencias sociales. </em> (4ª ed.). McGraw Hill Interamericana. <span class="isbn">ISBN:
+                        970-10-5698-1</span>
+                    <em>//
+                        Libro de referencia estándar en universidades como MIT</em>
+                </li>
+            </ul>
+        </div>
+    </div>
