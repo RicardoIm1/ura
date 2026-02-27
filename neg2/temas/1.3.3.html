@@ -1,0 +1,150 @@
+<li>
+  <!-- 1. Título del tema -->
+  <h3>1.3.3 Producto de matrices</h3>
+
+  <!-- 2. SVG de un reloj (estimado 45 min) -->
+  <svg width="60" height="60" viewBox="0 0 60 60" style="display: block; margin: 0.5rem 0;">
+    <circle cx="30" cy="30" r="26" fill="white" stroke="#2c3e50" stroke-width="2.5" />
+    <circle cx="30" cy="30" r="3" fill="#2c3e50" />
+    <!-- manecilla hora (corta) -->
+    <line x1="30" y1="30" x2="30" y2="16" stroke="#2c3e50" stroke-width="2.5" stroke-linecap="round" />
+    <!-- manecilla minuto (larga) apuntando a 45 minutos (270°) = hacia abajo -->
+    <line x1="30" y1="30" x2="30" y2="48" stroke="#2c3e50" stroke-width="1.8" stroke-linecap="round" />
+    <!-- marcas de minutos (opcional para estética) -->
+    <circle cx="30" cy="6" r="1.2" fill="#2c3e50" />
+    <text x="34" y="12" font-family="Arial, sans-serif" font-size="8" fill="#2c3e50">45 min</text>
+  </svg>
+
+  <!-- 3. Objetivo del tema -->
+  <p><strong>Objetivo:</strong> Comprender la operación de multiplicación entre matrices, su condición de compatibilidad, el procedimiento fila‑por‑columna y la interpretación como composición de transformaciones lineales.</p>
+
+  <!-- 4. Idea principal -->
+  <p><strong>Idea principal:</strong> El producto de matrices A·B solo está definido si el número de columnas de A coincide con el número de filas de B. El elemento (i, j) del producto se obtiene multiplicando cada elemento de la fila i de A por su correspondiente en la columna j de B y sumando los resultados. Esta operación equivale a aplicar primero la transformación representada por B y después la de A.</p>
+
+  <!-- 5. Ejercicios visualmente claros -->
+  <h4>Ejercicio: multiplicación 2x2 y 2x3</h4>
+  <p>Dadas las matrices <em>A</em> (2×2) y <em>B</em> (2×3), calcular <em>C = A · B</em>.</p>
+
+  <!-- Tabla con los datos -->
+  <table style="border-collapse: collapse; margin: 1rem 0; font-family: monospace; border: 1px solid #aaa;">
+    <caption style="caption-side: bottom; padding-top: 0.3rem;">Matrices A y B</caption>
+    <thead>
+      <tr>
+        <th style="border: 1px solid #aaa; padding: 0.4rem 1rem;">A (2×2)</th>
+        <th style="border: 1px solid #aaa; padding: 0.4rem 1rem;">B (2×3)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #aaa; padding: 0.4rem 1rem;">
+          [ 1 &nbsp; 2 ]<br>[ 3 &nbsp; 4 ]
+        </td>
+        <td style="border: 1px solid #aaa; padding: 0.4rem 1rem;">
+          [ 5 &nbsp; 6 &nbsp; 7 ]<br>[ 8 &nbsp; 9 &nbsp; 10 ]
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Gráfica SVG: representación visual del proceso fila×columna -->
+  <svg width="380" height="140" viewBox="0 0 380 140" style="border: 1px dashed #2c3e50; background: #f9f9f9;">
+    <!-- Matriz A (2x2) -->
+    <rect x="20" y="20" width="70" height="70" fill="none" stroke="#1e3c5c" stroke-width="1.5" />
+    <text x="30" y="38" font-family="Courier, monospace" font-size="12" fill="#1e3c5c">1</text>
+    <text x="55" y="38" font-family="Courier, monospace" font-size="12" fill="#1e3c5c">2</text>
+    <text x="30" y="63" font-family="Courier, monospace" font-size="12" fill="#1e3c5c">3</text>
+    <text x="55" y="63" font-family="Courier, monospace" font-size="12" fill="#1e3c5c">4</text>
+    <text x="20" y="12" font-family="Arial" font-size="10" fill="#2c3e50">A (2×2)</text>
+
+    <!-- Matriz B (2x3) -->
+    <rect x="120" y="20" width="100" height="70" fill="none" stroke="#2a5a3a" stroke-width="1.5" />
+    <text x="135" y="38" font-family="Courier, monospace" font-size="12" fill="#2a5a3a">5</text>
+    <text x="160" y="38" font-family="Courier, monospace" font-size="12" fill="#2a5a3a">6</text>
+    <text x="185" y="38" font-family="Courier, monospace" font-size="12" fill="#2a5a3a">7</text>
+    <text x="135" y="63" font-family="Courier, monospace" font-size="12" fill="#2a5a3a">8</text>
+    <text x="160" y="63" font-family="Courier, monospace" font-size="12" fill="#2a5a3a">9</text>
+    <text x="185" y="63" font-family="Courier, monospace" font-size="12" fill="#2a5a3a">10</text>
+    <text x="120" y="12" font-family="Arial" font-size="10" fill="#2c3e50">B (2×3)</text>
+
+    <!-- Matriz producto C (2x3) -->
+    <rect x="250" y="20" width="100" height="70" fill="none" stroke="#b13e3e" stroke-width="1.8" />
+    <text x="265" y="38" font-family="Courier, monospace" font-size="12" fill="#b13e3e">c₁₁</text>
+    <text x="295" y="38" font-family="Courier, monospace" font-size="12" fill="#b13e3e">c₁₂</text>
+    <text x="325" y="38" font-family="Courier, monospace" font-size="12" fill="#b13e3e">c₁₃</text>
+    <text x="265" y="63" font-family="Courier, monospace" font-size="12" fill="#b13e3e">c₂₁</text>
+    <text x="295" y="63" font-family="Courier, monospace" font-size="12" fill="#b13e3e">c₂₂</text>
+    <text x="325" y="63" font-family="Courier, monospace" font-size="12" fill="#b13e3e">c₂₃</text>
+    <text x="250" y="12" font-family="Arial" font-size="10" fill="#2c3e50">C = A·B (2×3)</text>
+
+    <!-- Flecha proceso -->
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="#2c3e50" />
+      </marker>
+    </defs>
+    <line x1="110" y1="55" x2="190" y2="55" stroke="#2c3e50" stroke-width="1.2" marker-end="url(#arrow)" />
+    <line x1="230" y1="55" x2="240" y2="55" stroke="#2c3e50" stroke-width="1.2" marker-end="url(#arrow)" />
+  </svg>
+
+  <p><strong>Procedimiento paso a paso (cálculo de C):</strong></p>
+  <pre style="background: #f4f4f4; padding: 0.8rem; border-left: 4px solid #2c3e50; font-family: monospace;">
+// C = A * B, con A(2x2) y B(2x3). 
+// Elemento (1,1): fila1_A · col1_B = 1*5 + 2*8 = 5 + 16 = 21
+// Elemento (1,2): fila1_A · col2_B = 1*6 + 2*9 = 6 + 18 = 24
+// Elemento (1,3): fila1_A · col3_B = 1*7 + 2*10 = 7 + 20 = 27
+// Elemento (2,1): fila2_A · col1_B = 3*5 + 4*8 = 15 + 32 = 47
+// Elemento (2,2): fila2_A · col2_B = 3*6 + 4*9 = 18 + 36 = 54
+// Elemento (2,3): fila2_A · col3_B = 3*7 + 4*10 = 21 + 40 = 61
+
+// Resultado:
+//    [ 21  24  27 ]
+//    [ 47  54  61 ]
+  </pre>
+
+  <!-- Interpretación geométrica con SVG -->
+  <h4>Interpretación como composición de transformaciones lineales</h4>
+  <svg width="450" height="180" viewBox="0 0 450 180" style="background: #ffffff; border: 1px solid #ccc;">
+    <!-- Ejes coordenados -->
+    <line x1="30" y1="150" x2="200" y2="150" stroke="#aaa" stroke-width="1" stroke-dasharray="3 2" />
+    <line x1="30" y1="150" x2="30" y2="30" stroke="#aaa" stroke-width="1" stroke-dasharray="3 2" />
+    <text x="10" y="40" font-family="Arial" font-size="9" fill="#2c3e50">y</text>
+    <text x="195" y="165" font-family="Arial" font-size="9" fill="#2c3e50">x</text>
+
+    <!-- Vector original v (en gris) -->
+    <defs>
+      <marker id="arrowVec" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#1e3c5c" />
+      </marker>
+    </defs>
+    <line x1="30" y1="150" x2="80" y2="90" stroke="#1e3c5c" stroke-width="2" marker-end="url(#arrowVec)" />
+    <text x="50" y="70" font-family="Arial" font-size="9" fill="#1e3c5c">v</text>
+
+    <!-- Aplicar B primero (transformación intermedia) -->
+    <line x1="30" y1="150" x2="150" y2="70" stroke="#2a5a3a" stroke-width="2" marker-end="url(#arrowVec)" />
+    <text x="120" y="40" font-family="Arial" font-size="9" fill="#2a5a3a">B·v</text>
+
+    <!-- Aplicar A después (producto total) -->
+    <line x1="30" y1="150" x2="190" y2="30" stroke="#b13e3e" stroke-width="2" marker-end="url(#arrowVec)" />
+    <text x="160" y="15" font-family="Arial" font-size="9" fill="#b13e3e">A·(B·v) = (AB)·v</text>
+
+    <!-- Nota aclaratoria -->
+    <text x="220" y="70" font-family="Arial" font-size="10" fill="#2c3e50">(AB) actúa como una única</text>
+    <text x="220" y="90" font-family="Arial" font-size="10" fill="#2c3e50">transformación: primero B, luego A.</text>
+  </svg>
+  <p><strong>Qué notar:</strong> El producto de matrices no es conmutativo (AB ≠ BA en general). Geométricamente, aplicar B y después A produce un efecto combinado equivalente a la matriz producto.</p>
+
+  <!-- 6. Ejemplos de aplicaciones reales y directas -->
+  <h4>Aplicaciones en contextos reales</h4>
+  <ul style="list-style-type: disc; margin-left: 1.5rem;">
+    <li><strong>Gráficos por computadora:</strong> Para rotar, escalar y trasladar objetos en 2D/3D se combinan matrices de transformación mediante multiplicación.</li>
+    <li><strong>Redes neuronales:</strong> Cada capa fully connected calcula una salida como producto de la matriz de pesos por el vector de entrada.</li>
+    <li><strong>Economía y cadenas de suministro:</strong> Multiplicación de matrices input-output para calcular demandas totales en sectores interrelacionados.</li>
+    <li><strong>Criptografía:</strong> Cifrados como Hill cipher utilizan multiplicación de matrices para codificar mensajes.</li>
+  </ul>
+
+  <!-- 7. Bibliografía confiable y verificable -->
+  <p><strong>Bibliografía:</strong></p>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li>• Strang, G. (2016). <em>Introduction to Linear Algebra</em> (5th ed.). Wellesley-Cambridge Press. Capítulo 2.4 (Reglas para productos de matrices).</li>
+  </ul>
+</li>
