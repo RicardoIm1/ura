@@ -171,7 +171,9 @@
   <section class="container">
     <h2 class="section-title">Objetivo General</h2>
     <p class="objetivo evaluacion-item tema-card">
-      Al finalizar el curso el alumno analizará procedimientos y protocolos para la creación de algoritmos, escritura de código y prueba de programas de cómputo en lenguaje estructurado C. con el fin de sustentar conocimientos de programación de mayor especialización.
+      Al finalizar el curso el alumno analizará procedimientos y protocolos para la creación de algoritmos, escritura de
+      código y prueba de programas de cómputo en lenguaje estructurado C. con el fin de sustentar conocimientos de
+      programación de mayor especialización.
     </p>
     <button class="apple-button"
       onclick="window.open('https://drive.google.com/file/d/1alVanW0D9hlKij8838TyPCv_Z1AxOvRT/view?usp=sharing', '_blank')">
@@ -190,8 +192,7 @@
         <ul class="tema-list">
           <!-- 1 -->
           <li>
-            <button class="btn-trans"
-              onclick="cargarTemaModal('1.1 Breve reseña de la computación', '1.1')">
+            <button class="btn-trans" onclick="cargarTemaModal('1.1 Breve reseña de la computación', '1.1')">
               1.1 Breve reseña de la computación
             </button>
           </li>
@@ -295,6 +296,10 @@
     </div>
   </section>
 
+  <footer>
+    © 2025 Universidad URA – Asignatura Fundamentos de Programación
+  </footer>
+
   <!-- Modal -->
   <div id="modal-info" class="modal">
     <div class="modal-overlay"></div>
@@ -312,27 +317,72 @@
     const modalClose = document.querySelector('.modal-close');
     const modalOverlay = document.querySelector('.modal-overlay');
 
-    // Función para abrir modal con HTML
-    function abrirModal(titulo, html) {
-      modalTitle.textContent = titulo;
-      modalText.innerHTML = html;
-      modal.classList.add('show');
-      modal.style.display = 'block';
+    // NUEVA FUNCIÓN: Carga el contenido desde archivo
+    async function cargarTemaModal(titulo, nombreArchivo) {
+      try {
+        // Mostrar estado de carga
+        modalText.innerHTML = `
+          <div style="text-align: center; padding: 40px;">
+            <div style="font-size: 2em; margin-bottom: 20px;">⏳</div>
+            <p>Cargando contenido premium...</p>
+            <p style="font-size: 0.9em; color: #666;">Archivo: ${nombreArchivo}.html</p>
+          </div>
+        `;
+
+        // Mostrar modal inmediatamente
+        modalTitle.textContent = titulo;
+        modal.classList.add('show');
+        modal.style.display = 'block';
+
+        // ✅ CORRECCIÓN: Cargar desde la carpeta correcta
+        // Ajusta esta ruta según tu estructura real
+        const rutaArchivo = `/ura/neg2/temas/${nombreArchivo}.html`;
+        const respuesta = await fetch(rutaArchivo);
+
+        if (!respuesta.ok) {
+          throw new Error(`No se encontró el archivo: ${rutaArchivo}`);
+        }
+
+        const contenido = await respuesta.text();
+        modalText.innerHTML = contenido;
+
+      } catch (error) {
+        console.error('Error cargando el tema:', error);
+        modalText.innerHTML = `
+          <div style="padding: 20px; color: #d32f2f;">
+            <h4>❌ Error al cargar el contenido</h4>
+            <p><strong>Archivo:</strong> ${nombreArchivo}.html</p>
+            <p><strong>Error:</strong> ${error.message}</p>
+            <p>Verifica que el archivo exista en: <code>/ura/neg2/temas/</code></p>
+            <button onclick="cargarTemaModal('${titulo}', '${nombreArchivo}')" 
+                    style="margin-top: 15px; padding: 8px 16px; background: #0066cc; color: white; border: none; border-radius: 4px;">
+              Reintentar
+            </button>
+          </div>
+        `;
+      }
     }
 
     // Función para cerrar modal
     function cerrarModal() {
       modal.classList.remove('show');
-      setTimeout(() => modal.style.display = 'none', 300); // espera la transición
+      setTimeout(() => modal.style.display = 'none', 300);
     }
 
     modalClose.addEventListener('click', cerrarModal);
     modalOverlay.addEventListener('click', cerrarModal);
+
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('show')) {
+        cerrarModal();
+      }
+    });
   </script>
 
-  <footer>
-    © 2025 Universidad URA – Asignatura Fundamentos de Programación
-  </footer>
+</body>
+
+</html>
 </body>
 
 </html>
