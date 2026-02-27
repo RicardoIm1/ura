@@ -1,0 +1,196 @@
+<li>
+  <!-- CONTENEDOR PRINCIPAL DEL TEMA -->
+  <article style="font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; max-width: 1000px; margin: 0 auto; background: #ffffff; padding: 2rem 1.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); line-height: 1.6; color: #1a2b3c;">
+
+    <!-- 1. TITULO DEL TEMA -->
+    <h1 style="font-size: 2.2rem; font-weight: 500; border-left: 6px solid #1e4f7a; padding-left: 1.2rem; margin-top: 0; margin-bottom: 1rem; letter-spacing: -0.01em; color: #0a2942;">
+      1.4 Representación matricial de un sistema de ecuaciones lineales
+    </h1>
+
+    <!-- 2. SVG RELOJ (TIEMPO ESTIMADO) -->
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; background: #f2f6fa; padding: 0.6rem 1.2rem; border-radius: 40px; width: fit-content;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.8;">
+        <circle cx="12" cy="12" r="9" stroke="#1e4f7a" stroke-width="1.5" fill="white"/>
+        <path d="M12 7V12L15 15" stroke="#1e4f7a" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="1.5" fill="#1e4f7a"/>
+      </svg>
+      <span style="font-weight: 400; color: #0e3b5e;">Tiempo estimado de estudio · 45 minutos (referencia: MIT OpenCourseWare, álgebra lineal básica)</span>
+    </div>
+
+    <!-- 3. OBJETIVO DEL TEMA -->
+    <section style="margin-bottom: 2.4rem;">
+      <h2 style="font-size: 1.6rem; font-weight: 450; border-bottom: 1px solid #cbd5e0; padding-bottom: 0.4rem; color: #143750;">Objetivo</h2>
+      <p style="margin-top: 0.6rem; background: #f9fcff; padding: 1rem 1.6rem; border-radius: 16px;">
+        Comprender cómo un sistema de ecuaciones lineales se puede escribir de forma compacta como una ecuación matricial A·x = b. Identificar la matriz de coeficientes, el vector de incógnitas y el vector de términos independientes, y utilizar esta representación para analizar la existencia de soluciones.
+      </p>
+    </section>
+
+    <!-- 4. IDEA PRINCIPAL -->
+    <section style="margin-bottom: 2.4rem;">
+      <h2 style="font-size: 1.6rem; font-weight: 450; border-bottom: 1px solid #cbd5e0; padding-bottom: 0.4rem; color: #143750;">Idea principal</h2>
+      <p style="margin-top: 0.6rem;">
+        Un sistema de m ecuaciones lineales con n incógnitas <strong>no es más que una multiplicación de matrices</strong>. 
+        Si ordenamos los coeficientes en una matriz A (de tamaño m×n), las incógnitas en un vector columna x (dimensión n) 
+        y las constantes en otro vector b (dimensión m), el sistema original se condensa en <strong>A·x = b</strong>. 
+        Esta notación no solo ahorra espacio, sino que permite aplicar propiedades del álgebra matricial (inversas, rango, determinantes) 
+        para decidir si el sistema tiene solución única, infinitas o ninguna.
+      </p>
+    </section>
+
+    <!-- 5. EJERCICIOS VISUALMENTE CLAROS (TABLAS Y GRÁFICAS) -->
+    <section style="margin-bottom: 2.8rem;">
+      <h2 style="font-size: 1.6rem; font-weight: 450; border-bottom: 1px solid #cbd5e0; padding-bottom: 0.4rem; color: #143750;">Ejercicio visual: escritura y lectura matricial</h2>
+      
+      <!-- SUBSECCIÓN: TABLA DE CORRESPONDENCIA -->
+      <p style="margin-bottom: 0.8rem;"><strong>Paso a paso: del sistema a la forma matricial</strong></p>
+      <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.03); border-radius: 16px; overflow: hidden; margin-bottom: 2rem;">
+        <thead style="background: #e7edf3;">
+          <tr>
+            <th style="padding: 12px; font-weight: 500; color: #143750;">Sistema original</th>
+            <th style="padding: 12px; font-weight: 500; color: #143750;">Matriz A (coeficientes)</th>
+            <th style="padding: 12px; font-weight: 500; color: #143750;">Vector x (incógnitas)</th>
+            <th style="padding: 12px; font-weight: 500; color: #143750;">Vector b (términos indep.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #dde4ec;">
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">3x + 2y = 7<br>4x - 5y = 11</td>
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">⎡3   2⎤<br>⎣4  -5⎦</td>
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">⎡x⎤<br>⎣y⎦</td>
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">⎡ 7⎤<br>⎣11⎦</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #dde4ec; background: #f8fafd;">
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">2x₁ -  x₂ +  x₃ = 4<br> x₁ + 3x₂ - 2x₃ = 5<br> -x₁ + 2x₂ + 6x₃ = 0</td>
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">⎡2  -1   1⎤<br>⎢1   3  -2⎥<br>⎣-1  2   6⎦</td>
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">⎡x₁⎤<br>⎢x₂⎥<br>⎣x₃⎦</td>
+            <td style="padding: 14px; font-family: 'Courier New', monospace;">⎡4⎤<br>⎢5⎥<br>⎣0⎦</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.95rem; color: #2b4a6f; margin-top: -0.8rem;">⬆️ Cada fila de la matriz A multiplicada por x reproduce la ecuación correspondiente.</p>
+
+      <!-- GRÁFICA CANVAS: INTERSECCIÓN DE RECTAS (2x2) Y SU MATRIZ -->
+      <p style="margin-top: 2.2rem; margin-bottom: 0.8rem;"><strong>Interpretación geométrica de la forma matricial</strong></p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
+        <!-- Canvas para la gráfica de las dos rectas -->
+        <div style="flex: 1 1 280px;">
+          <canvas id="graficaRectasMatriz" width="300" height="300" style="border: 1px solid #bdc9d6; border-radius: 24px; background: #fdfeff; box-shadow: 0 5px 14px rgba(0,20,40,0.05); display: block; margin-bottom: 0.5rem;"></canvas>
+          <p style="text-align: center; font-weight: 350; font-size: 0.9rem; color: #1f4970;">Sistema: 3x + 2y = 7  (azul) ;  4x - 5y = 11  (naranja)</p>
+        </div>
+        <!-- Bloque de explicación y matriz asociada -->
+        <div style="flex: 2 1 300px;">
+          <div style="background: #f2f7fd; padding: 1rem 1.6rem; border-radius: 24px;">
+            <p style="margin-top: 0;"><strong>¿Qué observar?</strong> La solución (x,y) es el punto donde se cortan ambas rectas. En lenguaje matricial:</p>
+            <pre style="background: #ffffff; padding: 0.8rem; border-radius: 12px; font-size: 1.1rem; overflow-x: auto; white-space: pre-wrap; word-break: break-word; font-family: 'Courier New', monospace; border: 1px solid #cbd6e4;">
+⎡3   2⎤ ⎡x⎤   =   ⎡7⎤
+⎣4  -5⎦ ⎣y⎦       ⎣11⎦   →   A·x = b
+            </pre>
+            <p>El punto de intersección calculado (x≈2.13, y≈0.30) satisface ambas ecuaciones. La matriz A contiene las pendientes implícitas; el vector b desplaza las rectas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCRIPT DE LA GRÁFICA (PRECISA, NO INTERACTIVA) -->
+      <script>
+        (function() {
+          const canvas = document.getElementById('graficaRectasMatriz');
+          if (!canvas) return;
+          const ctx = canvas.getContext('2d');
+          const w = 300, h = 300;
+          ctx.clearRect(0, 0, w, h);
+          
+          // Estilo del plano
+          ctx.strokeStyle = '#a0b8cf';
+          ctx.lineWidth = 0.5;
+          // lineas secundarias (gris muy claro)
+          ctx.beginPath();
+          for (let i = 0; i <= 10; i++) {
+            let x = i * 30;
+            ctx.moveTo(x, 0); ctx.lineTo(x, h);
+            ctx.moveTo(0, x); ctx.lineTo(w, x);
+          }
+          ctx.strokeStyle = '#e0e8f0';
+          ctx.stroke();
+
+          // Ejes principales (negro suave)
+          ctx.beginPath();
+          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = '#2b4f6e';
+          ctx.moveTo(150, 0); ctx.lineTo(150, h);
+          ctx.moveTo(0, 150); ctx.lineTo(w, 150);
+          ctx.stroke();
+
+          // Escala: 1 unidad = 30 píxeles. origen en (150,150)
+          const toX = (x) => 150 + x * 30;
+          const toY = (y) => 150 - y * 30;  // porque Y invertido en canvas
+
+          // Dibujar recta 1: 3x + 2y = 7  -> y = (7 - 3x)/2
+          ctx.beginPath();
+          ctx.strokeStyle = '#1f77b4';
+          ctx.lineWidth = 2.5;
+          let x1 = -4, y1 = (7 - 3*x1)/2;
+          let x2 = 5, y2 = (7 - 3*x2)/2;
+          ctx.moveTo(toX(x1), toY(y1));
+          ctx.lineTo(toX(x2), toY(y2));
+          ctx.stroke();
+
+          // recta 2: 4x - 5y = 11 -> y = (4x - 11)/5
+          ctx.beginPath();
+          ctx.strokeStyle = '#d97706';
+          ctx.lineWidth = 2.5;
+          y1 = (4*x1 - 11)/5;
+          y2 = (4*x2 - 11)/5;
+          ctx.moveTo(toX(x1), toY(y1));
+          ctx.lineTo(toX(x2), toY(y2));
+          ctx.stroke();
+
+          // Punto solución (aproximado: x≈2.13, y≈0.30)
+          ctx.beginPath();
+          ctx.fillStyle = '#b11e4a';
+          ctx.arc(toX(2.13), toY(0.30), 5, 0, 2*Math.PI);
+          ctx.fill();
+          ctx.strokeStyle = 'white';
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
+
+          // etiquetas pequeñas
+          ctx.font = '10px "Courier New", monospace';
+          ctx.fillStyle = '#143750';
+          ctx.fillText('x', 165, 138); 
+          ctx.fillText('y', 138, 125);
+        })();
+      </script>
+      <p style="font-size: 0.95rem; margin-top: 0.6rem; background: #eaf2fa; padding: 0.6rem 1.2rem; border-radius: 30px;">
+        📐 Cada recta es una ecuación individual; la matriz A contiene los coeficientes que definen su pendiente. El vector b determina su ordenada al origen. La representación A·x = b encapsula toda la información geométrica.
+      </p>
+    </section>
+
+    <!-- 6. EJEMPLOS DE APLICACIONES REALES Y DIRECTAS -->
+    <section style="margin-bottom: 2.4rem;">
+      <h2 style="font-size: 1.6rem; font-weight: 450; border-bottom: 1px solid #cbd5e0; padding-bottom: 0.4rem; color: #143750;">Aplicaciones reales</h2>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 1rem; padding-left: 1.8rem; position: relative;">
+          <span style="position: absolute; left: 0; color: #1b5a8c; font-weight: 500;">⚙️</span> 
+          <strong>Ingeniería estructural:</strong> Cada ecuación representa el equilibrio de fuerzas en un nodo de una armadura. La matriz A (rigidez) relaciona desplazamientos (x) con fuerzas externas (b). Resolver A·x = b da las deformaciones.
+        </li>
+        <li style="margin-bottom: 1rem; padding-left: 1.8rem; position: relative;">
+          <span style="position: absolute; left: 0; color: #1b5a8c; font-weight: 500;">🔌</span> 
+          <strong>Circuitos eléctricos (Leyes de Kirchhoff):</strong> Las corrientes en mallas forman un sistema lineal. La representación matricial permite usar métodos como eliminación de Gauss o regla de Cramer para hallar corrientes y voltajes.
+        </li>
+        <li style="margin-bottom: 1rem; padding-left: 1.8rem; position: relative;">
+          <span style="position: absolute; left: 0; color: #1b5a8c; font-weight: 500;">📊</span> 
+          <strong>Regresión lineal (mínimos cuadrados):</strong> Dados puntos experimentales, se plantea un sistema sobredeterminado que se resuelve mediante la ecuación normal AᵀA x = Aᵀb. La matriz de diseño A contiene las variables predictoras.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 7. BIBLIOGRAFÍA CONFIABLE -->
+    <section style="margin-top: 2.8rem; padding-top: 0.8rem; border-top: 1px dashed #b7c9dd;">
+      <h2 style="font-size: 1.4rem; font-weight: 450; color: #143750;">Bibliografía</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.3rem;">📘 Strang, G. (2016). <em>Introducción al álgebra lineal</em>. (5ª edición). Wellesley-Cambridge Press. Capítulo 1: Matrices y eliminación de Gauss.</li>
+      </ul>
+    </section>
+
+  </article>
+</li>
