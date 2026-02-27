@@ -1,168 +1,170 @@
-<div class="tema-contenido">
-    <!-- 1. TÍTULO DEL TEMA -->
-    <!-- <h2>1.1. Definición de matriz, orden y nomenclatura</h2> -->
+<div class="tema-contenido" style="font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 1100px; margin: 0 auto; background: #f8fafc; padding: 2rem; border-radius: 32px; box-shadow: 0 20px 40px -12px rgba(0,20,40,0.25);">
 
-    <!-- 2. SVG RELOJ TIEMPO ESTIMADO -->
-    <div class="tiempo-estimado">
-        <svg width="60" height="60" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="55" stroke="#4a6fa5" stroke-width="3" fill="none" />
-            <circle cx="60" cy="60" r="50" stroke="#e0e7ff" stroke-width="8" fill="none" />
-            <!-- Marcas de minutos -->
-            <g id="marcas">
-                <line x1="60" y1="15" x2="60" y2="20" stroke="#4a6fa5" stroke-width="2" />
-                <line x1="60" y1="100" x2="60" y2="95" stroke="#4a6fa5" stroke-width="2" />
-                <line x1="15" y1="60" x2="20" y2="60" stroke="#4a6fa5" stroke-width="2" />
-                <line x1="100" y1="60" x2="95" y2="60" stroke="#4a6fa5" stroke-width="2" />
-            </g>
-            <!-- Aguja del reloj -->
-            <line x1="60" y1="60" x2="60" y2="30" stroke="#2c3e50" stroke-width="3" stroke-linecap="round">
-                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 60"
-                    to="180 60 60" dur="20s" repeatCount="indefinite" />
-            </line>
-            <circle cx="60" cy="60" r="4" fill="#2c3e50" />
-            <text x="60" y="75" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="14"
-                font-weight="bold">2
-                min</text>
-        </svg>
-        <p class="tiempo-texto">Tiempo estimado basado en programas de MIT, Stanford y UC Berkeley</p>
+    <!-- Encabezado con título y tiempo estimado (mejorado) -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 2.5rem; background: white; padding: 1.2rem 2rem; border-radius: 60px; box-shadow: 0 4px 12px rgba(0,32,64,0.08);">
+        <h2 style="font-size: 1.9rem; font-weight: 600; margin: 0; color: #0b2b40; letter-spacing: -0.02em; border-left: 8px solid #2b6c8f; padding-left: 1.2rem;">1.1 Definición de matriz, orden y nomenclatura</h2>
+        
+        <div class="tiempo-estimado" style="display: flex; align-items: center; gap: 10px; background: #e3f0f9; padding: 0.2rem 1.2rem 0.2rem 0.8rem; border-radius: 40px;">
+            <svg width="52" height="52" viewBox="0 0 120 120" style="display: block;">
+                <circle cx="60" cy="60" r="55" stroke="#2b6c8f" stroke-width="3" fill="none" />
+                <circle cx="60" cy="60" r="50" stroke="#d4e3f0" stroke-width="8" fill="none" />
+                <!-- Marcas de minutos más elegantes -->
+                <g stroke="#2b6c8f" stroke-width="2.5">
+                    <line x1="60" y1="18" x2="60" y2="26" />
+                    <line x1="60" y1="94" x2="60" y2="102" />
+                    <line x1="18" y1="60" x2="26" y2="60" />
+                    <line x1="94" y1="60" x2="102" y2="60" />
+                </g>
+                <!-- Aguja estilizada -->
+                <line x1="60" y1="60" x2="60" y2="34" stroke="#1a3f54" stroke-width="4" stroke-linecap="round">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 60" to="180 60 60" dur="20s" repeatCount="indefinite" />
+                </line>
+                <circle cx="60" cy="60" r="5" fill="#1a3f54" />
+                <text x="60" y="80" text-anchor="middle" fill="#1a3f54" font-family="Inter, Arial" font-size="14" font-weight="600">2 min</text>
+            </svg>
+            <p class="tiempo-texto" style="margin: 0; font-size: 0.95rem; color: #1f4b66; max-width: 200px; font-weight: 450; line-height: 1.3;">Tiempo estimado · referencias MIT, Stanford, Berkeley</p>
+        </div>
     </div>
-    <div class="desarrollo">
-        <h1></h1>Clasificación de Matrices</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Tipo de Matriz</th>
-                    <th>Descripción</th>
-                    <th>Ejemplo / Característica</th>
-                </tr>
+    <!-- Desarrollo: CLASIFICACIÓN DE MATRICES con diseño tipo tarjetas -->
+    <div class="desarrollo" style="background: white; border-radius: 36px; padding: 2rem 1.5rem; box-shadow: 0 12px 30px rgba(0,30,50,0.1);">
+        
+        <h3 style="font-size: 1.8rem; font-weight: 550; color: #0e3b4f; margin-top: 0; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 10px;">
+            <span style="background: #1d5e85; width: 14px; height: 14px; border-radius: 20px;"></span> 
+            Clasificación de Matrices
+        </h3>
+
+        <!-- Tabla rediseñada con tarjetas internas y mejor tipografía (sin emojis) -->
+        <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px; font-size: 1rem;">
+            <thead style="display: none;"> <!-- ocultamos cabecera tradicional para dar más peso visual a las categorías -->
+                <tr><th>Tipo</th><th>Descripción</th><th>Ejemplo</th></tr>
             </thead>
             <tbody>
-                <!-- Por dimensión -->
-                <tr class="categoria">
-                    <td colspan="3">🔹 SEGÚN SU DIMENSIÓN</td>
+                <!-- SEGÚN SU DIMENSIÓN -->
+                <tr><td colspan="3" style="padding: 0.8rem 0 0.2rem 0;">
+                    <div style="background: linear-gradient(90deg, #e0eff9, #ffffff); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; color: #113946; letter-spacing: 0.3px; border-left: 6px solid #1e6a92;">SEGÚN SU DIMENSIÓN</div>
+                </td></tr>
+                <tr style="background: #ffffff; border-radius: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Fila</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">Tiene una sola fila</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', 'Cascadia Code', monospace;">[1 2 3] (1×3)</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Fila</strong></td>
-                    <td>Tiene una sola fila </td>
-                    <td><span class="ejemplo">[1 2 3]</span> (1×3)</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Columna</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">Tiene una sola columna</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[1; 2; 3] (3×1)</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Columna</strong></td>
-                    <td>Tiene una sola columna </td>
-                    <td><span class="ejemplo">[1; 2; 3]</span> (3×1)</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Rectangular</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">filas ≠ columnas</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">2×3, 3×2, 4×3</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Rectangular</strong></td>
-                    <td>Número de filas ≠ número de columnas </td>
-                    <td><span class="ejemplo">2×3, 3×2, 4×3</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Matriz Cuadrada</strong></td>
-                    <td>Mismo número de filas que columnas (n×n) </td>
-                    <td><span class="ejemplo">2×2, 3×3, 4×4</span></td>
-                </tr>
-
-                <!-- Matrices cuadradas especiales -->
-                <tr class="categoria">
-                    <td colspan="3">🔹 MATRICES CUADRADAS ESPECIALES</td>
-                </tr>
-                <tr>
-                    <td><strong>Matriz Triangular Superior</strong></td>
-                    <td>Elementos debajo de la diagonal principal son cero </td>
-                    <td><span class="ejemplo">[a b c; 0 d e; 0 0 f]</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Matriz Triangular Inferior</strong></td>
-                    <td>Elementos encima de la diagonal principal son cero </td>
-                    <td><span class="ejemplo">[a 0 0; b c 0; d e f]</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Matriz Diagonal</strong></td>
-                    <td>Solo los elementos de la diagonal principal son no nulos 
-                    </td>
-                    <td><span class="ejemplo">[a 0 0; 0 b 0; 0 0 c]</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Matriz Escalar</strong></td>
-                    <td>Matriz diagonal con todos los elementos de la diagonal iguales
-                        
-                    </td>
-                    <td><span class="ejemplo">[k 0 0; 0 k 0; 0 0 k]</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Matriz Identidad</strong></td>
-                    <td>Matriz diagonal con unos en la diagonal principal </td>
-                    <td><span class="ejemplo">[1 0 0; 0 1 0; 0 0 1]</span></td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Cuadrada</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">filas = columnas (n×n)</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">2×2, 3×3, 4×4</td>
                 </tr>
 
-                <!-- Por propiedades de sus elementos -->
-                <tr class="categoria">
-                    <td colspan="3">🔹 SEGÚN SUS ELEMENTOS</td>
+                <!-- MATRICES CUADRADAS ESPECIALES -->
+                <tr><td colspan="3" style="padding: 1.2rem 0 0.2rem 0;">
+                    <div style="background: linear-gradient(90deg, #e0eff9, #ffffff); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; color: #113946; border-left: 6px solid #1e6a92;">MATRICES CUADRADAS ESPECIALES</div>
+                </td></tr>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Triangular Superior</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">ceros debajo de diagonal</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[a b c; 0 d e; 0 0 f]</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Nula (Cero)</strong></td>
-                    <td>Todos sus elementos son cero </td>
-                    <td><span class="ejemplo">[0 0 0; 0 0 0; 0 0 0]</span></td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Triangular Inferior</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">ceros encima de diagonal</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[a 0 0; b c 0; d e f]</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Simétrica</strong></td>
-                    <td>A = Aᵀ (elementos simétricos iguales) </td>
-                    <td><span class="ejemplo">[a b c; b d e; c e f]</span></td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Diagonal</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">solo diagonal no nula</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[a 0 0; 0 b 0; 0 0 c]</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Antisimétrica</strong></td>
-                    <td>A = -Aᵀ (diagonal principal = 0) </td>
-                    <td><span class="ejemplo">[0 a b; -a 0 c; -b -c 0]</span></td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Escalar</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">diagonal con el mismo valor</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[k 0 0; 0 k 0; 0 0 k]</td>
+                </tr>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Identidad</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">unos en diagonal principal</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[1 0 0; 0 1 0; 0 0 1]</td>
                 </tr>
 
-                <!-- Operaciones especiales -->
-                <tr class="categoria">
-                    <td colspan="3">🔹 POR OPERACIONES ESPECIALES</td>
+                <!-- SEGÚN SUS ELEMENTOS -->
+                <tr><td colspan="3" style="padding: 1.2rem 0 0.2rem 0;">
+                    <div style="background: linear-gradient(90deg, #e0eff9, #ffffff); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; color: #113946; border-left: 6px solid #1e6a92;">SEGÚN SUS ELEMENTOS</div>
+                </td></tr>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Nula (Cero)</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">todos los elementos son cero</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[0 0 0; 0 0 0; 0 0 0]</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Traspuesta (Aᵀ)</strong></td>
-                    <td>Se obtiene cambiando filas por columnas </td>
-                    <td>Si A es 2×3, Aᵀ es 3×2</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Simétrica</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">A = Aᵀ</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[a b c; b d e; c e f]</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Regular (Inversible)</strong></td>
-                    <td>Matriz cuadrada que tiene inversa (determinante ≠ 0) </td>
-                    <td>Existe A⁻¹ tal que A·A⁻¹ = I</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Antisimétrica</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">A = -Aᵀ (diag. ceros)</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">[0 a b; -a 0 c; -b -c 0]</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Singular</strong></td>
-                    <td>Matriz cuadrada que NO tiene inversa (determinante = 0) </td>
-                    <td>No existe A⁻¹</td>
+
+                <!-- POR OPERACIONES ESPECIALES -->
+                <tr><td colspan="3" style="padding: 1.2rem 0 0.2rem 0;">
+                    <div style="background: linear-gradient(90deg, #e0eff9, #ffffff); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 600; color: #113946; border-left: 6px solid #1e6a92;">POR OPERACIONES ESPECIALES</div>
+                </td></tr>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Traspuesta (Aᵀ)</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">filas por columnas</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">si A es 2×3, Aᵀ es 3×2</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Ortogonal</strong></td>
-                    <td>A · Aᵀ = Aᵀ · A = I </td>
-                    <td>A⁻¹ = Aᵀ</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Regular (Inversible)</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">existe A⁻¹, det ≠ 0</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">A·A⁻¹ = I</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Idempotente</strong></td>
-                    <td>A² = A </td>
-                    <td>Al multiplicarse por sí misma da la misma matriz</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Singular</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">no tiene inversa, det = 0</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">no existe A⁻¹</td>
                 </tr>
-                <tr>
-                    <td><strong>Matriz Involutiva</strong></td>
-                    <td>A² = I </td>
-                    <td>Su cuadrado es la matriz identidad</td>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Ortogonal</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">A·Aᵀ = Aᵀ·A = I</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">A⁻¹ = Aᵀ</td>
+                </tr>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Idempotente</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">A² = A</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">A·A = A</td>
+                </tr>
+                <tr style="background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <td style="padding: 1rem 1.2rem; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background: #f4fafd;"><strong style="color: #11516d;">Matriz Involutiva</strong></td>
+                    <td style="padding: 1rem 0.5rem; color: #2a4050;">A² = I</td>
+                    <td style="padding: 1rem 1.2rem; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background: #f4fafd; font-family: 'JetBrains Mono', monospace;">su cuadrado es I</td>
                 </tr>
             </tbody>
         </table>
 
-        <!-- 8. BIBLIOGRAFÍA -->
-        <div class="bibliografia">
-            <h3>Bibliografía</h3>
-            <ul>
-                <li><strong>Frank S. Budick</strong> (2007). <em>Matemáticas Aplicadas para Administración, economía y
-                        ciencias sociales. </em> (4ª ed.). McGraw Hill Interamericana. <span class="isbn">ISBN:
-                        970-10-5698-1</span>
-                    <em>//
-                        Libro de referencia estándar en universidades como MIT</em>
+        <!-- BIBLIOGRAFÍA rediseñada (nota: sin emojis) -->
+        <div class="bibliografia" style="margin-top: 3rem; background: #f1f6fa; border-radius: 32px; padding: 1.5rem 2rem;">
+            <h3 style="font-size: 1.4rem; font-weight: 550; color: #0e3b4f; margin-top: 0; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px;">
+                <span style="background: #1d5e85; width: 12px; height: 12px; border-radius: 20px;"></span> Bibliografía
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="background: white; padding: 1rem 1.5rem; border-radius: 40px; box-shadow: 0 4px 10px rgba(0,20,30,0.05);">
+                    <strong style="color: #11516d;">Frank S. Budnick</strong> (2007). 
+                    <em style="color: #1d4b63;">Matemáticas Aplicadas para Administración, economía y ciencias sociales</em> (4ª ed.). McGraw Hill Interamericana. 
+                    <span style="font-family: monospace; background: #e5ecf3; padding: 0.2rem 0.8rem; border-radius: 30px; margin-left: 0.5rem; font-size: 0.9rem;">ISBN: 970-10-5698-1</span>
+                    <div style="margin-top: 0.4rem; color: #326f8c; font-size: 0.9rem; border-left: 3px solid #7da7c9; padding-left: 1rem;">Libro de referencia estándar en universidades como MIT</div>
                 </li>
             </ul>
         </div>
-    </div>
+    </div> <!-- fin desarrollo -->
+</div> <!-- fin tema-contenido -->
