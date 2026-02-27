@@ -477,8 +477,10 @@
         }
 
         .btn-trans {
-            min-width: 5rem;
-            /* Cambia width por min-width */
+            width: auto;
+            /* Cambia de 5rem a auto */
+            min-width: 120px;
+            /* Establece un ancho mínimo pero permite crecimiento */
             background: transparent;
             color: var(--apple-vibrant-blue);
             padding: 10px 16px;
