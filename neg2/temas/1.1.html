@@ -1,199 +1,213 @@
-<div class="tema-contenido">
+<li>
+  <div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 900px; margin: 0 auto; background: #ffffff; color: #1a2b3c; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
 
-    <!-- 1. TÍTULO DEL TEMA -->
-    <!-- <h2>1.1. Definición de matriz, orden y nomenclatura</h2> -->
+    <!-- 1. Título del tema -->
+    <h2 style="font-size: 2rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; border-bottom: 3px solid #3b7fbd; padding-bottom: 0.3rem; color: #0a2942;">1.1 Definición de matriz, orden y nomenclatura</h2>
 
-    <!-- 2. SVG RELOJ TIEMPO ESTIMADO -->
-    <div class="tiempo-estimado">
-        <svg width="60" height="60" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="55" stroke="#4a6fa5" stroke-width="3" fill="none" />
-            <circle cx="60" cy="60" r="50" stroke="#e0e7ff" stroke-width="8" fill="none" />
-            <!-- Marcas de minutos -->
-            <g id="marcas">
-                <line x1="60" y1="15" x2="60" y2="20" stroke="#4a6fa5" stroke-width="2" />
-                <line x1="60" y1="100" x2="60" y2="95" stroke="#4a6fa5" stroke-width="2" />
-                <line x1="15" y1="60" x2="20" y2="60" stroke="#4a6fa5" stroke-width="2" />
-                <line x1="100" y1="60" x2="95" y2="60" stroke="#4a6fa5" stroke-width="2" />
-            </g>
-            <!-- Aguja del reloj -->
-            <line x1="60" y1="60" x2="60" y2="30" stroke="#2c3e50" stroke-width="3" stroke-linecap="round">
-                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 60"
-                    to="180 60 60" dur="20s" repeatCount="indefinite" />
-            </line>
-            <circle cx="60" cy="60" r="4" fill="#2c3e50" />
-            <text x="60" y="75" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="14"
-                font-weight="bold">20
-                min</text>
-        </svg>
-        <p class="tiempo-texto">Tiempo estimado basado en programas de MIT, Stanford y UC Berkeley</p>
+    <!-- 2. SVG de un reloj (tiempo estimado: 45 min, basado en estándares de cursos introductorios) -->
+    <div style="display: flex; align-items: center; gap: 12px; margin: 1.5rem 0 2rem 0; background: #f0f7ff; padding: 0.8rem 1.2rem; border-radius: 60px; width: fit-content;">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="19" cy="19" r="16" stroke="#1e4f7a" stroke-width="2.5" fill="white"/>
+        <circle cx="19" cy="19" r="2.5" fill="#1e4f7a"/>
+        <path d="M19 8 L19 20 L26 24" stroke="#1e4f7a" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="31" y="10" font-size="10" fill="#1e4f7a" font-weight="bold">45</text>
+        <text x="31" y="22" font-size="7" fill="#1e4f7a">min</text>
+      </svg>
+      <span style="font-size: 1rem; color: #0a2942; font-weight: 500;">Tiempo estimado: 45 min (referencia: cursos lineales M.I.T. & UNAM)</span>
     </div>
 
-    <!-- 3. OBJETIVO DEL TEMA -->
-    <div class="objetivo">
-        <h3>Objetivo del tema</h3>
-        <p>Al finalizar este tema, deberías ser capaz de Comprender y definir formalmente qué es una matriz</p>
+    <!-- 3. Objetivo del tema -->
+    <div style="margin-bottom: 2.2rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; color: #1e4f7a;">▸ Objetivo del tema</h3>
+      <p style="font-size: 1.1rem; line-height: 1.5; margin: 0; background: #f9fafc; padding: 1rem 1.5rem; border-left: 6px solid #3b7fbd; border-radius: 0 12px 12px 0;">
+        El estudiante comprenderá la definición formal de una matriz, identificará sus elementos, 
+        determinará su orden (dimensión) y utilizará correctamente la nomenclatura estándar para 
+        representar matrices y sus componentes en contextos algebraicos.
+      </p>
     </div>
-    <br>
 
-    <!-- 4. IDEA PRINCIPAL -->
-    <div class="idea-principal">
-        <h3>Idea principal</h3>
-        <h4>Propósito del estudio del álgebra matricial</h4>
-        <p>
-            Las matrices ofrecen un medio conveniente para almacenar, presentar y manipular datos.
-            Los datos de las calificaciones obtenidas en una prueba se almacenan convenientemente
-            en la matriz anterior y ésta ofrece un método claro y compacto para presentar estos datos.
-            La mayor parte de los datos almacenados en computadoras se almacenan en un formato
-            de matriz. En el lenguaje FORTRAN se reserva espacio de almacenamiento para arreglos
-            en la memoria de la computadora para utilizar el enunciado DIMENSION. El enunciado “DIMENSION A(20, 30)”
-            reserva espacio para una matriz A que tiene una dimensión
-            (20 30). En el lenguaje BASIC, el enunciado “DIM A (20, 30)” cumple la misma función.
+    <!-- 4. Idea principal -->
+    <div style="margin-bottom: 2.2rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; color: #1e4f7a;">▸ Idea principal</h3>
+      <p style="font-size: 1.05rem; line-height: 1.5; margin: 0; background: #ffffff; border: 1px solid #dde7f0; padding: 1rem 1.5rem; border-radius: 12px;">
+        Una matriz es un arreglo rectangular de números (o elementos) dispuestos en filas y columnas. 
+        Se denota usualmente con letras mayúsculas (<b>A</b>, <b>B</b>, …) y su tamaño u <i>orden</i> 
+        se especifica como <b>m × n</b>, donde <b>m</b> es el número de filas y <b>n</b> el número de 
+        columnas. Cada entrada se identifica con un doble subíndice: <b>aᵢⱼ</b> representa el elemento 
+        en la fila <b>i</b> y columna <b>j</b>.
+      </p>
+    </div>
+
+    <!-- 5. Ejercicios visualmente claros: tabla + gráfica con canvas -->
+    <div style="margin-bottom: 2.5rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 1.2rem; color: #1e4f7a;">▸ Representación visual y ejercicios</h3>
+      
+      <!-- Tabla 1: Matriz genérica A de orden 3x4 -->
+      <div style="background: #f2f6fc; padding: 1.2rem; border-radius: 18px; margin-bottom: 2rem;">
+        <p style="margin-top: 0; margin-bottom: 0.8rem; font-weight: 500;"><b>Matriz A (orden 3×4):</b> 3 filas, 4 columnas.</p>
+        <table style="border-collapse: collapse; margin: 0 auto; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; min-width: 280px;">
+          <thead style="background: #1e4f7a; color: white;">
+            <tr>
+              <th style="padding: 10px 12px; font-weight: 500;">fila\col</th>
+              <th style="padding: 10px 12px; font-weight: 500;">col 1</th>
+              <th style="padding: 10px 12px; font-weight: 500;">col 2</th>
+              <th style="padding: 10px 12px; font-weight: 500;">col 3</th>
+              <th style="padding: 10px 12px; font-weight: 500;">col 4</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 8px 10px; background: #e6edf6; font-weight: 500;">fila 1</td>
+              <td style="padding: 8px 10px;">a₁₁ = 2</td>
+              <td style="padding: 8px 10px;">a₁₂ = 5</td>
+              <td style="padding: 8px 10px;">a₁₃ = -1</td>
+              <td style="padding: 8px 10px;">a₁₄ = 0</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 8px 10px; background: #e6edf6; font-weight: 500;">fila 2</td>
+              <td style="padding: 8px 10px;">a₂₁ = 7</td>
+              <td style="padding: 8px 10px;">a₂₂ = -3</td>
+              <td style="padding: 8px 10px;">a₂₃ = 4</td>
+              <td style="padding: 8px 10px;">a₂₄ = 6</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 10px; background: #e6edf6; font-weight: 500;">fila 3</td>
+              <td style="padding: 8px 10px;">a₃₁ = 1</td>
+              <td style="padding: 8px 10px;">a₃₂ = 8</td>
+              <td style="padding: 8px 10px;">a₃₃ = -2</td>
+              <td style="padding: 8px 10px;">a₃₄ = 3</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 0; margin-top: 12px; font-size: 0.98rem; background: #e1edfb; padding: 8px 14px; border-radius: 24px;">
+          📌 Notar: a₂₃ = 4 (fila 2, columna 3). El orden se indica como 3×4. Las filas se enumeran de arriba abajo, columnas de izquierda a derecha.
         </p>
-        <p>Cuando se almacenan datos en matrices, a menudo es necesario desplegarlos. Si los datos se almacenan en una matriz con algún patrón lógico, puede ser relativamente fácil recuperar elementos individuales o grupos de  elementos. Con frecuencia es necesario manipular datos que se almacenan en una matriz. Por ejemplo, una  profesora tal vez quiera determinar el promedio de una clase en una prueba dada o el promedio de un estudiante en las tres pruebas utilizando los datos de la calificación en la prueba de la matriz antes definida. El álgebra matricial permite manipular los datos y efectuar cálculos a la vez que mantiene los datos en forma de matriz. Esto es conveniente en especial en las aplicaciones computarizadas.</p>
-        <p>Siempre que se manejan datos, se debe interesar en organizarlos de manera tal que sean
-            <strong>significativos</strong> y se puedan identificar con facilidad. Resumir los datos en forma tabular
-            puede ayudar en esta función. Una matriz es una forma común para resumir y presentar números o datos.
+      </div>
+
+      <!-- Gráfica: Representación de posiciones mediante canvas (rejilla de puntos 3x4) -->
+      <div style="background: #ffffff; border: 1px solid #bdd3e8; border-radius: 24px; padding: 1rem 1rem 0.5rem 1rem;">
+        <p style="margin-top: 0; margin-bottom: 1rem; font-weight: 500;">▸ Posiciones (i,j) en una rejilla 3×4 :</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+          <canvas id="matrizGridCanvas" width="360" height="220" style="border-radius: 16px; background: #fbfdff; box-shadow: 0 4px 12px rgba(0, 30, 60, 0.1);"></canvas>
+        </div>
+        <p style="font-size: 0.95rem; margin: 0.8rem 0 0 0; padding: 8px 16px; background: #eaf3fb; border-radius: 30px; color: #0a2942;">
+          🔍 Qué notar: cada círculo representa la posición (i, j) dentro de la matriz. 
+          El eje vertical indica filas (1 a 3), el horizontal columnas (1 a 4). 
+          Se ha resaltado la entrada (2,3) que corresponde a a₂₃ = 4 en la tabla anterior.
         </p>
+      </div>
+      <script>
+        (function() {
+          const canvas = document.getElementById('matrizGridCanvas');
+          if (!canvas) return;
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0, 0, 360, 220);
+          
+          // fondo blanco sutil
+          ctx.fillStyle = '#fbfdff';
+          ctx.fillRect(0, 0, 360, 220);
+          
+          // dibujar líneas secundarias (grid tenue)
+          ctx.strokeStyle = '#c0d0e2';
+          ctx.lineWidth = 0.5;
+          for (let i = 1; i <= 3; i++) {
+            for (let j = 1; j <= 4; j++) {
+              let x = 60 + (j-1)*70;
+              let y = 40 + (i-1)*50;
+              ctx.beginPath();
+              ctx.arc(x, y, 14, 0, 2*Math.PI);
+              ctx.fillStyle = '#eef3fa';
+              ctx.fill();
+              ctx.strokeStyle = '#a0bbd4';
+              ctx.lineWidth = 1.5;
+              ctx.stroke();
+            }
+          }
+          
+          // dibujar puntos principales y etiquetas
+          ctx.font = 'bold 13px monospace';
+          ctx.fillStyle = '#0a2942';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          
+          for (let i = 1; i <= 3; i++) {
+            for (let j = 1; j <= 4; j++) {
+              let x = 60 + (j-1)*70;
+              let y = 40 + (i-1)*50;
+              
+              // Relleno blanco para los círculos (sobre fondo tenue)
+              ctx.beginPath();
+              ctx.arc(x, y, 12, 0, 2*Math.PI);
+              ctx.fillStyle = '#ffffff';
+              ctx.fill();
+              ctx.strokeStyle = '#3b7fbd';
+              ctx.lineWidth = 2;
+              ctx.stroke();
+              
+              // Etiqueta (i,j)
+              ctx.fillStyle = '#1e4f7a';
+              ctx.font = 'bold 12px "Courier New", monospace';
+              ctx.fillText(`(${i},${j})`, x, y);
+            }
+          }
+          
+          // Resaltar la posición (2,3) con un círculo exterior más grueso
+          let highlightX = 60 + (3-1)*70; // col 3
+          let highlightY = 40 + (2-1)*50; // fila 2
+          ctx.beginPath();
+          ctx.arc(highlightX, highlightY, 18, 0, 2*Math.PI);
+          ctx.strokeStyle = '#c7452b';
+          ctx.lineWidth = 3.5;
+          ctx.stroke();
+          
+          // dibujar ejes de fila (índices i, j)
+          ctx.fillStyle = '#1f3a57';
+          ctx.font = 'bold 14px sans-serif';
+          ctx.fillText('j →', 310, 190);
+          ctx.fillText('i', 20, 30);
+          ctx.fillText('↓', 28, 45);
+        })();
+      </script>
+
+      <!-- Ejemplo de nomenclatura con notación formal -->
+      <div style="background: #eaf0f8; margin-top: 2rem; padding: 1rem 1.8rem; border-radius: 16px;">
+        <p style="font-weight: 600; margin-top: 0; margin-bottom: 8px;">✏️ Nomenclatura formal:</p>
+        <p style="font-family: 'Courier New', monospace; background: #1e2f3f; color: #d4edff; padding: 12px; border-radius: 12px; margin: 0;">
+          A = [aᵢⱼ] ∈ ℝ^{3×4}   , con i = 1,…,3 , j = 1,…,4 <br>
+          a₂₃ = 4  (lectura: "a subíndice dos tres")
+        </p>
+        <p style="margin-bottom: 0; margin-top: 10px;">Se lee: "La matriz A, de orden 3 por 4, tiene por entrada general a subíndice i j".</p>
+      </div>
     </div>
 
-    <div class="desarrollo">
-        <h4>Definición</h4>
-        <ul>
-            <li><span style='color: red; font-weight: bold;'>Matriz:</span> Una matriz es un arreglo rectangular de
-                elementos.</li>
-        </ul>
-        <div class="deita">
-            <p>Los elementos de una matriz por lo general son números reales, pero no siempre. Considere las
-                calificaciones de prueba de cinco estudiantes en tres exámenes. Éstas se presentan en la siguiente
-                matriz.</p>
-            <img src="/ura/neg2/temas/img/img_001.png" alt="Matriz de calificaciones" class="matriz-imagen">
-        </div>
-        <div class="deita">
-            <p>La matriz contiene el conjunto de calificaciones de prueba encerradas entre los paréntesis grandes. El
-                arreglo tiene forma rectangular con cinco filas (una por cada estudiante) y tres columnas (una por cada
-                prueba). Cada fila contiene las tres calificaciones de prueba para un estudiante particular. Cada
-                columna
-                contiene las cinco calificaciones en una prueba particular.</p>
-            <img src="/ura/neg2/temas/img/img_002.png" alt="Forma generalizada de una matriz" class="matriz-imagen">
-            <p>Esta matriz generalizada se representa con m filas y n columnas. Los subíndices en un elemento aij
-                indican la
-                ubicación del elemento en una matriz. El elemento aij se localiza en la intersección de la fila i y la
-                columna j de la matriz. Por ejemplo, a21 se localiza en la intersección de la fila 2 y la columna 1. El
-                elemento a35 se ubicaría en la fila 3 y la columna 5 de la matriz.</p>
-            <p>Los nombres de la matriz generalmente se representan con letras mayúsculas y los elementos de una matriz
-                con
-                letras minúsculas con subíndices.</p>
-        </div>
-
-        <h4>Orden o Dimensión</h4>
-        <div class="deita">
-            <p>Una matriz se caracteriza también por su dimensión. La dimensión o el orden indican el número de filas y
-                el
-                número de columnas contenidos en una matriz. Si una matriz tiene m filas y n columnas, se dice que tiene
-                una
-                dimensión m n, que se lee “m por n”. La matriz de calificación de prueba de los estudiantes tiene una
-                dimensión (5 3), o se dice que es una matriz de “5 por 3”</p>
-            <p>El orden (o dimensión) de una matriz nos indica su tamaño. Se define por el número de filas (m) y el
-                número
-                de columnas (n).
-            </p>
-
-        </div>
-
-        <h4>Nomenclatura</h4>
-        <div class="deita">
-            <h4>Dependiendo de la relación entre <italic>m</italic> y <italic>n</italic>>, las matrices reciben nombres
-                específicos:</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tipo</th>
-                        <th>Condición</th>
-                        <th>Descripción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Matriz Fila</strong></td>
-                        <td>Tiene una sola fila</td>
-                        <td>También llamada vector fila. Ejemplo: [1 2 3]</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Matriz Columna</strong></td>
-                        <td>Tiene una sola columna</td>
-                        <td>También llamada vector columna. Ejemplo: [1; 2; 3]</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Matriz Cuadrada</strong></td>
-                        <td>Mismo número de filas y columnas</td>
-                        <td>Ejemplo: 2×2, 3×3, 4×4</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Matriz Rectangular</strong></td>
-                        <td>Número de filas y columnas diferente</td>
-                        <td>Ejemplo: 2×3, 3×2, 4×3</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="deita">
-            <p>
-                <strong>Para que todos los matemáticos y científicos hablen el mismo idioma, se siguen estas
-                    reglas:</strong>
-            </p>
-
-            <div class="deita">
-                <h3>A. Nombre de la Matriz</h3>
-                <p>Se representan con <strong>letras mayúsculas</strong> (A, B, C,
-                    ...).</p>
-            </div>
-
-            <div class="deita">
-                <h3>B. Elementos de la Matriz</h3>
-                <p>
-                    Los números individuales dentro de la matriz se llaman <strong>elementos o entradas</strong>.
-                    Se representan con la letra minúscula correspondiente al nombre de la matriz, seguida de dos
-                    subíndices:
-                </p>
-
-                <div class="deita">
-                    <div>
-                        <span style="font-size: 18px; font-weight: bold;">a<sub style="color: #1976D2;">ij</sub></span>
-                    </div>
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <div><span style="font-weight: bold; color: #1976D2;">i</span> = La fila donde se encuentra el
-                            elemento.</div>
-                        <div><span style="font-weight: bold; color: #1976D2;">j</span> = La columna donde se encuentra
-                            el elemento.</div>
-                    </div>
-                </div>
-
-                <div
-                    style="display: flex; gap: 30px; margin-top: 15px; flex-wrap: wrap; background-color: #F5F5F5; padding: 15px; border-radius: 5px;">
-                    <div>
-                        <span style="font-weight: bold;">a<sub>12</sub></span> es el elemento en la <strong>Fila 1,
-                            Columna 2</strong>.
-                    </div>
-                    <div>
-                        <span style="font-weight: bold;">a<sub>21</sub></span> es el elemento en la <strong>Fila 2,
-                            Columna 1</strong>.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- 6. Ejemplos de aplicaciones reales y directas -->
+    <div style="margin-bottom: 2.5rem;">
+      <h3 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.8rem; color: #1e4f7a;">▸ Aplicaciones en contextos reales</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li style="background: white; border: 1px solid #d9e6f5; border-radius: 30px; padding: 0.9rem 1.5rem; margin-bottom: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+          <span style="font-weight: 600;">📊 Tablas de datos:</span> Una hoja de cálculo con 5 filas de estudiantes y 3 columnas (nombre, nota1, nota2) es una matriz 5×3. Cada celda es un elemento aᵢⱼ.
+        </li>
+        <li style="background: white; border: 1px solid #d9e6f5; border-radius: 30px; padding: 0.9rem 1.5rem; margin-bottom: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+          <span style="font-weight: 600;">🖼️ Imágenes digitales:</span> Una imagen en escala de grises de 640×480 píxeles es una matriz de 640 filas y 480 columnas; cada entrada es la intensidad del píxel.
+        </li>
+        <li style="background: white; border: 1px solid #d9e6f5; border-radius: 30px; padding: 0.9rem 1.5rem; margin-bottom: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+          <span style="font-weight: 600;">🗺️ Redes de transporte:</span> Una matriz de adyacencia indica conexiones entre estaciones: si hay ruta directa de i a j, la entrada (i,j) vale 1 (o distancia).
+        </li>
+      </ul>
     </div>
 
-
-    <!-- 8. BIBLIOGRAFÍA -->
-    <div class="bibliografia">
-        <h3>Bibliografía</h3>
-        <ul>
-            <li><strong>Frank S. Budick</strong> (2007). <em>Matemáticas Aplicadas para Administración, economía y
-                    ciencias sociales. </em> (4ª ed.). McGraw Hill Interamericana. <span class="isbn">ISBN:
-                    970-10-5698-1</span>
-                <em>//
-                    Libro de referencia estándar en universidades como MIT</em>
-            </li>
-        </ul>
+    <!-- 7. Bibliografía confiable y verificable -->
+    <div style="margin-top: 2rem; padding-top: 0.5rem; border-top: 2px dashed #9bb7d4;">
+      <h3 style="font-size: 1.3rem; font-weight: 500; margin-bottom: 0.3rem; color: #1e4f7a;">▸ Bibliografía fundamental</h3>
+      <p style="font-size: 1rem; background: #f5f9ff; padding: 0.8rem 1.2rem; border-radius: 30px;">
+        📘 Grossman, S. I. (2012). <i>Álgebra Lineal</i> (7ª ed.). McGraw-Hill. Capítulo 1: Matrices y sistemas de ecuaciones lineales. (ISBN: 978-6071507617)
+      </p>
+      <p style="font-size: 0.9rem; color: #2b4f6e; margin-top: 0.3rem;">Páginas 3-12: definición, orden, notación de dobles subíndices y ejemplos elementales.</p>
     </div>
-</div>
+
+    <!-- Nota de reutilización (opcional para diseño) -->
+    <div style="font-size: 0.8rem; text-align: right; color: #7089a3; margin-top: 1.8rem; border-top: 1px solid #d0e0ef; padding-top: 0.5rem;">
+      contenido modular para temas científicos · reemplazar título y núcleo manteniendo estructura &lt;li&gt;
+    </div>
+  </div>
+</li>
