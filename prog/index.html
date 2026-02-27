@@ -347,7 +347,7 @@
 
         // ✅ CORRECCIÓN: Cargar desde la carpeta correcta
         // Ajusta esta ruta según tu estructura real
-        const rutaArchivo = `/ura/neg2/temas/${nombreArchivo}.html`;
+        const rutaArchivo = `/ura/prog/temas/${nombreArchivo}.html`;
         const respuesta = await fetch(rutaArchivo);
 
         if (!respuesta.ok) {
@@ -364,7 +364,7 @@
             <h4>❌ Error al cargar el contenido</h4>
             <p><strong>Archivo:</strong> ${nombreArchivo}.html</p>
             <p><strong>Error:</strong> ${error.message}</p>
-            <p>Verifica que el archivo exista en: <code>/ura/neg2/temas/</code></p>
+            <p>Verifica que el archivo exista en: <code>/ura/prog/temas/</code></p>
             <button onclick="cargarTemaModal('${titulo}', '${nombreArchivo}')" 
                     style="margin-top: 15px; padding: 8px 16px; background: #0066cc; color: white; border: none; border-radius: 4px;">
               Reintentar
