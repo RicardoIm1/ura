@@ -931,6 +931,8 @@
 
         .deita, p {
             margin-bottom: 1rem;
+            text-align: justify;
+            font-size: 1.2rem;
         }
 
         table {
