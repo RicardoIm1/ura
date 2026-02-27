@@ -476,21 +476,34 @@
             margin-top: 8px;
         }
 
+        .contenedor-botones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+        }
+
         .btn-trans {
-            width: auto;
-            /* Cambia de 5rem a auto */
-            min-width: 120px;
-            /* Establece un ancho mínimo pero permite crecimiento */
             background: transparent;
             color: var(--apple-vibrant-blue);
-            padding: 10px 16px;
+            padding: 12px 8px;
             border-radius: var(--apple-border-radius);
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             transition: var(--apple-transition);
-            border: none;
-            white-space: nowrap;
+            border: 1px solid transparent;
+            white-space: normal;
+            line-height: 1.3;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-trans:hover {
+            border-color: var(--apple-vibrant-blue);
+            background: rgba(0, 122, 255, 0.05);
         }
 
         .btn-subida {
