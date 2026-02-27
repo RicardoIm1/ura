@@ -1,4 +1,31 @@
 <div class="tema-contenido">
+        <!-- 1. TÍTULO DEL TEMA -->
+    <!-- <h2>1.1. Definición de matriz, orden y nomenclatura</h2> -->
+
+    <!-- 2. SVG RELOJ TIEMPO ESTIMADO -->
+    <div class="tiempo-estimado">
+        <svg width="60" height="60" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="55" stroke="#4a6fa5" stroke-width="3" fill="none" />
+            <circle cx="60" cy="60" r="50" stroke="#e0e7ff" stroke-width="8" fill="none" />
+            <!-- Marcas de minutos -->
+            <g id="marcas">
+                <line x1="60" y1="15" x2="60" y2="20" stroke="#4a6fa5" stroke-width="2" />
+                <line x1="60" y1="100" x2="60" y2="95" stroke="#4a6fa5" stroke-width="2" />
+                <line x1="15" y1="60" x2="20" y2="60" stroke="#4a6fa5" stroke-width="2" />
+                <line x1="100" y1="60" x2="95" y2="60" stroke="#4a6fa5" stroke-width="2" />
+            </g>
+            <!-- Aguja del reloj -->
+            <line x1="60" y1="60" x2="60" y2="30" stroke="#2c3e50" stroke-width="3" stroke-linecap="round">
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 60 60"
+                    to="180 60 60" dur="20s" repeatCount="indefinite" />
+            </line>
+            <circle cx="60" cy="60" r="4" fill="#2c3e50" />
+            <text x="60" y="75" text-anchor="middle" fill="#2c3e50" font-family="Arial" font-size="14"
+                font-weight="bold">120
+                min</text>
+        </svg>
+        <p class="tiempo-texto">Tiempo estimado basado en programas de MIT, Stanford y UC Berkeley</p>
+    </div>
     <p>¡Hola y bienvenido! Este es uno de los momentos más emocionantes de tu vida universitaria. Estás en el umbral de
         una carrera fascinante, una que no solo te dará un título, sino que te enseñará una nueva forma de pensar, de
         crear y de resolver problemas. La Introducción a la Computación es tu primera inmersión en este universo. Lejos
