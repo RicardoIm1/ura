@@ -1,0 +1,169 @@
+<li>
+  <!-- ======================================== -->
+  <!-- TEMA: 1.2.2 MATRIZ RECTANGULAR          -->
+  <!-- ======================================== -->
+
+  <!-- 1. Título del tema -->
+  <h3>1.2.2 Matriz Rectangular</h3>
+
+  <!-- 2. SVG del reloj (Tiempo estimado: 45 min) -->
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <svg width="50" height="50" viewBox="0 0 50 50" style="background: transparent;">
+      <!-- Círculo exterior del reloj -->
+      <circle cx="25" cy="25" r="22" fill="none" stroke="#1e3c5c" stroke-width="2.5" />
+      <!-- Manecilla de la hora (marcando 45 minutos, es decir, 270°) -->
+      <line x1="25" y1="25" x2="25" y2="10" stroke="#1e3c5c" stroke-width="2" stroke-linecap="round" transform="rotate(-90 25 25)" />
+      <!-- Manecilla del minuto (apunta a 45) -->
+      <line x1="25" y1="25" x2="40" y2="25" stroke="#1e3c5c" stroke-width="1.8" stroke-linecap="round" transform="rotate(270 25 25)" />
+      <!-- Centro del reloj -->
+      <circle cx="25" cy="25" r="2" fill="#1e3c5c" />
+      <!-- Marcas de 12, 3, 6, 9 -->
+      <line x1="25" y1="3" x2="25" y2="7" stroke="#1e3c5c" stroke-width="1.5" />
+      <line x1="43" y1="25" x2="47" y2="25" stroke="#1e3c5c" stroke-width="1.5" />
+      <line x1="25" y1="43" x2="25" y2="47" stroke="#1e3c5c" stroke-width="1.5" />
+      <line x1="3" y1="25" x2="7" y2="25" stroke="#1e3c5c" stroke-width="1.5" />
+      <text x="50" y="20" font-family="Arial, sans-serif" font-size="10" fill="#1e3c5c">45</text>
+    </svg>
+    <span style="font-family: Arial, sans-serif; color: #1e3c5c; font-weight: bold;">Tiempo estimado: 45 min (basado en planes de estudio de universidades de prestigio)</span>
+  </div>
+
+  <!-- 3. Objetivo del tema -->
+  <h4>Objetivo del tema</h4>
+  <p>El estudiante comprenderá la estructura y propiedades de una matriz rectangular, identificando su dimensión (m × n) y diferenciándola de una matriz cuadrada. Aprenderá a interpretar el orden de una matriz y su relación con operaciones básicas como la trasposición.</p>
+
+  <!-- 4. Idea principal -->
+  <h4>Idea principal</h4>
+  <p>Una matriz rectangular es un arreglo de números (o funciones) dispuestos en <strong>m filas</strong> y <strong>n columnas</strong>, con <strong>m ≠ n</strong>. Es la forma más general de una matriz y constituye la base para representar sistemas de ecuaciones, transformaciones lineales entre espacios de diferente dimensión y conjuntos de datos en filas y columnas. Su dimensión se denota como <em>m × n</em> (léase "m por n").</p>
+
+  <!-- 5. Ejercicios visualmente claros -->
+  <h4>Ejercicio visual: Identificación y representación</h4>
+  <p>Analicemos la matriz <strong>A</strong> de tamaño 3 filas × 2 columnas (3×2). A la derecha se muestra su representación gráfica como un rectángulo de celdas.</p>
+
+  <!-- SVG: Gráfica de matriz rectangular (tabla visual) -->
+  <div style="background-color: #f9f9fc; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e0; margin: 20px 0;">
+    <svg width="280" height="320" viewBox="0 0 280 320" style="display: block; margin: 0 auto; background: white; border-radius: 5px;">
+      <!-- Título de la gráfica -->
+      <text x="20" y="30" font-family="Courier New, monospace" font-size="14" fill="#2d3748">Matriz A (3×2)</text>
+      
+      <!-- Dibujo de la rejilla: 3 filas, 2 columnas -->
+      <!-- Líneas verticales (separan columnas) -->
+      <line x1="60" y1="60" x2="60" y2="240" stroke="#4a5568" stroke-width="1.5" />
+      <line x1="140" y1="60" x2="140" y2="240" stroke="#4a5568" stroke-width="1.5" />
+      <line x1="220" y1="60" x2="220" y2="240" stroke="#4a5568" stroke-width="1.5" />
+      <!-- Líneas horizontales (separan filas) -->
+      <line x1="20" y1="60" x2="260" y2="60" stroke="#4a5568" stroke-width="1.5" />
+      <line x1="20" y1="120" x2="260" y2="120" stroke="#4a5568" stroke-width="1.5" />
+      <line x1="20" y1="180" x2="260" y2="180" stroke="#4a5568" stroke-width="1.5" />
+      <line x1="20" y1="240" x2="260" y2="240" stroke="#4a5568" stroke-width="1.5" />
+      
+      <!-- Relleno de celdas con números (valores ficticios pero didácticos) -->
+      <text x="35" y="95" font-family="Arial" font-size="16" fill="#1e3c5c">2</text>
+      <text x="115" y="95" font-family="Arial" font-size="16" fill="#1e3c5c">-1</text>
+      <text x="195" y="95" font-family="Arial" font-size="16" fill="#1e3c5c">0</text>
+      
+      <text x="35" y="155" font-family="Arial" font-size="16" fill="#1e3c5c">5</text>
+      <text x="115" y="155" font-family="Arial" font-size="16" fill="#1e3c5c">3</text>
+      <text x="195" y="155" font-family="Arial" font-size="16" fill="#1e3c5c">-2</text>
+      
+      <text x="35" y="215" font-family="Arial" font-size="16" fill="#1e3c5c">7</text>
+      <text x="115" y="215" font-family="Arial" font-size="16" fill="#1e3c5c">4</text>
+      <text x="195" y="215" font-family="Arial" font-size="16" fill="#1e3c5c">1</text>
+      
+      <!-- Notación de dimensiones -->
+      <text x="20" y="270" font-family="Courier New, monospace" font-size="12" fill="#2d3748">3 filas (m=3)</text>
+      <text x="150" y="270" font-family="Courier New, monospace" font-size="12" fill="#2d3748">2 columnas (n=2)</text>
+      
+      <!-- Flechas indicadoras -->
+      <line x1="40" y1="280" x2="40" y2="250" stroke="#e53e3e" stroke-width="1.5" marker-end="url(#arrowhead)" />
+      <line x1="190" y1="280" x2="190" y2="250" stroke="#3182ce" stroke-width="1.5" marker-end="url(#arrowhead)" />
+      
+      <!-- Definición de marcador de flecha (oculto pero funcional) -->
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <polygon points="0 0, 10 5, 0 10" fill="#e53e3e" />
+        </marker>
+      </defs>
+    </svg>
+    
+    <!-- Explicación paso a paso de la matriz -->
+    <div style="margin-top: 15px; font-family: Arial, sans-serif; background: #ebf4ff; padding: 15px; border-radius: 8px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold;">🔍 Notar en la gráfica:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>La matriz tiene <strong>tres filas horizontales</strong> y <strong>dos columnas verticales</strong> (m ≠ n).</li>
+        <li>Las celdas se organizan en una cuadrícula claramente delimitada por líneas.</li>
+        <li>Se puede acceder a cada elemento mediante un par de índices: <em>fila, columna</em>. Por ejemplo, el elemento <strong>a₂₁ = 5</strong> (fila 2, columna 1).</li>
+        <li>La forma rectangular (más ancha o más alta) es la característica visual que da nombre a la matriz.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Segundo ejercicio: contraste con matriz cuadrada (SVG comparativo) -->
+  <h4>Ejercicio comparativo: Matriz rectangular vs. cuadrada</h4>
+  <p>Una matriz cuadrada tiene igual número de filas que de columnas (m = n). La siguiente representación muestra una matriz cuadrada 2×2 (izquierda) y otra rectangular 2×3 (derecha).</p>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; background: #f0f4f8; padding: 20px; border-radius: 12px; margin: 20px 0;">
+    <!-- Matriz cuadrada 2x2 -->
+    <div style="text-align: center;">
+      <svg width="150" height="180" viewBox="0 0 150 180">
+        <text x="30" y="25" font-family="Arial" font-size="14" fill="#2d3748">Cuadrada 2×2</text>
+        <!-- Líneas verticales -->
+        <line x1="40" y1="40" x2="40" y2="120" stroke="#2c3e50" stroke-width="1.5" />
+        <line x1="90" y1="40" x2="90" y2="120" stroke="#2c3e50" stroke-width="1.5" />
+        <line x1="140" y1="40" x2="140" y2="120" stroke="#2c3e50" stroke-width="1.5" />
+        <!-- Líneas horizontales -->
+        <line x1="15" y1="40" x2="165" y2="40" stroke="#2c3e50" stroke-width="1.5" />
+        <line x1="15" y1="80" x2="165" y2="80" stroke="#2c3e50" stroke-width="1.5" />
+        <line x1="15" y1="120" x2="165" y2="120" stroke="#2c3e50" stroke-width="1.5" />
+        <!-- Valores -->
+        <text x="55" y="70" font-family="Arial" font-size="14">1</text>
+        <text x="105" y="70" font-family="Arial" font-size="14">0</text>
+        <text x="55" y="110" font-family="Arial" font-size="14">0</text>
+        <text x="105" y="110" font-family="Arial" font-size="14">1</text>
+        <text x="20" y="145" font-family="Courier New" font-size="12">m = n = 2</text>
+      </svg>
+    </div>
+    
+    <!-- Matriz rectangular 2x3 -->
+    <div style="text-align: center;">
+      <svg width="180" height="180" viewBox="0 0 180 180">
+        <text x="30" y="25" font-family="Arial" font-size="14" fill="#2d3748">Rectangular 2×3</text>
+        <!-- Líneas verticales (4 columnas) -->
+        <line x1="30" y1="40" x2="30" y2="120" stroke="#1e3c5c" stroke-width="1.5" />
+        <line x1="70" y1="40" x2="70" y2="120" stroke="#1e3c5c" stroke-width="1.5" />
+        <line x1="110" y1="40" x2="110" y2="120" stroke="#1e3c5c" stroke-width="1.5" />
+        <line x1="150" y1="40" x2="150" y2="120" stroke="#1e3c5c" stroke-width="1.5" />
+        <!-- Líneas horizontales (3 filas) -->
+        <line x1="10" y1="40" x2="170" y2="40" stroke="#1e3c5c" stroke-width="1.5" />
+        <line x1="10" y1="80" x2="170" y2="80" stroke="#1e3c5c" stroke-width="1.5" />
+        <line x1="10" y1="120" x2="170" y2="120" stroke="#1e3c5c" stroke-width="1.5" />
+        <!-- Valores -->
+        <text x="45" y="70" font-family="Arial" font-size="14">2</text>
+        <text x="85" y="70" font-family="Arial" font-size="14">-1</text>
+        <text x="125" y="70" font-family="Arial" font-size="14">4</text>
+        <text x="45" y="110" font-family="Arial" font-size="14">3</text>
+        <text x="85" y="110" font-family="Arial" font-size="14">0</text>
+        <text x="125" y="110" font-family="Arial" font-size="14">-5</text>
+        <text x="20" y="145" font-family="Courier New" font-size="12">m=2, n=3</text>
+      </svg>
+    </div>
+  </div>
+  
+  <div style="background: #e6f7ff; padding: 10px 15px; border-left: 5px solid #1890ff; margin: 10px 0 20px 0;">
+    <strong>Conclusión visual:</strong> En la matriz cuadrada el bloque es perfectamente cuadrado; en la rectangular, la forma es de rectángulo (horizontal o vertical). Esto afecta la existencia de inversa y la dimensionalidad de las transformaciones lineales asociadas.
+  </div>
+
+  <!-- 6. Ejemplos de aplicaciones reales y directas -->
+  <h4>Aplicaciones reales y directas</h4>
+  <ul style="list-style-type: disc; margin-left: 20px;">
+    <li><strong>Bases de datos y hojas de cálculo:</strong> Una tabla de Excel con filas (registros) y columnas (campos) es una matriz rectangular. Por ejemplo, 100 estudiantes (filas) y 5 calificaciones (columnas) → matriz 100×5.</li>
+    <li><strong>Procesamiento de imágenes:</strong> Una imagen en escala de grises se representa como una matriz rectangular donde cada elemento es la intensidad de un píxel (ej. 1920×1080).</li>
+    <li><strong>Redes neuronales:</strong> Los pesos entre capas de diferente número de neuronas se almacenan en matrices rectangulares (por ejemplo, de capa de entrada de 128 neuronas a capa oculta de 64 → matriz 128×64).</li>
+    <li><strong>Estadística:</strong> Matriz de datos de diseño (design matrix) en regresión lineal, con n observaciones y p variables predictoras → matriz n×p.</li>
+  </ul>
+
+  <!-- 7. Bibliografía confiable y verificable (solo un libro) -->
+  <h4>Bibliografía confiable</h4>
+  <p style="font-family: Georgia, serif;">Poole, D. (2011). <em>Álgebra lineal: Una introducción moderna</em> (3a ed.). Cengage Learning. Capítulo 1: Vectores y matrices.</p>
+
+  <!-- Nota de uso: todo el contenido está dentro de <li>, listo para incluir en cualquier sistema de modales. -->
+</li>
