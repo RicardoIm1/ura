@@ -1,0 +1,199 @@
+<li>
+  <div class="tema-container">
+
+    <!-- 1. Título del tema -->
+    <h2 class="tema-titulo">1.4.2 Solución de un sistema de ecuaciones lineales por el método de Gauss-Jordan</h2>
+
+    <!-- 2. SVG del reloj (tiempo estimado: 60 min) -->
+    <div class="tiempo-estimado">
+      <svg width="60" height="60" viewBox="0 0 60 60" style="display:block; margin: 0 auto 8px auto;">
+        <!-- Círculo exterior del reloj -->
+        <circle cx="30" cy="30" r="26" fill="white" stroke="#1e3c5c" stroke-width="2.5" />
+        <!-- Marcas de minutos (líneas pequeñas) -->
+        <line x1="30" y1="6" x2="30" y2="10" stroke="#1e3c5c" stroke-width="1.2" />
+        <line x1="30" y1="50" x2="30" y2="54" stroke="#1e3c5c" stroke-width="1.2" />
+        <line x1="6" y1="30" x2="10" y2="30" stroke="#1e3c5c" stroke-width="1.2" />
+        <line x1="50" y1="30" x2="54" y2="30" stroke="#1e3c5c" stroke-width="1.2" />
+        <!-- Manecilla de la hora (corta) -->
+        <line x1="30" y1="30" x2="22" y2="20" stroke="#1e3c5c" stroke-width="2" stroke-linecap="round" />
+        <!-- Manecilla del minuto (larga) apuntando a 45 minutos (270 grados?) mejor apuntar a 50 min para indicar tiempo considerable) -->
+        <line x1="30" y1="30" x2="45" y2="30" stroke="#1e3c5c" stroke-width="1.8" stroke-linecap="round" />
+        <!-- Círculo central -->
+        <circle cx="30" cy="30" r="2" fill="#1e3c5c" />
+      </svg>
+      <div style="text-align:center; font-family: 'Segoe UI', Roboto, sans-serif; font-size:0.9rem; color:#1e3c5c;">Tiempo estimado: 60 min</div>
+    </div>
+
+    <!-- 3. Objetivo del tema -->
+    <div class="objetivo">
+      <h3>Objetivo</h3>
+      <p>Aprender a resolver sistemas de ecuaciones lineales mediante el método de eliminación de Gauss-Jordan, transformando la matriz aumentada en su forma reducida por filas para obtener la solución de manera directa.</p>
+    </div>
+
+    <!-- 4. Idea principal -->
+    <div class="idea-principal">
+      <h3>Idea principal</h3>
+      <p>El método de Gauss-Jordan consiste en aplicar operaciones elementales sobre las filas de la matriz aumentada del sistema hasta alcanzar la forma escalonada reducida. En esta forma, cada variable tiene un coeficiente 1 en una única ecuación, lo que revela inmediatamente los valores de las incógnitas o la naturaleza del sistema (consistente, inconsistente o con infinitas soluciones).</p>
+    </div>
+
+    <!-- 5. Ejercicios visualmente claros (tabla + gráfica) -->
+    <div class="ejercicios">
+      <h3>Ejercicio paso a paso: resolución de un sistema 2x2</h3>
+      <p>Sistema: <br> 2x + 3y = 8 <br> x - y = -1 </p>
+
+      <!-- Tabla que muestra el proceso (matriz aumentada paso a paso) -->
+      <table class="tabla-pasos">
+        <thead>
+          <tr><th>Paso</th><th>Operación</th><th>Matriz aumentada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>Sistema inicial</td><td>[ 2   3  |  8 ]<br>[ 1  -1  | -1 ]</td></tr>
+          <tr><td>1</td><td>Intercambiar F1 ↔ F2 (para tener 1 como pivote)</td><td>[ 1  -1  | -1 ]<br>[ 2   3  |  8 ]</td></tr>
+          <tr><td>2</td><td>F2 = F2 - 2*F1</td><td>[ 1  -1  | -1 ]<br>[ 0   5  | 10 ]</td></tr>
+          <tr><td>3</td><td>F2 = (1/5)*F2</td><td>[ 1  -1  | -1 ]<br>[ 0   1  |  2 ]</td></tr>
+          <tr><td>4</td><td>F1 = F1 + F2</td><td>[ 1   0  |  1 ]<br>[ 0   1  |  2 ]</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Interpretación de la matriz final -->
+      <p><strong>Solución única:</strong> x = 1,  y = 2.</p>
+
+      <!-- GRÁFICA SVG: representación de las rectas y el punto de intersección -->
+      <div class="grafica-container">
+        <p><strong>Gráfica del sistema:</strong> Las dos rectas se cortan en (1,2).</p>
+        <svg width="300" height="300" viewBox="-3 -3 10 10" style="border:1px solid #ccc; background:#f9f9f9;">
+          <!-- Ejes coordenados -->
+          <line x1="-3" y1="0" x2="7" y2="0" stroke="#333" stroke-width="0.1" />
+          <line x1="0" y1="-3" x2="0" y2="7" stroke="#333" stroke-width="0.1" />
+          
+          <!-- Recta 1: 2x + 3y = 8  =>  y = (8-2x)/3  -->
+          <line x1="-2" y1="4" x2="5" y2="-0.667" stroke="blue" stroke-width="0.15" stroke-dasharray="2 1" />
+          <text x="5.2" y="-0.4" fill="blue" font-size="0.3">2x+3y=8</text>
+          
+          <!-- Recta 2: x - y = -1   =>  y = x+1 -->
+          <line x1="-2" y1="-1" x2="5" y2="6" stroke="darkgreen" stroke-width="0.15" stroke-dasharray="2 1" />
+          <text x="5.2" y="6" fill="darkgreen" font-size="0.3">x-y=-1</text>
+          
+          <!-- Punto de intersección (1,2) -->
+          <circle cx="1" cy="2" r="0.2" fill="red" stroke="none" />
+          <text x="1.2" y="1.5" fill="red" font-size="0.3">(1,2)</text>
+          
+          <!-- Marcas de eje (opcional) -->
+          <text x="6.8" y="0.3" font-size="0.2">x</text>
+          <text x="0.3" y="6.5" font-size="0.2">y</text>
+        </svg>
+        <p class="nota-grafica"><strong>Qué notar:</strong> La solución (x=1, y=2) es la intersección de ambas rectas; el método de Gauss-Jordan la obtiene directamente sin graficar, operando sobre las ecuaciones.</p>
+      </div>
+
+      <!-- Ejemplo 2: Sistema 3x3 (tabla más compacta) -->
+      <h3 style="margin-top:24px;">Ejercicio 2: sistema 3x3</h3>
+      <p> x + 2y + z = 7 <br> 2x - y + z = 4 <br> 3x + y - 2z = -1 </p>
+      <table class="tabla-pasos">
+        <thead><tr><th>Paso</th><th>Matriz aumentada</th></tr></thead>
+        <tbody>
+          <tr><td>Inicio</td><td>[1   2   1 | 7]<br>[2  -1   1 | 4]<br>[3   1  -2 | -1]</td></tr>
+          <tr><td>F2 = F2 - 2F1<br>F3 = F3 - 3F1</td><td>[1   2   1 |  7]<br>[0  -5  -1 | -10]<br>[0  -5  -5 | -22]</td></tr>
+          <tr><td>F3 = F3 - F2</td><td>[1   2   1 |  7]<br>[0  -5  -1 | -10]<br>[0   0  -4 | -12]</td></tr>
+          <tr><td>F3 = -1/4 F3</td><td>[1   2   1 |  7]<br>[0  -5  -1 | -10]<br>[0   0   1 |   3]</td></tr>
+          <tr><td>F2 = F2 + F3 <br> F1 = F1 - F3</td><td>[1   2   0 |  4]<br>[0  -5   0 | -7]<br>[0   0   1 |  3]</td></tr>
+          <tr><td>F2 = -1/5 F2</td><td>[1   2   0 |  4]<br>[0   1   0 | 7/5=1.4]<br>[0   0   1 |  3]</td></tr>
+          <tr><td>F1 = F1 - 2F2</td><td>[1   0   0 |  4 - 2.8 = 1.2]<br>[0   1   0 | 1.4]<br>[0   0   1 |  3]</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Solución única:</strong> x = 1.2 , y = 1.4 , z = 3.</p>
+      <p class="nota-grafica">En 3D las tres planos se cortan en un solo punto; el método nos entrega sus coordenadas mediante reducción completa.</p>
+    </div>
+
+    <!-- 6. Ejemplos de aplicaciones reales y directas -->
+    <div class="aplicaciones">
+      <h3>Aplicaciones reales y directas</h3>
+      <ul>
+        <li><strong>Ingeniería estructural:</strong> Cálculo de fuerzas internas en armaduras, donde cada nodo genera una ecuación lineal de equilibrio.</li>
+        <li><strong>Circuitos eléctricos:</strong> Análisis de mallas y nodos mediante leyes de Kirchhoff producen sistemas lineales resueltos con Gauss-Jordan.</li>
+        <li><strong>Economía:</strong> Modelos input-output de Leontief, que describen relaciones entre sectores productivos, se resuelven con eliminación gaussiana.</li>
+        <li><strong>Química:</strong> Balanceo de reacciones químicas: se igualan cantidades de átomos planteando ecuaciones lineales.</li>
+      </ul>
+    </div>
+
+    <!-- 7. Bibliografía confiable y verificable -->
+    <div class="bibliografia">
+      <h3>Bibliografía recomendada</h3>
+      <p>Grossman, S. I., & Flores Godoy, J. J. (2019). <em>Álgebra Lineal</em> (8a ed.). McGraw-Hill. Capítulo 3: Sistemas de ecuaciones lineales. (ISBN: 9781456271343)</p>
+    </div>
+
+    <!-- Estilos incrustados (limpios, modulares) -->
+    <style>
+      .tema-container {
+        max-width: 900px;
+        margin: 0 auto;
+        font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+        line-height: 1.5;
+        color: #1e2b3c;
+      }
+      .tema-titulo {
+        font-size: 1.8rem;
+        font-weight: 500;
+        border-bottom: 2px solid #2c5f8a;
+        padding-bottom: 6px;
+        margin-top: 8px;
+        color: #0a3147;
+      }
+      .tiempo-estimado {
+        margin: 16px 0 8px 0;
+      }
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 20px 0 8px 0;
+        color: #1e3c5c;
+      }
+      .tabla-pasos {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        margin: 18px 0;
+      }
+      .tabla-pasos th, .tabla-pasos td {
+        border: 1px solid #b0c4d9;
+        padding: 10px 8px;
+        vertical-align: middle;
+      }
+      .tabla-pasos th {
+        background-color: #d9e6f2;
+        font-weight: 500;
+      }
+      .tabla-pasos td {
+        background-color: #fdfdfd;
+      }
+      .grafica-container {
+        margin: 28px 0 12px 0;
+      }
+      .nota-grafica {
+        background: #f0f6fb;
+        border-left: 4px solid #2c5f8a;
+        padding: 10px 14px;
+        margin: 18px 0;
+        font-style: normal;
+        border-radius: 0 6px 6px 0;
+      }
+      .aplicaciones ul, .bibliografia p {
+        background: #f9f9fc;
+        padding: 14px 20px;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1px #e0e7ef;
+      }
+      .aplicaciones li {
+        margin-bottom: 6px;
+      }
+      /* Ajuste para listas dentro de li principal */
+      li {
+        list-style: none;
+      }
+      /* El contenedor ya está dentro de un li, pero queremos mantener la semántica */
+    </style>
+
+    <!-- Nota final: el contenido es modular; se puede cambiar el título y la explicación manteniendo la estructura -->
+  </div>
+</li>
