@@ -928,10 +928,36 @@
         .tema-contenido .tiempo-estimado .objetivo .idea-principal {
             margin-bottom: 1rem;
         }
-        .deita p{
+
+        .deita p {
             margin-bottom: 1rem;
         }
 
-        table{
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
             border: 1px solid var(--apple-vibrant-blue);
+        }
+
+        /* Si quieres que las celdas de los extremos no tengan borde exterior */
+        td:first-child,
+        th:first-child {
+            border-left: none;
+        }
+
+        td:last-child,
+        th:last-child {
+            border-right: none;
+        }
+
+        tr:first-child th,
+        tr:first-child td {
+            border-top: none;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
         }
