@@ -1,0 +1,158 @@
+<li>
+
+<div class="tema-matematicas">
+
+  <!-- 1. TITULO DEL TEMA -->
+  <h3>1.2.4 Matriz identidad o unitaria</h3>
+
+  <!-- 2. SVG RELOJ (TIEMPO ESTIMADO: 45 MINUTOS) -->
+  <div class="tiempo-duracion" aria-label="Tiempo estimado: 45 minutos">
+    <svg width="50" height="50" viewBox="0 0 50 50" style="display: block; margin: 0.5rem 0;">
+      <circle cx="25" cy="25" r="22" fill="white" stroke="#1e3a5f" stroke-width="2.5" />
+      <circle cx="25" cy="25" r="3" fill="#1e3a5f" />
+      <line x1="25" y1="25" x2="25" y2="13" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" />
+      <line x1="25" y1="25" x2="35" y2="25" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" />
+      <text x="48" y="8" font-family="Arial, sans-serif" font-size="8" fill="#2c3e50">45</text>
+    </svg>
+    <span style="display: block; font-size: 0.9rem; color: #1e3a5f;">minutos</span>
+  </div>
+
+  <!-- 3. OBJETIVO DEL TEMA -->
+  <div class="objetivo">
+    <h4>Objetivo</h4>
+    <p>Comprender la definición, estructura y propiedades de la matriz identidad (o unitaria). El estudiante aprenderá a identificarla dentro del álgebra de matrices, entenderá su función como el elemento neutro multiplicativo y será capaz de aplicarla en operaciones matriciales básicas y en la verificación de matrices inversas.</p>
+  </div>
+
+  <!-- 4. IDEA PRINCIPAL -->
+  <div class="idea-principal">
+    <h4>Idea principal</h4>
+    <p>La matriz identidad, denotada generalmente como I o Iₙ, es una matriz cuadrada que tiene el número 1 en cada entrada de su diagonal principal y 0 en el resto de posiciones. Actúa de manera análoga al número 1 en la multiplicación de números reales: cualquier matriz A (de dimensiones compatibles) multiplicada por la identidad (A·I o I·A) da como resultado la misma matriz A. Es la base para conceptos como la matriz inversa y los sistemas de ecuaciones lineales.</p>
+  </div>
+
+  <!-- 5. EJERCICIOS VISUALMENTE CLAROS -->
+  <div class="ejercicios-visuales">
+    <h4>Ejercicios visualmente claros</h4>
+
+    <!-- TABLA 1: FORMAS DE LA MATRIZ IDENTIDAD -->
+    <p><strong>Ejercicio 1: Reconocimiento visual de la matriz identidad</strong></p>
+    <p>Observa la estructura de las matrices identidad de diferentes órdenes. Nota que solo la diagonal principal contiene unos.</p>
+    <table style="border-collapse: collapse; margin: 1rem 0; width: 100%; text-align: center; background: #f8fafc;">
+      <thead>
+        <tr style="background: #1e3a5f; color: white;">
+          <th style="padding: 8px; border: 1px solid #334e68;">Identidad 2x2 (I₂)</th>
+          <th style="padding: 8px; border: 1px solid #334e68;">Identidad 3x3 (I₃)</th>
+          <th style="padding: 8px; border: 1px solid #334e68;">Identidad 4x4 (I₄)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #334e68; font-family: monospace;">
+            | 1 &nbsp; 0 |<br>
+            | 0 &nbsp; 1 |
+          </td>
+          <td style="padding: 8px; border: 1px solid #334e68; font-family: monospace;">
+            | 1 &nbsp; 0 &nbsp; 0 |<br>
+            | 0 &nbsp; 1 &nbsp; 0 |<br>
+            | 0 &nbsp; 0 &nbsp; 1 |
+          </td>
+          <td style="padding: 8px; border: 1px solid #334e68; font-family: monospace;">
+            | 1 &nbsp; 0 &nbsp; 0 &nbsp; 0 |<br>
+            | 0 &nbsp; 1 &nbsp; 0 &nbsp; 0 |<br>
+            | 0 &nbsp; 0 &nbsp; 1 &nbsp; 0 |<br>
+            | 0 &nbsp; 0 &nbsp; 0 &nbsp; 1 |
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><em>Comentario:</em> La diagonal de unos es la característica fundamental. Fuera de ella, todos los elementos son cero. Se denota como Iₙ, donde n es el número de filas y columnas.</p>
+
+    <!-- GRAFICA CANVAS: MULTIPLICACION POR IDENTIDAD -->
+    <p><strong>Ejercicio 2: Representación de la propiedad de neutralidad (A · I = A)</strong></p>
+    <p>El siguiente gráfico muestra visualmente cómo una matriz A (representada por un bloque de 2x3) al multiplicarse por una identidad I₃ (3x3) da como resultado la misma matriz A (2x3). La identidad no altera la estructura.</p>
+    
+    <!-- Canvas para gráfica 1: neutralidad -->
+    <svg width="380" height="130" viewBox="0 0 380 130" style="border: 1px solid #d0d9e5; background: #ffffff; display: block; margin: 1rem auto;">
+      <!-- Bloque Matriz A (2x3) -->
+      <rect x="20" y="20" width="90" height="60" fill="#e9f0f9" stroke="#1e3a5f" stroke-width="2" />
+      <text x="45" y="55" font-family="Arial, sans-serif" font-size="14" fill="#1e3a5f">A</text>
+      <text x="30" y="15" font-family="Arial, sans-serif" font-size="10" fill="#334e68">2x3</text>
+      
+      <!-- signo multiplicación -->
+      <text x="120" y="55" font-family="Arial, sans-serif" font-size="20" fill="#1e3a5f">·</text>
+      
+      <!-- Bloque Matriz Identidad I₃ (3x3) -->
+      <rect x="140" y="10" width="60" height="60" fill="#f0f4fa" stroke="#1e3a5f" stroke-width="2" />
+      <text x="160" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e3a5f">I₃</text>
+      <text x="150" y="5" font-family="Arial, sans-serif" font-size="10" fill="#334e68">3x3</text>
+      <!-- pequeños unos en la diagonal visual -->
+      <line x1="150" y1="20" x2="190" y2="60" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="4 2" />
+      <text x="192" y="50" font-family="Arial, sans-serif" font-size="9" fill="#b22222">diag(1)</text>
+      
+      <!-- signo igual -->
+      <text x="210" y="55" font-family="Arial, sans-serif" font-size="20" fill="#1e3a5f">=</text>
+      
+      <!-- Bloque Resultado = Matriz A (2x3) -->
+      <rect x="240" y="20" width="90" height="60" fill="#e9f0f9" stroke="#1e3a5f" stroke-width="2" />
+      <text x="265" y="55" font-family="Arial, sans-serif" font-size="14" fill="#1e3a5f">A</text>
+      <text x="310" y="75" font-family="Arial, sans-serif" font-size="9" fill="#334e68">sin cambios</text>
+      <!-- flecha indicando identidad -->
+      <path d="M140 80 L180 95 L210 80" stroke="#2a6d8c" fill="none" stroke-width="1.5" />
+      <text x="160" y="110" font-family="Arial, sans-serif" font-size="9" fill="#2a6d8c">I₃ actúa como 1</text>
+    </svg>
+    <p><em>Qué notar en la gráfica:</em> La matriz identidad de 3x3, aunque se representa como un cuadrado con una diagonal marcada, al multiplicar a la matriz A (2x3) no altera sus dimensiones ni sus valores. Es el equivalente al número 1 en la multiplicación escalar.</p>
+
+    <!-- GRAFICA 2 (SVG puro): Representación simbólica del producto -->
+    <p><strong>Ejercicio 3: Ejemplo numérico de la propiedad I·A = A</strong></p>
+    <svg width="400" height="120" viewBox="0 0 400 120" style="border: 1px solid #d0d9e5; background: #ffffff; display: block; margin: 1rem auto;">
+      <!-- Matriz I₂ -->
+      <rect x="10" y="25" width="70" height="70" fill="none" stroke="#1e3a5f" stroke-width="1.5" />
+      <text x="20" y="45" font-family="monospace" font-size="12" fill="#1e3a5f">1 0</text>
+      <text x="20" y="65" font-family="monospace" font-size="12" fill="#1e3a5f">0 1</text>
+      <text x="25" y="15" font-family="Arial, sans-serif" font-size="9" fill="#334e68">I₂</text>
+      
+      <text x="90" y="60" font-family="Arial, sans-serif" font-size="16" fill="#1e3a5f">·</text>
+      
+      <!-- Matriz A 2x2 con literales -->
+      <rect x="105" y="25" width="70" height="70" fill="none" stroke="#1e3a5f" stroke-width="1.5" />
+      <text x="115" y="45" font-family="monospace" font-size="12" fill="#1e5f6f">a b</text>
+      <text x="115" y="65" font-family="monospace" font-size="12" fill="#1e5f6f">c d</text>
+      <text x="120" y="15" font-family="Arial, sans-serif" font-size="9" fill="#334e68">A</text>
+      
+      <text x="185" y="60" font-family="Arial, sans-serif" font-size="16" fill="#1e3a5f">=</text>
+      
+      <!-- Matriz resultado = A -->
+      <rect x="210" y="25" width="70" height="70" fill="none" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="4 2" />
+      <text x="220" y="45" font-family="monospace" font-size="12" fill="#1e3a5f" font-weight="bold">a b</text>
+      <text x="220" y="65" font-family="monospace" font-size="12" fill="#1e3a5f" font-weight="bold">c d</text>
+      <text x="235" y="100" font-family="Arial, sans-serif" font-size="9" fill="#b22222">se obtiene A</text>
+
+      <!-- operación paso a paso -->
+      <text x="300" y="40" font-family="Arial, sans-serif" font-size="8" fill="#2c3e50">(1·a + 0·c) = a</text>
+      <text x="300" y="55" font-family="Arial, sans-serif" font-size="8" fill="#2c3e50">(1·b + 0·d) = b</text>
+      <text x="300" y="70" font-family="Arial, sans-serif" font-size="8" fill="#2c3e50">(0·a + 1·c) = c</text>
+      <text x="300" y="85" font-family="Arial, sans-serif" font-size="8" fill="#2c3e50">(0·b + 1·d) = d</text>
+    </svg>
+    <p><em>Comentario paso a paso:</em> Al multiplicar I₂ por una matriz A genérica 2x2, cada elemento (i,j) de A se obtiene multiplicando la fila i de I por la columna j de A. Como I tiene un 1 en la fila i, columna i, y cero en las demás, el resultado es exactamente el elemento (i,j) de A. Esto demuestra la neutralidad.</p>
+  </div>
+
+  <!-- 6. EJEMPLOS DE APLICACIONES REALES Y DIRECTAS -->
+  <div class="aplicaciones">
+    <h4>Ejemplos de aplicaciones reales y directas</h4>
+    <ul style="list-style-type: disc; padding-left: 1.5rem;">
+      <li><strong>Computación gráfica y transformaciones:</strong> En sistemas de coordenadas homogéneas, la matriz identidad representa la transformación nula (no rotación, no traslación, no escala). Se usa como punto de partida para construir transformaciones complejas (rotación, traslación) mediante multiplicación de matrices.</li>
+      <li><strong>Criptografía y teoría de códigos:</strong> En algoritmos de cifrado como el cifrado de Hill, la matriz identidad se utiliza para verificar la existencia de una matriz inversa módulo un entero. Si A · B = I (mód n), entonces B es la matriz inversa de A, esencial para descifrar mensajes.</li>
+      <li><strong>Sistemas de control y robótica:</strong> La matriz identidad aparece en la solución de ecuaciones de estado en sistemas lineales. Por ejemplo, en la forma canónica controlable, se usa para representar la realimentación de estados cuando se quiere mantener el sistema sin alteraciones.</li>
+    </ul>
+  </div>
+
+  <!-- 7. BIBLIOGRAFIA CONFIABLE Y VERIFICABLE -->
+  <div class="bibliografia">
+    <h4>Bibliografía confiable y verificable</h4>
+    <p>Strang, G. (2016). <em>Introduction to Linear Algebra</em> (5th ed.). Wellesley-Cambridge Press. Capítulo 2: Matrices y eliminación gaussiana. (Ver sección 2.5 sobre matrices inversas y la identidad).</p>
+    <!-- Solo un libro verifiable, como se solicita -->
+  </div>
+
+  <!-- NOTA: Estructura modular: se puede cambiar el contenido interno (título, ejercicios, ejemplos) manteniendo las etiquetas semánticas para cualquier tema de ciencia o cálculo. -->
+  
+</div>
+</li>
