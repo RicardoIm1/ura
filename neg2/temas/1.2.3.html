@@ -1,0 +1,142 @@
+<li>
+  <div class="tema-container">
+
+    <!-- 1. Título del tema -->
+    <h2 class="tema-titulo">1.2.3 Matriz Diagonal: Estructura, propiedades y acción geométrica</h2>
+
+    <!-- 2. SVG del reloj (tiempo estimado: 45 min) -->
+    <div class="reloj-svg" style="width: 60px; height: 60; margin: 10px 0;">
+      <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+        <!-- círculo del reloj -->
+        <circle cx="50" cy="50" r="45" fill="white" stroke="#2c3e50" stroke-width="3"/>
+        <!-- manecilla hora (marcando 45 min = 9/12 de hora = 270°, pero representamos 45 min como 9/12 de vuelta) -->
+        <line x1="50" y1="50" x2="50" y2="20" stroke="#2c3e50" stroke-width="4" stroke-linecap="round" transform="rotate(120 50 50)"/>
+        <!-- manecilla minuto (45 minutos = 270° desde las 12) -->
+        <line x1="50" y1="50" x2="50" y2="15" stroke="#e67e22" stroke-width="2" stroke-linecap="round" transform="rotate(270 50 50)"/>
+        <!-- punto central -->
+        <circle cx="50" cy="50" r="3" fill="#2c3e50"/>
+        <!-- texto estimado -->
+        <text x="50" y="85" text-anchor="middle" font-size="12" font-family="Arial" fill="#2c3e50">45 min</text>
+      </svg>
+    </div>
+
+    <!-- 3. Objetivo del tema -->
+    <div class="objetivo">
+      <h3>Objetivo</h3>
+      <p>Comprender la definición y propiedades fundamentales de una matriz diagonal. Identificará su estructura, aprenderá a operar con ella (potencias, inversa) y visualizará su efecto como transformación lineal (escalamiento puro) en el plano, conectando con aplicaciones en sistemas dinámicos y análisis de datos.</p>
+    </div>
+
+    <!-- 4. Idea principal -->
+    <div class="idea-principal">
+      <h3>Idea central</h3>
+      <p>Una <strong>matriz diagonal</strong> es una matriz cuadrada cuyos únicos elementos no nulos se encuentran en la diagonal principal. Actúa como un operador de <em>escalado independiente</em> sobre cada componente de un vector: multiplica la primera coordenada por el primer elemento diagonal, la segunda por el segundo, etc. Esta simplicidad las convierte en herramientas fundamentales para diagonalizar otras matrices, resolver sistemas de ecuaciones diferenciales y entender modos normales de vibración.</p>
+    </div>
+
+    <!-- 5. Ejercicios visualmente claros con tablas y gráficas SVG perfectas -->
+    <div class="ejercicios-visuales">
+      <h3>Ejercicio modelo: manipulación y efecto geométrico</h3>
+      <p>Consideremos la matriz diagonal <strong>D</strong> de tamaño 2×2:</p>
+      <p style="font-size: 1.2em;">D = [ 3.0 , 0.0 ; 0.0 , 0.5 ]</p>
+
+      <!-- Tabla de propiedades -->
+      <h4>Tabla 1. Propiedades de D</h4>
+      <table class="tabla-propiedades">
+        <thead><tr><th>Propiedad</th><th>Cálculo / Valor</th><th>Comentario</th></tr></thead>
+        <tbody>
+          <tr><td>Determinante</td><td>det(D) = 3 × 0.5 = 1.5</td><td>≠ 0 → invertible (ningún elemento diagonal es cero).</td></tr>
+          <tr><td>Rango</td><td>rango(D) = 2</td><td>Máximo, pues las filas son linealmente independientes.</td></tr>
+          <tr><td>Matriz inversa</td><td>D⁻¹ = [ 1/3 , 0 ; 0 , 2 ]</td><td>Inversa de una diagonal: recíproco de cada elemento.</td></tr>
+          <tr><td>Potencia n-ésima</td><td>Dⁿ = [ 3ⁿ , 0 ; 0 , (0.5)ⁿ ]</td><td>Simplemente se eleva cada elemento.</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Gráfica de la acción de D sobre vectores base y un vector arbitrario -->
+      <h4>Figura 1. Transformación del plano mediante D (escalado de ejes)</h4>
+      <p style="font-style: italic;">Observa: el eje horizontal se estira (×3), el vertical se contrae (×0.5). Un cuadrado unitario se convierte en rectángulo de área 1.5.</p>
+
+      <!-- SVG con gráfica precisa, ejes, cuadrícula, vectores y curvas -->
+      <svg width="400" height="400" viewBox="-2.5 -2.5 5 5" style="border:1px solid #ccc; background:#f9f9f9;">
+        <!-- Definiciones: flecha de punta -->
+        <defs>
+          <marker id="flecha" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <polygon points="0 0, 10 5, 0 10" fill="#2c3e50" stroke="none" />
+          </marker>
+        </defs>
+
+        <!-- Cuadrícula secundaria (0.25) líneas grises muy suaves -->
+        <g stroke="#ddd" stroke-width="0.5">
+          for (let i = -2; i <= 2; i+=0.25) {
+            if (Math.abs(i) < 0.01) continue;
+            <line x1="-2" y1="{i}" x2="2" y2="{i}" stroke="#ddd" />
+            <line x1="{i}" y1="-2" x2="{i}" y2="2" stroke="#ddd" />
+          }
+        </g>
+        <!-- Cuadrícula principal (1.0) líneas grises más oscuras -->
+        <g stroke="#aaa" stroke-width="1">
+          for (let i = -2; i <= 2; i++) {
+            if (Math.abs(i) < 0.01) continue;
+            <line x1="-2" y1="{i}" x2="2" y2="{i}" stroke="#aaa" />
+            <line x1="{i}" y1="-2" x2="{i}" y2="2" stroke="#aaa" />
+          }
+        </g>
+        <!-- Ejes coordenados con flechas -->
+        <line x1="-2.2" y1="0" x2="2.2" y2="0" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+        <line x1="0" y1="-2.2" x2="0" y2="2.2" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+        <text x="2.3" y="0.2" font-size="0.15">x</text>
+        <text x="0.2" y="-2.3" font-size="0.15">y</text>
+
+        <!-- Vectores originales (base canónica) en azul claro -->
+        <line x1="0" y1="0" x2="1" y2="0" stroke="#1e90ff" stroke-width="3" opacity="0.7" marker-end="url(#flecha)"/>
+        <text x="1.1" y="-0.1" font-size="0.15" fill="#1e90ff">e₁</text>
+        <line x1="0" y1="0" x2="0" y2="1" stroke="#1e90ff" stroke-width="3" opacity="0.7" marker-end="url(#flecha)"/>
+        <text x="-0.2" y="1.1" font-size="0.15" fill="#1e90ff">e₂</text>
+
+        <!-- Vectores transformados D*e₁ y D*e₂ en naranja -->
+        <line x1="0" y1="0" x2="3" y2="0" stroke="#e67e22" stroke-width="3" marker-end="url(#flecha)"/>
+        <text x="3.1" y="-0.1" font-size="0.15" fill="#e67e22">D e₁</text>
+        <line x1="0" y1="0" x2="0" y2="0.5" stroke="#e67e22" stroke-width="3" marker-end="url(#flecha)"/>
+        <text x="-0.3" y="0.6" font-size="0.15" fill="#e67e22">D e₂</text>
+
+        <!-- Vector arbitrario v = (1, 1.5) en azul tenue -->
+        <line x1="0" y1="0" x2="1" y2="1.5" stroke="#1e3a8a" stroke-width="2.5" opacity="0.8" stroke-dasharray="0.1,0.1" marker-end="url(#flecha)"/>
+        <text x="1.2" y="1.4" font-size="0.15" fill="#1e3a8a">v</text>
+
+        <!-- Vector transformado D*v = (3, 0.75) en rojo intenso -->
+        <line x1="0" y1="0" x2="3" y2="0.75" stroke="#c0392b" stroke-width="3" marker-end="url(#flecha)"/>
+        <text x="3.1" y="0.8" font-size="0.15" fill="#c0392b">D v</text>
+
+        <!-- Cuadrado unitario punteado original (esquina (1,1)) -->
+        <polyline points="0,0 1,0 1,1 0,1 0,0" fill="none" stroke="#1e90ff" stroke-width="1.5" stroke-dasharray="0.1,0.05" opacity="0.5"/>
+        <!-- Rectángulo transformado (esquina (3,0.5)) -->
+        <polyline points="0,0 3,0 3,0.5 0,0.5 0,0" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="0.1,0.05"/>
+
+        <!-- Nota de área -->
+        <text x="1.5" y="-1.5" font-size="0.2" fill="#2c3e50">Área = det(D) = 1.5</text>
+      </svg>
+
+      <h4>Interpretación paso a paso</h4>
+      <ol style="margin-top: 5px;">
+        <li><strong>Vectores base:</strong> e₁ = (1,0) se transforma en (3,0) – escala sólo en x. e₂ = (0,1) se transforma en (0,0.5) – escala sólo en y.</li>
+        <li><strong>Vector arbitrario v = (1, 1.5):</strong> se transforma en (3×1 , 0.5×1.5) = (3, 0.75). La dirección cambia, pero sigue siendo la combinación escalada de los ejes.</li>
+        <li><strong>Cuadrado unitario:</strong> el cuadrado de lado 1 (área 1) se convierte en rectángulo de lados 3 y 0.5 (área 1.5), reflejando el determinante.</li>
+      </ol>
+    </div>
+
+    <!-- 6. Ejemplos de aplicaciones reales y directas -->
+    <div class="aplicaciones">
+      <h3>Aplicaciones reales de las matrices diagonales</h3>
+      <ul>
+        <li><strong>Procesamiento de imágenes (escalado de canales RGB):</strong> Una imagen digital puede representar cada píxel como un vector (R,G,B). Multiplicar por una matriz diagonal con coeficientes (0.3, 0.6, 0.1) ajusta el brillo de cada canal de forma independiente (balance de blancos).</li>
+        <li><strong>Sistemas de ecuaciones diferenciales desacopladas:</strong> Si un sistema dy/dt = A y se puede diagonalizar (A = PDP⁻¹), entonces definiendo z = P⁻¹y se obtiene dz/dt = D z, donde D es diagonal. Cada ecuación se resuelve por separado: dzᵢ/dt = λᵢ zᵢ ⇒ crecimiento/decaimiento exponencial puro.</li>
+        <li><strong>Análisis de componentes principales (PCA):</strong> La matriz de covarianza se diagonaliza para obtener componentes no correlacionados. Los valores propios (en la matriz diagonal) indican la varianza explicada por cada componente.</li>
+        <li><strong>Modelos económicos de Leontief:</strong> En versiones simplificadas, la matriz de requerimientos directos puede ser diagonal si cada sector sólo se provee a sí mismo, simplificando el cálculo de producción necesaria.</li>
+      </ul>
+    </div>
+
+    <!-- 7. Bibliografía confiable y verificable (solo un libro) -->
+    <div class="bibliografia">
+      <h3>Bibliografía</h3>
+      <p>Strang, G. (2019). <em>Introduction to Linear Algebra</em> (5th ed.). Wellesley-Cambridge Press. Capítulo 1.2 y 5.2. </p>
+    </div>
+  </div>
+</li>
