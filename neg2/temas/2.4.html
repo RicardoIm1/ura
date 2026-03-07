@@ -1,203 +1,259 @@
+<li>
 <link rel="stylesheet" href="/ura/css/estilo.css">
+<!-- MathJax para renderizar notación matemática elegante -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <!-- CSS adicional para el modal -->
 <!-- <link rel="stylesheet" href="/ura/css/estilos2.css"> -->
 <!-- Tu script de carga de modal -->
 <script src="/ura/js/modal-loader.js" defer></script>
 
-<li>
-<!--   <h3>2.4 Interpretación de la derivada</h3> -->
+<h2>2.4 Interpretación de la Derivada</h2>
 
-  <!-- SVG reloj: tiempo estimado 55 min -->
-  <svg width="70" height="70" viewBox="0 0 100 100" style="display:block; margin:1rem 0;">
-    <circle cx="50" cy="50" r="45" fill="none" stroke="#1e3c5c" stroke-width="5" />
-    <circle cx="50" cy="50" r="3" fill="#1e3c5c" />
-    <line x1="50" y1="50" x2="35" y2="25" stroke="#1e3c5c" stroke-width="4" stroke-linecap="round" />
-    <line x1="50" y1="50" x2="70" y2="35" stroke="#1e3c5c" stroke-width="3" stroke-linecap="round" />
-    <circle cx="50" cy="10" r="2.5" fill="#1e3c5c" />
-    <circle cx="90" cy="50" r="2.5" fill="#1e3c5c" />
-    <circle cx="50" cy="90" r="2.5" fill="#1e3c5c" />
-    <circle cx="10" cy="50" r="2.5" fill="#1e3c5c" />
-    <text x="25" y="85" font-family="Arial, sans-serif" font-size="12" fill="#1e3c5c" font-weight="bold">55 min</text>
-  </svg>
+<h3>Tiempo estimado de estudio</h3>
 
-  <h4>Objetivo del tema</h4>
-  <p>Interpretar la derivada desde tres perspectivas fundamentales: geométrica (pendiente de la recta tangente), física (razón de cambio instantánea) y analítica (tasa de variación). Se aprenderá a conectar estas interpretaciones y a utilizarlas para analizar el comportamiento de funciones en contextos aplicados.</p>
+<svg width='160' height='160' viewBox='0 0 160 160'>
+<circle cx='80' cy='80' r='70' stroke='black' stroke-width='4' fill='none'/>
+<line x1='80' y1='80' x2='80' y2='30' stroke='black' stroke-width='4'/>
+<line x1='80' y1='80' x2='120' y2='80' stroke='black' stroke-width='3'/>
+<text x='80' y='145' text-anchor='middle' font-size='14'>40 minutos</text>
+</svg>
 
-  <h4>Idea principal</h4>
-  <p>La derivada de una función f en un punto a es un concepto unificador que puede entenderse de múltiples maneras: <strong>geométricamente</strong> como la pendiente de la recta tangente a la curva y = f(x) en (a, f(a)); <strong>físicamente</strong> como la velocidad instantánea si f representa posición; y <strong>analíticamente</strong> como el límite de los cocientes incrementales lim<sub>h→0</sub> [f(a+h) - f(a)]/h. Estas interpretaciones permiten modelar y analizar fenómenos de cambio en todas las ciencias.</p>
+<h3>Objetivo del tema</h3>
 
-  <h4>Ejercicios visualmente claros</h4>
+<p>
+Comprender el significado geométrico y físico de la derivada de una función. El estudiante aprenderá a interpretar la derivada como la pendiente de la recta tangente a una curva y como una tasa de cambio instantánea en fenómenos reales.
+</p>
 
-  <!-- EJERCICIO 1: INTERPRETACIÓN GEOMÉTRICA -->
-  <div style="margin:2rem 0;">
-    <p><strong>Ejercicio 1: Interpretación geométrica - Pendiente de la recta tangente</strong></p>
-    <p>Dada la función f(x) = x² + 1, calcular la derivada en x = 1 y trazar la recta tangente.</p>
+<h3>Idea principal</h3>
 
-    <table style="border-collapse:collapse; margin:1rem 0; width:80%; border:1px solid #333;">
-      <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
-      <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar f(x)=x²+1 usando regla potencia</td><td style="border:1px solid #333; padding:0.5rem;">f'(x) = 2x</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Evaluar en x = 1</td><td style="border:1px solid #333; padding:0.5rem;">f'(1) = 2</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Calcular f(1)</td><td style="border:1px solid #333; padding:0.5rem;">f(1) = 2</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">4</td><td style="border:1px solid #333; padding:0.5rem;">Ecuación recta tangente</td><td style="border:1px solid #333; padding:0.5rem;">y = 2x</td></tr>
-      </tbody>
-    </table>
+<p>
+La derivada de una función describe cómo cambia una variable respecto a otra en un punto específico. Desde una perspectiva geométrica, representa la pendiente de la recta tangente a la gráfica de la función. Desde una perspectiva aplicada, indica la velocidad instantánea de cambio de un fenómeno. Esto convierte a la derivada en una herramienta central para analizar crecimiento, movimiento, optimización y comportamiento de sistemas físicos, económicos y computacionales.
+</p>
 
-    <svg width="450" height="380" viewBox="0 0 450 380" style="border:1px solid #333; background:#fefefe;">
-      <!-- origen en (70, 300), escala 40px/unidad X, 30px/unidad Y -->
-      <g stroke="#e0e0e0" stroke-width="0.8">
-        <line x1="30" y1="30" x2="30" y2="350" /><line x1="70" y1="30" x2="70" y2="350" />
-        <line x1="110" y1="30" x2="110" y2="350" /><line x1="150" y1="30" x2="150" y2="350" />
-        <line x1="190" y1="30" x2="190" y2="350" /><line x1="230" y1="30" x2="230" y2="350" />
-        <line x1="270" y1="30" x2="270" y2="350" /><line x1="310" y1="30" x2="310" y2="350" />
-        <line x1="350" y1="30" x2="350" y2="350" /><line x1="390" y1="30" x2="390" y2="350" />
-        <line x1="430" y1="30" x2="430" y2="350" />
-        <line x1="30" y1="300" x2="450" y2="300" /><line x1="30" y1="270" x2="450" y2="270" />
-        <line x1="30" y1="240" x2="450" y2="240" /><line x1="30" y1="210" x2="450" y2="210" />
-        <line x1="30" y1="180" x2="450" y2="180" /><line x1="30" y1="150" x2="450" y2="150" />
-        <line x1="30" y1="120" x2="450" y2="120" /><line x1="30" y1="90" x2="450" y2="90" />
-        <line x1="30" y1="60" x2="450" y2="60" />
-      </g>
-      <g stroke="black" stroke-width="2.5">
-        <line x1="30" y1="300" x2="450" y2="300" />
-        <line x1="70" y1="350" x2="70" y2="20" />
-      </g>
-      <g font-family="Arial" font-size="12" fill="black">
-        <text x="65" y="320">-1</text><text x="105" y="320">0</text><text x="145" y="320">1</text>
-        <text x="185" y="320">2</text><text x="225" y="320">3</text><text x="40" y="305">-1</text>
-        <text x="40" y="275">0</text><text x="40" y="245">1</text><text x="40" y="215">2</text>
-        <text x="40" y="185">3</text><text x="40" y="155">4</text><text x="40" y="125">5</text>
-      </g>
-      <path d="M30,470 Q70,410 110,350 Q150,290 190,230 Q230,170 270,110 Q310,50 350,-10" stroke="blue" stroke-width="3" fill="none" />
-      <line x1="30" y1="370" x2="390" y2="-50" stroke="red" stroke-width="3" stroke-dasharray="5 3" />
-      <circle cx="145" cy="230" r="5" fill="red" />
-      <text x="320" y="60" fill="blue">f(x) = x²+1</text>
-      <text x="320" y="90" fill="red">Tangente: y = 2x</text>
-      <text x="420" y="290" font-size="14">x</text>
-      <text x="30" y="30" font-size="14">y</text>
-    </svg>
-    <p><strong>Qué notar:</strong> La recta roja punteada es tangente en (1,2) con pendiente 2, igual a la derivada.</p>
-  </div>
+<h3>Ejercicio 1: Interpretación geométrica de la derivada</h3>
 
-  <!-- EJERCICIO 2: INTERPRETACIÓN FÍSICA -->
-  <div style="margin:2rem 0;">
-    <p><strong>Ejercicio 2: Interpretación física - Velocidad instantánea</strong></p>
-    <p>Posición s(t) = t³ - 6t² + 9t (m). La derivada es la velocidad.</p>
-    <table style="border-collapse:collapse; margin:1rem 0; width:90%; border:1px solid #333;">
-      <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
-      <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar s(t)</td><td style="border:1px solid #333; padding:0.5rem;">v(t) = 3t² - 12t + 9</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">v(t) = 0</td><td style="border:1px solid #333; padding:0.5rem;">t = 1, t = 3</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">v(2)</td><td style="border:1px solid #333; padding:0.5rem;">-3 m/s (retrocede)</td></tr>
-      </tbody>
-    </table>
-    <svg width="450" height="380" viewBox="0 0 450 380" style="border:1px solid #333; background:#fefefe;">
-      <g stroke="#e0e0e0" stroke-width="0.8">
-        <line x1="30" y1="30" x2="30" y2="350" /><line x1="70" y1="30" x2="70" y2="350" />
-        <line x1="110" y1="30" x2="110" y2="350" /><line x1="150" y1="30" x2="150" y2="350" />
-        <line x1="190" y1="30" x2="190" y2="350" /><line x1="230" y1="30" x2="230" y2="350" />
-        <line x1="270" y1="30" x2="270" y2="350" /><line x1="310" y1="30" x2="310" y2="350" />
-        <line x1="350" y1="30" x2="350" y2="350" /><line x1="390" y1="30" x2="390" y2="350" />
-        <line x1="430" y1="30" x2="430" y2="350" />
-        <line x1="30" y1="300" x2="450" y2="300" /><line x1="30" y1="260" x2="450" y2="260" />
-        <line x1="30" y1="220" x2="450" y2="220" /><line x1="30" y1="180" x2="450" y2="180" />
-        <line x1="30" y1="140" x2="450" y2="140" /><line x1="30" y1="100" x2="450" y2="100" />
-        <line x1="30" y1="60" x2="450" y2="60" />
-      </g>
-      <g stroke="black" stroke-width="2.5">
-        <line x1="30" y1="300" x2="450" y2="300" />
-        <line x1="70" y1="350" x2="70" y2="20" />
-      </g>
-      <g font-family="Arial" font-size="12" fill="black">
-        <text x="65" y="320">0</text><text x="105" y="320">1</text><text x="145" y="320">2</text>
-        <text x="185" y="320">3</text><text x="225" y="320">4</text><text x="40" y="305">-4</text>
-        <text x="40" y="265">-2</text><text x="40" y="225">0</text><text x="40" y="185">2</text>
-        <text x="40" y="145">4</text><text x="40" y="105">6</text><text x="40" y="65">8</text>
-      </g>
-      <path d="M30,400 Q70,340 110,300 Q150,260 190,240 Q230,220 270,220 Q310,220 350,240" stroke="blue" stroke-width="3" fill="none" />
-      <path d="M30,340 Q70,320 110,300 Q150,280 190,260 Q230,240 270,220 Q310,200 350,180" stroke="red" stroke-width="3" fill="none" stroke-dasharray="5 3" />
-      <line x1="30" y1="260" x2="450" y2="260" stroke="gray" stroke-width="1" stroke-dasharray="2 2" />
-      <circle cx="105" cy="260" r="4" fill="green" />
-      <circle cx="185" cy="260" r="4" fill="green" />
-      <text x="300" y="60" fill="blue">s(t) posición</text>
-      <text x="300" y="90" fill="red">v(t) velocidad</text>
-      <text x="300" y="120" fill="green">v = 0 en t = 1, 3</text>
-      <text x="420" y="290" font-size="14">t</text>
-      <text x="30" y="30" font-size="14">s, v</text>
-    </svg>
-    <p><strong>Qué notar:</strong> Velocidad cero en puntos de tangente horizontal; velocidad negativa indica retroceso.</p>
-  </div>
+<p>
+Considere la función:
+</p>
 
-  <!-- EJERCICIO 3: INTERPRETACIÓN ANALÍTICA -->
-  <div style="margin:2rem 0;">
-    <p><strong>Ejercicio 3: Tasa media vs instantánea</strong></p>
-    <p>f(x) = √x. Comparar tasa media en [1,4] con instantánea en x = 1.</p>
-    <table style="border-collapse:collapse; margin:1rem 0; width:80%; border:1px solid #333;">
-      <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
-      <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Tasa media [1,4]</td><td style="border:1px solid #333; padding:0.5rem;">(2 - 1)/3 = 1/3 ≈ 0.333</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Derivada</td><td style="border:1px solid #333; padding:0.5rem;">f'(x) = 1 / (2√x)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Instantánea en x = 1</td><td style="border:1px solid #333; padding:0.5rem;">f'(1) = 0.5</td></tr>
-      </tbody>
-    </table>
-    <svg width="450" height="380" viewBox="0 0 450 380" style="border:1px solid #333; background:#fefefe;">
-      <g stroke="#e0e0e0" stroke-width="0.8">
-        <line x1="30" y1="30" x2="30" y2="350" /><line x1="70" y1="30" x2="70" y2="350" />
-        <line x1="110" y1="30" x2="110" y2="350" /><line x1="150" y1="30" x2="150" y2="350" />
-        <line x1="190" y1="30" x2="190" y2="350" /><line x1="230" y1="30" x2="230" y2="350" />
-        <line x1="270" y1="30" x2="270" y2="350" /><line x1="310" y1="30" x2="310" y2="350" />
-        <line x1="350" y1="30" x2="350" y2="350" /><line x1="390" y1="30" x2="390" y2="350" />
-        <line x1="30" y1="300" x2="450" y2="300" /><line x1="30" y1="250" x2="450" y2="250" />
-        <line x1="30" y1="200" x2="450" y2="200" /><line x1="30" y1="150" x2="450" y2="150" />
-        <line x1="30" y1="100" x2="450" y2="100" /><line x1="30" y1="50" x2="450" y2="50" />
-      </g>
-      <g stroke="black" stroke-width="2.5">
-        <line x1="30" y1="300" x2="450" y2="300" />
-        <line x1="70" y1="350" x2="70" y2="20" />
-      </g>
-      <g font-family="Arial" font-size="12" fill="black">
-        <text x="65" y="320">0</text><text x="105" y="320">1</text><text x="145" y="320">2</text>
-        <text x="185" y="320">3</text><text x="225" y="320">4</text><text x="40" y="305">0</text>
-        <text x="40" y="255">1</text><text x="40" y="205">2</text><text x="40" y="155">3</text>
-      </g>
-      <path d="M30,470 Q70,390 110,330 Q150,290 190,250 Q230,220 270,190 Q310,170 350,150" stroke="blue" stroke-width="3" fill="none" />
-      <circle cx="105" cy="250" r="4" fill="purple" />
-      <circle cx="225" cy="150" r="4" fill="purple" />
-      <line x1="105" y1="250" x2="225" y2="150" stroke="orange" stroke-width="3" stroke-dasharray="5 3" />
-      <line x1="50" y1="290" x2="150" y2="210" stroke="red" stroke-width="3" stroke-dasharray="5 3" />
-      <text x="300" y="60" fill="blue">f(x) = √x</text>
-      <text x="300" y="90" fill="orange">Secante pendiente 1/3</text>
-      <text x="300" y="120" fill="red">Tangente pendiente 1/2</text>
-      <text x="420" y="290" font-size="14">x</text>
-      <text x="30" y="30" font-size="14">y</text>
-    </svg>
-    <p><strong>Qué notar:</strong> La tangente (roja) tiene mayor pendiente que la secante (naranja).</p>
-  </div>
+<p>
+\\[
+f(x) = x^2
+\\]
+</p>
 
-  <!-- EJERCICIO 4: APLICACIÓN ECONÓMICA -->
-  <div style="margin:2rem 0;">
-    <p><strong>Ejercicio 4: Costo marginal</strong></p>
-    <p>C(x) = 0.1x³ - 0.5x² + 300x + 500. Calcular costo marginal en x = 50.</p>
-    <table style="border-collapse:collapse; margin:1rem 0; width:80%; border:1px solid #333;">
-      <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
-      <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar C(x)</td><td style="border:1px solid #333; padding:0.5rem;">C'(x) = 0.3x² - x + 300</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Evaluar en x = 50</td><td style="border:1px solid #333; padding:0.5rem;">C'(50) = 1000</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Interpretación</td><td style="border:1px solid #333; padding:0.5rem;">Costo unitario adicional ≈ $1000</td></tr>
-      </tbody>
-    </table>
-  </div>
+<p>
+Calcular e interpretar la derivada en el punto \\(x = 1\\).
+</p>
 
-  <h4>Ejemplos de aplicaciones reales y directas</h4>
-  <ul>
-    <li><strong>Física:</strong> velocidad y aceleración.</li>
-    <li><strong>Economía:</strong> costo marginal, ingreso marginal.</li>
-    <li><strong>Ingeniería:</strong> pendiente de deflexión en vigas.</li>
-    <li><strong>Biología:</strong> tasa de crecimiento poblacional.</li>
-    <li><strong>Química:</strong> velocidad de reacción.</li>
-    <li><strong>Medicina:</strong> tasa de absorción de fármacos.</li>
-  </ul>
+<h4>Procedimiento paso a paso</h4>
 
-  <h4>Bibliografía</h4>
-  <p>Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 2 y 3.</p>
+<table border='1'>
+<tr>
+<th>Paso</th>
+<th>Procedimiento</th>
+<th>Explicación</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>\\(f(x)=x^2\\)</td>
+<td>Se define la función original.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>\\(f'(x)=2x\\)</td>
+<td>Se calcula la derivada aplicando reglas básicas de derivación.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>\\(f'(1)=2(1)=2\\)</td>
+<td>Se evalúa la derivada en el punto indicado.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Pendiente = 2</td>
+<td>La recta tangente en ese punto tiene pendiente igual a 2.</td>
+</tr>
+
+</table>
+
+<h4>Gráfica de la función y la recta tangente</h4>
+
+<svg width='520' height='420' viewBox='0 0 520 420'>
+
+<!-- cuadrícula -->
+<g stroke='#ddd' stroke-width='1'>
+<line x1='0' y1='200' x2='520' y2='200'/>
+<line x1='260' y1='0' x2='260' y2='420'/>
+
+<line x1='0' y1='150' x2='520' y2='150'/>
+<line x1='0' y1='100' x2='520' y2='100'/>
+<line x1='0' y1='250' x2='520' y2='250'/>
+<line x1='0' y1='300' x2='520' y2='300'/>
+
+<line x1='210' y1='0' x2='210' y2='420'/>
+<line x1='310' y1='0' x2='310' y2='420'/>
+</g>
+
+<!-- ejes -->
+<g stroke='black' stroke-width='2'>
+<line x1='0' y1='200' x2='520' y2='200'/>
+<line x1='260' y1='0' x2='260' y2='420'/>
+</g>
+
+<!-- curva -->
+<path d='M60 360 Q260 200 460 360' stroke='blue' stroke-width='3' fill='none'/>
+
+<!-- recta tangente -->
+<line x1='160' y1='260' x2='360' y2='140' stroke='red' stroke-width='3'/>
+
+<!-- punto -->
+<circle cx='310' cy='150' r='5' fill='black'/>
+
+</svg>
+
+<h4>Qué notar en la gráfica</h4>
+
+<ul>
+<li>La curva azul representa la función \\(f(x)=x^2\\).</li>
+<li>El punto negro representa el punto \\((1,1)\\).</li>
+<li>La recta roja es la recta tangente en ese punto.</li>
+<li>La pendiente de esta recta corresponde exactamente al valor de la derivada.</li>
+</ul>
+
+<h3>Ejercicio 2: Interpretación como tasa de cambio</h3>
+
+<p>
+Un automóvil se mueve siguiendo la función de posición:
+</p>
+
+<p>
+\\[
+s(t)=t^2
+\\]
+</p>
+
+<p>
+donde \\(s\\) está en metros y \\(t\\) en segundos.
+</p>
+
+<p>
+La velocidad instantánea es la derivada de la posición.
+</p>
+
+<p>
+\\[
+v(t)=\frac{ds}{dt}=2t
+\\]
+</p>
+
+<table border='1'>
+<tr>
+<th>Tiempo (s)</th>
+<th>Posición (m)</th>
+<th>Velocidad (m/s)</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>9</td>
+<td>6</td>
+</tr>
+
+</table>
+
+<h4>Gráfica posición-tiempo</h4>
+
+<svg width='520' height='420' viewBox='0 0 520 420'>
+
+<g stroke='#ddd' stroke-width='1'>
+<line x1='0' y1='200' x2='520' y2='200'/>
+<line x1='260' y1='0' x2='260' y2='420'/>
+</g>
+
+<g stroke='black' stroke-width='2'>
+<line x1='0' y1='380' x2='520' y2='380'/>
+<line x1='60' y1='0' x2='60' y2='420'/>
+</g>
+
+<path d='M60 380 Q200 300 320 200 T480 40'
+stroke='green'
+stroke-width='3'
+fill='none'/>
+
+</svg>
+
+<h4>Qué notar en la gráfica</h4>
+
+<ul>
+<li>La curva muestra que la posición aumenta cada vez más rápido.</li>
+<li>La pendiente de la curva aumenta con el tiempo.</li>
+<li>Esto significa que la velocidad también aumenta.</li>
+</ul>
+
+<h3>Aplicaciones reales</h3>
+
+<table border='1'>
+
+<tr>
+<th>Área</th>
+<th>Aplicación</th>
+</tr>
+
+<tr>
+<td>Física</td>
+<td>Velocidad y aceleración en movimiento.</td>
+</tr>
+
+<tr>
+<td>Economía</td>
+<td>Análisis de costos marginales y beneficios marginales.</td>
+</tr>
+
+<tr>
+<td>Ingeniería</td>
+<td>Optimización de procesos industriales.</td>
+</tr>
+
+<tr>
+<td>Ciencia de datos</td>
+<td>Algoritmos de optimización como descenso por gradiente.</td>
+</tr>
+
+<tr>
+<td>Biología</td>
+<td>Análisis de crecimiento poblacional.</td>
+</tr>
+
+</table>
+
+<h3>Bibliografía</h3>
+
+<p>
+Stewart, James. <i>Calculus: Early Transcendentals</i>. Cengage Learning.
+</p>
+
 </li>
