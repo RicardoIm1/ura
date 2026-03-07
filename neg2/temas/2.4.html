@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2.4 Interpretación de la derivada · Cálculo diferencial</title>
-    <!-- MathJax para notación elegante -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <!-- MathJax versión 3 con configuración estándar (más compatible) -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$','$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
     <style>
         body {
             background: #f5f8fc;
@@ -193,7 +206,7 @@
     <h3>Gráfica: función y recta tangente en \(x=3\)</h3>
     <canvas id="canvasDerivada" width="700" height="360" style="width:100%; height:auto; background:#ffffff;"></canvas>
     <div class="grafica-explicacion">
-        🔍 Curva \( f(x)=3+0.5x-0.1x^{2} \) (azul). Punto de tangencia \(P(3,\,3.2)\) en rojo. La recta tangente (naranja) tiene pendiente \(m = -0.1\). Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
+        🔍 Curva \( f(x)=3+0.5x-0.1x^{2} \) (azul). Punto de tangencia \(P(3,\,3.6)\) en rojo. La recta tangente (naranja) tiene pendiente \(m = -0.1\). Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
     </div>
 
     <!-- Instrucciones paso a paso (cálculo con límite) -->
@@ -409,7 +422,7 @@
         ctx2.stroke();
 
         // punto t=2
-        const pT2 = pxt(2, 2*4+1=9);
+        const pT2 = pxt(2, 2*4+1); // 2*4+1 = 9
         ctx2.fillStyle = '#c0395b';
         ctx2.beginPath();
         ctx2.arc(pT2.x, pT2.y, 6, 0, 2*Math.PI);
@@ -429,7 +442,7 @@
 
         // secante desde t=2 a t=3
         let pSec1 = pxt(2, 9);
-        let pSec2 = pxt(3, 2*9+1=19);
+        let pSec2 = pxt(3, 2*9+1); // 2*9+1 = 19
         ctx2.beginPath();
         ctx2.strokeStyle = '#8f6f50';
         ctx2.lineWidth = 1.8;
