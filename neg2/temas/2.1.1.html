@@ -1,0 +1,222 @@
+<li>
+  <h3>2.1.1 Dominio y rango</h3>
+
+  <!-- SVG reloj: tiempo estimado 50 min (referencia: curso universitario estándar) -->
+  <svg width="60" height="60" viewBox="0 0 100 100" style="display:block; margin:0.5rem 0;">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#2c3e50" stroke-width="6" />
+    <circle cx="50" cy="50" r="3" fill="#2c3e50" />
+    <line x1="50" y1="50" x2="50" y2="30" stroke="#2c3e50" stroke-width="4" stroke-linecap="round" />
+    <line x1="50" y1="50" x2="20" y2="50" stroke="#2c3e50" stroke-width="3" stroke-linecap="round" />
+    <circle cx="50" cy="8" r="2.5" fill="#2c3e50" />
+    <circle cx="85" cy="30" r="2.5" fill="#2c3e50" />
+    <circle cx="92" cy="65" r="2.5" fill="#2c3e50" />
+    <circle cx="70" cy="88" r="2.5" fill="#2c3e50" />
+    <text x="30" y="96" font-family="Arial" font-size="10" fill="#2c3e50">⏱️ 50 min</text>
+  </svg>
+
+  <h4>Objetivo del tema</h4>
+  <p>Determinar el dominio y el rango de una función a partir de su representación gráfica, su forma algebraica y en contextos aplicados. Se aprenderá a identificar restricciones como división entre cero y raíces de índice par, y a expresar estos conjuntos usando notación de intervalos.</p>
+
+  <h4>Idea principal</h4>
+  <p>El dominio de una función es el conjunto de todos los valores de entrada (x) para los cuales la función está definida y produce un número real. El rango es el conjunto de todos los valores de salida (y) que la función puede generar. Así como una máquina solo acepta ciertos insumos y produce ciertos productos, una función tiene valores permitidos (dominio) y valores resultantes (rango). Comprender estos conjuntos es esencial para interpretar gráficas y modelar fenómenos reales [citation:2][citation:3].</p>
+
+  <h4>Ejercicios:</h4>
+
+  <p><strong>Ejercicio 1: Dominio y rango a partir de una tabla de valores</strong></p>
+  <p>La siguiente tabla muestra la altura (en metros) de un proyectil en función del tiempo t (en segundos). Determinar dominio y rango.</p>
+
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 40%; border: 1px solid #333;">
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">t (segundos)</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">h(t) (metros)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">0</td><td style="border: 1px solid #333; padding: 0.5rem;">0</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">15</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">20</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">15</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">0</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Comentario paso a paso:</strong> El dominio son los valores de t registrados: {0, 1, 2, 3, 4} segundos. El rango son las alturas alcanzadas: {0, 15, 20} metros. En este caso, tanto dominio como rango son conjuntos discretos. En situaciones reales, el dominio sería continuo (t desde 0 hasta 4), pero la tabla muestra solo algunos valores.</p>
+
+  <p><strong>Ejercicio 2: Tabla de dominio y rango de funciones básicas</strong></p>
+  <p>Esta tabla resume el dominio y rango de funciones elementales, útil como referencia [citation:1].</p>
+
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 80%; border: 1px solid #333;">
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">Tipo de función</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Ejemplo</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Dominio</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Rango</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">Lineal</td><td style="border: 1px solid #333; padding: 0.5rem;">f(x)=2x+1</td><td style="border: 1px solid #333; padding: 0.5rem;">ℝ</td><td style="border: 1px solid #333; padding: 0.5rem;">ℝ</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">Cuadrática</td><td style="border: 1px solid #333; padding: 0.5rem;">f(x)=x²</td><td style="border: 1px solid #333; padding: 0.5rem;">ℝ</td><td style="border: 1px solid #333; padding: 0.5rem;">[0, ∞)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">Raíz cuadrada</td><td style="border: 1px solid #333; padding: 0.5rem;">f(x)=√x</td><td style="border: 1px solid #333; padding: 0.5rem;">[0, ∞)</td><td style="border: 1px solid #333; padding: 0.5rem;">[0, ∞)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">Racional</td><td style="border: 1px solid #333; padding: 0.5rem;">f(x)=1/x</td><td style="border: 1px solid #333; padding: 0.5rem;">ℝ \ {0}</td><td style="border: 1px solid #333; padding: 0.5rem;">ℝ \ {0}</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">Valor absoluto</td><td style="border: 1px solid #333; padding: 0.5rem;">f(x)=|x|</td><td style="border: 1px solid #333; padding: 0.5rem;">ℝ</td><td style="border: 1px solid #333; padding: 0.5rem;">[0, ∞)</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Ejercicio 3: Determinación gráfica de dominio y rango</strong></p>
+  <p>Gráfica de la función f(x) = √(x+2) - 1. A partir de la gráfica, determinar dominio y rango.</p>
+
+  <!-- GRÁFICA: función raíz cuadrada desplazada -->
+  <svg width="400" height="350" viewBox="0 0 400 350" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
+    <!-- Definición del sistema: origen en (60, 300), eje X: 40px por unidad, eje Y: -30px por unidad (invertido) -->
+    
+    <!-- 1. Cuadrícula secundaria (cada 0.5 unidades) -->
+    <g stroke="#e0e0e0" stroke-width="0.8">
+      <!-- Líneas verticales cada 0.5 (20px) desde x=-3 hasta x=4 -->
+      <line x1="20" y1="50" x2="20" y2="320" stroke="#e0e0e0" />
+      <line x1="60" y1="50" x2="60" y2="320" stroke="#e0e0e0" />
+      <line x1="100" y1="50" x2="100" y2="320" stroke="#e0e0e0" />
+      <line x1="140" y1="50" x2="140" y2="320" stroke="#e0e0e0" />
+      <line x1="180" y1="50" x2="180" y2="320" stroke="#e0e0e0" />
+      <line x1="220" y1="50" x2="220" y2="320" stroke="#e0e0e0" />
+      <line x1="260" y1="50" x2="260" y2="320" stroke="#e0e0e0" />
+      <line x1="300" y1="50" x2="300" y2="320" stroke="#e0e0e0" />
+      <line x1="340" y1="50" x2="340" y2="320" stroke="#e0e0e0" />
+      
+      <!-- Líneas horizontales cada 0.5 (15px) desde y=-2 hasta y=3 -->
+      <line x1="20" y1="300" x2="360" y2="300" stroke="#e0e0e0" />
+      <line x1="20" y1="270" x2="360" y2="270" stroke="#e0e0e0" />
+      <line x1="20" y1="240" x2="360" y2="240" stroke="#e0e0e0" />
+      <line x1="20" y1="210" x2="360" y2="210" stroke="#e0e0e0" />
+      <line x1="20" y1="180" x2="360" y2="180" stroke="#e0e0e0" />
+      <line x1="20" y1="150" x2="360" y2="150" stroke="#e0e0e0" />
+      <line x1="20" y1="120" x2="360" y2="120" stroke="#e0e0e0" />
+      <line x1="20" y1="90" x2="360" y2="90" stroke="#e0e0e0" />
+      <line x1="20" y1="60" x2="360" y2="60" stroke="#e0e0e0" />
+      <line x1="20" y1="330" x2="360" y2="330" stroke="#e0e0e0" />
+    </g>
+    
+    <!-- 2. Ejes principales (negros) -->
+    <g stroke="black" stroke-width="2.5">
+      <line x1="20" y1="300" x2="380" y2="300" /> <!-- eje X -->
+      <line x1="60" y1="340" x2="60" y2="40" />   <!-- eje Y -->
+    </g>
+    
+    <!-- 3. Marcas y números en ejes -->
+    <g font-family="Arial" font-size="12" fill="black">
+      <!-- Marcas eje X (unidad = 40px, origen en x=60) -->
+      <text x="55" y="320" text-anchor="middle">-3</text>
+      <text x="95" y="320" text-anchor="middle">-2</text>
+      <text x="135" y="320" text-anchor="middle">-1</text>
+      <text x="175" y="320" text-anchor="middle">0</text>
+      <text x="215" y="320" text-anchor="middle">1</text>
+      <text x="255" y="320" text-anchor="middle">2</text>
+      <text x="295" y="320" text-anchor="middle">3</text>
+      <text x="335" y="320" text-anchor="middle">4</text>
+      
+      <!-- Marcas eje Y (y=300 es 0, hacia arriba disminuye) -->
+      <text x="30" y="305" text-anchor="end">0</text>
+      <text x="30" y="275" text-anchor="end">1</text>
+      <text x="30" y="245" text-anchor="end">2</text>
+      <text x="30" y="215" text-anchor="end">3</text>
+      <text x="30" y="185" text-anchor="end">4</text>
+      <text x="30" y="155" text-anchor="end">5</text>
+      <text x="30" y="335" text-anchor="end">-1</text>
+      <text x="30" y="365" text-anchor="end">-2</text>
+    </g>
+    
+    <!-- 4. Función f(x)=√(x+2)-1 -->
+    <!-- Puntos calculados: x=-2 → y=-1; x=-1 → y=0; x=0 → y=0.414; x=1 → y=0.732; x=2 → y=1; x=3 → y=1.236; x=4 → y=1.449 -->
+    <path d="M60,330 
+             Q80,300 100,300 
+             Q120,285 140,275 
+             Q160,265 180,255 
+             Q200,245 220,235 
+             Q240,225 260,215 
+             Q280,205 300,195 
+             Q320,185 340,175" 
+          stroke="blue" stroke-width="3" fill="none" />
+    
+    <!-- 5. Puntos clave -->
+    <circle cx="60" cy="330" r="4" fill="red" />   <!-- (-2,-1) -->
+    <circle cx="100" cy="300" r="4" fill="red" />  <!-- (-1,0) -->
+    <circle cx="140" cy="275" r="4" fill="red" />  <!-- (0,0.414) -->
+    <circle cx="180" cy="255" r="4" fill="red" />  <!-- (1,0.732) -->
+    <circle cx="220" cy="235" r="4" fill="red" />  <!-- (2,1) -->
+    <circle cx="260" cy="215" r="4" fill="red" />  <!-- (3,1.236) -->
+    <circle cx="300" cy="195" r="4" fill="red" />  <!-- (4,1.449) -->
+    
+    <!-- 6. Indicaciones de dominio y rango -->
+    <line x1="60" y1="345" x2="340" y2="345" stroke="green" stroke-width="2" stroke-dasharray="5 3" />
+    <line x1="340" y1="345" x2="340" y2="300" stroke="green" stroke-width="2" stroke-dasharray="5 3" />
+    <text x="200" y="360" font-size="12" fill="green" font-weight="bold">Dominio: [-2, ∞)</text>
+    
+    <line x1="10" y1="330" x2="60" y2="330" stroke="purple" stroke-width="2" stroke-dasharray="5 3" />
+    <line x1="10" y1="175" x2="60" y2="175" stroke="purple" stroke-width="2" stroke-dasharray="5 3" />
+    <text x="10" y="150" font-size="12" fill="purple" font-weight="bold">Rango: [-1, ∞)</text>
+    
+    <!-- 7. Etiquetas de los ejes -->
+    <text x="360" y="290" font-size="14" font-family="Arial">x</text>
+    <text x="20" y="50" font-size="14" font-family="Arial">y</text>
+    
+    <!-- 8. Título de la gráfica -->
+    <text x="120" y="40" font-size="14" font-family="Arial" font-weight="bold">f(x) = √(x+2) - 1</text>
+  </svg>
+
+  <p><strong>Qué notar en la gráfica:</strong></p>
+  <ul>
+    <li>El dominio se indica con la línea verde segmentada sobre el eje x: comienza en x = -2 (donde la función empieza a existir) y se extiende hacia la derecha hasta infinito. En notación de intervalos: [-2, ∞).</li>
+    <li>El rango se indica con la línea púrpura segmentada sobre el eje y: comienza en y = -1 (el valor mínimo que alcanza la función) y crece hacia infinito. En notación de intervalos: [-1, ∞).</li>
+    <li>La función no existe para x menores que -2, pues el radicando sería negativo (raíz cuadrada de número negativo no es real).</li>
+    <li>Los puntos rojos muestran valores específicos de la función, confirmando que para x=-2 se obtiene y=-1 (el punto inicial del rango).</li>
+  </ul>
+
+  <p><strong>Ejercicio 4: Comparación de dominios: función racional vs raíz cuadrada</strong></p>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <!-- Función racional f(x)=1/(x-1) -->
+    <svg width="300" height="250" viewBox="0 0 300 250" style="border:1px solid #333; background:#fefefe;">
+      <text x="80" y="20" font-size="12" font-weight="bold">f(x) = 1/(x-1)</text>
+      <!-- Ejes -->
+      <line x1="30" y1="200" x2="280" y2="200" stroke="black" stroke-width="2" />
+      <line x1="150" y1="220" x2="150" y2="30" stroke="black" stroke-width="2" />
+      <!-- Asíntota vertical x=1 -->
+      <line x1="190" y1="30" x2="190" y2="220" stroke="red" stroke-width="2" stroke-dasharray="5 3" />
+      <text x="175" y="40" fill="red" font-size="10">x=1</text>
+      <!-- Ramas de la hipérbola -->
+      <path d="M110,190 Q150,150 150,100 Q150,50 130,40" stroke="blue" stroke-width="2" fill="none" />
+      <path d="M270,40 Q230,80 230,130 Q230,180 270,190" stroke="blue" stroke-width="2" fill="none" />
+      <text x="50" y="220" font-size="10">Dominio: ℝ\{1}</text>
+    </svg>
+
+    <!-- Función raíz f(x)=√(x-2) -->
+    <svg width="300" height="250" viewBox="0 0 300 250" style="border:1px solid #333; background:#fefefe;">
+      <text x="80" y="20" font-size="12" font-weight="bold">f(x) = √(x-2)</text>
+      <!-- Ejes -->
+      <line x1="30" y1="200" x2="280" y2="200" stroke="black" stroke-width="2" />
+      <line x1="50" y1="220" x2="50" y2="30" stroke="black" stroke-width="2" />
+      <!-- Punto de inicio x=2 -->
+      <line x1="90" y1="30" x2="90" y2="220" stroke="green" stroke-width="2" stroke-dasharray="5 3" />
+      <text x="75" y="40" fill="green" font-size="10">x=2</text>
+      <!-- Curva -->
+      <path d="M90,200 Q120,150 150,120 Q180,90 210,70 Q240,50 270,40" stroke="blue" stroke-width="2" fill="none" />
+      <circle cx="90" cy="200" r="3" fill="red" />
+      <text x="50" y="220" font-size="10">Dominio: [2, ∞)</text>
+    </svg>
+  </div>
+
+  <p><strong>Qué notar en las gráficas:</strong> La función racional tiene una asíntota en x=1 (línea roja punteada) donde la función no está definida (división entre cero). Su dominio es todos los reales excepto 1. La función raíz cuadrada comienza en x=2 (línea verde punteada) y solo existe para valores mayores o iguales a 2, pues el radicando debe ser no negativo.</p>
+
+  <h4>Ejemplos de aplicaciones reales y directas</h4>
+  <ul>
+    <li><strong>Física: lanzamiento de proyectil.</strong> La altura h(t) de un proyectil tiene sentido solo para tiempos t desde el lanzamiento hasta el impacto (dominio). El rango son las alturas alcanzadas, desde 0 hasta la altura máxima [citation:2].</li>
+    <li><strong>Economía: funciones de costo.</strong> El costo C(x) de producir x artículos tiene dominio x ≥ 0 (no se pueden producir cantidades negativas). El rango son los costos posibles, desde el costo fijo hasta infinito.</li>
+    <li><strong>Medicina: dosis de medicamento.</strong> La concentración de un fármaco en sangre como función del tiempo tiene dominio t ≥ 0 (tiempo después de administrar). El rango son las concentraciones observadas, que deben estar dentro de ciertos límites para ser efectivas y seguras.</li>
+    <li><strong>Ingeniería: voltaje en un circuito.</strong> La relación entre voltaje de entrada y salida puede tener restricciones: ciertos voltajes de entrada podrían dañar el circuito (dominio restringido) y los voltajes de salida están limitados por la fuente de alimentación (rango acotado) [citation:3].</li>
+  </ul>
+
+  <h4>Bibliografía</h4>
+  <p>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em> (7ª ed.). Cengage Learning. Capítulo 2: Funciones. (Ver sección 2.1 para definiciones básicas y sección 2.2 para dominio y rango).</p>
+
+</li>
