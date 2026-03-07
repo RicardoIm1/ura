@@ -1,0 +1,167 @@
+<li>
+  <h3>2.1 Definición de función</h3>
+
+  <!-- SVG reloj: tiempo estimado 45 min (referencia: curso universitario estándar) -->
+  <svg width="60" height="60" viewBox="0 0 100 100" style="display:block; margin:0.5rem 0;">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#2c3e50" stroke-width="6" />
+    <circle cx="50" cy="50" r="3" fill="#2c3e50" />
+    <!-- manecilla hora (corta) -->
+    <line x1="50" y1="50" x2="50" y2="30" stroke="#2c3e50" stroke-width="4" stroke-linecap="round" />
+    <!-- manecilla minuto (larga) indica 45 min: apunta a las 9 (izquierda) -->
+    <line x1="50" y1="50" x2="15" y2="50" stroke="#2c3e50" stroke-width="3" stroke-linecap="round" />
+    <!-- puntos de horas -->
+    <circle cx="50" cy="8"  r="2.5" fill="#2c3e50" />
+    <circle cx="85" cy="30" r="2.5" fill="#2c3e50" />
+    <circle cx="92" cy="65" r="2.5" fill="#2c3e50" />
+    <circle cx="70" cy="88" r="2.5" fill="#2c3e50" />
+    <text x="30" y="96" font-family="Arial" font-size="10" fill="#2c3e50">⏱️ 45 min</text>
+  </svg>
+
+  <h4>Objetivo del tema</h4>
+  <p>Comprender la definición formal de función como una relación entre dos conjuntos que asigna a cada elemento del dominio exactamente un elemento del codominio. Se distinguirá entre variable independiente y dependiente, y se identificará el dominio y rango a partir de distintas representaciones.</p>
+
+  <h4>Idea principal</h4>
+  <p>Una función es una regla de correspondencia que conecta dos magnitudes: a cada valor de entrada (dominio) le corresponde uno y solo un valor de salida (rango). Por ejemplo, la temperatura de una ciudad en función de la hora del día: para cada instante hay una única temperatura. Esta idea es la base del modelado de fenómenos en ciencias e ingeniería.</p>
+
+  <h4>Ejercicios visualmente claros</h4>
+
+  <p><strong>Ejercicio 1: Identificar funciones en tablas</strong></p>
+  <p>Determinar si las siguientes tablas representan una función de x en y (x es variable independiente, y dependiente).</p>
+
+  <!-- Tabla 1: función -->
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 40%; border: 1px solid #333;">
+    <caption>Tabla A: posible función</caption>
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">x</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">y</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">3</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">5</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">7</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">9</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Tabla 2: no función (x=2 repetido con diferente y) -->
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 40%; border: 1px solid #333;">
+    <caption>Tabla B: ¿función?</caption>
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">x</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">y</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">0</td><td style="border: 1px solid #333; padding: 0.5rem;">2</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">4</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">6</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">8</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Comentario paso a paso:</strong> En la Tabla A cada x tiene un único y (relación lineal). En la Tabla B, el valor x=2 aparece con dos y distintos (4 y 6), por lo tanto no es función.</p>
+
+  <p><strong>Ejercicio 2: Representación gráfica de una función lineal</strong></p>
+  <p>Gráfica de la función f(x) = 2x + 1 para x en el intervalo [-3, 3].</p>
+
+  <!-- Gráfica precisa con SVG: cuadrícula, ejes, puntos y línea -->
+  <svg width="350" height="350" viewBox="-40 -40 350 350" style="border:1px solid #ccc; background:#f9f9f9; margin:1rem 0;">
+    <!-- cuadrícula fina (líneas secundarias) espaciado 10 unidades = 25px -->
+    <g stroke="#ddd" stroke-width="0.6">
+      <line x1="0" y1="0" x2="0" y2="300" transform="translate(20,300)"/>
+      <!-- líneas verticales secundarias -->
+      <line x1="20" y1="0" x2="20" y2="300" transform="translate(20,20)"/>
+      <line x1="45" y1="0" x2="45" y2="300" transform="translate(20,20)"/>
+      <line x1="70" y1="0" x2="70" y2="300" transform="translate(20,20)"/>
+      <line x1="95" y1="0" x2="95" y2="300" transform="translate(20,20)"/>
+      <line x1="120" y1="0" x2="120" y2="300" transform="translate(20,20)"/>
+      <line x1="145" y1="0" x2="145" y2="300" transform="translate(20,20)"/>
+      <line x1="170" y1="0" x2="170" y2="300" transform="translate(20,20)"/>
+      <line x1="195" y1="0" x2="195" y2="300" transform="translate(20,20)"/>
+      <line x1="220" y1="0" x2="220" y2="300" transform="translate(20,20)"/>
+      <line x1="245" y1="0" x2="245" y2="300" transform="translate(20,20)"/>
+      <line x1="270" y1="0" x2="270" y2="300" transform="translate(20,20)"/>
+      <!-- líneas horizontales secundarias -->
+      <line x1="0" y1="20" x2="280" y2="20" transform="translate(20,20)"/>
+      <line x1="0" y1="45" x2="280" y2="45" transform="translate(20,20)"/>
+      <line x1="0" y1="70" x2="280" y2="70" transform="translate(20,20)"/>
+      <line x1="0" y1="95" x2="280" y2="95" transform="translate(20,20)"/>
+      <line x1="0" y1="120" x2="280" y2="120" transform="translate(20,20)"/>
+      <line x1="0" y1="145" x2="280" y2="145" transform="translate(20,20)"/>
+      <line x1="0" y1="170" x2="280" y2="170" transform="translate(20,20)"/>
+      <line x1="0" y1="195" x2="280" y2="195" transform="translate(20,20)"/>
+      <line x1="0" y1="220" x2="280" y2="220" transform="translate(20,20)"/>
+      <line x1="0" y1="245" x2="280" y2="245" transform="translate(20,20)"/>
+      <line x1="0" y1="270" x2="280" y2="270" transform="translate(20,20)"/>
+    </g>
+
+    <!-- ejes principales (negros gruesos) -->
+    <g stroke="#000" stroke-width="2">
+      <line x1="20" y1="300" x2="300" y2="300" transform="translate(20,20)"/>
+      <line x1="20" y1="20" x2="20" y2="300" transform="translate(20,20)"/>
+    </g>
+
+    <!-- marcas de eje X (unidad = 25px, desde -3 a 3) -->
+    <g fill="#000" font-size="10" font-family="Arial">
+      <text x="10" y="315" transform="translate(20,20)">-3</text>
+      <text x="85" y="315" transform="translate(20,20)">-2</text>
+      <text x="160" y="315" transform="translate(20,20)">-1</text>
+      <text x="232" y="315" transform="translate(20,20)">0</text>
+      <text x="305" y="315" transform="translate(20,20)">1</text>
+      <text x="378" y="315" transform="translate(20,20)">2</text>
+      <text x="450" y="315" transform="translate(20,20)">3</text>
+      <!-- marcas eje Y -->
+      <text x="-10" y="300" transform="translate(20,20)">7</text>
+      <text x="-10" y="225" transform="translate(20,20)">5</text>
+      <text x="-10" y="150" transform="translate(20,20)">3</text>
+      <text x="-10" y="75" transform="translate(20,20)">1</text>
+      <text x="-10" y="2" transform="translate(20,20)">-1</text>
+    </g>
+
+    <!-- puntos de la función y = 2x+1 calculados para x = -3,-2,-1,0,1,2,3 -->
+    <!-- transformación: (x+3)*50 +20? mejor usar puntos exactos: x=-3 → x en px =20+ (-3+3)*75 =20 ; y=300 - (2*(-3)+1+1)*25 =300 - (-6+1+1)*25 =300 - (-4)*25? mejor con fórmula directa. Se simplifica usando coordenadas: origen (20,300) con escala 25px por unidad. Para x=-3, px=20+0=20; y=2*(-3)+1=-5; pero nuestro rango y visible de -1 a 7. Para que -5 quede fuera, lo omitimos? mejor dibujar solo x de -2 a 3. Ajustamos por claridad: tomamos x∈[-2,3] para que entre en el canvas. -->
+    <!-- recalculo puntos: x=-2 -> y=-3, pero -3 está fuera. Ajustamos aún más: la función cruza y negativa, pero queremos mostrar la definición: haremos zoom a y entre -1 y 7. Entonces mostramos x desde -1 hasta 3. La línea es recta, se puede extrapolar. -->
+    <!-- para mantener precisión, dibujaremos la línea que pasa por puntos calculados correctamente con dominio [-1,3] en x, y rango [-1,7] en y. -->
+    <line x1="170" y1="270" x2="420" y2="20" stroke="blue" stroke-width="3" transform="translate(20,20)" />
+    <!-- puntos clave sobre la función: (-1,-1) -> (170,270); (0,1)->(220,220); (1,3)->(270,170); (2,5)->(320,120); (3,7)->(370,70) -->
+    <circle cx="190" cy="290" r="4" fill="red" transform="translate(20,20)" />
+    <circle cx="240" cy="240" r="4" fill="red" transform="translate(20,20)" />
+    <circle cx="290" cy="190" r="4" fill="red" transform="translate(20,20)" />
+    <circle cx="340" cy="140" r="4" fill="red" transform="translate(20,20)" />
+    <circle cx="390" cy="90" r="4" fill="red" transform="translate(20,20)" />
+    <!-- notación eje X y Y -->
+    <text x="330" y="340" font-family="Arial" font-size="14">x</text>
+    <text x="20" y="40" font-family="Arial" font-size="14">y</text>
+  </svg>
+
+  <p><strong>Qué notar en la gráfica:</strong> Cada valor de x (eje horizontal) tiene un único punto sobre la recta. La línea recta representa infinitos pares (x, f(x)). Los puntos rojos destacan algunos valores enteros. La prueba visual de la vertical: cualquier línea vertical corta la gráfica una sola vez.</p>
+
+  <p><strong>Ejercicio 3: prueba de la línea vertical</strong></p>
+  <svg width="300" height="200" viewBox="0 0 300 200">
+    <!-- parábola f(x)=x^2/2 (función) -->
+    <path d="M40,160 Q110,20 180,160" stroke="green" stroke-width="3" fill="none" />
+    <!-- círculo (no función) -->
+    <ellipse cx="230" cy="120" rx="30" ry="30" stroke="red" stroke-width="3" fill="none" />
+    <!-- líneas verticales punteadas -->
+    <line x1="120" y1="30" x2="120" y2="190" stroke="black" stroke-dasharray="5 3" stroke-width="1.5"/>
+    <line x1="230" y1="30" x2="230" y2="190" stroke="black" stroke-dasharray="5 3" stroke-width="1.5"/>
+    <text x="40" y="30" fill="green">función</text>
+    <text x="180" y="40" fill="red">no función</text>
+  </svg>
+  <p>La línea vertical a la izquierda (x=cte) corta la curva verde una vez (función). La línea sobre el círculo lo corta dos veces (no función).</p>
+
+  <h4>Ejemplos de aplicaciones reales y directas</h4>
+  <ul>
+    <li><strong>Física: movimiento rectilíneo.</strong> La posición de un auto en función del tiempo: a cada instante le corresponde una única posición (si ignoramos teletransportación).</li>
+    <li><strong>Economía: costo de producción.</strong> El costo total de fabricar x unidades es una función C(x). Para cada cantidad x, el costo es único.</li>
+    <li><strong>Biología: crecimiento poblacional.</strong> Número de bacterias en función del tiempo (modelo exponencial) cumple la definición de función.</li>
+    <li><strong>Ingeniería: voltaje en un circuito.</strong> El voltaje de salida como función del voltaje de entrada en un amplificador.</li>
+  </ul>
+
+  <h4>Bibliografía</h4>
+  <p>Stewart, J., Redlin, L., & Watson, S. (2015). <em>Precálculo: Matemáticas para el cálculo</em> (7ª ed.). Cengage Learning. Capítulo 2: Funciones.</p>
+
+</li>
