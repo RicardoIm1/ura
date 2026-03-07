@@ -1,0 +1,309 @@
+<li>
+  <h3>2.4.1 Pendiente de una recta tangente a una curva</h3>
+
+  <!-- SVG reloj: tiempo estimado 50 min (referencia: curso universitario estándar) -->
+  <svg width="70" height="70" viewBox="0 0 100 100" style="display:block; margin:0.5rem 0 1rem 0;">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#1e3c5c" stroke-width="5" />
+    <circle cx="50" cy="50" r="3" fill="#1e3c5c" />
+    <line x1="50" y1="50" x2="35" y2="25" stroke="#1e3c5c" stroke-width="4" stroke-linecap="round" />
+    <line x1="50" y1="50" x2="70" y2="40" stroke="#1e3c5c" stroke-width="3" stroke-linecap="round" />
+    <circle cx="50" cy="10" r="2.5" fill="#1e3c5c" />
+    <circle cx="90" cy="50" r="2.5" fill="#1e3c5c" />
+    <circle cx="50" cy="90" r="2.5" fill="#1e3c5c" />
+    <circle cx="10" cy="50" r="2.5" fill="#1e3c5c" />
+    <text x="25" y="85" font-family="Arial" font-size="12" fill="#1e3c5c" font-weight="bold">50 min</text>
+  </svg>
+
+  <h4>Objetivo del tema</h4>
+  <p>Comprender el concepto de pendiente de la recta tangente a una curva en un punto como el límite de las pendientes de las rectas secantes cuando el segundo punto se aproxima al punto de interés. Se aprenderá a calcular esta pendiente mediante la derivada y a interpretarla geométricamente como la tasa de cambio instantánea de la función en ese punto.</p>
+
+  <h4>Idea principal</h4>
+  <p>La pendiente de la recta tangente a la gráfica de una función \(f\) en el punto \((a, f(a))\) es el límite de las pendientes de las rectas secantes que pasan por \((a, f(a))\) y \((x, f(x))\) cuando \(x\) tiende a \(a\). Este límite, cuando existe, es precisamente la derivada \(f'(a)\). Geométricamente, la recta tangente es la recta que "mejor aproxima" a la curva cerca del punto, y su pendiente indica si la función crece (pendiente positiva), decrece (pendiente negativa) o tiene un punto estacionario (pendiente cero).</p>
+
+  <h4>Ejercicios visualmente claros</h4>
+
+  <p><strong>Ejercicio 1: Aproximación de la tangente mediante secantes</strong></p>
+  <p>Considera la función \(f(x) = x^2\). Vamos a aproximar la pendiente de la recta tangente en \(x = 1\) calculando pendientes de rectas secantes para puntos cada vez más cercanos.</p>
+
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 70%; border: 1px solid #333;">
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">\(x\)</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">\(f(x)\)</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">\(\Delta x = x - 1\)</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Pendiente secante \(\frac{f(x)-f(1)}{x-1}\)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2.0</td><td style="border: 1px solid #333; padding: 0.5rem;">4.0</td><td style="border: 1px solid #333; padding: 0.5rem;">1.0</td><td style="border: 1px solid #333; padding: 0.5rem;">3.0</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1.5</td><td style="border: 1px solid #333; padding: 0.5rem;">2.25</td><td style="border: 1px solid #333; padding: 0.5rem;">0.5</td><td style="border: 1px solid #333; padding: 0.5rem;">2.5</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1.1</td><td style="border: 1px solid #333; padding: 0.5rem;">1.21</td><td style="border: 1px solid #333; padding: 0.5rem;">0.1</td><td style="border: 1px solid #333; padding: 0.5rem;">2.1</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1.01</td><td style="border: 1px solid #333; padding: 0.5rem;">1.0201</td><td style="border: 1px solid #333; padding: 0.5rem;">0.01</td><td style="border: 1px solid #333; padding: 0.5rem;">2.01</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1.001</td><td style="border: 1px solid #333; padding: 0.5rem;">1.002001</td><td style="border: 1px solid #333; padding: 0.5rem;">0.001</td><td style="border: 1px solid #333; padding: 0.5rem;">2.001</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">0.9</td><td style="border: 1px solid #333; padding: 0.5rem;">0.81</td><td style="border: 1px solid #333; padding: 0.5rem;">-0.1</td><td style="border: 1px solid #333; padding: 0.5rem;">1.9</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">0.99</td><td style="border: 1px solid #333; padding: 0.5rem;">0.9801</td><td style="border: 1px solid #333; padding: 0.5rem;">-0.01</td><td style="border: 1px solid #333; padding: 0.5rem;">1.99</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Comentario paso a paso:</strong> Observamos que cuando \(x\) se acerca a 1 tanto por la izquierda como por la derecha, la pendiente de la recta secante se aproxima a 2. Por lo tanto, la pendiente de la recta tangente en \(x=1\) es 2. Esto coincide con la derivada \(f'(x)=2x\) evaluada en \(x=1\).</p>
+
+  <!-- Gráfica que muestra la curva, la tangente y algunas secantes -->
+  <svg width="450" height="400" viewBox="0 0 450 400" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
+    <!-- Sistema: origen en (80, 320), escala: 50px/unidad en X, 40px/unidad en Y -->
+    
+    <!-- Cuadrícula -->
+    <g stroke="#e0e0e0" stroke-width="0.8">
+      <line x1="30" y1="40" x2="30" y2="360" /><line x1="80" y1="40" x2="80" y2="360" />
+      <line x1="130" y1="40" x2="130" y2="360" /><line x1="180" y1="40" x2="180" y2="360" />
+      <line x1="230" y1="40" x2="230" y2="360" /><line x1="280" y1="40" x2="280" y2="360" />
+      <line x1="330" y1="40" x2="330" y2="360" /><line x1="380" y1="40" x2="380" y2="360" />
+      <line x1="30" y1="320" x2="430" y2="320" /><line x1="30" y1="280" x2="430" y2="280" />
+      <line x1="30" y1="240" x2="430" y2="240" /><line x1="30" y1="200" x2="430" y2="200" />
+      <line x1="30" y1="160" x2="430" y2="160" /><line x1="30" y1="120" x2="430" y2="120" />
+      <line x1="30" y1="80" x2="430" y2="80" /><line x1="30" y1="40" x2="430" y2="40" />
+    </g>
+    
+    <!-- Ejes -->
+    <g stroke="black" stroke-width="2.5">
+      <line x1="30" y1="320" x2="440" y2="320" />
+      <line x1="80" y1="360" x2="80" y2="20" />
+    </g>
+    
+    <!-- Marcas -->
+    <g font-family="Arial" font-size="12" fill="black">
+      <text x="75" y="340">0</text><text x="125" y="340">1</text><text x="175" y="340">2</text>
+      <text x="225" y="340">3</text><text x="275" y="340">4</text><text x="45" y="325">0</text>
+      <text x="45" y="285">2</text><text x="45" y="245">4</text><text x="45" y="205">6</text>
+      <text x="45" y="165">8</text><text x="45" y="125">10</text><text x="45" y="85">12</text>
+    </g>
+    
+    <!-- Función f(x)=x² -->
+    <path d="M30,520 Q80,440 130,360 Q180,280 230,200 Q280,120 330,40 Q380,-40 430,-120" 
+          stroke="blue" stroke-width="3" fill="none" />
+    
+    <!-- Punto de tangencia (1,1) -->
+    <circle cx="130" cy="280" r="6" fill="red" stroke="red" stroke-width="2" />
+    
+    <!-- Recta tangente en x=1 (pendiente 2) -->
+    <line x1="80" y1="360" x2="180" y2="200" stroke="green" stroke-width="3" />
+    
+    <!-- Algunas rectas secantes -->
+    <!-- Secante con x=2 (punto (2,4)) -->
+    <line x1="130" y1="280" x2="180" y2="160" stroke="orange" stroke-width="2" stroke-dasharray="5 3" />
+    <!-- Secante con x=1.5 (punto (1.5,2.25)) -->
+    <line x1="130" y1="280" x2="155" y2="220" stroke="orange" stroke-width="2" stroke-dasharray="5 3" />
+    <!-- Secante con x=0.5 (punto (0.5,0.25)) -->
+    <line x1="130" y1="280" x2="105" y2="340" stroke="orange" stroke-width="2" stroke-dasharray="5 3" />
+    
+    <text x="300" y="80" fill="blue">f(x) = x²</text>
+    <text x="300" y="120" fill="green">Tangente en (1,1) pendiente 2</text>
+    <text x="300" y="160" fill="orange">Secantes (aproximaciones)</text>
+    
+    <text x="420" y="310" font-size="14">x</text>
+    <text x="30" y="30" font-size="14">y</text>
+  </svg>
+
+  <p><strong>Qué notar en la gráfica:</strong> La curva azul es \(f(x)=x^2\). El punto rojo es \((1,1)\). La recta verde es la tangente en ese punto. Las rectas naranjas punteadas son secantes que pasan por \((1,1)\) y otros puntos de la curva. A medida que el segundo punto se acerca a \((1,1)\), las secantes se aproximan a la tangente.</p>
+
+  <p><strong>Ejercicio 2: Cálculo analítico de la pendiente tangente</strong></p>
+  <p>Para la función \(f(x) = x^3 - 3x + 2\), calcular la pendiente de la recta tangente en \(x = 2\) usando la definición de derivada como límite.</p>
+
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 90%; border: 1px solid #333;">
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">Paso</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Operación</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Expresión</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">Escribir el límite de la pendiente secante</td><td style="border: 1px solid #333; padding: 0.5rem;">\(\displaystyle \lim_{h \to 0} \frac{f(2+h)-f(2)}{h}\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">Calcular \(f(2)\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(f(2) = 8 - 6 + 2 = 4\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">Calcular \(f(2+h)\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\((2+h)^3 - 3(2+h) + 2 = 8 + 12h + 6h^2 + h^3 - 6 - 3h + 2\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">Simplificar \(f(2+h)\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(4 + 9h + 6h^2 + h^3\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">5</td><td style="border: 1px solid #333; padding: 0.5rem;">Formar el numerador \(f(2+h)-f(2)\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\((4 + 9h + 6h^2 + h^3) - 4 = 9h + 6h^2 + h^3\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">6</td><td style="border: 1px solid #333; padding: 0.5rem;">Dividir entre \(h\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(9 + 6h + h^2\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">7</td><td style="border: 1px solid #333; padding: 0.5rem;">Tomar límite \(h \to 0\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(9\)</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Resultado:</strong> La pendiente de la recta tangente en \(x=2\) es \(9\). La ecuación de la recta tangente es \(y - 4 = 9(x - 2)\) \(\Rightarrow\) \(y = 9x - 14\).</p>
+
+  <!-- Gráfica de f(x)=x³-3x+2 y su tangente en x=2 -->
+  <svg width="450" height="400" viewBox="0 0 450 400" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
+    <g stroke="#e0e0e0" stroke-width="0.8">
+      <line x1="30" y1="40" x2="30" y2="360" /><line x1="80" y1="40" x2="80" y2="360" />
+      <line x1="130" y1="40" x2="130" y2="360" /><line x1="180" y1="40" x2="180" y2="360" />
+      <line x1="230" y1="40" x2="230" y2="360" /><line x1="280" y1="40" x2="280" y2="360" />
+      <line x1="330" y1="40" x2="330" y2="360" /><line x1="380" y1="40" x2="380" y2="360" />
+      <line x1="30" y1="320" x2="430" y2="320" /><line x1="30" y1="280" x2="430" y2="280" />
+      <line x1="30" y1="240" x2="430" y2="240" /><line x1="30" y1="200" x2="430" y2="200" />
+      <line x1="30" y1="160" x2="430" y2="160" /><line x1="30" y1="120" x2="430" y2="120" />
+      <line x1="30" y1="80" x2="430" y2="80" />
+    </g>
+    
+    <g stroke="black" stroke-width="2.5">
+      <line x1="30" y1="320" x2="440" y2="320" />
+      <line x1="80" y1="360" x2="80" y2="20" />
+    </g>
+    
+    <g font-family="Arial" font-size="12" fill="black">
+      <text x="75" y="340">0</text><text x="125" y="340">1</text><text x="175" y="340">2</text>
+      <text x="225" y="340">3</text><text x="275" y="340">4</text><text x="45" y="325">-2</text>
+      <text x="45" y="285">0</text><text x="45" y="245">2</text><text x="45" y="205">4</text>
+      <text x="45" y="165">6</text><text x="45" y="125">8</text>
+    </g>
+    
+    <!-- Función f(x)=x³-3x+2 -->
+    <path d="M30,520 Q80,440 130,360 Q180,280 230,200 Q280,120 330,40 Q380,-40 430,-120" 
+          stroke="blue" stroke-width="3" fill="none" />
+    
+    <!-- Punto de tangencia (2,4) -->
+    <circle cx="180" cy="200" r="6" fill="red" stroke="red" stroke-width="2" />
+    
+    <!-- Recta tangente y = 9x - 14 -->
+    <line x1="130" y1="360" x2="230" y2="40" stroke="green" stroke-width="3" />
+    
+    <text x="300" y="80" fill="blue">f(x) = x³ - 3x + 2</text>
+    <text x="300" y="120" fill="green">Tangente en x=2, pendiente 9</text>
+    
+    <text x="420" y="310" font-size="14">x</text>
+    <text x="30" y="30" font-size="14">y</text>
+  </svg>
+
+  <p><strong>Qué notar en la gráfica:</strong> La curva azul es cúbica. En el punto rojo (x=2), la recta verde (tangente) tiene una pendiente pronunciada (9), lo que indica que la función crece rápidamente en ese punto.</p>
+
+  <p><strong>Ejercicio 3: Tangente horizontal (pendiente cero)</strong></p>
+  <p>Para la función \(f(x) = -x^2 + 4x - 3\), encontrar el punto donde la recta tangente es horizontal y verificar que la pendiente es cero.</p>
+
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 80%; border: 1px solid #333;">
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">Paso</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Operación</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">Derivar \(f(x)\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(f'(x) = -2x + 4\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">Igualar a cero para tangente horizontal</td><td style="border: 1px solid #333; padding: 0.5rem;">\(-2x + 4 = 0 \Rightarrow x = 2\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">Calcular \(f(2)\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(f(2) = -4 + 8 - 3 = 1\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">Ecuación de la tangente horizontal</td><td style="border: 1px solid #333; padding: 0.5rem;">\(y = 1\)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Gráfica de parábola con tangente horizontal -->
+  <svg width="400" height="350" viewBox="0 0 400 350" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
+    <g stroke="#e0e0e0" stroke-width="0.8">
+      <line x1="30" y1="50" x2="30" y2="320" /><line x1="80" y1="50" x2="80" y2="320" />
+      <line x1="130" y1="50" x2="130" y2="320" /><line x1="180" y1="50" x2="180" y2="320" />
+      <line x1="230" y1="50" x2="230" y2="320" /><line x1="280" y1="50" x2="280" y2="320" />
+      <line x1="330" y1="50" x2="330" y2="320" />
+      <line x1="30" y1="300" x2="370" y2="300" /><line x1="30" y1="250" x2="370" y2="250" />
+      <line x1="30" y1="200" x2="370" y2="200" /><line x1="30" y1="150" x2="370" y2="150" />
+      <line x1="30" y1="100" x2="370" y2="100" /><line x1="30" y1="50" x2="370" y2="50" />
+    </g>
+    
+    <g stroke="black" stroke-width="2.5">
+      <line x1="30" y1="300" x2="380" y2="300" />
+      <line x1="80" y1="330" x2="80" y2="20" />
+    </g>
+    
+    <g font-family="Arial" font-size="12" fill="black">
+      <text x="75" y="320">0</text><text x="125" y="320">1</text><text x="175" y="320">2</text>
+      <text x="225" y="320">3</text><text x="275" y="320">4</text><text x="45" y="305">-2</text>
+      <text x="45" y="255">0</text><text x="45" y="205">2</text><text x="45" y="155">4</text>
+    </g>
+    
+    <!-- Función f(x) = -x² + 4x - 3 -->
+    <path d="M30,320 Q80,260 130,200 Q180,140 230,80 Q280,20 330,-40" 
+          stroke="blue" stroke-width="3" fill="none" />
+    
+    <!-- Punto de tangente horizontal (2,1) -->
+    <circle cx="180" cy="220" r="6" fill="red" stroke="red" stroke-width="2" />
+    
+    <!-- Recta tangente horizontal y=1 -->
+    <line x1="80" y1="220" x2="280" y2="220" stroke="green" stroke-width="3" />
+    
+    <text x="250" y="80" fill="blue">f(x) = -x² + 4x - 3</text>
+    <text x="250" y="120" fill="green">Tangente horizontal en (2,1)</text>
+    
+    <text x="360" y="290" font-size="14">x</text>
+    <text x="30" y="30" font-size="14">y</text>
+  </svg>
+
+  <p><strong>Qué notar en la gráfica:</strong> La parábola abre hacia abajo. En su vértice (2,1), la recta tangente es horizontal (pendiente cero). Esto corresponde a un máximo local de la función.</p>
+
+  <p><strong>Ejercicio 4: Tangente con pendiente negativa</strong></p>
+  <p>Para la función \(f(x) = \frac{1}{x}\), calcular la pendiente de la recta tangente en \(x = 2\) y trazar la gráfica.</p>
+
+  <table style="border-collapse: collapse; margin: 1rem 0; width: 80%; border: 1px solid #333;">
+    <thead>
+      <tr style="background-color: #d3d3d3;">
+        <th style="border: 1px solid #333; padding: 0.5rem;">Paso</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Operación</th>
+        <th style="border: 1px solid #333; padding: 0.5rem;">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">Derivar \(f(x) = x^{-1}\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(f'(x) = -x^{-2} = -\frac{1}{x^2}\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">Evaluar en \(x=2\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\(f'(2) = -\frac{1}{4} = -0.25\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">Punto de tangencia: \(f(2) = \frac{1}{2}\)</td><td style="border: 1px solid #333; padding: 0.5rem;">\((2, 0.5)\)</td></tr>
+      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">Ecuación tangente</td><td style="border: 1px solid #333; padding: 0.5rem;">\(y - 0.5 = -0.25(x - 2) \Rightarrow y = -0.25x + 1\)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Gráfica de hipérbola y tangente -->
+  <svg width="400" height="350" viewBox="0 0 400 350" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
+    <g stroke="#e0e0e0" stroke-width="0.8">
+      <line x1="30" y1="50" x2="30" y2="320" /><line x1="80" y1="50" x2="80" y2="320" />
+      <line x1="130" y1="50" x2="130" y2="320" /><line x1="180" y1="50" x2="180" y2="320" />
+      <line x1="230" y1="50" x2="230" y2="320" /><line x1="280" y1="50" x2="280" y2="320" />
+      <line x1="330" y1="50" x2="330" y2="320" />
+      <line x1="30" y1="300" x2="370" y2="300" /><line x1="30" y1="250" x2="370" y2="250" />
+      <line x1="30" y1="200" x2="370" y2="200" /><line x1="30" y1="150" x2="370" y2="150" />
+      <line x1="30" y1="100" x2="370" y2="100" />
+    </g>
+    
+    <g stroke="black" stroke-width="2.5">
+      <line x1="30" y1="300" x2="380" y2="300" />
+      <line x1="80" y1="330" x2="80" y2="20" />
+    </g>
+    
+    <g font-family="Arial" font-size="12" fill="black">
+      <text x="75" y="320">0</text><text x="125" y="320">1</text><text x="175" y="320">2</text>
+      <text x="225" y="320">3</text><text x="275" y="320">4</text><text x="45" y="305">0</text>
+      <text x="45" y="255">1</text><text x="45" y="205">2</text><text x="45" y="155">3</text>
+    </g>
+    
+    <!-- Función f(x)=1/x -->
+    <path d="M30,300 Q80,280 130,260 Q180,240 230,220 Q280,200 330,180" 
+          stroke="blue" stroke-width="3" fill="none" />
+    
+    <!-- Punto de tangencia (2,0.5) -->
+    <circle cx="180" cy="210" r="6" fill="red" stroke="red" stroke-width="2" />
+    
+    <!-- Recta tangente y = -0.25x + 1 -->
+    <line x1="80" y1="240" x2="280" y2="180" stroke="green" stroke-width="3" />
+    
+    <text x="250" y="80" fill="blue">f(x) = 1/x</text>
+    <text x="250" y="120" fill="green">Tangente en x=2, pendiente -0.25</text>
+    
+    <text x="360" y="290" font-size="14">x</text>
+    <text x="30" y="30" font-size="14">y</text>
+  </svg>
+
+  <p><strong>Qué notar en la gráfica:</strong> La hipérbola decrece para x>0. La tangente en (2,0.5) tiene pendiente negativa (-0.25), indicando que la función está disminuyendo en ese punto.</p>
+
+  <h4>Ejemplos de aplicaciones reales y directas</h4>
+  <ul>
+    <li><strong>Física:</strong> La pendiente de la recta tangente a la gráfica posición-tiempo en un instante dado es la velocidad instantánea en ese momento.</li>
+    <li><strong>Economía:</strong> La pendiente de la tangente a la curva de costo total en un punto es el costo marginal, que indica cuánto aumenta el costo al producir una unidad adicional.</li>
+    <li><strong>Ingeniería:</strong> En el diseño de carreteras, la pendiente de la tangente a un perfil vertical determina la inclinación de la vía en un punto.</li>
+    <li><strong>Biología:</strong> La pendiente de la tangente a una curva de crecimiento poblacional indica la tasa de crecimiento instantánea.</li>
+    <li><strong>Química:</strong> La pendiente de la tangente a la curva de concentración vs. tiempo da la velocidad instantánea de reacción.</li>
+  </ul>
+
+  <h4>Bibliografía</h4>
+  <p>Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 2: Límites y derivadas (sección 2.1: La tangente y la velocidad).</p>
+</li>
