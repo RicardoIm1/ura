@@ -1,110 +1,455 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Interpretación de la Derivada</title>
-<style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-    h1 { color: #004a99; }
-    h2 { color: #0056b3; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-    h3 { color: #0066cc; }
-    .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .math { font-family: "Cambria Math", "Calibri", serif; font-style: italic; }
-    .svg-container { text-align: center; margin: 20px 0; }
-    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-    th { background-color: #f4f4f4; }
-    .nota { background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 10px; margin-top: 10px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4 Interpretación de la derivada · Cálculo diferencial</title>
+    <!-- MathJax para notación elegante -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+        body {
+            background: #f5f8fc;
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            margin: 0;
+            padding: 2rem 1.2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .documento {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 15px 30px rgba(0,25,40,0.08);
+            padding: 2.8rem;
+        }
+        h1, h2, h3 {
+            color: #113946;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+        h1 {
+            font-size: 2.4rem;
+            border-left: 6px solid #1d6f8b;
+            padding-left: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        .reloj-svg {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #ecf3f9;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            width: fit-content;
+            margin: 1.2rem 0 2rem 0;
+        }
+        .reloj-svg span {
+            font-size: 1.2rem;
+            color: #154454;
+            font-weight: 450;
+        }
+        .objetivo, .idea-principal {
+            background: #ecf3f8;
+            padding: 1.8rem 2.2rem;
+            border-radius: 26px;
+            margin: 2rem 0;
+        }
+        .etiqueta {
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1.2px;
+            color: #266a84;
+            text-transform: uppercase;
+        }
+        p, li {
+            font-size: 1.08rem;
+            line-height: 1.5;
+            color: #1b3340;
+        }
+        canvas {
+            display: block;
+            margin: 2rem auto;
+            border-radius: 22px;
+            background: #ffffff;
+            box-shadow: 0 6px 16px rgba(23, 55, 70, 0.12);
+            border: 1px solid #bcd3e3;
+            width: 100%;
+            height: auto;
+        }
+        .grafica-explicacion {
+            text-align: center;
+            font-style: italic;
+            color: #1a4f63;
+            margin-top: -1rem;
+            margin-bottom: 2.2rem;
+            font-size: 0.98rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.2rem 0;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,30,40,0.05);
+        }
+        th {
+            background: #215e79;
+            color: white;
+            font-weight: 500;
+            padding: 12px 10px;
+        }
+        td {
+            background: #f0f6fb;
+            padding: 10px 10px;
+            border-bottom: 1px solid #c2d6e6;
+        }
+        .instrucciones {
+            background: #e7f0f7;
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+        .instrucciones pre {
+            background: #1c2f3c;
+            color: #e3f0fd;
+            padding: 1.4rem;
+            border-radius: 18px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.95rem;
+        }
+        .ejemplos-aplicacion {
+            background: #eaf2f8;
+            border-radius: 26px;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0;
+        }
+        .bibliografia {
+            border-top: 2px dashed #9fbdd1;
+            padding-top: 2rem;
+            margin-top: 2.5rem;
+        }
+        .nota-matematica {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 2rem 0 0.5rem;
+            color: #123f52;
+        }
+    </style>
 </head>
 <body>
+<div class="documento">
 
-<div class="container">
-    <h1>2.4 Interpretación Geométrica y Física de la Derivada</h1>
+    <!-- 1. Título -->
+    <h1>2.4 Interpretación de la derivada</h1>
 
-    <div class="svg-container">
-        <!-- SVG Reloj (Tiempo estimado: 15 min) -->
-        <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" stroke="#333" stroke-width="5" fill="none"/>
-            <path d="M50 50 L50 20" stroke="#333" stroke-width="5" stroke-linecap="round"/>
-            <path d="M50 50 L70 50" stroke="#333" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="50" cy="50" r="4" fill="#333"/>
+    <!-- 2. SVG reloj (35 min aprox) -->
+    <div class="reloj-svg">
+        <svg width="48" height="48" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="white" stroke="#0e3b4c" stroke-width="5" />
+            <circle cx="50" cy="50" r="3" fill="#0e3b4c" />
+            <line x1="50" y1="50" x2="50" y2="20" stroke="#0e3b4c" stroke-width="4" stroke-linecap="round" />
+            <line x1="50" y1="50" x2="80" y2="50" stroke="#1b6f8c" stroke-width="3" stroke-linecap="round" />
+            <circle cx="50" cy="10" r="2.5" fill="#1b6f8c" />
+            <circle cx="85" cy="50" r="2.5" fill="#1b6f8c" />
         </svg>
-        <p>Tiempo estimado: 15 minutos</p>
+        <span><strong>⏳ 35 minutos</strong> · interpretación geométrica y física (referencia: Universidad de Stanford)</span>
     </div>
 
-    <h2>Objetivo del tema</h2>
-    <p>Comprender la derivada no solo como un límite algebraico, sino como la pendiente de la recta tangente a una curva (interpretación geométrica) y como una tasa de cambio instantánea (interpretación física), permitiendo analizar el comportamiento de funciones.</p>
-
-    <h2>Idea principal</h2>
-    <p>La derivada <span class="math">f'(a)</span> representa la pendiente de la recta tangente a la gráfica de la función <span class="math">y = f(x)</span> en el punto <span class="math">(a, f(a))</span>. Físicamente, mide la velocidad a la que cambia una magnitud con respecto a otra en un instante preciso, siendo el límite del cociente incremental cuando el intervalo de tiempo tiende a cero.</p>
-
-    <h2>Ejercicios visualmente claros y análisis</h2>
-    
-    <div class="svg-container">
-        <!-- Gráfica de la derivada como pendiente tangente -->
-        <svg width="400" height="300" viewBox="0 0 400 300">
-            <!-- Ejes -->
-            <line x1="50" y1="250" x2="350" y2="250" stroke="black" stroke-width="2"/>
-            <line x1="100" y1="50" x2="100" y2="280" stroke="black" stroke-width="2"/>
-            
-            <!-- Curva f(x) = x^2 / 50 + 50 (curva suave) -->
-            <path d="M 120 220 Q 200 100 300 150" stroke="#0056b3" stroke-width="3" fill="none"/>
-            
-            <!-- Punto de tangencia (a, f(a)) -->
-            <circle cx="200" cy="130" r="5" fill="red"/>
-            
-            <!-- Recta Tangente -->
-            <line x1="140" y1="160" x2="260" y2="100" stroke="#ff4500" stroke-width="2" stroke-dasharray="5,5"/>
-            
-            <!-- Etiquetas -->
-            <text x="300" y="270" font-family="Arial" font-size="14">x</text>
-            <text x="80" y="60" font-family="Arial" font-size="14">y</text>
-            <text x="205" y="125" font-family="Arial" font-size="12" fill="red">P(a, f(a))</text>
-            <text x="260" y="90" font-family="Arial" font-size="12" fill="#ff4500">Tangente: m = f'(a)</text>
-        </svg>
+    <!-- 3. Objetivo -->
+    <div class="objetivo">
+        <div class="etiqueta">📌 Objetivo</div>
+        <p>Comprender las distintas interpretaciones de la derivada de una función: geométrica (pendiente de la recta tangente), física (velocidad instantánea, razón de cambio) y analítica (tasa de variación instantánea). Se busca que el estudiante relacione estos significados y los aplique a contextos científicos elementales.</p>
     </div>
 
-    <div class="nota">
-        <strong>Qué notar en la gráfica:</strong> La línea roja punteada (tangente) toca a la curva azul exactamente en un punto, y su inclinación representa el valor de la derivada en ese punto específico.
+    <!-- 4. Idea principal -->
+    <div class="idea-principal">
+        <div class="etiqueta">🧠 Idea central</div>
+        <p>La derivada \( f'(a) \) mide cómo cambia \( f \) en el punto \( a \). Geométricamente es la pendiente de la recta tangente a la curva \( y=f(x) \) en \( (a, f(a)) \). Físicamente, si \( x \) representa tiempo y \( f(x) \) posición, \( f'(a) \) es la velocidad instantánea. En general, \( f'(a) \) es la mejor aproximación lineal del cambio de la función cerca de \( a \).</p>
     </div>
 
+    <!-- 5. Ejercicios visualmente claros: gráficas canvas y tabla -->
+    <h2>▸ Interpretación geométrica: pendiente de la tangente</h2>
+    <p>Sea \( f(x) = 3 + 0.5x - 0.1x^2 \) (una parábola cóncava hacia abajo). Evaluaremos en \( a = 3 \). La derivada analítica es \( f'(x) = 0.5 - 0.2x \), por lo que \( f'(3) = 0.5 - 0.6 = -0.1 \). Esto indica que en \( x=3 \) la curva decrece localmente.</p>
+
+    <!-- Tabla de aproximación con secantes -->
     <table>
-        <tr>
-            <th>Concepto</th>
-            <th>Interpretación</th>
-            <th>Expresión Matemática</th>
-        </tr>
-        <tr>
-            <td>Geométrica</td>
-            <td>Pendiente de la recta tangente</td>
-            <td><span class="math">m = \tan(\theta) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}</span></td>
-        </tr>
-        <tr>
-            <td>Física</td>
-            <td>Tasa de cambio instantánea</td>
-            <td><span class="math">v(t) = \frac{ds}{dt} = \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t}</span></td>
-        </tr>
+        <caption style="caption-side: bottom; margin-top: 6px;">Tabla 1. Aproximación de \( f'(3) \) mediante secantes</caption>
+        <thead><tr><th>\( h \)</th><th>\( Q(3+h, f(3+h)) \)</th><th>\( f(3+h) \)</th><th>\( \frac{f(3+h)-f(3)}{h} \)</th></tr></thead>
+        <tbody>
+            <tr><td>\(0.5\)</td><td>\((3.5, 3.525)\)</td><td>\(3.525\)</td><td>\(-0.05\)</td></tr>
+            <tr><td>\(0.2\)</td><td>\((3.2, 3.376)\)</td><td>\(3.376\)</td><td>\(-0.12\)</td></tr>
+            <tr><td>\(0.1\)</td><td>\((3.1, 3.289)\)</td><td>\(3.289\)</td><td>\(-0.11\)</td></tr>
+            <tr><td>\(0.01\)</td><td>\((3.01, 3.20899)\)</td><td>\(3.20899\)</td><td>\(-0.101\)</td></tr>
+            <tr><td>\(-0.1\)</td><td>\((2.9, 3.109)\)</td><td>\(3.109\)</td><td>\(-0.09\)</td></tr>
+            <tr><td>\(-0.2\)</td><td>\((2.8, 3.016)\)</td><td>\(3.016\)</td><td>\(-0.08\)</td></tr>
+        </tbody>
     </table>
+    <p style="text-align: center;">Las pendientes secantes se aproximan a \(-0.1\), confirmando la derivada analítica.</p>
 
-    <h3>Procedimiento paso a paso</h3>
-    <p>Para hallar la pendiente de la recta tangente a <span class="math">f(x) = x^2</span> en <span class="math">x=3</span>:</p>
-    <ol>
-        <li>Definir la función: <span class="math">f(x) = x^2</span>.</li>
-        <li>Calcular la derivada general: <span class="math">f'(x) = 2x</span>.</li>
-        <li>Evaluar la derivada en el punto solicitado: <span class="math">f'(3) = 2(3) = 6</span>.</li>
-        <li><strong>Conclusión:</strong> La pendiente de la recta tangente en <span class="math">x=3</span> es 6.</li>
-    </ol>
+    <!-- Canvas con la curva y la tangente exacta -->
+    <h3>Gráfica: función y recta tangente en \(x=3\)</h3>
+    <canvas id="canvasDerivada" width="700" height="360" style="width:100%; height:auto; background:#ffffff;"></canvas>
+    <div class="grafica-explicacion">
+        🔍 Curva \( f(x)=3+0.5x-0.1x^{2} \) (azul). Punto de tangencia \(P(3,\,3.2)\) en rojo. La recta tangente (naranja) tiene pendiente \(m = -0.1\). Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
+    </div>
 
-    <h2>Ejemplos de aplicaciones reales</h2>
-    <ul>
-        <li><strong>Cinemática (Física):</strong> Si una función <span class="math">s(t)</span> representa la posición de un objeto, la derivada <span class="math">v(t) = s'(t)</span> representa la velocidad instantánea del objeto en el tiempo <span class="math">t</span> [1].</li>
-        <li><strong>Economía:</strong> El costo marginal se define como la derivada de la función de costo total <span class="math">C(x)</span>, representando el costo aproximado de producir una unidad adicional [1].</li>
-        <li><strong>Biología:</strong> La tasa de crecimiento poblacional de bacterias es la derivada de la función de población respecto al tiempo, indicando qué tan rápido crece la población en un momento dado.</li>
-    </ul>
+    <!-- Instrucciones paso a paso (cálculo con límite) -->
+    <div class="instrucciones">
+        <div class="etiqueta">📝 Procedimiento analítico paso a paso</div>
+        <p>Para \( f(x)=3+0.5x-0.1x^2 \) y \(a=3\):</p>
+        <pre>1.  Escribimos el cociente diferencial:  \( \frac{f(3+h)-f(3)}{h} \)
+2.  Evaluamos \( f(3) = 3 + 0.5(3) - 0.1(9) = 3 + 1.5 - 0.9 = 3.6 \)
+    \( f(3+h) = 3 + 0.5(3+h) - 0.1(3+h)^2 \)
+            = \( 3 + 1.5 + 0.5h - 0.1(9 + 6h + h^2) \)
+            = \( 4.5 + 0.5h - 0.9 - 0.6h - 0.1h^2 \)
+            = \( 3.6 - 0.1h - 0.1h^2 \)
+3.  Restamos: \( f(3+h) - f(3) = (3.6 - 0.1h - 0.1h^2) - 3.6 = -0.1h - 0.1h^2 \)
+4.  Dividimos entre \(h\): \( \frac{-0.1h - 0.1h^2}{h} = -0.1 - 0.1h \) (para \(h \neq 0\))
+5.  Tomamos límite \(h \to 0\): \(\displaystyle \lim_{h\to 0} (-0.1 - 0.1h) = -0.1\)
+6.  Por tanto, \( f'(3) = -0.1 \). Coincide con la tabla y la gráfica.</pre>
+        <p>Este cociente es la definición de derivada: \(f'(a) = \lim_{h\to 0} \frac{f(a+h)-f(a)}{h}\).</p>
+    </div>
 
-    <h2>Bibliografía</h2>
-    <p>[1] Stewart, J. (2018). *Cálculo de una variable: Trascendentes tempranas* (8a ed.). Cengage Learning.</p>
+    <!-- Otra interpretación: velocidad instantánea (contexto físico) -->
+    <h2>▸ Interpretación física: velocidad instantánea</h2>
+    <p>Supongamos que un auto se mueve según \( s(t) = 2t^2 + 1 \) (metros, \(t\) en segundos). La velocidad instantánea en \(t=2\) s es \( s'(2) \).</p>
+    <canvas id="canvasVelocidad" width="700" height="280" style="width:100%; height:auto; background:#ffffff;"></canvas>
+    <div class="grafica-explicacion">
+        🔍 Gráfica posición-tiempo \(s(t)=2t^2+1\). La recta tangente en \(t=2\) (verde) tiene pendiente \(8\), que es la velocidad instantánea en ese instante ( \(v = 8\,\text{m/s}\) ). La pendiente de la secante (punteada) entre \(t=2\) y \(t=3\) da la velocidad media \( \frac{s(3)-s(2)}{1} = 10\,\text{m/s} \), distinta de la instantánea.
+    </div>
+
+    <!-- Tabla de velocidades medias -->
+    <table>
+        <caption style="caption-side: bottom;">Tabla 2. Velocidades medias tendiendo a velocidad instantánea \(v(2)\)</caption>
+        <thead><tr><th>Intervalo \([2, 2+\Delta t]\)</th><th>\(\Delta t\) (s)</th><th>Velocidad media (m/s)</th></tr></thead>
+        <tbody>
+            <tr><td>\([2, 3]\)</td><td>\(1.0\)</td><td>\(10.0\)</td></tr>
+            <tr><td>\([2, 2.5]\)</td><td>\(0.5\)</td><td>\(9.0\)</td></tr>
+            <tr><td>\([2, 2.1]\)</td><td>\(0.1\)</td><td>\(8.2\)</td></tr>
+            <tr><td>\([2, 2.01]\)</td><td>\(0.01\)</td><td>\(8.02\)</td></tr>
+            <tr><td>\([1.9, 2]\)</td><td>\(-0.1\) (desde atrás)</td><td>\(7.8\)</td></tr>
+        </tbody>
+    </table>
+    <p>La velocidad media tiende a \(8\,\text{m/s}\), que es \(s'(2) = 4t|_{t=2}=8\).</p>
+
+    <!-- 6. Ejemplos de aplicaciones reales y directas -->
+    <div class="ejemplos-aplicacion">
+        <div class="etiqueta">🔬 Aplicaciones en contextos reales</div>
+        <ul>
+            <li><strong>Física:</strong> La derivada de la posición es velocidad; la derivada de velocidad es aceleración. Por ejemplo, estimar la fuerza en un instante a partir de la variación del momento lineal.</li>
+            <li><strong>Química:</strong> La velocidad de una reacción química es la derivada de la concentración de un reactivo respecto al tiempo.</li>
+            <li><strong>Biología:</strong> Tasa de crecimiento de una población en un instante (modelo malthusiano o logístico).</li>
+            <li><strong>Economía:</strong> El costo marginal (derivada del costo total respecto a unidades producidas) indica cuánto cuesta producir una unidad adicional.</li>
+            <li><strong>Ingeniería:</strong> En control de procesos, la derivada de una señal da información sobre tendencias (derivada proporcional en control PID).</li>
+        </ul>
+    </div>
+
+    <!-- 7. Bibliografía confiable -->
+    <div class="bibliografia">
+        <div class="etiqueta">📖 Referencia fundamental</div>
+        <p>Thomas, G. B., Weir, M. D., & Hass, J. (2014). <em>Cálculo: varias variables</em> (12ª ed.). Pearson Educación. Capítulo 3: La derivada. [ISBN: 978-607-32-2838-5]</p>
+        <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;">Este texto desarrolla la interpretación geométrica y física de la derivada con numerosos ejemplos y aplicaciones.</p>
+    </div>
+
+    <!-- Cierre con notación elegante -->
+    <div class="nota-matematica">
+        \[ \boxed{ f'(a) = \frac{df}{dx}(a) = \lim_{h\to 0}\frac{f(a+h)-f(a)}{h} } \]
+    </div>
+</div>
+
+<script>
+    (function() {
+        // --- Canvas 1: Interpretación geométrica (curva y tangente) ---
+        const canvas1 = document.getElementById('canvasDerivada');
+        if (!canvas1) return;
+        const ctx1 = canvas1.getContext('2d');
+        const w = 700, h = 360;
+        canvas1.width = w; canvas1.height = h;
+
+        // Márgenes y escala
+        const xMin = -1, xMax = 7;
+        const yMin = 1, yMax = 5;
+        const px = (x, y) => ({
+            x: 60 + (x - xMin) * (w - 100) / (xMax - xMin),
+            y: h - 50 - (y - yMin) * (h - 90) / (yMax - yMin)
+        });
+
+        // fondo
+        ctx1.fillStyle = '#ffffff';
+        ctx1.fillRect(0, 0, w, h);
+
+        // Ejes
+        ctx1.beginPath();
+        ctx1.strokeStyle = '#2f5f78';
+        ctx1.lineWidth = 1.8;
+        ctx1.moveTo(50, h-50); ctx1.lineTo(w-40, h-50); // X
+        ctx1.moveTo(60, 30); ctx1.lineTo(60, h-40);     // Y
+        ctx1.stroke();
+
+        // Marcas eje X
+        ctx1.fillStyle = '#1e4d64';
+        ctx1.font = '12px Segoe UI';
+        for (let i = 0; i <= 6; i++) {
+            let p = px(i, 0);
+            ctx1.fillText(i.toString(), p.x-5, h-35);
+        }
+        // Marcas eje Y
+        for (let i = 1; i <= 5; i++) {
+            let p = px(0, i);
+            ctx1.fillText(i.toString(), 30, p.y+4);
+        }
+
+        // Grilla secundaria (suave)
+        ctx1.beginPath();
+        ctx1.strokeStyle = '#bed9ec';
+        ctx1.lineWidth = 0.5;
+        for (let i = -1; i <= 7; i+=0.5) {
+            let p1 = px(i, yMin), p2 = px(i, yMax);
+            ctx1.moveTo(p1.x, p1.y); ctx1.lineTo(p2.x, p2.y);
+        }
+        for (let j = 1; j <=5; j+=0.5) {
+            let p1 = px(xMin, j), p2 = px(xMax, j);
+            ctx1.moveTo(p1.x, p1.y); ctx1.lineTo(p2.x, p2.y);
+        }
+        ctx1.strokeStyle = '#cbddee';
+        ctx1.stroke();
+
+        // Curva f(x)=3+0.5x-0.1x^2
+        ctx1.beginPath();
+        ctx1.strokeStyle = '#164f6b';
+        ctx1.lineWidth = 3.2;
+        let first = true;
+        for (let x = -0.8; x <= 6.8; x += 0.08) {
+            let y = 3 + 0.5*x - 0.1*x*x;
+            if (y < yMin-0.2 || y > yMax+0.2) continue;
+            let p = px(x, y);
+            if (first) { ctx1.moveTo(p.x, p.y); first = false; }
+            else ctx1.lineTo(p.x, p.y);
+        }
+        ctx1.stroke();
+
+        // Punto de tangencia (3, 3.6)
+        const pP = px(3, 3.6);
+        ctx1.fillStyle = '#c2335c';
+        ctx1.beginPath();
+        ctx1.arc(pP.x, pP.y, 7, 0, 2*Math.PI);
+        ctx1.fill();
+        ctx1.fillStyle = '#c2335c';
+        ctx1.font = 'bold 13px Segoe UI';
+        ctx1.fillText('P (3,3.6)', pP.x+10, pP.y-12);
+
+        // Recta tangente: y = -0.1(x-3) + 3.6 = -0.1x + 3.9
+        ctx1.beginPath();
+        ctx1.strokeStyle = '#c95b2c';
+        ctx1.lineWidth = 2.5;
+        let xA = 1.2, yA = -0.1*xA + 3.9;
+        let xB = 5.0, yB = -0.1*xB + 3.9;
+        let pA = px(xA, yA), pB = px(xB, yB);
+        ctx1.moveTo(pA.x, pA.y); ctx1.lineTo(pB.x, pB.y);
+        ctx1.stroke();
+
+        // Etiqueta tangente
+        ctx1.fillStyle = '#b1471f';
+        ctx1.font = 'italic 12px Segoe UI';
+        ctx1.fillText('tangente m = -0.1', 430, 130);
+
+        // --- Canvas 2: Velocidad instantánea s(t)=2t^2+1 ---
+        const canvas2 = document.getElementById('canvasVelocidad');
+        if (!canvas2) return;
+        const ctx2 = canvas2.getContext('2d');
+        canvas2.width = 700; canvas2.height = 280;
+        const w2 = 700, h2 = 280;
+
+        const tMin = 0, tMax = 4;
+        const sMin = 0, sMax = 35;
+
+        const pxt = (t, s) => ({
+            x: 50 + (t - tMin) * (w2 - 100) / (tMax - tMin),
+            y: h2 - 40 - (s - sMin) * (h2 - 70) / (sMax - sMin)
+        });
+
+        ctx2.fillStyle = '#ffffff';
+        ctx2.fillRect(0,0,w2,h2);
+
+        // ejes
+        ctx2.strokeStyle = '#15475c';
+        ctx2.lineWidth = 1.8;
+        ctx2.beginPath();
+        ctx2.moveTo(40, h2-40); ctx2.lineTo(w2-40, h2-40);
+        ctx2.moveTo(45, 30); ctx2.lineTo(45, h2-35);
+        ctx2.stroke();
+
+        // marcas t
+        ctx2.fillStyle = '#1b4f64';
+        ctx2.font = '11px Segoe UI';
+        for (let i=0; i<=4; i++) {
+            let p = pxt(i,0);
+            ctx2.fillText(i.toString(), p.x-5, h2-25);
+        }
+        for (let s=0; s<=35; s+=5) {
+            let p = pxt(0,s);
+            if (s%5===0) ctx2.fillText(s.toString(), 15, p.y+4);
+        }
+
+        // curva s(t)
+        ctx2.beginPath();
+        ctx2.strokeStyle = '#226f8c';
+        ctx2.lineWidth = 3;
+        first = true;
+        for (let t=0; t<=4; t+=0.04) {
+            let s = 2*t*t + 1;
+            if (s>sMax) continue;
+            let p = pxt(t, s);
+            if (first) { ctx2.moveTo(p.x, p.y); first = false; }
+            else ctx2.lineTo(p.x, p.y);
+        }
+        ctx2.stroke();
+
+        // punto t=2
+        const pT2 = pxt(2, 2*4+1=9);
+        ctx2.fillStyle = '#c0395b';
+        ctx2.beginPath();
+        ctx2.arc(pT2.x, pT2.y, 6, 0, 2*Math.PI);
+        ctx2.fill();
+        ctx2.fillStyle = '#b03c5a';
+        ctx2.fillText('t=2, s=9', pT2.x+8, pT2.y-12);
+
+        // tangente en t=2: v=8 => s = 8(t-2)+9
+        ctx2.beginPath();
+        ctx2.strokeStyle = '#34937c';
+        ctx2.lineWidth = 2.5;
+        let tA = 1.2, sA = 8*(tA-2)+9;
+        let tB = 3.2, sB = 8*(tB-2)+9;
+        let pA2 = pxt(tA, sA), pB2 = pxt(tB, sB);
+        ctx2.moveTo(pA2.x, pA2.y); ctx2.lineTo(pB2.x, pB2.y);
+        ctx2.stroke();
+
+        // secante desde t=2 a t=3
+        let pSec1 = pxt(2, 9);
+        let pSec2 = pxt(3, 2*9+1=19);
+        ctx2.beginPath();
+        ctx2.strokeStyle = '#8f6f50';
+        ctx2.lineWidth = 1.8;
+        ctx2.setLineDash([6, 4]);
+        ctx2.moveTo(pSec1.x, pSec1.y); ctx2.lineTo(pSec2.x, pSec2.y);
+        ctx2.stroke();
+        ctx2.setLineDash([]); // restaurar
+
+        // textos
+        ctx2.fillStyle = '#256077';
+        ctx2.font = '12px Segoe UI';
+        ctx2.fillText('tangente v=8 m/s', 450, 70);
+        ctx2.fillStyle = '#8f6f50';
+        ctx2.fillText('secante (vel. media)', 440, 140);
+    })();
+</script>
+
+<!-- Observación final para los canvas -->
+<div style="font-size:0.9rem; margin-top:1rem; color:#2f687f; text-align:center; border-top: 1px solid #c4d6e5; padding-top:1rem;">
+    Las gráficas han sido generadas con coordenadas exactas para garantizar la precisión visual de pendientes y puntos.
 </div>
 
 </body>
