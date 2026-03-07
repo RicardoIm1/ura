@@ -2,111 +2,141 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2.4.1 Pendiente de una recta tangente a una curva</title>
 <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+    body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
     h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-    h2 { color: #e67e22; margin-top: 30px; }
+    h2 { color: #2980b9; margin-top: 25px; }
     .svg-container { text-align: center; margin: 20px 0; }
-    .highlight { background-color: #f4f6f7; padding: 15px; border-left: 5px solid #3498db; }
-    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-    th { background-color: #3498db; color: white; }
-    .formula { font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #c0392b; }
+    .content-box { background-color: #f9f9f9; border-left: 5px solid #3498db; padding: 15px; margin: 20px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .formula { font-family: 'Courier New', monospace; font-weight: bold; color: #e67e22; }
 </style>
 </head>
 <body>
 
-    <h1>2.4.1 Pendiente de una recta tangente a una curva</h1>
+<h1>2.4.1 Pendiente de una recta tangente a una curva</h1>
 
-    <div class="svg-container">
-        <!-- Reloj representando 20 minutos de estudio -->
-        <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" stroke="#3498db" stroke-width="5" fill="none"/>
-            <line x1="50" y1="50" x2="50" y2="20" stroke="#2c3e50" stroke-width="6" stroke-linecap="round"/>
-            <line x1="50" y1="50" x2="70" y2="50" stroke="#2c3e50" stroke-width="6" stroke-linecap="round"/>
-            <circle cx="50" cy="50" r="4" fill="#2c3e50"/>
-        </svg>
-        <p>Tiempo estimado: 20 minutos</p>
-    </div>
+<div class="svg-container">
+    <!-- SVG de reloj - 15 minutos -->
+    <svg width="60" height="60" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#333" stroke-width="5" fill="none"/>
+        <line x1="50" y1="50" x2="50" y2="25" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+        <line x1="50" y1="50" x2="70" y2="50" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="3" fill="#333"/>
+    </svg>
+    <p><em>Tiempo estimado: 15 minutos</em></p>
+</div>
 
-    <h2>Objetivo del tema</h2>
-    <p>Comprender el concepto geométrico de la recta tangente a una curva y aprender a calcular su pendiente utilizando el límite del cociente de diferencias (definición de derivada) en un punto específico <span class="formula">x=a</span>.</p>
+<h2>Objetivo del tema</h2>
+<p>Comprender el concepto geométrico de la recta tangente como el límite de rectas secantes, y aprender a calcular la pendiente de dicha recta en un punto específico de una curva utilizando el concepto de derivada (límite del cociente de diferencias).</p>
 
-    <h2>Idea principal</h2>
-    <p>La pendiente de la recta tangente a una curva $y=f(x)$ en un punto $P(a, f(a))$ representa la <strong>razón de cambio instantánea</strong> de la función en ese punto. Geométricamente, es la inclinación de la recta que "toca" a la curva en ese único punto y se obtiene como el límite de las pendientes de rectas secantes cuando el segundo punto de intersección se aproxima infinitamente al punto $P$.</p>
+<h2>Idea principal</h2>
+<p>La pendiente de una recta tangente a una curva $y=f(x)$ en un punto $P(a, f(a))$ representa la tasa de cambio instantánea de la función en ese punto. Se obtiene tomando una recta secante que pasa por $P$ y otro punto cercano $Q(a+h, f(a+h))$, y haciendo que la distancia horizontal $h$ tienda a cero. Matemáticamente, esto se define como el límite $\lim_{h \to 0} \frac{f(a+h)-f(a)}{h}$, conocido como la derivada de la función en $a$, denotedo como $f'(a)$.</p>
 
-    <h2>Ejercicios visualmente claros: Cálculo de la pendiente</h2>
+<h2>Gráfica: Recta tangente como límite de secantes</h2>
+<div class="svg-container">
+    <svg width="500" height="400" viewBox="0 0 500 400">
+        <!-- Ejes -->
+        <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="2"/>
+        <line x1="100" y1="50" x2="100" y2="380" stroke="black" stroke-width="2"/>
+        <!-- Etiquetas ejes -->
+        <text x="440" y="380" font-size="16">x</text>
+        <text x="70" y="60" font-size="16">y</text>
+        
+        <!-- Curva f(x) = 0.01(x-150)^2 + 100 -->
+        <path d="M 120 300 Q 250 50 380 300" stroke="#2980b9" stroke-width="3" fill="none"/>
+        
+        <!-- Puntos P y Q -->
+        <circle cx="200" cy="115" r="5" fill="red"/>
+        <text x="180" y="110" font-size="14" fill="red">P(a,f(a))</text>
+        <circle cx="320" cy="190" r="5" fill="#f39c12"/>
+        <text x="330" y="190" font-size="14" fill="#f39c12">Q(a+h,f(a+h))</text>
+        
+        <!-- Secante PQ -->
+        <line x1="120" y1="65" x2="380" y2="230" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,5"/>
+        
+        <!-- Tangente en P -->
+        <line x1="100" y1="185" x2="300" y2="60" stroke="#2c3e50" stroke-width="3"/>
+        
+        <!-- Líneas auxiliares h -->
+        <line x1="200" y1="350" x2="200" y2="115" stroke="#7f8c8d" stroke-width="1"/>
+        <line x1="320" y1="350" x2="320" y2="190" stroke="#7f8c8d" stroke-width="1"/>
+        <text x="195" y="370" font-size="12">a</text>
+        <text x="310" y="370" font-size="12">a+h</text>
+    </svg>
+</div>
 
-    <div class="svg-container">
-        <!-- Gráfica SVG de la parábola, recta tangente y punto P -->
-        <svg width="400" height="300" viewBox="0 0 400 300">
-            <!-- Ejes -->
-            <line x1="0" y1="150" x2="400" y2="150" stroke="black" stroke-width="1"/>
-            <line x1="200" y1="0" x2="200" y2="300" stroke="black" stroke-width="1"/>
-            
-            <!-- Curva y = x^2 / 50 + 50 (simplificada) -->
-            <path d="M 50 250 Q 200 -50 350 250" stroke="#3498db" stroke-width="3" fill="none"/>
-            
-            <!-- Punto P(200, 150) -->
-            <circle cx="200" cy="150" r="5" fill="#e67e22"/>
-            
-            <!-- Recta tangente en P (inclinación) -->
-            <line x1="100" y1="150" x2="300" y2="150" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,5"/>
-            
-            <!-- Etiquetas -->
-            <text x="210" y="140" font-family="Arial" font-size="14" fill="#e67e22">P(a, f(a))</text>
-            <text x="350" y="50" font-family="Arial" font-size="14" fill="#3498db">y = f(x)</text>
-            <text x="300" y="140" font-family="Arial" font-size="14" fill="#c0392b">Tangente</text>
-        </svg>
-    </div>
-    
-    <p><strong>Qué notar en la gráfica:</strong> La línea azul representa la curva $f(x)$. La recta punteada roja es la tangente en el punto naranja $P$. La pendiente es horizontal en este ejemplo particular, pero la inclinación cambia según la derivada en cada punto.</p>
-
-    <h3>Ejemplo: Hallar la pendiente de $f(x) = x^2$ en $a=1$</h3>
-    <table>
-        <tr>
-            <th>Paso</th>
-            <th>Descripción</th>
-            <th>Procedimiento</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Definir el punto de tangencia</td>
-            <td>Si <span class="formula">x=1</span>, entonces <span class="formula">f(1) = 1^2 = 1</span>. El punto es <span class="formula">P(1, 1)</span>.</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Plantear el cociente de diferencias</td>
-            <td><span class="formula">m = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}</span>.</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Sustituir la función y el valor de <span class="formula">a</span></td>
-            <td><span class="formula">m = \lim_{h \to 0} \frac{(1+h)^2 - 1^2}{h}</span></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Expandir y simplificar el numerador</td>
-            <td><span class="formula">\lim_{h \to 0} \frac{1 + 2h + h^2 - 1}{h} = \lim_{h \to 0} \frac{2h + h^2}{h}</span>.</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Factorizar <span class="formula">h</span> y evaluar el límite</td>
-            <td><span class="formula">\lim_{h \to 0} (2+h) = 2 + 0 = 2</span>. La pendiente es <span class="formula">m=2</span>.</td>
-        </tr>
-    </table>
-
-    <h2>Ejemplos de aplicaciones reales y directas</h2>
+<div class="content-box">
+    <strong>Qué notar en la gráfica:</strong>
     <ul>
-        <li><strong>Física (Velocidad Instantánea):</strong> Si la curva representa la posición de un objeto respecto al tiempo $s(t)$, la pendiente de la recta tangente en un tiempo $t_0$ es la velocidad instantánea del objeto en ese preciso instante.</li>
-        <li><strong>Economía (Costo Marginal):</strong> Si $C(x)$ es la función de costo total de producir $x$ unidades, la pendiente de la tangente a la curva de costos representa el costo marginal, es decir, el costo aproximado de producir una unidad adicional.</li>
-        <li><strong>Arquitectura:</strong> El diseño de curvas suaves en puentes o edificios utiliza rectas tangentes para garantizar cambios de pendiente continuos y seguros.</li>
+        <li>La curva azul representa $f(x)$.</li>
+        <li>El punto rojo $P$ es donde queremos la tangente.</li>
+        <li>La línea naranja discontinua es una secante, cuya pendiente es $\frac{\Delta y}{\Delta x}$.</li>
+        <li>A medida que $Q$ se acerca a $P$ ($h \to 0$), la línea naranja se aproxima a la recta sólida negra (tangente).</li>
+        <li>La pendiente de la recta negra es $m_{tan} = \lim_{h \to 0} m_{sec}$.</li>
     </ul>
+</div>
 
-    <h2>Bibliografía confiable y verificable</h2>
-    <p>Stewart, J. (2018). <em>Cálculo de una variable: Trascendentes tempranas</em> (8a ed.). Cengage Learning. Capítulo 2: Límites y derivadas.</p>
+<h2>Ejercicios visualmente claros y procedimiento</h2>
+<p>Encuentre la pendiente de la recta tangente a la curva $f(x) = x^2$ en el punto $(1, 1)$.</p>
+
+<table>
+    <tr>
+        <th>Paso</th>
+        <th>Descripción y Comentarios</th>
+        <th>Fórmula/Resultado</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Definir el punto $a$ y la función. Aquí $a=1$.</td>
+        <td>$f(x) = x^2, a=1$</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Aplicar la fórmula de la pendiente: $m = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}$</td>
+        <td>$m = \lim_{h \to 0} \frac{(1+h)^2 - 1^2}{h}$</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Desarrollar el binomio al cuadrado en el numerador.</td>
+        <td>$m = \lim_{h \to 0} \frac{1 + 2h + h^2 - 1}{h}$</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Simplificar términos semejantes ($1-1=0$).</td>
+        <td>$m = \lim_{h \to 0} \frac{2h + h^2}{h}$</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Factorizar $h$ en el numerador para eliminar la indeterminación $0/0$.</td>
+        <td>$m = \lim_{h \to 0} \frac{h(2+h)}{h}$</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Cancelar $h$ (ya que $h \to 0$ pero $h \neq 0$).</td>
+        <td>$m = \lim_{h \to 0} (2+h)$</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Evaluar el límite cuando $h$ tiende a 0.</td>
+        <td>$m = 2+0 = 2$</td>
+    </tr>
+</table>
+
+<p><strong>Conclusión:</strong> La pendiente de la recta tangente a $f(x)=x^2$ en $x=1$ es $m=2$.</p>
+
+<h2>Ejemplos de aplicaciones reales</h2>
+<ul>
+    <li><strong>Física (Velocidad instantánea):</strong> Si $f(t)$ representa la posición de un objeto en el tiempo $t$, la pendiente de la recta tangente a la curva de posición en un tiempo $t_0$ representa la velocidad instantánea del objeto en ese preciso instante.</li>
+    <li><strong>Economía (Costo marginal):</strong> Si $C(x)$ es la función de costo total para producir $x$ unidades, la pendiente de la recta tangente en $x=a$ representa el costo marginal, es decir, el costo aproximado de producir una unidad adicional.</li>
+    <li><strong>Ingeniería (Análisis de trayectorias):</strong> Determinar la dirección instantánea de un vehículo en una curva para el diseño de peraltes en carreteras.</li>
+</ul>
+
+<h2>Bibliografía confiable y verificable</h2>
+<p>Stewart, J. (2018). <em>Cálculo: Trascendentes Tempranas</em> (8a ed.). Cengage Learning. Capítulo 2: Límites y Derivadas.</p>
 
 </body>
 </html>
