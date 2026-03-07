@@ -1,17 +1,28 @@
 <li>
   <!-- <h3>2.1 Definición de función</h3> -->
 
-  <!-- SVG reloj: tiempo estimado 45 min -->
-  <svg width="60" height="60" viewBox="0 0 100 100" style="display:block; margin:0.5rem 0;">
-    <circle cx="50" cy="50" r="45" fill="none" stroke="#2c3e50" stroke-width="6" />
-    <circle cx="50" cy="50" r="3" fill="#2c3e50" />
-    <line x1="50" y1="50" x2="50" y2="30" stroke="#2c3e50" stroke-width="4" stroke-linecap="round" />
-    <line x1="50" y1="50" x2="15" y2="50" stroke="#2c3e50" stroke-width="3" stroke-linecap="round" />
-    <circle cx="50" cy="8" r="2.5" fill="#2c3e50" />
-    <circle cx="85" cy="30" r="2.5" fill="#2c3e50" />
-    <circle cx="92" cy="65" r="2.5" fill="#2c3e50" />
-    <circle cx="70" cy="88" r="2.5" fill="#2c3e50" />
-    <text x="30" y="96" font-family="Arial" font-size="10" fill="#2c3e50">⏱️ 45 min</text>
+   <!-- SVG reloj CORREGIDO: diseño profesional, manecillas claras, 50 minutos -->
+  <svg width="70" height="70" viewBox="0 0 100 100" style="display:block; margin:0.5rem 0 1rem 0;">
+    <!-- Círculo del reloj -->
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#1e3c5c" stroke-width="5" />
+    
+    <!-- Centro del reloj -->
+    <circle cx="50" cy="50" r="3" fill="#1e3c5c" />
+    
+    <!-- Manecilla de hora (corta, apunta a las 10 aproximadamente para indicar 50 min después de la hora) -->
+    <line x1="50" y1="50" x2="35" y2="30" stroke="#1e3c5c" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Manecilla de minuto (larga, apunta a las 10 = 50 minutos) -->
+    <line x1="50" y1="50" x2="20" y2="20" stroke="#1e3c5c" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Marcas de las horas (12, 3, 6, 9) -->
+    <circle cx="50" cy="10" r="2.5" fill="#1e3c5c" />
+    <circle cx="90" cy="50" r="2.5" fill="#1e3c5c" />
+    <circle cx="50" cy="90" r="2.5" fill="#1e3c5c" />
+    <circle cx="10" cy="50" r="2.5" fill="#1e3c5c" />
+    
+    <!-- Texto de tiempo estimado (sin emoji) -->
+    <text x="25" y="85" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e3c5c" font-weight="bold">50 min</text>
   </svg>
 
   <h4>Objetivo del tema</h4>
