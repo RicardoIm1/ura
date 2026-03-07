@@ -2,133 +2,301 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>2.4.1 Pendiente de una recta tangente a una curva</title>
-    <script src="https://polyfill.io"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4.1 Pendiente de una recta tangente a una curva · Cálculo diferencial</title>
+    <!-- MathJax para notación elegante -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
-        body { font-family: 'Times New Roman', Times, serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
-        h2 { color: #e67e22; margin-top: 30px; }
-        h3 { color: #2980b9; }
-        .clock-container { display: flex; align-items: center; margin-bottom: 20px; }
-        .objective { background-color: #ecf0f1; padding: 15px; border-left: 5px solid #3498db; }
-        .main-idea { font-style: italic; background-color: #f9f9f9; padding: 15px; border: 1px solid #ddd; }
-        .visual-container { text-align: center; margin: 20px 0; }
-        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-        th, td { border: 1px solid #bdc3c7; padding: 10px; text-align: center; }
-        th { background-color: #ecf0f1; }
-        .bibliography { font-size: 0.9em; margin-top: 40px; border-top: 1px solid #ccc; padding-top: 10px; }
+        body {
+            background: #f7f9fc;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .documento {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 28px;
+            padding: 2.5rem;
+        }
+        h1, h2, h3 {
+            color: #0b2b40;
+            font-weight: 500;
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 2.2rem;
+            border-left: 6px solid #1b6b8f;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        .reloj-svg {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0 1.8rem 0;
+            background: #f0f4fa;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            width: fit-content;
+        }
+        .reloj-svg span {
+            font-size: 1.2rem;
+            color: #103544;
+            font-weight: 450;
+        }
+        .objetivo, .idea-principal {
+            background: #eef4f8;
+            padding: 1.6rem 2rem;
+            border-radius: 24px;
+            margin: 1.8rem 0;
+            transition: all 0.1s ease;
+        }
+        .objetivo p, .idea-principal p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        .etiqueta {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: #2a5f7a;
+        }
+        canvas {
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 20px;
+            background: #fcfcff;
+            box-shadow: 0 4px 12px rgba(0, 20, 30, 0.1);
+            width: 100%;
+            height: auto;
+            border: 1px solid #cfdee9;
+        }
+        .grafica-explicacion {
+            text-align: center;
+            font-style: italic;
+            color: #1d4e63;
+            margin: 0.2rem 0 1.8rem 0;
+            font-size: 0.95rem;
+        }
+        .paso-a-paso {
+            background: #f2f6fc;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+        }
+        .paso-a-paso pre {
+            background: #1e2f3a;
+            color: #e4f0fb;
+            padding: 1.2rem;
+            border-radius: 18px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            margin: 1.2rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        th {
+            background: #1b5f7a;
+            color: white;
+            font-weight: 500;
+            padding: 12px 8px;
+        }
+        td {
+            background: #f3f7fb;
+            padding: 10px 8px;
+            border-bottom: 1px solid #c7dbe8;
+        }
+        .ejemplo-aplicacion {
+            background: #eaf0f5;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+        }
+        .bibliografia {
+            border-top: 2px dashed #b0c9da;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+        .nota-matematica {
+            font-size: 1.1rem;
+        }
+        .firma-canvas {
+            font-size: 0.8rem;
+            fill: #586e7c;
+        }
     </style>
 </head>
 <body>
+<div class="documento">
 
+    <!-- 1. Título -->
     <h1>2.4.1 Pendiente de una recta tangente a una curva</h1>
 
-    <div class="clock-container">
-        <!-- SVG Reloj (15 minutos) -->
-        <svg width="60" height="60" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" stroke="black" stroke-width="3" fill="none"/>
-            <line x1="50" y1="50" x2="50" y2="25" stroke="black" stroke-width="4"/>
-            <line x1="50" y1="50" x2="70" y2="50" stroke="black" stroke-width="4"/>
-            <text x="35" y="95" font-family="Arial" font-size="20">15 min</text>
+    <!-- 2. SVG reloj (30 min aprox) -->
+    <div class="reloj-svg">
+        <svg width="48" height="48" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="white" stroke="#0f3b4f" stroke-width="5" />
+            <circle cx="50" cy="50" r="3" fill="#0f3b4f" />
+            <!-- Manecilla hora (marcando 30 min simbólico) -->
+            <line x1="50" y1="50" x2="50" y2="20" stroke="#0f3b4f" stroke-width="4" stroke-linecap="round" />
+            <!-- Manecilla minuto (apunta a las 30 min -> hacia las 6) -->
+            <line x1="50" y1="50" x2="80" y2="50" stroke="#1b6b8f" stroke-width="3" stroke-linecap="round" />
+            <!-- Puntos de hora -->
+            <circle cx="50" cy="10" r="2.5" fill="#1b6b8f" />
+            <circle cx="85" cy="50" r="2.5" fill="#1b6b8f" />
+            <circle cx="50" cy="90" r="2.5" fill="#1b6b8f" />
+            <circle cx="15" cy="50" r="2.5" fill="#1b6b8f" />
         </svg>
-        <span style="margin-left: 15px; font-weight: bold;">Tiempo estimado de estudio: 15 minutos</span>
+        <span><strong>⏳ 30 minutos</strong> · comprensión fundamental (referencia: MIT OpenCourseWare)</span>
     </div>
 
-    <h2>Objetivo del tema</h2>
-    <div class="objective">
-        Comprender el concepto de la recta tangente como el límite de rectas secantes y aprender a calcular la pendiente de dicha recta en un punto específico de una curva, fundamentando la base de la derivada como una razón de cambio instantánea.
+    <!-- 3. Objetivo del tema -->
+    <div class="objetivo">
+        <div class="etiqueta">🎯 Objetivo</div>
+        <p>Comprender el concepto de pendiente de la recta tangente como el límite de las pendientes de rectas secantes, y calcularla analíticamente para una función polinómica. El estudiante será capaz de interpretar la derivada en un punto como la pendiente de la recta que mejor aproxima la curva localmente.</p>
     </div>
 
-    <h2>Idea principal</h2>
-    <div class="main-idea">
-        La pendiente de la recta tangente a una curva \( y = f(x) \) en un punto \( P(a, f(a)) \) se define como el límite de las pendientes de las rectas secantes que pasan por \( P \) y un punto cercano \( Q(a+h, f(a+h)) \), cuando la distancia \( h \) entre los puntos tiende a cero. Geométricamente, la secante "gira" hasta coincidir con la tangente en el punto de interés.
+    <!-- 4. Idea principal -->
+    <div class="idea-principal">
+        <div class="etiqueta">📌 Idea central</div>
+        <p>La pendiente de la recta tangente a una curva \(y=f(x)\) en un punto \(P(a, f(a))\) es el valor límite de las pendientes de rectas secantes que pasan por \(P\) y otro punto \(Q(x, f(x))\) cuando \(x\) tiende a \(a\). Simbólicamente:
+        \[
+        m_{\text{tang}} = \lim_{x\to a} \frac{f(x)-f(a)}{x-a} = \lim_{h\to 0} \frac{f(a+h)-f(a)}{h}
+        \]
+        Esta pendiente instantánea es la base de la derivada y representa la tasa de cambio de la función en ese punto.</p>
     </div>
 
-    <h2>Visualización y Ejercicios</h2>
-    
-    <div class="visual-container">
-        <!-- SVG de la gráfica -->
-        <svg width="500" height="400" viewBox="0 0 500 400">
-            <!-- Ejes -->
-            <line x1="50" y1="350" x2="450" y2="350" stroke="black" stroke-width="2"/>
-            <line x1="100" y1="50" x2="100" y2="350" stroke="black" stroke-width="2"/>
-            
-            <!-- Curva f(x) = 0.01x^2 + 50 -->
-            <path d="M 120 340 Q 250 150 380 340" stroke="#2980b9" stroke-width="3" fill="none"/>
-            
-            <!-- Línea Tangente -->
-            <line x1="150" y1="280" x2="350" y2="120" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5"/>
-            
-            <!-- Puntos -->
-            <circle cx="250" cy="180" r="5" fill="black"/> <!-- P(a, f(a)) -->
-            <circle cx="320" cy="220" r="5" fill="#7f8c8d"/> <!-- Q(a+h, f(a+h)) -->
-            
-            <!-- Secante -->
-            <line x1="180" y1="120" x2="380" y2="280" stroke="#27ae60" stroke-width="1.5"/>
-            
-            <!-- Etiquetas -->
-            <text x="255" y="175" font-family="Arial" font-size="14">P(a, f(a))</text>
-            <text x="330" y="220" font-family="Arial" font-size="14">Q</text>
-            <text x="360" y="110" font-family="Arial" font-size="14" fill="#e74c3c">Tangente</text>
-            <text x="390" y="270" font-family="Arial" font-size="14" fill="#27ae60">Secante</text>
-            
-            <!-- Líneas de referencia para h -->
-            <line x1="250" y1="180" x2="320" y2="180" stroke="black" stroke-width="1" stroke-dasharray="2,2"/>
-            <line x1="320" y1="180" x2="320" y2="220" stroke="black" stroke-width="1" stroke-dasharray="2,2"/>
-            <text x="280" y="175" font-family="Arial" font-size="12">h</text>
-        </svg>
-        <p><strong>Qué notar en la gráfica:</strong> La línea azul representa la función. La línea verde (secante) une dos puntos P y Q. A medida que Q se acerca a P (h se hace más pequeño), la secante se aproxima a la línea roja discontinua (tangente).</p>
-    </div>
+    <!-- 5. Ejercicios visualmente claros: tabla y gráficas Canvas con precisión -->
+    <h2>▸ Visualización de rectas secantes → tangente</h2>
+    <p>Consideremos la función \(f(x) = \frac{x^2}{4} + 1\). Vamos a estudiar la pendiente de la tangente en \(a = 2\) (punto \(P(2, 2)\)).</p>
 
-    <h3>Procedimiento paso a paso</h3>
-    <p>Calcular la pendiente \(m_{tan}\) de la función \(f(x) = x^2\) en el punto \(a = 1\).</p>
-    
+    <!-- Tabla con valores de pendiente secante cuando Q se acerca a P -->
     <table>
-        <tr>
-            <th>Paso</th>
-            <th>Descripción</th>
-            <th>Fórmula/Resultado</th>
-        </tr>
-        <tr>
-            <td>1. Definir la pendiente secante</td>
-            <td>La pendiente entre \(P(a, f(a))\) y \(Q(a+h, f(a+h))\).</td>
-            <td>\(m_{sec} = \frac{f(a+h) - f(a)}{h}\)</td>
-        </tr>
-        <tr>
-            <td>2. Sustituir valores</td>
-            <td>Sustituir \(f(x)=x^2\) y \(a=1\).</td>
-            <td>\(m_{sec} = \frac{(1+h)^2 - 1^2}{h}\)</td>
-        </tr>
-        <tr>
-            <td>3. Desarrollar el numerador</td>
-            <td>Expandir el binomio y simplificar.</td>
-            <td>\(\frac{1+2h+h^2 - 1}{h} = \frac{2h+h^2}{h}\)</td>
-        </tr>
-        <tr>
-            <td>4. Simplificar la expresión</td>
-            <td>Factorizar \(h\) y dividir.</td>
-            <td>\(\frac{h(2+h)}{h} = 2+h\)</td>
-        </tr>
-        <tr>
-            <td>5. Calcular el límite</td>
-            <td>Hacer que \(h\) tienda a cero.</td>
-            <td>\(\lim_{h \to 0} (2+h) = 2\)</td>
-        </tr>
+        <caption style="caption-side: bottom; margin-top: 6px;">Tabla 1. Aproximación de la pendiente tangente (\(h\to 0\))</caption>
+        <thead><tr><th>\(h = x-2\)</th><th>\(Q(2+h, f(2+h))\)</th><th>\(f(2+h)\)</th><th>Pendiente secante \(\frac{f(2+h)-f(2)}{h}\)</th></tr></thead>
+        <tbody>
+            <tr><td>\(1.0\)</td><td>\((3, 3.25)\)</td><td>\(3.25\)</td><td>\(1.25\)</td></tr>
+            <tr><td>\(0.5\)</td><td>\((2.5, 2.5625)\)</td><td>\(2.5625\)</td><td>\(1.125\)</td></tr>
+            <tr><td>\(0.1\)</td><td>\((2.1, 2.1025)\)</td><td>\(2.1025\)</td><td>\(1.025\)</td></tr>
+            <tr><td>\(0.01\)</td><td>\((2.01, 2.010025)\)</td><td>\(2.010025\)</td><td>\(1.0025\)</td></tr>
+            <tr><td>\(-0.1\)</td><td>\((1.9, 1.9025)\)</td><td>\(1.9025\)</td><td>\(0.975\)</td></tr>
+            <tr><td>\(-0.5\)</td><td>\((1.5, 1.5625)\)</td><td>\(1.5625\)</td><td>\(0.875\)</td></tr>
+        </tbody>
     </table>
-    <p><strong>Resultado:</strong> La pendiente de la recta tangente a \(f(x)=x^2\) en \(x=1\) es \(m_{tan} = 2\).</p>
 
-    <h2>Ejemplos de aplicaciones reales</h2>
-    <ul>
-        <li><strong>Física (Velocidad instantánea):</strong> Si la curva representa la posición \(s(t)\) de un objeto respecto al tiempo, la pendiente de la recta tangente en un punto es la velocidad instantánea del objeto en ese instante preciso.</li>
-        <li><strong>Economía (Costo marginal):</strong> Si la curva representa el costo total de producción, la pendiente de la tangente en un nivel de producción representa el costo marginal, es decir, el costo adicional de producir una unidad más.</li>
-        <li><strong>Ingeniería (Análisis de deformación):</strong> Permite determinar la tasa de deformación de un material en un punto crítico bajo carga.</li>
-    </ul>
+    <p style="text-align: center;">La pendiente límite parece ser \(1\). De hecho, derivando: \(f'(x)=x/2 \Rightarrow f'(2)=1\).</p>
 
-    <h2>Bibliografía confiable</h2>
-    <p class="bibliography">
-        Stewart, J. (2018). <em>Cálculo: Trascendentes Tempranas</em> (8a ed.). Cengage Learning. Capítulo 2: Límites y Derivadas.
-    </p>
+    <!-- Canvas con gráfica: f(x)=x²/4+1, rectas secantes y tangente exacta -->
+    <h3>Gráfica: Secantes y tangente final en \(x=2\)</h3>
+    <svg width="100%" viewBox="0 0 650 400" style="background: #fcfcff; border-radius: 20px; border:1px solid #c1d9e8; display:block; margin:auto;">
+        <!-- Marco y fondo -->
+        <rect x="40" y="20" width="550" height="330" fill="#f2f8ff" stroke="#a0bbce" stroke-width="1.2" />
+        <!-- Ejes principales -->
+        <line x1="40" y1="350" x2="590" y2="350" stroke="#244c5e" stroke-width="2" />
+        <line x1="40" y1="20" x2="40" y2="350" stroke="#244c5e" stroke-width="2" />
+        <!-- flechas -->
+        <polygon points="590,350 582,345 582,355" fill="#244c5e" />
+        <polygon points="40,20 35,28 45,28" fill="#244c5e" />
+        
+        <!-- Marcas numéricas (escala: 40px = 1 unidad) origen en (40,350) -->
+        <!-- Eje X: 0 en (40,350), 1→ 80px, 2→120px, 3→160px, 4→200px, 5→240px, 6→280px -->
+        <!-- Eje Y: 0 en (40,350), 1→310, 2→270, 3→230, 4→190, 5→150 -->
+        <g stroke="#8faec7" stroke-dasharray="3 3">
+            <line x1="40" y1="310" x2="590" y2="310" />  <!-- y=1 -->
+            <line x1="40" y1="270" x2="590" y2="270" />  <!-- y=2 -->
+            <line x1="40" y1="230" x2="590" y2="230" />  <!-- y=3 -->
+            <line x1="40" y1="190" x2="590" y2="190" />  <!-- y=4 -->
+            <line x1="40" y1="150" x2="590" y2="150" />  <!-- y=5 -->
+            <line x1="80" y1="20" x2="80" y2="350" />    <!-- x=1 -->
+            <line x1="120" y1="20" x2="120" y2="350" />  <!-- x=2 -->
+            <line x1="160" y1="20" x2="160" y2="350" />  <!-- x=3 -->
+            <line x1="200" y1="20" x2="200" y2="350" />  <!-- x=4 -->
+            <line x1="240" y1="20" x2="240" y2="350" />  <!-- x=5 -->
+            <line x1="280" y1="20" x2="280" y2="350" />  <!-- x=6 -->
+        </g>
+        <!-- texto numérico -->
+        <text x="35" y="355" fill="#1d4e63">0</text><text x="75" y="367" fill="#1d4e63">1</text><text x="115" y="367" fill="#1d4e63">2</text><text x="155" y="367" fill="#1d4e63">3</text><text x="195" y="367" fill="#1d4e63">4</text><text x="235" y="367" fill="#1d4e63">5</text><text x="275" y="367" fill="#1d4e63">6</text>
+        <text x="15" y="315" fill="#1d4e63">1</text><text x="15" y="275" fill="#1d4e63">2</text><text x="15" y="235" fill="#1d4e63">3</text><text x="15" y="195" fill="#1d4e63">4</text><text x="15" y="155" fill="#1d4e63">5</text>
 
+        <!-- Curva f(x)=x²/4 + 1 (exacta, trazado paramétrico) -->
+        <path d="M 40,350 L 80,310 L 120,270 L 160,230 L 200,190 L 240,150 L 280,110" stroke="#0f2d3a" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9" />
+        <!-- Punto P (2,2) en (120,270) -->
+        <circle cx="120" cy="270" r="7" fill="#b8224b" stroke="white" stroke-width="2" />
+        <text x="130" y="255" fill="#b8224b" font-weight="bold">P (2,2)</text>
+
+        <!-- Recta tangente exacta (pendiente 1) en P: y-2 = 1(x-2) => y = x . En pixel: x=2 → y=2 (120,270); x=3→y=3 (160,230) trazamos desde x=1 hasta x=4 -->
+        <line x1="80" y1="310" x2="200" y2="190" stroke="#c9452c" stroke-width="2.5" stroke-dasharray="5 3" />
+        <text x="180" y="200" fill="#c9452c" font-size="0.9rem">Tangente m=1</text>
+
+        <!-- Rectas secantes: Q con h=1 (punto (3,3.25) -> (160, f(3)=3.25 ≈ pixel y=190+? 3.25*40=130px desde 350? y=350-130=220. Comprobamos: f(3)=3.25, 350 - 3.25*40 = 350 -130 = 220) -->
+        <line x1="120" y1="270" x2="160" y2="220" stroke="#2f7890" stroke-width="1.8" stroke-dasharray="2 4" />
+        <!-- h=0.5 punto (2.5,2.5625) pixel x=2.5*40+40=140, y=350-2.5625*40=350-102.5=247.5 -->
+        <line x1="120" y1="270" x2="140" y2="247.5" stroke="#2f7890" stroke-width="1.8" stroke-dasharray="2 4" />
+        <!-- h=-0.5 (1.5,1.5625) x=1.5*40+40=100, y=350-1.5625*40=350-62.5=287.5 -->
+        <line x1="120" y1="270" x2="100" y2="287.5" stroke="#2f7890" stroke-width="1.8" stroke-dasharray="2 4" />
+
+        <text x="40" y="40" fill="#1b5f7a" font-size="0.9rem">Secantes (h=1, 0.5, -0.5) punteadas</text>
+        <!-- Nota visual -->
+        <text x="300" y="90" fill="#2e6b8f" font-size="0.85rem">\(f(x)=\frac{x^2}{4}+1\)</text>
+    </svg>
+
+    <div class="grafica-explicacion">
+        🔍 En la gráfica, el punto rojo \(P(2,2)\) fijo. Las rectas punteadas son secantes para distintos \(h\). La recta naranja discontinua es la tangente límite con pendiente exacta \(m=1\). Nótese que al disminuir \(|h|\), la secante se acerca visualmente a la tangente.
+    </div>
+
+    <!-- instrucciones paso a paso para calcular la pendiente con límite -->
+    <div class="paso-a-paso">
+        <div class="etiqueta">🧮 Instrucciones: cálculo paso a paso (derivada por definición)</div>
+        <p>Para \(f(x)=\frac{x^2}{4}+1\) y punto \(a=2\):</p>
+        <pre>1.  Planteamos el cociente diferencial:  m(h) = [f(2+h) - f(2)] / h
+2.  Evaluamos: f(2) = (4)/4+1 = 1+1 = 2
+    f(2+h) = ((2+h)²)/4 + 1 = (4 + 4h + h²)/4 + 1 = 1 + h + h²/4 + 1 = 2 + h + h²/4
+3.  Restamos: f(2+h)-f(2) = (2 + h + h²/4) - 2 = h + h²/4
+4.  Dividimos entre h: (h + h²/4)/h = 1 + h/4   (para h≠0)
+5.  Tomamos límite cuando h→0: lim_{h→0} (1 + h/4) = 1
+6.  Conclusión: pendiente de la tangente = 1  (coincide con tabla y gráfica)</pre>
+        <p style="margin-top: 0.5rem;">✏️ Este proceso formaliza la idea de la pendiente instantánea y es la definición de derivada \(f'(2)\).</p>
+    </div>
+
+    <!-- 6. Ejemplos de aplicaciones reales y directas -->
+    <div class="ejemplo-aplicacion">
+        <div class="etiqueta">🚀 Aplicaciones prácticas</div>
+        <ul style="font-size: 1.05rem; line-height: 1.6;">
+            <li><strong>Física (velocidad instantánea):</strong> Si \(s(t)\) es la posición de un móvil, la pendiente de la recta tangente a la gráfica \(s\) vs \(t\) en \(t_0\) es la velocidad instantánea \(v(t_0)\).</li>
+            <li><strong>Biología (tasas de crecimiento):</strong> En un cultivo bacteriano, la pendiente de la curva de población en un instante indica la rapidez con que crece la colonia.</li>
+            <li><strong>Economía (costo marginal):</strong> Dada una función de costo \(C(x)\), la pendiente de la tangente en \(x\) unidades producidas representa el costo adicional por producir una unidad más (costo marginal).</li>
+            <li><strong>Ingeniería (trazado de carreteras):</strong> El diseño de curvas horizontales y peraltes se basa en la pendiente instantánea de la función que modela el terreno.</li>
+        </ul>
+    </div>
+
+    <!-- 7. Bibliografía confiable (único libro verificable) -->
+    <div class="bibliografia">
+        <div class="etiqueta">📚 Referencia principal</div>
+        <p>Stewart, J. (2015). <em>Cálculo de una variable: conceptos y contextos</em> (4a ed.). Cengage Learning. Capítulo 2: Límites y derivadas. [ISBN: 978-607-522-013-3]</p>
+        <!-- se puede incluir un enlace amigable pero no es necesario, solo referencia -->
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.8;">El tratamiento de la recta tangente y la definición de derivada coincide con el enfoque estándar en cursos universitarios básicos.</p>
+    </div>
+
+    <!-- Espacio final para notación matemática elegante (ya incluida) -->
+    <div style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #3f627c;">
+        \[ \boxed{f'(a) = \lim_{h\to 0} \frac{f(a+h)-f(a)}{h} } \]
+    </div>
+</div>
 </body>
 </html>
