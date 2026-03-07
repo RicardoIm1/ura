@@ -2,344 +2,311 @@
 
 <link rel='stylesheet' href='/ura/css/estilo.css'>
 
+<!-- MathJax para renderizar notación matemática elegante -->
 <script src='https://polyfill.io/v3/polyfill.min.js?features=es6'></script>
 <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
 
+<!-- CSS adicional para el modal -->
+<!-- <link rel='stylesheet' href='/ura/css/estilos2.css'> -->
+
+<!-- Tu script de carga de modal -->
 <script src='/ura/js/modal-loader.js' defer></script>
 
-<h3>2.4.1 Pendiente de una recta tangente a una curva</h3>
+<section>
 
-<!-- Reloj de tiempo estimado -->
+<h2>2.4.1 Pendiente de una recta tangente a una curva</h2>
 
-<svg width='80' height='80' viewBox='0 0 100 100' style='display:block;margin:10px 0;'>
+<!-- RELOJ SVG -->
+<div style='max-width:220px;margin:auto'>
+<svg viewBox='0 0 200 200'>
+<circle cx='100' cy='100' r='90' stroke='#222' stroke-width='4' fill='none'/>
+<circle cx='100' cy='100' r='4' fill='#000'/>
 
-<circle cx='50' cy='50' r='45' fill='none' stroke='#1e3c5c' stroke-width='5'></circle>
-<circle cx='50' cy='50' r='3' fill='#1e3c5c'></circle>
+<line x1='100' y1='100' x2='100' y2='35' stroke='#000' stroke-width='4'/>
+<line x1='100' y1='100' x2='150' y2='100' stroke='#000' stroke-width='4'/>
 
-<line x1='50' y1='50' x2='50' y2='20' stroke='#1e3c5c' stroke-width='4'></line>
-<line x1='50' y1='50' x2='75' y2='55' stroke='#1e3c5c' stroke-width='3'></line>
-
-<text x='22' y='90' font-size='13' fill='#1e3c5c'>45 min</text>
-
+<text x='100' y='185' text-anchor='middle' font-size='18'>30 minutos</text>
 </svg>
+</div>
 
-<h4>Objetivo del tema</h4>
+<h3>Objetivo del tema</h3>
 
 <p>
-
-Comprender el concepto matemático de <strong>pendiente de la recta tangente</strong> a una curva en un punto específico.  
-El estudiante aprenderá cómo la pendiente de una recta tangente describe la <strong>tasa de cambio instantánea</strong> de una función, y cómo puede calcularse mediante el concepto de límite que define la derivada.
-
+Comprender el concepto de <strong>pendiente de la recta tangente a una curva</strong>, interpretar su significado geométrico y calcularla mediante el concepto de <strong>límite del cociente incremental</strong>. Este tema constituye la base conceptual del cálculo diferencial y permite describir la velocidad de cambio instantánea de una función.
 </p>
 
-<h4>Idea principal</h4>
+<h3>Idea principal</h3>
 
 <p>
-
-Cuando una función se representa gráficamente, es posible estudiar cómo cambia su valor en un punto específico.  
-La recta tangente es una línea que toca la curva exactamente en un punto y comparte con ella la misma dirección en ese lugar.  
-La pendiente de esta recta indica qué tan rápido cambia la función en ese instante. Matemáticamente, esta pendiente se obtiene mediante el límite del cociente de incrementos:
-
+Cuando una función describe una curva, la pendiente ya no es constante como en una recta. Sin embargo, es posible conocer la pendiente en un punto específico construyendo una recta que toque la curva exactamente en ese punto sin cortarla localmente. A esta recta se le llama <strong>recta tangente</strong>. Matemáticamente, su pendiente se obtiene analizando el comportamiento del cociente de cambio cuando la distancia entre dos puntos de la curva se hace infinitamente pequeña.
 </p>
 
-<p>
+<h3>Fundamento matemático</h3>
 
+<p>
+Sea una función \(f(x)\). La pendiente de la recta tangente en un punto \(x=a\) se define mediante el límite
+</p>
+
+<p style='text-align:center'>
 \[
-f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}
+m = \lim_{h \to 0}\frac{f(a+h)-f(a)}{h}
 \]
-
 </p>
 
 <p>
-
-Este valor se denomina <strong>derivada de la función</strong> en el punto \(a\).  
-La derivada conecta la geometría de la gráfica con el comportamiento dinámico de la función.
-
+Este límite describe cómo cambia la función cuando el incremento horizontal \(h\) se aproxima a cero. Si el límite existe, el resultado corresponde a la pendiente de la recta tangente.
 </p>
 
-<h4>Ejercicios visualmente claros</h4>
-
-<p><strong>Ejercicio 1. Aproximación de la pendiente mediante rectas secantes</strong></p>
+<h3>Ejercicio guiado</h3>
 
 <p>
+Determinar la pendiente de la recta tangente a la función
+</p>
 
-Considere la función:
-
+<p style='text-align:center'>
 \[
 f(x)=x^2
 \]
-
-Deseamos aproximar la pendiente de la recta tangente en el punto \(x=1\).
-
 </p>
 
-<table>
+<p>
+en el punto \(x=2\).
+</p>
 
-<thead>
+<h4>Procedimiento paso a paso</h4>
+
+<table border='1' style='border-collapse:collapse;width:100%;text-align:center'>
 
 <tr>
-<th>x</th>
-<th>f(x)</th>
-<th>\(\Delta x = x-1\)</th>
-<th>Pendiente secante</th>
+<th>Paso</th>
+<th>Expresión matemática</th>
+<th>Explicación</th>
 </tr>
 
-</thead>
+<tr>
+<td>1</td>
+<td>\(f(2)=2^2=4\)</td>
+<td>Se evalúa la función en el punto donde se quiere la pendiente</td>
+</tr>
 
-<tbody>
+<tr>
+<td>2</td>
+<td>\(f(2+h)=(2+h)^2\)</td>
+<td>Se calcula la función en un punto cercano</td>
+</tr>
 
-<tr><td>2</td><td>4</td><td>1</td><td>3</td></tr>
-<tr><td>1.5</td><td>2.25</td><td>0.5</td><td>2.5</td></tr>
-<tr><td>1.1</td><td>1.21</td><td>0.1</td><td>2.1</td></tr>
-<tr><td>1.01</td><td>1.0201</td><td>0.01</td><td>2.01</td></tr>
-<tr><td>0.99</td><td>0.9801</td><td>-0.01</td><td>1.99</td></tr>
+<tr>
+<td>3</td>
+<td>\((2+h)^2=4+4h+h^2\)</td>
+<td>Se desarrolla el binomio</td>
+</tr>
 
-</tbody>
+<tr>
+<td>4</td>
+<td>\(\frac{f(2+h)-f(2)}{h}=\frac{4+4h+h^2-4}{h}\)</td>
+<td>Se sustituye en el cociente incremental</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>\(\frac{4h+h^2}{h}\)</td>
+<td>Se simplifica el numerador</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>\(4+h\)</td>
+<td>Se cancela el factor común \(h\)</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>\(\lim_{h\to0}(4+h)=4\)</td>
+<td>Se calcula el límite</td>
+</tr>
 
 </table>
 
 <p>
-
-La pendiente de la secante se calcula con:
-
+La pendiente de la recta tangente en \(x=2\) es
 </p>
 
-<p>
-
+<p style='text-align:center'>
 \[
-m=\frac{f(x)-f(1)}{x-1}
+m=4
 \]
-
 </p>
+
+<h3>Tabla numérica de aproximación al límite</h3>
+
+<table border='1' style='border-collapse:collapse;width:100%;text-align:center'>
+
+<tr>
+<th>h</th>
+<th>(4+h)</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>0.5</td>
+<td>4.5</td>
+</tr>
+
+<tr>
+<td>0.1</td>
+<td>4.1</td>
+</tr>
+
+<tr>
+<td>0.01</td>
+<td>4.01</td>
+</tr>
+
+<tr>
+<td>0.001</td>
+<td>4.001</td>
+</tr>
+
+</table>
 
 <p>
-
-A medida que \(x\) se aproxima a 1, la pendiente se acerca al valor 2.  
-Esto sugiere que la pendiente de la recta tangente es:
-
+La tabla muestra que conforme \(h\) se aproxima a cero, el valor se aproxima a 4.
 </p>
 
-<p>
+<h3>Gráfica exacta de la curva y la recta tangente</h3>
 
-\[
-f'(1)=2
-\]
-
-</p>
-
-<!-- Gráfica exacta -->
-
-<canvas id='grafica_tangente' width='520' height='360' style='border:1px solid #333; margin-top:15px;'></canvas>
+<canvas id='grafica1' width='520' height='420'></canvas>
 
 <script>
 
-const canvas=document.getElementById('grafica_tangente')
+const canvas=document.getElementById('grafica1')
 const ctx=canvas.getContext('2d')
 
-const width=canvas.width
-const height=canvas.height
+const w=canvas.width
+const h=canvas.height
 
-const origenX=80
-const origenY=300
-const escala=60
+const scale=40
+const originX=260
+const originY=300
 
-function xpix(x){return origenX + x*escala}
-function ypix(y){return origenY - y*escala}
+function xcoord(x){return originX+x*scale}
+function ycoord(y){return originY-y*scale}
 
-ctx.strokeStyle='#ddd'
 ctx.lineWidth=1
+ctx.strokeStyle='#bbb'
 
-for(let i=0;i<7;i++){
+for(let i=-5;i<=5;i++){
 
 ctx.beginPath()
-ctx.moveTo(origenX+i*escala,20)
-ctx.lineTo(origenX+i*escala,330)
+ctx.moveTo(xcoord(i),0)
+ctx.lineTo(xcoord(i),h)
+ctx.stroke()
+
+ctx.beginPath()
+ctx.moveTo(0,ycoord(i))
+ctx.lineTo(w,ycoord(i))
 ctx.stroke()
 
 }
 
-for(let j=0;j<6;j++){
-
-ctx.beginPath()
-ctx.moveTo(40,origenY-j*escala)
-ctx.lineTo(480,origenY-j*escala)
-ctx.stroke()
-
-}
-
-ctx.strokeStyle='#000'
 ctx.lineWidth=2
+ctx.strokeStyle='#000'
 
 ctx.beginPath()
-ctx.moveTo(40,origenY)
-ctx.lineTo(480,origenY)
+ctx.moveTo(0,ycoord(0))
+ctx.lineTo(w,ycoord(0))
 ctx.stroke()
 
 ctx.beginPath()
-ctx.moveTo(origenX,20)
-ctx.lineTo(origenX,330)
+ctx.moveTo(xcoord(0),0)
+ctx.lineTo(xcoord(0),h)
 ctx.stroke()
 
-ctx.strokeStyle='#1f77b4'
+ctx.strokeStyle='#0044aa'
 ctx.lineWidth=3
 ctx.beginPath()
 
-for(let x=0;x<=4;x+=0.01){
+for(let x=-4;x<=4;x+=0.01){
 
 let y=x*x
-let px=xpix(x)
-let py=ypix(y)
 
-if(x===0)ctx.moveTo(px,py)
-else ctx.lineTo(px,py)
+if(x===-4){
+ctx.moveTo(xcoord(x),ycoord(y))
+}else{
+ctx.lineTo(xcoord(x),ycoord(y))
+}
 
 }
 
 ctx.stroke()
 
-ctx.strokeStyle='#d62728'
-ctx.lineWidth=2
-
+ctx.strokeStyle='#cc0000'
+ctx.lineWidth=3
 ctx.beginPath()
 
-for(let x=0;x<=4;x+=0.01){
+for(let x=-4;x<=4;x+=0.01){
 
-let y=2*(x-1)+1
-let px=xpix(x)
-let py=ypix(y)
+let y=4*(x-2)+4
 
-if(x===0)ctx.moveTo(px,py)
-else ctx.lineTo(px,py)
+if(x===-4){
+ctx.moveTo(xcoord(x),ycoord(y))
+}else{
+ctx.lineTo(xcoord(x),ycoord(y))
+}
 
 }
 
 ctx.stroke()
 
 ctx.fillStyle='#000'
-
 ctx.beginPath()
-ctx.arc(xpix(1),ypix(1),5,0,Math.PI*2)
+ctx.arc(xcoord(2),ycoord(4),4,0,Math.PI*2)
 ctx.fill()
 
 </script>
 
-<p><strong>Qué notar en la gráfica</strong></p>
+<h3>Qué notar en la gráfica</h3>
 
 <ul>
 
 <li>La curva azul representa la función \(f(x)=x^2\).</li>
-<li>El punto negro corresponde al punto de tangencia \((1,1)\).</li>
-<li>La recta roja es la recta tangente cuya pendiente es 2.</li>
-<li>La tangente coincide localmente con la dirección de la curva.</li>
+
+<li>La línea roja es la recta tangente en el punto \(x=2\).</li>
+
+<li>La tangente toca la curva en un único punto localmente.</li>
+
+<li>La inclinación de la recta coincide con la pendiente calculada \(m=4\).</li>
+
+<li>En un entorno muy pequeño del punto de tangencia, la recta y la curva casi coinciden.</li>
 
 </ul>
 
-<p><strong>Ejercicio 2. Cálculo analítico usando la definición</strong></p>
-
-<p>
-
-Considere la función:
-
-\[
-f(x)=x^3-3x+2
-\]
-
-Deseamos calcular la pendiente de la tangente en \(x=2\).
-
-</p>
-
-<table>
-
-<thead>
-
-<tr>
-<th>Paso</th>
-<th>Procedimiento</th>
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-<td>1</td>
-<td>\(f'(2)=\lim_{h\to0}\frac{f(2+h)-f(2)}{h}\)</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>\(f(2)=8-6+2=4\)</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>\(f(2+h)=(2+h)^3-3(2+h)+2\)</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>\(=8+12h+6h^2+h^3-6-3h+2\)</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>\(=4+9h+6h^2+h^3\)</td>
-</tr>
-
-<tr>
-<td>6</td>
-<td>\(\frac{f(2+h)-4}{h}=9+6h+h^2\)</td>
-</tr>
-
-<tr>
-<td>7</td>
-<td>\(\lim_{h\to0}(9+6h+h^2)=9\)</td>
-</tr>
-
-</tbody>
-
-</table>
-
-<p>
-
-La pendiente de la recta tangente en \(x=2\) es:
-
-\[
-m=9
-\]
-
-La ecuación de la recta tangente es:
-
-\[
-y-4=9(x-2)
-\]
-
-</p>
-
-<h4>Ejemplos de aplicaciones reales y directas</h4>
+<h3>Aplicaciones reales</h3>
 
 <ul>
 
-<li><strong>Física.</strong> La pendiente de la tangente a una gráfica posición-tiempo corresponde a la velocidad instantánea de un objeto.</li>
+<li><strong>Física:</strong> cálculo de velocidad instantánea a partir de la posición.</li>
 
-<li><strong>Economía.</strong> En una función de costos, la pendiente tangente representa el costo marginal de producir una unidad adicional.</li>
+<li><strong>Economía:</strong> análisis de cambio marginal en costos o ingresos.</li>
 
-<li><strong>Ingeniería.</strong> El cálculo de pendientes tangentes se utiliza para determinar inclinaciones en el diseño de carreteras y rampas.</li>
+<li><strong>Ingeniería:</strong> análisis de tasas de variación en procesos dinámicos.</li>
 
-<li><strong>Biología.</strong> La pendiente de una curva de crecimiento poblacional describe la tasa de crecimiento instantánea de una especie.</li>
-
-<li><strong>Química.</strong> La velocidad instantánea de una reacción química se obtiene a partir de la pendiente de la curva concentración-tiempo.</li>
+<li><strong>Aprendizaje automático:</strong> optimización mediante métodos de gradiente.</li>
 
 </ul>
 
-<h4>Bibliografía</h4>
+<h3>Bibliografía</h3>
 
 <p>
 
-Stewart, James.  
-<em>Cálculo de una variable: Trascendentes tempranas</em>.  
-Cengage Learning.
+Stewart, James. <em>Calculus: Early Transcendentals</em>. Cengage Learning.
 
 </p>
+
+</section>
 
 </li>
