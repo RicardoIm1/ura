@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Interpretación de la Derivada</title>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { color: #004a99; }
+    h2 { color: #0056b3; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    h3 { color: #0066cc; }
+    .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .math { font-family: "Cambria Math", "Calibri", serif; font-style: italic; }
+    .svg-container { text-align: center; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background-color: #f4f4f4; }
+    .nota { background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 10px; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>2.4 Interpretación Geométrica y Física de la Derivada</h1>
+
+    <div class="svg-container">
+        <!-- SVG Reloj (Tiempo estimado: 15 min) -->
+        <svg width="60" height="60" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" stroke="#333" stroke-width="5" fill="none"/>
+            <path d="M50 50 L50 20" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+            <path d="M50 50 L70 50" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="4" fill="#333"/>
+        </svg>
+        <p>Tiempo estimado: 15 minutos</p>
+    </div>
+
+    <h2>Objetivo del tema</h2>
+    <p>Comprender la derivada no solo como un límite algebraico, sino como la pendiente de la recta tangente a una curva (interpretación geométrica) y como una tasa de cambio instantánea (interpretación física), permitiendo analizar el comportamiento de funciones.</p>
+
+    <h2>Idea principal</h2>
+    <p>La derivada <span class="math">f'(a)</span> representa la pendiente de la recta tangente a la gráfica de la función <span class="math">y = f(x)</span> en el punto <span class="math">(a, f(a))</span>. Físicamente, mide la velocidad a la que cambia una magnitud con respecto a otra en un instante preciso, siendo el límite del cociente incremental cuando el intervalo de tiempo tiende a cero.</p>
+
+    <h2>Ejercicios visualmente claros y análisis</h2>
+    
+    <div class="svg-container">
+        <!-- Gráfica de la derivada como pendiente tangente -->
+        <svg width="400" height="300" viewBox="0 0 400 300">
+            <!-- Ejes -->
+            <line x1="50" y1="250" x2="350" y2="250" stroke="black" stroke-width="2"/>
+            <line x1="100" y1="50" x2="100" y2="280" stroke="black" stroke-width="2"/>
+            
+            <!-- Curva f(x) = x^2 / 50 + 50 (curva suave) -->
+            <path d="M 120 220 Q 200 100 300 150" stroke="#0056b3" stroke-width="3" fill="none"/>
+            
+            <!-- Punto de tangencia (a, f(a)) -->
+            <circle cx="200" cy="130" r="5" fill="red"/>
+            
+            <!-- Recta Tangente -->
+            <line x1="140" y1="160" x2="260" y2="100" stroke="#ff4500" stroke-width="2" stroke-dasharray="5,5"/>
+            
+            <!-- Etiquetas -->
+            <text x="300" y="270" font-family="Arial" font-size="14">x</text>
+            <text x="80" y="60" font-family="Arial" font-size="14">y</text>
+            <text x="205" y="125" font-family="Arial" font-size="12" fill="red">P(a, f(a))</text>
+            <text x="260" y="90" font-family="Arial" font-size="12" fill="#ff4500">Tangente: m = f'(a)</text>
+        </svg>
+    </div>
+
+    <div class="nota">
+        <strong>Qué notar en la gráfica:</strong> La línea roja punteada (tangente) toca a la curva azul exactamente en un punto, y su inclinación representa el valor de la derivada en ese punto específico.
+    </div>
+
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>Interpretación</th>
+            <th>Expresión Matemática</th>
+        </tr>
+        <tr>
+            <td>Geométrica</td>
+            <td>Pendiente de la recta tangente</td>
+            <td><span class="math">m = \tan(\theta) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}</span></td>
+        </tr>
+        <tr>
+            <td>Física</td>
+            <td>Tasa de cambio instantánea</td>
+            <td><span class="math">v(t) = \frac{ds}{dt} = \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t}</span></td>
+        </tr>
+    </table>
+
+    <h3>Procedimiento paso a paso</h3>
+    <p>Para hallar la pendiente de la recta tangente a <span class="math">f(x) = x^2</span> en <span class="math">x=3</span>:</p>
+    <ol>
+        <li>Definir la función: <span class="math">f(x) = x^2</span>.</li>
+        <li>Calcular la derivada general: <span class="math">f'(x) = 2x</span>.</li>
+        <li>Evaluar la derivada en el punto solicitado: <span class="math">f'(3) = 2(3) = 6</span>.</li>
+        <li><strong>Conclusión:</strong> La pendiente de la recta tangente en <span class="math">x=3</span> es 6.</li>
+    </ol>
+
+    <h2>Ejemplos de aplicaciones reales</h2>
+    <ul>
+        <li><strong>Cinemática (Física):</strong> Si una función <span class="math">s(t)</span> representa la posición de un objeto, la derivada <span class="math">v(t) = s'(t)</span> representa la velocidad instantánea del objeto en el tiempo <span class="math">t</span> [1].</li>
+        <li><strong>Economía:</strong> El costo marginal se define como la derivada de la función de costo total <span class="math">C(x)</span>, representando el costo aproximado de producir una unidad adicional [1].</li>
+        <li><strong>Biología:</strong> La tasa de crecimiento poblacional de bacterias es la derivada de la función de población respecto al tiempo, indicando qué tan rápido crece la población en un momento dado.</li>
+    </ul>
+
+    <h2>Bibliografía</h2>
+    <p>[1] Stewart, J. (2018). *Cálculo de una variable: Trascendentes tempranas* (8a ed.). Cengage Learning.</p>
+</div>
+
+</body>
+</html>
