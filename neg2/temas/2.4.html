@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2.4 Interpretación de la derivada · Cálculo diferencial</title>
-    <!-- MathJax versión 3 con configuración estándar (más compatible) -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$','$$'], ['\\[', '\\]']]
-            },
-            svg: {
-                fontCache: 'global'
-            }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
+    <!-- KaTeX - mucho más rápido y elegante que MathJax -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
     <style>
         body {
             background: #f5f8fc;
@@ -150,6 +148,8 @@
             margin: 2rem 0 0.5rem;
             color: #123f52;
         }
+        /* Estilo para las fórmulas de KaTeX */
+        .katex { font-size: 1.1em; }
     </style>
 </head>
 <body>
@@ -180,39 +180,39 @@
     <!-- 4. Idea principal -->
     <div class="idea-principal">
         <div class="etiqueta">🧠 Idea central</div>
-        <p>La derivada \( f'(a) \) mide cómo cambia \( f \) en el punto \( a \). Geométricamente es la pendiente de la recta tangente a la curva \( y=f(x) \) en \( (a, f(a)) \). Físicamente, si \( x \) representa tiempo y \( f(x) \) posición, \( f'(a) \) es la velocidad instantánea. En general, \( f'(a) \) es la mejor aproximación lineal del cambio de la función cerca de \( a \).</p>
+        <p>La derivada $f'(a)$ mide cómo cambia $f$ en el punto $a$. Geométricamente es la pendiente de la recta tangente a la curva $y=f(x)$ en $(a, f(a))$. Físicamente, si $x$ representa tiempo y $f(x)$ posición, $f'(a)$ es la velocidad instantánea. En general, $f'(a)$ es la mejor aproximación lineal del cambio de la función cerca de $a$.</p>
     </div>
 
     <!-- 5. Ejercicios visualmente claros: gráficas canvas y tabla -->
     <h2>▸ Interpretación geométrica: pendiente de la tangente</h2>
-    <p>Sea \( f(x) = 3 + 0.5x - 0.1x^2 \) (una parábola cóncava hacia abajo). Evaluaremos en \( a = 3 \). La derivada analítica es \( f'(x) = 0.5 - 0.2x \), por lo que \( f'(3) = 0.5 - 0.6 = -0.1 \). Esto indica que en \( x=3 \) la curva decrece localmente.</p>
+    <p>Sea $f(x) = 3 + 0.5x - 0.1x^2$ (una parábola cóncava hacia abajo). Evaluaremos en $a = 3$. La derivada analítica es $f'(x) = 0.5 - 0.2x$, por lo que $f'(3) = 0.5 - 0.6 = -0.1$. Esto indica que en $x=3$ la curva decrece localmente.</p>
 
     <!-- Tabla de aproximación con secantes -->
     <table>
-        <caption style="caption-side: bottom; margin-top: 6px;">Tabla 1. Aproximación de \( f'(3) \) mediante secantes</caption>
-        <thead><tr><th>\( h \)</th><th>\( Q(3+h, f(3+h)) \)</th><th>\( f(3+h) \)</th><th>\( \frac{f(3+h)-f(3)}{h} \)</th></tr></thead>
+        <caption style="caption-side: bottom; margin-top: 6px;">Tabla 1. Aproximación de $f'(3)$ mediante secantes</caption>
+        <thead><tr><th>$h$</th><th>$Q(3+h, f(3+h))$</th><th>$f(3+h)$</th><th>$\frac{f(3+h)-f(3)}{h}$</th></tr></thead>
         <tbody>
-            <tr><td>\(0.5\)</td><td>\((3.5, 3.525)\)</td><td>\(3.525\)</td><td>\(-0.05\)</td></tr>
-            <tr><td>\(0.2\)</td><td>\((3.2, 3.376)\)</td><td>\(3.376\)</td><td>\(-0.12\)</td></tr>
-            <tr><td>\(0.1\)</td><td>\((3.1, 3.289)\)</td><td>\(3.289\)</td><td>\(-0.11\)</td></tr>
-            <tr><td>\(0.01\)</td><td>\((3.01, 3.20899)\)</td><td>\(3.20899\)</td><td>\(-0.101\)</td></tr>
-            <tr><td>\(-0.1\)</td><td>\((2.9, 3.109)\)</td><td>\(3.109\)</td><td>\(-0.09\)</td></tr>
-            <tr><td>\(-0.2\)</td><td>\((2.8, 3.016)\)</td><td>\(3.016\)</td><td>\(-0.08\)</td></tr>
+            <tr><td>$0.5$</td><td>$(3.5, 3.525)$</td><td>$3.525$</td><td>$-0.05$</td></tr>
+            <tr><td>$0.2$</td><td>$(3.2, 3.376)$</td><td>$3.376$</td><td>$-0.12$</td></tr>
+            <tr><td>$0.1$</td><td>$(3.1, 3.289)$</td><td>$3.289$</td><td>$-0.11$</td></tr>
+            <tr><td>$0.01$</td><td>$(3.01, 3.20899)$</td><td>$3.20899$</td><td>$-0.101$</td></tr>
+            <tr><td>$-0.1$</td><td>$(2.9, 3.109)$</td><td>$3.109$</td><td>$-0.09$</td></tr>
+            <tr><td>$-0.2$</td><td>$(2.8, 3.016)$</td><td>$3.016$</td><td>$-0.08$</td></tr>
         </tbody>
     </table>
-    <p style="text-align: center;">Las pendientes secantes se aproximan a \(-0.1\), confirmando la derivada analítica.</p>
+    <p style="text-align: center;">Las pendientes secantes se aproximan a $-0.1$, confirmando la derivada analítica.</p>
 
     <!-- Canvas con la curva y la tangente exacta -->
-    <h3>Gráfica: función y recta tangente en \(x=3\)</h3>
+    <h3>Gráfica: función y recta tangente en $x=3$</h3>
     <canvas id="canvasDerivada" width="700" height="360" style="width:100%; height:auto; background:#ffffff;"></canvas>
     <div class="grafica-explicacion">
-        🔍 Curva \( f(x)=3+0.5x-0.1x^{2} \) (azul). Punto de tangencia \(P(3,\,3.6)\) en rojo. La recta tangente (naranja) tiene pendiente \(m = -0.1\). Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
+        🔍 Curva $f(x)=3+0.5x-0.1x^{2}$ (azul). Punto de tangencia $P(3,\,3.6)$ en rojo. La recta tangente (naranja) tiene pendiente $m = -0.1$. Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
     </div>
 
     <!-- Instrucciones paso a paso (cálculo con límite) -->
     <div class="instrucciones">
         <div class="etiqueta">📝 Procedimiento analítico paso a paso</div>
-        <p>Para \( f(x)=3+0.5x-0.1x^2 \) y \(a=3\):</p>
+        <p>Para $f(x)=3+0.5x-0.1x^2$ y $a=3$:</p>
         <pre>1.  Escribimos el cociente diferencial:  \( \frac{f(3+h)-f(3)}{h} \)
 2.  Evaluamos \( f(3) = 3 + 0.5(3) - 0.1(9) = 3 + 1.5 - 0.9 = 3.6 \)
     \( f(3+h) = 3 + 0.5(3+h) - 0.1(3+h)^2 \)
@@ -223,30 +223,30 @@
 4.  Dividimos entre \(h\): \( \frac{-0.1h - 0.1h^2}{h} = -0.1 - 0.1h \) (para \(h \neq 0\))
 5.  Tomamos límite \(h \to 0\): \(\displaystyle \lim_{h\to 0} (-0.1 - 0.1h) = -0.1\)
 6.  Por tanto, \( f'(3) = -0.1 \). Coincide con la tabla y la gráfica.</pre>
-        <p>Este cociente es la definición de derivada: \(f'(a) = \lim_{h\to 0} \frac{f(a+h)-f(a)}{h}\).</p>
+        <p>Este cociente es la definición de derivada: $f'(a) = \lim_{h\to 0} \frac{f(a+h)-f(a)}{h}$.</p>
     </div>
 
     <!-- Otra interpretación: velocidad instantánea (contexto físico) -->
     <h2>▸ Interpretación física: velocidad instantánea</h2>
-    <p>Supongamos que un auto se mueve según \( s(t) = 2t^2 + 1 \) (metros, \(t\) en segundos). La velocidad instantánea en \(t=2\) s es \( s'(2) \).</p>
+    <p>Supongamos que un auto se mueve según $s(t) = 2t^2 + 1$ (metros, $t$ en segundos). La velocidad instantánea en $t=2$ s es $s'(2)$.</p>
     <canvas id="canvasVelocidad" width="700" height="280" style="width:100%; height:auto; background:#ffffff;"></canvas>
     <div class="grafica-explicacion">
-        🔍 Gráfica posición-tiempo \(s(t)=2t^2+1\). La recta tangente en \(t=2\) (verde) tiene pendiente \(8\), que es la velocidad instantánea en ese instante ( \(v = 8\,\text{m/s}\) ). La pendiente de la secante (punteada) entre \(t=2\) y \(t=3\) da la velocidad media \( \frac{s(3)-s(2)}{1} = 10\,\text{m/s} \), distinta de la instantánea.
+        🔍 Gráfica posición-tiempo $s(t)=2t^2+1$. La recta tangente en $t=2$ (verde) tiene pendiente $8$, que es la velocidad instantánea en ese instante ( $v = 8\,\text{m/s}$ ). La pendiente de la secante (punteada) entre $t=2$ y $t=3$ da la velocidad media $ \frac{s(3)-s(2)}{1} = 10\,\text{m/s} $, distinta de la instantánea.
     </div>
 
     <!-- Tabla de velocidades medias -->
     <table>
-        <caption style="caption-side: bottom;">Tabla 2. Velocidades medias tendiendo a velocidad instantánea \(v(2)\)</caption>
-        <thead><tr><th>Intervalo \([2, 2+\Delta t]\)</th><th>\(\Delta t\) (s)</th><th>Velocidad media (m/s)</th></tr></thead>
+        <caption style="caption-side: bottom;">Tabla 2. Velocidades medias tendiendo a velocidad instantánea $v(2)$</caption>
+        <thead><tr><th>Intervalo $[2, 2+\Delta t]$</th><th>$\Delta t$ (s)</th><th>Velocidad media (m/s)</th></tr></thead>
         <tbody>
-            <tr><td>\([2, 3]\)</td><td>\(1.0\)</td><td>\(10.0\)</td></tr>
-            <tr><td>\([2, 2.5]\)</td><td>\(0.5\)</td><td>\(9.0\)</td></tr>
-            <tr><td>\([2, 2.1]\)</td><td>\(0.1\)</td><td>\(8.2\)</td></tr>
-            <tr><td>\([2, 2.01]\)</td><td>\(0.01\)</td><td>\(8.02\)</td></tr>
-            <tr><td>\([1.9, 2]\)</td><td>\(-0.1\) (desde atrás)</td><td>\(7.8\)</td></tr>
+            <tr><td>$[2, 3]$</td><td>$1.0$</td><td>$10.0$</td></tr>
+            <tr><td>$[2, 2.5]$</td><td>$0.5$</td><td>$9.0$</td></tr>
+            <tr><td>$[2, 2.1]$</td><td>$0.1$</td><td>$8.2$</td></tr>
+            <tr><td>$[2, 2.01]$</td><td>$0.01$</td><td>$8.02$</td></tr>
+            <tr><td>$[1.9, 2]$</td><td>$-0.1$ (desde atrás)</td><td>$7.8$</td></tr>
         </tbody>
     </table>
-    <p>La velocidad media tiende a \(8\,\text{m/s}\), que es \(s'(2) = 4t|_{t=2}=8\).</p>
+    <p>La velocidad media tiende a $8\,\text{m/s}$, que es $s'(2) = 4t|_{t=2}=8$.</p>
 
     <!-- 6. Ejemplos de aplicaciones reales y directas -->
     <div class="ejemplos-aplicacion">
