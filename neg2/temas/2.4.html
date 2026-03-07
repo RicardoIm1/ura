@@ -1,14 +1,11 @@
 <link rel="stylesheet" href="/ura/css/estilo.css">
-<!-- MathJax para renderizar notación matemática elegante -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <!-- CSS adicional para el modal -->
 <!-- <link rel="stylesheet" href="/ura/css/estilos2.css"> -->
 <!-- Tu script de carga de modal -->
 <script src="/ura/js/modal-loader.js" defer></script>
 
 <li>
-  <!-- <h3>2.4 Interpretacion de la derivada</h3> -->
+  <h3>2.4 Interpretación de la derivada</h3>
 
   <!-- SVG reloj: tiempo estimado 55 min -->
   <svg width="70" height="70" viewBox="0 0 100 100" style="display:block; margin:1rem 0;">
@@ -27,22 +24,22 @@
   <p>Interpretar la derivada desde tres perspectivas fundamentales: geométrica (pendiente de la recta tangente), física (razón de cambio instantánea) y analítica (tasa de variación). Se aprenderá a conectar estas interpretaciones y a utilizarlas para analizar el comportamiento de funciones en contextos aplicados.</p>
 
   <h4>Idea principal</h4>
-  <p>La derivada de una función \(f\) en un punto \(a\) es un concepto unificador que puede entenderse de múltiples maneras: <strong>geométricamente</strong> como la pendiente de la recta tangente a la curva \(y=f(x)\) en \((a, f(a))\); <strong>físicamente</strong> como la velocidad instantánea si \(f\) representa posición; y <strong>analíticamente</strong> como el límite de los cocientes incrementales \(\lim_{h \to 0} \frac{f(a+h)-f(a)}{h}\). Estas interpretaciones permiten modelar y analizar fenómenos de cambio en todas las ciencias.</p>
+  <p>La derivada de una función f en un punto a es un concepto unificador que puede entenderse de múltiples maneras: <strong>geométricamente</strong> como la pendiente de la recta tangente a la curva y = f(x) en (a, f(a)); <strong>físicamente</strong> como la velocidad instantánea si f representa posición; y <strong>analíticamente</strong> como el límite de los cocientes incrementales lim<sub>h→0</sub> [f(a+h) - f(a)]/h. Estas interpretaciones permiten modelar y analizar fenómenos de cambio en todas las ciencias.</p>
 
   <h4>Ejercicios visualmente claros</h4>
 
   <!-- EJERCICIO 1: INTERPRETACIÓN GEOMÉTRICA -->
   <div style="margin:2rem 0;">
     <p><strong>Ejercicio 1: Interpretación geométrica - Pendiente de la recta tangente</strong></p>
-    <p>Dada la función \(f(x) = x^2 + 1\), calcular la derivada en \(x = 1\) y trazar la recta tangente.</p>
+    <p>Dada la función f(x) = x² + 1, calcular la derivada en x = 1 y trazar la recta tangente.</p>
 
     <table style="border-collapse:collapse; margin:1rem 0; width:80%; border:1px solid #333;">
       <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
       <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar \(f(x)=x^2+1\) usando regla potencia</td><td style="border:1px solid #333; padding:0.5rem;">\(f'(x) = 2x\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Evaluar en \(x=1\)</td><td style="border:1px solid #333; padding:0.5rem;">\(f'(1) = 2\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Calcular \(f(1)\)</td><td style="border:1px solid #333; padding:0.5rem;">\(f(1) = 2\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">4</td><td style="border:1px solid #333; padding:0.5rem;">Ecuación recta tangente</td><td style="border:1px solid #333; padding:0.5rem;">\(y = 2x\)</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar f(x)=x²+1 usando regla potencia</td><td style="border:1px solid #333; padding:0.5rem;">f'(x) = 2x</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Evaluar en x = 1</td><td style="border:1px solid #333; padding:0.5rem;">f'(1) = 2</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Calcular f(1)</td><td style="border:1px solid #333; padding:0.5rem;">f(1) = 2</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">4</td><td style="border:1px solid #333; padding:0.5rem;">Ecuación recta tangente</td><td style="border:1px solid #333; padding:0.5rem;">y = 2x</td></tr>
       </tbody>
     </table>
 
@@ -85,12 +82,12 @@
   <!-- EJERCICIO 2: INTERPRETACIÓN FÍSICA -->
   <div style="margin:2rem 0;">
     <p><strong>Ejercicio 2: Interpretación física - Velocidad instantánea</strong></p>
-    <p>Posición \(s(t) = t^3 - 6t^2 + 9t\) (m). La derivada es la velocidad.</p>
+    <p>Posición s(t) = t³ - 6t² + 9t (m). La derivada es la velocidad.</p>
     <table style="border-collapse:collapse; margin:1rem 0; width:90%; border:1px solid #333;">
       <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
       <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar s(t)</td><td style="border:1px solid #333; padding:0.5rem;">\(v(t)=3t^2-12t+9\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">v(t)=0</td><td style="border:1px solid #333; padding:0.5rem;">t=1, t=3</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar s(t)</td><td style="border:1px solid #333; padding:0.5rem;">v(t) = 3t² - 12t + 9</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">v(t) = 0</td><td style="border:1px solid #333; padding:0.5rem;">t = 1, t = 3</td></tr>
         <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">v(2)</td><td style="border:1px solid #333; padding:0.5rem;">-3 m/s (retrocede)</td></tr>
       </tbody>
     </table>
@@ -124,9 +121,9 @@
       <circle cx="185" cy="260" r="4" fill="green" />
       <text x="300" y="60" fill="blue">s(t) posición</text>
       <text x="300" y="90" fill="red">v(t) velocidad</text>
-      <text x="300" y="120" fill="green">v=0 en t=1,3</text>
+      <text x="300" y="120" fill="green">v = 0 en t = 1, 3</text>
       <text x="420" y="290" font-size="14">t</text>
-      <text x="30" y="30" font-size="14">s,v</text>
+      <text x="30" y="30" font-size="14">s, v</text>
     </svg>
     <p><strong>Qué notar:</strong> Velocidad cero en puntos de tangente horizontal; velocidad negativa indica retroceso.</p>
   </div>
@@ -134,13 +131,13 @@
   <!-- EJERCICIO 3: INTERPRETACIÓN ANALÍTICA -->
   <div style="margin:2rem 0;">
     <p><strong>Ejercicio 3: Tasa media vs instantánea</strong></p>
-    <p>\(f(x)=\sqrt{x}\). Comparar tasa media en [1,4] con instantánea en x=1.</p>
+    <p>f(x) = √x. Comparar tasa media en [1,4] con instantánea en x = 1.</p>
     <table style="border-collapse:collapse; margin:1rem 0; width:80%; border:1px solid #333;">
       <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
       <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Tasa media [1,4]</td><td style="border:1px solid #333; padding:0.5rem;">\(\frac{2-1}{3}=\frac13\approx0.333\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Derivada</td><td style="border:1px solid #333; padding:0.5rem;">\(f'(x)=\frac{1}{2\sqrt{x}}\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Instantánea en x=1</td><td style="border:1px solid #333; padding:0.5rem;">\(f'(1)=0.5\)</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Tasa media [1,4]</td><td style="border:1px solid #333; padding:0.5rem;">(2 - 1)/3 = 1/3 ≈ 0.333</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Derivada</td><td style="border:1px solid #333; padding:0.5rem;">f'(x) = 1 / (2√x)</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Instantánea en x = 1</td><td style="border:1px solid #333; padding:0.5rem;">f'(1) = 0.5</td></tr>
       </tbody>
     </table>
     <svg width="450" height="380" viewBox="0 0 450 380" style="border:1px solid #333; background:#fefefe;">
@@ -168,7 +165,7 @@
       <circle cx="225" cy="150" r="4" fill="purple" />
       <line x1="105" y1="250" x2="225" y2="150" stroke="orange" stroke-width="3" stroke-dasharray="5 3" />
       <line x1="50" y1="290" x2="150" y2="210" stroke="red" stroke-width="3" stroke-dasharray="5 3" />
-      <text x="300" y="60" fill="blue">f(x)=√x</text>
+      <text x="300" y="60" fill="blue">f(x) = √x</text>
       <text x="300" y="90" fill="orange">Secante pendiente 1/3</text>
       <text x="300" y="120" fill="red">Tangente pendiente 1/2</text>
       <text x="420" y="290" font-size="14">x</text>
@@ -180,12 +177,12 @@
   <!-- EJERCICIO 4: APLICACIÓN ECONÓMICA -->
   <div style="margin:2rem 0;">
     <p><strong>Ejercicio 4: Costo marginal</strong></p>
-    <p>\(C(x)=0.1x^3-0.5x^2+300x+500\). Calcular costo marginal en x=50.</p>
+    <p>C(x) = 0.1x³ - 0.5x² + 300x + 500. Calcular costo marginal en x = 50.</p>
     <table style="border-collapse:collapse; margin:1rem 0; width:80%; border:1px solid #333;">
       <thead><tr style="background:#d3d3d3;"><th style="border:1px solid #333; padding:0.5rem;">Paso</th><th style="border:1px solid #333; padding:0.5rem;">Operación</th><th style="border:1px solid #333; padding:0.5rem;">Resultado</th></tr></thead>
       <tbody>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar C(x)</td><td style="border:1px solid #333; padding:0.5rem;">\(C'(x)=0.3x^2-x+300\)</td></tr>
-        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Evaluar en x=50</td><td style="border:1px solid #333; padding:0.5rem;">\(C'(50)=1000\)</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">1</td><td style="border:1px solid #333; padding:0.5rem;">Derivar C(x)</td><td style="border:1px solid #333; padding:0.5rem;">C'(x) = 0.3x² - x + 300</td></tr>
+        <tr><td style="border:1px solid #333; padding:0.5rem;">2</td><td style="border:1px solid #333; padding:0.5rem;">Evaluar en x = 50</td><td style="border:1px solid #333; padding:0.5rem;">C'(50) = 1000</td></tr>
         <tr><td style="border:1px solid #333; padding:0.5rem;">3</td><td style="border:1px solid #333; padding:0.5rem;">Interpretación</td><td style="border:1px solid #333; padding:0.5rem;">Costo unitario adicional ≈ $1000</td></tr>
       </tbody>
     </table>
@@ -201,6 +198,6 @@
     <li><strong>Medicina:</strong> tasa de absorción de fármacos.</li>
   </ul>
 
-  <h4>Bibliografía</h4>
+  <h4>Bibliografía confiable y verificable</h4>
   <p>Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 2 y 3.</p>
 </li>
