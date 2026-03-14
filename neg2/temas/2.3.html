@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>2.3 Fórmulas de derivación · Cálculo diferencial</title> -->
-    <!-- MathJax para notación matemática elegante -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
-<!--     <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>2.3 Fórmulas de derivación · Cálculo diferencial</title> -->
+  <!-- MathJax para notación matemática elegante -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+  <!--     <style>
         body {
             background: #f9fbfd;
             font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
@@ -177,167 +178,199 @@
         }
     </style> -->
 </head>
+
 <body>
-<div class="contenedor-tema">
+  <div class="contenedor-tema">
 
     <!-- 1. Título del tema -->
     <h1>2.3 Fórmulas de derivación</h1>
 
     <!-- 2. SVG reloj (45 min) -->
     <div class="reloj-svg">
-        <svg width="48" height="48" viewBox="0 0 100 100" style="display:block;">
-            <circle cx="50" cy="50" r="45" fill="white" stroke="#1e4a6d" stroke-width="5" />
-            <circle cx="50" cy="50" r="42" fill="#f8fcff" />
-            <!-- manecilla hora (corta) apuntando a la 1 (aprox 30°) -->
-            <line x1="50" y1="50" x2="65" y2="30" stroke="#1e4a6d" stroke-width="5" stroke-linecap="round" />
-            <!-- manecilla minuto (larga) apuntando a 45 min → 270° (hacia abajo) realmente 45min = 270° = -90°: x2=50, y2=95 -->
-            <line x1="50" y1="50" x2="50" y2="95" stroke="#0b3b5a" stroke-width="4" stroke-linecap="round" />
-            <circle cx="50" cy="50" r="5" fill="#1e4a6d" />
-            <text x="50" y="84" text-anchor="middle" font-size="13" fill="#144a6e" font-weight="bold">45'</text>
-        </svg>
-        <span>Tiempo estimado: 45 min (referencia MIT OCW)</span>
+      <svg width="48" height="48" viewBox="0 0 100 100" style="display:block;">
+        <circle cx="50" cy="50" r="45" fill="white" stroke="#1e4a6d" stroke-width="5" />
+        <circle cx="50" cy="50" r="42" fill="#f8fcff" />
+        <!-- manecilla hora (corta) apuntando a la 1 (aprox 30°) -->
+        <line x1="50" y1="50" x2="65" y2="30" stroke="#1e4a6d" stroke-width="5" stroke-linecap="round" />
+        <!-- manecilla minuto (larga) apuntando a 45 min → 270° (hacia abajo) realmente 45min = 270° = -90°: x2=50, y2=95 -->
+        <line x1="50" y1="50" x2="50" y2="95" stroke="#0b3b5a" stroke-width="4" stroke-linecap="round" />
+        <circle cx="50" cy="50" r="5" fill="#1e4a6d" />
+        <text x="50" y="84" text-anchor="middle" font-size="13" fill="#144a6e" font-weight="bold">45'</text>
+      </svg>
+      <span>Tiempo estimado: 45 min (referencia MIT OCW)</span>
     </div>
 
     <!-- 3. Objetivo del tema -->
     <div class="objetivo">
-        <h2 style="margin:0 0 0.8rem 0; font-weight:500;"> Objetivo del tema</h2>
-        <p style="margin:0; font-size:1.2rem;">Aplicar con fluidez las fórmulas de derivación para funciones polinomiales, trigonométricas, exponenciales y logarítmicas, entendiendo su origen a partir del límite de la definición de derivada. El estudiante será capaz de derivar cualquier combinación elemental sin titubeos y comprenderá por qué cada fórmula tiene esa forma.</p>
+      <h2 style="margin:0 0 0.8rem 0; font-weight:500;"> Objetivo del tema</h2>
+      <p style="margin:0; font-size:1.2rem;">Aplicar con fluidez las fórmulas de derivación para funciones polinomiales,
+        trigonométricas, exponenciales y logarítmicas, entendiendo su origen a partir del límite de la definición de
+        derivada. El estudiante será capaz de derivar cualquier combinación elemental sin titubeos y comprenderá por qué
+        cada fórmula tiene esa forma.</p>
     </div>
 
     <!-- 4. Idea principal -->
     <div class="idea-principal">
-        <h2 style="margin:0 0 0.8rem 0; font-weight:500;"> Idea principal</h2>
-        <p style="margin:0; font-size:1.15rem;">Las fórmulas de derivación son atajos algebraicos obtenidos a partir del límite del cociente de Newton. En lugar de calcular \( \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \) cada vez, usamos reglas como \( \frac{d}{dx}x^n = n x^{n-1} \), \( \frac{d}{dx}\sin x = \cos x \), etc. Estas reglas son lineales y se combinan: la derivada de una suma es la suma de las derivadas.</p>
+      <h2 style="margin:0 0 0.8rem 0; font-weight:500;"> Idea principal</h2>
+      <p style="margin:0; font-size:1.15rem;">Las fórmulas de derivación son atajos algebraicos obtenidos a partir del
+        límite del cociente de Newton. En lugar de calcular \( \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \) cada vez, usamos
+        reglas como \( \frac{d}{dx}x^n = n x^{n-1} \), \( \frac{d}{dx}\sin x = \cos x \), etc. Estas reglas son lineales
+        y se combinan: la derivada de una suma es la suma de las derivadas.</p>
     </div>
 
     <!-- 5. Ejercicios visualmente claros: tablas y gráficas SVG -->
-    <h2>📐 Ejercicios modelo · precisión gráfica</h2>
-    
+    <h2>📐 Ejercicios</h2>
+
     <!-- Gráfica 1: función cuadrática y su tangente -->
     <div class="grafico-contenedor">
-        <h3 style="margin-top:0; align-self:start;">Función \(f(x)=x^2\) y recta tangente en \(x=1\)</h3>
-        <svg width="600" height="380" viewBox="-2.5 -0.5 5 4" style="border:1px solid #d3e3f0; background:#ffffff;">
-            <!-- fondo y cuadrícula -->
-            <rect x="-2.5" y="-0.5" width="5" height="4" fill="#fcfdff" />
-            <g stroke="#d9e2ec" stroke-width="0.01" stroke-dasharray="0.02 0.02">
-                <line x1="-2" y1="-0.5" x2="-2" y2="3.5" />
-                <line x1="-1" y1="-0.5" x2="-1" y2="3.5" />
-                <line x1="0" y1="-0.5" x2="0" y2="3.5" />
-                <line x1="1" y1="-0.5" x2="1" y2="3.5" />
-                <line x1="2" y1="-0.5" x2="2" y2="3.5" />
-                <line x1="-2.5" y1="0" x2="2.5" y2="0" />
-                <line x1="-2.5" y1="1" x2="2.5" y2="1" />
-                <line x1="-2.5" y1="2" x2="2.5" y2="2" />
-                <line x1="-2.5" y1="3" x2="2.5" y2="3" />
-            </g>
-            <line x1="-2.5" y1="0" x2="2.5" y2="0" stroke="#1f3a57" stroke-width="0.03" />
-            <line x1="0" y1="-0.5" x2="0" y2="3.5" stroke="#1f3a57" stroke-width="0.03" />
-            <!-- curva f(x)=x^2 (exacta) -->
-            <path d="M -2.0 4.0 Q -1.0 1.0 0.0 0.0 Q 1.0 1.0 2.0 4.0" fill="none" stroke="#1e6f5c" stroke-width="0.07" />
-            <!-- recta tangente en x=1: y = 2x -1 -->
-            <line x1="-1.0" y1="-3.0" x2="2.5" y2="4.0" stroke="#c0423b" stroke-width="0.07" stroke-dasharray="0.1 0.05" />
-            <circle cx="1.0" cy="1.0" r="0.1" fill="#b0332a" />
-            <text x="1.7" y="1.8" font-size="0.25" fill="#1f3a57">\(P(1,1)\)</text>
-            <text x="1.2" y="0.2" font-size="0.25" fill="#1e6f5c">\(f(x)=x^2\)</text>
-            <text x="2.0" y="3.3" font-size="0.25" fill="#b0332a">\(y=2x-1\)</text>
-        </svg>
-        <div class="notas-grafica">
-            ⚡ Notar: la recta tangente toca la parábola solo en (1,1) y su pendiente es exactamente \(f'(1)=2\).
-        </div>
+      <h3 style="margin-top:0; align-self:start;">Función \(f(x)=x^2\) y recta tangente en \(x=1\)</h3>
+      <iframe src="https://www.desmos.com/calculator/nfxpis9nfo?embed" width="500" height="500"
+        style="border: 1px solid #ccc" frameborder=0></iframe>
+
+      <div class="notas-grafica">
+        Notar: la recta tangente toca la parábola solo en (1,1) y su pendiente es exactamente \(f'(1)=2\).
+      </div>
     </div>
 
     <!-- Tabla de fórmulas esenciales -->
     <h3> Tabla esencial: fórmulas de derivación más comunes</h3>
     <table>
-        <thead><tr><th>Tipo función</th><th>\(f(x)\)</th><th>\(f'(x)\)</th><th>Ejemplo</th></tr></thead>
-        <tbody>
-            <tr><td>Potencia</td><td>\(x^n\)</td><td>\(n x^{n-1}\)</td><td>\(\frac{d}{dx}x^5 = 5x^4\)</td></tr>
-            <tr><td>Exponencial</td><td>\(e^x\)</td><td>\(e^x\)</td><td>\(\frac{d}{dx}e^x = e^x\)</td></tr>
-            <tr><td>Logaritmo natural</td><td>\(\ln x\)</td><td>\(\frac{1}{x}\)</td><td>\(\frac{d}{dx}\ln x = \frac{1}{x}\)</td></tr>
-            <tr><td>Seno</td><td>\(\sin x\)</td><td>\(\cos x\)</td><td>\(\frac{d}{dx}\sin x = \cos x\)</td></tr>
-            <tr><td>Coseno</td><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>\(\frac{d}{dx}\cos x = -\sin x\)</td></tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Tipo función</th>
+          <th>\(f(x)\)</th>
+          <th>\(f'(x)\)</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Potencia</td>
+          <td>\(x^n\)</td>
+          <td>\(n x^{n-1}\)</td>
+          <td>\(\frac{d}{dx}x^5 = 5x^4\)</td>
+        </tr>
+        <tr>
+          <td>Exponencial</td>
+          <td>\(e^x\)</td>
+          <td>\(e^x\)</td>
+          <td>\(\frac{d}{dx}e^x = e^x\)</td>
+        </tr>
+        <tr>
+          <td>Logaritmo natural</td>
+          <td>\(\ln x\)</td>
+          <td>\(\frac{1}{x}\)</td>
+          <td>\(\frac{d}{dx}\ln x = \frac{1}{x}\)</td>
+        </tr>
+        <tr>
+          <td>Seno</td>
+          <td>\(\sin x\)</td>
+          <td>\(\cos x\)</td>
+          <td>\(\frac{d}{dx}\sin x = \cos x\)</td>
+        </tr>
+        <tr>
+          <td>Coseno</td>
+          <td>\(\cos x\)</td>
+          <td>\(-\sin x\)</td>
+          <td>\(\frac{d}{dx}\cos x = -\sin x\)</td>
+        </tr>
+      </tbody>
     </table>
 
     <!-- Grid de ejercicios con procedimientos comentados -->
     <div class="grid-ejemplos">
-        <div class="card-ejemplo">
-            <h3> 1. Derivada polinomial con trigonometría</h3>
-            <p>\(f(x) = 4x^3 + 2\sin x - 5\)</p>
-            <div class="procedimiento">
-                <span class="comentario"># Aplicamos linealidad: derivada de suma = suma de derivadas</span><br>
-                f'(x) = d/dx[4x^3] + d/dx[2 sin x] - d/dx[5]<br>
-                <span class="comentario"># Regla de la potencia: d/dx[x^n] = n·x^{n-1}</span><br>
-                = 4·(3x^{2}) + 2·(cos x) - 0<br>
-                <span class="comentario"># Simplificamos coeficientes</span><br>
-                = 12x^{2} + 2cos x
-            </div>
-            <p style="margin-bottom: 0;">✅ Resultado final: \(f'(x)=12x^{2}+2\cos x\)</p>
+      <div class="card-ejemplo">
+        <h3> 1. Derivada polinomial con trigonometría</h3>
+        <p>\(f(x) = 4x^3 + 2\sin x - 5\)</p>
+        <div class="procedimiento">
+          <span class="comentario"># Aplicamos linealidad: derivada de suma = suma de derivadas</span><br>
+          f'(x) = d/dx[4x^3] + d/dx[2 sin x] - d/dx[5]<br>
+          <span class="comentario"># Regla de la potencia: d/dx[x^n] = n·x^{n-1}</span><br>
+          = 4·(3x^{2}) + 2·(cos x) - 0<br>
+          <span class="comentario"># Simplificamos coeficientes</span><br>
+          = 12x^{2} + 2cos x
         </div>
-        <div class="card-ejemplo">
-            <h3>✏️ 2. Regla del producto</h3>
-            <p>\(f(x) = x^2 \cdot e^x\)</p>
-            <div class="procedimiento">
-                <span class="comentario"># Regla del producto: (fg)' = f'g + fg'</span><br>
-                f'(x) = (2x)(e^x) + (x^2)(e^x)<br>
-                <span class="comentario"># Factorizamos e^x</span><br>
-                = e^x(2x + x^2) = e^x·x(2 + x)
-            </div>
-            <p style="margin-bottom: 0;">✅ Forma compacta: \(f'(x)=e^x(x^2+2x)\)</p>
+        <p style="margin-bottom: 0;">✅ Resultado final: \(f'(x)=12x^{2}+2\cos x\)</p>
+      </div>
+      <div class="card-ejemplo">
+        <h3>✏️ 2. Regla del producto</h3>
+        <p>\(f(x) = x^2 \cdot e^x\)</p>
+        <div class="procedimiento">
+          <span class="comentario"># Regla del producto: (fg)' = f'g + fg'</span><br>
+          f'(x) = (2x)(e^x) + (x^2)(e^x)<br>
+          <span class="comentario"># Factorizamos e^x</span><br>
+          = e^x(2x + x^2) = e^x·x(2 + x)
         </div>
+        <p style="margin-bottom: 0;">✅ Forma compacta: \(f'(x)=e^x(x^2+2x)\)</p>
+      </div>
     </div>
 
     <!-- Gráfica 2: seno y coseno (relación derivada) -->
     <div class="grafico-contenedor">
-        <h3 style="margin-top:0; align-self:start;">Relación funcional: \(f(x)=\sin x\) (azul) y \(f'(x)=\cos x\) (naranja)</h3>
-        <svg width="600" height="280" viewBox="-1.5 -1.8 10 3.6" style="background:#ffffff; border:1px solid #cddeed;">
-            <g stroke="#b7c9db" stroke-width="0.02" stroke-dasharray="0.1 0.1">
-                <line x1="0" y1="-1.5" x2="0" y2="1.5" />
-                <line x1="1.57" y1="-1.5" x2="1.57" y2="1.5" />
-                <line x1="3.14" y1="-1.5" x2="3.14" y2="1.5" />
-                <line x1="4.71" y1="-1.5" x2="4.71" y2="1.5" />
-                <line x1="6.28" y1="-1.5" x2="6.28" y2="1.5" />
-            </g>
-            <line x1="-1" y1="0" x2="8.5" y2="0" stroke="#0b2a44" stroke-width="0.05" />
-            <line x1="0" y1="-1.8" x2="0" y2="1.8" stroke="#0b2a44" stroke-width="0.05" />
-            <!-- seno: curva suave con puntos exactos -->
-            <path d="M0 0 C0.5 0.48, 1.07 0.98, 1.57 1 C2.07 0.98, 2.64 0.48, 3.14 0 C3.64 -0.48, 4.21 -0.98, 4.71 -1 C5.21 -0.98, 5.78 -0.48, 6.28 0" fill="none" stroke="#1f5b9e" stroke-width="0.1" />
-            <!-- coseno: curva naranja discontinua -->
-            <path d="M0 1 C0.5 0.7, 1.07 0.2, 1.57 0 C2.07 -0.2, 2.64 -0.7, 3.14 -1 C3.64 -0.7, 4.21 -0.2, 4.71 0 C5.21 0.2, 5.78 0.7, 6.28 1" fill="none" stroke="#c05e2a" stroke-width="0.1" stroke-dasharray="0.15 0.1" />
-            <text x="0.8" y="-1.2" font-size="0.3" fill="#1f5b9e">\(\sin x\)</text>
-            <text x="4.5" y="1.5" font-size="0.3" fill="#c05e2a">\(\cos x\)</text>
-        </svg>
-        <div class="notas-grafica">
-             Cuando \(\sin x\) crece, \(\cos x\) es positivo; en los extremos de \(\sin x\), \(\cos x = 0\) (tangente horizontal).
-        </div>
+      <h3 style="margin-top:0; align-self:start;">Relación funcional: \(f(x)=\sin x\) (azul) y \(f'(x)=\cos x\)
+        (naranja)</h3>
+      <svg width="600" height="280" viewBox="-1.5 -1.8 10 3.6" style="background:#ffffff; border:1px solid #cddeed;">
+        <g stroke="#b7c9db" stroke-width="0.02" stroke-dasharray="0.1 0.1">
+          <line x1="0" y1="-1.5" x2="0" y2="1.5" />
+          <line x1="1.57" y1="-1.5" x2="1.57" y2="1.5" />
+          <line x1="3.14" y1="-1.5" x2="3.14" y2="1.5" />
+          <line x1="4.71" y1="-1.5" x2="4.71" y2="1.5" />
+          <line x1="6.28" y1="-1.5" x2="6.28" y2="1.5" />
+        </g>
+        <line x1="-1" y1="0" x2="8.5" y2="0" stroke="#0b2a44" stroke-width="0.05" />
+        <line x1="0" y1="-1.8" x2="0" y2="1.8" stroke="#0b2a44" stroke-width="0.05" />
+        <!-- seno: curva suave con puntos exactos -->
+        <path
+          d="M0 0 C0.5 0.48, 1.07 0.98, 1.57 1 C2.07 0.98, 2.64 0.48, 3.14 0 C3.64 -0.48, 4.21 -0.98, 4.71 -1 C5.21 -0.98, 5.78 -0.48, 6.28 0"
+          fill="none" stroke="#1f5b9e" stroke-width="0.1" />
+        <!-- coseno: curva naranja discontinua -->
+        <path
+          d="M0 1 C0.5 0.7, 1.07 0.2, 1.57 0 C2.07 -0.2, 2.64 -0.7, 3.14 -1 C3.64 -0.7, 4.21 -0.2, 4.71 0 C5.21 0.2, 5.78 0.7, 6.28 1"
+          fill="none" stroke="#c05e2a" stroke-width="0.1" stroke-dasharray="0.15 0.1" />
+        <text x="0.8" y="-1.2" font-size="0.3" fill="#1f5b9e">\(\sin x\)</text>
+        <text x="4.5" y="1.5" font-size="0.3" fill="#c05e2a">\(\cos x\)</text>
+      </svg>
+      <div class="notas-grafica">
+        Cuando \(\sin x\) crece, \(\cos x\) es positivo; en los extremos de \(\sin x\), \(\cos x = 0\) (tangente
+        horizontal).
+      </div>
     </div>
 
     <!-- 6. Aplicaciones reales -->
     <div class="aplicaciones">
-        <h2 style="margin-top:0;"> Aplicaciones reales (ingeniería y ciencias)</h2>
-        <ul style="font-size:1.1rem; padding-left:1.4rem;">
-            <li><strong>📡 Cinemática:</strong> Si \(s(t) = 4.9t^2\) (caída libre), entonces \(v(t)=9.8t\). La derivada de la posición es velocidad.</li>
-            <li><strong>⚡ Circuitos eléctricos:</strong> En un condensador, \(i(t)=C\frac{dv}{dt}\); la corriente es la derivada del voltaje.</li>
-            <li><strong>📈 Optimización en economía:</strong> El costo marginal es la derivada del costo total; permite hallar el nivel de producción que maximiza ganancias.</li>
-            <li><strong>🧪 Crecimiento poblacional:</strong> Modelo \(P(t)=P_0 e^{kt}\), derivada \(P'(t)=kP(t)\): velocidad de crecimiento proporcional a la población.</li>
-        </ul>
+      <h2 style="margin-top:0;"> Aplicaciones reales (ingeniería y ciencias)</h2>
+      <ul style="font-size:1.1rem; padding-left:1.4rem;">
+        <li><strong>📡 Cinemática:</strong> Si \(s(t) = 4.9t^2\) (caída libre), entonces \(v(t)=9.8t\). La derivada de
+          la posición es velocidad.</li>
+        <li><strong>⚡ Circuitos eléctricos:</strong> En un condensador, \(i(t)=C\frac{dv}{dt}\); la corriente es la
+          derivada del voltaje.</li>
+        <li><strong>📈 Optimización en economía:</strong> El costo marginal es la derivada del costo total; permite
+          hallar el nivel de producción que maximiza ganancias.</li>
+        <li><strong>🧪 Crecimiento poblacional:</strong> Modelo \(P(t)=P_0 e^{kt}\), derivada \(P'(t)=kP(t)\): velocidad
+          de crecimiento proporcional a la población.</li>
+      </ul>
     </div>
 
     <!-- 7. Bibliografía confiable (único libro verificable) -->
     <div class="bibliografia">
-        <h3 style="margin-bottom:0.5rem;">📚 Bibliografía fundamental</h3>
-        <p style="font-size:1.1rem;">Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 3: Reglas de derivación. <br> <span style="background:#ecf3fa; padding:0.2rem 1rem; border-radius:30px;">ISBN: 978-607-522-013-3</span></p>
-        <p style="margin-top:1rem;">Obra utilizada en cursos de cálculo en universidades como MIT, Stanford, UNAM, etc. Las fórmulas y ejercicios aquí presentados siguen su estructura.</p>
+      <h3 style="margin-bottom:0.5rem;">📚 Bibliografía fundamental</h3>
+      <p style="font-size:1.1rem;">Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª
+        ed.). Cengage Learning. Capítulo 3: Reglas de derivación. <br> <span
+          style="background:#ecf3fa; padding:0.2rem 1rem; border-radius:30px;">ISBN: 978-607-522-013-3</span></p>
+      <p style="margin-top:1rem;">Obra utilizada en cursos de cálculo en universidades como MIT, Stanford, UNAM, etc.
+        Las fórmulas y ejercicios aquí presentados siguen su estructura.</p>
     </div>
 
     <hr>
-    <p style="text-align:right; color:#446688;">contenido generado para enseñanza · precisión y claridad · notación con MathJax</p>
-</div>
-<!-- Forzar la re-renderización de MathJax por si algún elemento se añadió después -->
-<script>
+    <p style="text-align:right; color:#446688;">contenido generado para enseñanza · precisión y claridad · notación con
+      MathJax</p>
+  </div>
+  <!-- Forzar la re-renderización de MathJax por si algún elemento se añadió después -->
+  <script>
     if (window.MathJax) {
-        MathJax.typesetPromise();
+      MathJax.typesetPromise();
     }
-</script>
+  </script>
 </body>
+
 </html>
