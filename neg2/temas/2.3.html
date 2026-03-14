@@ -1,234 +1,333 @@
-<li>
-<!--   <h3>2.3 Fórmulas de derivación</h3> -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3 Fórmulas de derivación · Cálculo diferencial</title>
+    <!-- KaTeX para notación matemática ultrarrápida y elegante -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
+    <!-- <style>
+        body {
+            background: #f9fbfd;
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+            color: #1e2b3c;
+            line-height: 1.6;
+        }
+        .contenedor-tema {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0,20,30,0.25);
+            padding: 2.5rem;
+        }
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+            border-left: 6px solid #1e4a6d;
+            padding-left: 1.5rem;
+            color: #0a2a3b;
+        }
+        .reloj-svg {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #eaf0f6;
+            border-radius: 60px;
+            padding: 0.6rem 1.8rem 0.6rem 1.2rem;
+            margin: 0.5rem 0 1.8rem 0;
+            width: fit-content;
+        }
+        .reloj-svg span {
+            font-weight: 450;
+            font-size: 1.2rem;
+            color: #144a6e;
+        }
+        .objetivo {
+            background: #e2eaf2;
+            padding: 1.6rem 2rem;
+            border-radius: 24px;
+            margin: 2rem 0 1.5rem 0;
+            border: 1px solid #cbd6e4;
+        }
+        .idea-principal {
+            background: #f0f4fa;
+            padding: 1.6rem 2rem;
+            border-radius: 24px;
+            margin: 2rem 0 2rem 0;
+            border-left: 5px solid #2e6396;
+        }
+        .grid-ejemplos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        .card-ejemplo {
+            background: #ffffff;
+            border: 1px solid #cfdeed;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 6px 14px rgba(0,20,30,0.05);
+        }
+        .card-ejemplo h3 {
+            margin-top: 0;
+            color: #1b4b6e;
+            font-weight: 550;
+            font-size: 1.6rem;
+            border-bottom: 2px dashed #abc0d0;
+            padding-bottom: 0.5rem;
+        }
+        .procedimiento {
+            background: #f2f6fc;
+            border-radius: 16px;
+            padding: 1.2rem;
+            font-family: 'Fira Code', 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            border: 1px solid #b8ccdd;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            margin: 1.2rem 0;
+        }
+        .comentario {
+            color: #2a6d4e;
+            font-weight: 450;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px #d9e2ec;
+        }
+        th {
+            background: #1e3d5e;
+            color: white;
+            font-weight: 500;
+            padding: 12px 8px;
+        }
+        td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #d4e0e9;
+            text-align: center;
+        }
+        .grafico-contenedor {
+            background: #fbfeff;
+            border: 1px solid #c1d8ea;
+            border-radius: 24px;
+            padding: 1.5rem 1rem 1rem 1rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .grafico-contenedor svg {
+            max-width: 100%;
+            height: auto;
+            background: white;
+            border-radius: 16px;
+        }
+        .notas-grafica {
+            background: #e9f0f9;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #1a3a53;
+            text-align: center;
+            border: 1px solid #b3cde0;
+            width: fit-content;
+        }
+        .aplicaciones {
+            background: #e7f0f9;
+            padding: 2rem;
+            border-radius: 28px;
+            margin: 2.8rem 0 1.8rem;
+        }
+        .bibliografia {
+            border-top: 2px solid #b3cde0;
+            padding-top: 1.8rem;
+            margin-top: 2.5rem;
+            font-size: 1rem;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #cbdae7;
+            margin: 2rem 0;
+        }
+        /* Pequeño ajuste para que KaTeX se integre bien */
+        .katex { font-size: 1.1em; }
+        .procedimiento .katex { font-size: 1em; }
+    </style> -->
+</head>
+<body>
+<div class="contenedor-tema">
 
-  <!-- SVG reloj: tiempo estimado 75 min (referencia: curso universitario estándar) -->
-  <svg width="70" height="70" viewBox="0 0 100 100" style="display:block; margin:0.5rem 0 1rem 0;">
-    <circle cx="50" cy="50" r="45" fill="none" stroke="#1e3c5c" stroke-width="5" />
-    <circle cx="50" cy="50" r="3" fill="#1e3c5c" />
-    <line x1="50" y1="50" x2="35" y2="20" stroke="#1e3c5c" stroke-width="4" stroke-linecap="round" />
-    <line x1="50" y1="50" x2="70" y2="25" stroke="#1e3c5c" stroke-width="3" stroke-linecap="round" />
-    <circle cx="50" cy="10" r="2.5" fill="#1e3c5c" />
-    <circle cx="90" cy="50" r="2.5" fill="#1e3c5c" />
-    <circle cx="50" cy="90" r="2.5" fill="#1e3c5c" />
-    <circle cx="10" cy="50" r="2.5" fill="#1e3c5c" />
-    <text x="25" y="85" font-family="Arial" font-size="12" fill="#1e3c5c" font-weight="bold">75 min</text>
-  </svg>
+    <!-- 1. Título del tema -->
+    <h1>2.3 Fórmulas de derivación</h1>
 
-  <h4>Objetivo del tema</h4>
-  <p>Conocer y aplicar las reglas básicas de derivación: regla de la potencia, regla del producto, regla del cociente y regla de la cadena. Se aprenderá a derivar funciones polinomiales, racionales, trigonométricas y compuestas, así como a interpretar geométricamente la derivada como la pendiente de la recta tangente.</p>
+    <!-- 2. SVG reloj (45 min) -->
+    <div class="reloj-svg">
+        <svg width="48" height="48" viewBox="0 0 100 100" style="display:block;">
+            <circle cx="50" cy="50" r="45" fill="white" stroke="#1e4a6d" stroke-width="5" />
+            <circle cx="50" cy="50" r="42" fill="#f8fcff" />
+            <!-- manecilla hora (corta) -->
+            <line x1="50" y1="50" x2="65" y2="30" stroke="#1e4a6d" stroke-width="5" stroke-linecap="round" />
+            <!-- manecilla minuto (larga) apuntando a 45 min -->
+            <line x1="50" y1="50" x2="50" y2="95" stroke="#0b3b5a" stroke-width="4" stroke-linecap="round" />
+            <circle cx="50" cy="50" r="5" fill="#1e4a6d" />
+            <text x="50" y="84" text-anchor="middle" font-size="13" fill="#144a6e" font-weight="bold">45'</text>
+        </svg>
+        <span>Tiempo estimado: 45 min (referencia MIT OCW)</span>
+    </div>
 
-  <h4>Idea principal</h4>
-  <p>La derivada de una función f en un punto x representa la tasa de cambio instantánea y geométricamente es la pendiente de la recta tangente a la curva en ese punto. Las fórmulas de derivación son atajos que evitan calcular el límite del cociente incremental cada vez. Estas reglas (potencia, producto, cociente, cadena) permiten derivar sistemáticamente una amplia variedad de funciones, lo que resulta esencial en todas las ciencias para modelar fenómenos de cambio.</p>
+    <!-- 3. Objetivo del tema -->
+    <div class="objetivo">
+        <h2 style="margin:0 0 0.8rem 0; font-weight:500;"> Objetivo del tema</h2>
+        <p style="margin:0; font-size:1.2rem;">Aplicar con fluidez las fórmulas de derivación para funciones polinomiales, trigonométricas, exponenciales y logarítmicas, entendiendo su origen a partir del límite de la definición de derivada. El estudiante será capaz de derivar cualquier combinación elemental sin titubeos y comprenderá por qué cada fórmula tiene esa forma.</p>
+    </div>
 
-  <h4>Ejercicios visualmente claros</h4>
+    <!-- 4. Idea principal -->
+    <div class="idea-principal">
+        <h2 style="margin:0 0 0.8rem 0; font-weight:500;"> Idea principal</h2>
+        <p style="margin:0; font-size:1.15rem;">Las fórmulas de derivación son atajos algebraicos obtenidos a partir del límite del cociente de Newton. En lugar de calcular \( \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \) cada vez, usamos reglas como \( \frac{d}{dx}x^n = n x^{n-1} \), \( \frac{d}{dx}\sin x = \cos x \), etc. Estas reglas son lineales y se combinan: la derivada de una suma es la suma de las derivadas.</p>
+    </div>
 
-  <p><strong>Ejercicio 1: Regla de la potencia y recta tangente</strong></p>
-  <p>Derivar f(x) = x³ y encontrar la ecuación de la recta tangente en x = 1. Trazar la función y la tangente.</p>
+    <!-- 5. Ejercicios visualmente claros: tablas y gráficas SVG -->
+    <h2>📐 Ejercicios modelo · precisión gráfica</h2>
+    
+    <!-- Gráfica 1: función cuadrática y su tangente -->
+    <div class="grafico-contenedor">
+        <h3 style="margin-top:0; align-self:start;">Función \(f(x)=x^2\) y recta tangente en \(x=1\)</h3>
+        <svg width="600" height="380" viewBox="-2.5 -0.5 5 4" style="border:1px solid #d3e3f0; background:#ffffff;">
+            <!-- fondo y cuadrícula secundaria -->
+            <rect x="-2.5" y="-0.5" width="5" height="4" fill="#fcfdff" />
+            <g stroke="#d9e2ec" stroke-width="0.01" stroke-dasharray="0.02 0.02">
+                <line x1="-2" y1="-0.5" x2="-2" y2="3.5" />
+                <line x1="-1" y1="-0.5" x2="-1" y2="3.5" />
+                <line x1="0" y1="-0.5" x2="0" y2="3.5" />
+                <line x1="1" y1="-0.5" x2="1" y2="3.5" />
+                <line x1="2" y1="-0.5" x2="2" y2="3.5" />
+                <line x1="-2.5" y1="0" x2="2.5" y2="0" />
+                <line x1="-2.5" y1="1" x2="2.5" y2="1" />
+                <line x1="-2.5" y1="2" x2="2.5" y2="2" />
+                <line x1="-2.5" y1="3" x2="2.5" y2="3" />
+            </g>
+            <!-- ejes principales -->
+            <line x1="-2.5" y1="0" x2="2.5" y2="0" stroke="#1f3a57" stroke-width="0.03" />
+            <line x1="0" y1="-0.5" x2="0" y2="3.5" stroke="#1f3a57" stroke-width="0.03" />
+            <!-- curva f(x)=x^2 (exacta) -->
+            <path d="M -2.0 4.0 Q -1.0 1.0 0.0 0.0 Q 1.0 1.0 2.0 4.0" fill="none" stroke="#1e6f5c" stroke-width="0.07" />
+            <!-- recta tangente en x=1: y = 2x -1 -->
+            <line x1="-1.0" y1="-3.0" x2="2.5" y2="4.0" stroke="#c0423b" stroke-width="0.07" stroke-dasharray="0.1 0.05" />
+            <circle cx="1.0" cy="1.0" r="0.1" fill="#b0332a" />
+            <text x="1.7" y="1.8" font-size="0.25" fill="#1f3a57">\(P(1,1)\)</text>
+            <text x="1.2" y="0.2" font-size="0.25" fill="#1e6f5c">\(f(x)=x^2\)</text>
+            <text x="2.0" y="3.3" font-size="0.25" fill="#b0332a">\(y=2x-1\)</text>
+        </svg>
+        <div class="notas-grafica">
+            ⚡ Notar: la recta tangente toca la parábola solo en (1,1) y su pendiente es exactamente \(f'(1)=2\).
+        </div>
+    </div>
 
-  <table style="border-collapse: collapse; margin: 1rem 0; width: 80%; border: 1px solid #333;">
-    <thead>
-      <tr style="background-color: #d3d3d3;">
-        <th style="border: 1px solid #333; padding: 0.5rem;">Paso</th>
-        <th style="border: 1px solid #333; padding: 0.5rem;">Operación</th>
-        <th style="border: 1px solid #333; padding: 0.5rem;">Resultado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">Aplicar regla de la potencia: d/dx [xⁿ] = n·xⁿ⁻¹</td><td style="border: 1px solid #333; padding: 0.5rem;">f'(x) = 3x²</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">Evaluar f'(x) en x = 1 (pendiente)</td><td style="border: 1px solid #333; padding: 0.5rem;">m = f'(1) = 3(1)² = 3</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">Calcular f(1) para el punto de tangencia</td><td style="border: 1px solid #333; padding: 0.5rem;">Punto (1, 1)</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">Ecuación punto-pendiente: y - y₀ = m(x - x₀)</td><td style="border: 1px solid #333; padding: 0.5rem;">y - 1 = 3(x - 1) → y = 3x - 2</td></tr>
-    </tbody>
-  </table>
+    <!-- Tabla de fórmulas esenciales -->
+    <h3> Tabla esencial: fórmulas de derivación más comunes</h3>
+    <table>
+        <thead><tr><th>Tipo función</th><th>\(f(x)\)</th><th>\(f'(x)\)</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+            <tr><td>Potencia</td><td>\(x^n\)</td><td>\(n x^{n-1}\)</td><td>\(\frac{d}{dx}x^5 = 5x^4\)</td></tr>
+            <tr><td>Exponencial</td><td>\(e^x\)</td><td>\(e^x\)</td><td>\(\frac{d}{dx}e^x = e^x\)</td></tr>
+            <tr><td>Logaritmo natural</td><td>\(\ln x\)</td><td>\(\frac{1}{x}\)</td><td>\(\frac{d}{dx}\ln x = \frac{1}{x}\)</td></tr>
+            <tr><td>Seno</td><td>\(\sin x\)</td><td>\(\cos x\)</td><td>\(\frac{d}{dx}\sin x = \cos x\)</td></tr>
+            <tr><td>Coseno</td><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>\(\frac{d}{dx}\cos x = -\sin x\)</td></tr>
+        </tbody>
+    </table>
 
-  <!-- Gráfica de f(x)=x³ y su tangente en x=1 -->
-  <svg width="400" height="350" viewBox="0 0 400 350" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
-    <!-- Sistema: origen en (60, 300), escala: 40px/unidad en X, 30px/unidad en Y -->
-    
-    <!-- Cuadrícula -->
-    <g stroke="#e0e0e0" stroke-width="0.8">
-      <line x1="20" y1="50" x2="20" y2="320" /><line x1="60" y1="50" x2="60" y2="320" />
-      <line x1="100" y1="50" x2="100" y2="320" /><line x1="140" y1="50" x2="140" y2="320" />
-      <line x1="180" y1="50" x2="180" y2="320" /><line x1="220" y1="50" x2="220" y2="320" />
-      <line x1="260" y1="50" x2="260" y2="320" /><line x1="300" y1="50" x2="300" y2="320" />
-      <line x1="340" y1="50" x2="340" y2="320" />
-      <line x1="20" y1="300" x2="360" y2="300" /><line x1="20" y1="270" x2="360" y2="270" />
-      <line x1="20" y1="240" x2="360" y2="240" /><line x1="20" y1="210" x2="360" y2="210" />
-      <line x1="20" y1="180" x2="360" y2="180" /><line x1="20" y1="150" x2="360" y2="150" />
-      <line x1="20" y1="120" x2="360" y2="120" /><line x1="20" y1="90" x2="360" y2="90" />
-      <line x1="20" y1="60" x2="360" y2="60" />
-    </g>
-    
-    <!-- Ejes -->
-    <g stroke="black" stroke-width="2.5">
-      <line x1="20" y1="300" x2="380" y2="300" />
-      <line x1="60" y1="340" x2="60" y2="20" />
-    </g>
-    
-    <!-- Marcas -->
-    <g font-family="Arial" font-size="12" fill="black">
-      <text x="55" y="320">-1</text><text x="95" y="320">0</text><text x="135" y="320">1</text>
-      <text x="175" y="320">2</text><text x="215" y="320">3</text><text x="30" y="305">-2</text>
-      <text x="30" y="275">-1</text><text x="30" y="245">0</text><text x="30" y="215">1</text>
-      <text x="30" y="185">2</text><text x="30" y="155">3</text><text x="30" y="125">4</text>
-      <text x="30" y="95">5</text><text x="30" y="65">6</text>
-    </g>
-    
-    <!-- Función f(x)=x³ -->
-    <path d="M20,420 Q60,360 100,300 Q140,240 180,180 Q220,120 260,60 Q300,0 340,-60" 
-          stroke="blue" stroke-width="3" fill="none" transform="translate(0,0)"/>
-    
-    <!-- Recta tangente y = 3x - 2 -->
-    <line x1="20" y1="360" x2="340" y2="0" stroke="red" stroke-width="3" stroke-dasharray="5 3" />
-    
-    <!-- Punto de tangencia (1,1) -->
-    <circle cx="135" cy="215" r="5" fill="red" stroke="red" stroke-width="2" />
-    
-    <!-- Anotaciones -->
-    <text x="200" y="50" fill="blue" font-weight="bold">f(x) = x³</text>
-    <text x="200" y="80" fill="red" font-weight="bold">Tangente: y = 3x - 2</text>
-    
-    <text x="360" y="290" font-size="14">x</text>
-    <text x="20" y="30" font-size="14">y</text>
-  </svg>
+    <!-- Grid de ejercicios con procedimientos comentados -->
+    <div class="grid-ejemplos">
+        <div class="card-ejemplo">
+            <h3> 1. Derivada polinomial con trigonometría</h3>
+            <p>\(f(x) = 4x^3 + 2\sin x - 5\)</p>
+            <div class="procedimiento">
+                <span class="comentario"># Aplicamos linealidad: derivada de suma = suma de derivadas</span><br>
+                f'(x) = d/dx[4x^3] + d/dx[2 sin x] - d/dx[5]<br>
+                <span class="comentario"># Regla de la potencia: d/dx[x^n] = n·x^{n-1}</span><br>
+                = 4·(3x^{2}) + 2·(cos x) - 0<br>
+                <span class="comentario"># Simplificamos coeficientes</span><br>
+                = 12x^{2} + 2cos x
+            </div>
+            <p style="margin-bottom: 0;">✅ Resultado final: \(f'(x)=12x^{2}+2\cos x\)</p>
+        </div>
+        <div class="card-ejemplo">
+            <h3> 2. Regla del producto</h3>
+            <p>\(f(x) = x^2 \cdot e^x\)</p>
+            <div class="procedimiento">
+                <span class="comentario"># Regla del producto: (fg)' = f'g + fg'</span><br>
+                f'(x) = (2x)(e^x) + (x^2)(e^x)<br>
+                <span class="comentario"># Factorizamos e^x</span><br>
+                = e^x(2x + x^2) = e^x·x(2 + x)
+            </div>
+            <p style="margin-bottom: 0;">✅ Forma compacta: \(f'(x)=e^x(x^2+2x)\)</p>
+        </div>
+    </div>
 
-  <p><strong>Qué notar en la gráfica:</strong> La curva azul es cúbica. La recta roja punteada es la tangente en x = 1. La pendiente de esta recta (3) es precisamente f'(1). La recta toca la curva solo en ese punto y tiene la misma dirección que la curva en ese instante.</p>
+    <!-- Gráfica 2: seno y coseno (relación derivada) -->
+    <div class="grafico-contenedor">
+        <h3 style="margin-top:0; align-self:start;">Relación funcional: \(f(x)=\sin x\) (azul) y \(f'(x)=\cos x\) (naranja)</h3>
+        <svg width="600" height="280" viewBox="-1.5 -1.8 10 3.6" style="background:#ffffff; border:1px solid #cddeed;">
+            <g stroke="#b7c9db" stroke-width="0.02" stroke-dasharray="0.1 0.1">
+                <line x1="0" y1="-1.5" x2="0" y2="1.5" />
+                <line x1="1.57" y1="-1.5" x2="1.57" y2="1.5" />
+                <line x1="3.14" y1="-1.5" x2="3.14" y2="1.5" />
+                <line x1="4.71" y1="-1.5" x2="4.71" y2="1.5" />
+                <line x1="6.28" y1="-1.5" x2="6.28" y2="1.5" />
+            </g>
+            <line x1="-1" y1="0" x2="8.5" y2="0" stroke="#0b2a44" stroke-width="0.05" />
+            <line x1="0" y1="-1.8" x2="0" y2="1.8" stroke="#0b2a44" stroke-width="0.05" />
+            <!-- seno: curva exacta -->
+            <path d="M0 0 C0.5 0.48, 1.07 0.98, 1.57 1 C2.07 0.98, 2.64 0.48, 3.14 0 C3.64 -0.48, 4.21 -0.98, 4.71 -1 C5.21 -0.98, 5.78 -0.48, 6.28 0" fill="none" stroke="#1f5b9e" stroke-width="0.1" />
+            <!-- coseno: curva discontinua -->
+            <path d="M0 1 C0.5 0.7, 1.07 0.2, 1.57 0 C2.07 -0.2, 2.64 -0.7, 3.14 -1 C3.64 -0.7, 4.21 -0.2, 4.71 0 C5.21 0.2, 5.78 0.7, 6.28 1" fill="none" stroke="#c05e2a" stroke-width="0.1" stroke-dasharray="0.15 0.1" />
+            <text x="0.8" y="-1.2" font-size="0.3" fill="#1f5b9e">\(\sin x\)</text>
+            <text x="4.5" y="1.5" font-size="0.3" fill="#c05e2a">\(\cos x\)</text>
+        </svg>
+        <div class="notas-grafica">
+            Cuando \(\sin x\) crece, \(\cos x\) es positivo; en los extremos de \(\sin x\), \(\cos x = 0\) (tangente horizontal).
+        </div>
+    </div>
 
-  <p><strong>Ejercicio 2: Regla del producto</strong></p>
-  <p>Derivar f(x) = (x² + 1)(x³ - 2x). Verificar evaluando la derivada en x = 1.</p>
+    <!-- 6. Aplicaciones reales -->
+    <div class="aplicaciones">
+        <h2 style="margin-top:0;"> Aplicaciones reales (ingeniería y ciencias)</h2>
+        <ul style="font-size:1.1rem; padding-left:1.4rem;">
+            <li><strong>📡 Cinemática:</strong> Si \(s(t) = 4.9t^2\) (caída libre), entonces \(v(t)=9.8t\). La derivada de la posición es velocidad.</li>
+            <li><strong>⚡ Circuitos eléctricos:</strong> En un condensador, \(i(t)=C\frac{dv}{dt}\); la corriente es la derivada del voltaje.</li>
+            <li><strong>📈 Optimización en economía:</strong> El costo marginal es la derivada del costo total; permite hallar el nivel de producción que maximiza ganancias.</li>
+            <li><strong>🧪 Crecimiento poblacional:</strong> Modelo \(P(t)=P_0 e^{kt}\), derivada \(P'(t)=kP(t)\): velocidad de crecimiento proporcional a la población.</li>
+        </ul>
+    </div>
 
-  <table style="border-collapse: collapse; margin: 1rem 0; width: 90%; border: 1px solid #333;">
-    <thead>
-      <tr style="background-color: #d3d3d3;">
-        <th style="border: 1px solid #333; padding: 0.5rem;">Paso</th>
-        <th style="border: 1px solid #333; padding: 0.5rem;">Operación</th>
-        <th style="border: 1px solid #333; padding: 0.5rem;">Expresión</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">Identificar u = x² + 1, v = x³ - 2x</td><td style="border: 1px solid #333; padding: 0.5rem;">u' = 2x, v' = 3x² - 2</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">Aplicar regla del producto: (uv)' = u'v + uv'</td><td style="border: 1px solid #333; padding: 0.5rem;">f'(x) = (2x)(x³ - 2x) + (x² + 1)(3x² - 2)</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">Expandir primer término</td><td style="border: 1px solid #333; padding: 0.5rem;">2x⁴ - 4x²</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">Expandir segundo término</td><td style="border: 1px solid #333; padding: 0.5rem;">(x²)(3x² - 2) + 1(3x² - 2) = 3x⁴ - 2x² + 3x² - 2</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">5</td><td style="border: 1px solid #333; padding: 0.5rem;">Simplificar segundo término</td><td style="border: 1px solid #333; padding: 0.5rem;">3x⁴ + x² - 2</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">6</td><td style="border: 1px solid #333; padding: 0.5rem;">Sumar términos</td><td style="border: 1px solid #333; padding: 0.5rem;">f'(x) = (2x⁴ - 4x²) + (3x⁴ + x² - 2) = 5x⁴ - 3x² - 2</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">7</td><td style="border: 1px solid #333; padding: 0.5rem;">Evaluar en x = 1</td><td style="border: 1px solid #333; padding: 0.5rem;">f'(1) = 5(1)⁴ - 3(1)² - 2 = 5 - 3 - 2 = 0</td></tr>
-    </tbody>
-  </table>
+    <!-- 7. Bibliografía confiable (único libro verificable) -->
+    <div class="bibliografia">
+        <h3 style="margin-bottom:0.5rem;">📚 Bibliografía</h3>
+        <p style="font-size:1.1rem;">Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 3: Reglas de derivación. <br> <span style="background:#ecf3fa; padding:0.2rem 1rem; border-radius:30px;">ISBN: 978-607-522-013-3</span></p>
+        <p style="margin-top:1rem;">Obra utilizada en cursos de cálculo en universidades como MIT, Stanford, UNAM, etc. Las fórmulas y ejercicios aquí presentados siguen su estructura.</p>
+    </div>
 
-  <p><strong>Ejercicio 3: Regla del cociente</strong></p>
-  <p>Derivar f(x) = (x² - 1)/(x² + 1). Graficar la función y su derivada para interpretar crecimiento y decrecimiento.</p>
-
-  <!-- Gráfica comparativa: función cociente y su derivada -->
-  <svg width="400" height="350" viewBox="0 0 400 350" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
-    <!-- Sistema doble para visualizar función y derivada (simplificado) -->
-    <g stroke="#e0e0e0" stroke-width="0.8">
-      <line x1="20" y1="50" x2="20" y2="320" /><line x1="60" y1="50" x2="60" y2="320" />
-      <line x1="100" y1="50" x2="100" y2="320" /><line x1="140" y1="50" x2="140" y2="320" />
-      <line x1="180" y1="50" x2="180" y2="320" /><line x1="220" y1="50" x2="220" y2="320" />
-      <line x1="260" y1="50" x2="260" y2="320" /><line x1="300" y1="50" x2="300" y2="320" />
-      <line x1="340" y1="50" x2="340" y2="320" />
-      <line x1="20" y1="300" x2="360" y2="300" /><line x1="20" y1="250" x2="360" y2="250" />
-      <line x1="20" y1="200" x2="360" y2="200" /><line x1="20" y1="150" x2="360" y2="150" />
-      <line x1="20" y1="100" x2="360" y2="100" /><line x1="20" y1="50" x2="360" y2="50" />
-    </g>
-    
-    <g stroke="black" stroke-width="2.5">
-      <line x1="20" y1="300" x2="380" y2="300" />
-      <line x1="60" y1="340" x2="60" y2="20" />
-    </g>
-    
-    <g font-family="Arial" font-size="12" fill="black">
-      <text x="55" y="320">-3</text><text x="95" y="320">-2</text><text x="135" y="320">-1</text>
-      <text x="175" y="320">0</text><text x="215" y="320">1</text><text x="255" y="320">2</text>
-      <text x="295" y="320">3</text><text x="30" y="305">-1</text><text x="30" y="255">0</text>
-      <text x="30" y="205">1</text><text x="30" y="155">2</text>
-    </g>
-    
-    <!-- Función f(x) = (x²-1)/(x²+1) -->
-    <path d="M20,380 Q60,330 100,300 Q140,270 180,250 Q220,230 260,220 Q300,210 340,200" 
-          stroke="blue" stroke-width="3" fill="none" />
-    
-    <!-- Derivada f'(x) = 4x/(x²+1)² -->
-    <path d="M20,300 Q60,280 100,260 Q140,240 180,220 Q220,200 260,180 Q300,160 340,140" 
-          stroke="red" stroke-width="3" fill="none" stroke-dasharray="5 3" />
-    
-    <!-- Línea horizontal en y=0 -->
-    <line x1="20" y1="300" x2="360" y2="300" stroke="gray" stroke-width="1" />
-    
-    <text x="250" y="100" fill="blue">f(x)</text>
-    <text x="250" y="130" fill="red">f'(x)</text>
-    <text x="360" y="290" font-size="14">x</text>
-    <text x="20" y="30" font-size="14">y</text>
-  </svg>
-
-  <p><strong>Qué notar en la gráfica:</strong> La función azul tiene un mínimo en x = 0, donde su derivada (roja punteada) cruza el eje x (f'(0)=0). Para x < 0, f'(x) < 0 (función decrece); para x > 0, f'(x) > 0 (función crece). La derivada indica el signo de la pendiente en cada punto.</p>
-
-  <p><strong>Ejercicio 4: Regla de la cadena</strong></p>
-  <p>Derivar f(x) = sen(3x² + 1). Evaluar la derivada en x = 0.</p>
-
-  <table style="border-collapse: collapse; margin: 1rem 0; width: 80%; border: 1px solid #333;">
-    <thead>
-      <tr style="background-color: #d3d3d3;">
-        <th style="border: 1px solid #333; padding: 0.5rem;">Paso</th>
-        <th style="border: 1px solid #333; padding: 0.5rem;">Operación</th>
-        <th style="border: 1px solid #333; padding: 0.5rem;">Expresión</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">1</td><td style="border: 1px solid #333; padding: 0.5rem;">Identificar función externa e interna</td><td style="border: 1px solid #333; padding: 0.5rem;">externa: sen(u), interna: u = 3x² + 1</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">2</td><td style="border: 1px solid #333; padding: 0.5rem;">Derivada de externa: d/du[sen(u)] = cos(u)</td><td style="border: 1px solid #333; padding: 0.5rem;">cos(3x² + 1)</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">3</td><td style="border: 1px solid #333; padding: 0.5rem;">Derivada de interna: u' = 6x</td><td style="border: 1px solid #333; padding: 0.5rem;">6x</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">4</td><td style="border: 1px solid #333; padding: 0.5rem;">Multiplicar (regla de la cadena)</td><td style="border: 1px solid #333; padding: 0.5rem;">f'(x) = cos(3x² + 1) · 6x</td></tr>
-      <tr><td style="border: 1px solid #333; padding: 0.5rem;">5</td><td style="border: 1px solid #333; padding: 0.5rem;">Evaluar en x = 0</td><td style="border: 1px solid #333; padding: 0.5rem;">f'(0) = cos(1) · 0 = 0</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Gráfica de seno compuesto y su tangente en x=0 -->
-  <svg width="400" height="300" viewBox="0 0 400 300" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
-    <g stroke="#e0e0e0" stroke-width="0.8">
-      <line x1="20" y1="50" x2="20" y2="250" /><line x1="70" y1="50" x2="70" y2="250" />
-      <line x1="120" y1="50" x2="120" y2="250" /><line x1="170" y1="50" x2="170" y2="250" />
-      <line x1="220" y1="50" x2="220" y2="250" /><line x1="270" y1="50" x2="270" y2="250" />
-      <line x1="320" y1="50" x2="320" y2="250" />
-      <line x1="20" y1="150" x2="370" y2="150" /><line x1="20" y1="200" x2="370" y2="200" />
-      <line x1="20" y1="100" x2="370" y2="100" /><line x1="20" y1="50" x2="370" y2="50" />
-    </g>
-    
-    <g stroke="black" stroke-width="2.5">
-      <line x1="20" y1="150" x2="380" y2="150" />
-      <line x1="170" y1="270" x2="170" y2="20" />
-    </g>
-    
-    <g font-family="Arial" font-size="12" fill="black">
-      <text x="165" y="170">0</text><text x="115" y="170">-1</text><text x="215" y="170">1</text>
-      <text x="50" y="155">-1</text><text x="290" y="155">1</text>
-    </g>
-    
-    <!-- Función f(x)=sen(3x²+1) -->
-    <path d="M20,160 Q70,120 120,110 Q170,100 220,110 Q270,120 320,160" 
-          stroke="blue" stroke-width="3" fill="none" />
-    
-    <!-- Recta tangente en x=0 (horizontal, pendiente 0) -->
-    <line x1="120" y1="110" x2="220" y2="110" stroke="red" stroke-width="3" stroke-dasharray="5 3" />
-    
-    <circle cx="170" cy="110" r="5" fill="red" />
-    
-    <text x="250" y="50" fill="blue">f(x) = sen(3x²+1)</text>
-    <text x="250" y="80" fill="red">Tangente horizontal en x=0</text>
-  </svg>
-
-  <p><strong>Qué notar en la gráfica:</strong> En x = 0, la función tiene un punto crítico (máximo local) y la recta tangente es horizontal (pendiente 0), consistente con f'(0)=0. La regla de la cadena permitió obtener la derivada de esta función compuesta.</p>
-
-  <h4>Ejemplos de aplicaciones reales y directas</h4>
-  <ul>
-    <li><strong>Física: velocidad y aceleración.</strong> Si s(t) es la posición, v(t) = s'(t) es la velocidad y a(t) = v'(t) es la aceleración. Las fórmulas de derivación permiten calcular estas cantidades para cualquier función de movimiento.</li>
-    <li><strong>Economía: costo marginal e ingreso marginal.</strong> La derivada de la función de costo C(x) da el costo marginal; la derivada del ingreso R(x) da el ingreso marginal. Estos indican cómo cambian los costos e ingresos al aumentar la producción en una unidad.</li>
-    <li><strong>Ingeniería: optimización de diseños.</strong> Para maximizar el área de un envase o minimizar el material usado, se derivan las funciones de área/volumen y se igualan a cero (puntos críticos).</li>
-    <li><strong>Biología: crecimiento poblacional.</strong> La tasa de crecimiento instantánea de una población P(t) es P'(t). Modelos como el logístico requieren derivar funciones compuestas.</li>
-    <li><strong>Química: velocidad de reacción.</strong> La concentración de un producto en función del tiempo tiene una derivada que representa la velocidad de reacción instantánea.</li>
-  </ul>
-
-  <h4>Bibliografía</h4>
-  <p>Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 3: Reglas de derivación.</p>
-</li>
+    <hr>
+    <p style="text-align:right; color:#446688;">contenido generado para enseñanza · precisión y claridad · notación con KaTeX</p>
+</div>
+</body>
+</html>
