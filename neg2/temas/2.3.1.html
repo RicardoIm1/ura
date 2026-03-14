@@ -66,55 +66,7 @@
   </table>
 
   <!-- Gráfica del polinomio y su recta tangente en x=1 -->
-  <svg width="400" height="350" viewBox="0 0 400 350" style="border:1px solid #333; background:#fefefe; margin:1rem 0;">
-    <!-- Sistema: origen en (60, 300), escala: 30px/unidad en X, 20px/unidad en Y -->
-    
-    <!-- Cuadrícula -->
-    <g stroke="#e0e0e0" stroke-width="0.8">
-      <line x1="20" y1="50" x2="20" y2="320" /><line x1="50" y1="50" x2="50" y2="320" />
-      <line x1="80" y1="50" x2="80" y2="320" /><line x1="110" y1="50" x2="110" y2="320" />
-      <line x1="140" y1="50" x2="140" y2="320" /><line x1="170" y1="50" x2="170" y2="320" />
-      <line x1="200" y1="50" x2="200" y2="320" /><line x1="230" y1="50" x2="230" y2="320" />
-      <line x1="260" y1="50" x2="260" y2="320" /><line x1="290" y1="50" x2="290" y2="320" />
-      <line x1="320" y1="50" x2="320" y2="320" /><line x1="350" y1="50" x2="350" y2="320" />
-      
-      <line x1="20" y1="300" x2="370" y2="300" /><line x1="20" y1="270" x2="370" y2="270" />
-      <line x1="20" y1="240" x2="370" y2="240" /><line x1="20" y1="210" x2="370" y2="210" />
-      <line x1="20" y1="180" x2="370" y2="180" /><line x1="20" y1="150" x2="370" y2="150" />
-      <line x1="20" y1="120" x2="370" y2="120" /><line x1="20" y1="90" x2="370" y2="90" />
-      <line x1="20" y1="60" x2="370" y2="60" />
-    </g>
-    
-    <!-- Ejes -->
-    <g stroke="black" stroke-width="2.5">
-      <line x1="20" y1="300" x2="380" y2="300" />
-      <line x1="60" y1="340" x2="60" y2="20" />
-    </g>
-    
-    <!-- Marcas -->
-    <g font-family="Arial" font-size="12" fill="black">
-      <text x="55" y="320">-1</text><text x="85" y="320">0</text><text x="115" y="320">1</text>
-      <text x="145" y="320">2</text><text x="175" y="320">3</text><text x="30" y="305">-5</text>
-      <text x="30" y="265">0</text><text x="30" y="225">5</text><text x="30" y="185">10</text>
-      <text x="30" y="145">15</text><text x="30" y="105">20</text>
-    </g>
-    
-    <!-- Función f(x) = 4x⁵ - 3x² + 7x - 2 (aproximada) -->
-    <path d="M20,400 Q60,350 100,300 Q140,250 180,200 Q220,150 260,100 Q300,50 340,0" 
-          stroke="blue" stroke-width="3" fill="none" />
-    
-    <!-- Recta tangente en x=1: pendiente 21, pasa por (1, f(1)=4-3+7-2=6) -->
-    <line x1="85" y1="380" x2="145" y2="40" stroke="red" stroke-width="3" stroke-dasharray="5 3" />
-    
-    <!-- Punto de tangencia (1,6) -->
-    <circle cx="115" cy="180" r="5" fill="red" stroke="red" stroke-width="2" />
-    
-    <text x="250" y="50" fill="blue">f(x) = 4x⁵ - 3x² + 7x - 2</text>
-    <text x="250" y="80" fill="red">Recta tangente en x=1 (pendiente 21)</text>
-    
-    <text x="360" y="290" font-size="14">x</text>
-    <text x="20" y="30" font-size="14">y</text>
-  </svg>
+  <iframe src="https://www.desmos.com/calculator/esdmzrshpr?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 
   <p><strong>Qué notar en la gráfica:</strong> La curva azul es el polinomio. La recta roja punteada es la tangente en x = 1. La pendiente de esta recta (21) es el valor de la derivada en ese punto. La recta toca la curva solo en (1,6) y tiene la misma inclinación que la curva en ese instante.</p>
 
