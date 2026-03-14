@@ -17,7 +17,7 @@
             ],
             throwOnError: false
         });"></script>
-    <style>
+    <!-- <style>
         body {
             background: #f5f8fc;
             font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
@@ -150,7 +150,7 @@
         }
         /* Estilo para las fórmulas de KaTeX */
         .katex { font-size: 1.1em; }
-    </style>
+    </style> -->
 </head>
 <body>
 <div class="documento">
@@ -168,18 +168,18 @@
             <circle cx="50" cy="10" r="2.5" fill="#1b6f8c" />
             <circle cx="85" cy="50" r="2.5" fill="#1b6f8c" />
         </svg>
-        <span><strong>⏳ 35 minutos</strong> · interpretación geométrica y física (referencia: Universidad de Stanford)</span>
+        <span><strong> 35 minutos</strong> · interpretación geométrica y física (referencia: Universidad de Stanford)</span>
     </div>
 
     <!-- 3. Objetivo -->
     <div class="objetivo">
-        <div class="etiqueta">📌 Objetivo</div>
+        <div class="etiqueta"> Objetivo</div>
         <p>Comprender las distintas interpretaciones de la derivada de una función: geométrica (pendiente de la recta tangente), física (velocidad instantánea, razón de cambio) y analítica (tasa de variación instantánea). Se busca que el estudiante relacione estos significados y los aplique a contextos científicos elementales.</p>
     </div>
 
     <!-- 4. Idea principal -->
     <div class="idea-principal">
-        <div class="etiqueta">🧠 Idea central</div>
+        <div class="etiqueta"> Idea central</div>
         <p>La derivada $f'(a)$ mide cómo cambia $f$ en el punto $a$. Geométricamente es la pendiente de la recta tangente a la curva $y=f(x)$ en $(a, f(a))$. Físicamente, si $x$ representa tiempo y $f(x)$ posición, $f'(a)$ es la velocidad instantánea. En general, $f'(a)$ es la mejor aproximación lineal del cambio de la función cerca de $a$.</p>
     </div>
 
@@ -206,12 +206,12 @@
     <h3>Gráfica: función y recta tangente en $x=3$</h3>
     <canvas id="canvasDerivada" width="700" height="360" style="width:100%; height:auto; background:#ffffff;"></canvas>
     <div class="grafica-explicacion">
-        🔍 Curva $f(x)=3+0.5x-0.1x^{2}$ (azul). Punto de tangencia $P(3,\,3.6)$ en rojo. La recta tangente (naranja) tiene pendiente $m = -0.1$. Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
+         Curva $f(x)=3+0.5x-0.1x^{2}$ (azul). Punto de tangencia $P(3,\,3.6)$ en rojo. La recta tangente (naranja) tiene pendiente $m = -0.1$. Nótese que la curva cruza de creciente a decreciente; la tangente refleja la tendencia local descendente.
     </div>
 
     <!-- Instrucciones paso a paso (cálculo con límite) -->
     <div class="instrucciones">
-        <div class="etiqueta">📝 Procedimiento analítico paso a paso</div>
+        <div class="etiqueta"> Procedimiento analítico paso a paso</div>
         <p>Para $f(x)=3+0.5x-0.1x^2$ y $a=3$:</p>
         <pre>1.  Escribimos el cociente diferencial:  \( \frac{f(3+h)-f(3)}{h} \)
 2.  Evaluamos \( f(3) = 3 + 0.5(3) - 0.1(9) = 3 + 1.5 - 0.9 = 3.6 \)
@@ -262,7 +262,7 @@
 
     <!-- 7. Bibliografía confiable -->
     <div class="bibliografia">
-        <div class="etiqueta">📖 Referencia fundamental</div>
+        <div class="etiqueta">Bibliografía</div>
         <p>Thomas, G. B., Weir, M. D., & Hass, J. (2014). <em>Cálculo: varias variables</em> (12ª ed.). Pearson Educación. Capítulo 3: La derivada. [ISBN: 978-607-32-2838-5]</p>
         <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;">Este texto desarrolla la interpretación geométrica y física de la derivada con numerosos ejemplos y aplicaciones.</p>
     </div>
