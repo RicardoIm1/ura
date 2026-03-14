@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2.3 Fórmulas de derivación · Cálculo diferencial</title>
-    <!-- KaTeX para notación matemática ultrarrápida y elegante -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
-    <!-- <style>
+    <!-- MathJax para notación matemática elegante -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+<!--     <style>
         body {
             background: #f9fbfd;
             font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
@@ -167,9 +165,16 @@
             border-top: 2px solid #cbdae7;
             margin: 2rem 0;
         }
-        /* Pequeño ajuste para que KaTeX se integre bien */
-        .katex { font-size: 1.1em; }
-        .procedimiento .katex { font-size: 1em; }
+        /* Ajuste para que MathJax no desborde */
+        mjx-container {
+            font-size: 1.1rem;
+        }
+        .resaltado-matematico {
+            background: #f4f9ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
     </style> -->
 </head>
 <body>
@@ -183,9 +188,9 @@
         <svg width="48" height="48" viewBox="0 0 100 100" style="display:block;">
             <circle cx="50" cy="50" r="45" fill="white" stroke="#1e4a6d" stroke-width="5" />
             <circle cx="50" cy="50" r="42" fill="#f8fcff" />
-            <!-- manecilla hora (corta) -->
+            <!-- manecilla hora (corta) apuntando a la 1 (aprox 30°) -->
             <line x1="50" y1="50" x2="65" y2="30" stroke="#1e4a6d" stroke-width="5" stroke-linecap="round" />
-            <!-- manecilla minuto (larga) apuntando a 45 min -->
+            <!-- manecilla minuto (larga) apuntando a 45 min → 270° (hacia abajo) realmente 45min = 270° = -90°: x2=50, y2=95 -->
             <line x1="50" y1="50" x2="50" y2="95" stroke="#0b3b5a" stroke-width="4" stroke-linecap="round" />
             <circle cx="50" cy="50" r="5" fill="#1e4a6d" />
             <text x="50" y="84" text-anchor="middle" font-size="13" fill="#144a6e" font-weight="bold">45'</text>
@@ -212,7 +217,7 @@
     <div class="grafico-contenedor">
         <h3 style="margin-top:0; align-self:start;">Función \(f(x)=x^2\) y recta tangente en \(x=1\)</h3>
         <svg width="600" height="380" viewBox="-2.5 -0.5 5 4" style="border:1px solid #d3e3f0; background:#ffffff;">
-            <!-- fondo y cuadrícula secundaria -->
+            <!-- fondo y cuadrícula -->
             <rect x="-2.5" y="-0.5" width="5" height="4" fill="#fcfdff" />
             <g stroke="#d9e2ec" stroke-width="0.01" stroke-dasharray="0.02 0.02">
                 <line x1="-2" y1="-0.5" x2="-2" y2="3.5" />
@@ -225,7 +230,6 @@
                 <line x1="-2.5" y1="2" x2="2.5" y2="2" />
                 <line x1="-2.5" y1="3" x2="2.5" y2="3" />
             </g>
-            <!-- ejes principales -->
             <line x1="-2.5" y1="0" x2="2.5" y2="0" stroke="#1f3a57" stroke-width="0.03" />
             <line x1="0" y1="-0.5" x2="0" y2="3.5" stroke="#1f3a57" stroke-width="0.03" />
             <!-- curva f(x)=x^2 (exacta) -->
@@ -271,7 +275,7 @@
             <p style="margin-bottom: 0;">✅ Resultado final: \(f'(x)=12x^{2}+2\cos x\)</p>
         </div>
         <div class="card-ejemplo">
-            <h3> 2. Regla del producto</h3>
+            <h3>✏️ 2. Regla del producto</h3>
             <p>\(f(x) = x^2 \cdot e^x\)</p>
             <div class="procedimiento">
                 <span class="comentario"># Regla del producto: (fg)' = f'g + fg'</span><br>
@@ -296,15 +300,15 @@
             </g>
             <line x1="-1" y1="0" x2="8.5" y2="0" stroke="#0b2a44" stroke-width="0.05" />
             <line x1="0" y1="-1.8" x2="0" y2="1.8" stroke="#0b2a44" stroke-width="0.05" />
-            <!-- seno: curva exacta -->
+            <!-- seno: curva suave con puntos exactos -->
             <path d="M0 0 C0.5 0.48, 1.07 0.98, 1.57 1 C2.07 0.98, 2.64 0.48, 3.14 0 C3.64 -0.48, 4.21 -0.98, 4.71 -1 C5.21 -0.98, 5.78 -0.48, 6.28 0" fill="none" stroke="#1f5b9e" stroke-width="0.1" />
-            <!-- coseno: curva discontinua -->
+            <!-- coseno: curva naranja discontinua -->
             <path d="M0 1 C0.5 0.7, 1.07 0.2, 1.57 0 C2.07 -0.2, 2.64 -0.7, 3.14 -1 C3.64 -0.7, 4.21 -0.2, 4.71 0 C5.21 0.2, 5.78 0.7, 6.28 1" fill="none" stroke="#c05e2a" stroke-width="0.1" stroke-dasharray="0.15 0.1" />
             <text x="0.8" y="-1.2" font-size="0.3" fill="#1f5b9e">\(\sin x\)</text>
             <text x="4.5" y="1.5" font-size="0.3" fill="#c05e2a">\(\cos x\)</text>
         </svg>
         <div class="notas-grafica">
-            Cuando \(\sin x\) crece, \(\cos x\) es positivo; en los extremos de \(\sin x\), \(\cos x = 0\) (tangente horizontal).
+             Cuando \(\sin x\) crece, \(\cos x\) es positivo; en los extremos de \(\sin x\), \(\cos x = 0\) (tangente horizontal).
         </div>
     </div>
 
@@ -321,13 +325,19 @@
 
     <!-- 7. Bibliografía confiable (único libro verificable) -->
     <div class="bibliografia">
-        <h3 style="margin-bottom:0.5rem;">📚 Bibliografía</h3>
+        <h3 style="margin-bottom:0.5rem;">📚 Bibliografía fundamental</h3>
         <p style="font-size:1.1rem;">Stewart, J. (2015). <em>Cálculo de una variable: Trascendentes tempranas</em> (7ª ed.). Cengage Learning. Capítulo 3: Reglas de derivación. <br> <span style="background:#ecf3fa; padding:0.2rem 1rem; border-radius:30px;">ISBN: 978-607-522-013-3</span></p>
         <p style="margin-top:1rem;">Obra utilizada en cursos de cálculo en universidades como MIT, Stanford, UNAM, etc. Las fórmulas y ejercicios aquí presentados siguen su estructura.</p>
     </div>
 
     <hr>
-    <p style="text-align:right; color:#446688;">contenido generado para enseñanza · precisión y claridad · notación con KaTeX</p>
+    <p style="text-align:right; color:#446688;">contenido generado para enseñanza · precisión y claridad · notación con MathJax</p>
 </div>
+<!-- Forzar la re-renderización de MathJax por si algún elemento se añadió después -->
+<script>
+    if (window.MathJax) {
+        MathJax.typesetPromise();
+    }
+</script>
 </body>
 </html>
