@@ -2,30 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Graficadora Premium</title>
+  <title>Graficadora Jerónimo Premium</title>
   <style>
     body {
       margin: 0;
-      background: #0d0d0d;
       font-family: 'Segoe UI', sans-serif;
-      color: #fff;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .container {
-      margin-top: 20px;
-      background: #1a1a1a;
+      max-width: 90%;
+      width: 800px;
       border-radius: 20px;
-      box-shadow: 0 0 40px rgba(0,255,180,0.4);
       padding: 20px;
-      width: 700px;
+      box-shadow: 0 0 40px rgba(0,255,180,0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
     h2 {
       margin-top: 0;
-      color: #0ff;
       text-align: center;
+      font-size: 1.8em;
     }
     textarea {
       width: 100%;
@@ -35,59 +34,78 @@
       border: none;
       margin-bottom: 15px;
       font-size: 1em;
-      background: #222;
-      color: #0ff;
-      box-shadow: inset 0 0 5px #0ff;
+      box-shadow: inset 0 0 5px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+      justify-content: center;
     }
     button {
-      background: #0ff;
-      color: #000;
-      font-weight: bold;
       border: none;
       border-radius: 8px;
-      padding: 10px 15px;
+      padding: 8px 12px;
       cursor: pointer;
       transition: all 0.2s ease;
-      margin-bottom: 15px;
-    }
-    button:hover {
-      background: #00ffaa;
-      box-shadow: 0 0 20px #00ffaa;
+      font-weight: bold;
     }
     canvas {
-      background: #111;
       border-radius: 10px;
       width: 100%;
       height: 400px;
+      cursor: grab;
     }
+    /* Oscuro */
+    body.dark { background: #0d0d0d; color: #fff; }
+    .dark .container { background: #1a1a1a; box-shadow: 0 0 40px rgba(0,255,180,0.4); }
+    .dark textarea { background: #222; color: #0ff; box-shadow: inset 0 0 5px #0ff; }
+    .dark button { background: #0ff; color: #000; }
+    .dark button:hover { background: #00ffaa; box-shadow: 0 0 20px #00ffaa; }
+    /* Claro */
+    body.light { background: #f0f0f0; color: #000; }
+    .light .container { background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.2); }
+    .light textarea { background: #eee; color: #000; box-shadow: inset 0 0 5px #aaa; }
+    .light button { background: #00aaff; color: #fff; }
+    .light button:hover { background: #0077cc; box-shadow: 0 0 20px #0077cc; }
   </style>
 </head>
-<body>
+<body class="dark">
   <div class="container">
-    <h2>Graficadora Premium</h2>
+    <h2>Graficadora Premium – Jerónimo</h2>
     <textarea id="funciones" placeholder="Ejemplo:
 f(x)=4x^2+3x-2
 sin(x)
 exp(x)"></textarea>
-    <button onclick="graficar()">Graficar</button>
-    <canvas id="grafica" width="700" height="400"></canvas>
+    <div class="buttons">
+      <button onclick="insert('sin(x)')">sin(x)</button>
+      <button onclick="insert('cos(x)')">cos(x)</button>
+      <button onclick="insert('tan(x)')">tan(x)</button>
+      <button onclick="insert('exp(x)')">exp(x)</button>
+      <button onclick="insert('ln(x)')">ln(x)</button>
+      <button onclick="insert('sqrt(x)')">√x</button>
+      <button onclick="insert('pi*x')">πx</button>
+      <button onclick="toggleTheme()">Cambiar Tema</button>
+      <button onclick="graficar()">Graficar</button>
+    </div>
+    <canvas id="grafica" width="800" height="400"></canvas>
   </div>
 
   <script>
-    // Convierte notación matemática a sintaxis JS
+    const canvas = document.getElementById('grafica');
+    const ctx = canvas.getContext('2d');
+    const body = document.body;
+
+    let scaleX = 40, scaleY = 40;
+    let offsetX = canvas.width/2, offsetY = canvas.height/2;
+    let isDragging = false, dragStart = {x:0,y:0};
+
     function convertir(expr) {
       let e = expr.toLowerCase().trim();
-
-      // quitar "f(x)=" si existe
       e = e.replace(/^f\(x\)=/, "");
-
-      // reemplazar potencias ^ por Math.pow
       e = e.replace(/([0-9a-z]+)\^([0-9a-z]+)/gi, "Math.pow($1,$2)");
-
-      // insertar * entre número y x (ej: 4x -> 4*x)
       e = e.replace(/([0-9])x/gi, "$1*x");
-
-      // funciones comunes sin "Math."
       e = e.replace(/\bsin\(/g, "Math.sin(");
       e = e.replace(/\bcos\(/g, "Math.cos(");
       e = e.replace(/\btan\(/g, "Math.tan(");
@@ -95,50 +113,29 @@ exp(x)"></textarea>
       e = e.replace(/\bln\(/g, "Math.log(");
       e = e.replace(/\bsqrt\(/g, "Math.sqrt(");
       e = e.replace(/\bpi\b/g, "Math.PI");
-
       return e;
     }
 
     function graficar() {
-      const canvas = document.getElementById('grafica');
-      const ctx = canvas.getContext('2d');
       const exprs = document.getElementById('funciones').value.split('\n').filter(e => e.trim() !== '');
-
-      // limpiar
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const scaleX = 40; // píxeles por unidad
-      const scaleY = 40;
-      const offsetX = canvas.width/2;
-      const offsetY = canvas.height/2;
-
       // rejilla
-      ctx.strokeStyle = '#333';
+      ctx.strokeStyle = body.classList.contains("dark") ? '#333' : '#ccc';
       ctx.lineWidth = 1;
-      for (let gx = 0; gx < canvas.width; gx += scaleX) {
-        ctx.beginPath();
-        ctx.moveTo(gx, 0);
-        ctx.lineTo(gx, canvas.height);
-        ctx.stroke();
+      for (let gx = offsetX % scaleX; gx < canvas.width; gx += scaleX) {
+        ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, canvas.height); ctx.stroke();
       }
-      for (let gy = 0; gy < canvas.height; gy += scaleY) {
-        ctx.beginPath();
-        ctx.moveTo(0, gy);
-        ctx.lineTo(canvas.width, gy);
-        ctx.stroke();
+      for (let gy = offsetY % scaleY; gy < canvas.height; gy += scaleY) {
+        ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(canvas.width, gy); ctx.stroke();
       }
 
       // ejes
       ctx.strokeStyle = '#0ff';
       ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.moveTo(0, offsetY);
-      ctx.lineTo(canvas.width, offsetY);
-      ctx.moveTo(offsetX, 0);
-      ctx.lineTo(offsetX, canvas.height);
-      ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, offsetY); ctx.lineTo(canvas.width, offsetY); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(offsetX, 0); ctx.lineTo(offsetX, canvas.height); ctx.stroke();
 
-      // colores
       const colores = ['#00ffaa','#ff00aa','#ffaa00','#00aaff','#aaff00','#ff4444'];
 
       exprs.forEach((expr, idx) => {
@@ -151,26 +148,43 @@ exp(x)"></textarea>
         for (let px = 0; px < canvas.width; px++) {
           const x = (px - offsetX) / scaleX;
           let y;
-          try {
-            y = Function("x", "return " + jsExpr)(x);
-          } catch {
-            y = NaN;
-          }
+          try { y = Function("x", "return " + jsExpr)(x); } catch { y = NaN; }
           if (!isNaN(y) && isFinite(y)) {
             const py = offsetY - y * scaleY;
-            if (firstPoint) {
-              ctx.moveTo(px, py);
-              firstPoint = false;
-            } else {
-              ctx.lineTo(px, py);
-            }
-          } else {
-            firstPoint = true;
-          }
+            if (firstPoint) { ctx.moveTo(px, py); firstPoint = false; }
+            else { ctx.lineTo(px, py); }
+          } else { firstPoint = true; }
         }
         ctx.stroke();
       });
     }
-  </script>
-</body>
-</html>
+
+    function insert(text) {
+      const area = document.getElementById('funciones');
+      area.value += (area.value ? "\n" : "") + text;
+    }
+
+    function toggleTheme() {
+      if (body.classList.contains("dark")) { body.classList.replace("dark","light"); }
+      else { body.classList.replace("light","dark"); }
+      graficar();
+    }
+
+    // Zoom con scroll
+    canvas.addEventListener("wheel", e => {
+      e.preventDefault();
+      const factor = e.deltaY < 0 ? 1.1 : 0.9;
+      scaleX *= factor; scaleY *= factor;
+      graficar();
+    });
+
+    // Drag para mover
+    canvas.addEventListener("mousedown", e => {
+      isDragging = true;
+      dragStart = {x: e.offsetX, y: e.offsetY};
+      canvas.style.cursor = "grabbing";
+    });
+    canvas.addEventListener("mouseup", () => { isDragging = false; canvas.style.cursor = "grab"; });
+    canvas.addEventListener("mousemove", e => {
+      if (isDragging) {
+        offsetX +=
