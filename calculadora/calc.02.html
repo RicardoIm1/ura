@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Científica Premium</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      transition: background 0.3s ease;
+    }
+    .calculator {
+      border-radius: 20px;
+      padding: 20px;
+      width: 380px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .display {
+      font-size: 2em;
+      text-align: right;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    button {
+      font-size: 1em;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .span-2 { grid-column: span 2; }
+    .span-3 { grid-column: span 3; }
+    .equal { font-weight: bold; }
+
+    /* Estilo oscuro */
+    body.dark {
+      background: #0d0d0d;
+    }
+    .dark .calculator {
+      background: #1a1a1a;
+      box-shadow: 0 0 40px rgba(0,255,180,0.4);
+    }
+    .dark .display {
+      background: #000;
+      color: #0ff;
+      box-shadow: inset 0 0 10px #0ff;
+    }
+    .dark button {
+      background: #222;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0,255,180,0.2);
+    }
+    .dark button:hover {
+      background: #0ff;
+      color: #000;
+      box-shadow: 0 0 20px #0ff;
+    }
+    .dark .equal {
+      background: #0ff;
+      color: #000;
+    }
+    .dark .equal:hover {
+      background: #00ffaa;
+      box-shadow: 0 0 25px #00ffaa;
+    }
+
+    /* Estilo claro */
+    body.light {
+      background: #f0f0f0;
+    }
+    .light .calculator {
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .light .display {
+      background: #eaeaea;
+      color: #333;
+      box-shadow: inset 0 0 5px #aaa;
+    }
+    .light button {
+      background: #ddd;
+      color: #000;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .light button:hover {
+      background: #00aaff;
+      color: #fff;
+      box-shadow: 0 0 15px #00aaff;
+    }
+    .light .equal {
+      background: #00aaff;
+      color: #fff;
+    }
+    .light .equal:hover {
+      background: #0077cc;
+      box-shadow: 0 0 20px #0077cc;
+    }
+
+    /* Switch */
+    .theme-switch {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .theme-switch button {
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body class="dark">
+  <div class="calculator">
+    <div class="theme-switch">
+      <button onclick="toggleTheme()">Cambiar Tema</button>
+    </div>
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="deleteChar()">⌫</button>
+      <button onclick="append('(')">(</button>
+      <button onclick="append(')')">)</button>
+      <button onclick="append('/')">÷</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('*')">×</button>
+      <button onclick="append('Math.sqrt(')">√</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')">−</button>
+      <button onclick="append('Math.pow(')">xʸ</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('+')">+</button>
+      <button onclick="append('Math.PI')">π</button>
+
+      <button onclick="append('0')" class="span-2">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="calculate()" class="equal span-2">=</button>
+
+      <button onclick="append('Math.sin(')">sin</button>
+      <button onclick="append('Math.cos(')">cos</button>
+      <button onclick="append('Math.tan(')">tan</button>
+      <button onclick="append('Math.log(')">ln</button>
+      <button onclick="append('Math.exp(')">exp</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    const body = document.body;
+
+    function append(value) {
+      if (display.innerText === "0") {
+        display.innerText = value;
+      } else {
+        display.innerText += value;
+      }
+    }
+
+    function clearDisplay() {
+      display.innerText = "0";
+    }
+
+    function deleteChar() {
+      display.innerText = display.innerText.slice(0, -1) || "0";
+    }
+
+    function calculate() {
+      try {
+        display.innerText = eval(display.innerText);
+      } catch {
+        display.innerText = "Error";
+      }
+    }
+
+    function toggleTheme() {
+      if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        body.classList.add("light");
+      } else {
+        body.classList.remove("light");
+        body.classList.add("dark");
+      }
+    }
+  </script>
+</body>
+</html>
