@@ -2,189 +2,598 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Graficadora Jerónimo Premium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graficadora Premium Jerónimo</title>
+  <!-- MEJORA: Usar math.js para un parseo robusto -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Roboto, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       transition: background 0.3s ease, color 0.3s ease;
     }
     .container {
-      max-width: 90%;
-      width: 800px;
-      border-radius: 20px;
-      padding: 20px;
+      max-width: 95%;
+      width: 1000px;
+      border-radius: 25px;
+      padding: 25px;
       box-shadow: 0 0 40px rgba(0,255,180,0.4);
       transition: background 0.3s ease, box-shadow 0.3s ease;
     }
     h2 {
       margin-top: 0;
       text-align: center;
-      font-size: 1.8em;
+      font-size: 2em;
+      font-weight: 300;
+      letter-spacing: 2px;
     }
-    textarea {
-      width: 100%;
-      height: 80px;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 15px;
-      font-size: 1em;
-      box-shadow: inset 0 0 5px;
-    }
-    .buttons {
+    .main-panel {
       display: flex;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 15px;
-      justify-content: center;
     }
-    button {
-      border: none;
-      border-radius: 8px;
-      padding: 8px 12px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-weight: bold;
+    .controls-panel {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .canvas-panel {
+      flex: 3;
+      min-width: 500px;
     }
     canvas {
-      border-radius: 10px;
+      border-radius: 15px;
       width: 100%;
-      height: 400px;
+      height: auto;
       cursor: grab;
+      display: block;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
-    /* Oscuro */
+    .function-list {
+      background: rgba(128,128,128,0.1);
+      border-radius: 15px;
+      padding: 15px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .function-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+    }
+    .function-item input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid;
+      background: transparent;
+      font-family: monospace;
+    }
+    .function-item input[type="color"] {
+      width: 35px;
+      height: 35px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: transparent;
+    }
+    .function-item button {
+      padding: 5px 10px;
+      font-size: 1.2em;
+      line-height: 1;
+      background: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    button, .button-like {
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 600;
+      font-size: 0.9em;
+      flex: 1 0 auto;
+    }
+    .axis-inputs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .axis-inputs div {
+      flex: 1;
+    }
+    .axis-inputs label {
+      display: block;
+      font-size: 0.8em;
+      margin-bottom: 3px;
+      opacity: 0.8;
+    }
+    .axis-inputs input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.2);
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .legend-item.visible {
+      opacity: 1;
+      font-weight: bold;
+    }
+    .legend-color {
+      width: 20px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    /* Tooltip */
+    .tooltip {
+      position: absolute;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      pointer-events: none;
+      transform: translate(-50%, -100%);
+      transition: opacity 0.2s;
+      z-index: 100;
+    }
+    /* Temas */
     body.dark { background: #0d0d0d; color: #fff; }
     .dark .container { background: #1a1a1a; box-shadow: 0 0 40px rgba(0,255,180,0.4); }
-    .dark textarea { background: #222; color: #0ff; box-shadow: inset 0 0 5px #0ff; }
+    .dark .function-item input[type="text"] { border-color: #444; color: #0ff; }
+    .dark .function-item { background: #222; }
+    .dark .axis-inputs input { border-color: #444; color: white; }
     .dark button { background: #0ff; color: #000; }
     .dark button:hover { background: #00ffaa; box-shadow: 0 0 20px #00ffaa; }
-    /* Claro */
+    .dark .legend { background: #222; }
+
     body.light { background: #f0f0f0; color: #000; }
-    .light .container { background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.2); }
-    .light textarea { background: #eee; color: #000; box-shadow: inset 0 0 5px #aaa; }
+    .light .container { background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.2); }
+    .light .function-item input[type="text"] { border-color: #ccc; color: #000; }
+    .light .function-item { background: #f5f5f5; }
+    .light .axis-inputs input { border-color: #ccc; color: #000; }
     .light button { background: #00aaff; color: #fff; }
     .light button:hover { background: #0077cc; box-shadow: 0 0 20px #0077cc; }
+    .light .legend { background: #e0e0e0; }
   </style>
 </head>
 <body class="dark">
   <div class="container">
-    <h2>Graficadora Premium – Jerónimo</h2>
-    <textarea id="funciones" placeholder="Ejemplo:
-f(x)=4x^2+3x-2
-sin(x)
-exp(x)"></textarea>
-    <div class="buttons">
-      <button onclick="insert('sin(x)')">sin(x)</button>
-      <button onclick="insert('cos(x)')">cos(x)</button>
-      <button onclick="insert('tan(x)')">tan(x)</button>
-      <button onclick="insert('exp(x)')">exp(x)</button>
-      <button onclick="insert('ln(x)')">ln(x)</button>
-      <button onclick="insert('sqrt(x)')">√x</button>
-      <button onclick="insert('pi*x')">πx</button>
-      <button onclick="toggleTheme()">Cambiar Tema</button>
-      <button onclick="graficar()">Graficar</button>
+    <h2>⚡ G R A F I C A D O R A  P R E M I U M ⚡</h2>
+    <div class="main-panel">
+      <!-- Panel Izquierdo: Controles -->
+      <div class="controls-panel">
+        <div class="function-list" id="functionList">
+          <!-- Las funciones se generan aquí con JS -->
+        </div>
+        <div class="button-group">
+          <button onclick="addFunction()">+ Añadir Función</button>
+          <button onclick="toggleTheme()">🌓 Tema</button>
+          <button onclick="resetView()">⟲ Reset Vista</button>
+          <button onclick="exportPNG()">📸 Exportar PNG</button>
+        </div>
+
+        <!-- Controles de ejes -->
+        <div class="axis-inputs">
+          <div>
+            <label>X min</label>
+            <input type="number" id="xMin" value="-10" step="any" onchange="updateFromAxes()">
+          </div>
+          <div>
+            <label>X max</label>
+            <input type="number" id="xMax" value="10" step="any" onchange="updateFromAxes()">
+          </div>
+          <div>
+            <label>Y min</label>
+            <input type="number" id="yMin" value="-10" step="any" onchange="updateFromAxes()">
+          </div>
+          <div>
+            <label>Y max</label>
+            <input type="number" id="yMax" value="10" step="any" onchange="updateFromAxes()">
+          </div>
+        </div>
+
+        <!-- Botones de funciones rápidas -->
+        <div class="button-group">
+          <button onclick="quickFunction('sin(x)')">sin(x)</button>
+          <button onclick="quickFunction('cos(x)')">cos(x)</button>
+          <button onclick="quickFunction('x^2')">x²</button>
+          <button onclick="quickFunction('exp(x)')">e^x</button>
+          <button onclick="quickFunction('log(x)')">ln(x)</button>
+          <button onclick="quickFunction('sqrt(x)')">√x</button>
+        </div>
+      </div>
+
+      <!-- Panel Derecho: Canvas y Leyenda -->
+      <div class="canvas-panel">
+        <canvas id="grafica" width="800" height="450"></canvas>
+        <div id="legend" class="legend"></div>
+      </div>
     </div>
-    <canvas id="grafica" width="800" height="400"></canvas>
   </div>
 
+  <!-- Tooltip flotante -->
+  <div id="tooltip" class="tooltip" style="opacity:0; position: fixed;">x: 0, y: 0</div>
+
   <script>
-    const canvas = document.getElementById('grafica');
-    const ctx = canvas.getContext('2d');
-    const body = document.body;
+    (function() {
+      // --- Elementos del DOM ---
+      const canvas = document.getElementById('grafica');
+      const ctx = canvas.getContext('2d');
+      const body = document.body;
+      const functionListDiv = document.getElementById('functionList');
+      const legendDiv = document.getElementById('legend');
+      const tooltip = document.getElementById('tooltip');
 
-    let scaleX = 40, scaleY = 40;
-    let offsetX = canvas.width/2, offsetY = canvas.height/2;
-    let isDragging = false, dragStart = {x:0,y:0};
+      // --- Variables de estado ---
+      let functions = []; // { expr: string, color: string, visible: boolean }
+      let view = {
+        xMin: -10,
+        xMax: 10,
+        yMin: -10,
+        yMax: 10
+      };
+      let isDragging = false;
+      let dragStart = { x: 0, y: 0 };
 
-    function convertir(expr) {
-      let e = expr.toLowerCase().trim();
-      e = e.replace(/^f\(x\)=/, "");
-      e = e.replace(/([0-9a-z]+)\^([0-9a-z]+)/gi, "Math.pow($1,$2)");
-      e = e.replace(/([0-9])x/gi, "$1*x");
-      e = e.replace(/\bsin\(/g, "Math.sin(");
-      e = e.replace(/\bcos\(/g, "Math.cos(");
-      e = e.replace(/\btan\(/g, "Math.tan(");
-      e = e.replace(/\bexp\(/g, "Math.exp(");
-      e = e.replace(/\bln\(/g, "Math.log(");
-      e = e.replace(/\bsqrt\(/g, "Math.sqrt(");
-      e = e.replace(/\bpi\b/g, "Math.PI");
-      return e;
-    }
-
-    function graficar() {
-      const exprs = document.getElementById('funciones').value.split('\n').filter(e => e.trim() !== '');
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // rejilla
-      ctx.strokeStyle = body.classList.contains("dark") ? '#333' : '#ccc';
-      ctx.lineWidth = 1;
-      for (let gx = offsetX % scaleX; gx < canvas.width; gx += scaleX) {
-        ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, canvas.height); ctx.stroke();
+      // --- Funciones de conversión (Canvas a Mundo y viceversa) ---
+      function toCanvasX(xWorld) {
+        return ((xWorld - view.xMin) / (view.xMax - view.xMin)) * canvas.width;
       }
-      for (let gy = offsetY % scaleY; gy < canvas.height; gy += scaleY) {
-        ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(canvas.width, gy); ctx.stroke();
+      function toCanvasY(yWorld) {
+        return canvas.height - ((yWorld - view.yMin) / (view.yMax - view.yMin)) * canvas.height; // invertir Y
+      }
+      function toWorldX(xCanvas) {
+        return (xCanvas / canvas.width) * (view.xMax - view.xMin) + view.xMin;
+      }
+      function toWorldY(yCanvas) {
+        return view.yMax - (yCanvas / canvas.height) * (view.yMax - view.yMin);
       }
 
-      // ejes
-      ctx.strokeStyle = '#0ff';
-      ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(0, offsetY); ctx.lineTo(canvas.width, offsetY); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(offsetX, 0); ctx.lineTo(offsetX, canvas.height); ctx.stroke();
+      // --- Actualizar inputs numéricos desde view ---
+      function updateAxisInputs() {
+        document.getElementById('xMin').value = view.xMin.toFixed(2);
+        document.getElementById('xMax').value = view.xMax.toFixed(2);
+        document.getElementById('yMin').value = view.yMin.toFixed(2);
+        document.getElementById('yMax').value = view.yMax.toFixed(2);
+      }
 
-      const colores = ['#00ffaa','#ff00aa','#ffaa00','#00aaff','#aaff00','#ff4444'];
+      // --- Leer inputs y actualizar view ---
+      function updateFromAxes() {
+        view.xMin = parseFloat(document.getElementById('xMin').value) || -10;
+        view.xMax = parseFloat(document.getElementById('xMax').value) || 10;
+        view.yMin = parseFloat(document.getElementById('yMin').value) || -10;
+        view.yMax = parseFloat(document.getElementById('yMax').value) || 10;
+        if (view.xMin >= view.xMax) view.xMax = view.xMin + 1;
+        if (view.yMin >= view.yMax) view.yMax = view.yMin + 1;
+        graficar();
+        updateAxisInputs(); // Para formatear
+      }
 
-      exprs.forEach((expr, idx) => {
-        const jsExpr = convertir(expr);
-        ctx.strokeStyle = colores[idx % colores.length];
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        let firstPoint = true;
+      // --- Reset de vista ---
+      function resetView() {
+        view = { xMin: -10, xMax: 10, yMin: -10, yMax: 10 };
+        updateAxisInputs();
+        graficar();
+      }
 
-        for (let px = 0; px < canvas.width; px++) {
-          const x = (px - offsetX) / scaleX;
-          let y;
-          try { y = Function("x", "return " + jsExpr)(x); } catch { y = NaN; }
-          if (!isNaN(y) && isFinite(y)) {
-            const py = offsetY - y * scaleY;
-            if (firstPoint) { ctx.moveTo(px, py); firstPoint = false; }
-            else { ctx.lineTo(px, py); }
-          } else { firstPoint = true; }
+      // --- Dibujar todo ---
+      function graficar() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawGrid();
+        drawAxes();
+        drawFunctions();
+        updateLegend();
+      }
+
+      // --- Dibujar cuadrícula ---
+      function drawGrid() {
+        ctx.strokeStyle = body.classList.contains('dark') ? '#333' : '#ddd';
+        ctx.lineWidth = 0.5;
+
+        // Líneas X
+        const xStep = getStepSize(view.xMax - view.xMin);
+        const firstX = Math.ceil(view.xMin / xStep) * xStep;
+        for (let x = firstX; x <= view.xMax; x += xStep) {
+          const canvasX = toCanvasX(x);
+          ctx.beginPath();
+          ctx.moveTo(canvasX, 0);
+          ctx.lineTo(canvasX, canvas.height);
+          ctx.strokeStyle = (Math.abs(x) < 1e-9) ? '#ffaa00' : (body.classList.contains('dark') ? '#333' : '#ddd');
+          ctx.stroke();
         }
-        ctx.stroke();
+
+        // Líneas Y
+        const yStep = getStepSize(view.yMax - view.yMin);
+        const firstY = Math.ceil(view.yMin / yStep) * yStep;
+        for (let y = firstY; y <= view.yMax; y += yStep) {
+          const canvasY = toCanvasY(y);
+          ctx.beginPath();
+          ctx.moveTo(0, canvasY);
+          ctx.lineTo(canvas.width, canvasY);
+          ctx.strokeStyle = (Math.abs(y) < 1e-9) ? '#ffaa00' : (body.classList.contains('dark') ? '#333' : '#ddd');
+          ctx.stroke();
+        }
+      }
+
+      function getStepSize(range) {
+        const roughStep = range / 8;
+        const magnitude = Math.pow(10, Math.floor(Math.log10(roughStep)));
+        return (roughStep / magnitude < 1.5) ? magnitude :
+               (roughStep / magnitude < 3) ? 2 * magnitude :
+               (roughStep / magnitude < 7) ? 5 * magnitude : 10 * magnitude;
+      }
+
+      // --- Dibujar ejes (resaltados) ---
+      function drawAxes() {
+        ctx.lineWidth = 2;
+        // Eje X
+        if (view.yMin <= 0 && view.yMax >= 0) {
+          ctx.strokeStyle = '#0ff';
+          ctx.beginPath();
+          ctx.moveTo(0, toCanvasY(0));
+          ctx.lineTo(canvas.width, toCanvasY(0));
+          ctx.stroke();
+        }
+        // Eje Y
+        if (view.xMin <= 0 && view.xMax >= 0) {
+          ctx.strokeStyle = '#0ff';
+          ctx.beginPath();
+          ctx.moveTo(toCanvasX(0), 0);
+          ctx.lineTo(toCanvasX(0), canvas.height);
+          ctx.stroke();
+        }
+      }
+
+      // --- Dibujar funciones usando math.js ---
+      function drawFunctions() {
+        functions.forEach((f, index) => {
+          if (!f.visible) return;
+
+          ctx.strokeStyle = f.color;
+          ctx.lineWidth = 2.5;
+          ctx.beginPath();
+
+          let firstPoint = true;
+          let lastValidPoint = null;
+
+          for (let px = 0; px < canvas.width; px++) {
+            const xWorld = toWorldX(px);
+            let yWorld;
+
+            try {
+              // Usar math.js para evaluar de forma segura
+              const compiledExpr = math.compile(f.expr);
+              yWorld = compiledExpr.evaluate({ x: xWorld });
+            } catch (e) {
+              yWorld = NaN;
+            }
+
+            if (!isNaN(yWorld) && isFinite(yWorld) && yWorld >= view.yMin && yWorld <= view.yMax) {
+              const py = toCanvasY(yWorld);
+              if (firstPoint) {
+                ctx.moveTo(px, py);
+                firstPoint = false;
+              } else {
+                ctx.lineTo(px, py);
+              }
+              lastValidPoint = { x: px, y: py };
+            } else {
+              // Si hay un punto válido anterior, cerramos el trazo
+              if (!firstPoint) {
+                ctx.stroke();  // Dibujar el segmento actual
+                ctx.beginPath(); // Empezar nuevo segmento
+                firstPoint = true;
+              }
+            }
+          }
+          ctx.stroke(); // Asegurar último segmento
+        });
+      }
+
+      // --- Actualizar leyenda ---
+      function updateLegend() {
+        legendDiv.innerHTML = '';
+        functions.forEach((f, index) => {
+          const item = document.createElement('span');
+          item.className = `legend-item ${f.visible ? 'visible' : ''}`;
+          item.innerHTML = `<span class="legend-color" style="background:${f.color};"></span> ${f.expr}`;
+          item.onclick = () => toggleFunctionVisibility(index);
+          legendDiv.appendChild(item);
+        });
+      }
+
+      function toggleFunctionVisibility(index) {
+        functions[index].visible = !functions[index].visible;
+        graficar();
+      }
+
+      // --- Renderizar lista de funciones en panel de control ---
+      function renderFunctionList() {
+        functionListDiv.innerHTML = '';
+        functions.forEach((f, index) => {
+          const div = document.createElement('div');
+          div.className = 'function-item';
+          div.innerHTML = `
+            <input type="text" value="${f.expr}" placeholder="f(x)" onchange="updateFunctionExpr(${index}, this.value)">
+            <input type="color" value="${f.color}" onchange="updateFunctionColor(${index}, this.value)">
+            <button onclick="removeFunction(${index})">✕</button>
+          `;
+          functionListDiv.appendChild(div);
+        });
+      }
+
+      // --- Acciones sobre funciones ---
+      window.addFunction = function() {
+        functions.push({ expr: 'x^2', color: '#00ffaa', visible: true });
+        renderFunctionList();
+        graficar();
+      };
+
+      window.removeFunction = function(index) {
+        functions.splice(index, 1);
+        renderFunctionList();
+        graficar();
+      };
+
+      window.updateFunctionExpr = function(index, newExpr) {
+        functions[index].expr = newExpr;
+        graficar();
+      };
+
+      window.updateFunctionColor = function(index, newColor) {
+        functions[index].color = newColor;
+        graficar();
+      };
+
+      window.quickFunction = function(expr) {
+        functions.push({ expr: expr, color: getRandomColor(), visible: true });
+        renderFunctionList();
+        graficar();
+      };
+
+      function getRandomColor() {
+        const hue = Math.random() * 360;
+        return `hsl(${hue}, 100%, 60%)`;
+      }
+
+      // --- Eventos de arrastre (pan) ---
+      canvas.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStart = { x: e.offsetX, y: e.offsetY };
+        canvas.style.cursor = 'grabbing';
       });
-    }
 
-    function insert(text) {
-      const area = document.getElementById('funciones');
-      area.value += (area.value ? "\n" : "") + text;
-    }
+      canvas.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          const dx = e.offsetX - dragStart.x;
+          const dy = e.offsetY - dragStart.y;
 
-    function toggleTheme() {
-      if (body.classList.contains("dark")) { body.classList.replace("dark","light"); }
-      else { body.classList.replace("light","dark"); }
+          const dxWorld = (dx / canvas.width) * (view.xMax - view.xMin);
+          const dyWorld = -(dy / canvas.height) * (view.yMax - view.yMin); // negativo por Y invertida
+
+          view.xMin -= dxWorld;
+          view.xMax -= dxWorld;
+          view.yMin -= dyWorld;
+          view.yMax -= dyWorld;
+
+          dragStart = { x: e.offsetX, y: e.offsetY };
+          updateAxisInputs();
+          graficar();
+        } else {
+          // Tooltip
+          const xWorld = toWorldX(e.offsetX);
+          const yWorld = toWorldY(e.offsetY);
+          tooltip.style.opacity = 1;
+          tooltip.style.left = e.pageX + 'px';
+          tooltip.style.top = e.pageY - 30 + 'px';
+          tooltip.innerHTML = `x: ${xWorld.toFixed(2)}, y: ${yWorld.toFixed(2)}`;
+        }
+      });
+
+      canvas.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = 0;
+      });
+
+      canvas.addEventListener('mouseup', () => {
+        isDragging = false;
+        canvas.style.cursor = 'grab';
+      });
+
+      // --- Zoom con rueda (centrado en el mouse) ---
+      canvas.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const rect = canvas.getBoundingClientRect();
+        const mouseXCanvas = e.clientX - rect.left;
+        const mouseYCanvas = e.clientY - rect.top;
+        const mouseXWorld = toWorldX(mouseXCanvas);
+        const mouseYWorld = toWorldY(mouseYCanvas);
+
+        const factor = e.deltaY < 0 ? 0.9 : 1.1; // scroll up = zoom in
+
+        const newWidth = (view.xMax - view.xMin) * factor;
+        const newHeight = (view.yMax - view.yMin) * factor;
+
+        view.xMin = mouseXWorld - newWidth * (mouseXCanvas / canvas.width);
+        view.xMax = view.xMin + newWidth;
+        view.yMin = mouseYWorld - newHeight * (1 - mouseYCanvas / canvas.height);
+        view.yMax = view.yMin + newHeight;
+
+        updateAxisInputs();
+        graficar();
+      });
+
+      // --- Exportar a PNG ---
+      window.exportPNG = function() {
+        const link = document.createElement('a');
+        link.download = 'grafica_premium.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      };
+
+      // --- Toggle tema ---
+      window.toggleTheme = function() {
+        if (body.classList.contains('dark')) {
+          body.classList.replace('dark', 'light');
+        } else {
+          body.classList.replace('light', 'dark');
+        }
+        graficar();
+      };
+
+      // --- Inicializar con algunas funciones de ejemplo ---
+      functions = [
+        { expr: 'sin(x)', color: '#00ffaa', visible: true },
+        { expr: 'cos(x)', color: '#ff00aa', visible: true },
+        { expr: 'x^2/5', color: '#ffaa00', visible: true }
+      ];
+
+      // Exponer funciones necesarias globalmente
+      window.updateFromAxes = updateFromAxes;
+      window.resetView = resetView;
+
+      // Render inicial
+      renderFunctionList();
+      updateAxisInputs();
       graficar();
-    }
-
-    // Zoom con scroll
-    canvas.addEventListener("wheel", e => {
-      e.preventDefault();
-      const factor = e.deltaY < 0 ? 1.1 : 0.9;
-      scaleX *= factor; scaleY *= factor;
-      graficar();
-    });
-
-    // Drag para mover
-    canvas.addEventListener("mousedown", e => {
-      isDragging = true;
-      dragStart = {x: e.offsetX, y: e.offsetY};
-      canvas.style.cursor = "grabbing";
-    });
-    canvas.addEventListener("mouseup", () => { isDragging = false; canvas.style.cursor = "grab"; });
-    canvas.addEventListener("mousemove", e => {
-      if (isDragging) {
-        offsetX +=
+    })();
+  </script>
+</body>
+</html>
