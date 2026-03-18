@@ -1,74 +1,139 @@
 <!DOCTYPE html> <!-- Define que el documento usa HTML5 -->
 <html lang="es"> <!-- Inicia el documento HTML con idioma español -->
+
 <head> <!-- Cabecera del documento: contiene metadatos y configuraciones -->
   <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres UTF-8 para soportar acentos y símbolos -->
   <title>Calculadora Científica Premium</title> <!-- Título que aparece en la pestaña del navegador -->
-  <style> /* Inicio de los estilos CSS */
-    body { /* Estilos para el cuerpo de la página */
-      background: #0d0d0d; /* Fondo negro oscuro */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal y alternativas */
-      display: flex; /* Activa Flexbox para centrar contenido */
-      justify-content: center; /* Centra horizontalmente */
-      align-items: center; /* Centra verticalmente */
-      height: 100vh; /* Altura igual al 100% del viewport */
-      margin: 0; /* Elimina márgenes por defecto */
+  <style>
+    /* Inicio de los estilos CSS */
+    body {
+      /* Estilos para el cuerpo de la página */
+      background: #0d0d0d;
+      /* Fondo negro oscuro */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Fuente principal y alternativas */
+      display: flex;
+      /* Activa Flexbox para centrar contenido */
+      justify-content: center;
+      /* Centra horizontalmente */
+      align-items: center;
+      /* Centra verticalmente */
+      height: 100vh;
+      /* Altura igual al 100% del viewport */
+      margin: 0;
+      /* Elimina márgenes por defecto */
     }
-    .calculator { /* Estilos para el contenedor principal de la calculadora */
-      background: #1a1a1a; /* Fondo gris muy oscuro */
-      border-radius: 20px; /* Bordes redondeados de 20px */
-      box-shadow: 0 0 40px rgba(0,255,180,0.4); /* Sombra exterior verde azulada */
-      padding: 20px; /* Espaciado interno de 20px */
-      width: 380px; /* Ancho fijo de 380 píxeles */
+
+    .calculator {
+      /* Estilos para el contenedor principal de la calculadora */
+      background: #1a1a1a;
+      /* Fondo gris muy oscuro */
+      border-radius: 20px;
+      /* Bordes redondeados de 20px */
+      box-shadow: 0 0 40px rgba(0, 255, 180, 0.4);
+      /* Sombra exterior verde azulada */
+      padding: 20px;
+      /* Espaciado interno de 20px */
+      width: 380px;
+      /* Ancho fijo de 380 píxeles */
     }
-    .display { /* Estilos para la pantalla de la calculadora */
-      background: #000; /* Fondo negro */
-      color: #0ff; /* Texto en color cian fluorescente */
-      font-size: 2em; /* Tamaño de fuente del doble del normal */
-      text-align: right; /* Texto alineado a la derecha */
-      padding: 15px; /* Espaciado interno */
-      border-radius: 10px; /* Bordes redondeados */
-      margin-bottom: 20px; /* Margen inferior para separar de los botones */
-      box-shadow: inset 0 0 10px #0ff; /* Sombra interior cian */
-      overflow-x: auto; /* Permite scroll horizontal si el texto es muy largo */
+
+    .display {
+      /* Estilos para la pantalla de la calculadora */
+      background: #000;
+      /* Fondo negro */
+      color: #0ff;
+      /* Texto en color cian fluorescente */
+      font-size: 2em;
+      /* Tamaño de fuente del doble del normal */
+      text-align: right;
+      /* Texto alineado a la derecha */
+      padding: 15px;
+      /* Espaciado interno */
+      border-radius: 10px;
+      /* Bordes redondeados */
+      margin-bottom: 20px;
+      /* Margen inferior para separar de los botones */
+      box-shadow: inset 0 0 10px #0ff;
+      /* Sombra interior cian */
+      overflow-x: auto;
+      /* Permite scroll horizontal si el texto es muy largo */
     }
-    .buttons { /* Estilos para el contenedor de botones */
-      display: grid; /* Usa CSS Grid para organizar botones */
-      grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas de igual tamaño */
-      gap: 10px; /* Espacio de 10px entre botones */
+
+    .buttons {
+      /* Estilos para el contenedor de botones */
+      display: grid;
+      /* Usa CSS Grid para organizar botones */
+      grid-template-columns: repeat(5, 1fr);
+      /* Crea 5 columnas de igual tamaño */
+      gap: 10px;
+      /* Espacio de 10px entre botones */
     }
-    button { /* Estilos base para todos los botones */
-      background: #222; /* Fondo gris oscuro */
-      color: #fff; /* Texto blanco */
-      font-size: 1em; /* Tamaño de fuente normal */
-      padding: 15px; /* Espaciado interno */
-      border: none; /* Sin borde */
-      border-radius: 8px; /* Bordes redondeados */
-      cursor: pointer; /* Cambia el cursor a mano al pasar */
-      transition: all 0.2s ease; /* Transición suave para efectos hover */
-      box-shadow: 0 0 10px rgba(0,255,180,0.2); /* Sombra sutil cian */
+
+    button {
+      /* Estilos base para todos los botones */
+      background: #222;
+      /* Fondo gris oscuro */
+      color: #fff;
+      /* Texto blanco */
+      font-size: 1em;
+      /* Tamaño de fuente normal */
+      padding: 15px;
+      /* Espaciado interno */
+      border: none;
+      /* Sin borde */
+      border-radius: 8px;
+      /* Bordes redondeados */
+      cursor: pointer;
+      /* Cambia el cursor a mano al pasar */
+      transition: all 0.2s ease;
+      /* Transición suave para efectos hover */
+      box-shadow: 0 0 10px rgba(0, 255, 180, 0.2);
+      /* Sombra sutil cian */
     }
-    button:hover { /* Efecto al pasar el mouse sobre los botones */
-      background: #0ff; /* Fondo cian */
-      color: #000; /* Texto negro */
-      box-shadow: 0 0 20px #0ff; /* Sombra cian más intensa */
+
+    button:hover {
+      /* Efecto al pasar el mouse sobre los botones */
+      background: #0ff;
+      /* Fondo cian */
+      color: #000;
+      /* Texto negro */
+      box-shadow: 0 0 20px #0ff;
+      /* Sombra cian más intensa */
     }
-    .span-2 { /* Clase para botones que ocupan 2 columnas */
-      grid-column: span 2; /* Expande el botón a través de 2 columnas */
+
+    .span-2 {
+      /* Clase para botones que ocupan 2 columnas */
+      grid-column: span 2;
+      /* Expande el botón a través de 2 columnas */
     }
-    .span-3 { /* Clase para botones que ocupan 3 columnas */
-      grid-column: span 3; /* Expande el botón a través de 3 columnas */
+
+    .span-3 {
+      /* Clase para botones que ocupan 3 columnas */
+      grid-column: span 3;
+      /* Expande el botón a través de 3 columnas */
     }
-    .equal { /* Estilos específicos para el botón igual */
-      background: #0ff; /* Fondo cian */
-      color: #000; /* Texto negro */
-      font-weight: bold; /* Texto en negrita */
+
+    .equal {
+      /* Estilos específicos para el botón igual */
+      background: #0ff;
+      /* Fondo cian */
+      color: #000;
+      /* Texto negro */
+      font-weight: bold;
+      /* Texto en negrita */
     }
-    .equal:hover { /* Efecto hover específico para el botón igual */
-      background: #00ffaa; /* Fondo verde cian más claro */
-      box-shadow: 0 0 25px #00ffaa; /* Sombra más grande e intensa */
+
+    .equal:hover {
+      /* Efecto hover específico para el botón igual */
+      background: #00ffaa;
+      /* Fondo verde cian más claro */
+      box-shadow: 0 0 25px #00ffaa;
+      /* Sombra más grande e intensa */
     }
   </style> <!-- Fin de los estilos CSS -->
 </head> <!-- Fin de la cabecera -->
+
 <body> <!-- Cuerpo del documento: contenido visible -->
   <div class="calculator"> <!-- Contenedor principal de la calculadora -->
     <div class="display" id="display">0</div> <!-- Pantalla con ID para JavaScript y valor inicial 0 -->
@@ -141,6 +206,76 @@
         display.innerText = "Error"; // Muestra "Error" en la pantalla
       }
     }
+
+    // Escuchar teclas del teclado
+    document.addEventListener('keydown', function (event) {
+      const tecla = event.key;
+
+      // Números
+      if (tecla >= '0' && tecla <= '9') {
+        append(tecla);
+      }
+
+      // Operadores básicos
+      switch (tecla) {
+        case '+': append('+'); break;
+        case '-': append('-'); break;
+        case '*': append('*'); break;
+        case '/': append('/'); break;
+        case '.': append('.'); break;
+        case '(': append('('); break;
+        case ')': append(')'); break;
+
+        // Enter para calcular
+        case 'Enter':
+          event.preventDefault(); // Evita que el formulario se envíe
+          calculate();
+          break;
+
+        // Escape para limpiar
+        case 'Escape':
+          clearDisplay();
+          break;
+
+        // Backspace para borrar
+        case 'Backspace':
+          event.preventDefault(); // Evita que navegue hacia atrás
+          deleteChar();
+          break;
+      }
+
+      // Teclas con Ctrl para funciones especiales
+      if (event.ctrlKey) {
+        switch (tecla) {
+          case 's': // Ctrl+S para seno
+          case 'S':
+            append('Math.sin(');
+            event.preventDefault();
+            break;
+          case 'c': // Ctrl+C para coseno
+          case 'C':
+            append('Math.cos(');
+            event.preventDefault();
+            break;
+          case 't': // Ctrl+T para tangente
+          case 'T':
+            append('Math.tan(');
+            event.preventDefault();
+            break;
+          case 'l': // Ctrl+L para logaritmo
+          case 'L':
+            append('Math.log(');
+            event.preventDefault();
+            break;
+          case 'p': // Ctrl+P para Pi
+          case 'P':
+            append('Math.PI');
+            event.preventDefault();
+            break;
+        }
+      }
+    });
   </script> <!-- Fin del código JavaScript -->
 </body> <!-- Fin del cuerpo -->
+
 </html> <!-- Fin del documento HTML -->
