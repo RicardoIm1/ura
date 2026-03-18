@@ -1,146 +1,146 @@
-1  <!DOCTYPE html> <!-- Esta línea le dice al navegador que usamos HTML5 -->
-2  <html lang="es"> <!-- Aquí empieza la página web en español -->
-3  <head> <!-- Cabecero: configuraciones que no se ven -->
-4    <meta charset="UTF-8"> <!-- Permite usar ñ y acentos -->
-5    <title>Calculadora Científica</title> <!-- Título de la pestaña -->
-6    <style> /* Aquí empiezan los estilos (la "ropa") */
-7      body { /* Estilos para toda la página */
-8        background: #0d0d0d; /* Fondo negro */
-9        font-family: 'Segoe UI', sans-serif; /* Tipo de letra */
-10       display: flex; /* Activa modo centrado */
-11       justify-content: center; /* Centra horizontal */
-12       align-items: center; /* Centra vertical */
-13       height: 100vh; /* Alto total de pantalla */
-14       margin: 0; /* Quita márgenes */
-15     }
-16     .calculator { /* Estilos para la calculadora */
-17       background: #1a1a1a; /* Fondo gris oscuro */
-18       border-radius: 20px; /* Esquinas redondeadas */
-19       box-shadow: 0 0 40px rgba(0,255,180,0.4); /* Sombra */
-20       padding: 20px; /* Espacio interno */
-21       width: 380px; /* Ancho fijo */
-22     }
-23     .display { /* Estilos para la pantalla */
-24       background: #000; /* Fondo negro */
-25       color: #0ff; /* Letras celestes */
-26       font-size: 2em; /* Letra grande */
-27       text-align: right; /* Texto a la derecha */
-28       padding: 15px; /* Espacio interno */
-29       border-radius: 10px; /* Esquinas redondeadas */
-30       margin-bottom: 20px; /* Espacio abajo */
-31       box-shadow: inset 0 0 10px #0ff; /* Brillo interior */
-32       overflow-x: auto; /* Permite deslizar si es largo */
-33     }
-34     .buttons { /* Estilos para los botones */
-35       display: grid; /* Organiza en filas y columnas */
-36       grid-template-columns: repeat(5, 1fr); /* 5 columnas */
-37       gap: 10px; /* Espacio entre botones */
-38     }
-39     button { /* Estilos para todos los botones */
-40       background: #222; /* Fondo gris oscuro */
-41       color: #fff; /* Letras blancas */
-42       font-size: 1em; /* Tamaño normal */
-43       padding: 15px; /* Botones grandes */
-44       border: none; /* Sin borde */
-45       border-radius: 8px; /* Esquinas redondeadas */
-46       cursor: pointer; /* Manita al pasar mouse */
-47       transition: all 0.2s ease; /* Efecto suave */
-48       box-shadow: 0 0 10px rgba(0,255,180,0.2); /* Sombra */
-49     }
-50     button:hover { /* Efecto al pasar mouse */
-51       background: #0ff; /* Fondo celeste */
-52       color: #000; /* Letras negras */
-53       box-shadow: 0 0 20px #0ff; /* Brillo intenso */
-54     }
-55     .span-2 { /* Botones que ocupan 2 espacios */
-56       grid-column: span 2; /* Ocupa 2 columnas */
-57     }
-58     .span-3 { /* Botones que ocupan 3 espacios */
-59       grid-column: span 3; /* Ocupa 3 columnas */
-60     }
-61     .equal { /* Estilo especial para = */
-62       background: #0ff; /* Fondo celeste */
-63       color: #000; /* Letras negras */
-64       font-weight: bold; /* Letras gruesas */
-65     }
-66     .equal:hover { /* Efecto al pasar mouse sobre = */
-67       background: #00ffaa; /* Color más verdoso */
-68       box-shadow: 0 0 25px #00ffaa; /* Brillo más grande */
-69     }
-70   </style> /* Aquí terminan los estilos */
-71 </head> <!-- Termina el cabecero -->
-72 <body> <!-- Aquí empieza lo que SÍ se ve -->
-73   <div class="calculator"> <!-- Caja de la calculadora -->
-74     <div class="display" id="display">0</div> <!-- Pantalla -->
-75     <div class="buttons"> <!-- Caja de botones -->
-76       <!-- FILA 1 -->
-77       <button onclick="clearDisplay()">C</button> <!-- Limpiar -->
-78       <button onclick="deleteChar()">⌫</button> <!-- Borrar -->
-79       <button onclick="append('(')">(</button> <!-- Abrir paréntesis -->
-80       <button onclick="append(')')">)</button> <!-- Cerrar paréntesis -->
-81       <button onclick="append('/')">÷</button> <!-- Dividir -->
-82       <!-- FILA 2 -->
-83       <button onclick="append('7')">7</button> <!-- Número 7 -->
-84       <button onclick="append('8')">8</button> <!-- Número 8 -->
-85       <button onclick="append('9')">9</button> <!-- Número 9 -->
-86       <button onclick="append('*')">×</button> <!-- Multiplicar -->
-87       <button onclick="append('Math.sqrt(')">√</button> <!-- Raíz cuadrada -->
-88       <!-- FILA 3 -->
-89       <button onclick="append('4')">4</button> <!-- Número 4 -->
-90       <button onclick="append('5')">5</button> <!-- Número 5 -->
-91       <button onclick="append('6')">6</button> <!-- Número 6 -->
-92       <button onclick="append('-')">−</button> <!-- Restar -->
-93       <button onclick="append('Math.pow(')">xʸ</button> <!-- Potencia -->
-94       <!-- FILA 4 -->
-95       <button onclick="append('1')">1</button> <!-- Número 1 -->
-96       <button onclick="append('2')">2</button> <!-- Número 2 -->
-97       <button onclick="append('3')">3</button> <!-- Número 3 -->
-98       <button onclick="append('+')">+</button> <!-- Sumar -->
-99       <button onclick="append('Math.PI')">π</button> <!-- Número Pi -->
-100      <!-- FILA 5 -->
-101      <button onclick="append('0')" class="span-2">0</button> <!-- Cero grande -->
-102      <button onclick="append('.')">.</button> <!-- Punto decimal -->
-103      <button onclick="calculate()" class="equal span-2">=</button> <!-- Igual -->
-104      <!-- FILA 6 -->
-105      <button onclick="append('Math.sin(')">sin</button> <!-- Seno -->
-106      <button onclick="append('Math.cos(')">cos</button> <!-- Coseno -->
-107      <button onclick="append('Math.tan(')">tan</button> <!-- Tangente -->
-108      <button onclick="append('Math.log(')">ln</button> <!-- Logaritmo -->
-109      <button onclick="append('Math.exp(')">exp</button> <!-- Exponencial -->
-110    </div> <!-- Cierra botones -->
-111  </div> <!-- Cierra calculadora -->
-112
-113  <script> // Aquí empieza JavaScript (el "cerebro")
-114    // Busca la pantalla y la guarda en una variable
-115    const display = document.getElementById('display');
-116
-117    // Función para añadir números a la pantalla
-118    function append(value) {
-119      if (display.innerText === "0") {
-120        display.innerText = value; // Reemplaza el 0
-121      } else {
-122        display.innerText += value; // Añade al final
-123      }
-124    }
-125
-126    // Función para borrar todo
-127    function clearDisplay() {
-128      display.innerText = "0";
-129    }
-130
-131    // Función para borrar el último carácter
-132    function deleteChar() {
-133      display.innerText = display.innerText.slice(0, -1) || "0";
-134    }
-135
-136    // Función para calcular el resultado
-137    function calculate() {
-138      try { // Intenta hacer el cálculo
-139        display.innerText = eval(display.innerText); // Resuelve la operación
-140      } catch { // Si hay error
-141        display.innerText = "Error"; // Muestra Error
-142      }
-143    }
-144  </script> // Aquí termina JavaScript
-145 </body> <!-- Termina el cuerpo -->
-146 </html> <!-- Termina la página -->
+<!DOCTYPE html> <!-- Define que el documento usa HTML5 -->
+<html lang="es"> <!-- Inicia el documento HTML con idioma español -->
+<head> <!-- Cabecera del documento: contiene metadatos y configuraciones -->
+  <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres UTF-8 para soportar acentos y símbolos -->
+  <title>Calculadora Científica Premium</title> <!-- Título que aparece en la pestaña del navegador -->
+  <style> /* Inicio de los estilos CSS */
+    body { /* Estilos para el cuerpo de la página */
+      background: #0d0d0d; /* Fondo negro oscuro */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal y alternativas */
+      display: flex; /* Activa Flexbox para centrar contenido */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      height: 100vh; /* Altura igual al 100% del viewport */
+      margin: 0; /* Elimina márgenes por defecto */
+    }
+    .calculator { /* Estilos para el contenedor principal de la calculadora */
+      background: #1a1a1a; /* Fondo gris muy oscuro */
+      border-radius: 20px; /* Bordes redondeados de 20px */
+      box-shadow: 0 0 40px rgba(0,255,180,0.4); /* Sombra exterior verde azulada */
+      padding: 20px; /* Espaciado interno de 20px */
+      width: 380px; /* Ancho fijo de 380 píxeles */
+    }
+    .display { /* Estilos para la pantalla de la calculadora */
+      background: #000; /* Fondo negro */
+      color: #0ff; /* Texto en color cian fluorescente */
+      font-size: 2em; /* Tamaño de fuente del doble del normal */
+      text-align: right; /* Texto alineado a la derecha */
+      padding: 15px; /* Espaciado interno */
+      border-radius: 10px; /* Bordes redondeados */
+      margin-bottom: 20px; /* Margen inferior para separar de los botones */
+      box-shadow: inset 0 0 10px #0ff; /* Sombra interior cian */
+      overflow-x: auto; /* Permite scroll horizontal si el texto es muy largo */
+    }
+    .buttons { /* Estilos para el contenedor de botones */
+      display: grid; /* Usa CSS Grid para organizar botones */
+      grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas de igual tamaño */
+      gap: 10px; /* Espacio de 10px entre botones */
+    }
+    button { /* Estilos base para todos los botones */
+      background: #222; /* Fondo gris oscuro */
+      color: #fff; /* Texto blanco */
+      font-size: 1em; /* Tamaño de fuente normal */
+      padding: 15px; /* Espaciado interno */
+      border: none; /* Sin borde */
+      border-radius: 8px; /* Bordes redondeados */
+      cursor: pointer; /* Cambia el cursor a mano al pasar */
+      transition: all 0.2s ease; /* Transición suave para efectos hover */
+      box-shadow: 0 0 10px rgba(0,255,180,0.2); /* Sombra sutil cian */
+    }
+    button:hover { /* Efecto al pasar el mouse sobre los botones */
+      background: #0ff; /* Fondo cian */
+      color: #000; /* Texto negro */
+      box-shadow: 0 0 20px #0ff; /* Sombra cian más intensa */
+    }
+    .span-2 { /* Clase para botones que ocupan 2 columnas */
+      grid-column: span 2; /* Expande el botón a través de 2 columnas */
+    }
+    .span-3 { /* Clase para botones que ocupan 3 columnas */
+      grid-column: span 3; /* Expande el botón a través de 3 columnas */
+    }
+    .equal { /* Estilos específicos para el botón igual */
+      background: #0ff; /* Fondo cian */
+      color: #000; /* Texto negro */
+      font-weight: bold; /* Texto en negrita */
+    }
+    .equal:hover { /* Efecto hover específico para el botón igual */
+      background: #00ffaa; /* Fondo verde cian más claro */
+      box-shadow: 0 0 25px #00ffaa; /* Sombra más grande e intensa */
+    }
+  </style> <!-- Fin de los estilos CSS -->
+</head> <!-- Fin de la cabecera -->
+<body> <!-- Cuerpo del documento: contenido visible -->
+  <div class="calculator"> <!-- Contenedor principal de la calculadora -->
+    <div class="display" id="display">0</div> <!-- Pantalla con ID para JavaScript y valor inicial 0 -->
+    <div class="buttons"> <!-- Contenedor de la cuadrícula de botones -->
+      <!-- Fila 1: Botones de control y operadores básicos -->
+      <button onclick="clearDisplay()">C</button> <!-- Botón para limpiar todo -->
+      <button onclick="deleteChar()">⌫</button> <!-- Botón para borrar último carácter -->
+      <button onclick="append('(')">(</button> <!-- Botón para paréntesis abierto -->
+      <button onclick="append(')')">)</button> <!-- Botón para paréntesis cerrado -->
+      <button onclick="append('/')">÷</button> <!-- Botón para división -->
+
+      <!-- Fila 2: Números 7-9 y operadores × y √ -->
+      <button onclick="append('7')">7</button> <!-- Botón número 7 -->
+      <button onclick="append('8')">8</button> <!-- Botón número 8 -->
+      <button onclick="append('9')">9</button> <!-- Botón número 9 -->
+      <button onclick="append('*')">×</button> <!-- Botón multiplicación (usa * en código) -->
+      <button onclick="append('Math.sqrt(')">√</button> <!-- Botón raíz cuadrada -->
+
+      <!-- Fila 3: Números 4-6 y operadores − y xʸ -->
+      <button onclick="append('4')">4</button> <!-- Botón número 4 -->
+      <button onclick="append('5')">5</button> <!-- Botón número 5 -->
+      <button onclick="append('6')">6</button> <!-- Botón número 6 -->
+      <button onclick="append('-')">−</button> <!-- Botón resta -->
+      <button onclick="append('Math.pow(')">xʸ</button> <!-- Botón potencia (x elevado a y) -->
+
+      <!-- Fila 4: Números 1-3 y operadores + y π -->
+      <button onclick="append('1')">1</button> <!-- Botón número 1 -->
+      <button onclick="append('2')">2</button> <!-- Botón número 2 -->
+      <button onclick="append('3')">3</button> <!-- Botón número 3 -->
+      <button onclick="append('+')">+</button> <!-- Botón suma -->
+      <button onclick="append('Math.PI')">π</button> <!-- Botón constante Pi -->
+
+      <!-- Fila 5: Botones especiales y funciones trigonométricas -->
+      <button onclick="append('0')" class="span-2">0</button> <!-- Botón cero ocupa 2 columnas -->
+      <button onclick="append('.')">.</button> <!-- Botón punto decimal -->
+      <button onclick="calculate()" class="equal span-2">=</button> <!-- Botón igual con clases especiales -->
+
+      <!-- Fila 6: Funciones matemáticas avanzadas -->
+      <button onclick="append('Math.sin(')">sin</button> <!-- Botón seno -->
+      <button onclick="append('Math.cos(')">cos</button> <!-- Botón coseno -->
+      <button onclick="append('Math.tan(')">tan</button> <!-- Botón tangente -->
+      <button onclick="append('Math.log(')">ln</button> <!-- Botón logaritmo natural -->
+      <button onclick="append('Math.exp(')">exp</button> <!-- Botón exponencial (e^x) -->
+    </div> <!-- Fin del contenedor de botones -->
+  </div> <!-- Fin del contenedor de la calculadora -->
+
+  <script> // Inicio del código JavaScript
+    const display = document.getElementById('display'); // Obtiene referencia al elemento de la pantalla por su ID
+
+    function append(value) { // Función para añadir caracteres a la pantalla
+      if (display.innerText === "0") { // Si la pantalla muestra solo "0"
+        display.innerText = value; // Reemplaza el 0 con el nuevo valor
+      } else { // Si ya hay otros números
+        display.innerText += value; // Añade el nuevo valor al final
+      }
+    }
+
+    function clearDisplay() { // Función para limpiar la pantalla
+      display.innerText = "0"; // Restablece la pantalla a "0"
+    }
+
+    function deleteChar() { // Función para borrar el último carácter
+      display.innerText = display.innerText.slice(0, -1) || "0"; // Elimina el último carácter o muestra "0" si está vacío
+    }
+
+    function calculate() { // Función para evaluar la expresión matemática
+      try { // Intenta ejecutar el código que podría causar error
+        display.innerText = eval(display.innerText); // Evalúa la expresión matemática y muestra el resultado
+      } catch { // Si ocurre un error
+        display.innerText = "Error"; // Muestra "Error" en la pantalla
+      }
+    }
+  </script> <!-- Fin del código JavaScript -->
+</body> <!-- Fin del cuerpo -->
+</html> <!-- Fin del documento HTML -->
