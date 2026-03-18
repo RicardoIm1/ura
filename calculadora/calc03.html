@@ -65,15 +65,40 @@
 <body>
   <div class="container">
     <h2>Graficadora Premium</h2>
-    <textarea id="funciones" placeholder="Escribe funciones separadas por saltos de línea. Ejemplo:
-Math.sin(x)
-x*x
-Math.exp(x)"></textarea>
+    <textarea id="funciones" placeholder="Ejemplo:
+f(x)=4x^2+3x-2
+sin(x)
+exp(x)"></textarea>
     <button onclick="graficar()">Graficar</button>
     <canvas id="grafica" width="700" height="400"></canvas>
   </div>
 
   <script>
+    // Convierte notación matemática a sintaxis JS
+    function convertir(expr) {
+      let e = expr.toLowerCase().trim();
+
+      // quitar "f(x)=" si existe
+      e = e.replace(/^f\(x\)=/, "");
+
+      // reemplazar potencias ^ por Math.pow
+      e = e.replace(/([0-9a-z]+)\^([0-9a-z]+)/gi, "Math.pow($1,$2)");
+
+      // insertar * entre número y x (ej: 4x -> 4*x)
+      e = e.replace(/([0-9])x/gi, "$1*x");
+
+      // funciones comunes sin "Math."
+      e = e.replace(/\bsin\(/g, "Math.sin(");
+      e = e.replace(/\bcos\(/g, "Math.cos(");
+      e = e.replace(/\btan\(/g, "Math.tan(");
+      e = e.replace(/\bexp\(/g, "Math.exp(");
+      e = e.replace(/\bln\(/g, "Math.log(");
+      e = e.replace(/\bsqrt\(/g, "Math.sqrt(");
+      e = e.replace(/\bpi\b/g, "Math.PI");
+
+      return e;
+    }
+
     function graficar() {
       const canvas = document.getElementById('grafica');
       const ctx = canvas.getContext('2d');
@@ -87,7 +112,7 @@ Math.exp(x)"></textarea>
       const offsetX = canvas.width/2;
       const offsetY = canvas.height/2;
 
-      // dibujar rejilla
+      // rejilla
       ctx.strokeStyle = '#333';
       ctx.lineWidth = 1;
       for (let gx = 0; gx < canvas.width; gx += scaleX) {
@@ -103,7 +128,7 @@ Math.exp(x)"></textarea>
         ctx.stroke();
       }
 
-      // dibujar ejes
+      // ejes
       ctx.strokeStyle = '#0ff';
       ctx.lineWidth = 2;
       ctx.beginPath();
@@ -113,10 +138,11 @@ Math.exp(x)"></textarea>
       ctx.lineTo(offsetX, canvas.height);
       ctx.stroke();
 
-      // colores para múltiples funciones
+      // colores
       const colores = ['#00ffaa','#ff00aa','#ffaa00','#00aaff','#aaff00','#ff4444'];
 
       exprs.forEach((expr, idx) => {
+        const jsExpr = convertir(expr);
         ctx.strokeStyle = colores[idx % colores.length];
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -126,7 +152,7 @@ Math.exp(x)"></textarea>
           const x = (px - offsetX) / scaleX;
           let y;
           try {
-            y = Function("x", "return " + expr)(x);
+            y = Function("x", "return " + jsExpr)(x);
           } catch {
             y = NaN;
           }
@@ -139,7 +165,7 @@ Math.exp(x)"></textarea>
               ctx.lineTo(px, py);
             }
           } else {
-            firstPoint = true; // cortar la línea si hay discontinuidad
+            firstPoint = true;
           }
         }
         ctx.stroke();
@@ -148,4 +174,3 @@ Math.exp(x)"></textarea>
   </script>
 </body>
 </html>
-
