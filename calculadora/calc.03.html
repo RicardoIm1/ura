@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Graficadora Premium</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      background: #0d0d0d;
+      color: #fff;
+    }
+    .container {
+      margin-top: 20px;
+      background: #1a1a1a;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0,255,180,0.4);
+      padding: 20px;
+      width: 420px;
+    }
+    .display {
+      background: #000;
+      color: #0ff;
+      font-size: 1.2em;
+      text-align: left;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: inset 0 0 10px #0ff;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 1em;
+      background: #222;
+      color: #0ff;
+      box-shadow: inset 0 0 5px #0ff;
+    }
+    button {
+      background: #0ff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    button:hover {
+      background: #00ffaa;
+      box-shadow: 0 0 20px #00ffaa;
+    }
+    canvas {
+      background: #111;
+      border-radius: 10px;
+      margin-top: 15px;
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="display">Introduce una función en términos de <b>x</b>:</div>
+    <input type="text" id="funcion" placeholder="Ejemplo: Math.sin(x) o x*x">
+    <button onclick="graficar()">Graficar</button>
+    <canvas id="grafica" width="400" height="300"></canvas>
+  </div>
+
+  <script>
+    function graficar() {
+      const canvas = document.getElementById('grafica');
+      const ctx = canvas.getContext('2d');
+      const expr = document.getElementById('funcion').value;
+
+      // limpiar canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // dibujar ejes
+      ctx.strokeStyle = '#0ff';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, canvas.height/2);
+      ctx.lineTo(canvas.width, canvas.height/2);
+      ctx.moveTo(canvas.width/2, 0);
+      ctx.lineTo(canvas.width/2, canvas.height);
+      ctx.stroke();
+
+      // graficar función
+      ctx.strokeStyle = '#00ffaa';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+
+      const scaleX = 40; // píxeles por unidad en x
+      const scaleY = 40; // píxeles por unidad en y
+      const offsetX = canvas.width/2;
+      const offsetY = canvas.height/2;
+
+      for (let px = 0; px < canvas.width; px++) {
+        const x = (px - offsetX) / scaleX;
+        let y;
+        try {
+          y = eval(expr);
+        } catch {
+          y = NaN;
+        }
+        if (!isNaN(y)) {
+          const py = offsetY - y * scaleY;
+          if (px === 0) {
+            ctx.moveTo(px, py);
+          } else {
+            ctx.lineTo(px, py);
+          }
+        }
+      }
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>
