@@ -22,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
     <!-- Confetti para celebración opcional -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <style>
+    <!-- <style>
         * {
             margin: 0;
             padding: 0;
@@ -227,6 +227,106 @@
             color: #5b6e8c;
             font-size: 0.8rem;
         }
+    </style> -->
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f2f4f7;
+            margin: 0;
+        }
+
+        header {
+            background: #1a237e;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .accordion {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: .6rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+        }
+
+        .accordion-header {
+            padding: 1rem;
+            background: #283593;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+        }
+
+        .math-equation {
+            background: #eceff1;
+            padding: .8rem;
+            border-radius: .5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New';
+            font-size: 1.1rem;
+        }
+
+        .quiz-box {
+            background: #f5f9ff;
+            border-left: 4px solid #1a73e8;
+            padding: 1rem;
+            border-radius: .5rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-box input {
+            padding: .5rem;
+            border: 1px solid #90caf9;
+            border-radius: .3rem;
+            width: 60%;
+            margin-right: .5rem;
+            font-size: 1rem;
+        }
+
+        .quiz-box button {
+            padding: .5rem .8rem;
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: .3rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .quiz-box button:hover {
+            background: #0d47a1;
+        }
+
+        .progress {
+            margin: 1rem 0;
+            height: 22px;
+            background: #c5cae9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-inner {
+            height: 100%;
+            width: 0%;
+            background: #1a73e8;
+            transition: .4s;
+        }
     </style>
 </head>
 
@@ -236,7 +336,7 @@
             <a href="/ura/">
                 <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
             </a>
-            <div class="header-title">Matemáticas para los Negocios 2<br><span style="font-size:0.8rem;">Matrices ·
+            <div class="header-title">Guía de Estudio Para el exámen de Matemáticas para los Negocios 2<br><span style="font-size:0.8rem;">Matrices ·
                     Derivadas · Optimización</span></div>
         </div>
     </header>
