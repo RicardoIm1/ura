@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Guía de estudio | Matemáticas para los Negocios 2</title>
+    <title>Guia de estudio para el examen del 18abr2026</title>
+    <link rel="stylesheet" href="/ura/css/estilo.css">
     <!-- Tipografía moderna -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap"
@@ -23,75 +24,43 @@
     <!-- Confetti para celebración opcional -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f4f7fc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0f2b6d, #1e3a8a);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
+        /* Link descarado al examen */
+        .examen-link {
+            background: var(--apple-gradient);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--apple-transition);
+            box-shadow: 0 2px 8px rgba(0, 119, 204, 0.3);
+            display: inline-flex;
             align-items: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
+            gap: 8px;
+            margin-left: auto;
         }
 
-        .header-logo {
-            height: 55px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 14px;
-            padding: 6px 12px;
-            font-weight: 700;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .examen-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 119, 204, 0.4);
         }
 
-        .header-logo img {
-            height: 42px;
-            width: auto;
+        .examen-link:active {
+            transform: scale(0.98);
         }
 
-        .header-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1.2rem;
-        }
-
-        /* barra progreso */
+        /* barra progreso estilo Apple */
         .progress-wrapper {
-            background: #e2e8f0;
+            background: var(--apple-light-gray);
             border-radius: 40px;
-            margin-bottom: 2rem;
-            box-shadow: inset 0 1px 3px #0001;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .progress-bar {
-            height: 12px;
-            background: #2563eb;
+            height: 8px;
+            background: var(--apple-gradient);
             width: 0%;
             border-radius: 40px;
             transition: width 0.35s ease;
@@ -101,20 +70,24 @@
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
-            margin-top: 6px;
-            color: #334155;
+            margin-bottom: 1.5rem;
+            color: var(--apple-dark-gray);
             font-weight: 500;
         }
 
-        /* acordeones */
+        /* acordeones estilo Apple */
         .accordion {
             background: white;
-            border-radius: 1.2rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            transition: all 0.2s;
-            border: 1px solid #e2edff;
+            transition: var(--apple-transition);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .accordion:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
         }
 
         .accordion-header {
@@ -126,12 +99,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eef2ff;
             transition: background 0.2s;
         }
 
         .accordion-header:hover {
-            background: #f8fafc;
+            background: var(--apple-light-gray);
         }
 
         .accordion-header span:first-child {
@@ -181,16 +153,6 @@
             margin: 0.5rem 0;
         }
 
-        .concepto {
-            font-style: italic;
-            color: #2c3e66;
-            border-left: 3px solid #3b82f6;
-            padding-left: 12px;
-            margin: 8px 0;
-            background: #ffffffc9;
-            border-radius: 0 8px 8px 0;
-        }
-
         .btn-toggle {
             background: #eef2ff;
             border: none;
@@ -220,26 +182,28 @@
             padding: 1rem;
             margin-top: 1rem;
         }
-
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: #5b6e8c;
-            font-size: 0.8rem;
-        }
     </style>
 </head>
 
 <body>
+
     <header>
         <div class="header-content">
             <a href="/ura/">
                 <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
             </a>
-            <div class="header-title">Guía de Estudio Para el exámen de Matemáticas para los Negocios 2<br><span style="font-size:0.8rem;">Matrices ·
-                    Derivadas · Optimización</span></div>
-        </div>
+            <div class="header-title">
+                <a href="https://urauniversidad.com" target="_blank" style="text-decoration: none; color: inherit;">
+                    Universidad Regional de los Altos
+                </a>
+            </div>
     </header>
+
+    <div class="hero">
+        <h2 style="color: white;">Guía de estudio para el examen de Matemáticas Aplicadas a los Negocios 2</h2>
+        <h2 style="color: white;">18 abril 2026</h2>
+        <a href="/ura/neg2/examen.html" class="apple-button">Ir al examen ahora!</a>
+    </div>
 
     <div class="container">
         <div class="progress-wrapper">
@@ -251,7 +215,8 @@
         </div>
 
         <div id="ejerciciosContainer"></div>
-        <footer>Estudio activo: revisa cada ejercicio, despliega el desarrollo y verifica tus respuestas. ¡Practica!
+        <footer>
+            © 2025 Universidad URA – Campus Bahía de Banderas San Vicente NAY
         </footer>
     </div>
 
@@ -261,7 +226,7 @@
         // --------------------------------------------------------------
         const ejercicios = [
             // TEMA 1: MATRICES
-            { tema: "1.1 Definición de matriz, orden y nomenclatura", titulo: "Ejercicio 1: Orden y nomenclatura", consigna: "Dada la matriz \\(A = \\begin{bmatrix} 2 & -1 & 0 \\\\ 4 & 3 & 5 \\end{bmatrix}\\), indica su orden y nomenclatura.", desarrollo: "Línea 1: La matriz tiene 2 filas y 3 columnas.<br>Concepto: Se cuentan las filas (horizontales) y las columnas (verticales).<br>Línea 2: Por lo tanto, su orden es \\(2 \\times 3\\) (se lee “2 por 3”).<br>Concepto: El orden de una matriz se expresa como \\(m \\times n\\), donde \\(m\\) es el número de filas y \\(n\\) el de columnas.<br>Línea 3: La nomenclatura es \\(A=[a_{ij}]\\) con \\(i=1,2\\) y \\(j=1,2,3\\).<br>Concepto: \\(a_{ij}\\) representa el elemento de la fila \\(i\\), columna \\(j\\)." },
+            { tema: "1.1 Definición de matriz, orden y nomenclatura", titulo: "Ejercicio 1: Orden y nomenclatura", consigna: "Dada la matriz \\(A = \\begin{bmatrix} 2 & -1 & 0 \\\\ 4 & 3 & 5 \\end{bmatrix}\\), indica su orden y nomenclatura.", desarrollo: "Línea 1: La matriz tiene 2 filas y 3 columnas.<br>Concepto: Se cuentan las filas (horizontales) y las columnas (verticales).<br>Línea 2: Por lo tanto, su orden es \\(2 \\times 3\\) (se lee \"2 por 3\").<br>Concepto: El orden de una matriz se expresa como \\(m \\times n\\), donde \\(m\\) es el número de filas y \\(n\\) el de columnas.<br>Línea 3: La nomenclatura es \\(A=[a_{ij}]\\) con \\(i=1,2\\) y \\(j=1,2,3\\).<br>Concepto: \\(a_{ij}\\) representa el elemento de la fila \\(i\\), columna \\(j\\)." },
             { tema: "1.1 Definición", titulo: "Ejercicio 2: Igualdad de matrices", consigna: "Encuentra los valores de \\(x, y, z\\) si \\(\\begin{bmatrix} x+y & 3 \\\\ 2x-y & z \\end{bmatrix} = \\begin{bmatrix} 5 & 3 \\\\ 0 & 4 \\end{bmatrix}\\).", desarrollo: "Línea 1: Igualamos elemento a elemento por definición de igualdad de matrices.<br>Concepto: Dos matrices son iguales si tienen el mismo orden y sus elementos correspondientes son iguales.<br>Línea 2: \\(x+y=5\\) (ecuación 1).<br>Línea 3: \\(2x-y=0\\) (ecuación 2).<br>Línea 4: \\(z=4\\).<br>Línea 5: Sumando: \\((x+y)+(2x-y)=5+0 \\rightarrow 3x=5 \\rightarrow x=5/3\\).<br>Línea 6: Sustituyendo: \\(5/3 + y =5 \\rightarrow y=10/3\\).<br>Línea 7: Solución: \\(x=5/3,\\; y=10/3,\\; z=4\\)." },
             { tema: "1.2 Clasificación de matrices", titulo: "Ejercicio 3: Clasificar matrices", consigna: "Clasifica según tipo: \\(A=\\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}, B=\\begin{bmatrix}2&0\\\\0&-3\\end{bmatrix}, C=\\begin{bmatrix}1&2&3\\\\4&5&6\\end{bmatrix}, D=\\begin{bmatrix}3&4\\\\0&5\\\\0&0\\end{bmatrix}, E=\\begin{bmatrix}2&1&0\\\\0&3&4\\\\0&0&5\\end{bmatrix}\\).", desarrollo: "Línea 1: \\(A\\) es \\(2\\times2\\), unos en diagonal y ceros fuera → identidad.<br>Línea 2: \\(B\\) cuadrada, solo diagonal no nula → diagonal.<br>Línea 3: \\(C\\) es \\(2\\times3\\), filas≠columnas → rectangular.<br>Línea 4: \\(D\\) es \\(3\\times2\\), rectangular (clasificación triangular solo para cuadradas).<br>Línea 5: \\(E\\) es \\(3\\times3\\), ceros debajo de diagonal principal → triangular superior." },
             { tema: "1.3 Operaciones (suma)", titulo: "Ejercicio 4: Suma de matrices", consigna: "\\(A=\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}, B=\\begin{bmatrix}5&6\\\\7&8\\end{bmatrix}\\). Calcula \\(A+B\\).", desarrollo: "Línea 1: Verificamos mismo orden \\(2\\times2\\).<br>Concepto: La suma está definida si tienen el mismo orden.<br>Línea 2: Sumamos elemento a elemento: \\(\\begin{bmatrix}1+5 & 2+6\\\\3+7 & 4+8\\end{bmatrix}\\).<br>Línea 3: Resultado: \\(\\begin{bmatrix}6&8\\\\10&12\\end{bmatrix}\\)." },
