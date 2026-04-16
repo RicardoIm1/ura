@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Guía de estudio | Matemáticas para los Negocios 2</title>
-    <!-- Tipografía moderna -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap"
-        rel="stylesheet">
     <!-- MathJax: configuración e inicio -->
     <script>
         window.MathJax = {
@@ -20,9 +16,22 @@
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-    <!-- Confetti para celebración opcional -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-dark-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-blue: #0071e3;
+            --apple-blue-hover: #0077ed;
+            --apple-gradient: linear-gradient(135deg, #0077CC, #8A2BE2);
+            --apple-border-radius: 12px;
+            --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --apple-vibrant-blue: #0077CC;
+            --apple-vibrant-orange: #FF9500;
+            --apple-vibrant-green: #34C759;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -30,49 +39,157 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f4f7fc;
-            color: #1e293b;
-            line-height: 1.5;
+            font-family: -apple-system, "BlinkMacSystemFont", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+            background: #ffffff;
+            color: var(--apple-black);
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
         }
 
+        /* Header estilo Apple */
         header {
-            background: linear-gradient(135deg, #0f2b6d, #1e3a8a);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 22px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         .header-content {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            justify-content: space-between;
             flex-wrap: wrap;
         }
 
         .header-logo {
-            height: 55px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 14px;
-            padding: 6px 12px;
-            font-weight: 700;
-            font-size: 1.4rem;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 12px;
         }
 
-        .header-logo img {
-            height: 42px;
-            width: auto;
+        .header-logo a {
+            background: rgba(0, 119, 204, 0.1);
+            border-radius: 12px;
+            padding: 6px 14px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--apple-vibrant-blue);
+            transition: var(--apple-transition);
+        }
+
+        .header-logo a:hover {
+            background: var(--apple-vibrant-blue);
+            color: white;
         }
 
         .header-title {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             letter-spacing: -0.3px;
+            color: var(--apple-black);
+        }
+
+        .header-title span {
+            font-size: 0.75rem;
+            color: var(--apple-dark-gray);
+            font-weight: 400;
+        }
+
+        /* Link descarado al examen */
+        .examen-link {
+            background: var(--apple-gradient);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--apple-transition);
+            box-shadow: 0 2px 8px rgba(0, 119, 204, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .examen-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 119, 204, 0.4);
+        }
+
+        .examen-link:active {
+            transform: scale(0.98);
+        }
+
+        /* Hero section */
+        .hero {
+            background: var(--apple-gradient);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.003em;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 21px;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        .hero .examen-link-hero {
+            display: inline-block;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--apple-transition);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero .examen-link-hero:hover {
+            background: white;
+            color: var(--apple-vibrant-blue);
+            transform: scale(1.05);
         }
 
         .container {
@@ -81,17 +198,17 @@
             padding: 0 1.2rem;
         }
 
-        /* barra progreso */
+        /* barra progreso estilo Apple */
         .progress-wrapper {
-            background: #e2e8f0;
+            background: var(--apple-light-gray);
             border-radius: 40px;
-            margin-bottom: 2rem;
-            box-shadow: inset 0 1px 3px #0001;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .progress-bar {
-            height: 12px;
-            background: #2563eb;
+            height: 8px;
+            background: var(--apple-gradient);
             width: 0%;
             border-radius: 40px;
             transition: width 0.35s ease;
@@ -101,49 +218,56 @@
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
-            margin-top: 6px;
-            color: #334155;
+            margin-bottom: 1.5rem;
+            color: var(--apple-dark-gray);
             font-weight: 500;
         }
 
-        /* acordeones */
+        /* acordeones estilo Apple */
         .accordion {
             background: white;
-            border-radius: 1.2rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            transition: all 0.2s;
-            border: 1px solid #e2edff;
+            transition: var(--apple-transition);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .accordion:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
         }
 
         .accordion-header {
             background: #ffffff;
             padding: 1rem 1.5rem;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eef2ff;
             transition: background 0.2s;
         }
 
         .accordion-header:hover {
-            background: #f8fafc;
+            background: var(--apple-light-gray);
         }
 
         .accordion-header span:first-child {
-            color: #0f2b6d;
+            color: var(--apple-black);
+        }
+
+        .accordion-header span:first-child strong {
+            color: var(--apple-vibrant-blue);
         }
 
         .status-badge {
-            font-size: 0.75rem;
-            background: #eef2ff;
-            padding: 4px 10px;
+            font-size: 0.7rem;
+            background: var(--apple-light-gray);
+            padding: 4px 12px;
             border-radius: 30px;
-            color: #1e3a8a;
+            color: var(--apple-dark-gray);
             font-weight: 500;
         }
 
@@ -151,7 +275,7 @@
             display: none;
             padding: 1.2rem 1.5rem 1.8rem;
             background: #fefefe;
-            border-top: 1px solid #eef2ff;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .accordion.active .accordion-content {
@@ -159,73 +283,95 @@
         }
 
         .math-block {
-            background: #f8fafd;
-            padding: 0.8rem 1rem;
+            background: var(--apple-light-gray);
+            padding: 1rem 1.2rem;
             border-radius: 16px;
             margin: 1rem 0;
-            font-family: monospace;
             overflow-x: auto;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid var(--apple-vibrant-blue);
+            font-size: 0.95rem;
         }
 
         .desarrollo {
-            background: #f1f5f9;
-            border-radius: 14px;
-            padding: 1rem;
+            background: var(--apple-light-gray);
+            border-radius: 16px;
+            padding: 1rem 1.2rem;
             margin: 1rem 0;
-            font-size: 0.95rem;
-            border: 1px solid #e0e7ff;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            line-height: 1.5;
         }
 
         .desarrollo p {
             margin: 0.5rem 0;
         }
 
-        .concepto {
-            font-style: italic;
-            color: #2c3e66;
-            border-left: 3px solid #3b82f6;
-            padding-left: 12px;
-            margin: 8px 0;
-            background: #ffffffc9;
-            border-radius: 0 8px 8px 0;
-        }
-
         .btn-toggle {
-            background: #eef2ff;
+            background: rgba(0, 119, 204, 0.1);
             border: none;
             font-size: 0.8rem;
-            padding: 5px 12px;
-            border-radius: 30px;
+            padding: 8px 20px;
+            border-radius: 980px;
             font-weight: 600;
             cursor: pointer;
-            color: #1e3a8a;
-            transition: 0.2s;
+            color: var(--apple-vibrant-blue);
+            transition: var(--apple-transition);
             margin-top: 8px;
         }
 
         .btn-toggle:hover {
-            background: #d9e4ff;
+            background: var(--apple-vibrant-blue);
+            color: white;
         }
 
         hr {
             margin: 16px 0;
             border: none;
-            border-top: 1px solid #e2edff;
-        }
-
-        .quiz-area {
-            background: #f0f7ff;
-            border-radius: 18px;
-            padding: 1rem;
-            margin-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
         }
 
         footer {
             text-align: center;
             padding: 2rem 1rem;
-            color: #5b6e8c;
+            color: var(--apple-dark-gray);
             font-size: 0.8rem;
+            background: var(--apple-light-gray);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .header-title {
+                font-size: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            header {
+                height: auto;
+                padding: 10px 16px;
+            }
+
+            .examen-link {
+                padding: 6px 16px;
+                font-size: 0.85rem;
+            }
+
+            .accordion-header {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -233,35 +379,45 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="/ura/">
-                <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+            <div class="header-logo">
+                <a href="/ura/">📐 URA</a>
+                <div class="header-title">
+                    Matemáticas para los Negocios 2<br><span>Matrices · Derivadas · Optimización</span>
+                </div>
+            </div>
+            <!-- LINK DESCARDADO AL EXAMEN -->
+            <a href="/ura/neg2/180426/examen.html" class="examen-link">
+                📝 ¡IR AL EXAMEN YA! →
             </a>
-            <div class="header-title">Guía de Estudio Para el exámen de Matemáticas para los Negocios 2<br><span style="font-size:0.8rem;">Matrices ·
-                    Derivadas · Optimización</span></div>
         </div>
     </header>
+
+    <section class="hero">
+        <h1>📚 Guía de estudio</h1>
+        <p>30 ejercicios resueltos para practicar · Domina matrices, derivadas y optimización</p>
+        <a href="/ura/neg2/180426/examen.html" class="examen-link-hero">
+            🎯 ¿Listo para el examen? Haz clic aquí
+        </a>
+    </section>
 
     <div class="container">
         <div class="progress-wrapper">
             <div class="progress-bar" id="globalProgress"></div>
         </div>
         <div class="stats">
-            <span>✅ Progreso general</span>
+            <span>✅ Progreso de estudio</span>
             <span id="progressText">0%</span>
         </div>
 
         <div id="ejerciciosContainer"></div>
-        <footer>Estudio activo: revisa cada ejercicio, despliega el desarrollo y verifica tus respuestas. ¡Practica!
+        <footer>
+            Estudio activo: revisa cada ejercicio, despliega el desarrollo y verifica tus respuestas. ¡Practica!
         </footer>
     </div>
 
     <script>
-        // --------------------------------------------------------------
-        // DATOS COMPLETOS: 30 ejercicios desde el contenido original
-        // --------------------------------------------------------------
         const ejercicios = [
-            // TEMA 1: MATRICES
-            { tema: "1.1 Definición de matriz, orden y nomenclatura", titulo: "Ejercicio 1: Orden y nomenclatura", consigna: "Dada la matriz \\(A = \\begin{bmatrix} 2 & -1 & 0 \\\\ 4 & 3 & 5 \\end{bmatrix}\\), indica su orden y nomenclatura.", desarrollo: "Línea 1: La matriz tiene 2 filas y 3 columnas.<br>Concepto: Se cuentan las filas (horizontales) y las columnas (verticales).<br>Línea 2: Por lo tanto, su orden es \\(2 \\times 3\\) (se lee “2 por 3”).<br>Concepto: El orden de una matriz se expresa como \\(m \\times n\\), donde \\(m\\) es el número de filas y \\(n\\) el de columnas.<br>Línea 3: La nomenclatura es \\(A=[a_{ij}]\\) con \\(i=1,2\\) y \\(j=1,2,3\\).<br>Concepto: \\(a_{ij}\\) representa el elemento de la fila \\(i\\), columna \\(j\\)." },
+            { tema: "1.1 Definición de matriz, orden y nomenclatura", titulo: "Ejercicio 1: Orden y nomenclatura", consigna: "Dada la matriz \\(A = \\begin{bmatrix} 2 & -1 & 0 \\\\ 4 & 3 & 5 \\end{bmatrix}\\), indica su orden y nomenclatura.", desarrollo: "Línea 1: La matriz tiene 2 filas y 3 columnas.<br>Concepto: Se cuentan las filas (horizontales) y las columnas (verticales).<br>Línea 2: Por lo tanto, su orden es \\(2 \\times 3\\) (se lee \"2 por 3\").<br>Concepto: El orden de una matriz se expresa como \\(m \\times n\\), donde \\(m\\) es el número de filas y \\(n\\) el de columnas.<br>Línea 3: La nomenclatura es \\(A=[a_{ij}]\\) con \\(i=1,2\\) y \\(j=1,2,3\\).<br>Concepto: \\(a_{ij}\\) representa el elemento de la fila \\(i\\), columna \\(j\\)." },
             { tema: "1.1 Definición", titulo: "Ejercicio 2: Igualdad de matrices", consigna: "Encuentra los valores de \\(x, y, z\\) si \\(\\begin{bmatrix} x+y & 3 \\\\ 2x-y & z \\end{bmatrix} = \\begin{bmatrix} 5 & 3 \\\\ 0 & 4 \\end{bmatrix}\\).", desarrollo: "Línea 1: Igualamos elemento a elemento por definición de igualdad de matrices.<br>Concepto: Dos matrices son iguales si tienen el mismo orden y sus elementos correspondientes son iguales.<br>Línea 2: \\(x+y=5\\) (ecuación 1).<br>Línea 3: \\(2x-y=0\\) (ecuación 2).<br>Línea 4: \\(z=4\\).<br>Línea 5: Sumando: \\((x+y)+(2x-y)=5+0 \\rightarrow 3x=5 \\rightarrow x=5/3\\).<br>Línea 6: Sustituyendo: \\(5/3 + y =5 \\rightarrow y=10/3\\).<br>Línea 7: Solución: \\(x=5/3,\\; y=10/3,\\; z=4\\)." },
             { tema: "1.2 Clasificación de matrices", titulo: "Ejercicio 3: Clasificar matrices", consigna: "Clasifica según tipo: \\(A=\\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}, B=\\begin{bmatrix}2&0\\\\0&-3\\end{bmatrix}, C=\\begin{bmatrix}1&2&3\\\\4&5&6\\end{bmatrix}, D=\\begin{bmatrix}3&4\\\\0&5\\\\0&0\\end{bmatrix}, E=\\begin{bmatrix}2&1&0\\\\0&3&4\\\\0&0&5\\end{bmatrix}\\).", desarrollo: "Línea 1: \\(A\\) es \\(2\\times2\\), unos en diagonal y ceros fuera → identidad.<br>Línea 2: \\(B\\) cuadrada, solo diagonal no nula → diagonal.<br>Línea 3: \\(C\\) es \\(2\\times3\\), filas≠columnas → rectangular.<br>Línea 4: \\(D\\) es \\(3\\times2\\), rectangular (clasificación triangular solo para cuadradas).<br>Línea 5: \\(E\\) es \\(3\\times3\\), ceros debajo de diagonal principal → triangular superior." },
             { tema: "1.3 Operaciones (suma)", titulo: "Ejercicio 4: Suma de matrices", consigna: "\\(A=\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}, B=\\begin{bmatrix}5&6\\\\7&8\\end{bmatrix}\\). Calcula \\(A+B\\).", desarrollo: "Línea 1: Verificamos mismo orden \\(2\\times2\\).<br>Concepto: La suma está definida si tienen el mismo orden.<br>Línea 2: Sumamos elemento a elemento: \\(\\begin{bmatrix}1+5 & 2+6\\\\3+7 & 4+8\\end{bmatrix}\\).<br>Línea 3: Resultado: \\(\\begin{bmatrix}6&8\\\\10&12\\end{bmatrix}\\)." },
@@ -272,7 +428,6 @@
             { tema: "1.4 Representación matricial", titulo: "Ejercicio 9: Sistema a forma matricial", consigna: "Expresa \\(\\begin{cases}2x+3y=5\\\\4x-y=1\\end{cases}\\) en forma matricial.", desarrollo: "Línea 1: Matriz coeficientes \\(A=\\begin{bmatrix}2&3\\\\4&-1\\end{bmatrix}\\), vector \\(X=\\begin{bmatrix}x\\\\y\\end{bmatrix}\\), constantes \\(B=\\begin{bmatrix}5\\\\1\\end{bmatrix}\\).<br>Representación: \\(AX=B\\)." },
             { tema: "1.4 Matriz inversa", titulo: "Ejercicio 10: Inversa 2x2", consigna: "Calcula la inversa de \\(A=\\begin{bmatrix}2&3\\\\1&4\\end{bmatrix}\\).", desarrollo: "Fórmula: \\(A^{-1}=\\frac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}\\).<br>Determinante: \\(2\\cdot4-3\\cdot1=8-3=5\\).<br>\\(A^{-1}=\\frac{1}{5}\\begin{bmatrix}4&-3\\\\-1&2\\end{bmatrix}=\\begin{bmatrix}4/5&-3/5\\\\-1/5&2/5\\end{bmatrix}\\)." },
             { tema: "1.4 Gauss-Jordan", titulo: "Ejercicio 11: Sistema por Gauss-Jordan", consigna: "Resuelve el sistema del ejercicio 9 por Gauss-Jordan.", desarrollo: "Matriz ampliada: \\(\\begin{bmatrix}2&3&5\\\\4&-1&1\\end{bmatrix}\\).<br>F1/2: \\([1\\;1.5\\;2.5]\\)<br>F2 = F2 -4F1: \\([0\\;-7\\;-9]\\)<br>F2/-7: \\([0\\;1\\;9/7]\\)<br>F1 = F1 -1.5F2: \\([1\\;0\\;4/7]\\)<br>Solución: \\(x=4/7,\\; y=9/7\\)." },
-            // TEMA 2: DERIVADAS
             { tema: "2.1 Dominio", titulo: "Ejercicio 12: Dominio función", consigna: "Encuentra el dominio de \\(f(x)=\\frac{1}{x-2}+\\sqrt{x+1}\\).", desarrollo: "Para \\(\\frac{1}{x-2}\\), \\(x\\neq2\\).<br>Para \\(\\sqrt{x+1}\\), \\(x+1\\ge0 \\Rightarrow x\\ge-1\\).<br>Intersección: \\(x\\ge-1\\) y \\(x\\neq2\\).<br>Dominio: \\([-1,2)\\cup(2,\\infty)\\)." },
             { tema: "2.1 Rango", titulo: "Ejercicio 13: Rango en intervalo", consigna: "Halla el rango de \\(f(x)=x^2+3\\) para \\(x\\in[-2,1]\\).", desarrollo: "Vértice en \\(x=0\\) (dentro). Evaluamos: \\(f(-2)=7, f(1)=4, f(0)=3\\).<br>Mínimo 3, máximo 7 → Rango: \\([3,7]\\)." },
             { tema: "2.2 Límite", titulo: "Ejercicio 14: Límite algebraico", consigna: "Calcula \\(\\lim_{x\\to 2}\\frac{x^2-4}{x-2}\\).", desarrollo: "Factorizamos: \\(\\frac{(x-2)(x+2)}{x-2}=x+2\\), \\(x\\neq2\\).<br>Límite: \\(2+2=4\\)." },
@@ -284,7 +439,6 @@
             { tema: "2.4 Interpretación geométrica", titulo: "Ejercicio 20: Pendiente tangente", consigna: "Halla pendiente de \\(f(x)=x^2\\) en \\(x=3\\).", desarrollo: "\\(f'(x)=2x\\), \\(f'(3)=6\\). Pendiente = 6." },
             { tema: "2.4 Ecuación recta tangente", titulo: "Ejercicio 21: Recta tangente", consigna: "Ecuación de la tangente a \\(f(x)=x^2\\) en \\(x=3\\).", desarrollo: "Punto \\((3,9)\\), pendiente 6. Ecuación: \\(y-9=6(x-3) \\Rightarrow y=6x-9\\)." },
             { tema: "2.4 Rapidez de cambio", titulo: "Ejercicio 22: Velocidad instantánea", consigna: "\\(s(t)=t^3-2t+1\\), halla velocidad en \\(t=2\\).", desarrollo: "\\(v(t)=s'(t)=3t^2-2\\). \\(v(2)=3(4)-2=10\\) m/s." },
-            // TEMA 3: OPTIMIZACIÓN
             { tema: "3.1 Segunda derivada", titulo: "Ejercicio 23: Segunda derivada", consigna: "Halla \\(f''(x)\\) de \\(f(x)=x^3-3x^2+2x-1\\).", desarrollo: "\\(f'(x)=3x^2-6x+2\\), \\(f''(x)=6x-6\\)." },
             { tema: "3.1 Criterio segunda derivada", titulo: "Ejercicio 24: Máx/mín con 2da derivada", consigna: "Para \\(f(x)=x^3-3x^2+2\\), determina si \\(x=2\\) es máximo o mínimo.", desarrollo: "\\(f'(x)=3x^2-6x=3x(x-2)\\), puntos críticos \\(x=0,2\\).<br>\\(f''(x)=6x-6\\), \\(f''(2)=6>0\\) → mínimo local." },
             { tema: "3.2 Extremos absolutos", titulo: "Ejercicio 25: Extremos en intervalo", consigna: "Extremos absolutos de \\(f(x)=x^3-3x^2+2\\) en \\([-1,3]\\).", desarrollo: "Críticos: \\(0,2\\). Evaluamos: \\(f(-1)=-2, f(0)=2, f(2)=-2, f(3)=2\\).<br>Máx absoluto =2 en \\(x=0,3\\); mín absoluto =-2 en \\(x=-1,2\\)." },
@@ -295,7 +449,7 @@
             { tema: "3.3 Ingreso vs utilidad", titulo: "Ejercicio 30: Maximizar ingreso y utilidad", consigna: "Precio \\(p=50-0.5q\\), costo \\(C(q)=10q+200\\). Hallar q que max ingreso y max utilidad.", desarrollo: "Ingreso \\(R(q)=50q-0.5q^2\\), \\(R'(q)=50-q=0\\) → \\(q=50\\) max ingreso.<br>Utilidad \\(U(q)=40q-0.5q^2-200\\), \\(U'(q)=40-q=0\\) → \\(q=40\\) max utilidad." }
         ];
 
-        let ejerciciosEstado = new Array(ejercicios.length).fill(false); // false = desarrollo oculto (visto?)
+        let ejerciciosEstado = new Array(ejercicios.length).fill(false);
 
         function actualizarProgreso() {
             const revisados = ejerciciosEstado.filter(v => v === true).length;
@@ -309,34 +463,16 @@
             }
         }
 
-        function toggleDesarrollo(idx, btnElement, contentId) {
-            const contentDiv = document.getElementById(contentId);
-            if (!contentDiv) return;
-            const isVisible = contentDiv.style.display !== "none";
-            if (!isVisible) {
-                contentDiv.style.display = "block";
-                btnElement.innerText = "Ocultar desarrollo";
-                ejerciciosEstado[idx] = true;
-            } else {
-                contentDiv.style.display = "none";
-                btnElement.innerText = "Mostrar desarrollo";
-                // no cambiamos estado a false para mantener progreso si ya se mostró alguna vez.
-            }
-            actualizarProgreso();
-        }
-
         function renderEjercicios() {
             const container = document.getElementById("ejerciciosContainer");
             if (!container) return;
             let html = "";
             ejercicios.forEach((ej, i) => {
                 const uniqueId = `dev-${i}`;
-                const headerId = `header-${i}`;
-                const isActive = false; // inicial cerrado
                 html += `
                 <div class="accordion" id="accordion-${i}">
                     <div class="accordion-header" data-idx="${i}">
-                        <span><strong>${ej.titulo}</strong><br><span style="font-size:0.75rem; color:#4b5563;">${ej.tema}</span></span>
+                        <span><strong>${ej.titulo}</strong><br><span style="font-size:0.7rem; color:var(--apple-dark-gray);">${ej.tema}</span></span>
                         <span class="status-badge" id="badge-${i}">📘 ejercicio</span>
                     </div>
                     <div class="accordion-content" id="content-${i}">
@@ -357,7 +493,6 @@
             });
             container.innerHTML = html;
 
-            // Eventos para acordeones (abrir/cerrar)
             for (let i = 0; i < ejercicios.length; i++) {
                 const header = document.querySelector(`.accordion-header[data-idx="${i}"]`);
                 const contentPanel = document.getElementById(`content-${i}`);
@@ -387,7 +522,6 @@
                     });
                 }
             }
-            // Inicializar progreso
             actualizarProgreso();
         }
 
