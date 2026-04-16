@@ -1,30 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Galería de imágenes</title>
-    <style>
-        .galeria { display: flex; flex-wrap: wrap; gap: 10px; }
-        .galeria img { width: 200px; border: 1px solid #ccc; padding: 5px; }
-    </style>
-</head>
 <body>
-    <h1>Mis imágenes</h1>
-    <div class="galeria" id="galeria"></div>
-
-    <script>
-        // Cambia ESTE_ID por el ID de UNA de tus imágenes (ej: el de 01.png)
-        const BASE_ID = "1gyH3otqr1fCC0O-AtU4TT94EXf9e7PTm";  // <-- Pon aquí el ID de una imagen
-        const TOTAL = 30;
-
-        const galeria = document.getElementById('galeria');
-        
-        for (let i = 1; i <= TOTAL; i++) {
-            let num = i.toString().padStart(2, '0');
-            // Asume que los IDs son iguales excepto el nombre del archivo
-            // Esto NO funciona porque cada imagen tiene ID único.
-            // Solo es válido si usas el mismo ID base (no es tu caso).
-            alert("Cada imagen tiene ID diferente. Mejor usa Método 1");
-        }
-    </script>
+    <h2>Galería de clase</h2>
+    <div style="display: flex; gap: 10px;">
+        <img src="https://drive.google.com/uc?export=view&id=ID_01" width="200">
+        <img src="https://drive.google.com/uc?export=view&id=ID_02" width="200">
+        <img src="https://drive.google.com/uc?export=view&id=ID_03" width="200">
+        <!-- Agrega hasta 30 -->
+    </div>
 </body>
 </html>
