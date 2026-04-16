@@ -1,77 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Matemáticas - Galería de estudio</title>
+    <title>Examen Matemáticas Aplicadas a los Negocios 2 - 18 abr 2026</title>
+    <link rel="stylesheet" href="/ura/css/estilo.css">
     <style>
-        :root {
-            --apple-black: #1d1d1f;
-            --apple-dark-gray: #86868b;
-            --apple-light-gray: #f5f5f7;
-            --apple-blue: #0071e3;
-            --apple-gradient: linear-gradient(135deg, #0077CC, #8A2BE2);
-            --apple-border-radius: 12px;
-            --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-            --apple-vibrant-orange: #FF9500;
-            --apple-vibrant-green: #34C759;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, "BlinkMacSystemFont", "SF Pro Text", "Helvetica Neue", sans-serif;
-        }
-
-        body {
-            background: #ffffff;
-            color: var(--apple-black);
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 0 22px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero {
-            background: var(--apple-gradient);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .hero p {
-            font-size: 21px;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 22px;
-        }
-
         /* Grid de miniaturas */
         .miniaturas-grid {
             display: grid;
@@ -91,7 +26,7 @@
 
         .miniatura:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .miniatura img {
@@ -130,7 +65,7 @@
             max-height: 85vh;
             object-fit: contain;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         /* Botones de navegación */
@@ -138,7 +73,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border: none;
             width: 48px;
@@ -155,7 +90,7 @@
         }
 
         .btn-nav:hover {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
             transform: translateY(-50%) scale(1.05);
         }
 
@@ -171,7 +106,7 @@
             position: absolute;
             top: 20px;
             right: 30px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border: none;
             width: 44px;
@@ -187,7 +122,7 @@
         }
 
         .btn-cerrar:hover {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
         }
 
         .contador-modal {
@@ -195,7 +130,7 @@
             bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 8px 20px;
             border-radius: 30px;
@@ -210,34 +145,23 @@
             color: var(--apple-dark-gray);
             margin-bottom: 30px;
         }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--apple-dark-gray);
-            background: var(--apple-light-gray);
-            margin-top: 50px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .miniaturas-grid { gap: 8px; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); }
-            .btn-nav { width: 36px; height: 36px; font-size: 20px; }
-            .btn-prev { left: 10px; }
-            .btn-next { right: 10px; }
-            .btn-cerrar { top: 10px; right: 15px; width: 36px; height: 36px; font-size: 20px; }
-        }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="header-content">📐 Examen de Matemáticas</div>
+        <div class="header-content">
+            <a href="/ura/">
+                <img src="/ura/img/logo-ura.png" alt="Logotipo URA" class="header-logo">
+            </a>
+            <div class="header-title">Matemáticas Aplicadas a los Negocios 2</div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>📚 Repaso visual</h1>
-        <p>30 imágenes para tu segundo examen · Haz clic en cualquier miniatura</p>
-    </section>
+    <div class="hero">
+        <h1>Matemáticas Aplicadas a los Negocios 2</h1>
+        <h2>Examen 18 abr 2026</h2>
+    </div>
 
     <div class="container">
         <div class="subtitulo">
@@ -247,7 +171,8 @@
     </div>
 
     <footer>
-        <p>Segundo examen de Matemáticas · ¡Mucho éxito!</p>
+        © 2025 Universidad URA – Asignatura
+        <a href="/ura/" class="no-style-link materias" target="_self">Inicio.</a>
     </footer>
 
     <!-- Modal tipo carrusel -->
@@ -265,83 +190,83 @@
         // Configuración
         const totalImagenes = 30;
         const rutaBase = '/ura/neg2/180426/img/';
-        
+
         let indiceActual = 0;
         let imagenes = [];
-        
+
         const galeriaDiv = document.getElementById('galeria');
         const modal = document.getElementById('modalCarrusel');
         const imagenModal = document.getElementById('imagenModal');
         const contadorModal = document.getElementById('contadorModal');
-        
+
         // Cargar todas las rutas
         for (let i = 1; i <= totalImagenes; i++) {
             let numero = i.toString().padStart(2, '0');
             imagenes.push(`${rutaBase}${numero}.png`);
         }
-        
+
         // Generar miniaturas
         imagenes.forEach((src, idx) => {
             const numero = (idx + 1).toString().padStart(2, '0');
             const miniaturaDiv = document.createElement('div');
             miniaturaDiv.className = 'miniatura';
-            
+
             const img = document.createElement('img');
             img.src = src;
             img.alt = `Imagen ${numero}`;
             img.loading = 'lazy';
-            
+
             img.onerror = () => {
                 img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="%2386868b"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 8h-4v4h-4v-4H6V9h4V5h4v4h4v2z%22/%3E%3C/svg%3E';
                 img.style.objectFit = 'contain';
                 img.style.padding = '20px';
             };
-            
+
             miniaturaDiv.appendChild(img);
             miniaturaDiv.addEventListener('click', () => abrirCarrusel(idx));
             galeriaDiv.appendChild(miniaturaDiv);
         });
-        
+
         // Abrir modal en índice específico
         function abrirCarrusel(indice) {
             indiceActual = indice;
             actualizarImagenModal();
             modal.classList.add('active');
         }
-        
+
         // Actualizar imagen y contador
         function actualizarImagenModal() {
             imagenModal.src = imagenes[indiceActual];
             contadorModal.textContent = `Imagen ${indiceActual + 1} / ${totalImagenes}`;
         }
-        
+
         // Navegación
         function siguienteImagen() {
             indiceActual = (indiceActual + 1) % totalImagenes;
             actualizarImagenModal();
         }
-        
+
         function anteriorImagen() {
             indiceActual = (indiceActual - 1 + totalImagenes) % totalImagenes;
             actualizarImagenModal();
         }
-        
+
         // Eventos de navegación
         document.getElementById('btnNext').addEventListener('click', siguienteImagen);
         document.getElementById('btnPrev').addEventListener('click', anteriorImagen);
-        
+
         // Cerrar modal
         document.getElementById('cerrarModal').addEventListener('click', () => {
             modal.classList.remove('active');
         });
-        
+
         // Cerrar con click fuera
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
             }
         });
-        
+
         // Cerrar con tecla ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
@@ -352,8 +277,9 @@
                 if (e.key === 'ArrowLeft') anteriorImagen();
             }
         });
-        
+
         console.log(`✅ Carrusel listo con ${totalImagenes} imágenes`);
     </script>
 </body>
+
 </html>
