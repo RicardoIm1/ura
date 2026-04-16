@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Matemáticas - Material de estudio</title>
+    <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-dark-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-blue: #0071e3;
+            --apple-gradient: linear-gradient(135deg, #0077CC, #8A2BE2);
+            --apple-border-radius: 12px;
+            --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --apple-vibrant-orange: #FF9500;
+            --apple-vibrant-green: #34C759;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, "BlinkMacSystemFont", "SF Pro Text", "Helvetica Neue", sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: var(--apple-black);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 22px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: var(--apple-gradient);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 22px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            font-size: 18px;
+            color: var(--apple-dark-gray);
+            margin-bottom: 30px;
+        }
+
+        /* Grid de miniaturas */
+        .miniaturas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+        }
+
+        .miniatura {
+            background: var(--apple-light-gray);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--apple-transition);
+            aspect-ratio: 1 / 1;
+        }
+
+        .miniatura:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .miniatura img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Modal simple */
+        .modal-simple {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.96);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal-simple.active {
+            display: flex;
+        }
+
+        .modal-simple img {
+            max-width: 90%;
+            max-height: 85%;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            animation: fadeIn 0.2s ease;
+        }
+
+        .btn-cerrar-modal {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .btn-cerrar-modal:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 22px;
+            font-size: 17px;
+            color: var(--apple-dark-gray);
+            background: var(--apple-light-gray);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 18px; }
+            .miniaturas-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 12px;
+            }
+            .btn-cerrar-modal {
+                top: 16px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">📐 Segundo Examen de Matemáticas</div>
+    </header>
+
+    <section class="hero">
+        <h1>📚 Material de estudio</h1>
+        <p>30 imágenes para repasar · Haz clic en cualquier miniatura</p>
+    </section>
+
+    <div class="container">
+        <div class="subtitulo">
+            🖼️ Imágenes del 01 al 30
+        </div>
+        <div class="miniaturas-grid" id="galeria"></div>
+    </div>
+
+    <footer>
+        <p>¡Éxito en tu segundo examen! 🍀</p>
+    </footer>
+
+    <!-- Modal simple -->
+    <div id="modalSimple" class="modal-simple">
+        <button class="btn-cerrar-modal" id="cerrarModalBtn">✕</button>
+        <img id="imagenModal" src="" alt="Imagen ampliada">
+    </div>
+
+    <script>
+        // ============================================
+        // ⚠️ IMPORTANTE: CAMBIA ESTA RUTA SI ES NECESARIO
+        // ============================================
+        const totalImagenes = 30;
+        const rutaBase = '/ura/180426/img/';  // <--- VERIFICA ESTA RUTA
+        
+        // Para depuración: muestra la ruta en consola
+        console.log('📁 Ruta base configurada:', rutaBase);
+        console.log('🌐 URL actual:', window.location.href);
+        
+        const galeriaDiv = document.getElementById('galeria');
+        const modal = document.getElementById('modalSimple');
+        const imagenModal = document.getElementById('imagenModal');
+        const cerrarBtn = document.getElementById('cerrarModalBtn');
+        
+        // Generar miniaturas
+        for (let i = 1; i <= totalImagenes; i++) {
+            let numero = i.toString().padStart(2, '0');
+            let rutaCompleta = `${rutaBase}${numero}.png`;
+            
+            console.log(`🖼️ Intentando cargar: ${rutaCompleta}`);
+            
+            const miniaturaDiv = document.createElement('div');
+            miniaturaDiv.className = 'miniatura';
+            
+            const img = document.createElement('img');
+            img.src = rutaCompleta;
+            img.alt = `Imagen ${numero}`;
+            img.loading = 'lazy';
+            
+            // Si hay error al cargar la imagen
+            img.onerror = () => {
+                console.warn(`❌ No se pudo cargar: ${rutaCompleta}`);
+                // Mostrar un placeholder bonito
+                img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="%2386868b"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 8h-4v4h-4v-4H6V9h4V5h4v4h4v2z%22/%3E%3C/svg%3E';
+                img.style.objectFit = 'contain';
+                img.style.padding = '30px';
+                img.style.backgroundColor = '#f5f5f7';
+            };
+            
+            img.onload = () => {
+                console.log(`✅ Cargada correctamente: ${rutaCompleta}`);
+            };
+            
+            miniaturaDiv.appendChild(img);
+            
+            // Al hacer clic, abrir modal
+            miniaturaDiv.addEventListener('click', () => {
+                imagenModal.src = rutaCompleta;
+                modal.classList.add('active');
+                console.log(`🔍 Abriendo modal con: ${rutaCompleta}`);
+            });
+            
+            galeriaDiv.appendChild(miniaturaDiv);
+        }
+        
+        // Cerrar modal con el botón X
+        cerrarBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+        
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        console.log(`✅ Galería lista con ${totalImagenes} imágenes`);
+    </script>
+</body>
+</html>
