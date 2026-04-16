@@ -1,12 +1,432 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de imágenes - Clase</title>
+    <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-dark-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-blue: #0071e3;
+            --apple-blue-hover: #0077ed;
+            --apple-gradient: linear-gradient(135deg, var(--apple-vibrant-blue), #8A2BE2);
+            --apple-border-radius: 12px;
+            --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --apple-vibrant-blue: #0077CC;
+            --apple-vibrant-orange: #FF9500;
+            --apple-vibrant-green: #34C759;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, "Poppins", "BlinkMacSystemFont", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: var(--apple-black);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        /* Header estilo Apple */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 22px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--apple-black);
+        }
+
+        /* Hero section */
+        .hero {
+            background: var(--apple-gradient);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.003em;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 21px;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        /* Container general */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 22px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: -0.003em;
+        }
+
+        /* Galería estilo Apple */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .imagen-card {
+            background: var(--apple-light-gray);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--apple-transition);
+            cursor: pointer;
+        }
+
+        .imagen-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .imagen-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .imagen-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .imagen-info {
+            padding: 18px 20px 20px;
+            text-align: center;
+        }
+
+        .imagen-numero {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--apple-vibrant-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .imagen-titulo {
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--apple-black);
+        }
+
+        /* Modal para ver imagen grande */
+        .modal-imagen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal-imagen.active {
+            display: flex;
+        }
+
+        .modal-imagen img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 20px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-imagen .cerrar-modal {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            color: white;
+            font-size: 40px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            background: none;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-imagen .cerrar-modal:hover {
+            opacity: 0.7;
+            background: rgba(255,255,255,0.3);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Contador de imágenes */
+        .contador {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 17px;
+            color: var(--apple-dark-gray);
+        }
+
+        .contador span {
+            color: var(--apple-vibrant-blue);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 22px;
+            font-size: 17px;
+            color: var(--apple-dark-gray);
+            background: var(--apple-light-gray);
+            margin-top: 60px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .galeria {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+            
+            .imagen-card img {
+                height: 160px;
+            }
+            
+            .imagen-info {
+                padding: 12px;
+            }
+            
+            .imagen-numero {
+                font-size: 11px;
+            }
+            
+            .imagen-titulo {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
 <body>
-    <h2>Galería de clase</h2>
-    <div style="display: flex; gap: 10px;">
-        <img src="https://drive.google.com/uc?export=view&id=ID_01" width="200">
-        <img src="https://drive.google.com/uc?export=view&id=ID_02" width="200">
-        <img src="https://drive.google.com/uc?export=view&id=ID_03" width="200">
-        <!-- Agrega hasta 30 -->
+    <header>
+        <div class="header-content">
+            <span class="header-title">📸 Galería de clase</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Nuestras imágenes</h1>
+        <p>Explora el material visual de la clase · 30 imágenes disponibles</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">📷 Galería completa</h2>
+        <div class="contador">
+            🖼️ <span id="contador-cargadas">0</span> / <span id="total-imagenes">30</span> imágenes
+        </div>
+        <div class="galeria" id="galeria"></div>
     </div>
+
+    <footer>
+        <p>Material educativo · Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Modal para ver imagen ampliada -->
+    <div id="modalImagen" class="modal-imagen">
+        <button class="cerrar-modal" id="cerrarModal">✕</button>
+        <img id="modalImg" src="" alt="Imagen ampliada">
+    </div>
+
+    <script>
+        // Configuración - ¡CAMBIÁ ESTA RUTA SI ES NECESARIO!
+        const totalImagenes = 30;
+        const rutaBase = '/ura/180426/img/';  // Ruta donde están las imágenes
+        
+        const galeria = document.getElementById('galeria');
+        const contadorSpan = document.getElementById('contador-cargadas');
+        let imagenesCargadas = 0;
+        
+        const modal = document.getElementById('modalImagen');
+        const modalImg = document.getElementById('modalImg');
+        const cerrarModal = document.getElementById('cerrarModal');
+        
+        // Función para actualizar contador
+        function actualizarContador() {
+            contadorSpan.textContent = imagenesCargadas;
+        }
+        
+        // Función para abrir modal con imagen
+        function abrirImagen(src, alt) {
+            modalImg.src = src;
+            modalImg.alt = alt;
+            modal.classList.add('active');
+        }
+        
+        // Cerrar modal con click fuera o en la X
+        cerrarModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        // Generar las imágenes del 01 al 30
+        for (let i = 1; i <= totalImagenes; i++) {
+            let numero = i.toString().padStart(2, '0');
+            let nombreArchivo = `${numero}.png`;
+            let rutaCompleta = `${rutaBase}${nombreArchivo}`;
+            
+            // Crear card
+            const card = document.createElement('div');
+            card.className = 'imagen-card';
+            
+            const img = document.createElement('img');
+            img.src = rutaCompleta;
+            img.alt = `Imagen ${numero}`;
+            img.loading = 'lazy';
+            
+            // Manejar carga exitosa
+            img.onload = () => {
+                imagenesCargadas++;
+                actualizarContador();
+            };
+            
+            // Manejar error de carga
+            img.onerror = () => {
+                console.warn(`No se pudo cargar: ${rutaCompleta}`);
+                // Mostrar placeholder en caso de error
+                img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="%2386868b"%3E%3Cpath d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 8h-4v4h-4v-4H6V9h4V5h4v4h4v2z%22/%3E%3C/svg%3E';
+                img.style.objectFit = 'contain';
+                img.style.padding = '40px';
+                imagenesCargadas++;
+                actualizarContador();
+            };
+            
+            const info = document.createElement('div');
+            info.className = 'imagen-info';
+            
+            const numeroSpan = document.createElement('div');
+            numeroSpan.className = 'imagen-numero';
+            numeroSpan.textContent = `#${numero}`;
+            
+            const titulo = document.createElement('div');
+            titulo.className = 'imagen-titulo';
+            titulo.textContent = `Imagen ${numero}`;
+            
+            info.appendChild(numeroSpan);
+            info.appendChild(titulo);
+            card.appendChild(img);
+            card.appendChild(info);
+            
+            // Al hacer click en la card, abrir modal
+            card.addEventListener('click', () => {
+                abrirImagen(rutaCompleta, `Imagen ${numero}`);
+            });
+            
+            galeria.appendChild(card);
+        }
+        
+        console.log(`📸 Galería inicializada con ${totalImagenes} imágenes desde ${rutaBase}`);
+    </script>
 </body>
 </html>
