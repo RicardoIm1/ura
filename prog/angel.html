@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang=”es”>
+<head>
+  <meta charset=”UTF-8”>
+  <title>Calculadora</title>
+
+  <!—
+    Nombre de los integrantes: 
+-	Angel Gabriel López Palomera 
+
+    Nombre de la práctica: “Mi Calculadora”
+    Nombre de la materia: Fundamento de programación
+    Fecha de entrega: 18 de abril del 2026
+  
+
+  <!—Apariencia (CSS) 
+  <style>
+    Body {
+      Background: #0d0d0d;
+      Font-family:’Segoe UI’, sans-serif;
+      Display: flex;
+      Flex-direction: column;
+      Justify-content: flex-start;
+      Align-items: center;
+      Height: 100vh;
+      Margin: 0;
+      Color: #fff;
+    }
+    Header {
+      Text-align: center;
+      Margin: 20px;
+      Padding: 10px;
+      Background: #1ª1a1a;
+      Border-radius: 10px;
+      Box-shadow: 0 0 20px rgba(0,255,180,0.4);
+      Width: 90%;
+      Max-width: 600px;
+    }
+    Header h1 {
+      Margin: 5px 0;
+      Color: #0ff;
+    }
+    Header p {
+      Margin: 3px 0;
+    }
+    .calculator {
+      Background: #1ª1a1a;
+      Border-radius: 20px;
+      Box-shadow: 0 0 40px rgba(0,255,180,0.4);
+      Padding: 20px;
+      Width: 380px;
+    }
+    .display {
+      Background: #000;
+      Color: #0ff;
+      Font-size: 2em;
+      Text-align: right;
+      Padding: 15px;
+      Border-radius: 10px;
+      Margin-bottom: 20px;
+      Box-shadow: inset 0 0 10px #0ff;
+      Overflow-x: auto;
+    }
+    .buttons {
+      Display: grid;
+      Grid-template-columns: repeat(5, 1fr);
+      Gap: 10px;
+    }
+    Button {
+      Background: #222;
+      Color: #fff;
+      Font-size: 1em;
+      Padding: 15px;
+      Border: none;
+      Border-radius: 8px;
+      Cursor: pointer;
+      Transition: all 0.2s ease;
+      Box-shadow: 0 0 10px rgba(0,255,180,0.2);
+    }
+    Button:hover {
+      Background: #0ff;
+      Color: #000;
+      Box-shadow: 0 0 20px #0ff;
+    }
+    .span-2 { grid-column: span 2; }
+    .span-3 { grid-column: span 3; }
+    .equal {
+      Background: #0ff;
+      Color: #000;
+      Font-weight: bold;
+    }
+    .equal:hover {
+      Background: #00ffaa;
+      Box-shadow: 0 0 25px #00ffaa;
+    }
+  </style>
+</head>
+<body>
+  <!—Contenido (HTML) 
+  <header>
+    <h1>Mi Calculadora</h1>
+    <p><strong>Integrantes:</strong> Angel Gabriel López Palomera</p>
+    <p><strong>Materia:</strong> Fundamento de programación</p>
+    <p><strong>Fecha de entrega:</strong> 18 de abril del 2026</p>
+  </header>
+
+  <div class=”calculator”>
+    <div class=”display” id=”display”>0</div>
+    <div class=”buttons”>
+      <!—Botones de la calculadora 
+      <button onclick=”clearDisplay()”>C</button>
+      <button onclick=”deleteChar()”>⌫</button>
+      <button onclick=”append(‘(‘)”>(</button>
+      <button onclick=”append(‘)’)”>)</button>
+      <button onclick=”append(‘/’)”>÷</button>
+
+      <button onclick=”append(‘7’)”>7</button>
+      <button onclick=”append(‘8’)”>8</button>
+      <button onclick=”append(‘9’)”>9</button>
+      <button onclick=”append(‘*’)”>×</button>
+      <button onclick=”append(‘Math.sqrt(‘)”>√</button>
+
+      <button onclick=”append(‘4’)”>4</button>
+      <button onclick=”append(‘5’)”>5</button>
+      <button onclick=”append(‘6’)”>6</button>
+      <button onclick=”append(‘-‘)”>−</button>
+      <button onclick=”append(‘Math.pow(‘)”>^</button>
+
+      <button onclick=”append(‘1’)”>1</button>
+      <button onclick=”append(‘2’)”>2</button>
+      <button onclick=”append(‘3’)”>3</button>
+      <button onclick=”append(‘+’)”>+</button>
+      <button onclick=”append(‘Math.PI’)”>π</button>
+
+      <button class=”span-2” onclick=”append(‘0’)”>0</button>
+      <button onclick=”append(‘.’)”>.</button>
+      <button onclick=”calculate()” class=”equal span-2”>=</button>
+
+      <button onclick=”append(‘Math.sin(‘)”>sin</button>
+      <button onclick=”append(‘Math.cos(‘)”>cos</button>
+      <button onclick=”append(‘Math.tan(‘)”>tan</button>
+      <button onclick=”append(‘Math.log(‘)”>log</button>
+      <button onclick=”append(‘Math.exp(‘)”>exp</button>
+    </div>
+  </div>
+
+  <!—Lógica (JavaScript) 
+  <script>
+    Function append(value) {
+      Const display = document.getElementById(‘display’);
+      If (display.innerText === ‘0’) {
+        Display.innerText = value;
+      } else {
+        Display.innerText += value;
+      }
+    }
+    Function clearDisplay() {
+      Document.getElementById(‘display’).innerText = ‘0’;
+    }
+    Function deleteChar() {
+      Const display = document.getElementById(‘display’);
+      Display.innerText = display.innerText.slice(0, -1) || ‘0’;
+    }
+    Function calculate() {
+      Const display = document.getElementById(‘display’);
+      Try {
+        Const result = eval(display.innerText);
+        Display.innerText = result;
+      } catch € {
+        Display.innerText = ‘Error’;
+      }
+    }
+  </script>
+</body>
+</html>
