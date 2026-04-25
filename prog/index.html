@@ -210,7 +210,8 @@
           </li>
           <!-- 4 -->
           <li>
-            <button class="btn-trans" onclick="cargarTemaModal('1.3.1 Lenguaje de alto nivel, bajo nivel, ensamblador y máquina', '1.3.1')">
+            <button class="btn-trans"
+              onclick="cargarTemaModal('1.3.1 Lenguaje de alto nivel, bajo nivel, ensamblador y máquina', '1.3.1')">
               1.3.1 Lenguaje de alto nivel, bajo nivel, ensamblador y máquina
             </button>
           </li>
@@ -264,7 +265,8 @@
           </li>
           <!-- 13 -->
           <li>
-            <button class="btn-trans" onclick="cargarTemaModal('1.4.3 Programación de descripción de Hardware sistemas numéricos', '1.4.3')">
+            <button class="btn-trans"
+              onclick="cargarTemaModal('1.4.3 Programación de descripción de Hardware sistemas numéricos', '1.4.3')">
               1.4.3 Programación de descripción de Hardware sistemas numéricos
             </button>
           </li>
@@ -289,8 +291,7 @@
           </li>
           <!-- 16 -->
           <li>
-            <button class="btn-trans"
-              onclick="cargarTemaModal('2.2 Metodología de la programación', '2.2')">
+            <button class="btn-trans" onclick="cargarTemaModal('2.2 Metodología de la programación', '2.2')">
               2.2 Metodología de la programación
             </button>
           </li>
@@ -345,6 +346,146 @@
         <div class="card">
           <h3>Prácticas de laboratorio</h3>
           <p>Realiza prácticas de laboratorio de programación en el lenguaje C.</p>
+          <ul class="accordion-list">
+            <li>
+              <button class="accordion-btn">Elaboración de Calculadora Científica</button>
+              <div class="accordion-content">
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                  <li>Abrir una cuenta en <a href="https://github.com" target="_blank">GitHub</a>.io</li>
+                  <li>Abrir una cuenta en <a href="https://DeepSeek.com" target="_blank">DeepSeek</a>.io</li>
+                  <li>Deberás generar el código a través de un prompt y hospedarlo en linea para que sea de acceso público</li>
+                  <li>Debe realizar operaciones básicas (+, -, ×, ÷)</li>
+                  <li>Debe incluir funciones científicas (seno, coseno, tangente, raíz cuadrada, potencia)</li>
+                  <li>Debe tener cambio de tema (claro/oscuro)</li>
+                  <li>Diseño responsive (adaptable a móviles)</li>
+                  <li>Validación de errores (división entre cero, expresiones inválidas)</li>
+                  <li>Entregar código comentado y documentado</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button class="accordion-btn">Elaboración de Currículum Vitae</button>
+              <div class="accordion-content">
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                  <li>Datos personales</li>
+                  <li>Formación académica (escuela, período, título obtenido)</li>
+                  <li>Experiencia laboral (puesto, empresa, fechas, funciones)</li>
+                  <li>Habilidades y competencias (idiomas, software, certificaciones)</li>
+                  <li>Diseño profesional y atractivo (usar CSS moderno)</li>
+                  <li>Deberás generar el código a través de un prompt y hospedarlo en linea para que sea de acceso público</li>
+                  <li>Maquetado con HTML semántico y CSS Grid/Flexbox</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+        <style>
+          .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+
+          .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            padding-left: 12px;
+          }
+
+          .accordion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          .accordion-list li {
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+          }
+
+          .accordion-btn {
+            width: 100%;
+            background: #f8f9fa;
+            color: #2c3e50;
+            cursor: pointer;
+            padding: 14px 18px;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .accordion-btn:hover {
+            background: #e9ecef;
+          }
+
+          .accordion-btn::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+          }
+
+          .accordion-btn.active::after {
+            transform: rotate(180deg);
+          }
+
+          .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fefefe;
+            padding: 0 18px;
+          }
+
+          .accordion-content.show {
+            max-height: 500px;
+            padding: 12px 18px;
+          }
+
+          .accordion-content ul {
+            margin: 8px 0 8px 20px;
+          }
+
+          .accordion-content li {
+            margin: 6px 0;
+            border: none;
+          }
+
+          .accordion-content p {
+            margin: 8px 0;
+          }
+        </style>
+
+        <script>
+          document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+              // Cerrar los demás acordeones (opcional, para que solo uno abra a la vez)
+              document.querySelectorAll('.accordion-btn').forEach(btn => {
+                if (btn !== button) {
+                  btn.classList.remove('active');
+                  btn.nextElementSibling.classList.remove('show');
+                }
+              });
+
+              // Toggle el acordeón actual
+              button.classList.toggle('active');
+              const content = button.nextElementSibling;
+              content.classList.toggle('show');
+            });
+          });
+        </script>
         </div>
         <div class="card">
           <h3>Expon temas en equipos de trabajo</h3>
@@ -373,6 +514,7 @@
         <div class="card">
           <h3>Elabora reportes de prácticas de laboratorio</h3>
         </div>
+
         <div class="card">
           <h3>Elabora tareas</h3>
         </div>
@@ -386,15 +528,15 @@
       <div class="evaluacion-item tema-card">
         <div class="evaluacion-porcentaje">20%</div>
         <p class="evaluacion-desc">Dos exámenes parciales</p><br>
-        
+
         <div class="tema-list">
           <button type="button" class="apple-button" onclick="window.open('https://google.com.mx', '_blank')">
-          🔒 1er Parcial 
+            🔒 1er Parcial
           </button>
         </div>
         <div class="tema-list">
           <button type="button" class="apple-button" onclick="window.open('https://google.com.mx', '_blank')">
-          🔒 2do Parcial 
+            🔒 2do Parcial
           </button>
         </div>
       </div>
