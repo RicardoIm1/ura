@@ -158,7 +158,7 @@
 
         <p>Estructura típica de un pseudocódigo:</p>
 
-        <code>
+       <pre> <code>
 Algoritmo NombreDelAlgoritmo
     // Definición de variables
     Definir variable1, variable2 Como TipoDeDato (Entero, Real, Carácter, Lógico)
@@ -180,7 +180,7 @@ Algoritmo NombreDelAlgoritmo
     // Salida de datos
     Escribir "El resultado es: ", variable2
 FinAlgoritmo
-        </code>
+        </code></pre>
 
         <h2>2.4.1 Algoritmos en pseudocódigo (Ejemplos Prácticos)</h2>
 
@@ -189,7 +189,7 @@ FinAlgoritmo
         <h3>Ejemplo 1: Algoritmo Secuencial (sin decisiones)</h3>
         <p>Problema: Calcular el área de un rectangulo.</p>
 
-        <code>
+       <pre> <code>
 Algoritmo AreaRectangulo
 Definir base, altura, area Como Real
 
@@ -201,11 +201,11 @@ Leer altura
 area <- base * altura 
 Escribir "El área del rectángulo es: " , area 
 FinAlgoritmo
-        </code>
+        </code></pre>
 
         <h3>Ejemplo 2: Algoritmo Condicional (con decisión Si-Entonces)</h3>
         <p>Problema: Determinar si un número es par o impar.</p>
-        <code>
+      <pre>  <code>
 Algoritmo ParImpar 
 Definir numero Como Entero 
 Escribir "Ingresa un número entero:" 
@@ -217,12 +217,12 @@ Sino
     Escribir numero, " es un número IMPAR." 
 FinSi 
 FinAlgoritmo
-        </code>
+        </code></pre>
         <p>(Nota: MOD significa módulo, es el operador que obtiene el residuo de una división).</p>
 
         <h3>Ejemplo 3: Algoritmo Cíclico (con repetición Mientras)</h3>
         <p>Problema: Sumar todos los números del 1 al N (donde N lo da el usuario).</p>
-        <code>
+        <pre><code>
 Algoritmo SumaHastaN 
 Definir n, i, suma Como Entero 
 Escribir "¿Hasta qué número quieres sumar?" 
@@ -235,7 +235,7 @@ Mientras (i <= n) Hacer
 FinMientras 
 Escribir "La suma de 1 a " , n, " es: " , suma 
 FinAlgoritmo
-        </code>
+        </code></pre>
 
         <h2>3 INTRODUCCION A LENGUAJE C</h2>
 
@@ -268,7 +268,7 @@ FinAlgoritmo
         <h2>3.2 Estructura básica de un programa en C</h2>
         <p>Todo programa en C tiene una estructura definida. Es como el esqueleto sobre el que construyes todo.</p>
 
-        <code>
+     <pre>   <code>
 // 1. Directivas del preprocesador (bibliotecas)
 #include &lt;stdio.h&gt; // Esta línea permite usar entrada/salida (printf, scanf)
 
@@ -282,7 +282,7 @@ int main() {
     // 4. Valor de retorno
     return 0; // 0 significa que el programa terminó correctamente
 } // Las llaves {} delimitan bloques de código
-        </code>
+        </code></pre>
 
         <p>Explicación de cada parte:</p>
         <p>
@@ -330,7 +330,7 @@ int main() {
         </ul>
         <p>Variables: Espacios en memoria donde guardamos datos.</p>
         <p>Declaración e inicialización:</p>
-        <code>
+       <pre> <code>
 // Declaración (solo creamos la variable)
 int numero;
 float promedio;
@@ -340,7 +340,7 @@ char letra;
 int edad = 25;
 float temperatura = 36.5;
 char inicial = 'J';
-        </code>
+        </code></pre>
 
         <h2>3.5 Constantes</h2>
         <p>Una constante es como una variable... ¡pero que no cambia! Su valor permanece igual durante todo el programa.</p>
@@ -516,7 +516,7 @@ int main() {
         <h2>3.9 Ejemplo completo: Calculadora básica</h2>
         <p>Aquí juntamos todo lo aprendido:</p>
         
-        <code>
+    <pre>    <code>
             <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -724,7 +724,7 @@ int main() {
 </body>
 </html>
 
-        </code>
+        </code></pre>
     </div>
 <!-- </body>
 </html> -->
