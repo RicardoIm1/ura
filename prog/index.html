@@ -382,21 +382,34 @@
           </ul>
 
         <style>
-          /* .card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          }*/
 
-          .card h3 {
-            margin-top: 0;
-            color: #2c3e50;
-            border-left: 4px solid #3498db;
-            padding-left: 12px;
-          } 
+          .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 18px;
+            padding: 30px;
+            transition: var(--apple-transition);
+            cursor: pointer;
+        }
 
+        .card:hover {
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card h3 {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+        
           .accordion-list {
             list-style: none;
             padding: 0;
