@@ -1,598 +1,659 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Examen de Fundamentos de Programación<title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(145deg, #eef2f7 0%, #d9e2ec 100%);
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            padding: 2rem 1.5rem;
-            color: #1a2c3e;
-        }
-
-        /* contenedor principal del examen */
-        .exam-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-            transition: all 0.2s;
-        }
-
-        /* encabezado */
-        .exam-header {
-            background: #0b3b5f;
-            padding: 1.8rem 2rem;
-            color: white;
-        }
-
-        .exam-header h1 {
-            font-size: 1.9rem;
-            letter-spacing: -0.3px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .exam-header h1:before {
-            content: "";
-            font-size: 2rem;
-        }
-
-        .exam-header p {
-            margin-top: 0.7rem;
-            opacity: 0.85;
-            font-size: 1rem;
-            border-left: 3px solid #ffb74d;
-            padding-left: 1rem;
-        }
-
-        .instruccion {
-            background: #fef7e0;
-            padding: 0.8rem 2rem;
-            border-bottom: 1px solid #e2e8f0;
-            font-weight: 500;
-            color: #b45309;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .instruccion span {
-            font-size: 1.2rem;
-        }
-
-        /* cuestionario */
-        .questions-area {
-            padding: 2rem 2rem 1.5rem;
-        }
-
-        .question-card {
-            background: #ffffff;
-            border-radius: 1.5rem;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 1.8rem;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e9edf2;
-            transition: 0.2s;
-        }
-
-        .question-card:hover {
-            border-color: #cbdbe0;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .q-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            background: #f0f4f9;
-            display: inline-block;
-            padding: 0.2rem 1rem;
-            border-radius: 40px;
-            margin-bottom: 1rem;
-            color: #155799;
-        }
-
-        .question-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 1.2rem;
-            line-height: 1.4;
-            color: #1e2f3f;
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-left: 0.5rem;
-        }
-
-        .option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #fafcff;
-            padding: 0.6rem 1rem;
-            border-radius: 60px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.1s ease;
-            cursor: pointer;
-        }
-
-        .option:hover {
-            background: #eef3fc;
-            border-color: #8bb3d4;
-        }
-
-        input[type="radio"] {
-            accent-color: #2c6e9e;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        .option label {
-            font-size: 0.98rem;
-            font-weight: 450;
-            color: #1f3a4b;
-            flex: 1;
-            cursor: pointer;
-        }
-
-        /* botonera y resultados */
-        .action-bar {
-            padding: 0 2rem 1.5rem 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .btn {
-            border: none;
-            background: #2c6e9e;
-            color: white;
-            font-weight: 600;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-outline {
-            background: white;
-            color: #2c6e9e;
-            border: 1px solid #2c6e9e;
-        }
-
-        .btn-outline:hover {
-            background: #e7f0f9;
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background: #1f6392;
-        }
-
-        .btn-primary:hover {
-            background: #0e4a70;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-        }
-
-        .score-area {
-            background: #eef2fa;
-            border-radius: 2rem;
-            padding: 0.8rem 1.5rem;
-            font-weight: bold;
-            font-size: 1rem;
-            color: #155799;
-        }
-
-        /* SEPARADOR RESPUESTAS CORRECTAS */
-        .answers-separator {
-            margin: 0.5rem 2rem 2rem 2rem;
-            border-top: 2px dashed #cbd5e1;
-            padding-top: 1.2rem;
-        }
-
-        .correct-answers-block {
-            background: #f0f9f0;
-            border-radius: 1.5rem;
-            padding: 1.2rem 1.8rem;
-            border-left: 8px solid #2b7a4b;
-            margin-bottom: 1.2rem;
-        }
-
-        .correct-answers-block h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1d5a3e;
-            margin-bottom: 0.8rem;
-        }
-
-        .answer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 0.5rem 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .answer-item {
-            font-size: 0.95rem;
-            font-weight: 500;
-            background: white;
-            padding: 0.3rem 0.7rem;
-            border-radius: 40px;
-            display: inline-block;
-            width: fit-content;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        }
-
-        .feedback-msg {
-            background: #1e2f3f;
-            color: white;
-            border-radius: 40px;
-            padding: 0.4rem 1.2rem;
-            font-size: 0.85rem;
-        }
-
-        footer {
-            background: #f8fafc;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.75rem;
-            color: #5c6f87;
-            border-top: 1px solid #e2edf7;
-        }
-
-        @media (max-width: 650px) {
-            body {
-                padding: 1rem;
-            }
-            .questions-area, .action-bar {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            .question-text {
-                font-size: 1rem;
-            }
-            .option label {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
-</head>
-<body>
-<div class="exam-wrapper">
-    <div class="exam-header">
-        <h1>Examen de Fundamentos de Programación</h1>
-            <h3>25 abr 2026</h3>
-    </div>
-    <div class="instruccion">
-        Cada pregunta tiene UNA opción correcta. Selecciona la respuesta que consideres válida. Al final puedes verificar tus aciertos y consultar las respuestas correctas por separado.
-    </div>
-
-    <div class="questions-area" id="questionsArea">
-        <!-- PREGUNTA 1 -->
-        <div class="question-card" data-qid="1">
-            <div class="q-title">Pregunta 1</div>
-            <div class="question-text">¿Cuál de las siguientes opciones describe MEJOR un "Lenguaje de Alto Nivel"?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q1" value="a" id="q1_a"><label for="q1_a">a) Es el idioma nativo de la computadora, basado únicamente en código binario (unos y ceros).</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q1" value="b" id="q1_b"><label for="q1_b">b) Lenguaje cercano al hardware, totalmente dependiente del tipo de máquina y muy difícil de leer.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q1" value="c" id="q1_c"><label for="q1_c">c) Usa estructuras similares al inglés o matemáticas, es independiente de la máquina y facilita la programación.</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 2 -->
-        <div class="question-card" data-qid="2">
-            <div class="q-title">Pregunta 2</div>
-            <div class="question-text">¿Qué función realiza un compilador?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q2" value="a" id="q2_a"><label for="q2_a">a) Traduce un programa línea por línea ejecutándolo directamente, sin crear un ejecutable.</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q2" value="b" id="q2_b"><label for="q2_b">b) Toma el programa completo escrito en lenguaje de alto nivel y lo convierte a lenguaje máquina de una sola vez.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q2" value="c" id="q2_c"><label for="q2_c">c) Gestiona los recursos del hardware y proporciona una interfaz amigable al usuario.</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 3: Arquitectura / CPU -->
-        <div class="question-card" data-qid="3">
-            <div class="q-title">Pregunta 3</div>
-            <div class="question-text">En el contexto de la arquitectura de computadoras, ¿qué es la CPU (Unidad Central de Procesamiento)?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q3" value="a" id="q3_a"><label for="q3_a">a) La memoria de almacenamiento masivo, como el disco duro o SSD.</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q3" value="b" id="q3_b"><label for="q3_b">b) El "cerebro" que ejecuta instrucciones y procesa los datos.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q3" value="c" id="q3_c"><label for="q3_c">c) El dispositivo de entrada/salida que muestra información al usuario.</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 4: Características del algoritmo -->
-        <div class="question-card" data-qid="4">
-            <div class="q-title">Pregunta 4</div>
-            <div class="question-text">Según el material, ¿cuáles son las tres características esenciales de un algoritmo?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q4" value="a" id="q4_a"><label for="q4_a">a) Preciso, definido y finito.</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q4" value="b" id="q4_b"><label for="q4_b">b) Rápido, optimizado y reusable.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q4" value="c" id="q4_c"><label for="q4_c">c) Aleatorio, condicional y cíclico.</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 5: Diagrama de flujo, símbolo decisión -->
-        <div class="question-card" data-qid="5">
-            <div class="q-title">Pregunta 5</div>
-            <div class="question-text">En los diagramas de flujo (estándar ANSI), ¿qué símbolo se usa para representar una decisión o bifurcación condicional?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q5" value="a" id="q5_a"><label for="q5_a">a) Óvalo (terminal).</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q5" value="b" id="q5_b"><label for="q5_b">b) Rombo.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q5" value="c" id="q5_c"><label for="q5_c">c) Rectángulo (proceso).</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 6: Pseudocódigo → estructura MIENTRAS -->
-        <div class="question-card" data-qid="6">
-            <div class="q-title">Pregunta 6</div>
-            <div class="question-text">Observa el siguiente fragmento de pseudocódigo:<br>
-            <code style="background:#eef; padding:2px 6px; border-radius:12px;">Mientras (i <= n) Hacer <br>&nbsp;&nbsp;&nbsp;suma <- suma + i <br>&nbsp;&nbsp;&nbsp;i <- i + 1<br>FinMientras</code><br>
-            ¿Qué tipo de estructura de control representa y qué problema resuelve típicamente?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q6" value="a" id="q6_a"><label for="q6_a">a) Una estructura condicional 'Si-Entonces' que ejecuta un bloque una sola vez.</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q6" value="b" id="q6_b"><label for="q6_b">b) Una estructura cíclica (iterativa) que permite sumar números desde 1 hasta N.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q6" value="c" id="q6_c"><label for="q6_c">c) Un bloque de selección múltiple típico de lenguajes ensambladores.</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 7: Creador de lenguaje C -->
-        <div class="question-card" data-qid="7">
-            <div class="q-title">Pregunta 7</div>
-            <div class="question-text">¿Quién creó el lenguaje de programación C y con qué objetivo principal?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q7" value="a" id="q7_a"><label for="q7_a">a) Ada Lovelace, para la máquina analítica de Babbage.</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q7" value="b" id="q7_b"><label for="q7_b">b) Dennis Ritchie, para desarrollar el sistema operativo UNIX.</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q7" value="c" id="q7_c"><label for="q7_c">c) Bjarne Stroustrup, para dar soporte a la programación orientada a objetos.</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 8: printf especificador para int -->
-        <div class="question-card" data-qid="8">
-            <div class="q-title">Pregunta 8</div>
-            <div class="question-text">En el lenguaje C, si deseamos mostrar una variable de tipo entero (int) con la función printf, ¿qué especificador de formato debe usarse?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q8" value="a" id="q8_a"><label for="q8_a">a) %f</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q8" value="b" id="q8_b"><label for="q8_b">b) %c</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q8" value="c" id="q8_c"><label for="q8_c">c) %d o %i</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 9: operador módulo en C -->
-        <div class="question-card" data-qid="9">
-            <div class="q-title">Pregunta 9</div>
-            <div class="question-text">¿Cuál es el operador en C que permite obtener el residuo de una división entre enteros?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q9" value="a" id="q9_a"><label for="q9_a">a) / (división)</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q9" value="b" id="q9_b"><label for="q9_b">b) % (módulo)</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q9" value="c" id="q9_c"><label for="q9_c">c) // (comentario de línea)</label></div>
-            </div>
-        </div>
-
-        <!-- PREGUNTA 10: Lenguaje orientado a objetos -->
-        <div class="question-card" data-qid="10">
-            <div class="q-title">Pregunta 10</div>
-            <div class="question-text">De acuerdo con la sección "Lenguajes de programación" y tipos de programación, ¿cuál de los siguientes es un lenguaje que soporta explícitamente la Programación Orientada a Objetos (POO) y es ampliamente usado?</div>
-            <div class="options">
-                <div class="option" data-opt="a"><input type="radio" name="q10" value="a" id="q10_a"><label for="q10_a">a) SQL (Structured Query Language)</label></div>
-                <div class="option" data-opt="b"><input type="radio" name="q10" value="b" id="q10_b"><label for="q10_b">b) C++</label></div>
-                <div class="option" data-opt="c"><input type="radio" name="q10" value="c" id="q10_c"><label for="q10_c">c) Lenguaje Ensamblador</label></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="action-bar">
-        <div>
-            <button class="btn btn-primary" id="checkBtn">✅ Calificar respuestas</button>
-            <button class="btn btn-outline" id="resetBtn">⟳ Limpiar selecciones</button>
-        </div>
-        <div class="score-area" id="scoreDisplay">🔍 Presiona "Calificar"</div>
-    </div>
-
-    <!-- RESPUESTAS CORRECTAS POR SEPARADO (tal como solicita el enunciado) -->
-    <div class="answers-separator">
-        <div class="correct-answers-block">
-            <h3>📌 Respuestas correctas (solucionario oficial)</h3>
-            <p style="margin-bottom: 0.6rem; font-size: 0.9rem;">A continuación se listan las opciones correctas para cada pregunta. Esta sección es independiente del formulario.</p>
-            <div class="answer-grid" id="answerKeyGrid">
-                <!-- se llena dinamicamente con js pero también se muestra fijo -->
-            </div>
-        </div>
-    </div>
-    <footer>
-        Examen elaborado con base en los materiales proporcionados (Introducción a la Computación, Diseño de Algoritmos y Lenguaje C). Tiempo estimado: 30-40 min.
-    </footer>
-</div>
-
-<script>
-    // Definición de respuestas correctas para cada pregunta (basadas en el contenido)
-    // Formato: letra correcta (a, b, c)
-    const correctAnswers = {
-        q1: 'c',
-        q2: 'b',
-        q3: 'b',
-        q4: 'a',
-        q5: 'b',
-        q6: 'b',
-        q7: 'b',
-        q8: 'c',
-        q9: 'b',
-        q10: 'b'
-    };
-
-    // Para mostrar las respuestas correctas en el bloque "por separado"
-    const preguntasDescriptivas = [
-        "1. Lenguaje de Alto Nivel",
-        "2. Función del compilador",
-        "3. Definición de CPU",
-        "4. Características del algoritmo",
-        "5. Símbolo de decisión en diagrama",
-        "6. Estructura 'Mientras' en pseudocódigo",
-        "7. Creador del lenguaje C",
-        "8. Especificador formato para int en printf",
-        "9. Operador módulo en C",
-        "10. Lenguaje con POO"
-    ];
-
-    const answerLetters = {
-        q1: 'c', q2: 'b', q3: 'b', q4: 'a', q5: 'b',
-        q6: 'b', q7: 'b', q8: 'c', q9: 'b', q10: 'b'
-    };
-    const answerDescriptions = {
-        q1: 'c) Independiente de máquina, similar al inglés.',
-        q2: 'b) Traduce todo el programa a lenguaje máquina de una sola vez.',
-        q3: 'b) El cerebro que ejecuta instrucciones.',
-        q4: 'a) Preciso, definido y finito.',
-        q5: 'b) Rombo (decisión).',
-        q6: 'b) Estructura cíclica que suma de 1 a N.',
-        q7: 'b) Dennis Ritchie, para crear UNIX.',
-        q8: 'c) %d o %i',
-        q9: 'b) % (módulo)',
-        q10: 'b) C++ (soporta POO y se menciona en el contenido)'
-    };
-
-    // Construir el grid de respuestas correctas separadas
-    function buildAnswerKeyGrid() {
-        const container = document.getElementById('answerKeyGrid');
-        if (!container) return;
-        container.innerHTML = '';
-        for (let i = 1; i <= 10; i++) {
-            const qKey = `q${i}`;
-            const correctLetter = answerLetters[qKey];
-            const desc = answerDescriptions[qKey] || `Opción ${correctLetter.toUpperCase()}`;
-            const div = document.createElement('div');
-            div.className = 'answer-item';
-            div.innerHTML = `<strong>${i}.</strong> ${correctLetter.toUpperCase()} → ${desc.substring(0, 70)}${desc.length > 70 ? '…' : ''}`;
-            container.appendChild(div);
-        }
-    }
-
-    // Función para obtener las respuestas seleccionadas
-    function getUserAnswers() {
-        let answers = {};
-        for (let i = 1; i <= 10; i++) {
-            const selected = document.querySelector(`input[name="q${i}"]:checked`);
-            answers[`q${i}`] = selected ? selected.value : null;
-        }
-        return answers;
-    }
-
-    // Calcular y mostrar puntaje
-    function calculateScore() {
-        const userAnswers = getUserAnswers();
-        let correctCount = 0;
-        let resultsDetails = [];
-
-        for (let i = 1; i <= 10; i++) {
-            const qKey = `q${i}`;
-            const userChoice = userAnswers[qKey];
-            const isCorrect = (userChoice === correctAnswers[qKey]);
-            if (isCorrect && userChoice !== null) correctCount++;
-            // para detalle opcional
-            resultsDetails.push({
-                num: i,
-                correct: isCorrect,
-                user: userChoice || 'sin responder',
-                expected: correctAnswers[qKey]
-            });
-        }
-
-        const total = 10;
-        const scoreText = `📊 Aciertos: ${correctCount} / ${total}  (${Math.round((correctCount/total)*100)}%)`;
-        const scoreDiv = document.getElementById('scoreDisplay');
-        if (correctCount === total) {
-            scoreDiv.innerHTML = `🏆 ¡Excelente! ${scoreText}`;
-            scoreDiv.style.background = "#d9f0e1";
-        } else if (correctCount >= 7) {
-            scoreDiv.innerHTML = `👍 Bien hecho. ${scoreText}`;
-            scoreDiv.style.background = "#fef7e0";
-        } else {
-            scoreDiv.innerHTML = `📚 ${scoreText} — Revisa el solucionario para reforzar.`;
-            scoreDiv.style.background = "#ffe6e6";
-        }
-
-        // Opcional: mostrar un modal sencillo o resaltar? se puede añadir un tooltip, cumplimos.
-        // Mostrar feedback en consola amigable + resaltado visual momentáneo
-        let sinResponder = resultsDetails.filter(r => r.user === 'sin responder').length;
-        if (sinResponder > 0) {
-            scoreDiv.innerHTML += ` ⚠️ ${sinResponder} pregunta(s) sin responder.`;
-        }
-        return { correctCount, total };
-    }
-
-    // Limpiar todas las selecciones de radio
-    function resetSelections() {
-        const radios = document.querySelectorAll('input[type="radio"]');
-        radios.forEach(radio => radio.checked = false);
-        document.getElementById('scoreDisplay').innerHTML = '🔍 Presiona "Calificar"';
-        document.getElementById('scoreDisplay').style.background = "#eef2fa";
-        // Restablecer estilo de tarjetas si se añade algún highlight (opcional)
-    }
-
-    // Eventos y carga inicial
-    document.addEventListener('DOMContentLoaded', () => {
-        buildAnswerKeyGrid();  // muestra respuestas correctas separadas
-
-        const checkBtn = document.getElementById('checkBtn');
-        const resetBtn = document.getElementById('resetBtn');
-
-        if (checkBtn) {
-            checkBtn.addEventListener('click', () => {
-                calculateScore();
-                // Muestra también mensaje adicional recordatorio de respuestas correctas (ya están visibles)
-                const feedbackDiv = document.getElementById('scoreDisplay');
-                feedbackDiv.style.transition = "0.2s";
-                setTimeout(() => {
-                    // opcional, solo para feedback, no obligatorio
-                }, 100);
-            });
-        }
-        if (resetBtn) {
-            resetBtn.addEventListener('click', resetSelections);
-        }
-
-        // Para aumentar usabilidad, permitir click en toda la fila de opción
-        const optionDivs = document.querySelectorAll('.option');
-        optionDivs.forEach(div => {
-            div.addEventListener('click', (e) => {
-                // si el click no fue directamente en el radio, buscamos el radio dentro
-                const radio = div.querySelector('input[type="radio"]');
-                if (radio && !radio.checked) {
-                    radio.checked = true;
-                    // disparar evento manual
-                    const changeEvent = new Event('change', { bubbles: true });
-                    radio.dispatchEvent(changeEvent);
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
                 }
+
+                body {
+                    background: linear-gradient(145deg, #eef2f7 0%, #d9e2ec 100%);
+                    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+                    padding: 2rem 1.5rem;
+                    color: #1a2c3e;
+                }
+
+                /* contenedor principal del examen */
+                .exam-wrapper {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    background: white;
+                    border-radius: 2rem;
+                    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25);
+                    overflow: hidden;
+                    transition: all 0.2s;
+                }
+
+                /* encabezado */
+                .exam-header {
+                    background: #0b3b5f;
+                    padding: 1.8rem 2rem;
+                    color: white;
+                }
+
+                .exam-header h1 {
+                    font-size: 1.9rem;
+                    letter-spacing: -0.3px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                .exam-header h1:before {
+                    content: "";
+                    font-size: 2rem;
+                }
+
+                .exam-header p {
+                    margin-top: 0.7rem;
+                    opacity: 0.85;
+                    font-size: 1rem;
+                    border-left: 3px solid #ffb74d;
+                    padding-left: 1rem;
+                }
+
+                .instruccion {
+                    background: #fef7e0;
+                    padding: 0.8rem 2rem;
+                    border-bottom: 1px solid #e2e8f0;
+                    font-weight: 500;
+                    color: #b45309;
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                }
+
+                .instruccion span {
+                    font-size: 1.2rem;
+                }
+
+                /* cuestionario */
+                .questions-area {
+                    padding: 2rem 2rem 1.5rem;
+                }
+
+                .question-card {
+                    background: #ffffff;
+                    border-radius: 1.5rem;
+                    padding: 1.2rem 1.5rem;
+                    margin-bottom: 1.8rem;
+                    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+                    border: 1px solid #e9edf2;
+                    transition: 0.2s;
+                }
+
+                .question-card:hover {
+                    border-color: #cbdbe0;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+                }
+
+                .q-title {
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    background: #f0f4f9;
+                    display: inline-block;
+                    padding: 0.2rem 1rem;
+                    border-radius: 40px;
+                    margin-bottom: 1rem;
+                    color: #155799;
+                }
+
+                .question-text {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    margin-bottom: 1.2rem;
+                    line-height: 1.4;
+                    color: #1e2f3f;
+                }
+
+                .options {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                    margin-left: 0.5rem;
+                }
+
+                .option {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    background: #fafcff;
+                    padding: 0.6rem 1rem;
+                    border-radius: 60px;
+                    border: 1px solid #e2e8f0;
+                    transition: all 0.1s ease;
+                    cursor: pointer;
+                }
+
+                .option:hover {
+                    background: #eef3fc;
+                    border-color: #8bb3d4;
+                }
+
+                input[type="radio"] {
+                    accent-color: #2c6e9e;
+                    width: 18px;
+                    height: 18px;
+                    cursor: pointer;
+                }
+
+                .option label {
+                    font-size: 0.98rem;
+                    font-weight: 450;
+                    color: #1f3a4b;
+                    flex: 1;
+                    cursor: pointer;
+                }
+
+                /* botonera y resultados */
+                .action-bar {
+                    padding: 0 2rem 1.5rem 2rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .btn {
+                    border: none;
+                    background: #2c6e9e;
+                    color: white;
+                    font-weight: 600;
+                    padding: 0.7rem 1.5rem;
+                    border-radius: 50px;
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .btn-outline {
+                    background: white;
+                    color: #2c6e9e;
+                    border: 1px solid #2c6e9e;
+                }
+
+                .btn-outline:hover {
+                    background: #e7f0f9;
+                    transform: translateY(-2px);
+                }
+
+                .btn-primary {
+                    background: #1f6392;
+                }
+
+                .btn-primary:hover {
+                    background: #0e4a70;
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+                }
+
+                .score-area {
+                    background: #eef2fa;
+                    border-radius: 2rem;
+                    padding: 0.8rem 1.5rem;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    color: #155799;
+                }
+
+                /* SEPARADOR RESPUESTAS CORRECTAS */
+                .answers-separator {
+                    margin: 0.5rem 2rem 2rem 2rem;
+                    border-top: 2px dashed #cbd5e1;
+                    padding-top: 1.2rem;
+                }
+
+                .correct-answers-block {
+                    background: #f0f9f0;
+                    border-radius: 1.5rem;
+                    padding: 1.2rem 1.8rem;
+                    border-left: 8px solid #2b7a4b;
+                    margin-bottom: 1.2rem;
+                }
+
+                .correct-answers-block h3 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #1d5a3e;
+                    margin-bottom: 0.8rem;
+                }
+
+                .answer-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                    gap: 0.5rem 1rem;
+                    margin-top: 0.5rem;
+                }
+
+                .answer-item {
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    background: white;
+                    padding: 0.3rem 0.7rem;
+                    border-radius: 40px;
+                    display: inline-block;
+                    width: fit-content;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                }
+
+                .feedback-msg {
+                    background: #1e2f3f;
+                    color: white;
+                    border-radius: 40px;
+                    padding: 0.4rem 1.2rem;
+                    font-size: 0.85rem;
+                }
+
+                footer {
+                    background: #f8fafc;
+                    text-align: center;
+                    padding: 1rem;
+                    font-size: 0.75rem;
+                    color: #5c6f87;
+                    border-top: 1px solid #e2edf7;
+                }
+
+                @media (max-width: 650px) {
+                    body {
+                        padding: 1rem;
+                    }
+
+                    .questions-area,
+                    .action-bar {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+
+                    .question-text {
+                        font-size: 1rem;
+                    }
+
+                    .option label {
+                        font-size: 0.9rem;
+                    }
+                }
+            </style>
+</head>
+
+<body>
+    <div class="exam-wrapper">
+        <div class="exam-header">
+            <h1>Examen de Fundamentos de Programación</h1>
+            <h3>25 abr 2026</h3>
+        </div>
+        <div class="instruccion">
+            Cada pregunta tiene UNA opción correcta. Selecciona la respuesta que consideres válida. Al final puedes
+            verificar tus aciertos y consultar las respuestas correctas por separado.
+        </div>
+
+        <div class="questions-area" id="questionsArea">
+            <!-- PREGUNTA 1 -->
+            <div class="question-card" data-qid="1">
+                <div class="q-title">Pregunta 1</div>
+                <div class="question-text">¿Cuál de las siguientes opciones describe MEJOR un "Lenguaje de Alto Nivel"?
+                </div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q1" value="a" id="q1_a"><label
+                            for="q1_a">a) Es el idioma nativo de la computadora, basado únicamente en código binario
+                            (unos y ceros).</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q1" value="b" id="q1_b"><label
+                            for="q1_b">b) Lenguaje cercano al hardware, totalmente dependiente del tipo de máquina y muy
+                            difícil de leer.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q1" value="c" id="q1_c"><label
+                            for="q1_c">c) Usa estructuras similares al inglés o matemáticas, es independiente de la
+                            máquina y facilita la programación.</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 2 -->
+            <div class="question-card" data-qid="2">
+                <div class="q-title">Pregunta 2</div>
+                <div class="question-text">¿Qué función realiza un compilador?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q2" value="a" id="q2_a"><label
+                            for="q2_a">a) Traduce un programa línea por línea ejecutándolo directamente, sin crear un
+                            ejecutable.</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q2" value="b" id="q2_b"><label
+                            for="q2_b">b) Toma el programa completo escrito en lenguaje de alto nivel y lo convierte a
+                            lenguaje máquina de una sola vez.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q2" value="c" id="q2_c"><label
+                            for="q2_c">c) Gestiona los recursos del hardware y proporciona una interfaz amigable al
+                            usuario.</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 3: Arquitectura / CPU -->
+            <div class="question-card" data-qid="3">
+                <div class="q-title">Pregunta 3</div>
+                <div class="question-text">En el contexto de la arquitectura de computadoras, ¿qué es la CPU (Unidad
+                    Central de Procesamiento)?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q3" value="a" id="q3_a"><label
+                            for="q3_a">a) La memoria de almacenamiento masivo, como el disco duro o SSD.</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q3" value="b" id="q3_b"><label
+                            for="q3_b">b) El "cerebro" que ejecuta instrucciones y procesa los datos.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q3" value="c" id="q3_c"><label
+                            for="q3_c">c) El dispositivo de entrada/salida que muestra información al usuario.</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 4: Características del algoritmo -->
+            <div class="question-card" data-qid="4">
+                <div class="q-title">Pregunta 4</div>
+                <div class="question-text">Según el material, ¿cuáles son las tres características esenciales de un
+                    algoritmo?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q4" value="a" id="q4_a"><label
+                            for="q4_a">a) Preciso, definido y finito.</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q4" value="b" id="q4_b"><label
+                            for="q4_b">b) Rápido, optimizado y reusable.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q4" value="c" id="q4_c"><label
+                            for="q4_c">c) Aleatorio, condicional y cíclico.</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 5: Diagrama de flujo, símbolo decisión -->
+            <div class="question-card" data-qid="5">
+                <div class="q-title">Pregunta 5</div>
+                <div class="question-text">En los diagramas de flujo (estándar ANSI), ¿qué símbolo se usa para
+                    representar una decisión o bifurcación condicional?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q5" value="a" id="q5_a"><label
+                            for="q5_a">a) Óvalo (terminal).</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q5" value="b" id="q5_b"><label
+                            for="q5_b">b) Rombo.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q5" value="c" id="q5_c"><label
+                            for="q5_c">c) Rectángulo (proceso).</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 6: Pseudocódigo → estructura MIENTRAS -->
+            <div class="question-card" data-qid="6">
+                <div class="q-title">Pregunta 6</div>
+                <div class="question-text">Observa el siguiente fragmento de pseudocódigo:<br>
+                    <code
+                        style="background:#eef; padding:2px 6px; border-radius:12px;">Mientras (i <= n) Hacer <br>&nbsp;&nbsp;&nbsp;suma <- suma + i <br>&nbsp;&nbsp;&nbsp;i <- i + 1<br>FinMientras</code><br>
+                    ¿Qué tipo de estructura de control representa y qué problema resuelve típicamente?
+                </div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q6" value="a" id="q6_a"><label
+                            for="q6_a">a) Una estructura condicional 'Si-Entonces' que ejecuta un bloque una sola
+                            vez.</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q6" value="b" id="q6_b"><label
+                            for="q6_b">b) Una estructura cíclica (iterativa) que permite sumar números desde 1 hasta
+                            N.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q6" value="c" id="q6_c"><label
+                            for="q6_c">c) Un bloque de selección múltiple típico de lenguajes ensambladores.</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 7: Creador de lenguaje C -->
+            <div class="question-card" data-qid="7">
+                <div class="q-title">Pregunta 7</div>
+                <div class="question-text">¿Quién creó el lenguaje de programación C y con qué objetivo principal?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q7" value="a" id="q7_a"><label
+                            for="q7_a">a) Ada Lovelace, para la máquina analítica de Babbage.</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q7" value="b" id="q7_b"><label
+                            for="q7_b">b) Dennis Ritchie, para desarrollar el sistema operativo UNIX.</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q7" value="c" id="q7_c"><label
+                            for="q7_c">c) Bjarne Stroustrup, para dar soporte a la programación orientada a
+                            objetos.</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 8: printf especificador para int -->
+            <div class="question-card" data-qid="8">
+                <div class="q-title">Pregunta 8</div>
+                <div class="question-text">En el lenguaje C, si deseamos mostrar una variable de tipo entero (int) con
+                    la función printf, ¿qué especificador de formato debe usarse?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q8" value="a" id="q8_a"><label
+                            for="q8_a">a) %f</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q8" value="b" id="q8_b"><label
+                            for="q8_b">b) %c</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q8" value="c" id="q8_c"><label
+                            for="q8_c">c) %d o %i</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 9: operador módulo en C -->
+            <div class="question-card" data-qid="9">
+                <div class="q-title">Pregunta 9</div>
+                <div class="question-text">¿Cuál es el operador en C que permite obtener el residuo de una división
+                    entre enteros?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q9" value="a" id="q9_a"><label
+                            for="q9_a">a) / (división)</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q9" value="b" id="q9_b"><label
+                            for="q9_b">b) % (módulo)</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q9" value="c" id="q9_c"><label
+                            for="q9_c">c) // (comentario de línea)</label></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 10: Lenguaje orientado a objetos -->
+            <div class="question-card" data-qid="10">
+                <div class="q-title">Pregunta 10</div>
+                <div class="question-text">De acuerdo con la sección "Lenguajes de programación" y tipos de
+                    programación, ¿cuál de los siguientes es un lenguaje que soporta explícitamente la Programación
+                    Orientada a Objetos (POO) y es ampliamente usado?</div>
+                <div class="options">
+                    <div class="option" data-opt="a"><input type="radio" name="q10" value="a" id="q10_a"><label
+                            for="q10_a">a) SQL (Structured Query Language)</label></div>
+                    <div class="option" data-opt="b"><input type="radio" name="q10" value="b" id="q10_b"><label
+                            for="q10_b">b) C++</label></div>
+                    <div class="option" data-opt="c"><input type="radio" name="q10" value="c" id="q10_c"><label
+                            for="q10_c">c) Lenguaje Ensamblador</label></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <div>
+                <button class="btn btn-primary" id="checkBtn">✅ Calificar respuestas</button>
+                <button class="btn btn-outline" id="resetBtn">⟳ Limpiar selecciones</button>
+            </div>
+            <div class="score-area" id="scoreDisplay">🔍 Presiona "Calificar"</div>
+        </div>
+
+        <!-- RESPUESTAS CORRECTAS POR SEPARADO (tal como solicita el enunciado) -->
+        <div class="answers-separator">
+            <div class="correct-answers-block">
+                <h3>📌 Respuestas correctas (solucionario oficial)</h3>
+                <p style="margin-bottom: 0.6rem; font-size: 0.9rem;">A continuación se listan las opciones correctas
+                    para cada pregunta. Esta sección es independiente del formulario.</p>
+                <div class="answer-grid" id="answerKeyGrid">
+                    <!-- se llena dinamicamente con js pero también se muestra fijo -->
+                </div>
+            </div>
+        </div>
+        <footer>
+            Examen elaborado con base en los materiales proporcionados (Introducción a la Computación, Diseño de
+            Algoritmos y Lenguaje C). Tiempo estimado: 30-40 min.
+        </footer>
+    </div>
+
+    <script>
+        // Definición de respuestas correctas para cada pregunta (basadas en el contenido)
+        // Formato: letra correcta (a, b, c)
+        const correctAnswers = {
+            q1: 'c',
+            q2: 'b',
+            q3: 'b',
+            q4: 'a',
+            q5: 'b',
+            q6: 'b',
+            q7: 'b',
+            q8: 'c',
+            q9: 'b',
+            q10: 'b'
+        };
+
+        // Para mostrar las respuestas correctas en el bloque "por separado"
+        const preguntasDescriptivas = [
+            "1. Lenguaje de Alto Nivel",
+            "2. Función del compilador",
+            "3. Definición de CPU",
+            "4. Características del algoritmo",
+            "5. Símbolo de decisión en diagrama",
+            "6. Estructura 'Mientras' en pseudocódigo",
+            "7. Creador del lenguaje C",
+            "8. Especificador formato para int en printf",
+            "9. Operador módulo en C",
+            "10. Lenguaje con POO"
+        ];
+
+        const answerLetters = {
+            q1: 'c', q2: 'b', q3: 'b', q4: 'a', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'c', q9: 'b', q10: 'b'
+        };
+        const answerDescriptions = {
+            q1: 'c) Independiente de máquina, similar al inglés.',
+            q2: 'b) Traduce todo el programa a lenguaje máquina de una sola vez.',
+            q3: 'b) El cerebro que ejecuta instrucciones.',
+            q4: 'a) Preciso, definido y finito.',
+            q5: 'b) Rombo (decisión).',
+            q6: 'b) Estructura cíclica que suma de 1 a N.',
+            q7: 'b) Dennis Ritchie, para crear UNIX.',
+            q8: 'c) %d o %i',
+            q9: 'b) % (módulo)',
+            q10: 'b) C++ (soporta POO y se menciona en el contenido)'
+        };
+
+        // Construir el grid de respuestas correctas separadas
+        function buildAnswerKeyGrid() {
+            const container = document.getElementById('answerKeyGrid');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 1; i <= 10; i++) {
+                const qKey = `q${i}`;
+                const correctLetter = answerLetters[qKey];
+                const desc = answerDescriptions[qKey] || `Opción ${correctLetter.toUpperCase()}`;
+                const div = document.createElement('div');
+                div.className = 'answer-item';
+                div.innerHTML = `<strong>${i}.</strong> ${correctLetter.toUpperCase()} → ${desc.substring(0, 70)}${desc.length > 70 ? '…' : ''}`;
+                container.appendChild(div);
+            }
+        }
+
+        // Función para obtener las respuestas seleccionadas
+        function getUserAnswers() {
+            let answers = {};
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                answers[`q${i}`] = selected ? selected.value : null;
+            }
+            return answers;
+        }
+
+        // Calcular y mostrar puntaje
+        function calculateScore() {
+            const userAnswers = getUserAnswers();
+            let correctCount = 0;
+            let resultsDetails = [];
+
+            for (let i = 1; i <= 10; i++) {
+                const qKey = `q${i}`;
+                const userChoice = userAnswers[qKey];
+                const isCorrect = (userChoice === correctAnswers[qKey]);
+                if (isCorrect && userChoice !== null) correctCount++;
+                // para detalle opcional
+                resultsDetails.push({
+                    num: i,
+                    correct: isCorrect,
+                    user: userChoice || 'sin responder',
+                    expected: correctAnswers[qKey]
+                });
+            }
+
+            const total = 10;
+            const scoreText = `📊 Aciertos: ${correctCount} / ${total}  (${Math.round((correctCount / total) * 100)}%)`;
+            const scoreDiv = document.getElementById('scoreDisplay');
+            if (correctCount === total) {
+                scoreDiv.innerHTML = `🏆 ¡Excelente! ${scoreText}`;
+                scoreDiv.style.background = "#d9f0e1";
+            } else if (correctCount >= 7) {
+                scoreDiv.innerHTML = `👍 Bien hecho. ${scoreText}`;
+                scoreDiv.style.background = "#fef7e0";
+            } else {
+                scoreDiv.innerHTML = `📚 ${scoreText} — Revisa el solucionario para reforzar.`;
+                scoreDiv.style.background = "#ffe6e6";
+            }
+
+            // Opcional: mostrar un modal sencillo o resaltar? se puede añadir un tooltip, cumplimos.
+            // Mostrar feedback en consola amigable + resaltado visual momentáneo
+            let sinResponder = resultsDetails.filter(r => r.user === 'sin responder').length;
+            if (sinResponder > 0) {
+                scoreDiv.innerHTML += ` ⚠️ ${sinResponder} pregunta(s) sin responder.`;
+            }
+            return { correctCount, total };
+        }
+
+        // Limpiar todas las selecciones de radio
+        function resetSelections() {
+            const radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(radio => radio.checked = false);
+            document.getElementById('scoreDisplay').innerHTML = '🔍 Presiona "Calificar"';
+            document.getElementById('scoreDisplay').style.background = "#eef2fa";
+            // Restablecer estilo de tarjetas si se añade algún highlight (opcional)
+        }
+
+        // Eventos y carga inicial
+        document.addEventListener('DOMContentLoaded', () => {
+            buildAnswerKeyGrid();  // muestra respuestas correctas separadas
+
+            const checkBtn = document.getElementById('checkBtn');
+            const resetBtn = document.getElementById('resetBtn');
+
+            if (checkBtn) {
+                checkBtn.addEventListener('click', () => {
+                    calculateScore();
+                    // Muestra también mensaje adicional recordatorio de respuestas correctas (ya están visibles)
+                    const feedbackDiv = document.getElementById('scoreDisplay');
+                    feedbackDiv.style.transition = "0.2s";
+                    setTimeout(() => {
+                        // opcional, solo para feedback, no obligatorio
+                    }, 100);
+                });
+            }
+            if (resetBtn) {
+                resetBtn.addEventListener('click', resetSelections);
+            }
+
+            // Para aumentar usabilidad, permitir click en toda la fila de opción
+            const optionDivs = document.querySelectorAll('.option');
+            optionDivs.forEach(div => {
+                div.addEventListener('click', (e) => {
+                    // si el click no fue directamente en el radio, buscamos el radio dentro
+                    const radio = div.querySelector('input[type="radio"]');
+                    if (radio && !radio.checked) {
+                        radio.checked = true;
+                        // disparar evento manual
+                        const changeEvent = new Event('change', { bubbles: true });
+                        radio.dispatchEvent(changeEvent);
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 </body>
+
 </html>
