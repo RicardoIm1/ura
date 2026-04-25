@@ -354,7 +354,8 @@
                 <ul>
                   <li>Abrir una cuenta en <a href="https://github.com" target="_blank">GitHub</a>.io</li>
                   <li>Abrir una cuenta en <a href="https://DeepSeek.com" target="_blank">DeepSeek</a>.io</li>
-                  <li>Deberás generar el código a través de un prompt y hospedarlo en linea para que sea de acceso público</li>
+                  <li>Deberás generar el código a través de un prompt y hospedarlo en linea para que sea de acceso
+                    público</li>
                   <li>Debe realizar operaciones básicas (+, -, ×, ÷)</li>
                   <li>Debe incluir funciones científicas (seno, coseno, tangente, raíz cuadrada, potencia)</li>
                   <li>Debe tener cambio de tema (claro/oscuro)</li>
@@ -374,131 +375,167 @@
                   <li>Experiencia laboral (puesto, empresa, fechas, funciones)</li>
                   <li>Habilidades y competencias (idiomas, software, certificaciones)</li>
                   <li>Diseño profesional y atractivo (usar CSS moderno)</li>
-                  <li>Deberás generar el código a través de un prompt y hospedarlo en linea para que sea de acceso público</li>
+                  <li>Deberás generar el código a través de un prompt y hospedarlo en linea para que sea de acceso
+                    público</li>
                   <li>Maquetado con HTML semántico y CSS Grid/Flexbox</li>
                 </ul>
               </div>
             </li>
           </ul>
 
-        <style>
+          <style>
+            .card {
+              background: rgba(255, 255, 255, 0.1);
+              backdrop-filter: blur(20px);
+              -webkit-backdrop-filter: blur(20px);
+              border-radius: 18px;
+              padding: 30px;
+              transition: var(--apple-transition);
+              cursor: pointer;
+            }
 
-          .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 18px;
-            padding: 30px;
-            transition: var(--apple-transition);
-            cursor: pointer;
-        }
+            .card:hover {
+              transform: scale(1.03);
+              background: rgba(255, 255, 255, 0.15);
+            }
 
-        .card:hover {
-            transform: scale(1.03);
-            background: rgba(255, 255, 255, 0.15);
-        }
+            .card h3 {
+              font-size: 21px;
+              font-weight: 600;
+              margin-bottom: 15px;
+            }
 
-        .card h3 {
-            font-size: 21px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+            .card p {
+              font-size: 17px;
+              line-height: 1.5;
+              opacity: 0.85;
+            }
 
-        .card p {
-            font-size: 17px;
-            line-height: 1.5;
-            opacity: 0.85;
-        }
+            .accordion-list {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
 
-          .accordion-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
+            .accordion-list li {
+              margin-bottom: 12px;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              overflow: hidden;
+            }
 
-          .accordion-list li {
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-          }
+            .accordion-btn {
+              width: 100%;
+              background: transparent;
+              color: #ffffff;
+              cursor: pointer;
+              padding: 14px 18px;
+              text-align: left;
+              border: none;
+              outline: none;
+              font-size: 1rem;
+              font-weight: bold;
+              transition: 0.3s;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
 
-          .accordion-btn {
-            width: 100%;
-            background: transparent;
-            color: #ffffff;
-            cursor: pointer;
-            padding: 14px 18px;
-            text-align: left;
-            border: none;
-            outline: none;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: 0.3s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
+            .accordion-btn:hover {
+              background: transparent
+            }
 
-          .accordion-btn:hover {
-            background: transparent
-          }
+            .accordion-btn::after {
+              content: '▼';
+              font-size: 0.8rem;
+              transition: transform 0.3s;
+            }
 
-          .accordion-btn::after {
-            content: '▼';
-            font-size: 0.8rem;
-            transition: transform 0.3s;
-          }
+            .accordion-btn.active::after {
+              transform: rotate(180deg);
+            }
 
-          .accordion-btn.active::after {
-            transform: rotate(180deg);
-          }
+            .accordion-content {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease-out;
+              background-color: transparent;
+              padding: 0 18px;
+            }
 
-          .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: transparent;
-            padding: 0 18px;
-          }
+            .accordion-content.show {
+              max-height: 500px;
+              padding: 12px 18px;
+            }
 
-          .accordion-content.show {
-            max-height: 500px;
-            padding: 12px 18px;
-          }
+            .accordion-content ul {
+              margin: 8px 0 8px 20px;
+            }
 
-          .accordion-content ul {
-            margin: 8px 0 8px 20px;
-          }
+            .accordion-content li {
+              margin: 6px 0;
+              border: none;
+            }
 
-          .accordion-content li {
-            margin: 6px 0;
-            border: none;
-          }
+            .accordion-content p {
+              margin: 8px 0;
+            }
+          </style>
+          <style>
+            .accordion-content {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease-out;
+              background-color: #fefefe;
+              padding: 0 18px;
+            }
 
-          .accordion-content p {
-            margin: 8px 0;
-          }
-        </style>
+            .accordion-content.show {
+              max-height: 300px;
+              /* Altura máxima antes de mostrar scroll */
+              overflow-y: auto;
+              /* Scroll vertical */
+              padding: 12px 18px;
+            }
 
-        <script>
-          document.querySelectorAll('.accordion-btn').forEach(button => {
-            button.addEventListener('click', () => {
-              // Cerrar los demás acordeones (opcional, para que solo uno abra a la vez)
-              document.querySelectorAll('.accordion-btn').forEach(btn => {
-                if (btn !== button) {
-                  btn.classList.remove('active');
-                  btn.nextElementSibling.classList.remove('show');
-                }
+            /* Personalizar la barra de scroll (opcional) */
+            .accordion-content.show::-webkit-scrollbar {
+              width: 8px;
+            }
+
+            .accordion-content.show::-webkit-scrollbar-track {
+              background: #f1f1f1;
+              border-radius: 4px;
+            }
+
+            .accordion-content.show::-webkit-scrollbar-thumb {
+              background: #3498db;
+              border-radius: 4px;
+            }
+
+            .accordion-content.show::-webkit-scrollbar-thumb:hover {
+              background: #2980b9;
+            }
+          </style>
+
+          <script>
+            document.querySelectorAll('.accordion-btn').forEach(button => {
+              button.addEventListener('click', () => {
+                // Cerrar los demás acordeones (opcional, para que solo uno abra a la vez)
+                document.querySelectorAll('.accordion-btn').forEach(btn => {
+                  if (btn !== button) {
+                    btn.classList.remove('active');
+                    btn.nextElementSibling.classList.remove('show');
+                  }
+                });
+
+                // Toggle el acordeón actual
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                content.classList.toggle('show');
               });
-
-              // Toggle el acordeón actual
-              button.classList.toggle('active');
-              const content = button.nextElementSibling;
-              content.classList.toggle('show');
             });
-          });
-        </script>
+          </script>
         </div>
         <div class="card">
           <h3>Expon temas en equipos de trabajo</h3>
