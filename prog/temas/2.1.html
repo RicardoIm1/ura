@@ -1,66 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño de Algoritmos e Introducción a Lenguaje C</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        h1 {
-            text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        h2 {
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
-            margin-top: 30px;
-        }
-        h3 {
-            margin-top: 20px;
-            color: #2980b9;
-        }
-        code, pre {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            display: block;
-            white-space: pre-wrap;
-            margin: 15px 0;
-        }
-        ul, p {
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        .note {
-            background-color: #eaf2f8;
-            border-left: 3px solid #3498db;
-            padding: 10px;
-            margin: 15px 0;
-        }
-    </style>
-</head>
-<body>-->
+<body>
 <div class="container">
     <h1>2. DISEÑO DE ALGORITMOS</h1>
     <h2>2.1 Conceptos básicos</h2>
@@ -739,5 +677,206 @@ int main() {
 </code></pre>
 
 </div>
-<!-- </body>
-</html> -->
+
+<!-- ========== CALCULADORA CIENTÍFICA PREMIUM ========== -->
+<style>
+  /* Estilos exclusivos para la calculadora (no afectan al resto) */
+  .calc-premium {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 2px solid #3498db;
+  }
+  .calc-premium h3 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  .calculator-premium {
+    border-radius: 20px;
+    padding: 20px;
+    width: 380px;
+    margin: 0 auto;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .display-premium {
+    font-size: 2em;
+    text-align: right;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    font-family: monospace;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .buttons-premium {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .buttons-premium button {
+    font-size: 1em;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .span-2 { grid-column: span 2; }
+  .equal-premium { font-weight: bold; }
+
+  /* Tema oscuro */
+  body.dark-calc .calculator-premium {
+    background: #1a1a1a;
+    box-shadow: 0 0 40px rgba(0,255,180,0.4);
+  }
+  body.dark-calc .display-premium {
+    background: #000;
+    color: #0ff;
+    box-shadow: inset 0 0 10px #0ff;
+  }
+  body.dark-calc .buttons-premium button {
+    background: #222;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,255,180,0.2);
+  }
+  body.dark-calc .buttons-premium button:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff;
+  }
+  body.dark-calc .equal-premium {
+    background: #0ff;
+    color: #000;
+  }
+  body.dark-calc .equal-premium:hover {
+    background: #00ffaa;
+    box-shadow: 0 0 25px #00ffaa;
+  }
+
+  /* Tema claro */
+  body.light-calc .calculator-premium {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
+  body.light-calc .display-premium {
+    background: #eaeaea;
+    color: #333;
+    box-shadow: inset 0 0 5px #aaa;
+  }
+  body.light-calc .buttons-premium button {
+    background: #ddd;
+    color: #000;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  body.light-calc .buttons-premium button:hover {
+    background: #00aaff;
+    color: #fff;
+    box-shadow: 0 0 15px #00aaff;
+  }
+  body.light-calc .equal-premium {
+    background: #00aaff;
+    color: #fff;
+  }
+  body.light-calc .equal-premium:hover {
+    background: #0077cc;
+    box-shadow: 0 0 20px #0077cc;
+  }
+  .theme-switch-premium {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+</style>
+
+<div class="calc-premium">
+  <h3>🧮 Calculadora Científica Premium (funcional)</h3>
+  <div class="calculator-premium">
+    <div class="theme-switch-premium">
+      <button onclick="toggleCalcTheme()">🌓 Cambiar Tema</button>
+    </div>
+    <div class="display-premium" id="calcDisplay">0</div>
+    <div class="buttons-premium">
+      <button onclick="clearCalc()">C</button>
+      <button onclick="deleteCalc()">⌫</button>
+      <button onclick="appendCalc('(')">(</button>
+      <button onclick="appendCalc(')')">)</button>
+      <button onclick="appendCalc('/')">÷</button>
+
+      <button onclick="appendCalc('7')">7</button>
+      <button onclick="appendCalc('8')">8</button>
+      <button onclick="appendCalc('9')">9</button>
+      <button onclick="appendCalc('*')">×</button>
+      <button onclick="appendCalc('Math.sqrt(')">√</button>
+
+      <button onclick="appendCalc('4')">4</button>
+      <button onclick="appendCalc('5')">5</button>
+      <button onclick="appendCalc('6')">6</button>
+      <button onclick="appendCalc('-')">−</button>
+      <button onclick="appendCalc('Math.pow(')">xʸ</button>
+
+      <button onclick="appendCalc('1')">1</button>
+      <button onclick="appendCalc('2')">2</button>
+      <button onclick="appendCalc('3')">3</button>
+      <button onclick="appendCalc('+')">+</button>
+      <button onclick="appendCalc('Math.PI')">π</button>
+
+      <button onclick="appendCalc('0')" class="span-2">0</button>
+      <button onclick="appendCalc('.')">.</button>
+      <button onclick="calculateCalc()" class="equal-premium span-2">=</button>
+
+      <button onclick="appendCalc('Math.sin(')">sin</button>
+      <button onclick="appendCalc('Math.cos(')">cos</button>
+      <button onclick="appendCalc('Math.tan(')">tan</button>
+      <button onclick="appendCalc('Math.log(')">ln</button>
+      <button onclick="appendCalc('Math.exp(')">exp</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript de la calculadora
+  const calcDisplay = document.getElementById('calcDisplay');
+  let currentTheme = 'dark-calc';
+
+  function appendCalc(value) {
+    if (calcDisplay.innerText === "0") {
+      calcDisplay.innerText = value;
+    } else {
+      calcDisplay.innerText += value;
+    }
+  }
+
+  function clearCalc() {
+    calcDisplay.innerText = "0";
+  }
+
+  function deleteCalc() {
+    calcDisplay.innerText = calcDisplay.innerText.slice(0, -1) || "0";
+  }
+
+  function calculateCalc() {
+    try {
+      let expr = calcDisplay.innerText;
+      // Reemplazar símbolos visuales por operadores reales
+      expr = expr.replace(/×/g, '*').replace(/÷/g, '/');
+      calcDisplay.innerText = eval(expr);
+    } catch (e) {
+      calcDisplay.innerText = "Error";
+    }
+  }
+
+  function toggleCalcTheme() {
+    const body = document.body;
+    if (currentTheme === 'dark-calc') {
+      body.classList.remove('dark-calc');
+      body.classList.add('light-calc');
+      currentTheme = 'light-calc';
+    } else {
+      body.classList.remove('light-calc');
+      body.classList.add('dark-calc');
+      currentTheme = 'dark-calc';
+    }
+  }
+
+  // Establecer tema inicial (oscuro)
+  document.body.classList.add('dark-calc');
+</script>
+</body>
